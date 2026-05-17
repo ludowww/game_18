@@ -37,10 +37,10 @@ def test_t134_day_completion_uses_mode_specific_required_conversations() -> None
         "nico_j1_v2",
         "maya_j1_v2",
         "ines_j1_v2",
-        "sarah_meal_j1_v2",
-        "nico_respiration_j1_v2",
     ]:
         assert f'"{conversation_id}"' in helper
+    assert '"sarah_meal_j1_v2"' not in helper
+    assert '"nico_respiration_j1_v2"' not in helper
     is_day_complete = function_body(source, "_is_day_complete")
     assert "var required_ids: Array = _required_conversations_for_current_mode(day)" in is_day_complete
     assert "REQUIRED_CONVERSATIONS_BY_DAY[day]" not in is_day_complete
@@ -57,8 +57,10 @@ def test_t134_breathing_scenes_unlock_only_after_core_j1_v2_done() -> None:
     assert "func _unlock_j1_v2_breathing_scenes_if_ready() -> void:" in source
     breathing_unlock = function_body(source, "_unlock_j1_v2_breathing_scenes_if_ready")
     assert "if not _j1_v2_core_conversations_done():" in breathing_unlock
-    assert 'conversations["sarah_meal_j1_v2"]["available"] = true' in breathing_unlock
-    assert 'conversations["nico_respiration_j1_v2"]["available"] = true' in breathing_unlock
+    assert '_attach_j1_v2_followup_scene("sarah_j1_v2", "res://data/sarah_meal_j1_v2_experimental.json", "j1_06_sarah_001", "J1 V2 — Rentrer manger", "Sarah parle du repas.")' in breathing_unlock
+    assert '_attach_j1_v2_followup_scene("nico_j1_v2", "res://data/nico_respiration_j1_v2_experimental.json", "j1_07_nico_001", "J1 V2 — Respiration", "Nico tente une respiration.")' in breathing_unlock
+    assert 'conversations["sarah_meal_j1_v2"]' not in breathing_unlock
+    assert 'conversations["nico_respiration_j1_v2"]' not in breathing_unlock
     for conversation_id in ["sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2"]:
         assert f'"{conversation_id}"' in function_body(source, "_j1_v2_core_conversations_done")
 

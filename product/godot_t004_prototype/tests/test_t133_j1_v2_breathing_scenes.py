@@ -29,18 +29,20 @@ def test_t133_breathing_scene_json_files_exist_and_have_choice_nodes() -> None:
         assert any(node.get("type") == "end" for node in data["nodes"])
 
 
-def test_t133_state_declares_breathing_scenes_initially_locked() -> None:
+def test_t133_breathing_scenes_are_followup_jsons_not_separate_threads() -> None:
     source = state_text()
-    for conversation_id, json_file, start_node, title in [
-        ("sarah_meal_j1_v2", "sarah_meal_j1_v2_experimental.json", "j1_06_sarah_001", "J1 V2 — Rentrer manger"),
-        ("nico_respiration_j1_v2", "nico_respiration_j1_v2_experimental.json", "j1_07_nico_001", "J1 V2 — Respiration"),
+    for json_file, start_node, title in [
+        ("sarah_meal_j1_v2_experimental.json", "j1_06_sarah_001", "J1 V2 — Rentrer manger"),
+        ("nico_respiration_j1_v2_experimental.json", "j1_07_nico_001", "J1 V2 — Respiration"),
     ]:
-        assert f'"{conversation_id}"' in source
         assert f'"res://data/{json_file}"' in source
         assert f'"{start_node}"' in source
         assert f'"{title}"' in source
-    assert '"sarah_meal_j1_v2",' in source
-    assert '"nico_respiration_j1_v2",' in source
+    conversation_ids_start = source.index("func conversation_ids")
+    conversation_ids_end = source.index("func active_conversation_ids", conversation_ids_start)
+    conversation_ids_body = source[conversation_ids_start:conversation_ids_end]
+    assert '"sarah_meal_j1_v2"' not in conversation_ids_body
+    assert '"nico_respiration_j1_v2"' not in conversation_ids_body
 
 
 def test_t133_breathing_scenes_are_deferred_until_late_j1_v2_unlock() -> None:
@@ -49,9 +51,8 @@ def test_t133_breathing_scenes_are_deferred_until_late_j1_v2_unlock() -> None:
     unlock_start = source.index("func _unlock_j1_v2_after_priority_choice")
     unlock_end = source.index("func _j1_v2_core_conversations_done", unlock_start)
     priority_unlock_body = source[unlock_start:unlock_end]
-    for conversation_id in ["sarah_meal_j1_v2", "nico_respiration_j1_v2"]:
-        assert f'conversations["{conversation_id}"]["available"] = true' not in priority_unlock_body
-        assert f'mark_conversation_new("{conversation_id}"' in source
+    assert '_attach_j1_v2_followup_scene("sarah_j1_v2", "res://data/sarah_meal_j1_v2_experimental.json", "j1_06_sarah_001", "J1 V2 — Rentrer manger", "Sarah parle du repas.")' in source
+    assert '_attach_j1_v2_followup_scene("nico_j1_v2", "res://data/nico_respiration_j1_v2_experimental.json", "j1_07_nico_001", "J1 V2 — Respiration", "Nico tente une respiration.")' in source
 
 
 def test_t133_validator_includes_breathing_scene_files() -> None:
@@ -65,7 +66,7 @@ def test_t133_validator_includes_breathing_scene_files() -> None:
 
 if __name__ == "__main__":
     test_t133_breathing_scene_json_files_exist_and_have_choice_nodes()
-    test_t133_state_declares_breathing_scenes_initially_locked()
+    test_t133_breathing_scenes_are_followup_jsons_not_separate_threads()
     test_t133_breathing_scenes_are_deferred_until_late_j1_v2_unlock()
     test_t133_validator_includes_breathing_scene_files()
     print("T133 J1 V2 breathing scenes tests OK")

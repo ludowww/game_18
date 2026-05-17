@@ -190,30 +190,6 @@ func _default_conversations() -> Dictionary:
 			true,
 			"j1_05_ines_001"
 		),
-		"sarah_meal_j1_v2": _new_conversation_state(
-			"sarah_meal_j1_v2",
-			"sarah",
-			"Sarah",
-			"J1 V2 — Rentrer manger",
-			"res://data/sarah_meal_j1_v2_experimental.json",
-			1,
-			false,
-			false,
-			true,
-			"j1_06_sarah_001"
-		),
-		"nico_respiration_j1_v2": _new_conversation_state(
-			"nico_respiration_j1_v2",
-			"nico",
-			"Nico",
-			"J1 V2 — Respiration",
-			"res://data/nico_respiration_j1_v2_experimental.json",
-			1,
-			false,
-			false,
-			true,
-			"j1_07_nico_001"
-		),
 		"camille_j2": _new_conversation_state(
 			"camille_j2",
 			"camille",
@@ -446,7 +422,7 @@ func _default_conversation_blocks() -> Dictionary:
 	return blocks
 
 func conversation_ids() -> Array:
-	return ["camille", "sarah", "j1_00_reveil_v2", "sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2", "sarah_meal_j1_v2", "nico_respiration_j1_v2", "camille_j2", "sarah_j2", "camille_j3", "sarah_j3", "camille_j4", "maya_j4", "ines_j4", "nico_j4", "sarah_j5", "camille_j5", "nico_j5", "maya_j5", "sarah_j6", "camille_j6", "nico_j6", "maya_j6", "ines_j6", "finales_mvp"]
+	return ["camille", "sarah", "j1_00_reveil_v2", "sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2", "camille_j2", "sarah_j2", "camille_j3", "sarah_j3", "camille_j4", "maya_j4", "ines_j4", "nico_j4", "sarah_j5", "camille_j5", "nico_j5", "maya_j5", "sarah_j6", "camille_j6", "nico_j6", "maya_j6", "ines_j6", "finales_mvp"]
 
 func active_conversation_ids() -> Array:
 	var ids: Array = []
@@ -834,12 +810,23 @@ func _unlock_j1_v2_breathing_scenes_if_ready() -> void:
 		return
 	if not _j1_v2_core_conversations_done():
 		return
-	if conversations.has("sarah_meal_j1_v2") and not bool(conversations["sarah_meal_j1_v2"].get("available", false)):
-		conversations["sarah_meal_j1_v2"]["available"] = true
-		mark_conversation_new("sarah_meal_j1_v2", "Sarah parle du repas.")
-	if conversations.has("nico_respiration_j1_v2") and not bool(conversations["nico_respiration_j1_v2"].get("available", false)):
-		conversations["nico_respiration_j1_v2"]["available"] = true
-		mark_conversation_new("nico_respiration_j1_v2", "Nico tente une respiration.")
+	_attach_j1_v2_followup_scene("sarah_j1_v2", "res://data/sarah_meal_j1_v2_experimental.json", "j1_06_sarah_001", "J1 V2 — Rentrer manger", "Sarah parle du repas.")
+	_attach_j1_v2_followup_scene("nico_j1_v2", "res://data/nico_respiration_j1_v2_experimental.json", "j1_07_nico_001", "J1 V2 — Respiration", "Nico tente une respiration.")
+
+func _attach_j1_v2_followup_scene(conversation_id: String, json_path: String, start_node: String, title: String, preview: String) -> void:
+	if not conversations.has(conversation_id):
+		return
+	var state: Dictionary = conversations[conversation_id]
+	if str(state.get("json_path", "")) == json_path:
+		return
+	state["json_path"] = json_path
+	state["start_node"] = start_node
+	state["title"] = title
+	state["available"] = true
+	state["done"] = false
+	state["next_node"] = start_node
+	state["active_choice_node"] = ""
+	mark_conversation_new(conversation_id, preview)
 
 func has_new(id: String) -> bool:
 	if not conversations.has(id):
@@ -898,9 +885,7 @@ func _required_conversations_for_current_mode(day: int) -> Array:
 			"camille_j1_v2",
 			"nico_j1_v2",
 			"maya_j1_v2",
-			"ines_j1_v2",
-			"sarah_meal_j1_v2",
-			"nico_respiration_j1_v2"
+			"ines_j1_v2"
 		]
 	return REQUIRED_CONVERSATIONS_BY_DAY.get(day, [])
 
