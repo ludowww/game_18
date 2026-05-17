@@ -1,0 +1,682 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "ines_j4_complete",
+  "day": 4,
+  "contact_id": "ines",
+  "start_node": "i4_block_a",
+  "nodes": [
+    {
+      "id": "i4_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "I4A — Inès : entrée trouble / perturbation",
+      "delay": 0,
+      "next": "i4_001"
+    },
+    {
+      "id": "i4_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "J’ai hésité avant d’envoyer. Du coup j’envoie avant de re-hésiter : je crois que je viens de tomber sur une version un peu arrangée de toi.",
+      "delay": 0,
+      "next": "i4_002"
+    },
+    {
+      "id": "i4_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "Ou alors tu as un talent rare pour être vu à des endroits où tu n’es officiellement pas passé. Ça m’est revenu dans le trajet.",
+      "delay": 75,
+      "next": "i4_003"
+    },
+    {
+      "id": "i4_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Inès apparaît avec une observation ambiguë.",
+      "choices": [
+        {
+          "id": "i4_003_a",
+          "text": "Ça dépend de ce que tu appelles une version arrangée.",
+          "next": "i4_004_a",
+          "effects": {
+            "ines_interest": 1,
+            "risk": 1,
+            "flags": [
+              "ines_interest_seeded"
+            ]
+          }
+        },
+        {
+          "id": "i4_003_b",
+          "text": "Tu m’as vu où ?",
+          "next": "i4_004_b",
+          "effects": {
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "ines_trace_left",
+              "j4_social_trace"
+            ]
+          }
+        },
+        {
+          "id": "i4_003_c",
+          "text": "Je pense que tu confonds avec quelqu’un.",
+          "next": "i4_004_c",
+          "effects": {
+            "ines_interest": -1,
+            "risk": -1,
+            "flags": [
+              "player_kept_distance_ines"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "i4_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Ça dépend de ce que tu appelles une version arrangée.",
+      "delay": 0,
+      "next": "i4_005_a"
+    },
+    {
+      "id": "i4_005_a",
+      "type": "message",
+      "sender": "ines",
+      "text": "Elle tient debout, ta version. Elle penche juste un peu quand on la regarde de côté, comme un reflet dans une vitrine de nuit.",
+      "delay": 55,
+      "next": "i4_006"
+    },
+    {
+      "id": "i4_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu m’as vu où ?",
+      "delay": 0,
+      "next": "i4_005_b"
+    },
+    {
+      "id": "i4_005_b",
+      "type": "message",
+      "sender": "ines",
+      "text": "Près d’un passage où les gens pressés regardent leurs chaussures. Le bus a raté mon arrêt, ou moi le sien, et toi tu regardais ton écran comme s’il contenait une sortie.",
+      "delay": 55,
+      "next": "i4_006"
+    },
+    {
+      "id": "i4_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je pense que tu confonds avec quelqu’un.",
+      "delay": 0,
+      "next": "i4_005_c"
+    },
+    {
+      "id": "i4_005_c",
+      "type": "message",
+      "sender": "ines",
+      "text": "Possible. Mais la personne qui te ressemble a aussi ta façon de répondre trop proprement.",
+      "delay": 55,
+      "next": "i4_006"
+    },
+    {
+      "id": "i4_006",
+      "type": "message",
+      "sender": "ines",
+      "text": "Rassure-toi, je ne fais pas de rapport. Je voulais juste vérifier que je n’avais pas inventé ce moment bizarre entre toi, ton écran, et la vitrine.",
+      "delay": 100,
+      "next": "i4_007"
+    },
+    {
+      "id": "i4_007",
+      "type": "choice",
+      "sender": "player",
+      "text": "Réagir à la curiosité d’Inès sans fermer la porte trop fort.",
+      "choices": [
+        {
+          "id": "i4_007_a",
+          "text": "Tu remarques toujours les gens dans les trajets comme ça ?",
+          "next": "i4_008_a",
+          "effects": {
+            "ines_interest": 2,
+            "risk": 1,
+            "flags": [
+              "player_flirted_ines"
+            ]
+          }
+        },
+        {
+          "id": "i4_007_b",
+          "text": "Je préfère rester une seule version, merci.",
+          "next": "i4_008_b",
+          "effects": {
+            "ines_interest": -1,
+            "risk": -1,
+            "flags": [
+              "ines_boundary_set"
+            ]
+          }
+        },
+        {
+          "id": "i4_007_c",
+          "text": "Deux versions, c’est parfois pratique.",
+          "next": "i4_008_c",
+          "effects": {
+            "ines_interest": 1,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "ines_interest_seeded",
+              "j4_social_trace"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "i4_008_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu remarques toujours les gens dans les trajets comme ça ?",
+      "delay": 0,
+      "next": "i4_009_a"
+    },
+    {
+      "id": "i4_009_a",
+      "type": "message",
+      "sender": "ines",
+      "text": "Seulement quand ils ne se comportent pas comme des inconnus pour tout le monde.",
+      "delay": 60,
+      "next": "i4_block_b"
+    },
+    {
+      "id": "i4_008_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je préfère rester une seule version, merci.",
+      "delay": 0,
+      "next": "i4_009_b"
+    },
+    {
+      "id": "i4_009_b",
+      "type": "message",
+      "sender": "ines",
+      "text": "Alors elle a dû se fatiguer, cette version. Parce qu’elle avait l’air de courir après quelque chose.",
+      "delay": 60,
+      "next": "i4_block_b"
+    },
+    {
+      "id": "i4_008_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Deux versions, c’est parfois pratique.",
+      "delay": 0,
+      "next": "i4_009_c"
+    },
+    {
+      "id": "i4_009_c",
+      "type": "message",
+      "sender": "ines",
+      "text": "Pratique, oui. Jusqu’au moment où quelqu’un parle à la mauvaise.",
+      "delay": 60,
+      "next": "i4_block_b"
+    },
+    {
+      "id": "i4_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "I4B — Inès : intérêt ambigu / déséquilibre",
+      "delay": 0,
+      "next": "i4_010"
+    },
+    {
+      "id": "i4_010",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je suis dans le coin encore vingt minutes. Pas pour toi, officiellement. J’ai un ticket froissé dans la poche qui prétend le contraire.",
+      "delay": 0,
+      "next": "i4_011"
+    },
+    {
+      "id": "i4_011",
+      "type": "message",
+      "sender": "ines",
+      "text": "Mais si tu passes devant la même vitrine que tout à l’heure, je saurai peut-être si je dois continuer à être curieuse.",
+      "delay": 85,
+      "next": "i4_012"
+    },
+    {
+      "id": "i4_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Inès ouvre une proximité avec porte de sortie sociale.",
+      "choices": [
+        {
+          "id": "i4_012_a",
+          "text": "Tu me proposes un hasard organisé ?",
+          "next": "i4_013_a",
+          "effects": {
+            "ines_interest": 2,
+            "risk": 2,
+            "flags": [
+              "player_flirted_ines",
+              "ines_interest_seeded"
+            ]
+          }
+        },
+        {
+          "id": "i4_012_b",
+          "text": "Je ne suis pas disponible pour ce genre de hasard.",
+          "next": "i4_013_b",
+          "effects": {
+            "ines_interest": -1,
+            "risk": -1,
+            "flags": [
+              "player_kept_distance_ines",
+              "ines_boundary_set"
+            ]
+          }
+        },
+        {
+          "id": "i4_012_c",
+          "text": "Je peux passer sans m’arrêter.",
+          "next": "i4_013_c",
+          "effects": {
+            "ines_interest": 1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "ines_trace_left"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "i4_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu me proposes un hasard organisé ?",
+      "delay": 0,
+      "next": "i4_014_a"
+    },
+    {
+      "id": "i4_014_a",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je propose une phrase qui reste défendable si quelqu’un la relit. C’est plus élégant.",
+      "delay": 55,
+      "next": "i4_015"
+    },
+    {
+      "id": "i4_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne suis pas disponible pour ce genre de hasard.",
+      "delay": 0,
+      "next": "i4_014_b"
+    },
+    {
+      "id": "i4_014_b",
+      "type": "message",
+      "sender": "ines",
+      "text": "Dommage. Tu avais pourtant l’air de quelqu’un qui se retrouve souvent au mauvais endroit au bon moment.",
+      "delay": 55,
+      "next": "i4_015"
+    },
+    {
+      "id": "i4_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je peux passer sans m’arrêter.",
+      "delay": 0,
+      "next": "i4_014_c"
+    },
+    {
+      "id": "i4_014_c",
+      "type": "message",
+      "sender": "ines",
+      "text": "Passer sans s’arrêter, c’est souvent ce que les gens font quand ils veulent vérifier qu’ils auraient pu.",
+      "delay": 55,
+      "next": "i4_015"
+    },
+    {
+      "id": "i4_015",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je ne te demande rien de compromettant. Juste un signe que je n’ai pas inventé ton air pressé.",
+      "delay": 95,
+      "next": "i4_016"
+    },
+    {
+      "id": "i4_016",
+      "type": "choice",
+      "sender": "player",
+      "text": "Décider quel signe laisser à Inès.",
+      "choices": [
+        {
+          "id": "i4_016_a",
+          "text": "Je peux t’envoyer un signe quand je passe.",
+          "next": "i4_017_a",
+          "effects": {
+            "ines_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "ines_trace_left",
+              "j4_social_trace"
+            ]
+          }
+        },
+        {
+          "id": "i4_016_b",
+          "text": "Aucun signe, c’est plus sûr.",
+          "next": "i4_017_b",
+          "effects": {
+            "ines_interest": 0,
+            "risk": -1,
+            "flags": [
+              "ines_boundary_set"
+            ]
+          }
+        },
+        {
+          "id": "i4_016_c",
+          "text": "Tu n’as pas inventé. Mais ça doit rester léger.",
+          "next": "i4_017_c",
+          "effects": {
+            "ines_interest": 1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "ines_interest_seeded",
+              "player_kept_distance_ines"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "i4_017_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je peux t’envoyer un signe quand je passe.",
+      "delay": 0,
+      "next": "i4_018_a"
+    },
+    {
+      "id": "i4_018_a",
+      "type": "message",
+      "sender": "ines",
+      "text": "Un signe, alors. Pas un dossier. Les dossiers vieillissent mal.",
+      "delay": 60,
+      "next": "i4_block_c"
+    },
+    {
+      "id": "i4_017_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Aucun signe, c’est plus sûr.",
+      "delay": 0,
+      "next": "i4_018_b"
+    },
+    {
+      "id": "i4_018_b",
+      "type": "message",
+      "sender": "ines",
+      "text": "Tu es prudent. Ou tu as déjà trop de choses à effacer. Je vais choisir la version flatteuse.",
+      "delay": 60,
+      "next": "i4_block_c"
+    },
+    {
+      "id": "i4_017_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu n’as pas inventé. Mais ça doit rester léger.",
+      "delay": 0,
+      "next": "i4_018_c"
+    },
+    {
+      "id": "i4_018_c",
+      "type": "message",
+      "sender": "ines",
+      "text": "Léger, c’est bien. Ça permet aux choses de flotter avant de tomber quelque part.",
+      "delay": 60,
+      "next": "i4_block_c"
+    },
+    {
+      "id": "i4_block_c",
+      "type": "message",
+      "sender": "system",
+      "text": "I4C — Inès : clôture de tension J4 / promesse de complication",
+      "delay": 0,
+      "next": "i4_019"
+    },
+    {
+      "id": "i4_019",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je pars. Avant que cette conversation devienne une chose qu’il faudrait expliquer avec trop de détails.",
+      "delay": 0,
+      "next": "i4_020"
+    },
+    {
+      "id": "i4_020",
+      "type": "message",
+      "sender": "ines",
+      "text": "Mais je garde ton air pressé en mémoire. Pas comme dossier. Comme question.",
+      "delay": 75,
+      "next": "i4_021"
+    },
+    {
+      "id": "i4_021",
+      "type": "choice",
+      "sender": "player",
+      "text": "Inès laisse une question ouverte pour J5.",
+      "choices": [
+        {
+          "id": "i4_021_a",
+          "text": "Et si je réponds à la question plus tard ?",
+          "next": "i4_022_a",
+          "effects": {
+            "ines_interest": 2,
+            "risk": 1,
+            "flags": [
+              "ines_interest_seeded"
+            ]
+          }
+        },
+        {
+          "id": "i4_021_b",
+          "text": "Oublie mon air pressé.",
+          "next": "i4_022_b",
+          "effects": {
+            "ines_interest": -1,
+            "risk": -1,
+            "flags": [
+              "player_kept_distance_ines"
+            ]
+          }
+        },
+        {
+          "id": "i4_021_c",
+          "text": "Garde seulement la version qui te plaît.",
+          "next": "i4_022_c",
+          "effects": {
+            "ines_interest": 1,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "player_flirted_ines",
+              "ines_trace_left"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "i4_022_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Et si je réponds à la question plus tard ?",
+      "delay": 0,
+      "next": "i4_023_a"
+    },
+    {
+      "id": "i4_023_a",
+      "type": "message",
+      "sender": "ines",
+      "text": "Alors je déciderai si j’aime mieux tes réponses ou tes esquives. Pour l’instant, les deux se défendent.",
+      "delay": 55,
+      "next": "i4_024"
+    },
+    {
+      "id": "i4_022_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Oublie mon air pressé.",
+      "delay": 0,
+      "next": "i4_023_b"
+    },
+    {
+      "id": "i4_023_b",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je peux oublier une phrase. Une silhouette qui se contredit, c’est plus difficile.",
+      "delay": 55,
+      "next": "i4_024"
+    },
+    {
+      "id": "i4_022_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Garde seulement la version qui te plaît.",
+      "delay": 0,
+      "next": "i4_023_c"
+    },
+    {
+      "id": "i4_023_c",
+      "type": "message",
+      "sender": "ines",
+      "text": "C’est dangereux de laisser quelqu’un choisir ta meilleure version. On finit par vouloir la vérifier.",
+      "delay": 55,
+      "next": "i4_024"
+    },
+    {
+      "id": "i4_024",
+      "type": "message",
+      "sender": "ines",
+      "text": "Demain, si on se recroise, je ferai semblant que c’est normal. Tu pourras faire semblant aussi, si tu es encore doué.",
+      "delay": 95,
+      "next": "i4_025"
+    },
+    {
+      "id": "i4_025",
+      "type": "choice",
+      "sender": "player",
+      "text": "Clore Inès J4.",
+      "choices": [
+        {
+          "id": "i4_025_a",
+          "text": "Je suis assez doué pour ça.",
+          "next": "i4_026_a",
+          "effects": {
+            "ines_interest": 2,
+            "risk": 2,
+            "flags": [
+              "ines_j4_end_game_open"
+            ]
+          }
+        },
+        {
+          "id": "i4_025_b",
+          "text": "Je préfère qu’on ne teste pas trop.",
+          "next": "i4_026_b",
+          "effects": {
+            "ines_interest": 0,
+            "risk": -1,
+            "flags": [
+              "ines_j4_end_prudent"
+            ]
+          }
+        },
+        {
+          "id": "i4_025_c",
+          "text": "Si on se recroise, ce sera peut-être moins normal que prévu.",
+          "next": "i4_026_c",
+          "effects": {
+            "ines_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "ines_j4_end_complication"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "i4_026_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis assez doué pour ça.",
+      "delay": 0,
+      "next": "i4_end_open"
+    },
+    {
+      "id": "i4_end_open",
+      "type": "end",
+      "sender": "ines",
+      "text": "Alors attention. Les gens doués attirent plus facilement ceux qui veulent les voir rater.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "ines_j4_end_open"
+        ]
+      }
+    },
+    {
+      "id": "i4_026_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je préfère qu’on ne teste pas trop.",
+      "delay": 0,
+      "next": "i4_end_boundary"
+    },
+    {
+      "id": "i4_end_boundary",
+      "type": "end",
+      "sender": "ines",
+      "text": "Sage. Ou déjà occupé ailleurs. Je ne choisirai pas encore.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "ines_j4_end_boundary"
+        ]
+      }
+    },
+    {
+      "id": "i4_026_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Si on se recroise, ce sera peut-être moins normal que prévu.",
+      "delay": 0,
+      "next": "i4_end_complication"
+    },
+    {
+      "id": "i4_end_complication",
+      "type": "end",
+      "sender": "ines",
+      "text": "Je note le “peut-être”. C’est souvent là que les vrais ennuis commencent.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "ines_j4_end_complication"
+        ]
+      }
+    }
+  ]
+}

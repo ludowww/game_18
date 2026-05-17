@@ -1,0 +1,31 @@
+Bloc 6/8 — Phase 3
+
+PHASE 3 — SYSTÈME NARRATIF
+Objectif : transformer le dialogue en simulateur de double vie.
+
+T022 — Variantes de messages selon état
+Statut : TODO
+
+T023 — Choix conditionnels
+Statut : TODO
+
+T024 — Flags narratifs
+Statut : TODO
+
+T025 — Événements conditionnels
+Statut : TODO
+
+T026 — Priorités d’événements
+Statut : TODO
+
+T027 — Blocage/déblocage conversations
+Statut : TODO
+
+T028 — Pression narrative
+Statut : TODO
+
+T029 — Semi-aléatoire contrôlé
+Statut : TODO
+
+Livrable :
+Les conséquences émergent des choix du joueur.

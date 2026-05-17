@@ -1,0 +1,497 @@
+{
+  "meta": {
+    "project": "Double Vie",
+    "subtitle": "Vu à 23:42",
+    "format_version": "0.1",
+    "day": 1,
+    "title": "Jour 1 — Mauvais réflexes",
+    "design_rule": "Le joueur doit être accro aux messages avant d’être accro aux images.",
+    "content_level": "adulte soft, flirt, tension, pas de NSFW explicite"
+  },
+  "message_format": {
+    "required_fields": ["id", "time", "thread", "sender", "type"],
+    "message_types": ["text", "choice", "system", "notification"],
+    "sender_values": ["player", "camille", "sarah", "nico", "system"],
+    "choice_rule": "Un node choice contient options[]. Chaque option peut définir next, effects et set_flags.",
+    "condition_rule": "conditions est optionnel. Si absent, le message est toujours jouable.",
+    "effect_rule": "effects modifie des jauges invisibles. Valeurs recommandées: -2 à +2.",
+    "thread_rule": "Une conversation est identifiée par thread. Les messages peuvent déclencher une notification dans un autre thread."
+  },
+  "initial_state": {
+    "stats": {
+      "camille_interest": 0,
+      "sarah_trust": 0,
+      "nico_alert": 0,
+      "risk": 0,
+      "guilt": 0
+    },
+    "flags": {
+      "answered_camille_fast": false,
+      "lied_to_sarah": false,
+      "told_nico_about_camille": false,
+      "left_camille_on_read": false
+    }
+  },
+  "contacts": {
+    "camille": {
+      "display_name": "Camille",
+      "role": "séduisible",
+      "tone": "joueuse, directe, teste les limites",
+      "adult": true
+    },
+    "sarah": {
+      "display_name": "Sarah",
+      "role": "partenaire officielle",
+      "tone": "familière, tendre, remarque vite les absences",
+      "adult": true
+    },
+    "nico": {
+      "display_name": "Nico",
+      "role": "confident optionnel",
+      "tone": "taquin, lucide, pousse au choix mais couvre le joueur si besoin",
+      "adult": true
+    }
+  },
+  "conversations": [
+    {
+      "thread": "camille_day1",
+      "contact": "camille",
+      "unlock": { "at": "08:42" },
+      "nodes": [
+        {
+          "id": "c1_001",
+          "time": "08:42",
+          "thread": "camille_day1",
+          "sender": "camille",
+          "type": "text",
+          "text": "Alors… tu fais toujours semblant d’être sérieux le matin ?",
+          "next": "c1_002"
+        },
+        {
+          "id": "c1_002",
+          "time": "08:43",
+          "thread": "camille_day1",
+          "sender": "system",
+          "type": "choice",
+          "prompt": "Répondre à Camille",
+          "options": [
+            {
+              "id": "c1_002_a",
+              "label": "Seulement quand on me surveille.",
+              "next": "c1_003_flirt",
+              "effects": { "camille_interest": 1, "risk": 1 },
+              "set_flags": { "answered_camille_fast": true }
+            },
+            {
+              "id": "c1_002_b",
+              "label": "Je suis très sérieux. Trop, même.",
+              "next": "c1_003_soft",
+              "effects": { "camille_interest": 0 },
+              "set_flags": { "answered_camille_fast": true }
+            },
+            {
+              "id": "c1_002_c",
+              "label": "Ignorer pour l’instant",
+              "next": "s1_001",
+              "effects": { "camille_interest": -1, "sarah_trust": 1 },
+              "set_flags": { "left_camille_on_read": true }
+            }
+          ]
+        },
+        {
+          "id": "c1_003_flirt",
+          "time": "08:44",
+          "thread": "camille_day1",
+          "sender": "player",
+          "type": "text",
+          "text": "Seulement quand on me surveille.",
+          "next": "c1_004_flirt"
+        },
+        {
+          "id": "c1_004_flirt",
+          "time": "08:45",
+          "thread": "camille_day1",
+          "sender": "camille",
+          "type": "text",
+          "text": "Donc si je te surveille, tu redeviens sage ? Intéressant.",
+          "next": "c1_005"
+        },
+        {
+          "id": "c1_003_soft",
+          "time": "08:44",
+          "thread": "camille_day1",
+          "sender": "player",
+          "type": "text",
+          "text": "Je suis très sérieux. Trop, même.",
+          "next": "c1_004_soft"
+        },
+        {
+          "id": "c1_004_soft",
+          "time": "08:45",
+          "thread": "camille_day1",
+          "sender": "camille",
+          "type": "text",
+          "text": "Ça sonne comme un défi, pas comme une information.",
+          "next": "c1_005"
+        },
+        {
+          "id": "c1_005",
+          "time": "08:47",
+          "thread": "camille_day1",
+          "sender": "camille",
+          "type": "text",
+          "text": "Je passe près de ton quartier ce soir. Enfin… peut-être.",
+          "next": "c1_006"
+        },
+        {
+          "id": "c1_006",
+          "time": "08:48",
+          "thread": "camille_day1",
+          "sender": "system",
+          "type": "choice",
+          "prompt": "Camille ouvre une porte.",
+          "options": [
+            {
+              "id": "c1_006_a",
+              "label": "Préviens-moi si le peut-être devient sûr.",
+              "next": "c1_007_a",
+              "effects": { "camille_interest": 1, "risk": 1 }
+            },
+            {
+              "id": "c1_006_b",
+              "label": "Ce soir c’est compliqué.",
+              "next": "c1_007_b",
+              "effects": { "camille_interest": -1, "sarah_trust": 1 }
+            },
+            {
+              "id": "c1_006_c",
+              "label": "Compliqué, mais j’ai envie de savoir.",
+              "next": "c1_007_c",
+              "effects": { "camille_interest": 2, "risk": 2, "guilt": 1 }
+            }
+          ]
+        },
+        {
+          "id": "c1_007_a",
+          "time": "08:49",
+          "thread": "camille_day1",
+          "sender": "camille",
+          "type": "text",
+          "text": "Je note. J’aime bien quand tu réponds vite.",
+          "next": "n_notif_001"
+        },
+        {
+          "id": "c1_007_b",
+          "time": "08:49",
+          "thread": "camille_day1",
+          "sender": "camille",
+          "type": "text",
+          "text": "Toujours sérieux, donc. Dommage, j’étais curieuse.",
+          "next": "n_notif_001"
+        },
+        {
+          "id": "c1_007_c",
+          "time": "08:49",
+          "thread": "camille_day1",
+          "sender": "camille",
+          "type": "text",
+          "text": "Voilà. Là tu es beaucoup plus intéressant.",
+          "next": "n_notif_001"
+        }
+      ]
+    },
+    {
+      "thread": "sarah_day1",
+      "contact": "sarah",
+      "unlock": { "after": "n_notif_001" },
+      "nodes": [
+        {
+          "id": "n_notif_001",
+          "time": "08:50",
+          "thread": "system",
+          "sender": "system",
+          "type": "notification",
+          "text": "Nouveau message de Sarah",
+          "next": "s1_001"
+        },
+        {
+          "id": "s1_001",
+          "time": "08:50",
+          "thread": "sarah_day1",
+          "sender": "sarah",
+          "type": "text",
+          "text": "T’es déjà parti ? J’ai pas entendu la porte.",
+          "next": "s1_002"
+        },
+        {
+          "id": "s1_002",
+          "time": "08:51",
+          "thread": "sarah_day1",
+          "sender": "system",
+          "type": "choice",
+          "prompt": "Répondre à Sarah",
+          "options": [
+            {
+              "id": "s1_002_a",
+              "label": "Oui, réunion tôt. Je t’ai pas réveillée.",
+              "next": "s1_003_lie",
+              "effects": { "sarah_trust": -1, "risk": 1, "guilt": 1 },
+              "set_flags": { "lied_to_sarah": true }
+            },
+            {
+              "id": "s1_002_b",
+              "label": "Je suis encore en bas, je passe prendre un café.",
+              "next": "s1_003_true",
+              "effects": { "sarah_trust": 1, "risk": -1 }
+            },
+            {
+              "id": "s1_002_c",
+              "label": "Deux minutes, je répondais à un message du boulot.",
+              "next": "s1_003_half",
+              "effects": { "sarah_trust": 0, "risk": 1, "guilt": 1 },
+              "set_flags": { "lied_to_sarah": true }
+            }
+          ]
+        },
+        {
+          "id": "s1_003_lie",
+          "time": "08:52",
+          "thread": "sarah_day1",
+          "sender": "sarah",
+          "type": "text",
+          "text": "Ah. Tu m’avais pas dit pour la réunion. Bon courage alors ❤️",
+          "next": "s1_004"
+        },
+        {
+          "id": "s1_003_true",
+          "time": "08:52",
+          "thread": "sarah_day1",
+          "sender": "sarah",
+          "type": "text",
+          "text": "Ramène-moi un croissant si t’es encore là. Et un vrai sourire, pas ton air pressé.",
+          "next": "s1_004"
+        },
+        {
+          "id": "s1_003_half",
+          "time": "08:52",
+          "thread": "sarah_day1",
+          "sender": "sarah",
+          "type": "text",
+          "text": "Du boulot à cette heure ? Tu deviens inquiétant 😅",
+          "next": "s1_004"
+        },
+        {
+          "id": "s1_004",
+          "time": "08:54",
+          "thread": "sarah_day1",
+          "sender": "sarah",
+          "type": "text",
+          "text": "Au fait, ce soir on mange ensemble ? J’ai bloqué ma soirée.",
+          "next": "s1_005"
+        },
+        {
+          "id": "s1_005",
+          "time": "08:55",
+          "thread": "sarah_day1",
+          "sender": "system",
+          "type": "choice",
+          "prompt": "La soirée devient un engagement.",
+          "options": [
+            {
+              "id": "s1_005_a",
+              "label": "Oui, bien sûr.",
+              "next": "s1_006_a",
+              "effects": { "sarah_trust": 1, "risk": 1 }
+            },
+            {
+              "id": "s1_005_b",
+              "label": "Je te confirme dans la journée.",
+              "next": "s1_006_b",
+              "effects": { "sarah_trust": -1, "risk": 1 }
+            },
+            {
+              "id": "s1_005_c",
+              "label": "J’ai peut-être un truc pro, je sais pas encore.",
+              "next": "s1_006_c",
+              "effects": { "sarah_trust": -2, "risk": 2, "guilt": 1 },
+              "set_flags": { "lied_to_sarah": true }
+            }
+          ]
+        },
+        {
+          "id": "s1_006_a",
+          "time": "08:56",
+          "thread": "sarah_day1",
+          "sender": "sarah",
+          "type": "text",
+          "text": "Parfait. Ça me fait plaisir.",
+          "next": "n_notif_002"
+        },
+        {
+          "id": "s1_006_b",
+          "time": "08:56",
+          "thread": "sarah_day1",
+          "sender": "sarah",
+          "type": "text",
+          "text": "Ok… mais me laisse pas attendre jusqu’à 19h comme la dernière fois.",
+          "next": "n_notif_002"
+        },
+        {
+          "id": "s1_006_c",
+          "time": "08:56",
+          "thread": "sarah_day1",
+          "sender": "sarah",
+          "type": "text",
+          "text": "Encore ? D’accord. On en reparle ce midi.",
+          "next": "n_notif_002"
+        }
+      ]
+    },
+    {
+      "thread": "nico_day1",
+      "contact": "nico",
+      "unlock": { "after": "n_notif_002" },
+      "nodes": [
+        {
+          "id": "n_notif_002",
+          "time": "09:03",
+          "thread": "system",
+          "sender": "system",
+          "type": "notification",
+          "text": "Nouveau message de Nico",
+          "next": "n1_001"
+        },
+        {
+          "id": "n1_001",
+          "time": "09:03",
+          "thread": "nico_day1",
+          "sender": "nico",
+          "type": "text",
+          "text": "T’as cette tête de mec qui a déjà fait une connerie avant 9h.",
+          "next": "n1_002"
+        },
+        {
+          "id": "n1_002",
+          "time": "09:04",
+          "thread": "nico_day1",
+          "sender": "system",
+          "type": "choice",
+          "prompt": "Nico peut devenir confident ou simple bruit de fond.",
+          "options": [
+            {
+              "id": "n1_002_a",
+              "label": "Camille m’a écrit. Rien de grave.",
+              "next": "n1_003_honest",
+              "effects": { "nico_alert": 1, "risk": -1 },
+              "set_flags": { "told_nico_about_camille": true }
+            },
+            {
+              "id": "n1_002_b",
+              "label": "Tu psychotes. Je suis clean.",
+              "next": "n1_003_deny",
+              "effects": { "nico_alert": -1, "risk": 1 }
+            },
+            {
+              "id": "n1_002_c",
+              "label": "Si j’avais fait une connerie, tu couvrirais ?",
+              "next": "n1_003_cover",
+              "effects": { "nico_alert": 2, "risk": 1, "guilt": 1 },
+              "set_flags": { "told_nico_about_camille": true }
+            }
+          ]
+        },
+        {
+          "id": "n1_003_honest",
+          "time": "09:05",
+          "thread": "nico_day1",
+          "sender": "nico",
+          "type": "text",
+          "text": "Camille “rien de grave” ? Frère, c’est littéralement le début des problèmes.",
+          "next": "n1_004"
+        },
+        {
+          "id": "n1_003_deny",
+          "time": "09:05",
+          "thread": "nico_day1",
+          "sender": "nico",
+          "type": "text",
+          "text": "Personne dit “je suis clean” quand il est clean. Mais ok, garde ton mystère éclaté.",
+          "next": "n1_004"
+        },
+        {
+          "id": "n1_003_cover",
+          "time": "09:05",
+          "thread": "nico_day1",
+          "sender": "nico",
+          "type": "text",
+          "text": "Je couvrirais une panne de voiture. Pas une double vie en kit. Nuance.",
+          "next": "n1_004"
+        },
+        {
+          "id": "n1_004",
+          "time": "09:07",
+          "thread": "nico_day1",
+          "sender": "nico",
+          "type": "text",
+          "text": "Conseil gratuit : supprime rien. Les suppressions, c’est plus suspect que les messages.",
+          "next": "n1_005"
+        },
+        {
+          "id": "n1_005",
+          "time": "09:08",
+          "thread": "nico_day1",
+          "sender": "system",
+          "type": "choice",
+          "prompt": "Fin de séquence Jour 1 matin.",
+          "options": [
+            {
+              "id": "n1_005_a",
+              "label": "Archiver Camille",
+              "next": "end_day1_morning_archive",
+              "effects": { "risk": -1, "guilt": 1 }
+            },
+            {
+              "id": "n1_005_b",
+              "label": "Garder Camille visible",
+              "next": "end_day1_morning_visible",
+              "effects": { "risk": 1, "camille_interest": 0 }
+            },
+            {
+              "id": "n1_005_c",
+              "label": "Épingler Camille discrètement",
+              "next": "end_day1_morning_pin",
+              "effects": { "risk": 2, "camille_interest": 1, "guilt": 1 }
+            }
+          ]
+        },
+        {
+          "id": "end_day1_morning_archive",
+          "time": "09:09",
+          "thread": "system",
+          "sender": "system",
+          "type": "system",
+          "text": "Camille est archivée. Moins visible, mais pas oubliée.",
+          "next": null
+        },
+        {
+          "id": "end_day1_morning_visible",
+          "time": "09:09",
+          "thread": "system",
+          "sender": "system",
+          "type": "system",
+          "text": "Camille reste dans la liste. Un risque simple, presque banal.",
+          "next": null
+        },
+        {
+          "id": "end_day1_morning_pin",
+          "time": "09:09",
+          "thread": "system",
+          "sender": "system",
+          "type": "system",
+          "text": "Camille est épinglée. Le geste est minuscule. L’intention ne l’est pas.",
+          "next": null
+        }
+      ]
+    }
+  ]
+}

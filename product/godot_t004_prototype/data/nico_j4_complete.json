@@ -1,0 +1,672 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "nico_j4_complete",
+  "day": 4,
+  "contact_id": "nico",
+  "start_node": "n4_block_a",
+  "nodes": [
+    {
+      "id": "n4_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "N4A — Nico : confident ou couverture",
+      "delay": 0,
+      "next": "n4_001"
+    },
+    {
+      "id": "n4_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "Question simple : tu es en train de gérer ta journée ou de la perdre avec panache ? Je pose mon sandwich pour suivre, c’est dire.",
+      "delay": 0,
+      "next": "n4_002"
+    },
+    {
+      "id": "n4_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "Je demande parce que Maya m’a répondu “je crois” quand j’ai demandé si tu étais avec nous. “Je crois”, c’est rarement bon signe. Même mon sandwich doute.",
+      "delay": 75,
+      "next": "n4_003"
+    },
+    {
+      "id": "n4_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Nico repère que le joueur jongle avec trop de choses.",
+      "choices": [
+        {
+          "id": "n4_003_a",
+          "text": "Tu dramatises pour un “je crois”, ou je dois vraiment poser mon sandwich ?",
+          "next": "n4_004_a",
+          "effects": {
+            "risk": 1,
+            "nico_trust": -1,
+            "flags": [
+              "player_minimized_nico"
+            ]
+          }
+        },
+        {
+          "id": "n4_003_b",
+          "text": "J’ai juste besoin que tu ne poses pas trop de questions.",
+          "next": "n4_004_b",
+          "effects": {
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "nico_cover_possible"
+            ]
+          }
+        },
+        {
+          "id": "n4_003_c",
+          "text": "Je crois que je commence à mal gérer, oui.",
+          "next": "n4_004_c",
+          "effects": {
+            "nico_trust": 2,
+            "guilt": 1,
+            "flags": [
+              "player_confided_nico"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n4_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu dramatises pour un “je crois”, ou je dois vraiment poser mon sandwich ?",
+      "delay": 0,
+      "next": "n4_005_a"
+    },
+    {
+      "id": "n4_005_a",
+      "type": "message",
+      "sender": "nico",
+      "text": "Non, je dramatise quand tu réponds comme un mec qui a déjà préparé trois versions. Là, je m’échauffe à peine, niveau résumé de match nul.",
+      "delay": 55,
+      "next": "n4_006"
+    },
+    {
+      "id": "n4_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai juste besoin que tu ne poses pas trop de questions.",
+      "delay": 0,
+      "next": "n4_005_b"
+    },
+    {
+      "id": "n4_005_b",
+      "type": "message",
+      "sender": "nico",
+      "text": "Donc tu veux le service “pote aveugle mais disponible”. C’est plus cher que prévu, et j’accepte pas les paiements en stress.",
+      "delay": 55,
+      "next": "n4_006"
+    },
+    {
+      "id": "n4_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je crois que je commence à mal gérer, oui.",
+      "delay": 0,
+      "next": "n4_005_c"
+    },
+    {
+      "id": "n4_005_c",
+      "type": "message",
+      "sender": "nico",
+      "text": "Ah. Voilà une phrase utile. Inquiétante, mais utile.",
+      "delay": 55,
+      "next": "n4_006"
+    },
+    {
+      "id": "n4_006",
+      "type": "message",
+      "sender": "nico",
+      "text": "Je peux couvrir un retard, pas devenir ton standard de crise. À un moment je vais finir par oublier quelle version je suis censé raconter.",
+      "delay": 100,
+      "next": "n4_007"
+    },
+    {
+      "id": "n4_007",
+      "type": "choice",
+      "sender": "player",
+      "text": "Demander ou refuser une couverture.",
+      "choices": [
+        {
+          "id": "n4_007_a",
+          "text": "J’ai besoin d’une couverture simple, juste aujourd’hui.",
+          "next": "n4_008_a",
+          "effects": {
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "nico_cover_possible",
+              "j4_social_trace"
+            ]
+          }
+        },
+        {
+          "id": "n4_007_b",
+          "text": "Non. Je ne veux pas t’embarquer là-dedans.",
+          "next": "n4_008_b",
+          "effects": {
+            "nico_trust": 1,
+            "risk": -1,
+            "flags": [
+              "nico_boundary_respected"
+            ]
+          }
+        },
+        {
+          "id": "n4_007_c",
+          "text": "Tu peux surtout me dire si je deviens ridicule. Version pote, pas conférence TED.",
+          "next": "n4_008_c",
+          "effects": {
+            "nico_trust": 1,
+            "guilt": 1,
+            "flags": [
+              "nico_warned_player"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n4_008_a",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai besoin d’une couverture simple, juste aujourd’hui.",
+      "delay": 0,
+      "next": "n4_009_a"
+    },
+    {
+      "id": "n4_009_a",
+      "type": "message",
+      "sender": "nico",
+      "text": "“Simple” et “juste aujourd’hui”, les deux phrases qui finissent toujours en formulaire. Mais d’accord, j’écoute.",
+      "delay": 60,
+      "next": "n4_block_b"
+    },
+    {
+      "id": "n4_008_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Non. Je ne veux pas t’embarquer là-dedans.",
+      "delay": 0,
+      "next": "n4_009_b"
+    },
+    {
+      "id": "n4_009_b",
+      "type": "message",
+      "sender": "nico",
+      "text": "C’est presque mature. Ça me perturbe. Continue, je vais peut-être m’y faire.",
+      "delay": 60,
+      "next": "n4_block_b"
+    },
+    {
+      "id": "n4_008_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu peux surtout me dire si je deviens ridicule. Version pote, pas conférence TED.",
+      "delay": 0,
+      "next": "n4_009_c"
+    },
+    {
+      "id": "n4_009_c",
+      "type": "message",
+      "sender": "nico",
+      "text": "Pas encore. Là tu es dans la zone chic du chaos. Après, ça devient très vite une chemise mal boutonnée.",
+      "delay": 60,
+      "next": "n4_block_b"
+    },
+    {
+      "id": "n4_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "N4B — Nico : conseil / provocation / avertissement",
+      "delay": 0,
+      "next": "n4_010"
+    },
+    {
+      "id": "n4_010",
+      "type": "message",
+      "sender": "nico",
+      "text": "Alors, diagnostic de pote : ton plan tient avec du scotch, ma mauvaise foi, et un sandwich que je n’ai toujours pas fini.",
+      "delay": 0,
+      "next": "n4_011"
+    },
+    {
+      "id": "n4_011",
+      "type": "message",
+      "sender": "nico",
+      "text": "C’est une performance, mais pas dans le sens où tu l’espères.",
+      "delay": 65,
+      "next": "n4_012"
+    },
+    {
+      "id": "n4_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Nico pousse le joueur à choisir son attitude.",
+      "choices": [
+        {
+          "id": "n4_012_a",
+          "text": "Je maîtrise plus que tu crois.",
+          "next": "n4_013_a",
+          "effects": {
+            "risk": 2,
+            "nico_trust": -1,
+            "flags": [
+              "player_boasted_nico"
+            ]
+          }
+        },
+        {
+          "id": "n4_012_b",
+          "text": "J’ai besoin d’un vrai conseil, pas d’une vanne.",
+          "next": "n4_013_b",
+          "effects": {
+            "nico_trust": 2,
+            "guilt": 1,
+            "flags": [
+              "nico_warned_player"
+            ]
+          }
+        },
+        {
+          "id": "n4_012_c",
+          "text": "Si tu sais quelque chose, dis-le clairement.",
+          "next": "n4_013_c",
+          "effects": {
+            "risk": 1,
+            "nico_trust": 0,
+            "flags": [
+              "nico_knows_too_much"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n4_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je maîtrise plus que tu crois.",
+      "delay": 0,
+      "next": "n4_014_a"
+    },
+    {
+      "id": "n4_014_a",
+      "type": "message",
+      "sender": "nico",
+      "text": "Phrase de mec qui va confondre “maîtriser” et “avoir eu de la chance jusqu’ici”.",
+      "delay": 55,
+      "next": "n4_015"
+    },
+    {
+      "id": "n4_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai besoin d’un vrai conseil, pas d’une vanne.",
+      "delay": 0,
+      "next": "n4_014_b"
+    },
+    {
+      "id": "n4_014_b",
+      "type": "message",
+      "sender": "nico",
+      "text": "Vrai conseil : choisis ce que tu veux protéger avant de choisir ce que tu veux obtenir. Sinon tu vas tout traiter comme un obstacle.",
+      "delay": 55,
+      "next": "n4_015"
+    },
+    {
+      "id": "n4_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Si tu sais quelque chose, dis-le clairement.",
+      "delay": 0,
+      "next": "n4_014_c"
+    },
+    {
+      "id": "n4_014_c",
+      "type": "message",
+      "sender": "nico",
+      "text": "Je sais surtout que tu changes de sujet quand un nom arrive trop près d’un autre. C’est pas un dossier, c’est pire : c’est automatique.",
+      "delay": 55,
+      "next": "n4_015"
+    },
+    {
+      "id": "n4_015",
+      "type": "message",
+      "sender": "nico",
+      "text": "Et avant que tu demandes : non, je ne vais pas faire le flic. Mais si je dois mentir pour toi, je veux au moins savoir si je mens pour une erreur ou pour une habitude.",
+      "delay": 100,
+      "next": "n4_016"
+    },
+    {
+      "id": "n4_016",
+      "type": "choice",
+      "sender": "player",
+      "text": "Dire à Nico ce qu’il couvre vraiment.",
+      "choices": [
+        {
+          "id": "n4_016_a",
+          "text": "C’est une erreur qui s’allonge.",
+          "next": "n4_017_a",
+          "effects": {
+            "nico_trust": 1,
+            "guilt": 2,
+            "flags": [
+              "player_confided_nico"
+            ]
+          }
+        },
+        {
+          "id": "n4_016_b",
+          "text": "C’est plus compliqué qu’une erreur.",
+          "next": "n4_017_b",
+          "effects": {
+            "nico_trust": 1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "nico_knows_too_much"
+            ]
+          }
+        },
+        {
+          "id": "n4_016_c",
+          "text": "Tu n’as pas besoin de savoir.",
+          "next": "n4_017_c",
+          "effects": {
+            "nico_trust": -2,
+            "risk": 1,
+            "flags": [
+              "player_minimized_nico"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n4_017_a",
+      "type": "message",
+      "sender": "player",
+      "text": "C’est une erreur qui s’allonge.",
+      "delay": 0,
+      "next": "n4_018_a"
+    },
+    {
+      "id": "n4_018_a",
+      "type": "message",
+      "sender": "nico",
+      "text": "Alors coupe avant que ça ressemble à une décision. Les erreurs aiment bien se déguiser quand on les nourrit.",
+      "delay": 60,
+      "next": "n4_block_c"
+    },
+    {
+      "id": "n4_017_b",
+      "type": "message",
+      "sender": "player",
+      "text": "C’est plus compliqué qu’une erreur.",
+      "delay": 0,
+      "next": "n4_018_b"
+    },
+    {
+      "id": "n4_018_b",
+      "type": "message",
+      "sender": "nico",
+      "text": "Oui, ça je l’avais deviné. “Compliqué” est souvent le mot qu’on met sur une chose simple qu’on ne veut pas payer.",
+      "delay": 60,
+      "next": "n4_block_c"
+    },
+    {
+      "id": "n4_017_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu n’as pas besoin de savoir.",
+      "delay": 0,
+      "next": "n4_018_c"
+    },
+    {
+      "id": "n4_018_c",
+      "type": "message",
+      "sender": "nico",
+      "text": "Exact. Mais alors tu n’as pas besoin de ma couverture non plus. Logique pénible, mais logique.",
+      "delay": 60,
+      "next": "n4_block_c"
+    },
+    {
+      "id": "n4_block_c",
+      "type": "message",
+      "sender": "system",
+      "text": "N4C — Nico : service rendu, limite posée",
+      "delay": 0,
+      "next": "n4_019"
+    },
+    {
+      "id": "n4_019",
+      "type": "message",
+      "sender": "nico",
+      "text": "Bon. Je vais rester vague si quelqu’un me demande. Pas héroïque, pas complice, juste vague.",
+      "delay": 0,
+      "next": "n4_020"
+    },
+    {
+      "id": "n4_020",
+      "type": "message",
+      "sender": "nico",
+      "text": "Mais retiens un truc : quand plusieurs personnes deviennent vagues autour de toi, ce n’est plus une couverture, c’est un nuage. Et les nuages, ça se voit.",
+      "delay": 85,
+      "next": "n4_021"
+    },
+    {
+      "id": "n4_021",
+      "type": "choice",
+      "sender": "player",
+      "text": "Nico accepte ou refuse de porter ton histoire une fois de plus.",
+      "choices": [
+        {
+          "id": "n4_021_a",
+          "text": "Je te revaudrai ça.",
+          "next": "n4_022_a",
+          "effects": {
+            "nico_trust": 1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "nico_cover_possible"
+            ]
+          }
+        },
+        {
+          "id": "n4_021_b",
+          "text": "Ne te mets pas en risque pour moi.",
+          "next": "n4_022_b",
+          "effects": {
+            "nico_trust": 2,
+            "risk": -1,
+            "flags": [
+              "nico_boundary_respected"
+            ]
+          }
+        },
+        {
+          "id": "n4_021_c",
+          "text": "Si tu restes vague, ça suffit.",
+          "next": "n4_022_c",
+          "effects": {
+            "nico_trust": -1,
+            "risk": 1,
+            "flags": [
+              "player_uses_nico_cover"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n4_022_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je te revaudrai ça.",
+      "delay": 0,
+      "next": "n4_023_a"
+    },
+    {
+      "id": "n4_023_a",
+      "type": "message",
+      "sender": "nico",
+      "text": "Tu me revaudras surtout une conversation où tu ne comptes pas mes silences comme des services.",
+      "delay": 55,
+      "next": "n4_024"
+    },
+    {
+      "id": "n4_022_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Ne te mets pas en risque pour moi.",
+      "delay": 0,
+      "next": "n4_023_b"
+    },
+    {
+      "id": "n4_023_b",
+      "type": "message",
+      "sender": "nico",
+      "text": "Trop tard pour le zéro embrouille. Mais évite de filer des rôles aux gens sans les prévenir, quand même.",
+      "delay": 55,
+      "next": "n4_024"
+    },
+    {
+      "id": "n4_022_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Si tu restes vague, ça suffit.",
+      "delay": 0,
+      "next": "n4_023_c"
+    },
+    {
+      "id": "n4_023_c",
+      "type": "message",
+      "sender": "nico",
+      "text": "Ça suffit aujourd’hui. Les phrases comme ça ont une date de péremption courte.",
+      "delay": 55,
+      "next": "n4_024"
+    },
+    {
+      "id": "n4_024",
+      "type": "message",
+      "sender": "nico",
+      "text": "Demain, soit tu clarifies un minimum, soit tu deviens le mec dont tout le monde protège une version différente. Et crois-moi, ça finit mal dans les groupes.",
+      "delay": 100,
+      "next": "n4_025"
+    },
+    {
+      "id": "n4_025",
+      "type": "choice",
+      "sender": "player",
+      "text": "Clore Nico J4.",
+      "choices": [
+        {
+          "id": "n4_025_a",
+          "text": "Demain je clarifie quelque chose.",
+          "next": "n4_026_a",
+          "effects": {
+            "nico_trust": 2,
+            "guilt": 1,
+            "flags": [
+              "nico_j4_end_clarify"
+            ]
+          }
+        },
+        {
+          "id": "n4_025_b",
+          "text": "Demain je ferai surtout attention.",
+          "next": "n4_026_b",
+          "effects": {
+            "risk": 1,
+            "nico_trust": 0,
+            "flags": [
+              "nico_j4_end_cautious"
+            ]
+          }
+        },
+        {
+          "id": "n4_025_c",
+          "text": "Demain, tu n’auras peut-être rien à couvrir.",
+          "next": "n4_026_c",
+          "effects": {
+            "nico_trust": 1,
+            "risk": -1,
+            "flags": [
+              "nico_j4_end_no_cover"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n4_026_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Demain je clarifie quelque chose.",
+      "delay": 0,
+      "next": "n4_end_clarify"
+    },
+    {
+      "id": "n4_end_clarify",
+      "type": "end",
+      "sender": "nico",
+      "text": "Je note “quelque chose”. C’est flou, mais c’est déjà moins lâche que “on verra”.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "nico_j4_end_clarify"
+        ]
+      }
+    },
+    {
+      "id": "n4_026_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Demain je ferai surtout attention.",
+      "delay": 0,
+      "next": "n4_end_cloud"
+    },
+    {
+      "id": "n4_end_cloud",
+      "type": "end",
+      "sender": "nico",
+      "text": "Faire attention, ce n’est pas réparer. C’est juste marcher moins fort sur les morceaux.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "nico_j4_end_cloud"
+        ]
+      }
+    },
+    {
+      "id": "n4_026_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Demain, tu n’auras peut-être rien à couvrir.",
+      "delay": 0,
+      "next": "n4_end_silence"
+    },
+    {
+      "id": "n4_end_silence",
+      "type": "end",
+      "sender": "nico",
+      "text": "J’espère. Parce que je suis meilleur pour les vannes que pour les alibis propres.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "nico_j4_end_silence"
+        ]
+      }
+    }
+  ]
+}

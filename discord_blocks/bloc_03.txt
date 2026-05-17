@@ -1,0 +1,25 @@
+Bloc 3/8 — Piliers
+
+PILIERS DU JEU
+
+1. Séduction
+Chaque personnage a son style, son rythme, ses limites et ses réactions.
+
+2. Secret
+Le téléphone contient des traces : messages, photos, notifications, archives, corbeille.
+
+3. Risque
+Multiplier les relations, mentir ou garder des traces augmente la pression.
+
+4. Conséquences
+Un message ancien peut revenir plus tard. Un mensonge peut créer une incohérence.
+
+5. Rejouabilité
+Routes romance, double vie, confession, harem, chaos, rupture, solitude.
+
+6. Collection
+Images, scènes, souvenirs, fins, profils, messages cachés, événements manqués.
+
+Règle de design :
+La variété doit venir des conséquences, pas du hasard pur.
+Le hasard doit seulement choisir entre plusieurs événements logiques.

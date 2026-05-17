@@ -1,0 +1,412 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "maya_j5_complete",
+  "day": 5,
+  "contact_id": "maya",
+  "start_node": "m5_block_a",
+  "nodes": [
+    {
+      "id": "m5_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "M5A — Maya : un détail qui circule",
+      "delay": 0,
+      "next": "m5_001"
+    },
+    {
+      "id": "m5_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je viens de voir ton nom passer dans deux conversations différentes en moins de cinq minutes. Même les stories ont un meilleur planning.",
+      "delay": 0,
+      "next": "m5_002"
+    },
+    {
+      "id": "m5_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "Rassure-moi : tu n’es pas devenu une sorte d’événement local ? Parce que j’ai pas prévu de faire l’accueil presse.",
+      "delay": 75,
+      "next": "m5_003"
+    },
+    {
+      "id": "m5_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Maya remarque un détail qui circule sans connaître toute l’histoire.",
+      "choices": [
+        {
+          "id": "m5_003_a",
+          "text": "Ok, j’ai peut-être un timing catastrophique, mais les gens exagèrent aussi.",
+          "next": "m5_004_a",
+          "effects": {
+            "risk": 1,
+            "maya_trust": -1,
+            "flags": [
+              "player_minimized_maya_j5",
+              "maya_trace_seen_j5",
+              "j5_social_pressure"
+            ]
+          }
+        },
+        {
+          "id": "m5_003_b",
+          "text": "Raconte-moi la scène, version Maya, sans tribunal.",
+          "next": "m5_004_b",
+          "effects": {
+            "risk": 1,
+            "maya_interest": 1,
+            "flags": [
+              "maya_suspicion_seeded",
+              "maya_trace_seen_j5"
+            ]
+          }
+        },
+        {
+          "id": "m5_003_c",
+          "text": "J’ai peut-être mal géré ma présence.",
+          "next": "m5_004_c",
+          "effects": {
+            "guilt": 1,
+            "maya_trust": 1,
+            "flags": [
+              "maya_trace_seen_j5",
+              "j5_social_pressure"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m5_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Ok, j’ai peut-être un timing catastrophique, mais les gens exagèrent aussi.",
+      "delay": 0,
+      "next": "m5_005_a"
+    },
+    {
+      "id": "m5_005_a",
+      "type": "message",
+      "sender": "maya",
+      "text": "Les gens exagèrent souvent. Mais rarement tous dans la même direction au même moment, avec le même petit regard de “on a vu, non ?”.",
+      "delay": 70,
+      "next": "m5_006"
+    },
+    {
+      "id": "m5_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Raconte-moi la scène, version Maya, sans tribunal.",
+      "delay": 0,
+      "next": "m5_005_b"
+    },
+    {
+      "id": "m5_005_b",
+      "type": "message",
+      "sender": "maya",
+      "text": "Rien de spectaculaire. Juste un “il est où ?” lancé trop vite, puis quelqu’un qui a regardé la porte comme si elle allait répondre.",
+      "delay": 70,
+      "next": "m5_006"
+    },
+    {
+      "id": "m5_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai peut-être mal géré ma présence.",
+      "delay": 0,
+      "next": "m5_005_c"
+    },
+    {
+      "id": "m5_005_c",
+      "type": "message",
+      "sender": "maya",
+      "text": "Ça, c’est une phrase qui sonne honnête et dangereuse. Mon mélange préféré, apparemment.",
+      "delay": 70,
+      "next": "m5_006"
+    },
+    {
+      "id": "m5_006",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je ne sais pas ce que tu fais, et je ne veux pas deviner à ta place. Mais de dehors, ton timing dessine des formes très moches.",
+      "delay": 95,
+      "next": "m5_007"
+    },
+    {
+      "id": "m5_007",
+      "type": "choice",
+      "sender": "player",
+      "text": "Maya peut arrondir un détail ou refuser de servir de relais.",
+      "choices": [
+        {
+          "id": "m5_007_a",
+          "text": "Si on te demande, dis que j’étais avec toi deux minutes.",
+          "next": "m5_008_a",
+          "effects": {
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "player_asked_maya_cover_j5",
+              "maya_cover_possible",
+              "j5_social_pressure"
+            ]
+          }
+        },
+        {
+          "id": "m5_007_b",
+          "text": "Ne couvre rien. Je voulais juste savoir.",
+          "next": "m5_008_b",
+          "effects": {
+            "maya_trust": 1,
+            "guilt": 1,
+            "flags": [
+              "maya_trace_seen_j5"
+            ]
+          }
+        },
+        {
+          "id": "m5_007_c",
+          "text": "Tu peux détourner si ça revient ?",
+          "next": "m5_008_c",
+          "effects": {
+            "risk": 1,
+            "maya_trust": 0,
+            "flags": [
+              "player_asked_maya_cover_j5",
+              "maya_cover_possible"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m5_008_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Si on te demande, dis que j’étais avec toi deux minutes.",
+      "delay": 0,
+      "next": "m5_009_a"
+    },
+    {
+      "id": "m5_009_a",
+      "type": "message",
+      "sender": "maya",
+      "text": "Deux minutes, je peux. Une version complète de ta journée, non. Je n’ai pas l’abonnement premium.",
+      "delay": 75,
+      "next": "m5_010"
+    },
+    {
+      "id": "m5_008_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Ne couvre rien. Je voulais juste savoir.",
+      "delay": 0,
+      "next": "m5_009_b"
+    },
+    {
+      "id": "m5_009_b",
+      "type": "message",
+      "sender": "maya",
+      "text": "Bonne réponse. Pas confortable, mais bonne. Les couvertures improvisées font souvent plus de bruit que le trou initial.",
+      "delay": 75,
+      "next": "m5_010"
+    },
+    {
+      "id": "m5_008_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu peux détourner si ça revient ?",
+      "delay": 0,
+      "next": "m5_009_c"
+    },
+    {
+      "id": "m5_009_c",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je peux changer de sujet avec élégance. Je ne peux pas effacer le fait que le sujet existe.",
+      "delay": 75,
+      "next": "m5_010"
+    },
+    {
+      "id": "m5_010",
+      "type": "message",
+      "sender": "maya",
+      "text": "Et avant que tu paniques : personne n’a “découvert” quoi que ce soit. C’est plutôt le moment gênant où tout le monde prétend regarder son verre.",
+      "delay": 100,
+      "next": "m5_011"
+    },
+    {
+      "id": "m5_011",
+      "type": "message",
+      "sender": "maya",
+      "text": "C’est fou comme un mini détail peut ruiner un grand discours.",
+      "delay": 85,
+      "next": "m5_012"
+    },
+    {
+      "id": "m5_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Maya demande si elle doit rester témoin discret ou signaler quand ça devient visible.",
+      "choices": [
+        {
+          "id": "m5_012_a",
+          "text": "Préviens-moi si ça circule.",
+          "next": "m5_013_a",
+          "effects": {
+            "maya_trust": 1,
+            "risk": 1,
+            "flags": [
+              "maya_suspicion_seeded",
+              "j5_social_pressure"
+            ]
+          }
+        },
+        {
+          "id": "m5_012_b",
+          "text": "Ignore, ça va passer.",
+          "next": "m5_013_b",
+          "effects": {
+            "risk": 2,
+            "maya_trust": -1,
+            "flags": [
+              "player_minimized_maya_j5",
+              "j5_social_pressure"
+            ]
+          }
+        },
+        {
+          "id": "m5_012_c",
+          "text": "Je préfère que tu ne sois pas impliquée.",
+          "next": "m5_013_c",
+          "effects": {
+            "guilt": 1,
+            "maya_trust": 2,
+            "flags": [
+              "maya_trace_seen_j5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m5_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Préviens-moi si ça circule.",
+      "delay": 0,
+      "next": "m5_014_a"
+    },
+    {
+      "id": "m5_014_a",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je peux être un radar, pas un pare-feu. Si ça clignote trop, je t’envoie un emoji sobre et inquiétant.",
+      "delay": 70,
+      "next": "m5_015"
+    },
+    {
+      "id": "m5_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Ignore, ça va passer.",
+      "delay": 0,
+      "next": "m5_014_b"
+    },
+    {
+      "id": "m5_014_b",
+      "type": "message",
+      "sender": "maya",
+      "text": "Peut-être. Mais les trucs qui “passent” reviennent souvent avec un ami et une question précise.",
+      "delay": 70,
+      "next": "m5_015"
+    },
+    {
+      "id": "m5_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je préfère que tu ne sois pas impliquée.",
+      "delay": 0,
+      "next": "m5_014_c"
+    },
+    {
+      "id": "m5_014_c",
+      "type": "message",
+      "sender": "maya",
+      "text": "Trop tard pour être totalement extérieure, mais pas trop tard pour rester à distance intelligente.",
+      "delay": 70,
+      "next": "m5_015"
+    },
+    {
+      "id": "m5_015",
+      "type": "message",
+      "sender": "maya",
+      "text": "Bref : respire, réponds aux vrais messages, et arrête de croire qu’un silence ne se remarque pas.",
+      "delay": 100,
+      "next": "m5_016"
+    },
+    {
+      "id": "m5_016",
+      "type": "choice",
+      "sender": "player",
+      "text": "Clôturer avec Maya : alerte légère, minimisation ou retrait protecteur.",
+      "choices": [
+        {
+          "id": "m5_016_a",
+          "text": "Ok. Alerte-moi si tu vois autre chose.",
+          "next": "m5_end_watch",
+          "effects": {
+            "risk": 1,
+            "maya_trust": 1,
+            "flags": [
+              "maya_suspicion_seeded",
+              "maya_trace_seen_j5",
+              "j5_social_pressure"
+            ]
+          }
+        },
+        {
+          "id": "m5_016_b",
+          "text": "Tu lis trop entre les lignes.",
+          "next": "m5_end_minimized",
+          "effects": {
+            "risk": 2,
+            "maya_trust": -1,
+            "flags": [
+              "player_minimized_maya_j5",
+              "j5_social_pressure"
+            ]
+          }
+        },
+        {
+          "id": "m5_016_c",
+          "text": "Merci. Je vais gérer sans t’embarquer.",
+          "next": "m5_end_distance",
+          "effects": {
+            "guilt": 1,
+            "maya_trust": 2,
+            "flags": [
+              "maya_trace_seen_j5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m5_end_watch",
+      "type": "end",
+      "text": "Fin Maya J5 — Maya n’a pas tout compris. Mais elle a vu assez pour ne plus regarder pareil."
+    },
+    {
+      "id": "m5_end_minimized",
+      "type": "end",
+      "text": "Fin Maya J5 — tu minimises. Maya sourit, mais elle garde le détail en tête."
+    },
+    {
+      "id": "m5_end_distance",
+      "type": "end",
+      "text": "Fin Maya J5 — Maya reste protectrice mais à distance ; la pression sociale existe sans couverture lourde."
+    }
+  ]
+}

@@ -1,0 +1,570 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "sarah_j2_complete",
+  "day": 2,
+  "contact_id": "sarah",
+  "start_node": "s2_block_a",
+  "nodes": [
+    {
+      "id": "s2_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "S2A — Matin après malaise",
+      "delay": 0,
+      "next": "s2_001"
+    },
+    {
+      "id": "s2_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Tu es parti tôt encore ? Ton chargeur est resté côté canapé.",
+      "delay": 0,
+      "next": "s2_002"
+    },
+    {
+      "id": "s2_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne te reproche rien. J’ai lancé l’épisode sans toi hier. J’ai tenu huit minutes, exploit. Après j’ai surtout eu l’impression qu’on avait laissé une phrase en suspens.",
+      "delay": 60,
+      "next": "s2_003"
+    },
+    {
+      "id": "s2_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre au malaise du matin avec une présence simple.",
+      "choices": [
+        {
+          "id": "s2_003_a",
+          "text": "Je sais. J’aurais dû être plus présent.",
+          "next": "s2_004_a",
+          "effects": {
+            "sarah_trust": 2,
+            "guilt": 1,
+            "risk": -1,
+            "flags": [
+              "sarah_j2_acknowledges_absence"
+            ]
+          }
+        },
+        {
+          "id": "s2_003_b",
+          "text": "J’étais juste fatigué, rien de plus.",
+          "next": "s2_004_b",
+          "effects": {
+            "sarah_trust": -1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j2_minimizes_malaise"
+            ]
+          }
+        },
+        {
+          "id": "s2_003_c",
+          "text": "On en parle ce soir ? Là je vais être en retard.",
+          "next": "s2_004_c",
+          "effects": {
+            "sarah_trust": 0,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j2_delays_talk"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s2_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je sais. J’aurais dû être plus présent.",
+      "delay": 0,
+      "next": "s2_005_a"
+    },
+    {
+      "id": "s2_005_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Merci de le dire. Ça compte, même par message. Je l’ai lu avec mon café trop fort, donc c’est presque une scène de couple.",
+      "delay": 60,
+      "next": "s2_006"
+    },
+    {
+      "id": "s2_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "J’étais juste fatigué, rien de plus.",
+      "delay": 0,
+      "next": "s2_005_b"
+    },
+    {
+      "id": "s2_005_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Peut-être. Mais quand tu es fatigué, d’habitude tu viens t’écraser sur le canapé à côté de moi. Là, même ton pull arrive avant toi.",
+      "delay": 60,
+      "next": "s2_006"
+    },
+    {
+      "id": "s2_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "On en parle ce soir ? Là je vais être en retard.",
+      "delay": 0,
+      "next": "s2_005_c"
+    },
+    {
+      "id": "s2_005_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "D’accord. Mais “ce soir” ne doit pas devenir le tiroir où on range tout ce qu’on n’ose pas ouvrir.",
+      "delay": 60,
+      "next": "s2_006"
+    },
+    {
+      "id": "s2_006",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vais faire simple : aujourd’hui, j’ai besoin d’un vrai message. Pas parfait. Juste un truc qui ne ressemble pas à une réponse envoyée entre deux portes.",
+      "delay": 100,
+      "next": "s2_007"
+    },
+    {
+      "id": "s2_007",
+      "type": "choice",
+      "sender": "player",
+      "text": "Sarah demande une présence réelle.",
+      "choices": [
+        {
+          "id": "s2_007_a",
+          "text": "Je t’écris dès que j’ai une pause. Promis.",
+          "next": "s2_008_a",
+          "effects": {
+            "sarah_trust": 1,
+            "risk": 1,
+            "flags": [
+              "sarah_j2_promised_pause_message"
+            ]
+          }
+        },
+        {
+          "id": "s2_007_b",
+          "text": "Je ne peux pas garantir ma journée, mais je vais essayer.",
+          "next": "s2_008_b",
+          "effects": {
+            "sarah_trust": 0,
+            "guilt": 1,
+            "flags": [
+              "sarah_j2_cautious_presence"
+            ]
+          }
+        },
+        {
+          "id": "s2_007_c",
+          "text": "Je suis là. Même si je réponds mal. Je peux commencer par un vrai message.",
+          "next": "s2_008_c",
+          "effects": {
+            "sarah_trust": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j2_imperfect_presence"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s2_008_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je t’écris dès que j’ai une pause. Promis.",
+      "delay": 0,
+      "next": "s2_009_a"
+    },
+    {
+      "id": "s2_009_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je prends le promis. Je vais essayer de ne pas le surveiller comme une idiote.",
+      "delay": 55,
+      "next": "s2_block_b"
+    },
+    {
+      "id": "s2_008_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne peux pas garantir ma journée, mais je vais essayer.",
+      "delay": 0,
+      "next": "s2_009_b"
+    },
+    {
+      "id": "s2_009_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Essayer, ça me va. Tant que ce n’est pas juste un mot pratique.",
+      "delay": 55,
+      "next": "s2_block_b"
+    },
+    {
+      "id": "s2_008_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis là. Même si je réponds mal. Je peux commencer par un vrai message.",
+      "delay": 0,
+      "next": "s2_009_c"
+    },
+    {
+      "id": "s2_009_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est peut-être la réponse la plus honnête que tu pouvais faire.",
+      "delay": 55,
+      "next": "s2_block_b"
+    },
+    {
+      "id": "s2_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "S2B — Demande de présence",
+      "delay": 1800,
+      "next": "s2_010"
+    },
+    {
+      "id": "s2_010",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je suis passée devant la boulangerie. Ils avaient les petits pains que tu prends toujours.",
+      "delay": 0,
+      "next": "s2_011"
+    },
+    {
+      "id": "s2_011",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’en ai pris deux. C’était peut-être optimiste.",
+      "delay": 45,
+      "next": "s2_012"
+    },
+    {
+      "id": "s2_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre à son geste du quotidien.",
+      "choices": [
+        {
+          "id": "s2_012_a",
+          "text": "Garde-m’en un. Je passerai vraiment.",
+          "next": "s2_013_a",
+          "effects": {
+            "sarah_trust": 2,
+            "risk": 1,
+            "flags": [
+              "sarah_j2_promised_to_pass"
+            ]
+          }
+        },
+        {
+          "id": "s2_012_b",
+          "text": "Tu aurais dû en prendre un seul, je suis pas sûr de passer.",
+          "next": "s2_013_b",
+          "effects": {
+            "sarah_trust": -1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j2_declines_domestic_gesture"
+            ]
+          }
+        },
+        {
+          "id": "s2_012_c",
+          "text": "Tu me connais trop bien.",
+          "next": "s2_013_c",
+          "effects": {
+            "sarah_trust": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j2_accepts_intimacy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s2_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Garde-m’en un. Je passerai vraiment.",
+      "delay": 0,
+      "next": "s2_014_a"
+    },
+    {
+      "id": "s2_014_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vais faire semblant de ne pas sourire à mon téléphone.",
+      "delay": 55,
+      "next": "s2_015"
+    },
+    {
+      "id": "s2_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu aurais dû en prendre un seul, je suis pas sûr de passer.",
+      "delay": 0,
+      "next": "s2_014_b"
+    },
+    {
+      "id": "s2_014_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ok. Je le savais un peu, mais ça fait différent quand tu l’écris.",
+      "delay": 55,
+      "next": "s2_015"
+    },
+    {
+      "id": "s2_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu me connais trop bien.",
+      "delay": 0,
+      "next": "s2_014_c"
+    },
+    {
+      "id": "s2_014_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est justement ça qui me rend attentive quand quelque chose sonne faux.",
+      "delay": 55,
+      "next": "s2_015"
+    },
+    {
+      "id": "s2_015",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ce soir, j’aimerais qu’on mange sans téléphone sur la table. Même pas longtemps.",
+      "delay": 120,
+      "next": "s2_016"
+    },
+    {
+      "id": "s2_016",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne veux pas faire la police. Je veux juste retrouver le calme avec toi.",
+      "delay": 50,
+      "next": "s2_017"
+    },
+    {
+      "id": "s2_017",
+      "type": "choice",
+      "sender": "player",
+      "text": "Sarah demande un moment sans téléphone.",
+      "choices": [
+        {
+          "id": "s2_017_a",
+          "text": "D’accord. Téléphone loin de la table.",
+          "next": "s2_018_a",
+          "effects": {
+            "sarah_trust": 2,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j2_no_phone_dinner"
+            ]
+          }
+        },
+        {
+          "id": "s2_017_b",
+          "text": "Je peux essayer, mais j’attends peut-être un message pro.",
+          "next": "s2_018_b",
+          "effects": {
+            "sarah_trust": -2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "sarah_j2_work_message_excuse"
+            ]
+          }
+        },
+        {
+          "id": "s2_017_c",
+          "text": "On peut juste éviter d’en faire un symbole ?",
+          "next": "s2_018_c",
+          "effects": {
+            "sarah_trust": -1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j2_rejects_symbol"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s2_018_a",
+      "type": "message",
+      "sender": "player",
+      "text": "D’accord. Téléphone loin de la table.",
+      "delay": 0,
+      "next": "s2_019_a"
+    },
+    {
+      "id": "s2_019_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Merci. Vraiment.",
+      "delay": 55,
+      "next": "s2_block_c"
+    },
+    {
+      "id": "s2_018_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je peux essayer, mais j’attends peut-être un message pro.",
+      "delay": 0,
+      "next": "s2_019_b"
+    },
+    {
+      "id": "s2_019_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Peut-être. Pro. Encore des mots qui laissent de la place à tout.",
+      "delay": 55,
+      "next": "s2_block_c"
+    },
+    {
+      "id": "s2_018_c",
+      "type": "message",
+      "sender": "player",
+      "text": "On peut juste éviter d’en faire un symbole ?",
+      "delay": 0,
+      "next": "s2_019_c"
+    },
+    {
+      "id": "s2_019_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je n’essaye pas de gagner un débat. J’aimerais juste ne pas me sentir idiote d’attendre ton message.",
+      "delay": 55,
+      "next": "s2_block_c"
+    },
+    {
+      "id": "s2_block_c",
+      "type": "message",
+      "sender": "system",
+      "text": "S2C — Doute formulé doucement",
+      "delay": 2400,
+      "next": "s2_020"
+    },
+    {
+      "id": "s2_020",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je viens de relire nos messages d’aujourd’hui.",
+      "delay": 0,
+      "next": "s2_021"
+    },
+    {
+      "id": "s2_021",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Il y a des moments où tu es tendre, et d’autres où j’ai l’impression de parler à quelqu’un qui regarde ailleurs.",
+      "delay": 70,
+      "next": "s2_022"
+    },
+    {
+      "id": "s2_022",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne veux pas te coincer. Je veux comprendre où tu es, là, maintenant.",
+      "delay": 80,
+      "next": "s2_023"
+    },
+    {
+      "id": "s2_023",
+      "type": "choice",
+      "sender": "player",
+      "text": "Point de bascule Sarah J2.",
+      "choices": [
+        {
+          "id": "s2_023_a",
+          "text": "Je suis avec toi. Je vais faire mieux ce soir.",
+          "next": "s2_end_presence",
+          "effects": {
+            "sarah_trust": 2,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j2_ending_presence"
+            ]
+          }
+        },
+        {
+          "id": "s2_023_b",
+          "text": "Je suis perdu, mais ce n’est pas contre toi.",
+          "next": "s2_end_fragile",
+          "effects": {
+            "sarah_trust": 1,
+            "risk": 2,
+            "guilt": 2,
+            "flags": [
+              "sarah_j2_ending_fragile_truth"
+            ]
+          }
+        },
+        {
+          "id": "s2_023_c",
+          "text": "Je ne peux pas parler de ça maintenant.",
+          "next": "s2_end_distance",
+          "effects": {
+            "sarah_trust": -2,
+            "risk": 2,
+            "guilt": 2,
+            "flags": [
+              "sarah_j2_ending_distance"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s2_end_presence",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Sarah J2 : tu promets une présence. Sarah veut y croire, mais le moindre délai comptera plus qu’avant.",
+      "effects": {
+        "flags": [
+          "sarah_j2_complete",
+          "sarah_j2_presence_promised"
+        ]
+      }
+    },
+    {
+      "id": "s2_end_fragile",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Sarah J2 : tu n’avoues rien, mais tu cesses de jouer lisse. Sarah reste là, prudente.",
+      "effects": {
+        "flags": [
+          "sarah_j2_complete",
+          "sarah_j2_fragile_opening"
+        ]
+      }
+    },
+    {
+      "id": "s2_end_distance",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Sarah J2 : tu repousses encore. Sarah ne force pas. C’est précisément ce qui rend son silence plus lourd.",
+      "effects": {
+        "flags": [
+          "sarah_j2_complete",
+          "sarah_j2_distance_widens"
+        ]
+      }
+    }
+  ]
+}

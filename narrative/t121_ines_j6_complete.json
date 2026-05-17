@@ -1,0 +1,317 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "ines_j6_complete",
+  "day": 6,
+  "contact_id": "ines",
+  "start_node": "i6_block_a",
+  "nodes": [
+    {
+      "id": "i6_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "I6A — Inès : porte latérale à contretemps",
+      "delay": 0,
+      "next": "i6_001"
+    },
+    {
+      "id": "i6_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "J’ai écrit trois versions de ce message. J’en ai effacé deux et demie.",
+      "delay": 0,
+      "next": "i6_002"
+    },
+    {
+      "id": "i6_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "Celle-ci est la moins étrange. Je crois. Oublie si c’est déjà trop.",
+      "delay": 80,
+      "next": "i6_003"
+    },
+    {
+      "id": "i6_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je suis passée près de l’arrêt où je t’avais vu marcher trop vite. Le bus a raté mon arrêt. Ou moi le sien. J’ai pensé à ton air de quelqu’un qui cherche une sortie sans panneau.",
+      "delay": 95,
+      "next": "i6_003b"
+    },
+    {
+      "id": "i6_003b",
+      "type": "message",
+      "sender": "ines",
+      "text": "J’ai gardé le ticket du trajet dans ma poche. Aucune raison. Juste un petit papier qui insistait plus que moi.",
+      "delay": 70,
+      "next": "i6_004"
+    },
+    {
+      "id": "i6_004",
+      "type": "choice",
+      "sender": "player",
+      "text": "Inès revient comme une porte latérale, pas une route complète.",
+      "choices": [
+        {
+          "id": "i6_004_a",
+          "text": "C’est bizarre, mais ton message arrive doucement. Ça me fait du bien.",
+          "next": "i6_005_a",
+          "effects": {
+            "ines_interest": 2,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "ines_j6_door_opened"
+            ]
+          }
+        },
+        {
+          "id": "i6_004_b",
+          "text": "Je ne devrais pas ouvrir une autre porte maintenant. Même si elle a l’air calme.",
+          "next": "i6_005_b",
+          "effects": {
+            "ines_interest": 0,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "ines_j6_boundary_set"
+            ]
+          }
+        },
+        {
+          "id": "i6_004_c",
+          "text": "Tu tombes au mauvais moment.",
+          "next": "i6_005_c",
+          "effects": {
+            "ines_interest": -1,
+            "risk": 0,
+            "flags": [
+              "ines_j6_bad_timing"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "i6_005_a",
+      "type": "message",
+      "sender": "player",
+      "text": "C’est bizarre, mais ton message arrive doucement. Ça me fait du bien.",
+      "delay": 0,
+      "next": "i6_006_a"
+    },
+    {
+      "id": "i6_006_a",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je ne sais pas si c’est une bonne chose. Parfois être content d’un message, c’est juste éviter les autres.",
+      "delay": 75,
+      "next": "i6_007"
+    },
+    {
+      "id": "i6_005_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne devrais pas ouvrir une autre porte maintenant. Même si elle a l’air calme.",
+      "delay": 0,
+      "next": "i6_006_b"
+    },
+    {
+      "id": "i6_006_b",
+      "type": "message",
+      "sender": "ines",
+      "text": "Oui. J’ai hésité à ne pas frapper. C’est peut-être plus honnête de rester sur le seuil, surtout quand la lumière est déjà allumée ailleurs.",
+      "delay": 75,
+      "next": "i6_007"
+    },
+    {
+      "id": "i6_005_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu tombes au mauvais moment.",
+      "delay": 0,
+      "next": "i6_006_c"
+    },
+    {
+      "id": "i6_006_c",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je sais. C’est un talent triste, tomber dans les interstices.",
+      "delay": 75,
+      "next": "i6_007"
+    },
+    {
+      "id": "i6_007",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je ne te demande rien. Je voulais juste vérifier que tu n’étais pas en train de disparaître dans une version trop pratique de toi. Pas grave si tu réponds plus tard.",
+      "delay": 95,
+      "next": "i6_008"
+    },
+    {
+      "id": "i6_008",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre à la tentation de fuite sans transformer Inès en issue romance.",
+      "choices": [
+        {
+          "id": "i6_008_a",
+          "text": "J’ai envie de répondre parce que c’est plus simple que choisir.",
+          "next": "i6_009_a",
+          "effects": {
+            "ines_interest": 1,
+            "guilt": 2,
+            "flags": [
+              "ines_j6_escape_named"
+            ]
+          }
+        },
+        {
+          "id": "i6_008_b",
+          "text": "Je vais répondre aux anciens messages avant d’en ouvrir de nouveaux.",
+          "next": "i6_009_b",
+          "effects": {
+            "ines_interest": 0,
+            "risk": -1,
+            "player_presence": 1,
+            "flags": [
+              "ines_j6_old_messages_first"
+            ]
+          }
+        },
+        {
+          "id": "i6_008_c",
+          "text": "Reste là un peu. Sans demander.",
+          "next": "i6_009_c",
+          "effects": {
+            "ines_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "ines_j6_flight_temptation"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "i6_009_a",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai envie de répondre parce que c’est plus simple que choisir.",
+      "delay": 0,
+      "next": "i6_010_a"
+    },
+    {
+      "id": "i6_010_a",
+      "type": "message",
+      "sender": "ines",
+      "text": "Alors ne me transforme pas en endroit simple. Je ne suis pas sûre d’aimer ce rôle.",
+      "delay": 75,
+      "next": "i6_011"
+    },
+    {
+      "id": "i6_009_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je vais répondre aux anciens messages avant d’en ouvrir de nouveaux.",
+      "delay": 0,
+      "next": "i6_010_b"
+    },
+    {
+      "id": "i6_010_b",
+      "type": "message",
+      "sender": "ines",
+      "text": "C’est probablement la phrase la moins jolie. Donc peut-être la plus juste.",
+      "delay": 75,
+      "next": "i6_011"
+    },
+    {
+      "id": "i6_009_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Reste là un peu. Sans demander.",
+      "delay": 0,
+      "next": "i6_010_c"
+    },
+    {
+      "id": "i6_010_c",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je peux rester un peu. Mais pas pour devenir la lumière allumée pendant que tu éteins les autres pièces.",
+      "delay": 80,
+      "next": "i6_011"
+    },
+    {
+      "id": "i6_011",
+      "type": "message",
+      "sender": "ines",
+      "text": "J’efface beaucoup avant d’envoyer. Ce soir, je t’en laisse une seule : ne choisis pas seulement l’endroit où ça fait le moins de bruit.",
+      "delay": 95,
+      "next": "i6_012"
+    },
+    {
+      "id": "i6_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Fixer le seed de fin côté Inès.",
+      "choices": [
+        {
+          "id": "i6_012_a",
+          "text": "Je vais fermer cette porte pour l’instant. Pas contre toi. Pour répondre ailleurs.",
+          "next": "i6_end_boundary",
+          "effects": {
+            "ines_interest": 0,
+            "risk": -1,
+            "flags": [
+              "ending_seed_ines_boundary",
+              "ines_j6_door_closed_respectfully"
+            ]
+          }
+        },
+        {
+          "id": "i6_012_b",
+          "text": "Je ne promets rien, mais ton message reste dans ma tête.",
+          "next": "i6_end_ambiguous",
+          "effects": {
+            "ines_interest": 1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "ending_seed_ines_ambiguous",
+              "ines_j6_message_lingers"
+            ]
+          }
+        },
+        {
+          "id": "i6_012_c",
+          "text": "Je crois que j’ai juste envie de disparaître avec quelqu’un qui ne demande rien.",
+          "next": "i6_end_flight",
+          "effects": {
+            "ines_interest": 2,
+            "risk": 2,
+            "guilt": 2,
+            "flags": [
+              "ending_seed_ines_flight",
+              "ines_j6_escape_pull"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "i6_end_boundary",
+      "type": "end",
+      "text": "Fin Inès J6 — le joueur refuse la porte latérale pour répondre aux liens déjà ouverts."
+    },
+    {
+      "id": "i6_end_ambiguous",
+      "type": "end",
+      "text": "Fin Inès J6 — Inès reste une phrase en suspens, assez présente pour troubler la fin."
+    },
+    {
+      "id": "i6_end_flight",
+      "type": "end",
+      "text": "Fin Inès J6 — la porte de fuite s’ouvre : pas une romance bonus, une échappatoire dangereuse."
+    }
+  ]
+}

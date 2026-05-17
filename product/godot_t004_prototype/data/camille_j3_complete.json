@@ -1,0 +1,580 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "camille_j3_complete",
+  "day": 3,
+  "contact_id": "camille",
+  "start_node": "c3_block_a",
+  "nodes": [
+    {
+      "id": "c3_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "C3A — Reprise selon J2",
+      "delay": 0,
+      "next": "c3_001"
+    },
+    {
+      "id": "c3_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je marche depuis dix minutes. Même rue, mêmes vitrines. Je me demandais si aujourd’hui tu allais faire comme si hier n’avait pas existé.",
+      "delay": 0,
+      "next": "c3_002"
+    },
+    {
+      "id": "c3_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu sais, les dix minutes. Le fil gardé ouvert. Ou la limite posée avec un air raisonnable, comme un téléphone retourné sur une table.",
+      "delay": 70,
+      "next": "c3_003"
+    },
+    {
+      "id": "c3_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille revient sur J2 sans nommer la route exacte.",
+      "choices": [
+        {
+          "id": "c3_003_a",
+          "text": "Je n’ai pas fait semblant. J’y ai pensé.",
+          "next": "c3_004_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "camille_j3_admits_thought"
+            ]
+          }
+        },
+        {
+          "id": "c3_003_b",
+          "text": "Je préfère ne pas trop repenser à ça.",
+          "next": "c3_004_b",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_j3_avoids_j2"
+            ]
+          }
+        },
+        {
+          "id": "c3_003_c",
+          "text": "Tu veux vraiment savoir ce que ça a changé ?",
+          "next": "c3_004_c",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "camille_j3_opens_consequence"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je n’ai pas fait semblant. J’y ai pensé.",
+      "delay": 0,
+      "next": "c3_005_a"
+    },
+    {
+      "id": "c3_005_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Bien. Je préfère être une pensée gênante qu’un message oublié. Les pensées gênantes tiennent mieux sous la pluie.",
+      "delay": 60,
+      "next": "c3_006"
+    },
+    {
+      "id": "c3_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je préfère ne pas trop repenser à ça.",
+      "delay": 0,
+      "next": "c3_005_b"
+    },
+    {
+      "id": "c3_005_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est drôle, les gens disent ça quand ils y repensent déjà trop. Ça sonnait presque vrai, en plus.",
+      "delay": 60,
+      "next": "c3_006"
+    },
+    {
+      "id": "c3_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu veux vraiment savoir ce que ça a changé ?",
+      "delay": 0,
+      "next": "c3_005_c"
+    },
+    {
+      "id": "c3_005_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Oui. Mais je préfère quand tu hésites avant de répondre.",
+      "delay": 60,
+      "next": "c3_006"
+    },
+    {
+      "id": "c3_006",
+      "type": "message",
+      "sender": "camille",
+      "text": "Aujourd’hui je n’ai pas beaucoup de temps. Le café ferme tôt, et moi aussi, apparemment. C’est peut-être mieux comme ça.",
+      "delay": 120,
+      "next": "c3_007"
+    },
+    {
+      "id": "c3_007",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille pose une fenêtre courte, presque légère, avant que ça redevienne sérieux.",
+      "choices": [
+        {
+          "id": "c3_007_a",
+          "text": "Mieux pour qui ? Pour toi, pour moi, ou pour le café qui nous supporte ?",
+          "next": "c3_008_a",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "camille_j3_questions_window"
+            ]
+          }
+        },
+        {
+          "id": "c3_007_b",
+          "text": "Tu rends ça dangereux exprès.",
+          "next": "c3_008_b",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j3_names_danger"
+            ]
+          }
+        },
+        {
+          "id": "c3_007_c",
+          "text": "Alors ne commence pas si tu dois disparaître.",
+          "next": "c3_008_c",
+          "effects": {
+            "camille_interest": 0,
+            "risk": -1,
+            "flags": [
+              "camille_j3_resists_window"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3_008_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Mieux pour qui ? Pour toi, pour moi, ou pour le café qui nous supporte ?",
+      "delay": 0,
+      "next": "c3_009_a"
+    },
+    {
+      "id": "c3_009_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Pour celui qui prétend encore pouvoir gérer son attention.",
+      "delay": 55,
+      "next": "c3_block_b"
+    },
+    {
+      "id": "c3_008_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu rends ça dangereux exprès.",
+      "delay": 0,
+      "next": "c3_009_b"
+    },
+    {
+      "id": "c3_009_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Non. Je retire juste les endroits où tu peux te cacher.",
+      "delay": 55,
+      "next": "c3_block_b"
+    },
+    {
+      "id": "c3_008_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Alors ne commence pas si tu dois disparaître.",
+      "delay": 0,
+      "next": "c3_009_c"
+    },
+    {
+      "id": "c3_009_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Trop tard. Tu as déjà lu.",
+      "delay": 55,
+      "next": "c3_block_b"
+    },
+    {
+      "id": "c3_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "C3B — Fenêtre courte",
+      "delay": 900,
+      "next": "c3_010"
+    },
+    {
+      "id": "c3_010",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je suis dans une boutique où ils passent une chanson beaucoup trop calme pour mon humeur.",
+      "delay": 0,
+      "next": "c3_011"
+    },
+    {
+      "id": "c3_011",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je pars dans douze minutes. Après, je coupe mon téléphone jusqu’à ce soir.",
+      "delay": 45,
+      "next": "c3_012"
+    },
+    {
+      "id": "c3_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "La fenêtre courte force un arbitrage d’attention.",
+      "choices": [
+        {
+          "id": "c3_012_a",
+          "text": "Alors ces douze minutes comptent.",
+          "next": "c3_013_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j3_values_window"
+            ]
+          }
+        },
+        {
+          "id": "c3_012_b",
+          "text": "Je ne peux pas être disponible sur commande.",
+          "next": "c3_013_b",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "flags": [
+              "camille_j3_refuses_on_demand"
+            ]
+          }
+        },
+        {
+          "id": "c3_012_c",
+          "text": "Écris-moi une seule chose que je ne pourrai pas ignorer.",
+          "next": "c3_013_c",
+          "effects": {
+            "camille_interest": 3,
+            "risk": 3,
+            "guilt": 2,
+            "flags": [
+              "camille_j3_invites_unignorable"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Alors ces douze minutes comptent.",
+      "delay": 0,
+      "next": "c3_014_a"
+    },
+    {
+      "id": "c3_014_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je savais que tu comprenais très bien les choses quand elles deviennent courtes.",
+      "delay": 55,
+      "next": "c3_015"
+    },
+    {
+      "id": "c3_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne peux pas être disponible sur commande.",
+      "delay": 0,
+      "next": "c3_014_b"
+    },
+    {
+      "id": "c3_014_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne commande pas. Je constate à quelle vitesse tu réponds quand tu dis non.",
+      "delay": 55,
+      "next": "c3_015"
+    },
+    {
+      "id": "c3_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Écris-moi une seule chose que je ne pourrai pas ignorer.",
+      "delay": 0,
+      "next": "c3_014_c"
+    },
+    {
+      "id": "c3_014_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "D’accord. J’ai aimé attendre ton message hier. Voilà, c’est dit.",
+      "delay": 55,
+      "next": "c3_015"
+    },
+    {
+      "id": "c3_015",
+      "type": "message",
+      "sender": "system",
+      "text": "Pendant quelques minutes, aucun autre message n’arrive. C’est presque pire : toute ton attention reste suspendue à cette fenêtre.",
+      "delay": 420,
+      "next": "c3_016"
+    },
+    {
+      "id": "c3_016",
+      "type": "message",
+      "sender": "camille",
+      "text": "Il me reste cinq minutes.",
+      "delay": 0,
+      "next": "c3_017"
+    },
+    {
+      "id": "c3_017",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je voulais voir si tu pouvais me garder dans un coin de ta journée sans que je sois juste une distraction.",
+      "delay": 40,
+      "next": "c3_018"
+    },
+    {
+      "id": "c3_018",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille demande une place, pas un rendez-vous.",
+      "choices": [
+        {
+          "id": "c3_018_a",
+          "text": "Tu prends déjà plus qu’un coin.",
+          "next": "c3_019_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j3_admits_space_taken"
+            ]
+          }
+        },
+        {
+          "id": "c3_018_b",
+          "text": "Je ne peux pas te donner plus que des messages.",
+          "next": "c3_019_b",
+          "effects": {
+            "camille_interest": 0,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_j3_limits_to_messages"
+            ]
+          }
+        },
+        {
+          "id": "c3_018_c",
+          "text": "Je ne sais pas ce que je peux te donner.",
+          "next": "c3_019_c",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "guilt": 2,
+            "flags": [
+              "camille_j3_uncertain_space"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3_019_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu prends déjà plus qu’un coin.",
+      "delay": 0,
+      "next": "c3_020_a"
+    },
+    {
+      "id": "c3_020_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est le genre de phrase qu’on regrette seulement après l’avoir relue.",
+      "delay": 55,
+      "next": "c3_block_c"
+    },
+    {
+      "id": "c3_019_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne peux pas te donner plus que des messages.",
+      "delay": 0,
+      "next": "c3_020_b"
+    },
+    {
+      "id": "c3_020_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Les messages suffisent parfois à déplacer quelqu’un. Tu devrais le savoir maintenant.",
+      "delay": 55,
+      "next": "c3_block_c"
+    },
+    {
+      "id": "c3_019_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne sais pas ce que je peux te donner.",
+      "delay": 0,
+      "next": "c3_020_c"
+    },
+    {
+      "id": "c3_020_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Au moins, tu ne mens pas proprement. C’est presque rassurant.",
+      "delay": 55,
+      "next": "c3_block_c"
+    },
+    {
+      "id": "c3_block_c",
+      "type": "message",
+      "sender": "system",
+      "text": "C3C — Ce qui reste après le silence",
+      "delay": 1800,
+      "next": "c3_021"
+    },
+    {
+      "id": "c3_021",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je n’ai pas coupé tout de suite.",
+      "delay": 0,
+      "next": "c3_022"
+    },
+    {
+      "id": "c3_022",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je voulais voir si ça te ferait quelque chose de savoir que j’avais menti sur les cinq minutes.",
+      "delay": 60,
+      "next": "c3_023"
+    },
+    {
+      "id": "c3_023",
+      "type": "message",
+      "sender": "camille",
+      "text": "Pas une grande invention. Juste assez pour rester près de la porte, là où tu pouvais encore répondre sans entrer vraiment.",
+      "delay": 70,
+      "next": "c3_024"
+    },
+    {
+      "id": "c3_024",
+      "type": "choice",
+      "sender": "player",
+      "text": "Fin Camille J3 : que faire de ce qui reste ?",
+      "choices": [
+        {
+          "id": "c3_024_a",
+          "text": "J’aurais répondu même après cinq minutes.",
+          "next": "c3_end_pull",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 3,
+            "guilt": 2,
+            "flags": [
+              "camille_j3_ending_pull"
+            ]
+          }
+        },
+        {
+          "id": "c3_024_b",
+          "text": "Ne fais pas ça. Pas avec moi.",
+          "next": "c3_end_boundary",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_j3_ending_boundary"
+            ]
+          }
+        },
+        {
+          "id": "c3_024_c",
+          "text": "Je vais garder ce message. Je ne sais pas pourquoi.",
+          "next": "c3_end_trace",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 2,
+            "guilt": 2,
+            "flags": [
+              "camille_j3_ending_trace"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3_end_pull",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Camille J3 : tu confirmes que la fenêtre importe moins que le fil. Camille le sait maintenant.",
+      "effects": {
+        "flags": [
+          "camille_j3_complete",
+          "camille_j3_attention_given"
+        ]
+      }
+    },
+    {
+      "id": "c3_end_boundary",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Camille J3 : tu poses une limite. Camille recule, mais le message reste dans la conversation.",
+      "effects": {
+        "flags": [
+          "camille_j3_complete",
+          "camille_j3_boundary_set"
+        ]
+      }
+    },
+    {
+      "id": "c3_end_trace",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Camille J3 : tu ne promets rien. Tu gardes quelque chose ouvert. C’est déjà une décision dangereuse.",
+      "effects": {
+        "flags": [
+          "camille_j3_complete",
+          "camille_j3_trace_kept"
+        ]
+      }
+    }
+  ]
+}

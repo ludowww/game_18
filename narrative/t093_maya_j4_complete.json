@@ -1,0 +1,678 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "maya_j4_complete",
+  "day": 4,
+  "contact_id": "maya",
+  "start_node": "m4_block_a",
+  "nodes": [
+    {
+      "id": "m4_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "M4A — Maya : regard social / remarque légère",
+      "delay": 0,
+      "next": "m4_001"
+    },
+    {
+      "id": "m4_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je pose ça là : sur la photo de groupe, tu es techniquement “pas là”, mais ton épaule fait une carrière solo.",
+      "delay": 0,
+      "next": "m4_002"
+    },
+    {
+      "id": "m4_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "C’est une compétence ? Une phase ? Ou juste ton nouveau mode camouflage social niveau amateur ?",
+      "delay": 70,
+      "next": "m4_003"
+    },
+    {
+      "id": "m4_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Maya remarque une absence sans accuser.",
+      "choices": [
+        {
+          "id": "m4_003_a",
+          "text": "Je suis juste un peu dispersé. Niveau photo floue, apparemment.",
+          "next": "m4_004_a",
+          "effects": {
+            "maya_trust": 0,
+            "risk": 0,
+            "flags": [
+              "player_minimized_maya"
+            ]
+          }
+        },
+        {
+          "id": "m4_003_b",
+          "text": "Tu as remarqué ça comment ?",
+          "next": "m4_004_b",
+          "effects": {
+            "maya_interest": 1,
+            "risk": 1,
+            "flags": [
+              "maya_noticed_absence"
+            ]
+          }
+        },
+        {
+          "id": "m4_003_c",
+          "text": "Disons que je gère plusieurs trucs à la fois.",
+          "next": "m4_004_c",
+          "effects": {
+            "maya_interest": 1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "j4_social_trace"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m4_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis juste un peu dispersé. Niveau photo floue, apparemment.",
+      "delay": 0,
+      "next": "m4_005_a"
+    },
+    {
+      "id": "m4_005_a",
+      "type": "message",
+      "sender": "maya",
+      "text": "Oui, “dispersé”, c’est le mot poli pour dire que trois personnes demandent où tu es pendant que ton épaule répond à ta place.",
+      "delay": 55,
+      "next": "m4_006"
+    },
+    {
+      "id": "m4_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu as remarqué ça comment ?",
+      "delay": 0,
+      "next": "m4_005_b"
+    },
+    {
+      "id": "m4_005_b",
+      "type": "message",
+      "sender": "maya",
+      "text": "Parce que tu réponds vite aux mauvaises questions et lentement aux simples. Même le groupe a moins de flou sur ses photos.",
+      "delay": 55,
+      "next": "m4_006"
+    },
+    {
+      "id": "m4_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Disons que je gère plusieurs trucs à la fois.",
+      "delay": 0,
+      "next": "m4_005_c"
+    },
+    {
+      "id": "m4_005_c",
+      "type": "message",
+      "sender": "maya",
+      "text": "Ah. La phrase préférée des gens qui ont déjà perdu le fil mais refusent de lâcher un fil.",
+      "delay": 55,
+      "next": "m4_006"
+    },
+    {
+      "id": "m4_006",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je ne te fais pas un interrogatoire. Je te dis juste que le “il est où ?” est parti trop vite. Trois têtes se sont tournées. Ambiance.",
+      "delay": 95,
+      "next": "m4_007"
+    },
+    {
+      "id": "m4_007",
+      "type": "choice",
+      "sender": "player",
+      "text": "Réagir au regard social de Maya sans lui donner un rôle de vigile.",
+      "choices": [
+        {
+          "id": "m4_007_a",
+          "text": "Et toi, tu as rempli avec quoi ?",
+          "next": "m4_008_a",
+          "effects": {
+            "maya_interest": 1,
+            "risk": 1,
+            "flags": [
+              "maya_suspicion_seeded"
+            ]
+          }
+        },
+        {
+          "id": "m4_007_b",
+          "text": "Je préfère que personne ne remplisse rien.",
+          "next": "m4_008_b",
+          "effects": {
+            "risk": -1,
+            "maya_trust": -1,
+            "flags": [
+              "player_locked_maya"
+            ]
+          }
+        },
+        {
+          "id": "m4_007_c",
+          "text": "Si quelqu’un demande, tu peux juste dire que j’étais occupé.",
+          "next": "m4_008_c",
+          "effects": {
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "maya_cover_possible",
+              "j4_social_trace"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m4_008_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Et toi, tu as rempli avec quoi ?",
+      "delay": 0,
+      "next": "m4_009_a"
+    },
+    {
+      "id": "m4_009_a",
+      "type": "message",
+      "sender": "maya",
+      "text": "Avec pas grand-chose. Pour l’instant. C’est ça qui devrait te rassurer ou t’inquiéter, je ne sais pas.",
+      "delay": 60,
+      "next": "m4_block_b"
+    },
+    {
+      "id": "m4_008_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je préfère que personne ne remplisse rien.",
+      "delay": 0,
+      "next": "m4_009_b"
+    },
+    {
+      "id": "m4_009_b",
+      "type": "message",
+      "sender": "maya",
+      "text": "Alors évite de laisser des blancs pile là où tout le monde regarde. Conseil gratuit.",
+      "delay": 60,
+      "next": "m4_block_b"
+    },
+    {
+      "id": "m4_008_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Si quelqu’un demande, tu peux juste dire que j’étais occupé.",
+      "delay": 0,
+      "next": "m4_009_c"
+    },
+    {
+      "id": "m4_009_c",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je peux. Mais note que tu viens de me demander une couverture avant même qu’on sache pour quoi.",
+      "delay": 60,
+      "next": "m4_block_b"
+    },
+    {
+      "id": "m4_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "M4B — Maya : petit détail vu trop vite",
+      "delay": 0,
+      "next": "m4_010"
+    },
+    {
+      "id": "m4_010",
+      "type": "message",
+      "sender": "maya",
+      "text": "Petit détail amusant : Nico m’a demandé si tu étais avec nous tout à l’heure, avec son visage de mec qui a perdu le script.",
+      "delay": 0,
+      "next": "m4_011"
+    },
+    {
+      "id": "m4_011",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je lui ai dit “je crois”. Et je me suis entendue dire “je crois”. Tu vois le problème ?",
+      "delay": 75,
+      "next": "m4_012"
+    },
+    {
+      "id": "m4_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Maya pointe une micro-contradiction sociale.",
+      "choices": [
+        {
+          "id": "m4_012_a",
+          "text": "Nico dramatise toujours les absences.",
+          "next": "m4_013_a",
+          "effects": {
+            "risk": 1,
+            "maya_trust": -1,
+            "flags": [
+              "player_minimized_maya"
+            ]
+          }
+        },
+        {
+          "id": "m4_012_b",
+          "text": "Merci de ne pas avoir creusé.",
+          "next": "m4_013_b",
+          "effects": {
+            "maya_trust": 1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "maya_cover_possible"
+            ]
+          }
+        },
+        {
+          "id": "m4_012_c",
+          "text": "Tu as dit quoi exactement ?",
+          "next": "m4_013_c",
+          "effects": {
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "maya_suspicion_seeded",
+              "j4_social_trace"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m4_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Nico dramatise toujours les absences.",
+      "delay": 0,
+      "next": "m4_014_a"
+    },
+    {
+      "id": "m4_014_a",
+      "type": "message",
+      "sender": "maya",
+      "text": "Peut-être. Mais là, ce n’est pas son ton qui m’a marquée. C’est ton réflexe de minimiser avant de savoir.",
+      "delay": 55,
+      "next": "m4_015"
+    },
+    {
+      "id": "m4_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Merci de ne pas avoir creusé.",
+      "delay": 0,
+      "next": "m4_014_b"
+    },
+    {
+      "id": "m4_014_b",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je n’ai pas creusé parce que je t’aime bien. Ce qui n’est pas exactement une garantie durable.",
+      "delay": 55,
+      "next": "m4_015"
+    },
+    {
+      "id": "m4_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu as dit quoi exactement ?",
+      "delay": 0,
+      "next": "m4_014_c"
+    },
+    {
+      "id": "m4_014_c",
+      "type": "message",
+      "sender": "maya",
+      "text": "Que tu avais dû décrocher. C’est assez vague pour aider, assez précis pour devenir gênant si quelqu’un compare.",
+      "delay": 55,
+      "next": "m4_015"
+    },
+    {
+      "id": "m4_015",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je ne veux pas savoir ce que tu faisais. Enfin… je veux savoir si tu comprends que ça déborde un peu autour de toi.",
+      "delay": 95,
+      "next": "m4_016"
+    },
+    {
+      "id": "m4_016",
+      "type": "choice",
+      "sender": "player",
+      "text": "Choisir jusqu’où se confier à Maya.",
+      "choices": [
+        {
+          "id": "m4_016_a",
+          "text": "J’ai besoin que tu ne poses pas trop de questions.",
+          "next": "m4_017_a",
+          "effects": {
+            "maya_trust": -1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "player_locked_maya"
+            ]
+          }
+        },
+        {
+          "id": "m4_016_b",
+          "text": "Il y a des choses que je gère mal, oui.",
+          "next": "m4_017_b",
+          "effects": {
+            "maya_trust": 2,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "player_confided_maya"
+            ]
+          }
+        },
+        {
+          "id": "m4_016_c",
+          "text": "Je pensais que ça ne se voyait pas.",
+          "next": "m4_017_c",
+          "effects": {
+            "maya_interest": 1,
+            "risk": 1,
+            "flags": [
+              "maya_noticed_absence"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m4_017_a",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai besoin que tu ne poses pas trop de questions.",
+      "delay": 0,
+      "next": "m4_018_a"
+    },
+    {
+      "id": "m4_018_a",
+      "type": "message",
+      "sender": "maya",
+      "text": "Alors formule mieux : tu as besoin que je choisisse de ne pas voir. Ce n’est pas pareil.",
+      "delay": 60,
+      "next": "m4_block_c"
+    },
+    {
+      "id": "m4_017_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Il y a des choses que je gère mal, oui.",
+      "delay": 0,
+      "next": "m4_018_b"
+    },
+    {
+      "id": "m4_018_b",
+      "type": "message",
+      "sender": "maya",
+      "text": "Ça, c’est une réponse que je peux respecter. Pas forcément couvrir, mais respecter.",
+      "delay": 60,
+      "next": "m4_block_c"
+    },
+    {
+      "id": "m4_017_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je pensais que ça ne se voyait pas.",
+      "delay": 0,
+      "next": "m4_018_c"
+    },
+    {
+      "id": "m4_018_c",
+      "type": "message",
+      "sender": "maya",
+      "text": "En général c’est pas le gros truc qui grille quelqu’un. C’est trois petits détails que personne ne devait additionner.",
+      "delay": 60,
+      "next": "m4_block_c"
+    },
+    {
+      "id": "m4_block_c",
+      "type": "message",
+      "sender": "system",
+      "text": "M4C — Maya : service demandé, sourcil levé",
+      "delay": 0,
+      "next": "m4_019"
+    },
+    {
+      "id": "m4_019",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je peux te rendre un service social minuscule : ne pas relever, ne pas répéter, ne pas faire la maligne.",
+      "delay": 0,
+      "next": "m4_020"
+    },
+    {
+      "id": "m4_020",
+      "type": "message",
+      "sender": "maya",
+      "text": "Mais je ne veux pas devenir le meuble derrière lequel tu caches tes trucs.",
+      "delay": 75,
+      "next": "m4_021"
+    },
+    {
+      "id": "m4_021",
+      "type": "choice",
+      "sender": "player",
+      "text": "Maya propose une couverture fragile sans devenir complice totale.",
+      "choices": [
+        {
+          "id": "m4_021_a",
+          "text": "Je ne te demanderai pas de mentir.",
+          "next": "m4_022_a",
+          "effects": {
+            "maya_trust": 2,
+            "risk": -1,
+            "flags": [
+              "maya_boundary_respected"
+            ]
+          }
+        },
+        {
+          "id": "m4_021_b",
+          "text": "Juste aujourd’hui. Après je remets de l’ordre.",
+          "next": "m4_022_b",
+          "effects": {
+            "maya_trust": 0,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "maya_cover_possible",
+              "j4_social_trace"
+            ]
+          }
+        },
+        {
+          "id": "m4_021_c",
+          "text": "Tu peux aussi me dire si je deviens ridicule.",
+          "next": "m4_022_c",
+          "effects": {
+            "maya_trust": 1,
+            "guilt": 1,
+            "flags": [
+              "player_confided_maya"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m4_022_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne te demanderai pas de mentir.",
+      "delay": 0,
+      "next": "m4_023_a"
+    },
+    {
+      "id": "m4_023_a",
+      "type": "message",
+      "sender": "maya",
+      "text": "Bien. Parce que je mens très mal quand je trouve la personne en face plus bête que prévue.",
+      "delay": 55,
+      "next": "m4_024"
+    },
+    {
+      "id": "m4_022_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Juste aujourd’hui. Après je remets de l’ordre.",
+      "delay": 0,
+      "next": "m4_023_b"
+    },
+    {
+      "id": "m4_023_b",
+      "type": "message",
+      "sender": "maya",
+      "text": "“Juste aujourd’hui” est une phrase qui vieillit rarement bien. Mais d’accord, je note la date.",
+      "delay": 55,
+      "next": "m4_024"
+    },
+    {
+      "id": "m4_022_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu peux aussi me dire si je deviens ridicule.",
+      "delay": 0,
+      "next": "m4_023_c"
+    },
+    {
+      "id": "m4_023_c",
+      "type": "message",
+      "sender": "maya",
+      "text": "Tu n’es pas encore ridicule. Tu es au stade élégant du désordre. C’est plus dangereux.",
+      "delay": 55,
+      "next": "m4_024"
+    },
+    {
+      "id": "m4_024",
+      "type": "message",
+      "sender": "maya",
+      "text": "Si quelqu’un me demande, je resterai vague. Pas pour te sauver. Pour ne pas être celle qui pousse le premier domino.",
+      "delay": 95,
+      "next": "m4_025"
+    },
+    {
+      "id": "m4_025",
+      "type": "choice",
+      "sender": "player",
+      "text": "Clore Maya J4.",
+      "choices": [
+        {
+          "id": "m4_025_a",
+          "text": "Je te dois un vrai merci.",
+          "next": "m4_026_a",
+          "effects": {
+            "maya_trust": 2,
+            "guilt": 1,
+            "flags": [
+              "maya_j4_end_gratitude"
+            ]
+          }
+        },
+        {
+          "id": "m4_025_b",
+          "text": "Reste vague, c’est tout ce que je demande.",
+          "next": "m4_026_b",
+          "effects": {
+            "risk": 1,
+            "maya_trust": -1,
+            "flags": [
+              "maya_j4_end_cover_used",
+              "maya_cover_possible"
+            ]
+          }
+        },
+        {
+          "id": "m4_025_c",
+          "text": "Je vais éviter de te mêler à ça.",
+          "next": "m4_026_c",
+          "effects": {
+            "maya_trust": 1,
+            "risk": -1,
+            "flags": [
+              "maya_j4_end_kept_out"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m4_026_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je te dois un vrai merci.",
+      "delay": 0,
+      "next": "m4_end_gratitude"
+    },
+    {
+      "id": "m4_end_gratitude",
+      "type": "end",
+      "sender": "maya",
+      "text": "Garde-le pour le moment où tu auras une explication qui ne tremble pas. Là, ce sera utile.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "maya_j4_end_gratitude"
+        ]
+      }
+    },
+    {
+      "id": "m4_026_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Reste vague, c’est tout ce que je demande.",
+      "delay": 0,
+      "next": "m4_end_cover"
+    },
+    {
+      "id": "m4_end_cover",
+      "type": "end",
+      "sender": "maya",
+      "text": "Je resterai vague. Mais les gens vagues finissent parfois par attirer les questions précises.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "maya_j4_end_cover"
+        ]
+      }
+    },
+    {
+      "id": "m4_026_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je vais éviter de te mêler à ça.",
+      "delay": 0,
+      "next": "m4_end_distance"
+    },
+    {
+      "id": "m4_end_distance",
+      "type": "end",
+      "sender": "maya",
+      "text": "Bonne idée. Commence par éviter que ton silence fasse toute la conversation à ta place.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "maya_j4_end_distance"
+        ]
+      }
+    }
+  ]
+}

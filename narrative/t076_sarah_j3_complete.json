@@ -1,0 +1,560 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "sarah_j3_complete",
+  "day": 3,
+  "contact_id": "sarah",
+  "start_node": "s3_block_a",
+  "nodes": [
+    {
+      "id": "s3_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "S3A — Matin prudent",
+      "delay": 0,
+      "next": "s3_001"
+    },
+    {
+      "id": "s3_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je me suis réveillée avant toi. J’ai failli t’écrire, puis je me suis dit que ça ferait trop.",
+      "delay": 0,
+      "next": "s3_002"
+    },
+    {
+      "id": "s3_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Alors j’ai attendu un peu. C’est idiot comme stratégie, non ?",
+      "delay": 60,
+      "next": "s3_003"
+    },
+    {
+      "id": "s3_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Sarah ouvre la journée avec prudence.",
+      "choices": [
+        {
+          "id": "s3_003_a",
+          "text": "Non. J’aime bien que tu m’écrives.",
+          "next": "s3_004_a",
+          "effects": {
+            "sarah_trust": 2,
+            "guilt": 1,
+            "flags": [
+              "sarah_j3_reassured_morning"
+            ]
+          }
+        },
+        {
+          "id": "s3_003_b",
+          "text": "Je suis un peu débordé ce matin.",
+          "next": "s3_004_b",
+          "effects": {
+            "sarah_trust": -1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j3_busy_morning"
+            ]
+          }
+        },
+        {
+          "id": "s3_003_c",
+          "text": "Tu peux m’écrire sans calculer.",
+          "next": "s3_004_c",
+          "effects": {
+            "sarah_trust": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j3_invites_simple_messages"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s3_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Non. J’aime bien que tu m’écrives.",
+      "delay": 0,
+      "next": "s3_005_a"
+    },
+    {
+      "id": "s3_005_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vais essayer de le retenir sans en faire une preuve officielle.",
+      "delay": 55,
+      "next": "s3_006"
+    },
+    {
+      "id": "s3_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis un peu débordé ce matin.",
+      "delay": 0,
+      "next": "s3_005_b"
+    },
+    {
+      "id": "s3_005_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Oui. Je le sens. J’essaie juste de comprendre si je suis dans le débordement ou à côté.",
+      "delay": 55,
+      "next": "s3_006"
+    },
+    {
+      "id": "s3_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu peux m’écrire sans calculer.",
+      "delay": 0,
+      "next": "s3_005_c"
+    },
+    {
+      "id": "s3_005_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est exactement le genre de phrase qui me donne envie d’y croire.",
+      "delay": 55,
+      "next": "s3_006"
+    },
+    {
+      "id": "s3_006",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne veux pas te prendre toute ta journée. Juste savoir si j’y ai encore une vraie place.",
+      "delay": 100,
+      "next": "s3_007"
+    },
+    {
+      "id": "s3_007",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre au besoin de place.",
+      "choices": [
+        {
+          "id": "s3_007_a",
+          "text": "Tu as une place. Je dois juste mieux la montrer.",
+          "next": "s3_008_a",
+          "effects": {
+            "sarah_trust": 2,
+            "guilt": 1,
+            "flags": [
+              "sarah_j3_promises_to_show_place"
+            ]
+          }
+        },
+        {
+          "id": "s3_007_b",
+          "text": "Je ne sais pas comment répondre sans promettre trop.",
+          "next": "s3_008_b",
+          "effects": {
+            "sarah_trust": 0,
+            "guilt": 2,
+            "flags": [
+              "sarah_j3_honest_uncertainty"
+            ]
+          }
+        },
+        {
+          "id": "s3_007_c",
+          "text": "Là, tu dramatises un peu.",
+          "next": "s3_008_c",
+          "effects": {
+            "sarah_trust": -2,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j3_minimizes_need"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s3_008_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu as une place. Je dois juste mieux la montrer.",
+      "delay": 0,
+      "next": "s3_009_a"
+    },
+    {
+      "id": "s3_009_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "D’accord. Alors aujourd’hui je vais regarder les gestes, pas les grands mots.",
+      "delay": 55,
+      "next": "s3_block_b"
+    },
+    {
+      "id": "s3_008_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne sais pas comment répondre sans promettre trop.",
+      "delay": 0,
+      "next": "s3_009_b"
+    },
+    {
+      "id": "s3_009_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est peut-être mieux qu’une promesse automatique. Au moins je t’entends réfléchir.",
+      "delay": 55,
+      "next": "s3_block_b"
+    },
+    {
+      "id": "s3_008_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Là, tu dramatises un peu.",
+      "delay": 0,
+      "next": "s3_009_c"
+    },
+    {
+      "id": "s3_009_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Peut-être. Mais je préférerais dramatiser avec toi que me calmer toute seule.",
+      "delay": 55,
+      "next": "s3_block_b"
+    },
+    {
+      "id": "s3_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "S3B — Petit rituel",
+      "delay": 1200,
+      "next": "s3_010"
+    },
+    {
+      "id": "s3_010",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Tu te souviens de la plante sur le rebord de la fenêtre ? Celle que tu as failli jeter parce qu’elle faisait “déprimée”.",
+      "delay": 0,
+      "next": "s3_011"
+    },
+    {
+      "id": "s3_011",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Elle a une nouvelle feuille. Minuscule. J’ai pensé à toi, forcément.",
+      "delay": 50,
+      "next": "s3_012"
+    },
+    {
+      "id": "s3_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Sarah propose un rituel simple, loin du dîner et du téléphone.",
+      "choices": [
+        {
+          "id": "s3_012_a",
+          "text": "Décris-la-moi. Je veux la voir ce soir.",
+          "next": "s3_013_a",
+          "effects": {
+            "sarah_trust": 2,
+            "risk": 0,
+            "flags": [
+              "sarah_j3_accepts_plant_ritual"
+            ]
+          }
+        },
+        {
+          "id": "s3_012_b",
+          "text": "Je suis étonné qu’elle ait survécu à nous deux.",
+          "next": "s3_013_b",
+          "effects": {
+            "sarah_trust": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j3_shared_memory"
+            ]
+          }
+        },
+        {
+          "id": "s3_012_c",
+          "text": "Je réponds plus tard, je suis en plein truc.",
+          "next": "s3_013_c",
+          "effects": {
+            "sarah_trust": -1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j3_postpones_ritual"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s3_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Décris-la-moi. Je veux la voir ce soir.",
+      "delay": 0,
+      "next": "s3_014_a"
+    },
+    {
+      "id": "s3_014_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Description mentale : une feuille ridicule, beaucoup trop fière d’exister.",
+      "delay": 55,
+      "next": "s3_015"
+    },
+    {
+      "id": "s3_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis étonné qu’elle ait survécu à nous deux.",
+      "delay": 0,
+      "next": "s3_014_b"
+    },
+    {
+      "id": "s3_014_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Elle tient mieux que nous certains matins. Mais elle ne répond pas aux messages, ça aide.",
+      "delay": 55,
+      "next": "s3_015"
+    },
+    {
+      "id": "s3_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je réponds plus tard, je suis en plein truc.",
+      "delay": 0,
+      "next": "s3_014_c"
+    },
+    {
+      "id": "s3_014_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ok. Je garde ma petite feuille pour plus tard alors.",
+      "delay": 55,
+      "next": "s3_015"
+    },
+    {
+      "id": "s3_015",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ce soir, tu pourras l’arroser ? Pas parce que c’est important. Juste parce que ça me ferait plaisir que ce soit toi.",
+      "delay": 110,
+      "next": "s3_016"
+    },
+    {
+      "id": "s3_016",
+      "type": "choice",
+      "sender": "player",
+      "text": "Le petit rituel devient un test de présence fiable.",
+      "choices": [
+        {
+          "id": "s3_016_a",
+          "text": "Oui. Je le ferai en rentrant.",
+          "next": "s3_017_a",
+          "effects": {
+            "sarah_trust": 2,
+            "risk": 1,
+            "flags": [
+              "sarah_j3_promised_plant_ritual"
+            ]
+          }
+        },
+        {
+          "id": "s3_016_b",
+          "text": "Rappelle-le-moi, j’ai peur d’oublier.",
+          "next": "s3_017_b",
+          "effects": {
+            "sarah_trust": 0,
+            "guilt": 1,
+            "flags": [
+              "sarah_j3_needs_reminder"
+            ]
+          }
+        },
+        {
+          "id": "s3_016_c",
+          "text": "Je ne sais pas à quelle heure je rentre.",
+          "next": "s3_017_c",
+          "effects": {
+            "sarah_trust": -2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "sarah_j3_uncertain_return"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s3_017_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Oui. Je le ferai en rentrant.",
+      "delay": 0,
+      "next": "s3_018_a"
+    },
+    {
+      "id": "s3_018_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je sais que c’est minuscule. Mais j’avais besoin d’un oui minuscule aujourd’hui.",
+      "delay": 55,
+      "next": "s3_block_c"
+    },
+    {
+      "id": "s3_017_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Rappelle-le-moi, j’ai peur d’oublier.",
+      "delay": 0,
+      "next": "s3_018_b"
+    },
+    {
+      "id": "s3_018_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je peux te le rappeler. J’aimerais juste ne pas avoir l’impression de te rappeler moi aussi.",
+      "delay": 55,
+      "next": "s3_block_c"
+    },
+    {
+      "id": "s3_017_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne sais pas à quelle heure je rentre.",
+      "delay": 0,
+      "next": "s3_018_c"
+    },
+    {
+      "id": "s3_018_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "D’accord. Je vais essayer de ne pas traduire ça trop vite dans ma tête.",
+      "delay": 55,
+      "next": "s3_block_c"
+    },
+    {
+      "id": "s3_block_c",
+      "type": "message",
+      "sender": "system",
+      "text": "S3C — Doute doux",
+      "delay": 1800,
+      "next": "s3_019"
+    },
+    {
+      "id": "s3_019",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je crois que ce qui me fatigue, ce n’est pas quand tu es absent.",
+      "delay": 0,
+      "next": "s3_020"
+    },
+    {
+      "id": "s3_020",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est quand je ne sais pas si je dois t’attendre, t’excuser, ou faire comme si ça ne me touchait pas.",
+      "delay": 70,
+      "next": "s3_021"
+    },
+    {
+      "id": "s3_021",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne veux pas devenir quelqu’un qui compte les minutes. Je veux juste savoir si tu fais attention à nous.",
+      "delay": 80,
+      "next": "s3_022"
+    },
+    {
+      "id": "s3_022",
+      "type": "choice",
+      "sender": "player",
+      "text": "Fin Sarah J3 : répondre au doute doux.",
+      "choices": [
+        {
+          "id": "s3_022_a",
+          "text": "Oui. Et je vais te le prouver avec des gestes, pas des excuses.",
+          "next": "s3_end_presence",
+          "effects": {
+            "sarah_trust": 3,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j3_ending_presence_proved"
+            ]
+          }
+        },
+        {
+          "id": "s3_022_b",
+          "text": "Je fais attention, mais je suis mauvais pour le montrer.",
+          "next": "s3_end_fragile",
+          "effects": {
+            "sarah_trust": 1,
+            "risk": 1,
+            "guilt": 2,
+            "flags": [
+              "sarah_j3_ending_fragile_attention"
+            ]
+          }
+        },
+        {
+          "id": "s3_022_c",
+          "text": "Je ne peux pas gérer ça maintenant.",
+          "next": "s3_end_distance",
+          "effects": {
+            "sarah_trust": -2,
+            "risk": 2,
+            "guilt": 2,
+            "flags": [
+              "sarah_j3_ending_distance"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s3_end_presence",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Sarah J3 : tu choisis le geste concret. Sarah ne demande pas plus pour l’instant, mais elle attendra de voir.",
+      "effects": {
+        "flags": [
+          "sarah_j3_complete",
+          "sarah_j3_presence_chosen"
+        ]
+      }
+    },
+    {
+      "id": "s3_end_fragile",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Sarah J3 : tu restes imparfait mais lisible. Pour Sarah, c’est déjà moins seul.",
+      "effects": {
+        "flags": [
+          "sarah_j3_complete",
+          "sarah_j3_fragile_but_open"
+        ]
+      }
+    },
+    {
+      "id": "s3_end_distance",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Sarah J3 : tu repousses le moment. Sarah ne force pas. Elle commence juste à se protéger.",
+      "effects": {
+        "flags": [
+          "sarah_j3_complete",
+          "sarah_j3_self_protection"
+        ]
+      }
+    }
+  ]
+}

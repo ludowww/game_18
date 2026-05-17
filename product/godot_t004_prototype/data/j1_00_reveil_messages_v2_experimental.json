@@ -1,0 +1,188 @@
+{
+  "schema_version": "0.1-refonte-j1-v2-experimental",
+  "conversation_id": "j1_00_reveil_messages_v2",
+  "day": 1,
+  "contact_id": "system",
+  "start_node": "j1_00_sys_001",
+  "experimental": true,
+  "notes": "Conversation système expérimentale non branchée au runtime actif. Conversion du draft lisible j1_00.",
+  "nodes": [
+    {
+      "id": "j1_00_sys_001",
+      "type": "message",
+      "sender": "system",
+      "text": "L’écran s’allume avant toi.",
+      "delay": 0,
+      "next": "j1_00_sys_002"
+    },
+    {
+      "id": "j1_00_sys_002",
+      "type": "message",
+      "sender": "system",
+      "text": "Cinq conversations attendent. Pas dans le même silence.",
+      "delay": 0,
+      "next": "j1_00_sarah_001"
+    },
+    {
+      "id": "j1_00_sarah_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "T’es réveillé ? Faut qu’on parle d’hier.",
+      "delay": 20,
+      "next": "j1_00_nico_001"
+    },
+    {
+      "id": "j1_00_nico_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "frérot j’ai fait ce que j’ai pu mais ton histoire sent le plan claqué",
+      "delay": 20,
+      "next": "j1_00_camille_001"
+    },
+    {
+      "id": "j1_00_camille_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je crois qu’on a été moins discrets qu’on pensait.",
+      "delay": 20,
+      "next": "j1_00_maya_001"
+    },
+    {
+      "id": "j1_00_maya_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "je pose ça là : vous êtes fatigants.",
+      "delay": 20,
+      "next": "j1_00_ines_001"
+    },
+    {
+      "id": "j1_00_ines_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "C’est peut-être pas mes affaires. Mais tu avais l’air triste hier.",
+      "delay": 20,
+      "next": "j1_00_sys_003"
+    },
+    {
+      "id": "j1_00_sys_003",
+      "type": "message",
+      "sender": "system",
+      "text": "Tu peux répondre à tout le monde. Pas en premier.",
+      "delay": 0,
+      "next": "j1_00_choice_priority"
+    },
+    {
+      "id": "j1_00_choice_priority",
+      "type": "choice",
+      "sender": "player",
+      "text": "À qui répondre en premier ?",
+      "choices": [
+        {
+          "id": "j1_00_reply_sarah_first",
+          "text": "Ouvrir Sarah.",
+          "next": "j1_00_end_to_sarah",
+          "effects": {
+            "confiance_sarah": 2,
+            "distance_sarah": -1,
+            "tension_camille": -1,
+            "flags": [
+              "first_reply_sarah"
+            ]
+          }
+        },
+        {
+          "id": "j1_00_reply_camille_first",
+          "text": "Ouvrir Camille.",
+          "next": "j1_00_end_to_camille",
+          "effects": {
+            "tension_camille": 2,
+            "confiance_sarah": -1,
+            "culpabilite": 1,
+            "flags": [
+              "first_reply_camille",
+              "delayed_reply_sarah_j1"
+            ]
+          }
+        },
+        {
+          "id": "j1_00_reply_nico_first",
+          "text": "Ouvrir Nico.",
+          "next": "j1_00_end_to_nico",
+          "effects": {
+            "dette_nico": 1,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "first_reply_nico",
+              "delayed_reply_sarah_j1",
+              "delayed_reply_camille_j1"
+            ]
+          }
+        },
+        {
+          "id": "j1_00_reply_maya_first",
+          "text": "Ouvrir Maya.",
+          "next": "j1_00_end_to_maya",
+          "effects": {
+            "suspicion_maya": 1,
+            "risque_exposition": 1,
+            "flags": [
+              "first_reply_maya",
+              "delayed_reply_sarah_j1",
+              "delayed_reply_camille_j1"
+            ]
+          }
+        },
+        {
+          "id": "j1_00_reply_ines_first",
+          "text": "Ouvrir Inès.",
+          "next": "j1_00_end_to_ines",
+          "effects": {
+            "fuite_ines": 2,
+            "fatigue_emotionnelle": 1,
+            "culpabilite": 1,
+            "flags": [
+              "first_reply_ines",
+              "delayed_reply_sarah_j1",
+              "delayed_reply_camille_j1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j1_00_end_to_sarah",
+      "type": "end",
+      "sender": "system",
+      "text": "Tu ouvres Sarah en premier.",
+      "delay": 0
+    },
+    {
+      "id": "j1_00_end_to_camille",
+      "type": "end",
+      "sender": "system",
+      "text": "Tu ouvres Camille en premier.",
+      "delay": 0
+    },
+    {
+      "id": "j1_00_end_to_nico",
+      "type": "end",
+      "sender": "system",
+      "text": "Tu ouvres Nico en premier.",
+      "delay": 0
+    },
+    {
+      "id": "j1_00_end_to_maya",
+      "type": "end",
+      "sender": "system",
+      "text": "Tu ouvres Maya en premier.",
+      "delay": 0
+    },
+    {
+      "id": "j1_00_end_to_ines",
+      "type": "end",
+      "sender": "system",
+      "text": "Tu ouvres Inès en premier.",
+      "delay": 0
+    }
+  ]
+}

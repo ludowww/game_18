@@ -1,0 +1,30 @@
+Bloc 1/8 — Roadmap index
+
+DOUBLE VIE — ROADMAP PROJET
+
+Salon : #game_18
+Thread actuel : Roadmap
+
+Vision courte :
+Jeu narratif adulte en fausse messagerie, centré sur séduction, double vie, risques et conséquences.
+
+Règle centrale :
+Le joueur doit être accro aux messages avant d’être accro aux images.
+
+Promesse :
+Un simulateur de double vie relationnelle où chaque message peut devenir une opportunité, un mensonge, une preuve ou une crise.
+
+Nom de travail :
+Double Vie
+
+Sous-titres possibles :
+- Vu à 23:42
+- Messages Privés
+- Contacts Cachés
+- Messages Supprimés
+
+MVP :
+Double Vie - Prototype 0.1
+
+Prochaine étape :
+Créer le thread Vision produit, puis valider pitch + limites du jeu.

@@ -1,0 +1,688 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "camille_j4_complete",
+  "day": 4,
+  "contact_id": "camille",
+  "start_node": "c4_block_a",
+  "nodes": [
+    {
+      "id": "c4_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "C4A — Camille : une fenêtre qui s’ouvre",
+      "delay": 0,
+      "next": "c4_001"
+    },
+    {
+      "id": "c4_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je viens de passer devant le café aux tables bancales. Celui où on ne se croise jamais par hasard.",
+      "delay": 0,
+      "next": "c4_002"
+    },
+    {
+      "id": "c4_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "J’ai pensé à toi. Pas au café. Pas à hier. Au moment précis où quelqu’un regarde une porte et prétend réfléchir à autre chose.",
+      "delay": 80,
+      "next": "c4_003"
+    },
+    {
+      "id": "c4_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille teste si J4 devient concret.",
+      "choices": [
+        {
+          "id": "c4_003_a",
+          "text": "Tu as choisi l’endroit exprès ?",
+          "next": "c4_004_a",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "camille_j4_questions_place"
+            ]
+          }
+        },
+        {
+          "id": "c4_003_b",
+          "text": "Aujourd’hui je dois rester prudent.",
+          "next": "c4_004_b",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_j4_stays_prudent"
+            ]
+          }
+        },
+        {
+          "id": "c4_003_c",
+          "text": "Dis-moi juste combien de temps elle reste ouverte.",
+          "next": "c4_004_c",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_window_accepted"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c4_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu as choisi l’endroit exprès ?",
+      "delay": 0,
+      "next": "c4_005_a"
+    },
+    {
+      "id": "c4_005_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "J’ai surtout choisi un endroit où tu ne peux pas répondre “c’est compliqué” sans que la table entière se moque de toi.",
+      "delay": 55,
+      "next": "c4_006"
+    },
+    {
+      "id": "c4_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Aujourd’hui je dois rester prudent.",
+      "delay": 0,
+      "next": "c4_005_b"
+    },
+    {
+      "id": "c4_005_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Prudent, c’est joli. Ça veut parfois dire que tu as déjà imaginé le contraire.",
+      "delay": 55,
+      "next": "c4_006"
+    },
+    {
+      "id": "c4_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Dis-moi juste combien de temps elle reste ouverte.",
+      "delay": 0,
+      "next": "c4_005_c"
+    },
+    {
+      "id": "c4_005_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Voilà. Là tu regardes la porte. C’est plus honnête que de commenter la poignée.",
+      "delay": 55,
+      "next": "c4_006"
+    },
+    {
+      "id": "c4_006",
+      "type": "message",
+      "sender": "camille",
+      "text": "Quarante minutes. Fin d’après-midi. Table du fond, café trop fort. Juste assez loin de tes habitudes pour que tu hésites déjà.",
+      "delay": 110,
+      "next": "c4_007"
+    },
+    {
+      "id": "c4_007",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre à la fenêtre concrète de Camille.",
+      "choices": [
+        {
+          "id": "c4_007_a",
+          "text": "Je peux peut-être disparaître quarante minutes.",
+          "next": "c4_008_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j4_maybe_disappears"
+            ]
+          }
+        },
+        {
+          "id": "c4_007_b",
+          "text": "J’ai pas envie de passer ma soirée à regarder derrière moi.",
+          "next": "c4_008_b",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "sarah_trust": 1,
+            "flags": [
+              "camille_j4_refuses_trace"
+            ]
+          }
+        },
+        {
+          "id": "c4_007_c",
+          "text": "Si on le fait, personne ne doit pouvoir le lire après.",
+          "next": "c4_008_c",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "j4_social_trace",
+              "camille_j4_controls_trace"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c4_008_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je peux peut-être disparaître quarante minutes.",
+      "delay": 0,
+      "next": "c4_009_a"
+    },
+    {
+      "id": "c4_009_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "“Peut-être disparaître”, c’est presque une promesse quand ça vient de toi.",
+      "delay": 60,
+      "next": "c4_block_b"
+    },
+    {
+      "id": "c4_008_b",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai pas envie de passer ma soirée à regarder derrière moi.",
+      "delay": 0,
+      "next": "c4_009_b"
+    },
+    {
+      "id": "c4_009_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors efface l’idée. Mais ne fais pas semblant qu’elle n’a pas laissé de marque.",
+      "delay": 60,
+      "next": "c4_block_b"
+    },
+    {
+      "id": "c4_008_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Si on le fait, personne ne doit pouvoir le lire après.",
+      "delay": 0,
+      "next": "c4_009_c"
+    },
+    {
+      "id": "c4_009_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu vois ? Tu réponds déjà depuis le seuil, comme si entrer et repartir demandaient la même phrase.",
+      "delay": 60,
+      "next": "c4_block_b"
+    },
+    {
+      "id": "c4_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "C4B — Camille : une proposition plus difficile à ranger",
+      "delay": 0,
+      "next": "c4_010"
+    },
+    {
+      "id": "c4_010",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je n’ai pas bougé. Je suis même arrivée trop tôt, ce qui est très mauvais signe.",
+      "delay": 0,
+      "next": "c4_011"
+    },
+    {
+      "id": "c4_011",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je pourrais t’envoyer l’adresse. Ou je pourrais te laisser choisir de ne pas la demander.",
+      "delay": 70,
+      "next": "c4_012"
+    },
+    {
+      "id": "c4_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille met le joueur devant une demande explicite.",
+      "choices": [
+        {
+          "id": "c4_012_a",
+          "text": "Envoie.",
+          "next": "c4_013_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 3,
+            "guilt": 1,
+            "flags": [
+              "camille_j4_asks_address",
+              "camille_window_accepted"
+            ]
+          }
+        },
+        {
+          "id": "c4_012_b",
+          "text": "Ne l’envoie pas. Si je demande, ce sera déjà trop.",
+          "next": "c4_013_b",
+          "effects": {
+            "camille_interest": 0,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_j4_blocks_address"
+            ]
+          }
+        },
+        {
+          "id": "c4_012_c",
+          "text": "Décris juste l’endroit, sans adresse.",
+          "next": "c4_013_c",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "camille_j4_half_measure"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c4_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Envoie.",
+      "delay": 0,
+      "next": "c4_014_a"
+    },
+    {
+      "id": "c4_014_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu sais que ce mot est beaucoup plus clair que toutes tes phrases raisonnables ?",
+      "delay": 50,
+      "next": "c4_015"
+    },
+    {
+      "id": "c4_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Ne l’envoie pas. Si je demande, ce sera déjà trop.",
+      "delay": 0,
+      "next": "c4_014_b"
+    },
+    {
+      "id": "c4_014_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu essaies encore de sauver une version de toi qui n’a pas ouvert cette conversation.",
+      "delay": 50,
+      "next": "c4_015"
+    },
+    {
+      "id": "c4_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Décris juste l’endroit, sans adresse.",
+      "delay": 0,
+      "next": "c4_014_c"
+    },
+    {
+      "id": "c4_014_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Un banc sombre, une vitrine fermée, un reflet où tu aurais l’air plus honnête si tu venais vraiment.",
+      "delay": 50,
+      "next": "c4_015"
+    },
+    {
+      "id": "c4_015",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne te demande pas de choisir ta vie. Juste de voir si tu peux mentir à ton agenda sans te mentir à toi-même.",
+      "delay": 100,
+      "next": "c4_016"
+    },
+    {
+      "id": "c4_016",
+      "type": "choice",
+      "sender": "player",
+      "text": "Choisir comment gérer l’alibi immédiat.",
+      "choices": [
+        {
+          "id": "c4_016_a",
+          "text": "Je vais inventer un détour simple.",
+          "next": "c4_017_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 2,
+            "flags": [
+              "camille_j4_simple_alibi",
+              "j4_social_trace"
+            ]
+          }
+        },
+        {
+          "id": "c4_016_b",
+          "text": "Je ne veux pas mentir pour quarante minutes.",
+          "next": "c4_017_b",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "sarah_trust": 1,
+            "flags": [
+              "camille_j4_refuses_alibi"
+            ]
+          }
+        },
+        {
+          "id": "c4_016_c",
+          "text": "Je peux rester en messages, pas plus.",
+          "next": "c4_017_c",
+          "effects": {
+            "camille_interest": 0,
+            "risk": 0,
+            "guilt": 1,
+            "flags": [
+              "camille_j4_messages_only"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c4_017_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je vais inventer un détour simple.",
+      "delay": 0,
+      "next": "c4_018_a"
+    },
+    {
+      "id": "c4_018_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Simple, c’est le mot qu’on utilise avant que quelqu’un remarque un détail.",
+      "delay": 60,
+      "next": "c4_block_c"
+    },
+    {
+      "id": "c4_017_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne veux pas mentir pour quarante minutes.",
+      "delay": 0,
+      "next": "c4_018_b"
+    },
+    {
+      "id": "c4_018_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors ne mens pas. Mais ne m’écris pas comme si tu étais déjà venu.",
+      "delay": 60,
+      "next": "c4_block_c"
+    },
+    {
+      "id": "c4_017_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je peux rester en messages, pas plus.",
+      "delay": 0,
+      "next": "c4_018_c"
+    },
+    {
+      "id": "c4_018_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Les messages sont aussi des endroits. Certains sont plus compromettants que des rues.",
+      "delay": 60,
+      "next": "c4_block_c"
+    },
+    {
+      "id": "c4_block_c",
+      "type": "message",
+      "sender": "system",
+      "text": "C4C — Camille : ce qui reste après la fenêtre",
+      "delay": 0,
+      "next": "c4_019"
+    },
+    {
+      "id": "c4_019",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je vais partir dans quelques minutes. Ça te laisse le temps d’être courageux, lâche, ou très poli.",
+      "delay": 0,
+      "next": "c4_020"
+    },
+    {
+      "id": "c4_020",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne sais pas lequel m’agace le plus.",
+      "delay": 65,
+      "next": "c4_021"
+    },
+    {
+      "id": "c4_021",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille laisse la fenêtre ouverte dans la tête du joueur.",
+      "choices": [
+        {
+          "id": "c4_021_a",
+          "text": "Je n’ai pas été poli. J’ai eu peur.",
+          "next": "c4_022_a",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "guilt": 2,
+            "flags": [
+              "camille_j4_admits_fear"
+            ]
+          }
+        },
+        {
+          "id": "c4_021_b",
+          "text": "Reste encore un peu.",
+          "next": "c4_022_b",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j4_asks_stay"
+            ]
+          }
+        },
+        {
+          "id": "c4_021_c",
+          "text": "Pars. Ce sera plus simple pour tout le monde.",
+          "next": "c4_022_c",
+          "effects": {
+            "camille_interest": -2,
+            "risk": -1,
+            "sarah_trust": 1,
+            "flags": [
+              "camille_j4_sends_away"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c4_022_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je n’ai pas été poli. J’ai eu peur.",
+      "delay": 0,
+      "next": "c4_023_a"
+    },
+    {
+      "id": "c4_023_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ça, au moins, c’est une vraie phrase. Je peux faire quelque chose avec la peur. Pas avec les excuses.",
+      "delay": 55,
+      "next": "c4_024"
+    },
+    {
+      "id": "c4_022_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Reste encore un peu.",
+      "delay": 0,
+      "next": "c4_023_b"
+    },
+    {
+      "id": "c4_023_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je reste. Mais maintenant c’est toi qui as créé l’attente, pas moi.",
+      "delay": 55,
+      "next": "c4_024"
+    },
+    {
+      "id": "c4_022_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Pars. Ce sera plus simple pour tout le monde.",
+      "delay": 0,
+      "next": "c4_023_c"
+    },
+    {
+      "id": "c4_023_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Simple, oui. Et étrangement pas très propre.",
+      "delay": 55,
+      "next": "c4_024"
+    },
+    {
+      "id": "c4_024",
+      "type": "message",
+      "sender": "camille",
+      "text": "Demain, je ne te demanderai pas si tu pouvais venir. Je te demanderai ce que tu as fait de cette possibilité.",
+      "delay": 95,
+      "next": "c4_025"
+    },
+    {
+      "id": "c4_025",
+      "type": "choice",
+      "sender": "player",
+      "text": "Clore Camille J4.",
+      "choices": [
+        {
+          "id": "c4_025_a",
+          "text": "Je veux garder cette possibilité ouverte.",
+          "next": "c4_026_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j4_keeps_window_open"
+            ]
+          }
+        },
+        {
+          "id": "c4_025_b",
+          "text": "Je ne peux pas te promettre plus que des messages.",
+          "next": "c4_026_b",
+          "effects": {
+            "camille_interest": 0,
+            "risk": 0,
+            "guilt": 1,
+            "flags": [
+              "camille_j4_limits_to_messages"
+            ]
+          }
+        },
+        {
+          "id": "c4_025_c",
+          "text": "Je dois refermer avant que ça déborde.",
+          "next": "c4_026_c",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "sarah_trust": 1,
+            "flags": [
+              "camille_j4_closes_window"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c4_026_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je veux garder cette possibilité ouverte.",
+      "delay": 0,
+      "next": "c4_end_window"
+    },
+    {
+      "id": "c4_end_window",
+      "type": "end",
+      "sender": "camille",
+      "text": "Alors garde-la bien. Les possibilités ouvertes finissent toujours par laisser entrer quelque chose.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "camille_j4_end_open_window"
+        ]
+      }
+    },
+    {
+      "id": "c4_026_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne peux pas te promettre plus que des messages.",
+      "delay": 0,
+      "next": "c4_end_trace"
+    },
+    {
+      "id": "c4_end_trace",
+      "type": "end",
+      "sender": "camille",
+      "text": "Les messages suffisent parfois. Surtout quand ils disent exactement ce que tu refuses de faire.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "camille_j4_end_message_trace"
+        ]
+      }
+    },
+    {
+      "id": "c4_026_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je dois refermer avant que ça déborde.",
+      "delay": 0,
+      "next": "c4_end_retreat"
+    },
+    {
+      "id": "c4_end_retreat",
+      "type": "end",
+      "sender": "camille",
+      "text": "Referme. Je saurai quand même que tu as regardé par l’ouverture.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "camille_j4_end_retreat"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "id": "t002_camille_j1_structured",
+  "source": "T001 — J1 Camille",
+  "purpose": "Normalisation du dialogue pour intégration Godot ultérieure",
+  "constraints": {
+    "scope": "Camille J1 uniquement",
+    "rewrite_policy": "fond conservé, micro-ajustements uniquement",
+    "core_tension": "messages d’abord"
+  },
+  "dialogue": [
+    {
+      "id": "c1_001",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "camille",
+      "text": "Alors… tu fais toujours semblant d’être sérieux le matin ?",
+      "delay": "start"
+    },
+    {
+      "id": "c1_002",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "player",
+      "text": "Répondre à Camille",
+      "delay": "1m",
+      "choices": [
+        {
+          "id": "c1_002_a",
+          "text": "Seulement quand on me surveille.",
+          "branch": "flirt",
+          "effect": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": {
+              "answered_camille_fast": true
+            }
+          }
+        },
+        {
+          "id": "c1_002_b",
+          "text": "Je suis très sérieux. Trop, même.",
+          "branch": "soft",
+          "effect": {
+            "camille_interest": 0,
+            "flags": {
+              "answered_camille_fast": true
+            }
+          }
+        },
+        {
+          "id": "c1_002_c",
+          "text": "Ignorer pour l’instant",
+          "branch": "ignore",
+          "effect": {
+            "camille_interest": -1,
+            "sarah_trust": 1,
+            "flags": {
+              "left_camille_on_read": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "c1_003_flirt",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "player",
+      "text": "Seulement quand on me surveille.",
+      "delay": "instant",
+      "branch": "flirt"
+    },
+    {
+      "id": "c1_004_flirt",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "camille",
+      "text": "Donc si je te surveille, tu redeviens sage ? Intéressant.",
+      "delay": "1m",
+      "branch": "flirt"
+    },
+    {
+      "id": "c1_003_soft",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "player",
+      "text": "Je suis très sérieux. Trop, même.",
+      "delay": "instant",
+      "branch": "soft"
+    },
+    {
+      "id": "c1_004_soft",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "camille",
+      "text": "Ça sonne comme un défi, pas comme une information.",
+      "delay": "1m",
+      "branch": "soft"
+    },
+    {
+      "id": "c1_003_ignore",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "system",
+      "text": "Camille reste en attente. La notification disparaît, pas la tension.",
+      "delay": "later",
+      "branch": "ignore",
+      "effect": {
+        "route_note": "sortie temporaire vers Sarah J1 dans le flow complet"
+      }
+    },
+    {
+      "id": "c1_005",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "camille",
+      "text": "Je passe près de ton quartier ce soir. Enfin… peut-être.",
+      "delay": "2m"
+    },
+    {
+      "id": "c1_006",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "player",
+      "text": "Camille ouvre une porte.",
+      "delay": "1m",
+      "choices": [
+        {
+          "id": "c1_006_a",
+          "text": "Préviens-moi si le peut-être devient sûr.",
+          "branch": "available",
+          "effect": {
+            "camille_interest": 1,
+            "risk": 1
+          }
+        },
+        {
+          "id": "c1_006_b",
+          "text": "Ce soir c’est compliqué.",
+          "branch": "distant",
+          "effect": {
+            "camille_interest": -1,
+            "sarah_trust": 1
+          }
+        },
+        {
+          "id": "c1_006_c",
+          "text": "Compliqué, mais j’ai envie de savoir.",
+          "branch": "tempted",
+          "effect": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "c1_007_a",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "camille",
+      "text": "Je note. J’aime bien quand tu réponds vite.",
+      "delay": "1m",
+      "branch": "available"
+    },
+    {
+      "id": "c1_007_b",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "camille",
+      "text": "Toujours sérieux, donc. Dommage, j’étais curieuse.",
+      "delay": "1m",
+      "branch": "distant"
+    },
+    {
+      "id": "c1_007_c",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "camille",
+      "text": "Voilà. Là tu es beaucoup plus intéressant.",
+      "delay": "1m",
+      "branch": "tempted"
+    },
+    {
+      "id": "c1_008_end",
+      "day": 1,
+      "contact": "camille",
+      "speaker": "system",
+      "text": "Fin temporaire du bloc Camille J1. La conversation peut reprendre après interruption Sarah/Nico.",
+      "delay": "after_branch",
+      "effect": {
+        "unlock": "sarah_day1",
+        "keeps_thread_open": true
+      }
+    }
+  ]
+}

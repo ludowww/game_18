@@ -1,0 +1,48 @@
+Bloc 7/8 — Phase 4 et 5
+
+PHASE 4 — CONTENU JOUABLE
+Objectif : créer une vraie démo courte.
+
+T030 — Écrire scène d’intro
+Statut : TODO
+
+T031 — Écrire Jour 1 complet
+Statut : TODO
+
+T032 — Écrire Jour 2 complet
+Statut : TODO
+
+T033 — Écrire première récompense
+Statut : TODO
+
+T034 — Écrire première crise
+Statut : TODO
+
+T035 — Écrire première jalousie
+Statut : TODO
+
+T036 — Écrire première confession possible
+Statut : TODO
+
+T037 — Écrire première fin
+Statut : TODO
+
+T038 — Intégrer galerie contextuelle placeholder
+Statut : TODO
+
+PHASE 5 — PROTOTYPE 0.1
+Objectif : version testable privée ou publique.
+
+T039 — Étendre à 5-7 jours
+T040 — Ajouter 3-5 fins
+T041 — Relecture cohérence dialogues Camille/Sarah J1 — DONE (voir Bloc 4, Roadmap Discord actuelle)
+T042 — Ajouter messages supprimés
+T043 — Ajouter archives/corbeille
+T044 — Ajouter mode soft/adulte
+T045 — Polish notifications
+T046 — Playtest rythme
+T047 — Corrections
+T048 — Build Windows
+
+Livrable :
+Double Vie - Prototype 0.1.

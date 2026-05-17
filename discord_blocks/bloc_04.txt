@@ -1,0 +1,724 @@
+Bloc 4/8 — Roadmap locale resynchronisée T001 à T124
+
+SOURCE DE VÉRITÉ
+La Roadmap Discord reste la source de vérité pour les IDs Txxx.
+Ce bloc local est une copie de suivi alignée après T008.
+
+T001 — J1 Camille / scénario prototype
+Thread : Dialogues
+Statut : DONE
+Sortie : conversation jouable brute pour valider la boucle messages → choix → attente.
+
+T002 — Normalisation du format dialogue
+Thread : Dialogues
+Statut : DONE
+Sortie : J1 Camille structuré avec IDs, speakers, délais, choix, branches et effets simples.
+
+T003 — Mini-schéma JSON stable Godot
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : format JSON plat, lisible, stable, suffisant pour Godot.
+
+T004 — Prototype conversation Godot
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : prototype Godot minimal lisant le JSON T003 et affichant une conversation interactive.
+
+T005 — Tester / ajuster l’UX faux smartphone minimal
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : audit UX statique + ajustements MVP faux smartphone.
+
+T006 — Polish UX faux smartphone court
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : polish léger de l’interface messagerie mobile, sans nouveau système.
+
+T007 — Étendre Camille J1 en contenu complet intégrable
+Thread : Dialogues / Scope MVP
+Statut : DONE
+Sortie : contenu J1 Camille complet intégrable produit et validé.
+Preuves : narrative/t007_camille_j1_complete.json ; product/godot_t004_prototype/data/camille_j1_complete.json ; product/t007_camille_j1_complete.md.
+Validation : 45 nodes, 6 choice_nodes, 3 end_nodes, aucun duplicate_id, aucun missing_next_target.
+
+T008 — Resynchroniser la roadmap locale
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : ancien intitulé T007 corrigé ; T001 à T007 listés avec statuts à jour, dont T007 DONE ; prototype et JSON inchangés.
+
+T009 — Brancher Camille J1 complet dans le prototype
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : prototype T004/T006 branché sur product/godot_t004_prototype/data/camille_j1_complete.json ; 6 choice_nodes et 3 fins vérifiés statiquement ; runtime Godot impossible localement.
+
+T011 — Corrections UX runtime après playtest
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : couleur dédiée Camille ; styles système/attente/introspection ; panneau choix avec padding bas ; auto-scroll choix ; délai affichage ajusté selon longueur ; JSON T003 conservé.
+
+T012 — Playtest runtime après T011
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : retours runtime capturés : choix instables, espace vide, tempo trop rapide, narration insuffisamment différenciée.
+
+T013 — Stabiliser lecture choix + tempo écriture + style narration
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : padding artificiel supprimé ; zone choix stable ; scroll moins brutal ; tempo ralenti ; narration/attente/introspection en style éditorial ; JSON T003 et contenu Camille J1 conservés.
+
+T014 — Playtest runtime stabilité lecture après T013
+Thread : Scope MVP / technique
+Statut : NON VALIDÉ
+Sortie : problèmes confirmés sur timing/typing indicator et zone de choix trop envahissante.
+
+T015 — Repenser interaction choix + timing d’écriture
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : délai appliqué avant node cible ; typing uniquement avant Camille ; réponse joueur immédiate ; zone choix compacte type barre de réponse ; choix longs gérés ; JSON T003 et contenu Camille J1 conservés.
+
+T016 — Playtest runtime messagerie après T015
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : retours rythme capturés : besoin de respirations entre narration, messages et choix.
+
+T017 — Ajuster respirations entre narration, messages et choix
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : délai avant choix ; temps lecture après narration/système/introspection ; typing Camille après respiration narrative ; temps minimum entre messages ; JSON T003 et contenu Camille J1 conservés.
+
+T018 — Playtest runtime après T017
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : Camille J1 validé runtime côté Ludo sur Godot 4.6.
+
+T019 — Verrouiller Camille J1 MVP
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : Camille J1 verrouillé comme première tranche MVP validée runtime ; schéma T003, contenu complet, prototype branché, limites connues et Godot 4.6 documentés ; aucun changement gameplay/contenu/UX.
+
+T021 — Prototype liste de conversations minimal
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : écran liste conversations ajouté ; entrée Camille J1 ; clic Camille ouvre le chat existant ; retour depuis chat vers liste ; structure prête pour Sarah/autres contacts ; JSON Camille J1 inchangé.
+
+T022 — Playtest runtime liste conversations
+Thread : Scope MVP / technique
+Statut : DONE AVEC RÉSERVE
+Sortie : navigation liste → Camille → retour validée, mais Camille redémarrait à zéro au retour.
+
+T023 — État minimal conversation + aperçu liste
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : état runtime minimal ajouté ; messages/progression/choix conservés en mémoire ; aperçu liste dernier message ou nouveau message ; pas de sauvegarde disque ; JSON T003 et Camille J1 inchangés.
+
+T025B — Préparation multi-conversation prototype
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : structure multi-conversation simple ; état runtime séparé par conversation ; liste prête pour Camille + Sarah ; branchement futur Sarah prévu sans contenu inventé ; JSON Camille inchangé.
+
+T026 — Intégrer Sarah J1 placeholder dans le prototype
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : Sarah activée dans la liste ; branchement sur product/godot_t004_prototype/data/sarah_j1_placeholder.json ; états/previews séparés Camille/Sarah ; choix Sarah validé statiquement ; JSON T003 conservé ; JSON Camille et Sarah inchangés.
+
+T027 — Playtest runtime Camille/Sarah + états séparés
+Thread : Scope MVP / technique
+Statut : DONE AVEC RETOURS
+Sortie : problèmes UI capturés sur choix longs, couleurs contacts et layout Messages.
+
+T028 — Lisibilité choix longs + couleurs contacts + layout Messages
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : choix longs en autowrap avec hauteur adaptée ; zone choix bordée/accentuée avec hover/focus ; couleurs Camille violet et Sarah ambre ; liste Messages corrigée contre troncature ; JSON Camille/Sarah et schéma T003 inchangés.
+
+T030 — Notifications simples / nouveaux messages entre conversations
+Thread : Scope MVP / technique
+Statut : VALIDÉ
+Sortie : badge simple “nouveau” dans la liste Messages ; preview mise à jour par conversation ; états has_new Camille/Sarah séparés ; aucune notification OS, sauvegarde disque ou modification JSON T003.
+
+T031 — Playtest runtime notifications simples multi-conversations
+Thread : Scope MVP / technique
+Statut : VALIDÉ AVEC RETOUR
+Sortie : badges/flow notifications simples validés ; problème preview détecté et traité ensuite par T032/T034.
+
+T032 — Corriger preview dernier message dans Messages
+Thread : Scope MVP / technique
+Statut : VALIDÉ
+Sortie : preview mise à jour uniquement avec le dernier message pertinent ; previews Camille/Sarah séparées ; messages système/narration ignorés ; réponses joueur préfixées `Vous : ...` ; has_new conservé ; JSON inchangés.
+
+T033 — Playtest runtime previews Messages + badges has_new
+Thread : Scope MVP / technique
+Statut : VALIDÉ AVEC CORRECTIF T034
+Sortie : badges conservés ; preview logique OK mais visibilité UI insuffisante, corrigée par T034.
+
+T034 — Corriger affichage visible des previews dans Messages
+Thread : Scope MVP / technique
+Statut : VALIDÉ
+Sortie : cartes Messages ajustées pour afficher 3 niveaux visibles — contact, titre, preview ; hauteur carte augmentée ; preview non clippée ; règles T032 conservées ; JSON inchangés et aucune sauvegarde disque.
+
+T035 — Playtest runtime visibilité previews Messages
+Thread : Scope MVP / technique
+Statut : VALIDÉ CÔTÉ LUDO
+Sortie : previews Messages visibles ; cartes 3 niveaux OK ; règles `Vous : ...`, système ignoré et badges `nouveau` conservées.
+
+T036 — Verrouiller socle multi-conversation MVP
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : socle multi-conversation MVP documenté/verrouillé ; liste Messages, Camille/Sarah, états runtime séparés, previews, badges nouveau, navigation aller/retour ; limites connues listées ; aucun changement gameplay/JSON/UX.
+
+T037 — Étendre Sarah J1 en contenu complet intégrable
+Thread : Dialogues
+Statut : DONE
+Sortie : Sarah J1 complet produit au format JSON plat T003 ; ton domestique/tendre/soupçon doux distinct de Camille ; fichiers `narrative/t037_sarah_j1_complete.json`, `product/godot_t004_prototype/data/sarah_j1_complete.json`, `product/t037_sarah_j1_complete.md` ; validation 41 nodes, 5 choice nodes, 3 end nodes, aucun duplicate ID, aucun missing target, aucun unreachable node.
+
+T038 — Resynchroniser roadmap locale après T037
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : ancien intitulé T037 obsolète corrigé ; T037 marqué DONE avec preuves et validation ; JSON non modifiés ; Sarah complet non intégré dans le prototype, qui pointe encore vers `sarah_j1_placeholder.json`.
+
+T039 — Intégrer Sarah J1 complet dans le prototype
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : `conversation_state.gd` pointe désormais Sarah vers `res://data/sarah_j1_complete.json` ; Sarah reste active ; état runtime, preview et badge `nouveau` conservés ; Camille inchangée ; JSON T003 inchangé ; validation Sarah complet 41 nodes, 5 choice nodes, 3 end nodes, aucun lien cassé.
+
+T041 — Relecture cohérence dialogues Camille/Sarah J1
+Thread : Dialogues
+Statut : DONE
+Sortie : relecture cohérence Camille/Sarah J1 effectuée ; résultat cohérent MVP ; patch Sarah doux appliqué pour garder un soupçon moins accusatoire ; Camille inchangée ; schéma T003 inchangé ; validation post-patch OK.
+
+T042 — Resynchroniser roadmap locale après T041
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : intitulé T041 corrigé ; T041 marqué DONE ; résumé et validation post-patch ajoutés ; aucun JSON modifié ; prototype Godot non modifié.
+
+T043 — Sauvegarde persistante minimale
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : sauvegarde locale `user://double_vie_save.json` ajoutée ; chargement au démarrage ; persistance des messages affichés, progression/next_node, choix actifs/effectués, previews, badges has_new et game_state minimal ; bouton debug discret `Reset` ajouté ; JSON T003 inchangé ; pas de cloud/compte/système complexe.
+
+T045 — Notifications dynamiques simples
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : déclencheurs hardcodés légers côté Godot ; après certains nodes Camille/Sarah, l’autre conversation reçoit `has_new = true` + preview d’appel ; badge visible dans Messages ; état sauvegardé via T043 ; anti-doublon `dynamic_notifications_fired` ; JSON T003 inchangé ; pas de notification OS, temps réel ou scheduler.
+
+T047 — Clarifier previews notifications dynamiques
+Thread : Scope MVP / technique
+Statut : VALIDÉ
+Sortie : previews T045 clarifiées avec libellés neutres `Nouveau message de Sarah` / `Nouveau message de Camille` ; déclencheurs, has_new, badge, sauvegarde et anti-doublon conservés ; anciens textes ambigus retirés ; aucun JSON modifié.
+
+T049 — Verrouiller socle MVP J1 Camille/Sarah
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : socle MVP J1 Camille/Sarah figé avant J2 : Camille J1 complet, Sarah J1 complet, liste Messages, navigation, états séparés, sauvegarde, previews, badges et notifications dynamiques simples ; T043→T048 marqués validés pour ce verrouillage ; limites connues listées ; aucun changement JSON/gameplay/UX/code.
+
+Livrable :
+Socle MVP J1 verrouillé dans `product/t049_verrouiller_socle_mvp_j1_camille_sarah.md`. Prochaine étape : cadrer J2 ou calendrier/jours dans un ticket séparé.
+
+T050 — Cadrage système minimal Jours
+Thread : Scope MVP / technique + Roadmap
+Statut : DONE
+Sortie : règle J1→J2 définie ; état global minimal `current_day` cadré ; fin J1 = Camille J1 + Sarah J1 terminés sans choix bloquant ; conversations J2 disponibles à partir de `current_day = 2` ; J1 reste visible en historique ; sauvegarde à étendre avec `current_day`/`completed_days` compatibles ; aucun changement JSON/gameplay/UX/code.
+
+Livrable :
+Cadrage système minimal Jours dans `product/t050_cadrage_systeme_minimal_jours.md`. Prochaine étape : implémenter `current_day` + passage J1→J2 sans écrire encore les dialogues J2.
+
+T051 — Implémenter current_day + passage J1→J2
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : `current_day`, `completed_days` et détection fin J1 ajoutés ; passage explicite J1→J2 via bouton discret `Passer au Jour 2` dans Messages ; `current_day` sauvegardé/chargé avec compatibilité anciennes saves ; Camille J2/Sarah J2 préparées comme entrées à venir non cliquables ; J1 reste visible ; aucun JSON J1 ni contenu J2 ajouté.
+
+Livrable :
+Implémentation minimale Jours documentée dans `product/t051_implementer_current_day_passage_j1_j2.md`. Prochaine étape : playtest runtime passage J1→J2.
+
+T053 — Sécuriser notifications dynamiques selon état conversation/jour
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : garde `_can_emit_dynamic_notification()` ajouté ; plus de `has_new` si cible done, indisponible, déjà ouverte ou si `current_day > 1` pour les triggers J1 ; anti-doublon `dynamic_notifications_fired`, sauvegarde et previews neutres conservés ; aucun JSON modifié ; pas de scheduler ni notification OS.
+
+Livrable :
+Notifications dynamiques sécurisées dans `product/t053_securiser_notifications_dynamiques_etat_jour.md`. Prochaine étape : playtest runtime anti-notifications fantômes.
+
+T055 — Verrouiller socle Jours + notifications
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : socle `current_day` / `completed_days` / passage J1→J2 / conversations J2 à venir / notifications dynamiques sécurisées / sauvegarde compatible verrouillé ; T050→T054 marqués validés pour ce verrouillage ; limite produit ajoutée : notifications encore sans temporalité réelle, surtout décoratives tant qu’il n’y a pas de verrous temporels narratifs ; aucun changement JSON/gameplay/UX/code.
+
+Note Roadmap : le socle valide multi-conversation, badges, previews, sauvegarde et passage J1→J2, mais pas encore le cœur addictif “j’attends un message, je vais voir ailleurs, puis ça revient”. Prochaine brique à cadrer : verrous temporels narratifs MVP, sans temps réel complexe.
+
+Livrable :
+Socle Jours + notifications verrouillé dans `product/t055_verrouiller_socle_jours_notifications.md`. Prochaine étape : cadrer les verrous temporels narratifs MVP.
+
+T056 — Segmentation narrative J1
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : Camille J1 et Sarah J1 découpés en 3 blocs chacun ; rythme MVP défini Camille début → attente → Sarah → notification Camille → alternance contrôlée → fin J1 ; logique prévue via états/unlocks narratifs, sans temps réel, sans scheduler et sans modification JSON J1.
+
+Livrable :
+Segmentation narrative J1 documentée dans `product/t056_segmentation_narrative_j1.md`. Prochaine étape : implémenter les verrous narratifs de blocs J1.
+
+T057 — Implémenter verrous narratifs de blocs J1
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : notion runtime de blocs J1 ajoutée (`camille_c1a/c1b/c1c`, `sarah_s1a/s1b/s1c`) ; fin de bloc = attente claire + bloc suivant débloqué ; notifications posées seulement quand un bloc est réellement disponible ; `conversation_blocks` sauvegardé avec compatibilité anciennes saves ; aucun JSON T003 modifié ; aucun contenu J2 ajouté.
+
+Livrable :
+Verrous narratifs de blocs J1 implémentés et documentés dans `product/t057_implementer_verrous_narratifs_blocs_j1.md`. Prochaine étape : playtest runtime alternance blocs J1.
+
+T059 — Verrouiller rythme narratif J1 segmenté
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : rythme MVP J1 segmenté figé avant J2 ; blocs Camille/Sarah, statuts `locked/available/active/done`, unlocks croisés, états d’attente, notifications liées aux blocs et sauvegarde `conversation_blocks` documentés ; T056→T058 marqués validés ; limites connues listées ; aucun changement JSON/code/UX/gameplay.
+
+Livrable :
+Rythme narratif J1 segmenté verrouillé dans `product/t059_verrouiller_rythme_narratif_j1_segmente.md`. Prochaine étape : cadrer/écrire J2 à partir du socle J1 verrouillé.
+
+T063 — Intégrer J2 dans le prototype
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : Camille J2 et Sarah J2 branchées sur `camille_j2_complete.json` / `sarah_j2_complete.json` ; conversations disponibles à `current_day = 2` ; blocs runtime J2 ajoutés (`camille_c2a/c2b/c2c`, `sarah_s2a/s2b/s2c`) avec unlocks croisés T060 ; notifications liées aux blocs ; sauvegarde `conversation_blocks` compatible ; J1 reste visible en historique ; aucun JSON T003 ni dialogue modifié.
+
+Livrable :
+Intégration J2 prototype documentée dans `product/t063_integrer_j2_prototype.md`. Prochaine étape : playtest runtime J2 blocs/unlocks/sauvegarde.
+
+T065 — Verrouiller MVP J2 intégré
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : MVP J2 intégré verrouillé avant J3 ; Camille J2, Sarah J2, blocs J2, unlocks J2, `SAVE_VERSION = 4`, compatibilité J1/J2 et validations runtime côté Ludo documentés ; T060→T064 marqués validés ; limites connues listées ; aucun changement JSON/code/gameplay/UX.
+
+Livrable :
+MVP J2 intégré verrouillé dans `product/t065_verrouiller_mvp_j2_integre.md`. Prochaine étape : cadrer la suite avant J3 ou nouveaux systèmes.
+
+T068 — Externaliser les blocs narratifs dans une config
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : frontières/unlocks de blocs J1+J2 externalisés dans `data/conversation_blocks.json` ; `conversation_state.gd` lit cette config ; comportement J1/J2 inchangé ; sauvegarde `conversation_blocks` compatible ; tests T057/T063/T053 adaptés et T068 ajouté ; aucun JSON dialogue modifié ; aucun J3 écrit.
+
+Livrable :
+Blocs narratifs externalisés dans `product/t068_externaliser_blocs_narratifs_config.md`. Prochaine étape : playtest runtime non-régression J1/J2 après externalisation.
+
+T069 — Playtest runtime non-régression après externalisation
+Thread : Scope MVP / technique
+Statut : RETOUR À CORRIGER
+Sortie : blocs/unlocks et alternance J1/J2 validés côté runtime, mais badges `nouveau` et previews Messages perdus ou fragilisés après externalisation. Décision Roadmap : corriger avant reprise J3.
+
+T070 — Corriger badges/previews après externalisation des blocs
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : `_unlock_block()` repasse par le pipeline `mark_conversation_new()` + `last_preview` ; notifications de déblocage gardées, previews neutres centralisées, sauvegarde préservée même sans badge ; tests T070/T068/T063/T057/T053 OK ; aucun JSON dialogue, schéma T003, config blocs ou contenu J3 modifié.
+
+Livrable :
+Correction documentée dans `product/t070_corriger_badges_previews_apres_externalisation.md`. Runtime T070 insuffisant : badge `nouveau` toujours absent côté Ludo, corrigé en T071.
+
+T071 — Correctif runtime badge nouveau après unlock bloc
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : `_can_emit_block_unlock_notification()` ne dépend plus de `has_available_block_for_conversation()` au moment de l’unlock ; le guard reçoit le `block_id` débloqué, vérifie que ce bloc appartient à la conversation cible, puis pose `has_new` + preview neutre via `mark_conversation_new()` ; sauvegarde immédiate conservée ; aucun JSON dialogue, schéma T003, config blocs, UX ou contenu J3 modifié.
+
+Livrable :
+Correction documentée dans `product/t071_correctif_runtime_badge_nouveau_apres_unlock_bloc.md`. Tests T071/T070/T068/T063/T057/T053 OK. Prochaine étape : T072 playtest runtime badges/previews après correctif T071.
+
+T072 — Réparer badges/previews pour saves existantes après externalisation
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : réparation légère ajoutée au chargement et au refresh Messages ; détecte les blocs `available` non ouverts après migration/externalisation et restaure `has_new` + preview neutre si pertinent ; ne recrée pas de badge pour conversation done/courante ; n’écrase pas un bloc déjà commencé ; sauvegarde compatible ; aucun JSON dialogue modifié.
+
+Livrable :
+Réparation documentée dans `product/t072_reparer_badges_previews_saves_existantes.md`. Tests T072/T068/T063/T057/T053 OK. Prochaine étape : playtest runtime sur save existante sans reset.
+
+T074 — Verrouiller externalisation blocs + badges/previews
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : externalisation `conversation_blocks.json` verrouillée ; unlocks/notifications depuis config, réparation saves existantes T072, validations runtime T073 et compatibilité sauvegarde documentées ; T068 validé, T069 validé avec réserve corrigée, T070/T071/T072/T073 validés ; limites connues listées ; aucun changement JSON/code/gameplay/UX.
+
+Livrable :
+Socle externalisation blocs + badges/previews verrouillé dans `product/t074_verrouiller_externalisation_blocs_badges_previews.md`. Prochaine étape : reprise J3 sur base config blocs.
+
+T078 — Intégrer J3 au prototype via `conversation_blocks.json`
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : J3 intégré dans le prototype Godot à partir des JSON existants ; conversations `camille_j3`/`sarah_j3`, progression Jour 3 et six blocs J3 ajoutés dans `conversation_blocks.json` ; rythme `C3A → S3A → C3B → S3B → C3C → S3C` ; schéma T003 et dialogues inchangés ; tests T078/T072/T068/T063/T057/T053 OK.
+
+Livrable :
+Intégration documentée dans `product/t078_integrer_j3_prototype.md`. Prochaine étape : T079 — playtest runtime J3 progression J2→J3, alternance, badges/previews, sauvegarde/reload.
+
+T080 — Correctif libellé bouton passage de jour
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : bouton de transition jour rendu dynamique dans `conversation_list.gd` via `ConversationState.current_day + 1` ; affiche `Passer au Jour 2` en J1 puis `Passer au Jour 3` en J2 ; tooltip rendu générique ; aucun changement JSON/gameplay/sauvegarde ; test T080 ajouté et régressions T078/T072/T068/T063/T057/T053 OK.
+
+Livrable :
+Correctif documenté dans `product/t080_correctif_libelle_bouton_passage_jour.md`. Prochaine étape : reprendre le playtest runtime côté Godot 4.6 pour vérifier le bouton J2→J3 puis progression J3/badges/sauvegarde.
+
+T082 — Verrouiller MVP J3 intégré
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : MVP J3 intégré verrouillé comme tranche validée ; Camille J3, Sarah J3, blocs J3, unlocks, rythme `C3A → S3A → C3B → S3B → C3C → S3C`, bouton jour dynamique, sauvegarde/reload et historique J1/J2 documentés ; T075/T076/T077/T078/T079/T080/T081 actés validés ; aucun changement JSON/code/gameplay/UX.
+
+Livrable :
+Verrouillage documenté dans `product/t082_verrouiller_mvp_j3_integre.md`. Prochaine étape : décider entre cadrage J4, polish UX/rythme J1-J3, ou outillage blocs/dialogues avant expansion.
+
+T083 — Mode test accéléré
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : toggle discret `Mode test rapide : ON/OFF` ajouté sur l’écran Messages ; mode OFF par défaut ; délais fortement réduits quand ON (`typing max 0.35s`, choix `0.1s`, narration `0.2s`, entre messages `0.1s`) ; rythme normal inchangé quand OFF ; aucun changement JSON/dialogues/`conversation_blocks.json`/sauvegarde. Test T083 ajouté et régressions T080/T078/T072/T068/T063/T057/T053 OK.
+
+Livrable :
+Mode documenté dans `product/t083_mode_test_accelere.md`. Limite : Godot CLI absent sur VPS (`godot_cli_absent`) ; validation runtime à faire côté Godot 4.6. Prochaine étape : playtest runtime rapide OFF/ON/OFF sur J1→J3, puis décider polish rythme ou cadrage J4.
+
+T085 — Archiver les jours passés hors liste Messages active
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : écran Messages filtré sur les conversations du jour courant ; section secondaire `Archives / Jours précédents` repliée par défaut pour relire J1/J2 sans polluer la boîte active ; badges/previews actifs limités au jour courant ; sauvegarde, JSON dialogues, schéma T003 et `conversation_blocks.json` inchangés. Test T085 ajouté et régressions T083/T080/T078/T072/T068/T063/T057/T053 OK.
+
+Livrable :
+Archives documentées dans `product/t085_archiver_jours_passes.md`. Limite : Godot CLI absent sur VPS (`godot_cli_absent`) ; validation runtime à faire côté Godot 4.6. Prochaine étape : T086 — playtest runtime archives Messages J1→J3.
+
+T087 — Corriger débordement horizontal écran Messages
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : correction UI Godot uniquement sur `conversation_list.gd` ; header `Reset` / `Mode test rapide` déplacé sur une deuxième ligne compacte ; cartes Messages contraintes à la largeur disponible ; previews en wrap + ellipsis de sécurité ; aucun changement JSON, schéma T003, `conversation_blocks.json`, save ou gameplay. Test T087 ajouté et régressions T085/T083/T080/T078/T072/T068/T063/T057/T053 OK.
+
+Livrable :
+Correctif documenté dans `product/t087_corriger_debordement_horizontal_messages.md`. Validation runtime T088 côté Ludo : écran Messages responsive + archives OK en Godot 4.6.
+
+T089 — Verrouiller MVP J1→J3 Messages + Archives + Responsive
+Thread : Roadmap / Scope MVP / technique
+Statut : DONE
+Sortie : socle Messages J1→J3 verrouillé après validations runtime Ludo T086/T088 ; inbox active limitée au jour courant, archives J1/J2 repliées et relisibles, cartes/previews/header Messages responsive, mode test rapide conservé OFF par défaut ; aucun changement JSON, schéma T003, `conversation_blocks.json`, save, gameplay ou contenu.
+
+Livrable :
+Verrouillage documenté dans `product/t089_verrouiller_mvp_j1_j3_messages_archives_responsive.md`. Prochaine décision : T090 — cadrer J4, ou polish UX/rythme J1→J3, ou outillage blocs/dialogues avant expansion.
+
+T090 — Consolider outillage dialogues/blocs avant J4
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : validateur standalone `product/godot_t004_prototype/tools/validate_dialogues_and_blocks.py` ajouté ; couvre les 6 dialogues actifs J1→J3, compare `narrative/*.json` avec `product/godot_t004_prototype/data/*.json`, valide IDs/targets/reachability/senders/effects et contrôle les 18 blocs de `conversation_blocks.json`. Validation OK : 0 erreur, 5 warnings placeholders non bloquants ; tests T078/T068/T090 OK ; Godot CLI absent.
+
+Livrable :
+Outillage documenté dans `product/t090_outillage_dialogues_blocs.md`. Prochaine décision Roadmap : cadrage J4 ou polish UX/rythme J1→J3.
+
+T091 — Cadrer J4 avant écriture
+Thread : Narration jours
+Statut : DONE
+Sortie : cadrage J4 produit sans écrire de dialogue ni modifier Godot ; décision narrative = multiplier les fronts après J3 sans crise finale, avec Camille comme moteur de risque, Maya comme regard social, Inès comme perturbation, Nico comme confident/couverture, Sarah en présence indirecte plutôt qu’active par défaut. Rythme proposé : `C4A → M4A → I4A → N4A → C4B → M4B → I4B → N4B → C4C → I4C/N4C`.
+
+Livrable :
+Cadrage documenté dans `product/t091_cadrage_j4_avant_ecriture.md`. Prochaine étape recommandée : T092 — Écrire Camille J4 complet intégrable.
+
+T092 — Écrire Camille J4 complet intégrable
+Thread : Dialogues
+Statut : DONE
+Sortie : Camille J4 complet produit au format JSON plat T003 ; trois blocs `c4_block_a/b/c` ; tension de disponibilité concrète sans crise finale ; fichiers `narrative/t092_camille_j4_complete.json`, `product/godot_t004_prototype/data/camille_j4_complete.json`, `product/t092_camille_j4_complete.md` ; validation 54 nodes, 6 choice nodes, 3 end nodes, aucun duplicate ID, aucun missing target, aucun unreachable node ; source/copie hashes identiques.
+
+Livrable :
+Camille J4 complet documenté dans `product/t092_camille_j4_complete.md`. Prochaine étape recommandée : T093 — Écrire Maya J4 complet intégrable.
+
+T093 — Écrire Maya J4 complet intégrable
+Thread : Dialogues
+Statut : DONE
+Sortie : Maya J4 complet produit au format JSON plat T003 ; trois blocs `m4_block_a/b/c` ; pression sociale légère par absences, micro-traces et couverture fragile ; fichiers `narrative/t093_maya_j4_complete.json`, `product/godot_t004_prototype/data/maya_j4_complete.json`, `product/t093_maya_j4_complete.md` ; validation 54 nodes, 6 choice nodes, 3 end nodes, aucun duplicate ID, aucun missing target, aucun unreachable node ; source/copie hashes identiques.
+
+Livrable :
+Maya J4 complet documenté dans `product/t093_maya_j4_complete.md`. Prochaine étape recommandée : T094 — Écrire Inès J4 complet intégrable.
+
+T094 — Écrire Inès J4 complet intégrable
+Thread : Dialogues
+Statut : DONE
+Sortie : Inès J4 complet produit au format JSON plat T003 ; trois blocs `i4_block_a/b/c` ; trouble neuf et perturbation ambiguë sans troisième romance complète ; fichiers `narrative/t094_ines_j4_complete.json`, `product/godot_t004_prototype/data/ines_j4_complete.json`, `product/t094_ines_j4_complete.md` ; validation 54 nodes, 6 choice nodes, 3 end nodes, aucun duplicate ID, aucun missing target, aucun unreachable node ; source/copie hashes identiques.
+
+Livrable :
+Inès J4 complet documenté dans `product/t094_ines_j4_complete.md`. Prochaine étape recommandée : T095 — Écrire Nico J4 complet intégrable.
+
+T095 — Écrire Nico J4 complet intégrable
+Thread : Dialogues
+Statut : DONE
+Sortie : Nico J4 complet produit au format JSON plat T003 ; trois blocs `n4_block_a/b/c` ; confident/miroir/couverture fragile sans tutoriel ni morale plate ; fichiers `narrative/t095_nico_j4_complete.json`, `product/godot_t004_prototype/data/nico_j4_complete.json`, `product/t095_nico_j4_complete.md` ; validation 54 nodes, 6 choice nodes, 3 end nodes, aucun duplicate ID, aucun missing target, aucun unreachable node ; source/copie hashes identiques.
+
+Livrable :
+Nico J4 complet documenté dans `product/t095_nico_j4_complete.md`. Prochaine étape recommandée : T096 — Relecture cohérence J4 / J1→J4.
+
+T096 — Relecture cohérence J4 / J1→J4
+Thread : Dialogues
+Statut : DONE
+Sortie : relecture cohérence J4 complète effectuée sur Camille/Maya/Inès/Nico + continuité J1→J4 ; décision : J4 prêt pour intégration T097 ; aucune correction JSON nécessaire ; validation technique des 4 dialogues et copies prototype OK — 54 nodes, 6 choice nodes, 3 end nodes chacun, aucun duplicate ID, aucun missing target, aucun unreachable node, hashes source/copie identiques ; aucun Godot/runtime modifié.
+
+Livrable :
+Relecture documentée dans `product/t096_relecture_coherence_j4_j1_j4.md`. Prochaine étape recommandée : T097 — Intégrer J4 Godot blocs/unlocks.
+
+T097 — Intégrer J4 Godot blocs/unlocks
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : J4 intégré dans le prototype Godot ; conversations `camille_j4`/`maya_j4`/`ines_j4`/`nico_j4`, progression Jour 4 et 12 blocs J4 ajoutés dans `conversation_blocks.json` selon le rythme `C4A → M4A → I4A → N4A → C4B → M4B → I4B → N4B → C4C → M4C → I4C → N4C` ; validateur T090 étendu à J1→J4 ; correction technique minimale des nodes de fin J4 en `type: end` pour respecter T003 ; tests T097/T090/T087/T085/T083/T080/T078/T072/T068/T063/T057/T053 OK ; Godot CLI absent.
+
+Livrable :
+Intégration documentée dans `product/t097_integrer_j4_prototype.md`. Prochaine étape recommandée : T098 — Playtest runtime J4 côté Godot 4.6.
+
+T099 — Corriger lisibilité J4 : couleurs contacts + indicateur d’écriture
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : correction UX runtime ciblée ; couleurs distinctes ajoutées pour Maya (`#2f6f73`), Inès (`#7b3f67`) et Nico (`#426c2f`) dans chat + liste Messages ; helper `_contact_color` étendu ; indicateur `Nom écrit...` replacé juste sous le flux messages avec animation légère points/alpha ; aucun JSON dialogue, schéma T003, `conversation_blocks.json`, save ou delays narratifs modifié. Tests T099/T097/T090/T087/T085/T083/T080/T078/T072/T068/T063/T057/T053 OK ; Godot CLI absent.
+
+Livrable :
+Correctif documenté dans `product/t099_couleurs_contacts_indicateur_ecriture.md`. Prochaine étape recommandée : T098 reprise playtest après correctif T099, puis T100 — Accès rapide nouvelle conversation si prioritaire.
+
+T100 — Transformer l’indicateur “...” en bulle typing dans le fil
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : indicateur typing transformé en bulle temporaire directement dans `message_list`, alignée côté contact et stylée avec la couleur du contact courant ; animation des points `.`, `..`, `...` conservée avec alpha subtil ; bulle supprimée avant l’arrivée du vrai message ; aucun JSON dialogue, schéma T003, `conversation_blocks.json`, save ou delay narratif modifié. Tests T100/T099/T097/T090/T087/T085/T083/T080/T078/T072/T068/T063/T057/T053 OK ; Godot CLI absent.
+
+Livrable :
+Correctif documenté dans `product/t100_bulle_typing_dans_fil.md`. Prochaine étape recommandée : reprise playtest T098/T100 côté Godot ; backlog accès rapide renommé T101 si prioritaire.
+
+T101 — Corriger bulle typing : taille friendly + intégration scroll
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : bulle `...` corrigée en vrai message temporaire dans le flux scrollable `message_list` ; auto-scroll après insertion/layout ; suppression avant le vrai message ; police agrandie et bulle plus lisible/discrète ; animation légère conservée ; aucun JSON dialogue, schéma T003, `conversation_blocks.json`, save ou rythme narratif modifié. Tests T101/T100/T099/T097/T090/T087/T085/T083/T080/T078/T072/T068/T063/T057/T053 OK ; Godot CLI absent.
+
+Livrable :
+Correctif documenté dans `product/t101_corriger_bulle_typing_scroll_friendly.md`. Prochaine étape recommandée : playtest runtime ciblé côté Ludo, puis décision Roadmap entre accès rapide nouvelle conversation ou polish rythme/notifications.
+
+T102 — Accès rapide à une conversation avec nouveau message
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : barre in-app discrète ajoutée dans l’écran conversation quand une autre conversation active du jour courant a `has_new` ; texte neutre `Nouveau message de X · Ouvrir` ; clic = bascule directe vers la conversation cible via le chemin conversation existant, avec `mark_conversation_read(target_id)` uniquement pour la cible ; archives/jours passés exclus ; aucun JSON dialogue, schéma T003, `conversation_blocks.json`, save, OS notification, scheduler ou temps réel modifié. Tests T102/T101/T100/T099/T097/T090/T087/T085/T083/T080/T078/T072/T068/T063/T057/T053 OK ; Godot CLI absent.
+
+Livrable :
+Correctif documenté dans `product/t102_acces_rapide_nouvelle_conversation.md`. Prochaine étape recommandée : reprise playtest J4 avec bascule rapide, puis verrouillage J4 si validé côté Ludo.
+
+T103 — Corriger toast accès rapide : refresh immédiat après unlock
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : toast T102 rafraîchi en live dans `conversation_screen.gd` après notification dynamique et après fin de bloc/unlock ; ajout de `_refresh_quick_switch_notification()` qui recalcule la cible, retire/recrée le bouton et le replace sous le header ; le toast apparaît sans aller-retour Messages → conversation ; action `Ouvrir`, filtre current-day actif, exclusion archives et lecture cible uniquement conservés ; aucun JSON dialogue, schéma T003, `conversation_blocks.json`, save, OS notification, scheduler ou temps réel modifié. Tests T103/T102/T101/T100/T099/T097/T090/T087/T085/T083/T080/T078/T072/T068/T063/T057/T053 OK ; Godot CLI absent.
+
+Livrable :
+Correctif documenté dans `product/t103_refresh_live_toast_nouveau_message.md`. Prochaine étape recommandée : reprise playtest T103 côté Ludo, puis verrouillage J4 si validé.
+
+T104 — Réparer toast live : bloc déjà disponible sans badge
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : réparation live ajoutée avant le refresh toast après fin de bloc ; `repair_available_block_notifications()` couvre désormais le cas bloc `available` sans `has_new`, filtré sur jour courant, cible disponible/non done/non courante/non déjà commencée et sans doublon si `has_new` existe déjà ; warnings Godot `var name :=` corrigés dans `conversation_screen.gd` et `conversation_list.gd`; aucun JSON dialogue, schéma T003, `conversation_blocks.json`, save, OS notification, scheduler ou temps réel modifié. Tests T104/T103/T102/T101/T100/T099/T097/T090/T087/T085/T083/T080/T078/T072/T068/T063/T057/T053 OK ; Godot CLI absent.
+
+Livrable :
+Correctif documenté dans `product/t104_reparer_toast_live_bloc_deja_disponible.md`. Validation runtime T104 côté Ludo : toast accès rapide live OK ; warnings Godot `var name` nettoyés.
+
+T105 — Verrouiller J4 intégré + polish notifications/typing validé
+Thread : Roadmap / Scope MVP / technique
+Statut : DONE
+Sortie : tranche J4 verrouillée après validations runtime Ludo ; J4 intégré avec Camille/Maya/Inès/Nico, 12 blocs J4, typing bubble friendly/scroll validée, couleurs contacts distinctes, accès rapide `Nouveau message de X · Ouvrir` corrigé live sans retour Messages, warnings Godot nettoyés ; aucun JSON dialogue, schéma T003, `conversation_blocks.json`, save, OS notification, scheduler ou temps réel modifié. Tests T104/T103/T102/T101/T100/T099/T097/T090/T087/T085/T083/T080/T078/T072/T068/T063/T057/T053 OK ; validateur T090 OK sur 10 dialogues actifs et 30 blocs ; Godot CLI absent.
+
+Livrable :
+Verrouillage documenté dans `product/t105_verrouiller_j4_integre_polish_notifications_typing.md`. Décision Roadmap suivante : cadrer J5.
+
+T106 — Cadrer J5 avant écriture
+Thread : Roadmap / Narration jours
+Statut : DONE
+Sortie : cadrage J5 produit sans écrire de dialogue ni modifier Godot ; décision narrative = transformer la multiplication des fronts J4 en coût visible, avec retour actif de Sarah, Camille comme risque affectif plus coûteux, Nico/Maya comme pression sociale/couverture, Inès dosée en réserve ou micro-bloc ; structure MVP recommandée en 8 blocs `S5A → C5A → N5A → S5B → C5B → M5A → S5C → C5C` ; aucun JSON, schéma T003, `conversation_blocks.json`, save ou runtime modifié.
+
+Livrable :
+Cadrage documenté dans `product/t106_cadrage_j5_avant_ecriture.md`. Prochaine étape recommandée : T107 — Écrire Sarah J5 complet intégrable.
+
+T107 — Écrire Sarah J5 complet intégrable
+Thread : Dialogues
+Statut : DONE
+Sortie : Sarah J5 complet produit au format JSON plat T003 ; trois blocs `s5_block_a/b/c` ; Sarah exprime le coût intime/domestique de l'absence, une demande concrète de présence et un doute doux sans posture détective ni confrontation finale ; fichiers `narrative/t107_sarah_j5_complete.json`, `product/godot_t004_prototype/data/sarah_j5_complete.json`, `product/t107_sarah_j5_complete.md` ; validation 54 nodes, 6 choice nodes, 3 end nodes, aucun duplicate ID, aucun missing target, aucun unreachable node ; source/copie hashes identiques.
+
+Livrable :
+Sarah J5 complet documenté dans `product/t107_sarah_j5_complete.md`. Prochaine étape recommandée : T108 — Écrire Camille J5 complet intégrable.
+
+T108 — Écrire Camille J5 complet intégrable
+Thread : Dialogues
+Statut : DONE
+Sortie : Camille J5 complet produit au format JSON plat T003 ; trois blocs `c5_block_a/b/c` ; Camille transforme la tension J4 en coût affectif visible, demande une preuve de disponibilité/courage/vérité partielle et prépare une conséquence J6 sans ultimatum brutal ni révélation finale ; fichiers `narrative/t108_camille_j5_complete.json`, `product/godot_t004_prototype/data/camille_j5_complete.json`, `product/t108_camille_j5_complete.md` ; validation 54 nodes, 6 choice nodes, 3 end nodes, aucun duplicate ID, aucun missing target, aucun unreachable node ; source/copie hashes identiques.
+
+Livrable :
+Camille J5 complet documenté dans `product/t108_camille_j5_complete.md`. Prochaine étape recommandée : T109 — Écrire Nico/Maya J5 pression sociale MVP.
+
+T109 — Écrire Nico/Maya J5 pression sociale MVP
+Thread : Dialogues
+Statut : DONE
+Sortie : Nico J5 et Maya J5 produits au format JSON plat T003 ; blocs courts `n5_block_a` et `m5_block_a` ; Nico sert de couverture fragile/miroir social sans résoudre le problème, Maya sert de témoin de trace visible sans devenir détective ; fichiers `narrative/t109_nico_j5_complete.json`, `product/godot_t004_prototype/data/nico_j5_complete.json`, `narrative/t109_maya_j5_complete.json`, `product/godot_t004_prototype/data/maya_j5_complete.json`, `product/t109_nico_maya_j5_pression_sociale.md` ; validation Nico 33 nodes, 4 choice nodes, 3 end nodes ; validation Maya 32 nodes, 4 choice nodes, 3 end nodes ; aucun duplicate ID, aucun missing target, aucun unreachable node ; source/copie hashes identiques.
+
+Livrable :
+Nico/Maya J5 pression sociale documenté dans `product/t109_nico_maya_j5_pression_sociale.md`. Prochaine étape recommandée : T110 — Décider Inès J5 : réserve ou micro-bloc.
+
+T110 — Décider Inès J5 : réserve ou micro-bloc
+Thread : Narration jours / Roadmap
+Statut : DONE
+Sortie : Option A retenue — Inès reste en réserve J5 ; aucun micro-bloc `i5_block_a` ni `ines_j5_complete.json` maintenant. J5 reste focalisé sur Sarah/Camille + pression sociale Nico/Maya, avec structure MVP 8 blocs plus sûre pour la relecture et l’intégration. Inès demeure tension latente/rappel indirect possible via flags, utile pour J6/fin.
+
+Livrable :
+Décision documentée dans `product/t110_decision_ines_j5_reserve_ou_micro_bloc.md`. Prochaine étape recommandée : T111 — Relecture cohérence J5 / J1→J5.
+
+T111 — Relecture cohérence J5 / J1→J5
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Relecture cohérence J5 complète ; J5 validé prêt pour intégration T112 avec structure MVP 8 blocs `S5A → C5A → N5A → S5B → C5B → M5A → S5C → C5C` ; Sarah/Camille/Nico/Maya respectent leurs rôles sans révélation finale, sans surcharge Inès et sans dérive hors MVP ; aucun patch JSON requis ; validation technique source/copies OK sur les quatre conversations.
+
+Livrable :
+Relecture documentée dans `product/t111_relecture_coherence_j5_j1_j5.md`. Prochaine étape recommandée : T112 — Intégrer J5 Godot blocs/unlocks.
+
+T112 — Intégrer J5 Godot blocs/unlocks
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : J5 intégré dans le prototype Godot ; conversations `sarah_j5`/`camille_j5`/`nico_j5`/`maya_j5`, progression Jour 5 et 8 blocs J5 ajoutés dans `conversation_blocks.json` selon le rythme `S5A → C5A → N5A → S5B → C5B → M5A → S5C → C5C` ; validateur T090 étendu à J1→J5 avec 14 dialogues actifs et 38 blocs ; Inès J5 non ajoutée conformément à T110 ; aucun JSON dialogue ni schéma T003 modifié. Tests T112/T104/T103/T102/T101/T100/T099/T097/T090/T087/T085/T083/T080/T078/T072/T068/T063/T057/T053 OK ; Godot CLI absent.
+
+Livrable :
+Intégration documentée dans `product/t112_integrer_j5_prototype.md`. Validation runtime T113 côté Ludo : J5 fonctionne.
+
+T113 — Playtest runtime J5
+Thread : Scope MVP / Roadmap
+Statut : VALIDÉ CÔTÉ LUDO
+Sortie : Ludo confirme que J5 fonctionne en runtime Godot local après intégration T112 ; aucune anomalie bloquante signalée.
+
+T114 — Verrouiller J5 intégré
+Thread : Roadmap / Scope MVP / technique
+Statut : DONE
+Sortie : J5 intégré verrouillé après validation runtime Ludo ; conversations `sarah_j5`/`camille_j5`/`nico_j5`/`maya_j5`, structure 8 blocs `S5A → C5A → N5A → S5B → C5B → M5A → S5C → C5C`, Inès en réserve sans `ines_j5`, validateur J1→J5 OK sur 14 dialogues et 38 blocs ; aucun JSON dialogue, schéma T003, `conversation_blocks.json`, scripts Godot, save, UX ou système notifications modifié dans ce verrou. Régressions T112/T104/T103/T102/T101/T100/T099/T097/T090/T087/T085/T083/T080/T078/T072/T068/T063/T057/T053 OK ; Godot CLI absent.
+
+Livrable :
+Verrouillage documenté dans `product/t114_verrouiller_j5_integre.md`. Prochaine décision Roadmap : T115 — cadrer J6 / fin MVP, ou polish rythme J1→J5, ou outillage auteur/régression J1→J5.
+
+T115 — Cadrer J6 / fin MVP avant écriture
+Thread : Roadmap / Narration jours
+Statut : DONE
+Sortie : Cadrage J6 / fin MVP produit sans écrire de dialogue ni modifier Godot ; décision narrative = transformer les coûts J5 en résolution MVP testable, avec 8 blocs recommandés `S6A → C6A → N6A → M6A → S6B → C6B → I6A → FIN`, 4 fins MVP obligatoires recommandées (`Réparation fragile`, `Camille assumée`, `Double vie maintenue`, `Tout se fissure`) et une 5e optionnelle (`Fuite en avant / solitude`) ; recommandation de micro-bloc Inès J6 court après réserve J5 ; aucun JSON, schéma T003, `conversation_blocks.json`, script Godot, save ou runtime modifié.
+
+Livrable :
+Cadrage documenté dans `product/t115_cadrage_j6_fin_mvp.md`. Décision Roadmap ajustée après retour produit : avant d’écrire J6, consolider l’identité des personnages et les respirations de dialogue.
+
+T116 — Bible personnages + voix de messagerie
+Thread : Personnages / Roadmap
+Statut : DONE
+Sortie : Bible personnages produite pour Sarah, Camille, Maya, Nico et Inès ; chaque voix est cadrée avec fonction narrative, rythme de messagerie, expressions propres, passions/habitudes concrètes, humeurs, do/don’t et exemples de messages. Règle de pression posée pour la suite : mélanger respirations sans pression, pression douce et pression forte afin d’éviter l’effet questionnaire dramatique. Le livrable fixe aussi le résumé histoire important et le lexique auteur à surveiller (`trace`, `preuve`, `dette`, `coût`, `double vie`, etc.) pour éviter les dialogues trop conceptuels. Aucun JSON dialogue, schéma T003, `conversation_blocks.json`, script Godot, save ou runtime modifié.
+
+Livrable :
+Bible documentée dans `product/t116_bible_personnages_voix_messagerie.md`. Prochaine étape recommandée : T117 — Audit expressions bizarres / dialogues trop conceptuels J1→J5.
+
+T117 — Audit expressions bizarres / dialogues trop conceptuels J1→J5
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Audit texte J1→J5 produit sur les 14 dialogues actifs ; repérage des lignes trop conceptuelles ou trop méta autour de `trace`, `preuve`, `dette`, `coût`, `double vie`, `disponibilité`, `incohérence`, `absence`, etc. Diagnostic : contenu cohérent et intégrable, mais Camille/Inès/Maya/Nico doivent être davantage incarnés par détails concrets et voix propres ; Sarah reste la plus naturelle mais doit garder un ancrage domestique. T117 propose les remplacements prioritaires pour T118 sans patcher les JSON. Aucun JSON dialogue, schéma T003, `conversation_blocks.json`, script Godot, save ou runtime modifié.
+
+Livrable :
+Audit documenté dans `product/t117_audit_expressions_dialogues_j1_j5.md`. Prochaine étape recommandée : T118 — Polish naturel + respirations J1→J5.
+
+T118 — Polish naturel + respirations J1→J5
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Polish texte ciblé appliqué sur les dialogues actifs J1→J5 prioritaires T117. 10 JSON source ont été patchés puis synchronisés avec leurs copies Godot : Camille J3/J4/J5, Maya J4/J5, Inès J4, Nico J4/J5, Sarah J2/J5. Les formulations trop conceptuelles visibles (`trace`, `preuve`, `dette`, `coût`, `double vie`, `disponibilité`, `incohérence`, `absence`) ont été remplacées par détails plus incarnés : téléphone, soir qui rentre tard, versions arrangées, signe, détail social, standard téléphonique, excuse qui porte des chaussures. IDs, branches, effets, flags et schéma T003 conservés ; `conversation_blocks.json`, scripts Godot/runtime/save/UX non modifiés.
+
+Livrable :
+Polish documenté dans `product/t118_polish_naturel_respirations_j1_j5.md`. Validation OK : 14 dialogues actifs parsés, aucun duplicate/missing/unreachable, source/copie SHA identiques ; tests directs T112/T097/T090/T078/T063 OK (`pytest` absent). Prochaine étape recommandée : T119 — Cadrage J6 / fin MVP après polish.
+
+T119 — Cadrage J6 / fin MVP après polish
+Thread : Roadmap / Narration jours
+Statut : DONE
+Sortie : Cadrage J6 post-T116/T117/T118 produit ; la structure MVP reste `S6A → C6A → N6A → M6A → S6B → C6B → I6A → FIN`, mais avec une règle de pression ajustée pour éviter le tunnel dramatique : détails humains, respirations, voix T116 et formulations incarnées T118. Inès est retenue en micro-bloc court, pas route complète. Fins conservées : 4 obligatoires (`Réparation fragile`, `Camille assumée`, `Double vie maintenue`, `Tout se fissure`) + 1 optionnelle (`Fuite en avant / solitude`). Renumérotation propre décidée pour la suite : T120 Sarah/Camille J6, T121 Nico/Maya/Inès J6, T122 fins MVP, T123 relecture cohérence, T124 intégration Godot. Aucun JSON dialogue, copie Godot data, schéma T003, `conversation_blocks.json`, script Godot, save ou runtime modifié.
+
+Livrable :
+Cadrage documenté dans `product/t119_cadrage_j6_fin_mvp_apres_polish.md`. Prochaine étape recommandée : T120 — Écrire Sarah/Camille J6 résolution MVP.
+
+T120 — Écrire Sarah/Camille J6 résolution MVP
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Sarah J6 et Camille J6 écrits en JSON T003 plat, pré-intégration. Sarah couvre `S6A` et `S6B` : quotidien qui ne tient plus, mug/assiette/téléphone, puis question intime “être là ou seulement faire tenir”. Camille couvre `C6A` et `C6B` : morceau de musique, café, téléphone, puis refus d’être une parenthèse ou un refuge. Chaque conversation contient 50 nodes, 6 choice nodes et 3 end nodes préparant T122/fins MVP sans résoudre tout maintenant. Copies Godot data synchronisées. Aucun changement de runtime, scripts, save, UX ou `conversation_blocks.json`.
+
+Livrable :
+JSON créés : `narrative/t120_sarah_j6_complete.json`, `narrative/t120_camille_j6_complete.json`, `product/godot_t004_prototype/data/sarah_j6_complete.json`, `product/godot_t004_prototype/data/camille_j6_complete.json`. Note : `product/t120_sarah_camille_j6_resolution_mvp.md`. Validation OK : schema/identité/senders/markers, aucun duplicate/missing/unreachable, effets valides, SHA source/copie OK, aucun hit visible sur les mots conceptuels surveillés. Prochaine étape recommandée : T121 — Écrire Nico/Maya/Inès J6 pression finale courte.
+
+T121 — Écrire Nico/Maya/Inès J6 pression finale courte
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Nico, Maya et Inès J6 écrits en JSON T003 plat, pré-intégration. Nico couvre `N6A` : dernier service, vraie limite, humour/frites/ponctuation de guerre, pas alibi permanent. Maya couvre `M6A` : photo de groupe, épaule reconnaissable, pression sociale concrète sans omniscience. Inès couvre `I6A` : message hésité, arrêt/ticket de trajet, porte latérale à contretemps sans troisième route complète. Les endings restent des seeds pour T122/fins MVP, pas des fins finales. Copies Godot data synchronisées. Aucun changement de runtime, scripts, save, UX ou `conversation_blocks.json`.
+
+Livrable :
+JSON créés : `narrative/t121_nico_j6_complete.json`, `narrative/t121_maya_j6_complete.json`, `narrative/t121_ines_j6_complete.json`, `product/godot_t004_prototype/data/nico_j6_complete.json`, `product/godot_t004_prototype/data/maya_j6_complete.json`, `product/godot_t004_prototype/data/ines_j6_complete.json`. Note : `product/t121_nico_maya_ines_j6_pression_finale.md`. Validation OK : schema/identité/senders/markers, aucun duplicate/missing/unreachable, effets valides, SHA source/copie OK, aucun hit visible sur les mots conceptuels surveillés. Prochaine étape recommandée : T122 — Écrire fins MVP / conversation finale.
+
+T122 — Écrire fins MVP / conversation finale
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Conversation finale dédiée créée en JSON T003 plat : `finales_mvp_complete`, day 6, `contact_id=system`, `start_node=final_block_a`. 5 routes écrites : Réparation fragile, Camille assumée, Équilibre maintenu, Tout se fissure, Fuite en avant / solitude. Format court et rejouable : 50 nodes, 1 choix final principal, 5 end nodes. Les fins gardent les voix T116/T118 : Sarah/mug/quotidien, Camille/phrase simple et morceau non relancé, Nico limite sociale, Maya retombée groupe/photo, Inès porte latérale non-romance bonus. Aucun changement de runtime, scripts, save, UX ou `conversation_blocks.json`.
+
+Livrable :
+JSON créés : `narrative/t122_finales_mvp_complete.json`, `product/godot_t004_prototype/data/finales_mvp_complete.json`. Note : `product/t122_fins_mvp_conversation_finale.md`. Validation OK : schema/identité/senders, aucun duplicate/missing/unreachable, effets valides, SHA source/copie OK, aucun hit visible sur les mots conceptuels surveillés. Prochaine étape recommandée : T123 — Relecture cohérence J6 / fins MVP.
+
+T123 — Relecture cohérence J6 / fins MVP
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Relecture cohérence J6/fins MVP effectuée sur les 6 JSON pré-intégration T120/T121/T122. Résultat : J6 est cohérent pour intégration T124 ; aucune correction JSON nécessaire. La structure `S6A → C6A → N6A → M6A → S6B → C6B → I6A → FIN` respecte le cadrage post-polish : Sarah intime/domestique sans enquête, Camille lucide sans ultimatum caricatural, Nico limite amicale sans tutoriel, Maya détail social sans omniscience, Inès porte latérale sans troisième romance complète, fins courtes sans victoire parfaite ni scoring expliqué. Validation statique OK : 239 nodes J6/fins au total, 24 choix, 20 ends, aucun duplicate ID, aucun `next` manquant, source/copies Godot SHA identiques. Aucun JSON, `conversation_blocks.json`, script Godot, schéma T003, save/runtime/UX modifié dans T123.
+
+Livrable :
+Relecture documentée dans `product/t123_relecture_coherence_j6_fins_mvp.md`. Prochaine étape recommandée : T124 — Intégrer J6 + fins MVP Godot.
+
+T124 — Intégrer J6 + fins MVP Godot
+Thread : Scope MVP / technique
+Statut : DONE
+Sortie : J6/finale intégrés dans le prototype Godot ; conversations `sarah_j6`/`camille_j6`/`nico_j6`/`maya_j6`/`ines_j6`/`finales_mvp`, progression Jour 6 et 8 blocs finaux ajoutés dans `conversation_blocks.json` selon le rythme `S6A → C6A → N6A → M6A → S6B → C6B → I6A → FIN` ; validateur T090 étendu à J1→J6/finale avec 20 dialogues actifs et 46 blocs ; finale traitée comme conversation dédiée, sans système lourd de fins ; aucun JSON dialogue ni schéma T003 modifié. Tests T124/T112/T104/T103/T102/T101/T100/T099/T097/T090/T087/T085/T083/T080/T078/T072/T068/T063/T057/T053 OK ; Godot CLI absent.
+
+Livrable :
+Intégration documentée dans `product/t124_integrer_j6_fins_mvp_godot.md`. Prochaine étape recommandée : playtest runtime J6/finale côté Ludo — progression J5→J6, alternance des blocs, badges/previews, finale et reload save.
+
+T125 — Corriger notifications switch vers S6B / C6B
+Thread : Scope MVP / Roadmap
+Statut : DONE
+Sortie : Bug runtime Ludo corrigé : absence de toast quick-switch vers `S6B` puis vers `C6B`. Root cause : les blocs `sarah_s6b` et `camille_c6b` sont des deuxièmes blocs dans une conversation déjà commencée ; l’état gardait un `next_node` de transition (`s6_014_*` / `c6_014_*`) avant le vrai `start_node`, et la réparation live pouvait l’interpréter comme bloc déjà commencé, donc ne pas poser `has_new`. Correction data-driven : ajout `pre_start_nodes` pour `sarah_s6b`/`camille_c6b` dans `conversation_blocks.json`, puis prise en compte dans `_has_started_available_block(...)`. Aucun JSON dialogue, texte narratif, schéma T003, save payload ou système lourd modifié. Validateur OK : 20 dialogues actifs, 46 blocs, 0 erreur, 5 warnings historiques ; tests T125/T124/T112/T104/T103/T102/T101/T100/T099/T097/T090/T078/T063/T053 OK ; Godot CLI absent.
+
+Livrable :
+Correction documentée dans `product/t125_corriger_notifications_switch_s6b_c6b.md`. Runtime à revalider côté Ludo : finir M6A → vérifier toast Sarah/S6B, finir S6B → vérifier toast Camille/C6B, continuer I6A → FIN.
+
+T126A — Refonte identité personnages / bible jouable J1→J6
+Thread : Personnages / Roadmap
+Statut : DONE
+Sortie : Bible jouable produite pour renforcer fortement l’identité de Sarah, Camille, Maya, Nico et Inès avant patch dialogues. Pour chaque contact : 5 marqueurs visibles en messagerie, 5 expressions/tics récurrents, 5 habitudes/passions concrètes, 3 respirations sans pression, 3 erreurs à éviter, exemples avant/après et recommandation de patch J1→J6. Direction claire : Sarah domestique/intime/confiance abîmée ; Camille trouble/lucidité/lieux/musique/silences ; Maya social/piquant/détails publics ; Nico ami oral/humour/limite ; Inès flottante/hésitante/porte latérale. Aucun JSON dialogue, copie Godot data, `conversation_blocks.json`, script Godot, schéma T003, save/runtime/UX modifié.
+
+Livrable :
+Bible jouable documentée dans `product/t126a_refonte_identite_personnages_bible_jouable.md`. Prochaine étape recommandée : T126B — Patch identité personnages J1→J6 dans Dialogues, texte uniquement, avec validation JSON/source-copie.
+
+T126B — Préparer refonte voix dialogues J1→J6 / patch ciblé fort
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Plan de patch dialogue produit sans modifier les JSON. T126B liste les scènes/nodes prioritaires J1→J6 + finale où renforcer l’identité en jeu : Sarah J1/J2/J5/J6 pour routine maison ; Camille J1/J3/J4/J6 pour lieux/musique/silences ; Maya J4/J5/J6 pour détails publics/groupe ; Nico J4/J5/J6 pour oralité/humour/limite ; Inès J4/J6/finale pour rareté, trajet, hésitation. Le plan priorise début J1/J2, premières apparitions Maya/Nico/Inès, puis J5/J6/finale, avec garde-fous : patch texte uniquement, pas de branches, pas d’IDs/flags/effects/schéma modifiés.
+
+Livrable :
+Plan documenté dans `product/t126b_plan_patch_voix_dialogues_j1_j6.md`. Découpage recommandé : T127 Sarah/Camille J1→J6 ; T128 Maya/Nico/Inès J4→J6 ; T129 respirations sans pression transversales ; T130 validation cohérence + intégration copies. Aucun JSON dialogue, copie Godot data, `conversation_blocks.json`, script Godot, schéma T003, save/runtime/UX modifié. Prochaine étape recommandée : T127 — Patch voix Sarah/Camille J1→J6.
+
+T127 — Patch voix Sarah/Camille J1→J6
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Patch texte fort appliqué sur 8 dialogues Sarah/Camille, sans changement structurel. Sarah J1/J2/J5/J6 gagne des motifs maison/routine : café froid, clés, chargeur côté canapé, épisode commencé sans le joueur, pull/canapé, lumière cuisine, assiette/frigo/courses, téléphone écran vers le haut. Camille J1/J3/J4/J6 gagne des motifs lieux/musique/silences : café du coin, morceau trop dramatique, serviette en papier, silence habillé, marche/vitrines/pluie, téléphone retourné, table du fond/table bancale, regard vers la porte. 48 remplacements de texte visible au total ; IDs, branches, choices, effects, flags, schéma T003, runtime et `conversation_blocks.json` inchangés.
+
+Livrable :
+JSON source patchés + copies Godot synchronisées : Sarah `t037`, `t062`, `t107`, `t120`; Camille `t007`, `t075`, `t092`, `t120`. Note : `product/t127_patch_voix_sarah_camille_j1_j6.md`. Validation OK : 20 dialogues actifs J1→J6/finale parsés, aucun duplicate/missing/unreachable, effects valides, SHA source/copie OK ; tests directs T124/T125/T112/T097/T090/T078/T063 OK. Prochaine étape recommandée : T128 — Patch voix Maya/Nico/Inès J4→J6.
+
+T128 — Patch voix Maya/Nico/Inès J4→J6
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Patch texte fort appliqué sur Maya/Nico/Inès + retombées finale, sans changement structurel. Maya J4/J5/J6 gagne des motifs sociaux concrets : photo de groupe, épaule floue, story mal cadrée, groupe qui regarde la porte, neutralité ratée. Nico J4/J5/J6 gagne davantage d’oralité et de sas comique : sandwich, frites, sauce, résumé de match, franchise d’excuses claquées, justificatif EDF, standard de crise. Inès J4/J6 gagne rareté et flottement : message écrit/effacé, trajet, bus/arrêt, vitrine de nuit, ticket froissé, seuil. Finale ajustée sur 5 retombées Nico/Maya/Inès. 53 remplacements de texte visible au total ; IDs, branches, choices, effects, flags, schéma T003, runtime et `conversation_blocks.json` inchangés.
+
+Livrable :
+JSON source patchés + copies Godot synchronisées : Maya `t093`, `t109`, `t121`; Nico `t095`, `t109`, `t121`; Inès `t094`, `t121`; finale `t122`. Note : `product/t128_patch_voix_maya_nico_ines_j4_j6.md`. Validation OK : 20 dialogues actifs J1→J6/finale parsés, aucun duplicate/missing/unreachable, effects valides, SHA source/copie OK ; tests directs T124/T125/T112/T097/T090/T078/T063 OK. Prochaine étape recommandée : T129 — Respirations sans pression transversales.
+
+T129 — Respirations sans pression transversales J1→J6
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Patch transversal de respirations appliqué sur 17 dialogues J1→J6/finale, sans changement structurel. 56 remplacements de texte visible : choix plus doux, répliques de complicité, détails quotidiens et humour léger. Sarah gagne café partagé, vrai message, “je mets mes chaussures” ; Camille gagne café agaçant, table du fond, vingt premières secondes d’un morceau ; Maya gagne scène “version Maya sans tribunal”, épaule superstar, vanne moche pour calmer le groupe ; Nico gagne sandwich, frites tranquilles, sauces, version pote/pas conférence TED ; Inès gagne trajets, porte calme, message qui arrive doucement. Finale ajustée avec photo de dessert moche et route contrôle moins mécanique. IDs, branches, choices, effects, flags, schéma T003, runtime et `conversation_blocks.json` inchangés.
+
+Livrable :
+JSON source patchés + copies Godot synchronisées sur les 17 fichiers touchés. Note : `product/t129_respirations_sans_pression_transversales_j1_j6.md`. Validation OK : 20 dialogues actifs J1→J6/finale parsés, aucun duplicate/missing/unreachable, effects valides, SHA source/copie OK ; tests directs T124/T125/T112/T097/T090/T078/T063 OK. Prochaine étape recommandée : T130 — Validation cohérence finale voix/personnages + copies Godot.
+
+T130 — Validation cohérence finale voix/personnages + copies Godot
+Thread : Roadmap / Dialogues
+Statut : DONE
+Sortie : Validation finale de la séquence refonte voix/personnages effectuée après T126A/T126B/T127/T128/T129, sans patch JSON. Résultat : les cinq contacts ont désormais une couche d’identité plus visible en jeu — Sarah domestique/intime, Camille lieux/musique/silences, Maya social/piquant, Nico oralité/humour/limite, Inès rareté/trajet/hésitation. Les 20 dialogues actifs J1→J6/finale ont été relus statiquement : JSON parsés, aucun duplicate ID, aucun `next` manquant, tous les nodes atteignables, effects valides, SHA source/copie Godot identiques. T130 ne modifie aucun JSON, `conversation_blocks.json`, script Godot, schéma T003, save/runtime/UX.
+
+Livrable :
+Validation documentée dans `product/t130_validation_coherence_finale_voix_personnages.md`. Prochaine étape recommandée : T131 — Playtest perception personnages J1→J6 côté Ludo.
+
+T131 — Export relecture dialogues J1→J6
+Thread : Roadmap / Dialogues
+Statut : DONE
+Sortie : Export lisible complet généré pour permettre une relecture humaine des dialogues après retour Ludo indiquant qu’une première phrase est incompréhensible. Deux fichiers créés : `product/dialogues_export_lisible_j1_j6.md` et `product/dialogues_export_simple_j1_j6.txt`. L’export contient les 20 dialogues actifs J1→J6/finale, organisés par jour/contact, avec messages visibles, choix joueur, IDs de nodes et sources JSON. Note de cadrage créée : `product/t131_export_relecture_dialogues_j1_j6.md`. Aucun JSON dialogue, copie Godot data, `conversation_blocks.json`, script Godot, schéma T003, save/runtime/UX modifié.
+
+Livrable :
+Exports prêts pour relecture. Prochaine étape recommandée : T132 — Corrections lisibilité dialogues après relecture externe.
+

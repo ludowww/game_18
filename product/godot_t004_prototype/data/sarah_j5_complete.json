@@ -1,0 +1,688 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "sarah_j5_complete",
+  "day": 5,
+  "contact_id": "sarah",
+  "start_node": "s5_block_a",
+  "nodes": [
+    {
+      "id": "s5_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "S5A — Sarah : retour du poids intime",
+      "delay": 0,
+      "next": "s5_001"
+    },
+    {
+      "id": "s5_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai laissé la petite lumière de la cuisine. Je sais pas pourquoi. Ça faisait moins vide.",
+      "delay": 0,
+      "next": "s5_002"
+    },
+    {
+      "id": "s5_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je sais que tu as beaucoup de choses en ce moment. Mais parfois j’ai l’impression d’être le message que tu ouvres quand tout le reste est fini.",
+      "delay": 75,
+      "next": "s5_003"
+    },
+    {
+      "id": "s5_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Sarah parle d’un soir trop silencieux sans accuser.",
+      "choices": [
+        {
+          "id": "s5_003_a",
+          "text": "Tu n’es pas un reste. Je suis juste mauvais pour le montrer.",
+          "next": "s5_004_a",
+          "effects": {
+            "sarah_trust": 2,
+            "guilt": 1,
+            "player_presence": 1,
+            "flags": [
+              "sarah_trust_repaired_j5"
+            ]
+          }
+        },
+        {
+          "id": "s5_003_b",
+          "text": "Je suis crevé, mais j’ai envie de te retrouver un peu.",
+          "next": "s5_004_b",
+          "effects": {
+            "sarah_trust": 1,
+            "guilt": 1,
+            "flags": [
+              "player_explained_tired_j5"
+            ]
+          }
+        },
+        {
+          "id": "s5_003_c",
+          "text": "Tu lis trop dans mes silences.",
+          "next": "s5_004_c",
+          "effects": {
+            "sarah_trust": -2,
+            "sarah_doubt": 2,
+            "risk": 1,
+            "flags": [
+              "player_deflected_sarah_j5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s5_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu n’es pas un reste. Je suis juste mauvais pour le montrer.",
+      "delay": 0,
+      "next": "s5_005_a"
+    },
+    {
+      "id": "s5_005_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je préfère cette phrase-là à une phrase parfaite. Au moins elle ne marche pas sur la pointe des pieds dans l’appartement.",
+      "delay": 55,
+      "next": "s5_006"
+    },
+    {
+      "id": "s5_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis crevé, mais j’ai envie de te retrouver un peu.",
+      "delay": 0,
+      "next": "s5_005_b"
+    },
+    {
+      "id": "s5_005_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je peux entendre la fatigue. J’ai plus de mal quand elle prend toute la place, même sur le canapé, et qu’il ne reste que des réponses courtes.",
+      "delay": 55,
+      "next": "s5_006"
+    },
+    {
+      "id": "s5_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu lis trop dans mes silences.",
+      "delay": 0,
+      "next": "s5_005_c"
+    },
+    {
+      "id": "s5_005_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Peut-être. Mais quand il y a plus de silence que de gestes, je finis par faire avec ce que j’ai.",
+      "delay": 55,
+      "next": "s5_006"
+    },
+    {
+      "id": "s5_006",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Hier, tu as eu l’air là par moments. Puis très loin. J’ai gardé ta part au frigo comme si ça allait répondre à ma place.",
+      "delay": 100,
+      "next": "s5_007"
+    },
+    {
+      "id": "s5_007",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre avec une phrase qui peut tenir dans la cuisine, pas seulement dans le téléphone.",
+      "choices": [
+        {
+          "id": "s5_007_a",
+          "text": "Je vais arrêter de te donner deux versions.",
+          "next": "s5_008_a",
+          "effects": {
+            "sarah_trust": 2,
+            "guilt": 1,
+            "player_presence": 1,
+            "flags": [
+              "player_promised_presence_j5"
+            ]
+          }
+        },
+        {
+          "id": "s5_007_b",
+          "text": "Je ne peux pas tout expliquer, mais je peux être plus clair avec toi.",
+          "next": "s5_008_b",
+          "effects": {
+            "sarah_trust": 1,
+            "sarah_doubt": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j5_partial_honesty"
+            ]
+          }
+        },
+        {
+          "id": "s5_007_c",
+          "text": "Je ne veux pas qu’un soir où je rentre tard devienne forcément un sujet.",
+          "next": "s5_008_c",
+          "effects": {
+            "sarah_trust": -1,
+            "sarah_doubt": 2,
+            "risk": 1,
+            "flags": [
+              "sarah_doubt_deepened_j5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s5_008_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je vais arrêter de te donner deux versions.",
+      "delay": 0,
+      "next": "s5_009_a"
+    },
+    {
+      "id": "s5_009_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Alors commence petit. Pas avec une grande promesse. Avec un moment où ton téléphone reste posé et où je n’ai pas besoin de deviner.",
+      "delay": 60,
+      "next": "s5_block_b"
+    },
+    {
+      "id": "s5_008_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne peux pas tout expliquer, mais je peux être plus clair avec toi.",
+      "delay": 0,
+      "next": "s5_009_b"
+    },
+    {
+      "id": "s5_009_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est déjà une ligne plus honnête que “tout va bien”. Je peux partir de là.",
+      "delay": 60,
+      "next": "s5_block_b"
+    },
+    {
+      "id": "s5_008_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne veux pas qu’un soir où je rentre tard devienne forcément un sujet.",
+      "delay": 0,
+      "next": "s5_009_c"
+    },
+    {
+      "id": "s5_009_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Moi non plus. Je voudrais juste qu’elles arrêtent de se transformer toutes seules en distance.",
+      "delay": 60,
+      "next": "s5_block_b"
+    },
+    {
+      "id": "s5_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "S5B — Sarah : demande de présence concrète",
+      "delay": 0,
+      "next": "s5_010"
+    },
+    {
+      "id": "s5_010",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ce soir, j’ai besoin d’un vrai moment. Pas longtemps. Pas quelque chose d’organisé au millimètre.",
+      "delay": 0,
+      "next": "s5_011"
+    },
+    {
+      "id": "s5_011",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Juste un moment où tu ne réponds pas comme si tu gardais une porte ouverte ailleurs.",
+      "delay": 85,
+      "next": "s5_012"
+    },
+    {
+      "id": "s5_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Sarah demande un signe concret de présence.",
+      "choices": [
+        {
+          "id": "s5_012_a",
+          "text": "Je serai là ce soir, vraiment.",
+          "next": "s5_013_a",
+          "effects": {
+            "sarah_trust": 2,
+            "guilt": 1,
+            "player_presence": 2,
+            "flags": [
+              "player_promised_presence_j5"
+            ]
+          }
+        },
+        {
+          "id": "s5_012_b",
+          "text": "Je peux te promettre un moment, pas toute la soirée.",
+          "next": "s5_013_b",
+          "effects": {
+            "sarah_trust": 1,
+            "sarah_doubt": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j5_limited_presence"
+            ]
+          }
+        },
+        {
+          "id": "s5_012_c",
+          "text": "Ce soir risque d’être compliqué.",
+          "next": "s5_013_c",
+          "effects": {
+            "sarah_trust": -2,
+            "sarah_doubt": 2,
+            "risk": 1,
+            "player_evasion": 1,
+            "flags": [
+              "player_deflected_sarah_j5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s5_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je serai là ce soir, vraiment.",
+      "delay": 0,
+      "next": "s5_014_a"
+    },
+    {
+      "id": "s5_014_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "D’accord. Je vais essayer de croire le “vraiment” sans le serrer trop fort.",
+      "delay": 55,
+      "next": "s5_015"
+    },
+    {
+      "id": "s5_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je peux te promettre un moment, pas toute la soirée.",
+      "delay": 0,
+      "next": "s5_014_b"
+    },
+    {
+      "id": "s5_014_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Un moment peut suffire si tu y es vraiment. Mais je crois que je saurai faire la différence.",
+      "delay": 55,
+      "next": "s5_015"
+    },
+    {
+      "id": "s5_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Ce soir risque d’être compliqué.",
+      "delay": 0,
+      "next": "s5_014_c"
+    },
+    {
+      "id": "s5_014_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Voilà. C’est ce mot qui commence à me fatiguer. “Compliqué” ressemble de plus en plus à une porte fermée doucement.",
+      "delay": 55,
+      "next": "s5_015"
+    },
+    {
+      "id": "s5_015",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne te demande pas de tout me raconter. Je te demande d’arrêter de me laisser être la personne qui comprend après tout le monde.",
+      "delay": 100,
+      "next": "s5_016"
+    },
+    {
+      "id": "s5_016",
+      "type": "choice",
+      "sender": "player",
+      "text": "Choisir entre présence, demi-vérité ou esquive.",
+      "choices": [
+        {
+          "id": "s5_016_a",
+          "text": "Tu as raison. Je dois te remettre avant les excuses.",
+          "next": "s5_017_a",
+          "effects": {
+            "sarah_trust": 2,
+            "guilt": 2,
+            "player_presence": 1,
+            "flags": [
+              "sarah_trust_repaired_j5"
+            ]
+          }
+        },
+        {
+          "id": "s5_016_b",
+          "text": "Il y a des choses dont je ne suis pas fier.",
+          "next": "s5_017_b",
+          "effects": {
+            "sarah_trust": 1,
+            "sarah_doubt": 1,
+            "guilt": 2,
+            "flags": [
+              "sarah_j5_hears_shame"
+            ]
+          }
+        },
+        {
+          "id": "s5_016_c",
+          "text": "Je ne veux pas parler de ça maintenant.",
+          "next": "s5_017_c",
+          "effects": {
+            "sarah_trust": -2,
+            "sarah_doubt": 2,
+            "player_evasion": 1,
+            "flags": [
+              "sarah_doubt_deepened_j5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s5_017_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu as raison. Je dois te remettre avant les excuses.",
+      "delay": 0,
+      "next": "s5_018_a"
+    },
+    {
+      "id": "s5_018_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Alors je vais attendre un geste, pas une défense. Ça me semble plus sain pour nous deux.",
+      "delay": 60,
+      "next": "s5_block_c"
+    },
+    {
+      "id": "s5_017_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Il y a des choses dont je ne suis pas fier.",
+      "delay": 0,
+      "next": "s5_018_b"
+    },
+    {
+      "id": "s5_018_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne sais pas si ça me rassure. Mais au moins ce n’est pas une phrase qui essaie de m’endormir.",
+      "delay": 60,
+      "next": "s5_block_c"
+    },
+    {
+      "id": "s5_017_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne veux pas parler de ça maintenant.",
+      "delay": 0,
+      "next": "s5_018_c"
+    },
+    {
+      "id": "s5_018_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "D’accord. Alors je vais arrêter de tirer sur une porte que tu tiens de l’autre côté.",
+      "delay": 60,
+      "next": "s5_block_c"
+    },
+    {
+      "id": "s5_block_c",
+      "type": "message",
+      "sender": "system",
+      "text": "S5C — Sarah : tension incompatible avec les autres fronts",
+      "delay": 0,
+      "next": "s5_019"
+    },
+    {
+      "id": "s5_019",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vais faire simple : si tu as besoin d’air, dis-le. Si tu as besoin de moi, montre-le.",
+      "delay": 0,
+      "next": "s5_020"
+    },
+    {
+      "id": "s5_020",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais entre les deux, je commence à me perdre un peu.",
+      "delay": 75,
+      "next": "s5_021"
+    },
+    {
+      "id": "s5_021",
+      "type": "choice",
+      "sender": "player",
+      "text": "Sarah pose une limite douce.",
+      "choices": [
+        {
+          "id": "s5_021_a",
+          "text": "J’ai besoin de toi. Je vais le montrer mieux.",
+          "next": "s5_022_a",
+          "effects": {
+            "sarah_trust": 2,
+            "guilt": 1,
+            "player_presence": 2,
+            "flags": [
+              "sarah_trust_repaired_j5",
+              "player_promised_presence_j5"
+            ]
+          }
+        },
+        {
+          "id": "s5_021_b",
+          "text": "J’ai besoin d’air, mais pas loin de toi.",
+          "next": "s5_022_b",
+          "effects": {
+            "sarah_trust": 0,
+            "sarah_doubt": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j5_needs_space_named"
+            ]
+          }
+        },
+        {
+          "id": "s5_021_c",
+          "text": "Je ne sais plus très bien ce dont j’ai besoin.",
+          "next": "s5_022_c",
+          "effects": {
+            "sarah_trust": -1,
+            "sarah_doubt": 2,
+            "guilt": 2,
+            "flags": [
+              "sarah_doubt_deepened_j5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s5_022_a",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai besoin de toi. Je vais le montrer mieux.",
+      "delay": 0,
+      "next": "s5_023_a"
+    },
+    {
+      "id": "s5_023_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je veux te croire. Mais cette fois, je vais laisser tes gestes parler avant moi.",
+      "delay": 55,
+      "next": "s5_024"
+    },
+    {
+      "id": "s5_022_b",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai besoin d’air, mais pas loin de toi.",
+      "delay": 0,
+      "next": "s5_023_b"
+    },
+    {
+      "id": "s5_023_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est une phrase fragile. Je peux la recevoir, si tu ne t’en sers pas pour rester flou.",
+      "delay": 55,
+      "next": "s5_024"
+    },
+    {
+      "id": "s5_022_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne sais plus très bien ce dont j’ai besoin.",
+      "delay": 0,
+      "next": "s5_023_c"
+    },
+    {
+      "id": "s5_023_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Alors moi je vais essayer de ne pas devenir seulement une option parmi tes hésitations.",
+      "delay": 55,
+      "next": "s5_024"
+    },
+    {
+      "id": "s5_024",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ce soir, je serai là. Pas pour vérifier. Pour voir si on sait encore être simples ensemble.",
+      "delay": 95,
+      "next": "s5_025"
+    },
+    {
+      "id": "s5_025",
+      "type": "choice",
+      "sender": "player",
+      "text": "Clore Sarah J5.",
+      "choices": [
+        {
+          "id": "s5_025_a",
+          "text": "Je serai là pour quelque chose de simple.",
+          "next": "s5_026_a",
+          "effects": {
+            "sarah_trust": 2,
+            "guilt": 1,
+            "player_presence": 2,
+            "flags": [
+              "sarah_j5_end_simple_presence"
+            ]
+          }
+        },
+        {
+          "id": "s5_025_b",
+          "text": "Je vais essayer. Je ne veux pas mentir avec une promesse trop nette.",
+          "next": "s5_026_b",
+          "effects": {
+            "sarah_trust": 1,
+            "sarah_doubt": 1,
+            "guilt": 1,
+            "flags": [
+              "sarah_j5_end_fragile_honesty"
+            ]
+          }
+        },
+        {
+          "id": "s5_025_c",
+          "text": "Si je n’y arrive pas, je te le dirai.",
+          "next": "s5_026_c",
+          "effects": {
+            "sarah_trust": 0,
+            "sarah_doubt": 2,
+            "guilt": 1,
+            "flags": [
+              "sarah_j5_end_possible_absence"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s5_026_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je serai là pour quelque chose de simple.",
+      "delay": 0,
+      "next": "s5_end_presence"
+    },
+    {
+      "id": "s5_end_presence",
+      "type": "end",
+      "sender": "sarah",
+      "text": "Alors garde ça. Pas comme une phrase à relire. Comme quelque chose à tenir quand le reste voudra t’emmener ailleurs.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "sarah_j5_end_presence"
+        ]
+      }
+    },
+    {
+      "id": "s5_026_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je vais essayer. Je ne veux pas mentir avec une promesse trop nette.",
+      "delay": 0,
+      "next": "s5_end_fragile"
+    },
+    {
+      "id": "s5_end_fragile",
+      "type": "end",
+      "sender": "sarah",
+      "text": "Je préfère une vérité fragile à une belle promesse vide. Mais fragile, ça veut dire qu’il faudra en prendre soin.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "sarah_j5_end_fragile"
+        ]
+      }
+    },
+    {
+      "id": "s5_026_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Si je n’y arrive pas, je te le dirai.",
+      "delay": 0,
+      "next": "s5_end_distance"
+    },
+    {
+      "id": "s5_end_distance",
+      "type": "end",
+      "sender": "sarah",
+      "text": "Dis-le avant que je le devine. Je crois que c’est tout ce que je peux encore demander sans me perdre.",
+      "delay": 70,
+      "effects": {
+        "flags": [
+          "sarah_j5_end_distance"
+        ]
+      }
+    }
+  ]
+}

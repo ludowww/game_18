@@ -1,0 +1,581 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "camille_j1_complete",
+  "day": 1,
+  "contact_id": "camille",
+  "start_node": "c1_001",
+  "nodes": [
+    {
+      "id": "c1_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors… tu fais toujours semblant d’être sérieux le matin ? Le café du coin passe un morceau beaucoup trop dramatique pour 9h, ça aide peut-être.",
+      "delay": 0,
+      "next": "c1_002"
+    },
+    {
+      "id": "c1_002",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre à Camille sur le ton du jeu, pas de la survie.",
+      "choices": [
+        {
+          "id": "c1_002_a",
+          "text": "Seulement quand on me surveille.",
+          "next": "c1_003_flirt",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "answered_camille_fast"
+            ]
+          }
+        },
+        {
+          "id": "c1_002_b",
+          "text": "Je suis très sérieux. Trop, même. Surtout avant le deuxième café.",
+          "next": "c1_003_soft",
+          "effects": {
+            "camille_interest": 0,
+            "flags": [
+              "answered_camille_fast"
+            ]
+          }
+        },
+        {
+          "id": "c1_002_c",
+          "text": "Ignorer pour l’instant",
+          "next": "c1_003_ignore",
+          "effects": {
+            "camille_interest": -1,
+            "sarah_trust": 1,
+            "flags": [
+              "left_camille_on_read"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c1_003_flirt",
+      "type": "message",
+      "sender": "player",
+      "text": "Seulement quand on me surveille.",
+      "delay": 0,
+      "next": "c1_004_flirt"
+    },
+    {
+      "id": "c1_004_flirt",
+      "type": "message",
+      "sender": "camille",
+      "text": "Donc si je te surveille, tu redeviens sage ? Intéressant. Je note la théorie sur une serviette en papier.",
+      "delay": 60,
+      "next": "c1_005"
+    },
+    {
+      "id": "c1_003_soft",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis très sérieux. Trop, même. Surtout avant le deuxième café.",
+      "delay": 0,
+      "next": "c1_004_soft"
+    },
+    {
+      "id": "c1_004_soft",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ça sonne comme un défi, pas comme une information. Tu as hésité avant d’envoyer, non ?",
+      "delay": 60,
+      "next": "c1_005"
+    },
+    {
+      "id": "c1_003_ignore",
+      "type": "message",
+      "sender": "system",
+      "text": "Camille reste en attente. La notification disparaît, pas la tension.",
+      "delay": 0,
+      "next": "c1_004_ignore",
+      "effects": {
+        "flags": [
+          "camille_left_waiting"
+        ]
+      }
+    },
+    {
+      "id": "c1_004_ignore",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je vois. Monsieur sérieux a aussi l’option silence. Il est assez bien habillé, ce silence.",
+      "delay": 900,
+      "next": "c1_005_ignore_choice"
+    },
+    {
+      "id": "c1_005_ignore_choice",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille relance après le silence.",
+      "choices": [
+        {
+          "id": "c1_005_ignore_a",
+          "text": "J’étais occupé, pas indifférent.",
+          "next": "c1_006_ignore_a",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "camille_recovered_after_silence"
+            ]
+          }
+        },
+        {
+          "id": "c1_005_ignore_b",
+          "text": "Je ne voulais pas répondre trop vite.",
+          "next": "c1_006_ignore_b",
+          "effects": {
+            "camille_interest": 1,
+            "guilt": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "c1_006_ignore_a",
+      "type": "message",
+      "sender": "player",
+      "text": "J’étais occupé, pas indifférent.",
+      "delay": 0,
+      "next": "c1_007_ignore_a"
+    },
+    {
+      "id": "c1_007_ignore_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Bonne réponse. Je préfère quand tu assumes un minimum. Même si c’est juste la moitié d’une phrase au fond d’un café.",
+      "delay": 60,
+      "next": "c1_005"
+    },
+    {
+      "id": "c1_006_ignore_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne voulais pas répondre trop vite.",
+      "delay": 0,
+      "next": "c1_007_ignore_b"
+    },
+    {
+      "id": "c1_007_ignore_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ah. Donc tu calcules. C’est presque pire… mais pas inintéressant. Garde cette prudence, elle te resservira.",
+      "delay": 60,
+      "next": "c1_005"
+    },
+    {
+      "id": "c1_005",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je passe près de ton quartier ce soir. Enfin… peut-être.",
+      "delay": 120,
+      "next": "c1_006"
+    },
+    {
+      "id": "c1_006",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille ouvre une porte.",
+      "choices": [
+        {
+          "id": "c1_006_a",
+          "text": "Préviens-moi si le peut-être devient sûr.",
+          "next": "c1_007_a",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1
+          }
+        },
+        {
+          "id": "c1_006_b",
+          "text": "Ce soir c’est compliqué.",
+          "next": "c1_007_b",
+          "effects": {
+            "camille_interest": -1,
+            "sarah_trust": 1
+          }
+        },
+        {
+          "id": "c1_006_c",
+          "text": "Compliqué, mais j’ai envie de savoir.",
+          "next": "c1_007_c",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_evening_temptation"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c1_007_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Préviens-moi si le peut-être devient sûr.",
+      "delay": 0,
+      "next": "c1_008_a"
+    },
+    {
+      "id": "c1_008_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je note. J’aime bien quand tu réponds vite.",
+      "delay": 60,
+      "next": "c1_009_pause"
+    },
+    {
+      "id": "c1_007_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Ce soir c’est compliqué.",
+      "delay": 0,
+      "next": "c1_008_b"
+    },
+    {
+      "id": "c1_008_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Toujours sérieux, donc. Dommage, j’étais curieuse.",
+      "delay": 60,
+      "next": "c1_009_pause"
+    },
+    {
+      "id": "c1_007_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Compliqué, mais j’ai envie de savoir.",
+      "delay": 0,
+      "next": "c1_008_c"
+    },
+    {
+      "id": "c1_008_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Voilà. Là tu es beaucoup plus intéressant.",
+      "delay": 60,
+      "next": "c1_009_pause"
+    },
+    {
+      "id": "c1_009_pause",
+      "type": "message",
+      "sender": "system",
+      "text": "La journée avance. Camille ne renvoie rien pendant un moment. C’est pire que si elle insistait.",
+      "delay": 3600,
+      "next": "c1_010"
+    },
+    {
+      "id": "c1_010",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je viens de passer devant le café au coin. Il avait l’air vide. Presque fait exprès.",
+      "delay": 0,
+      "next": "c1_011"
+    },
+    {
+      "id": "c1_011",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre au message du soir",
+      "choices": [
+        {
+          "id": "c1_011_a",
+          "text": "Tu fais exprès de me mettre ça en tête.",
+          "next": "c1_012_a",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1
+          }
+        },
+        {
+          "id": "c1_011_b",
+          "text": "Je suis pris ce soir. Vraiment.",
+          "next": "c1_012_b",
+          "effects": {
+            "camille_interest": -1,
+            "sarah_trust": 1,
+            "guilt": -1
+          }
+        },
+        {
+          "id": "c1_011_c",
+          "text": "Si tu y retournes, je veux le savoir.",
+          "next": "c1_012_c",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "asked_camille_to_signal"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c1_012_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu fais exprès de me mettre ça en tête.",
+      "delay": 0,
+      "next": "c1_013_a"
+    },
+    {
+      "id": "c1_013_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Peut-être. Ça marche ?",
+      "delay": 45,
+      "next": "c1_014"
+    },
+    {
+      "id": "c1_012_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis pris ce soir. Vraiment.",
+      "delay": 0,
+      "next": "c1_013_b"
+    },
+    {
+      "id": "c1_013_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Vraiment, c’est le mot qu’on ajoute quand on veut que ça ait l’air simple.",
+      "delay": 45,
+      "next": "c1_014"
+    },
+    {
+      "id": "c1_012_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Si tu y retournes, je veux le savoir.",
+      "delay": 0,
+      "next": "c1_013_c"
+    },
+    {
+      "id": "c1_013_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Attention. Tu commences à parler comme quelqu’un qui attend une notification.",
+      "delay": 45,
+      "next": "c1_014"
+    },
+    {
+      "id": "c1_014",
+      "type": "message",
+      "sender": "camille",
+      "text": "Dis-moi juste un truc : si je t’écris tard, tu réponds ?",
+      "delay": 90,
+      "next": "c1_015"
+    },
+    {
+      "id": "c1_015",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille teste la limite du soir.",
+      "choices": [
+        {
+          "id": "c1_015_a",
+          "text": "Ça dépend de ce que tu écris.",
+          "next": "c1_016_a",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "invited_late_message"
+            ]
+          }
+        },
+        {
+          "id": "c1_015_b",
+          "text": "Je ne devrais pas.",
+          "next": "c1_016_b",
+          "effects": {
+            "camille_interest": 0,
+            "guilt": 1,
+            "flags": [
+              "knows_it_is_wrong"
+            ]
+          }
+        },
+        {
+          "id": "c1_015_c",
+          "text": "Oui.",
+          "next": "c1_016_c",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "promised_late_reply"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c1_016_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Ça dépend de ce que tu écris.",
+      "delay": 0,
+      "next": "c1_017_a"
+    },
+    {
+      "id": "c1_017_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors je vais choisir mes mots.",
+      "delay": 60,
+      "next": "c1_018_wait"
+    },
+    {
+      "id": "c1_016_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne devrais pas.",
+      "delay": 0,
+      "next": "c1_017_b"
+    },
+    {
+      "id": "c1_017_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je n’ai pas demandé ce que tu devrais faire.",
+      "delay": 60,
+      "next": "c1_018_wait"
+    },
+    {
+      "id": "c1_016_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Oui.",
+      "delay": 0,
+      "next": "c1_017_c"
+    },
+    {
+      "id": "c1_017_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Simple. Dangereux. J’aime bien.",
+      "delay": 60,
+      "next": "c1_018_wait"
+    },
+    {
+      "id": "c1_018_wait",
+      "type": "message",
+      "sender": "system",
+      "text": "Plus rien. L’écran reste calme assez longtemps pour que tu le vérifies deux fois.",
+      "delay": 7200,
+      "next": "c1_019"
+    },
+    {
+      "id": "c1_019",
+      "type": "message",
+      "sender": "camille",
+      "text": "23:42.",
+      "delay": 0,
+      "next": "c1_020"
+    },
+    {
+      "id": "c1_020",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je suis devant le café. Je ne sais pas pourquoi je t’écris au lieu de rentrer.",
+      "delay": 30,
+      "next": "c1_021"
+    },
+    {
+      "id": "c1_021",
+      "type": "choice",
+      "sender": "player",
+      "text": "Cliffhanger fin J1",
+      "choices": [
+        {
+          "id": "c1_021_a",
+          "text": "Ne bouge pas.",
+          "next": "c1_end_go",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 3,
+            "guilt": 2,
+            "flags": [
+              "camille_j1_cliffhanger_go"
+            ]
+          }
+        },
+        {
+          "id": "c1_021_b",
+          "text": "Rentre, Camille.",
+          "next": "c1_end_resist",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_j1_cliffhanger_resist"
+            ]
+          }
+        },
+        {
+          "id": "c1_021_c",
+          "text": "Vu à 23:42",
+          "next": "c1_end_seen",
+          "effects": {
+            "camille_interest": 0,
+            "risk": 1,
+            "guilt": 2,
+            "flags": [
+              "camille_j1_seen_no_reply"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c1_end_go",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin J1 : tu as répondu. Camille attend. Le téléphone aussi.",
+      "effects": {
+        "flags": [
+          "camille_j1_complete",
+          "camille_waits_at_cafe"
+        ]
+      }
+    },
+    {
+      "id": "c1_end_resist",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin J1 : tu poses une limite. Mais le message reste là, intact.",
+      "effects": {
+        "flags": [
+          "camille_j1_complete",
+          "camille_sent_home"
+        ]
+      }
+    },
+    {
+      "id": "c1_end_seen",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin J1 : tu n’as pas répondu. C’est parfois la trace la plus bruyante.",
+      "effects": {
+        "flags": [
+          "camille_j1_complete",
+          "camille_left_on_read_2342"
+        ]
+      }
+    }
+  ]
+}

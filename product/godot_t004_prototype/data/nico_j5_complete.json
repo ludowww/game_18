@@ -1,0 +1,421 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "nico_j5_complete",
+  "day": 5,
+  "contact_id": "nico",
+  "start_node": "n5_block_a",
+  "nodes": [
+    {
+      "id": "n5_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "N5A — Nico : couverture fragile / pression sociale",
+      "delay": 0,
+      "next": "n5_001"
+    },
+    {
+      "id": "n5_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "Dis-moi que le message de Maya à l’instant n’était pas pour vérifier si je savais où tu étais. Je venais de m’asseoir avec des frites, respecte-moi.",
+      "delay": 0,
+      "next": "n5_002"
+    },
+    {
+      "id": "n5_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "Parce que j’ai répondu “aucune idée” et même moi j’ai trouvé ça peu convaincant. Mes frites ont baissé les yeux.",
+      "delay": 80,
+      "next": "n5_003"
+    },
+    {
+      "id": "n5_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Nico voit que le joueur commence à impliquer les autres malgré lui.",
+      "choices": [
+        {
+          "id": "n5_003_a",
+          "text": "Reste vague si on te demande.",
+          "next": "n5_004_a",
+          "effects": {
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "player_asked_nico_cover_j5",
+              "nico_cover_possible",
+              "j5_social_pressure"
+            ]
+          }
+        },
+        {
+          "id": "n5_003_b",
+          "text": "Tu aurais pu dire que j’étais occupé.",
+          "next": "n5_004_b",
+          "effects": {
+            "risk": 2,
+            "nico_trust": -1,
+            "flags": [
+              "nico_warned_player",
+              "j5_social_pressure"
+            ]
+          }
+        },
+        {
+          "id": "n5_003_c",
+          "text": "Non, réponds juste la vérité : tu ne sais pas. Et mange tes frites tranquille.",
+          "next": "n5_004_c",
+          "effects": {
+            "nico_trust": 1,
+            "guilt": 1,
+            "flags": [
+              "nico_warned_player"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n5_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Reste vague si on te demande.",
+      "delay": 0,
+      "next": "n5_005_a"
+    },
+    {
+      "id": "n5_005_a",
+      "type": "message",
+      "sender": "nico",
+      "text": "Ah, la fameuse option “brouillard amical”. Je peux faire ça une fois. Après, j’ouvre une franchise d’excuses claquées.",
+      "delay": 70,
+      "next": "n5_006"
+    },
+    {
+      "id": "n5_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu aurais pu dire que j’étais occupé.",
+      "delay": 0,
+      "next": "n5_005_b"
+    },
+    {
+      "id": "n5_005_b",
+      "type": "message",
+      "sender": "nico",
+      "text": "Occupé à quoi ? Respirer avec mystère ? Ton excuse a besoin de chaussures et d’un justificatif EDF, sinon ça ne marche pas.",
+      "delay": 70,
+      "next": "n5_006"
+    },
+    {
+      "id": "n5_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Non, réponds juste la vérité : tu ne sais pas. Et mange tes frites tranquille.",
+      "delay": 0,
+      "next": "n5_005_c"
+    },
+    {
+      "id": "n5_005_c",
+      "type": "message",
+      "sender": "nico",
+      "text": "Ça, je sais faire. C’est même mon niveau de compétence principal dans ton dossier, juste après “lever les yeux au ciel”.",
+      "delay": 70,
+      "next": "n5_006"
+    },
+    {
+      "id": "n5_006",
+      "type": "message",
+      "sender": "nico",
+      "text": "Le souci, c’est que quand deux personnes me demandent où tu es dans la même matinée, ça commence à faire club de lecture.",
+      "delay": 95,
+      "next": "n5_007"
+    },
+    {
+      "id": "n5_007",
+      "type": "choice",
+      "sender": "player",
+      "text": "Nico propose une couverture limitée, mais veut une limite claire.",
+      "choices": [
+        {
+          "id": "n5_007_a",
+          "text": "Si Sarah demande, tu ne sais rien.",
+          "next": "n5_008_a",
+          "effects": {
+            "risk": 2,
+            "guilt": 2,
+            "flags": [
+              "player_asked_nico_cover_j5",
+              "nico_knows_too_much",
+              "j5_social_pressure"
+            ]
+          }
+        },
+        {
+          "id": "n5_007_b",
+          "text": "Je ne veux pas te mettre là-dedans. T’as déjà assez de problèmes avec tes sauces.",
+          "next": "n5_008_b",
+          "effects": {
+            "nico_trust": 2,
+            "guilt": 1,
+            "flags": [
+              "nico_warned_player"
+            ]
+          }
+        },
+        {
+          "id": "n5_007_c",
+          "text": "Personne ne va te demander.",
+          "next": "n5_008_c",
+          "effects": {
+            "risk": 1,
+            "nico_trust": -1,
+            "flags": [
+              "player_boasted_nico",
+              "j5_social_pressure"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n5_008_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Si Sarah demande, tu ne sais rien.",
+      "delay": 0,
+      "next": "n5_009_a"
+    },
+    {
+      "id": "n5_009_a",
+      "type": "message",
+      "sender": "nico",
+      "text": "Sarah ? Là tu viens de prononcer un prénom avec une alarme incendie dedans.",
+      "delay": 75,
+      "next": "n5_010"
+    },
+    {
+      "id": "n5_008_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne veux pas te mettre là-dedans. T’as déjà assez de problèmes avec tes sauces.",
+      "delay": 0,
+      "next": "n5_009_b"
+    },
+    {
+      "id": "n5_009_b",
+      "type": "message",
+      "sender": "nico",
+      "text": "Trop tard pour le principe, mais pas trop tard pour éviter de me donner un rôle avec dialogues.",
+      "delay": 75,
+      "next": "n5_010"
+    },
+    {
+      "id": "n5_008_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Personne ne va te demander.",
+      "delay": 0,
+      "next": "n5_009_c"
+    },
+    {
+      "id": "n5_009_c",
+      "type": "message",
+      "sender": "nico",
+      "text": "Tu dis ça avec la confiance d’un gars dont le téléphone est déjà en train de vibrer.",
+      "delay": 75,
+      "next": "n5_010"
+    },
+    {
+      "id": "n5_010",
+      "type": "message",
+      "sender": "nico",
+      "text": "Je peux couvrir un blanc social. Pas faire la saison 2 de ta journée avec résumé des épisodes précédents.",
+      "delay": 95,
+      "next": "n5_011"
+    },
+    {
+      "id": "n5_011",
+      "type": "message",
+      "sender": "nico",
+      "text": "Et je te dis ça sans morale. Juste avec l’instinct de survie du pote qui refuse d’être appelé “complice” dans un résumé.",
+      "delay": 90,
+      "next": "n5_012"
+    },
+    {
+      "id": "n5_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Nico demande quelle posture adopter si le réseau commence à comparer les versions.",
+      "choices": [
+        {
+          "id": "n5_012_a",
+          "text": "Dis juste que tu m’as vu passer vite fait.",
+          "next": "n5_013_a",
+          "effects": {
+            "risk": 1,
+            "nico_trust": -1,
+            "flags": [
+              "player_asked_nico_cover_j5",
+              "nico_cover_possible",
+              "j5_social_pressure"
+            ]
+          }
+        },
+        {
+          "id": "n5_012_b",
+          "text": "Dis que je gère un truc perso.",
+          "next": "n5_013_b",
+          "effects": {
+            "guilt": 1,
+            "risk": 1,
+            "flags": [
+              "nico_cover_possible",
+              "nico_warned_player"
+            ]
+          }
+        },
+        {
+          "id": "n5_012_c",
+          "text": "Ne dis rien. Je vais reprendre la main.",
+          "next": "n5_013_c",
+          "effects": {
+            "nico_trust": 1,
+            "guilt": 1,
+            "flags": [
+              "nico_warned_player"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n5_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Dis juste que tu m’as vu passer vite fait.",
+      "delay": 0,
+      "next": "n5_014_a"
+    },
+    {
+      "id": "n5_014_a",
+      "type": "message",
+      "sender": "nico",
+      "text": "“Vu passer vite fait”, c’est acceptable. Flou, triste, plausible. Comme ton agenda.",
+      "delay": 70,
+      "next": "n5_015"
+    },
+    {
+      "id": "n5_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Dis que je gère un truc perso.",
+      "delay": 0,
+      "next": "n5_014_b"
+    },
+    {
+      "id": "n5_014_b",
+      "type": "message",
+      "sender": "nico",
+      "text": "Ça, je peux le dire. Mais ça donne envie aux gens gentils de demander si ça va. Prépare une réponse.",
+      "delay": 70,
+      "next": "n5_015"
+    },
+    {
+      "id": "n5_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Ne dis rien. Je vais reprendre la main.",
+      "delay": 0,
+      "next": "n5_014_c"
+    },
+    {
+      "id": "n5_014_c",
+      "type": "message",
+      "sender": "nico",
+      "text": "Parfait. Reprendre la main, c’est généralement mieux que distribuer des gants à tout le monde.",
+      "delay": 70,
+      "next": "n5_015"
+    },
+    {
+      "id": "n5_015",
+      "type": "message",
+      "sender": "nico",
+      "text": "Dernier conseil gratuit : si tu dois improviser, évite les plans qui recrutent des bénévoles.",
+      "delay": 100,
+      "next": "n5_016"
+    },
+    {
+      "id": "n5_016",
+      "type": "message",
+      "sender": "nico",
+      "text": "Je reste joignable, mais je ne deviens pas ton standard téléphonique sentimental.",
+      "delay": 80,
+      "next": "n5_017"
+    },
+    {
+      "id": "n5_017",
+      "type": "choice",
+      "sender": "player",
+      "text": "Clôturer avec Nico : couverture minimale, aveu partiel ou retrait.",
+      "choices": [
+        {
+          "id": "n5_017_a",
+          "text": "Merci. Juste une couverture minimale.",
+          "next": "n5_end_cover",
+          "effects": {
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "nico_cover_possible",
+              "player_asked_nico_cover_j5",
+              "j5_social_pressure"
+            ]
+          }
+        },
+        {
+          "id": "n5_017_b",
+          "text": "Tu as raison. Je vais calmer le jeu.",
+          "next": "n5_end_warned",
+          "effects": {
+            "nico_trust": 2,
+            "guilt": 1,
+            "flags": [
+              "nico_warned_player"
+            ]
+          }
+        },
+        {
+          "id": "n5_017_c",
+          "text": "T’inquiète, je maîtrise.",
+          "next": "n5_end_cost",
+          "effects": {
+            "risk": 2,
+            "nico_trust": -1,
+            "flags": [
+              "player_boasted_nico",
+              "nico_knows_too_much",
+              "j5_social_pressure"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n5_end_cover",
+      "type": "end",
+      "text": "Fin Nico J5 — Nico peut couvrir un blanc social, mais il commence à lever les yeux au ciel."
+    },
+    {
+      "id": "n5_end_warned",
+      "type": "end",
+      "text": "Fin Nico J5 — Nico reste un miroir lucide ; le joueur garde une chance de reprendre la main."
+    },
+    {
+      "id": "n5_end_cost",
+      "type": "end",
+      "text": "Fin Nico J5 — Nico recule : il a entendu trop de versions et ne veut plus porter le sac."
+    }
+  ]
+}

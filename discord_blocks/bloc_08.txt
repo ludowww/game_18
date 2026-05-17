@@ -1,0 +1,46 @@
+Bloc 8/8 — Threads à créer
+
+THREADS À CRÉER DANS #game_18
+
+Déjà créé :
+- Roadmap
+
+À créer ensuite :
+- Vision produit
+- Scope MVP
+- Personnages
+- Narration jours
+- Dialogues
+- Jauges états
+- Événements conditionnels
+- Routes fins
+- UX faux smartphone
+- Tech Godot
+- Assets images
+- Monétisation
+- Legal plateformes
+- Debug tests
+- Backlog
+
+Décisions validées :
+- Projet dans #game_18
+- Jeu PC d’abord
+- Godot 4 recommandé
+- Interface faux smartphone
+- Contenu adulte pré-écrit et validé
+- Personnages séduisibles clairement adultes
+- Pas de génération NSFW libre côté joueur
+- Version soft possible
+- Version adulte complète séparée ou activable selon plateforme
+
+Décisions à prendre :
+1. Titre provisoire définitif
+2. Ton exact
+3. Genre du/de la partenaire officiel(le)
+4. Noms des 3 personnages MVP
+5. Durée MVP : 5 ou 7 jours
+6. Images placeholders ou DA dès le départ
+7. Godot maintenant ou après bible narrative
+
+Prochaine action :
+Créer le thread Vision produit.

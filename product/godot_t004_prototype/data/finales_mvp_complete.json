@@ -1,0 +1,461 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "finales_mvp_complete",
+  "day": 6,
+  "contact_id": "system",
+  "start_node": "final_block_a",
+  "nodes": [
+    {
+      "id": "final_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "FIN — Choisir ce qui reste ouvert",
+      "delay": 0,
+      "next": "final_001"
+    },
+    {
+      "id": "final_001",
+      "type": "message",
+      "sender": "system",
+      "text": "Le téléphone reste allumé. Les derniers messages sont là, pas rangés, pas effacés. Quelque part, quelqu’un envoie sûrement une photo de dessert moche.",
+      "delay": 0,
+      "next": "final_002"
+    },
+    {
+      "id": "final_002",
+      "type": "message",
+      "sender": "system",
+      "text": "Sarah a laissé le mug dans l’évier. Camille n’a pas relancé le morceau. Nico attend sans couvrir. Maya a vu la photo. Inès a laissé une porte entrouverte.",
+      "delay": 80,
+      "next": "final_003"
+    },
+    {
+      "id": "final_003",
+      "type": "message",
+      "sender": "system",
+      "text": "Il n’y a pas de phrase parfaite. Seulement la prochaine réponse.",
+      "delay": 80,
+      "next": "final_choice"
+    },
+    {
+      "id": "final_choice",
+      "type": "choice",
+      "sender": "player",
+      "text": "Choisir la route de fin MVP.",
+      "choices": [
+        {
+          "id": "final_choice_repair",
+          "text": "Rentrer parler à Sarah, sans promettre que tout est réparé.",
+          "next": "final_repair_001",
+          "effects": {
+            "sarah_trust": 3,
+            "player_presence": 2,
+            "guilt": 1,
+            "flags": [
+              "final_route_reparation_fragile"
+            ]
+          }
+        },
+        {
+          "id": "final_choice_camille",
+          "text": "Dire à Camille une phrase simple, et assumer ce qu’elle implique.",
+          "next": "final_camille_001",
+          "effects": {
+            "camille_interest": 3,
+            "risk": 2,
+            "guilt": 2,
+            "flags": [
+              "final_route_camille_assumee"
+            ]
+          }
+        },
+        {
+          "id": "final_choice_control",
+          "text": "Garder chaque conversation assez calme pour que la nuit passe, sans faire tomber tous les verres.",
+          "next": "final_control_001",
+          "effects": {
+            "risk": 2,
+            "guilt": 2,
+            "flags": [
+              "final_route_control_maintained"
+            ]
+          }
+        },
+        {
+          "id": "final_choice_fracture",
+          "text": "Répondre trop tard, trop court, à trop de monde.",
+          "next": "final_fracture_001",
+          "effects": {
+            "risk": 3,
+            "guilt": 3,
+            "sarah_trust": -2,
+            "camille_interest": -2,
+            "nico_trust": -2,
+            "maya_trust": -1,
+            "flags": [
+              "final_route_fissure"
+            ]
+          }
+        },
+        {
+          "id": "final_choice_flight",
+          "text": "Ouvrir le message d’Inès au lieu de répondre aux anciens.",
+          "next": "final_flight_001",
+          "effects": {
+            "risk": 2,
+            "guilt": 2,
+            "ines_interest": 2,
+            "flags": [
+              "final_route_fuite_en_avant"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "final_repair_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je rentre. Pas pour faire comme si tout allait bien. Pour parler avant de dormir.",
+      "delay": 0,
+      "next": "final_repair_002"
+    },
+    {
+      "id": "final_repair_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai pas rangé le mug.",
+      "delay": 70,
+      "next": "final_repair_003"
+    },
+    {
+      "id": "final_repair_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je sais pas pourquoi je commence par ça. Peut-être parce que c’est plus facile que de dire que je tremble un peu.",
+      "delay": 80,
+      "next": "final_repair_004"
+    },
+    {
+      "id": "final_repair_004",
+      "type": "message",
+      "sender": "player",
+      "text": "Ne le range pas. J’arrive et je pose mon téléphone sur la table. Écran vers le haut.",
+      "delay": 0,
+      "next": "final_repair_005"
+    },
+    {
+      "id": "final_repair_005",
+      "type": "message",
+      "sender": "sarah",
+      "text": "D’accord. Mais demain, on ne fait pas semblant que ce soir a tout nettoyé.",
+      "delay": 85,
+      "next": "final_repair_006"
+    },
+    {
+      "id": "final_repair_006",
+      "type": "message",
+      "sender": "nico",
+      "text": "Pour info, j’ai répondu propre à Maya. Et j’ai mangé tes frites émotionnelles à ta place. Tu me dois un vrai repas, pas un plan claqué.",
+      "delay": 70,
+      "next": "final_repair_007"
+    },
+    {
+      "id": "final_repair_007",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je pose ça là : parler avant le résumé du groupe, c’était pas l’idée la plus nulle de ta semaine. Le groupe survivra sans PowerPoint de ton épaule.",
+      "delay": 75,
+      "next": "final_repair_008"
+    },
+    {
+      "id": "final_repair_008",
+      "type": "message",
+      "sender": "system",
+      "text": "Sarah laisse la porte ouverte. Pas grande. Pas sans peur. Juste assez pour entrer et commencer par une phrase vraie.",
+      "delay": 90,
+      "next": "final_end_reparation_fragile"
+    },
+    {
+      "id": "final_end_reparation_fragile",
+      "type": "end",
+      "text": "Fin MVP — Réparation fragile : rien n’est effacé, mais le joueur choisit de revenir dans le quotidien au lieu de le contourner."
+    },
+    {
+      "id": "final_camille_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne veux pas que tu sois une pause. Je veux te voir comme quelqu’un de réel.",
+      "delay": 0,
+      "next": "final_camille_002"
+    },
+    {
+      "id": "final_camille_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est une phrase simple. Elle arrive tard.",
+      "delay": 80,
+      "next": "final_camille_003"
+    },
+    {
+      "id": "final_camille_003",
+      "type": "message",
+      "sender": "player",
+      "text": "Je sais. Et elle va faire mal ailleurs.",
+      "delay": 0,
+      "next": "final_camille_004"
+    },
+    {
+      "id": "final_camille_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors ne la rends pas jolie. Les jolies phrases glissent trop bien.",
+      "delay": 75,
+      "next": "final_camille_005"
+    },
+    {
+      "id": "final_camille_005",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai compris que tu ne rentrais pas pour parler comme tu l’avais dit. J’aurais préféré une phrase moins douce plus tôt.",
+      "delay": 85,
+      "next": "final_camille_006"
+    },
+    {
+      "id": "final_camille_006",
+      "type": "message",
+      "sender": "nico",
+      "text": "Je vais pas te jeter des cailloux par texto. Mais demain, évite de m’appeler pour traduire le silence des autres. Je suis ton pote, pas Google Traduction du chaos.",
+      "delay": 75,
+      "next": "final_camille_007"
+    },
+    {
+      "id": "final_camille_007",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je suis au café. Pas pour te sauver de ce que tu viens d’ouvrir. Si tu viens, viens debout.",
+      "delay": 90,
+      "next": "final_camille_008"
+    },
+    {
+      "id": "final_camille_008",
+      "type": "message",
+      "sender": "system",
+      "text": "Camille ne devient pas une récompense. Elle devient une adresse réelle, avec le poids de tout ce qui n’est pas venu avec toi.",
+      "delay": 90,
+      "next": "final_end_camille_assumee"
+    },
+    {
+      "id": "final_end_camille_assumee",
+      "type": "end",
+      "text": "Fin MVP — Camille assumée : le joueur choisit Camille comme relation réelle, attirante et lourde à porter, sans effacer Sarah par magie."
+    },
+    {
+      "id": "final_control_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je vais répondre à tout le monde. Pas parfaitement. Juste assez pour ce soir.",
+      "delay": 0,
+      "next": "final_control_002"
+    },
+    {
+      "id": "final_control_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "“Ce soir”, ça revient souvent dans tes phrases.",
+      "delay": 75,
+      "next": "final_control_003"
+    },
+    {
+      "id": "final_control_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je note le détour. Il est mieux habillé que les précédents.",
+      "delay": 70,
+      "next": "final_control_004"
+    },
+    {
+      "id": "final_control_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "Bon. Personne ne crie, donc techniquement ton château de cartes tient encore. Je déteste que cette phrase soit vraie.",
+      "delay": 80,
+      "next": "final_control_005"
+    },
+    {
+      "id": "final_control_005",
+      "type": "message",
+      "sender": "maya",
+      "text": "Le groupe passe à autre chose pour l’instant. Enfin, à une photo de dessert moche. Profite de cette diversion historique.",
+      "delay": 75,
+      "next": "final_control_006"
+    },
+    {
+      "id": "final_control_006",
+      "type": "message",
+      "sender": "ines",
+      "text": "Pas grave si tu réponds plus tard. Je crois que tu as déjà beaucoup de fenêtres ouvertes.",
+      "delay": 80,
+      "next": "final_control_007"
+    },
+    {
+      "id": "final_control_007",
+      "type": "message",
+      "sender": "system",
+      "text": "Aucune explosion. Aucun message définitif. Seulement le téléphone, un peu plus lourd, posé près de la main.",
+      "delay": 90,
+      "next": "final_control_008"
+    },
+    {
+      "id": "final_control_008",
+      "type": "message",
+      "sender": "system",
+      "text": "Ça tient. Pour l’instant. Et “pour l’instant” n’a jamais semblé aussi court.",
+      "delay": 90,
+      "next": "final_end_double_vie_maintenue"
+    },
+    {
+      "id": "final_end_double_vie_maintenue",
+      "type": "end",
+      "text": "Fin MVP — Équilibre maintenu : le joueur garde le contrôle une nuit de plus, mais chaque fil tire plus fort."
+    },
+    {
+      "id": "final_fracture_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je répondrai demain.",
+      "delay": 0,
+      "next": "final_fracture_002"
+    },
+    {
+      "id": "final_fracture_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "D’accord.",
+      "delay": 80,
+      "next": "final_fracture_003"
+    },
+    {
+      "id": "final_fracture_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vais dormir chez ma sœur ce soir. Le mug est dans l’évier si tu rentres.",
+      "delay": 90,
+      "next": "final_fracture_004"
+    },
+    {
+      "id": "final_fracture_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Pas maintenant, alors. Peut-être pas demain non plus.",
+      "delay": 80,
+      "next": "final_fracture_005"
+    },
+    {
+      "id": "final_fracture_005",
+      "type": "message",
+      "sender": "nico",
+      "text": "Je t’aime bien, mon reuf, mais là je ferme le standard. Je suis pas ouvert 24/7.",
+      "delay": 75,
+      "next": "final_fracture_006"
+    },
+    {
+      "id": "final_fracture_006",
+      "type": "message",
+      "sender": "maya",
+      "text": "On va dire que j’ai rien vu. Mais je vais surtout arrêter de regarder pour toi. Même mon visage neutre demande des congés.",
+      "delay": 80,
+      "next": "final_fracture_007"
+    },
+    {
+      "id": "final_fracture_007",
+      "type": "message",
+      "sender": "system",
+      "text": "Les messages ne disparaissent pas. Ils arrêtent juste de revenir vers toi.",
+      "delay": 90,
+      "next": "final_fracture_008"
+    },
+    {
+      "id": "final_fracture_008",
+      "type": "message",
+      "sender": "system",
+      "text": "Le silence n’a pas besoin de faire du bruit pour changer une pièce.",
+      "delay": 90,
+      "next": "final_end_tout_se_fissure"
+    },
+    {
+      "id": "final_end_tout_se_fissure",
+      "type": "end",
+      "text": "Fin MVP — Tout se fissure : pas de scène publique, mais les liens se retirent un par un."
+    },
+    {
+      "id": "final_flight_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu disais que tu avais écrit trois versions. Garde celle-ci ouverte encore un peu.",
+      "delay": 0,
+      "next": "final_flight_002"
+    },
+    {
+      "id": "final_flight_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je peux. Mais je ne veux pas devenir l’endroit où tu vas parce que les autres pièces ont trop de lumière.",
+      "delay": 85,
+      "next": "final_flight_003"
+    },
+    {
+      "id": "final_flight_003",
+      "type": "message",
+      "sender": "player",
+      "text": "Je sais. Je crois que j’ai juste envie d’un endroit qui ne demande rien.",
+      "delay": 0,
+      "next": "final_flight_004"
+    },
+    {
+      "id": "final_flight_004",
+      "type": "message",
+      "sender": "ines",
+      "text": "Les endroits qui ne demandent rien finissent souvent par prendre beaucoup.",
+      "delay": 80,
+      "next": "final_flight_005"
+    },
+    {
+      "id": "final_flight_005",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vais dormir. On parlera si tu rentres vraiment.",
+      "delay": 80,
+      "next": "final_flight_006"
+    },
+    {
+      "id": "final_flight_006",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne relance pas le morceau. Bonne nuit.",
+      "delay": 75,
+      "next": "final_flight_007"
+    },
+    {
+      "id": "final_flight_007",
+      "type": "message",
+      "sender": "system",
+      "text": "Tu ouvres une nouvelle fenêtre au lieu de répondre aux anciennes. L’air entre. Le froid aussi.",
+      "delay": 90,
+      "next": "final_flight_008"
+    },
+    {
+      "id": "final_flight_008",
+      "type": "message",
+      "sender": "ines",
+      "text": "Oublie si c’est trop. Ou réponds si c’est juste assez loin. Pas grave si tu réponds plus tard. Peut-être même mieux.",
+      "delay": 85,
+      "next": "final_end_fuite_en_avant"
+    },
+    {
+      "id": "final_end_fuite_en_avant",
+      "type": "end",
+      "text": "Fin MVP — Fuite en avant / solitude : le joueur choisit l’échappatoire, pas une nouvelle histoire sauvée."
+    }
+  ]
+}

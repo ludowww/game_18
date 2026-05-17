@@ -1,0 +1,258 @@
+{
+  "schema_version": "0.1-refonte-j1",
+  "project": "Double Vie",
+  "purpose": "Source technique des variables et flags narratifs V2 pour la refonte du MVP/Jour 1.",
+  "runtime_policy": {
+    "variable_range": {
+      "min": 0,
+      "max": 100
+    },
+    "effects_are_relative": true,
+    "clamp_after_effects": true,
+    "flags_are_unique": true,
+    "unknown_variables_policy": "warn_in_validation_before_runtime_integration",
+    "legacy_effects_policy": "Preserve existing legacy variables until V2 runtime migration is complete. New J1 V2 content must use official_variables."
+  },
+  "official_variables": {
+    "confiance_sarah": {
+      "initial": 55,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure si Sarah peut croire que le joueur lui parle vraiment."
+    },
+    "distance_sarah": {
+      "initial": 35,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure l’éloignement ressenti par Sarah."
+    },
+    "tension_camille": {
+      "initial": 55,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure la charge affective et désirante avec Camille."
+    },
+    "respect_camille": {
+      "initial": 50,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure si Camille se sent respectée et non utilisée."
+    },
+    "pression_camille": {
+      "initial": 30,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure si Camille sent que le joueur pousse trop ou la transforme en refuge."
+    },
+    "intimite_sarah": {
+      "initial": 45,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure la chaleur domestique et la présence réelle avec Sarah."
+    },
+    "intimite_camille": {
+      "initial": 45,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure la proximité avec Camille au-delà du désir."
+    },
+    "attente_image_camille": {
+      "initial": 0,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure l’attente, l’imaginaire et le fantasme autour d’une image possible de Camille."
+    },
+    "suspicion_maya": {
+      "initial": 40,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure le niveau d’alerte sociale de Maya."
+    },
+    "dette_nico": {
+      "initial": 20,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure le poids que le joueur fait porter à Nico."
+    },
+    "fuite_ines": {
+      "initial": 10,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure la tentation de chercher une porte latérale auprès d’Inès."
+    },
+    "coherence": {
+      "initial": 60,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure si les versions données par le joueur tiennent ensemble."
+    },
+    "culpabilite": {
+      "initial": 35,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure la charge intérieure du joueur."
+    },
+    "risque_exposition": {
+      "initial": 25,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure le risque que les traces, timings ou contradictions deviennent visibles."
+    },
+    "fatigue_emotionnelle": {
+      "initial": 20,
+      "min": 0,
+      "max": 100,
+      "description": "Mesure le coût psychique des mensonges, silences et tensions."
+    }
+  },
+  "legacy_variable_mapping": {
+    "sarah_trust": {
+      "suggested_target": "confiance_sarah",
+      "migration_note": "Mapping direct partiel. Ne pas appliquer mécaniquement sans relire le contexte."
+    },
+    "sarah_doubt": {
+      "suggested_target": "distance_sarah",
+      "migration_note": "Doute Sarah peut devenir distance_sarah ou perte de confiance selon la scène."
+    },
+    "camille_interest": {
+      "suggested_target": "tension_camille",
+      "migration_note": "Peut devenir tension_camille, intimite_camille ou respect_camille selon le sens du choix."
+    },
+    "risk": {
+      "suggested_target": "risque_exposition",
+      "migration_note": "Mapping quasi direct."
+    },
+    "guilt": {
+      "suggested_target": "culpabilite",
+      "migration_note": "Mapping quasi direct."
+    },
+    "nico_trust": {
+      "suggested_target": "dette_nico",
+      "migration_note": "Attention : dette_nico augmente quand Nico est utilisé, ce n’est pas une confiance positive."
+    },
+    "maya_trust": {
+      "suggested_target": "suspicion_maya",
+      "migration_note": "Mapping inversé ou contextuel."
+    },
+    "maya_interest": {
+      "suggested_target": "suspicion_maya",
+      "migration_note": "À relire : intérêt social peut augmenter suspicion_maya ou risque_exposition."
+    },
+    "ines_interest": {
+      "suggested_target": "fuite_ines",
+      "migration_note": "Ne pas traiter comme romance. Inès mesure surtout la fuite."
+    },
+    "player_presence": {
+      "suggested_target": "coherence",
+      "migration_note": "Peut aussi affecter intimite_sarah selon la scène."
+    },
+    "player_evasion": {
+      "suggested_target": "fatigue_emotionnelle",
+      "migration_note": "Peut aussi réduire coherence."
+    }
+  },
+  "flag_groups": {
+    "j1_priority": [
+      "first_reply_sarah",
+      "first_reply_camille",
+      "first_reply_nico",
+      "first_reply_maya",
+      "first_reply_ines",
+      "delayed_reply_sarah_j1",
+      "delayed_reply_camille_j1",
+      "delayed_reply_nico_j1",
+      "delayed_reply_maya_j1",
+      "delayed_reply_ines_j1"
+    ],
+    "j1_sarah_absence": [
+      "said_needed_air_to_sarah",
+      "used_nico_alibi_sarah",
+      "mentioned_camille_to_sarah",
+      "minimized_camille_to_sarah",
+      "vulnerable_to_sarah",
+      "ignored_sarah_j1",
+      "sarah_version_needed_air",
+      "sarah_version_nico",
+      "sarah_version_camille_minimized",
+      "sarah_version_emotional_confusion",
+      "sarah_no_clear_version_j1"
+    ],
+    "j1_camille_dehors": [
+      "admitted_tension_to_camille",
+      "protected_camille_boundary",
+      "minimized_with_camille",
+      "uncertain_with_camille",
+      "early_desire_to_camille",
+      "ignored_camille_j1",
+      "camille_trouble_acknowledged",
+      "camille_boundary_respected",
+      "camille_minimized_j1",
+      "camille_desire_too_early_j1",
+      "camille_left_on_read_j1"
+    ],
+    "j1_nico_couverture": [
+      "asked_nico_hold_version",
+      "told_nico_stay_silent",
+      "confessed_camille_to_nico",
+      "vulnerable_to_nico",
+      "dismissed_nico_warning",
+      "nico_full_alibi",
+      "nico_alibi_requested",
+      "joked_with_nico_to_avoid"
+    ],
+    "j1_maya_pique": [
+      "played_dumb_with_maya",
+      "info_maya_photo_possible",
+      "told_maya_needed_air",
+      "told_maya_not_involve",
+      "joked_with_maya_j1",
+      "asked_maya_if_sarah_talked",
+      "asked_maya_what_she_saw",
+      "ignored_maya_j1",
+      "maya_photo_possible",
+      "maya_timing_noted",
+      "maya_warned_no_lie",
+      "maya_suspicion_seeded_j1"
+    ],
+    "j1_ines_faille": [
+      "opened_to_ines",
+      "ines_fuite_seed",
+      "asked_ines_why_write",
+      "kept_ines_at_distance",
+      "sexualized_ines_too_early",
+      "ignored_ines_j1"
+    ],
+    "j1_sarah_domestic": [
+      "sarah_j1_domestic_presence",
+      "promised_sarah_later_j1",
+      "sarah_j1_uncertain_return",
+      "used_work_excuse_sarah_j1",
+      "late_reply_sarah_meal_j1"
+    ],
+    "j1_nico_respiration": [
+      "nico_j1_respiration_shared",
+      "asked_nico_real_advice_j1",
+      "asked_nico_second_cover_j1",
+      "joked_to_avoid_nico_j1",
+      "ignored_nico_respiration_j1"
+    ]
+  },
+  "scene_order_j1": [
+    "j1_00_reveil_messages",
+    "j1_01_sarah_absence",
+    "j1_02_camille_dehors",
+    "j1_03_nico_couverture",
+    "j1_04_maya_pique",
+    "j1_05_ines_faille",
+    "j1_06_sarah_rentrer_manger",
+    "j1_07_nico_vanne_soiree"
+  ],
+  "ending_priority_mvp": [
+    "FIN_EFFONDREMENT_SOCIAL",
+    "FIN_FUITE_INES",
+    "FIN_CAMILLE_REFUSE_REFUGE",
+    "FIN_CAMILLE_SUITE_PRUDENTE",
+    "FIN_SARAH_REPARATION_FRAGILE",
+    "FIN_SARAH_FACADE"
+  ]
+}

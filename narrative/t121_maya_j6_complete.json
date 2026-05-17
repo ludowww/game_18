@@ -1,0 +1,403 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "maya_j6_complete",
+  "day": 6,
+  "contact_id": "maya",
+  "start_node": "m6_block_a",
+  "nodes": [
+    {
+      "id": "m6_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "M6A — Maya : une photo, pas une enquête",
+      "delay": 0,
+      "next": "m6_001"
+    },
+    {
+      "id": "m6_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "J’ai failli rien dire. Puis le groupe a relancé la photo comme si c’était un épisode bonus.",
+      "delay": 0,
+      "next": "m6_002"
+    },
+    {
+      "id": "m6_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "Puis j’ai revu la photo du groupe. Celle où tu es censé ne pas être passé, sauf ton épaule, visiblement très indépendante.",
+      "delay": 75,
+      "next": "m6_003"
+    },
+    {
+      "id": "m6_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je précise : je n’ai pas un mur avec des fils rouges chez moi. J’ai juste des yeux, un dimanche trop calme, et une story mal cadrée.",
+      "delay": 85,
+      "next": "m6_004"
+    },
+    {
+      "id": "m6_004",
+      "type": "choice",
+      "sender": "player",
+      "text": "Maya pose un détail public, sans tout savoir.",
+      "choices": [
+        {
+          "id": "m6_004_a",
+          "text": "Ok, raconte l’épaule superstar.",
+          "next": "m6_005_a",
+          "effects": {
+            "maya_interest": 1,
+            "risk": 1,
+            "flags": [
+              "maya_j6_asked_photo_detail"
+            ]
+          }
+        },
+        {
+          "id": "m6_004_b",
+          "text": "Si c’est flou, laisse tomber.",
+          "next": "m6_005_b",
+          "effects": {
+            "maya_trust": -1,
+            "risk": 1,
+            "flags": [
+              "maya_j6_minimized_photo"
+            ]
+          }
+        },
+        {
+          "id": "m6_004_c",
+          "text": "Je préfère que tu me dises franchement ce qui circule.",
+          "next": "m6_005_c",
+          "effects": {
+            "maya_trust": 1,
+            "risk": 1,
+            "flags": [
+              "maya_j6_asks_social_truth"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m6_005_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Ok, raconte l’épaule superstar.",
+      "delay": 0,
+      "next": "m6_006_a"
+    },
+    {
+      "id": "m6_006_a",
+      "type": "message",
+      "sender": "maya",
+      "text": "Ton épaule. Enfin je crois. Très mauvaise célébrité : reconnaissable par textile et zéro sens du timing.",
+      "delay": 65,
+      "next": "m6_007"
+    },
+    {
+      "id": "m6_005_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Si c’est flou, laisse tomber.",
+      "delay": 0,
+      "next": "m6_006_b"
+    },
+    {
+      "id": "m6_006_b",
+      "type": "message",
+      "sender": "maya",
+      "text": "Flou ne veut pas dire invisible. Ça veut juste dire que tout le monde zoome comme des idiots.",
+      "delay": 65,
+      "next": "m6_007"
+    },
+    {
+      "id": "m6_005_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je préfère que tu me dises franchement ce qui circule.",
+      "delay": 0,
+      "next": "m6_006_c"
+    },
+    {
+      "id": "m6_006_c",
+      "type": "message",
+      "sender": "maya",
+      "text": "Ok. Une photo, deux “il était pas ailleurs lui ?”, et quelqu’un qui a répondu “laisse”. Ambiance nappe en papier qui brûle.",
+      "delay": 75,
+      "next": "m6_007"
+    },
+    {
+      "id": "m6_007",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je veux pas être mêlée. Je dis ça en étant déjà un peu mêlée, ce qui ruine mon image de neutralité.",
+      "delay": 90,
+      "next": "m6_008"
+    },
+    {
+      "id": "m6_008",
+      "type": "choice",
+      "sender": "player",
+      "text": "Décider si le joueur demande aide, distance ou franchise sociale.",
+      "choices": [
+        {
+          "id": "m6_008_a",
+          "text": "Ne couvre rien. Dis juste que tu ne sais pas.",
+          "next": "m6_009_a",
+          "effects": {
+            "maya_trust": 2,
+            "risk": -1,
+            "flags": [
+              "maya_j6_no_cover_truth"
+            ]
+          }
+        },
+        {
+          "id": "m6_008_b",
+          "text": "Si tu peux calmer le groupe avec une vanne moche, je prends.",
+          "next": "m6_009_b",
+          "effects": {
+            "maya_trust": 1,
+            "risk": 1,
+            "flags": [
+              "maya_j6_soften_group_no_lie"
+            ]
+          }
+        },
+        {
+          "id": "m6_008_c",
+          "text": "J’ai besoin que tu ne parles pas de ça.",
+          "next": "m6_009_c",
+          "effects": {
+            "maya_trust": -2,
+            "risk": 2,
+            "flags": [
+              "maya_j6_asked_silence"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m6_009_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Ne couvre rien. Dis juste que tu ne sais pas.",
+      "delay": 0,
+      "next": "m6_010_a"
+    },
+    {
+      "id": "m6_010_a",
+      "type": "message",
+      "sender": "maya",
+      "text": "Parfait. Ma spécialité : ne pas savoir officiellement. Ça demande peu d’entraînement.",
+      "delay": 65,
+      "next": "m6_011"
+    },
+    {
+      "id": "m6_009_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Si tu peux calmer le groupe avec une vanne moche, je prends.",
+      "delay": 0,
+      "next": "m6_010_b"
+    },
+    {
+      "id": "m6_010_b",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je peux dire “on va pas commenter une épaule”. C’est nul, mais c’est légal moralement.",
+      "delay": 65,
+      "next": "m6_011"
+    },
+    {
+      "id": "m6_009_c",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai besoin que tu ne parles pas de ça.",
+      "delay": 0,
+      "next": "m6_010_c"
+    },
+    {
+      "id": "m6_010_c",
+      "type": "message",
+      "sender": "maya",
+      "text": "Besoin ou confort ? Parce que l’un se comprend. L’autre me donne envie de ranger mon téléphone très loin.",
+      "delay": 75,
+      "next": "m6_011"
+    },
+    {
+      "id": "m6_011",
+      "type": "message",
+      "sender": "maya",
+      "text": "Et avant que tu paniques : non, je ne pense pas tout savoir. Je pense juste que ton timing est une œuvre d’art contemporaine.",
+      "delay": 85,
+      "next": "m6_012"
+    },
+    {
+      "id": "m6_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Réagir au regard social de Maya sans la transformer en outil.",
+      "choices": [
+        {
+          "id": "m6_012_a",
+          "text": "Merci de ne pas faire comme si tu savais tout.",
+          "next": "m6_013_a",
+          "effects": {
+            "maya_trust": 2,
+            "guilt": 1,
+            "flags": [
+              "maya_j6_respected_limits"
+            ]
+          }
+        },
+        {
+          "id": "m6_012_b",
+          "text": "Je suis en train de mettre tout le monde dans une position bizarre.",
+          "next": "m6_013_b",
+          "effects": {
+            "maya_trust": 1,
+            "guilt": 2,
+            "flags": [
+              "maya_j6_social_damage_admitted"
+            ]
+          }
+        },
+        {
+          "id": "m6_012_c",
+          "text": "Tu dramatises une épaule sur une photo.",
+          "next": "m6_013_c",
+          "effects": {
+            "maya_trust": -2,
+            "risk": 1,
+            "flags": [
+              "maya_j6_mocked_detail"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m6_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Merci de ne pas faire comme si tu savais tout.",
+      "delay": 0,
+      "next": "m6_014_a"
+    },
+    {
+      "id": "m6_014_a",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je suis agaçante, pas omnisciente. Nuance importante pour mon image de marque.",
+      "delay": 65,
+      "next": "m6_015"
+    },
+    {
+      "id": "m6_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis en train de mettre tout le monde dans une position bizarre.",
+      "delay": 0,
+      "next": "m6_014_b"
+    },
+    {
+      "id": "m6_014_b",
+      "type": "message",
+      "sender": "maya",
+      "text": "Oui. Et bizarre, ça se gère. Tant que tu n’obliges pas les autres à sourire pendant que ça brûle.",
+      "delay": 70,
+      "next": "m6_015"
+    },
+    {
+      "id": "m6_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu dramatises une épaule sur une photo.",
+      "delay": 0,
+      "next": "m6_014_c"
+    },
+    {
+      "id": "m6_014_c",
+      "type": "message",
+      "sender": "maya",
+      "text": "Possible. Mais ton épaule a actuellement une meilleure intrigue que la moitié du groupe.",
+      "delay": 70,
+      "next": "m6_015"
+    },
+    {
+      "id": "m6_015",
+      "type": "message",
+      "sender": "maya",
+      "text": "Je pose ça là : si tu dois parler à quelqu’un, fais-le avant que le groupe écrive le résumé à ta place avec des emojis beaucoup trop confiants.",
+      "delay": 85,
+      "next": "m6_016"
+    },
+    {
+      "id": "m6_016",
+      "type": "choice",
+      "sender": "player",
+      "text": "Fixer le seed de fin côté Maya.",
+      "choices": [
+        {
+          "id": "m6_016_a",
+          "text": "Je vais parler avant que ça tourne en version de groupe.",
+          "next": "m6_end_warned",
+          "effects": {
+            "maya_trust": 2,
+            "guilt": 1,
+            "flags": [
+              "ending_seed_maya_warned",
+              "maya_j6_player_will_talk"
+            ]
+          }
+        },
+        {
+          "id": "m6_016_b",
+          "text": "Gagne-moi juste un peu de calme, sans inventer.",
+          "next": "m6_end_soft_cover",
+          "effects": {
+            "maya_trust": 1,
+            "risk": 1,
+            "flags": [
+              "ending_seed_maya_soft_cover",
+              "maya_j6_group_calmed"
+            ]
+          }
+        },
+        {
+          "id": "m6_016_c",
+          "text": "Laisse-les parler. Je verrai après.",
+          "next": "m6_end_minimized",
+          "effects": {
+            "maya_trust": -2,
+            "risk": 2,
+            "flags": [
+              "ending_seed_maya_minimized",
+              "maya_j6_waits_too_long"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m6_end_warned",
+      "type": "end",
+      "text": "Fin Maya J6 — Maya a vu assez pour prévenir, mais laisse au joueur la responsabilité de parler avant le groupe."
+    },
+    {
+      "id": "m6_end_soft_cover",
+      "type": "end",
+      "text": "Fin Maya J6 — Maya amortit le détail sans inventer, tout en gardant une distance prudente."
+    },
+    {
+      "id": "m6_end_minimized",
+      "type": "end",
+      "text": "Fin Maya J6 — le joueur minimise ; Maya se retire et laisse le groupe tirer ses propres fils."
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "schema_version": "0.1-refonte-j1-v2-experimental",
+  "conversation_id": "sarah_j1_v2",
+  "day": 1,
+  "contact_id": "sarah",
+  "start_node": "j1_01_sarah_001",
+  "experimental": true,
+  "notes": "Conversion expérimentale non branchée au runtime actif. Première version donnée à Sarah.",
+  "nodes": [
+    {
+      "id": "j1_01_sarah_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "T’es réveillé ?",
+      "delay": 0,
+      "next": "j1_01_sarah_002"
+    },
+    {
+      "id": "j1_01_sarah_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je voulais pas commencer la journée comme ça.",
+      "delay": 35,
+      "next": "j1_01_sarah_003"
+    },
+    {
+      "id": "j1_01_sarah_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais hier, quand t’es revenu, j’ai eu l’impression que t’étais encore dehors.",
+      "delay": 45,
+      "next": "j1_01_sarah_004"
+    },
+    {
+      "id": "j1_01_sarah_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je sais pas comment le dire autrement.",
+      "delay": 35,
+      "next": "j1_01_sarah_005"
+    },
+    {
+      "id": "j1_01_sarah_005",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Tu étais où, exactement ?",
+      "delay": 30,
+      "next": "j1_01_choice_version_sarah"
+    },
+    {
+      "id": "j1_01_choice_version_sarah",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Sarah ?",
+      "choices": [
+        {
+          "id": "j1_01_needed_air",
+          "text": "J’avais besoin d’air. Je suis sorti un moment, c’est vrai. J’aurais dû te le dire.",
+          "next": "j1_01_player_006a",
+          "effects": {
+            "confiance_sarah": 1,
+            "distance_sarah": -1,
+            "coherence": 2,
+            "culpabilite": 1,
+            "flags": [
+              "said_needed_air_to_sarah",
+              "sarah_version_needed_air"
+            ]
+          }
+        },
+        {
+          "id": "j1_01_nico_alibi",
+          "text": "J’étais avec Nico une partie du temps. On a parlé dehors, c’est tout.",
+          "next": "j1_01_player_006b",
+          "effects": {
+            "confiance_sarah": -1,
+            "distance_sarah": 1,
+            "dette_nico": 3,
+            "coherence": -2,
+            "risque_exposition": 2,
+            "flags": [
+              "used_nico_alibi_sarah",
+              "sarah_version_nico"
+            ]
+          }
+        },
+        {
+          "id": "j1_01_camille_minimized",
+          "text": "J’ai croisé Camille dehors, oui. Mais c’était juste une discussion, rien de plus.",
+          "next": "j1_01_player_006c",
+          "effects": {
+            "confiance_sarah": -2,
+            "distance_sarah": 2,
+            "coherence": -1,
+            "culpabilite": 2,
+            "risque_exposition": 1,
+            "flags": [
+              "mentioned_camille_to_sarah",
+              "minimized_camille_to_sarah",
+              "sarah_version_camille_minimized"
+            ]
+          }
+        },
+        {
+          "id": "j1_01_vulnerable",
+          "text": "Je sais pas bien. Je suis sorti parce que j’étais pas bien. Et quand je suis revenu, j’ai pas réussi à revenir vraiment.",
+          "next": "j1_01_player_006d",
+          "effects": {
+            "confiance_sarah": 2,
+            "distance_sarah": -1,
+            "coherence": 1,
+            "culpabilite": 2,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "vulnerable_to_sarah",
+              "sarah_version_emotional_confusion"
+            ]
+          }
+        },
+        {
+          "id": "j1_01_silence",
+          "text": "Ne pas répondre maintenant.",
+          "next": "j1_01_sys_006e",
+          "effects": {
+            "confiance_sarah": -2,
+            "distance_sarah": 3,
+            "fatigue_emotionnelle": 1,
+            "culpabilite": 1,
+            "flags": [
+              "ignored_sarah_j1",
+              "sarah_no_clear_version_j1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j1_01_player_006a",
+      "type": "message",
+      "sender": "player",
+      "text": "J’avais besoin d’air. Je suis sorti un moment, c’est vrai. J’aurais dû te le dire.",
+      "delay": 0,
+      "next": "j1_01_sarah_007a"
+    },
+    {
+      "id": "j1_01_sarah_007a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "D’accord.",
+      "delay": 35,
+      "next": "j1_01_sarah_008a"
+    },
+    {
+      "id": "j1_01_sarah_008a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ça, je peux l’entendre.",
+      "delay": 30,
+      "next": "j1_01_sarah_009a"
+    },
+    {
+      "id": "j1_01_sarah_009a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ce que j’ai moins compris, c’est pourquoi t’es revenu comme si je venais de rater une partie de toi.",
+      "delay": 50,
+      "next": "j1_01_sarah_010a"
+    },
+    {
+      "id": "j1_01_sarah_010a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je te demande pas un rapport minute par minute. Juste de pas me laisser deviner toute seule.",
+      "delay": 45,
+      "next": "j1_01_end_fragile_open"
+    },
+    {
+      "id": "j1_01_end_fragile_open",
+      "type": "end",
+      "sender": "system",
+      "text": "Sarah reste inquiète, mais la conversation reste ouverte.",
+      "delay": 0
+    },
+    {
+      "id": "j1_01_player_006b",
+      "type": "message",
+      "sender": "player",
+      "text": "J’étais avec Nico une partie du temps. On a parlé dehors, c’est tout.",
+      "delay": 0,
+      "next": "j1_01_sarah_007b"
+    },
+    {
+      "id": "j1_01_sarah_007b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Nico m’a dit que t’étais sorti deux minutes.",
+      "delay": 35,
+      "next": "j1_01_sarah_008b"
+    },
+    {
+      "id": "j1_01_sarah_008b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Là tu me dis “une partie du temps”.",
+      "delay": 35,
+      "next": "j1_01_sarah_009b"
+    },
+    {
+      "id": "j1_01_sarah_009b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est peut-être rien. Mais ça bouge déjà un peu, ta phrase.",
+      "delay": 45,
+      "next": "j1_01_sarah_010b"
+    },
+    {
+      "id": "j1_01_sarah_010b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je veux pas avoir besoin de comparer ce que les gens me disent.",
+      "delay": 45,
+      "next": "j1_01_end_version_fragile"
+    },
+    {
+      "id": "j1_01_end_version_fragile",
+      "type": "end",
+      "sender": "system",
+      "text": "Une première incohérence existe déjà.",
+      "delay": 0
+    },
+    {
+      "id": "j1_01_player_006c",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai croisé Camille dehors, oui. Mais c’était juste une discussion, rien de plus.",
+      "delay": 0,
+      "next": "j1_01_sarah_007c"
+    },
+    {
+      "id": "j1_01_sarah_007c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je crois que c’est le “juste” qui me fatigue.",
+      "delay": 35,
+      "next": "j1_01_sarah_008c"
+    },
+    {
+      "id": "j1_01_sarah_008c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Pas parce que j’ai une preuve ou je sais pas quoi.",
+      "delay": 35,
+      "next": "j1_01_sarah_009c"
+    },
+    {
+      "id": "j1_01_sarah_009c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Parce que tu l’as dit comme quand tu veux poser un couvercle sur quelque chose qui déborde.",
+      "delay": 50,
+      "next": "j1_01_sarah_010c"
+    },
+    {
+      "id": "j1_01_sarah_010c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Si c’était rien, pourquoi j’ai eu l’impression que tu faisais attention à chaque mot ?",
+      "delay": 45,
+      "next": "j1_01_end_sarah_doubts"
+    },
+    {
+      "id": "j1_01_end_sarah_doubts",
+      "type": "end",
+      "sender": "system",
+      "text": "Sarah sait que Camille entre dans l’histoire, mais sent l’esquive.",
+      "delay": 0
+    },
+    {
+      "id": "j1_01_player_006d",
+      "type": "message",
+      "sender": "player",
+      "text": "Je sais pas bien. Je suis sorti parce que j’étais pas bien. Et quand je suis revenu, j’ai pas réussi à revenir vraiment.",
+      "delay": 0,
+      "next": "j1_01_sarah_007d"
+    },
+    {
+      "id": "j1_01_sarah_007d",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Merci de le dire comme ça.",
+      "delay": 35,
+      "next": "j1_01_sarah_008d"
+    },
+    {
+      "id": "j1_01_sarah_008d",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ça me rassure pas complètement.",
+      "delay": 30,
+      "next": "j1_01_sarah_009d"
+    },
+    {
+      "id": "j1_01_sarah_009d",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais au moins j’ai pas l’impression que tu me demandes de faire semblant de rien sentir.",
+      "delay": 45,
+      "next": "j1_01_sarah_010d"
+    },
+    {
+      "id": "j1_01_sarah_010d",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je peux entendre que tu sois perdu. Je peux moins entendre que tu me laisses seule avec ça.",
+      "delay": 45,
+      "next": "j1_01_end_fragile_open"
+    },
+    {
+      "id": "j1_01_sys_006e",
+      "type": "message",
+      "sender": "system",
+      "text": "Tu laisses le message ouvert.",
+      "delay": 0,
+      "next": "j1_01_sys_007e"
+    },
+    {
+      "id": "j1_01_sys_007e",
+      "type": "message",
+      "sender": "system",
+      "text": "La bulle ne bouge plus. Mais la conversation, elle, continue ailleurs.",
+      "delay": 35,
+      "next": "j1_01_sarah_008e"
+    },
+    {
+      "id": "j1_01_sarah_008e",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ok.",
+      "delay": 50,
+      "next": "j1_01_sarah_009e"
+    },
+    {
+      "id": "j1_01_sarah_009e",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vais prendre ça comme une réponse pour l’instant.",
+      "delay": 35,
+      "next": "j1_01_end_no_clear_version"
+    },
+    {
+      "id": "j1_01_end_no_clear_version",
+      "type": "end",
+      "sender": "system",
+      "text": "Sarah n’a aucune réponse claire.",
+      "delay": 0
+    }
+  ]
+}

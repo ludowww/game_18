@@ -1,0 +1,129 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "sarah_j1_placeholder",
+  "day": 1,
+  "contact_id": "sarah",
+  "start_node": "s1_001",
+  "nodes": [
+    {
+      "id": "s1_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "T’es déjà parti ? J’ai pas entendu la porte.",
+      "delay": 0,
+      "next": "s1_002"
+    },
+    {
+      "id": "s1_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai laissé ton café sur le plan de travail. Il doit être froid maintenant.",
+      "delay": 45,
+      "next": "s1_003"
+    },
+    {
+      "id": "s1_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre à Sarah",
+      "choices": [
+        {
+          "id": "s1_003_a",
+          "text": "Désolé, je suis parti tôt. Je voulais pas te réveiller.",
+          "next": "s1_004_a",
+          "effects": {
+            "sarah_trust": 1,
+            "guilt": 1,
+            "flags": ["sarah_j1_soft_answer"]
+          }
+        },
+        {
+          "id": "s1_003_b",
+          "text": "Réunion tôt. J’ai filé sans réfléchir.",
+          "next": "s1_004_b",
+          "effects": {
+            "sarah_trust": -1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": ["sarah_j1_work_excuse"]
+          }
+        },
+        {
+          "id": "s1_003_c",
+          "text": "Je suis encore dans le coin. Je peux repasser deux minutes.",
+          "next": "s1_004_c",
+          "effects": {
+            "sarah_trust": 2,
+            "risk": -1,
+            "flags": ["sarah_j1_reassured"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s1_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Désolé, je suis parti tôt. Je voulais pas te réveiller.",
+      "delay": 0,
+      "next": "s1_005_a"
+    },
+    {
+      "id": "s1_005_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est gentil. Mais j’aime bien quand tu me dis au revoir, même à moitié endormie.",
+      "delay": 60,
+      "next": "s1_006"
+    },
+    {
+      "id": "s1_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Réunion tôt. J’ai filé sans réfléchir.",
+      "delay": 0,
+      "next": "s1_005_b"
+    },
+    {
+      "id": "s1_005_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Tu me l’avais pas dit hier. C’est nouveau ?",
+      "delay": 60,
+      "next": "s1_006"
+    },
+    {
+      "id": "s1_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis encore dans le coin. Je peux repasser deux minutes.",
+      "delay": 0,
+      "next": "s1_005_c"
+    },
+    {
+      "id": "s1_005_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Deux minutes et un vrai sourire, alors. Pas ton sourire pressé.",
+      "delay": 60,
+      "next": "s1_006"
+    },
+    {
+      "id": "s1_006",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Au fait… ton téléphone a vibré deux fois sur la table cette nuit. J’ai pas regardé.",
+      "delay": 90,
+      "next": "s1_007"
+    },
+    {
+      "id": "s1_007",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin placeholder Sarah J1 : Sarah n’accuse rien, mais elle a remarqué quelque chose.",
+      "effects": {
+        "flags": ["sarah_j1_placeholder_done", "sarah_noticed_night_notifications"]
+      }
+    }
+  ]
+}

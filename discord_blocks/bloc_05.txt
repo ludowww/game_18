@@ -1,0 +1,37 @@
+Bloc 5/8 — Phase 2
+
+PHASE 2 — PROTOTYPE TECHNIQUE
+Objectif : boucle messages → choix → effets → conséquences.
+
+T012 — Créer projet Godot 4
+Statut : TODO
+
+T013 — Créer scène faux smartphone
+Statut : TODO
+
+T014 — Créer écran messages
+Statut : TODO
+
+T015 — Charger messages depuis JSON
+Statut : TODO
+
+T016 — Afficher bulles de conversation
+Statut : TODO
+
+T017 — Ajouter choix de réponses
+Statut : TODO
+
+T018 — Créer GameState
+Statut : TODO
+
+T019 — Appliquer effets des choix
+Statut : TODO
+
+T020 — Évaluer conditions simples
+Statut : TODO
+
+T021 — Ajouter écran debug
+Statut : TODO
+
+Livrable :
+Prototype jouable d’une conversation avec choix et effets.

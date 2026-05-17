@@ -1,0 +1,662 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "camille_j5_complete",
+  "day": 5,
+  "contact_id": "camille",
+  "start_node": "c5_block_a",
+  "nodes": [
+    {
+      "id": "c5_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "C5A — Camille : répondre quand ça déborde",
+      "delay": 0,
+      "next": "c5_001"
+    },
+    {
+      "id": "c5_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je n’ai pas envie de te demander où tu es. Ça ferait trop banal.",
+      "delay": 0,
+      "next": "c5_002"
+    },
+    {
+      "id": "c5_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ce qui m’intéresse, c’est ce que tu choisis de rendre vrai quand personne ne te regarde.",
+      "delay": 85,
+      "next": "c5_003"
+    },
+    {
+      "id": "c5_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille demande un signe qui ne soit pas seulement séduisant.",
+      "choices": [
+        {
+          "id": "c5_003_a",
+          "text": "Je peux te donner un vrai moment aujourd’hui.",
+          "next": "c5_004_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "player_chose_camille_j5",
+              "camille_trust_risk_j5"
+            ]
+          }
+        },
+        {
+          "id": "c5_003_b",
+          "text": "Je veux être honnête : aujourd’hui est compliqué.",
+          "next": "c5_004_b",
+          "effects": {
+            "camille_interest": 1,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_demands_truth_j5"
+            ]
+          }
+        },
+        {
+          "id": "c5_003_c",
+          "text": "Tu sais que je te regarde même quand je réponds peu.",
+          "next": "c5_004_c",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "camille_emotional_debt"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c5_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je peux te donner un vrai moment aujourd’hui.",
+      "delay": 0,
+      "next": "c5_005_a"
+    },
+    {
+      "id": "c5_005_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Un vrai moment, ce n’est pas une parenthèse volée. C’est quand tu assumes qu’elle a compté après.",
+      "delay": 60,
+      "next": "c5_006"
+    },
+    {
+      "id": "c5_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je veux être honnête : aujourd’hui est compliqué.",
+      "delay": 0,
+      "next": "c5_005_b"
+    },
+    {
+      "id": "c5_005_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Merci pour le mot honnête. Il est petit, mais il change la lumière sur tout le reste.",
+      "delay": 60,
+      "next": "c5_006"
+    },
+    {
+      "id": "c5_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu sais que je te regarde même quand je réponds peu.",
+      "delay": 0,
+      "next": "c5_005_c"
+    },
+    {
+      "id": "c5_005_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Oui. Et c’est précisément ça qui devient dangereux : je commence à croire les silences autant que les phrases.",
+      "delay": 60,
+      "next": "c5_006"
+    },
+    {
+      "id": "c5_006",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre à la place que Camille te demande vraiment.",
+      "choices": [
+        {
+          "id": "c5_006_a",
+          "text": "Je garde un fil avec toi, même quand je devrais lâcher mon téléphone.",
+          "next": "c5_007_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "sarah_trust": -1,
+            "flags": [
+              "player_chose_camille_j5",
+              "sarah_needs_presence_j5"
+            ]
+          }
+        },
+        {
+          "id": "c5_006_b",
+          "text": "Je ne veux pas te promettre quelque chose que je cacherai ensuite.",
+          "next": "c5_007_b",
+          "effects": {
+            "camille_interest": 1,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_boundary_respected_j5"
+            ]
+          }
+        },
+        {
+          "id": "c5_006_c",
+          "text": "Je peux rester là maintenant, pas tout résoudre.",
+          "next": "c5_007_c",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "camille_window_accepted"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c5_007_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je garde un fil avec toi, même quand je devrais lâcher mon téléphone.",
+      "delay": 0,
+      "next": "c5_008_a"
+    },
+    {
+      "id": "c5_008_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors ne le dis pas comme une victoire. Dis-le comme quelqu’un qui sait qu’il y aura une facture.",
+      "delay": 70,
+      "next": "c5_block_b"
+    },
+    {
+      "id": "c5_007_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne veux pas te promettre quelque chose que je cacherai ensuite.",
+      "delay": 0,
+      "next": "c5_008_b"
+    },
+    {
+      "id": "c5_008_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ça ressemble presque à du courage. Pas celui qui brille, celui qui évite d’abîmer tout le monde.",
+      "delay": 70,
+      "next": "c5_block_b"
+    },
+    {
+      "id": "c5_007_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je peux rester là maintenant, pas tout résoudre.",
+      "delay": 0,
+      "next": "c5_008_c"
+    },
+    {
+      "id": "c5_008_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Rester là maintenant, c’est déjà arrêter de me parler depuis le seuil.",
+      "delay": 70,
+      "next": "c5_block_b"
+    },
+    {
+      "id": "c5_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "C5B — Camille : oser une moitié de vérité",
+      "delay": 0,
+      "next": "c5_009"
+    },
+    {
+      "id": "c5_009",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je vais te poser une question simple, et tu vas avoir envie de la rendre compliquée.",
+      "delay": 80,
+      "next": "c5_010"
+    },
+    {
+      "id": "c5_010",
+      "type": "message",
+      "sender": "camille",
+      "text": "Quand tu me réponds comme ça, est-ce que tu protèges quelqu’un, ou est-ce que tu te protèges surtout toi ?",
+      "delay": 100,
+      "next": "c5_011"
+    },
+    {
+      "id": "c5_011",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre à la question de Camille sans tout révéler.",
+      "choices": [
+        {
+          "id": "c5_011_a",
+          "text": "Je protège quelqu’un, oui. Et je ne suis pas fier de tout.",
+          "next": "c5_012_a",
+          "effects": {
+            "guilt": 2,
+            "camille_interest": 1,
+            "flags": [
+              "camille_demands_truth_j5",
+              "sarah_needs_presence_j5"
+            ]
+          }
+        },
+        {
+          "id": "c5_011_b",
+          "text": "Je me protège aussi. Je ne vais pas faire semblant.",
+          "next": "c5_012_b",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "camille_trust_risk_j5"
+            ]
+          }
+        },
+        {
+          "id": "c5_011_c",
+          "text": "Je ne peux pas répondre sans faire du mal quelque part.",
+          "next": "c5_012_c",
+          "effects": {
+            "guilt": 2,
+            "risk": -1,
+            "flags": [
+              "player_kept_camille_at_distance_j5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c5_012_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je protège quelqu’un, oui. Et je ne suis pas fier de tout.",
+      "delay": 0,
+      "next": "c5_013_a"
+    },
+    {
+      "id": "c5_013_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Voilà. Ce n’est pas confortable, mais au moins ça ne me prend pas pour une décoration dans ta journée.",
+      "delay": 75,
+      "next": "c5_014"
+    },
+    {
+      "id": "c5_012_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je me protège aussi. Je ne vais pas faire semblant.",
+      "delay": 0,
+      "next": "c5_013_b"
+    },
+    {
+      "id": "c5_013_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est laid et honnête. Parfois, c’est déjà mieux que joli et lâche.",
+      "delay": 75,
+      "next": "c5_014"
+    },
+    {
+      "id": "c5_012_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne peux pas répondre sans faire du mal quelque part.",
+      "delay": 0,
+      "next": "c5_013_c"
+    },
+    {
+      "id": "c5_013_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je n’avais pas besoin du détail. J’avais besoin de savoir si tu voyais le mal possible.",
+      "delay": 75,
+      "next": "c5_014"
+    },
+    {
+      "id": "c5_014",
+      "type": "choice",
+      "sender": "player",
+      "text": "Fixer une limite ou franchir un pas avec Camille.",
+      "choices": [
+        {
+          "id": "c5_014_a",
+          "text": "Tu n’es pas un tiroir. Tu es un choix que je repousse trop souvent.",
+          "next": "c5_015_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_emotional_debt",
+              "player_chose_camille_j5"
+            ]
+          }
+        },
+        {
+          "id": "c5_014_b",
+          "text": "Je veux te respecter assez pour ne pas te vendre une place fausse.",
+          "next": "c5_015_b",
+          "effects": {
+            "camille_interest": 1,
+            "risk": -1,
+            "flags": [
+              "camille_boundary_respected_j5"
+            ]
+          }
+        },
+        {
+          "id": "c5_014_c",
+          "text": "Je suis mauvais avec les places. Je peux juste être vrai maintenant.",
+          "next": "c5_015_c",
+          "effects": {
+            "camille_interest": 1,
+            "guilt": 1,
+            "flags": [
+              "camille_demands_truth_j5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c5_015_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu n’es pas un tiroir. Tu es un choix que je repousse trop souvent.",
+      "delay": 0,
+      "next": "c5_016_a"
+    },
+    {
+      "id": "c5_016_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors arrête de me repousser avec des mains douces. C’est presque pire.",
+      "delay": 70,
+      "next": "c5_block_c"
+    },
+    {
+      "id": "c5_015_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je veux te respecter assez pour ne pas te vendre une place fausse.",
+      "delay": 0,
+      "next": "c5_016_b"
+    },
+    {
+      "id": "c5_016_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ça me frustre. Mais je préfère une limite qui tient debout à une promesse qui rampe.",
+      "delay": 70,
+      "next": "c5_block_c"
+    },
+    {
+      "id": "c5_015_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis mauvais avec les places. Je peux juste être vrai maintenant.",
+      "delay": 0,
+      "next": "c5_016_c"
+    },
+    {
+      "id": "c5_016_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Être vrai maintenant, c’est déjà choisir de ne pas me laisser deviner seule.",
+      "delay": 70,
+      "next": "c5_block_c"
+    },
+    {
+      "id": "c5_block_c",
+      "type": "message",
+      "sender": "system",
+      "text": "C5C — Camille : ce que Camille emporte vers J6",
+      "delay": 0,
+      "next": "c5_017"
+    },
+    {
+      "id": "c5_017",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne vais pas te demander son nom. Si je fais ça, je deviens quelqu’un qui fouille au lieu d’écouter, et je ne veux pas être cette personne-là.",
+      "delay": 80,
+      "next": "c5_018"
+    },
+    {
+      "id": "c5_018",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais comprends une chose : à force de ne pas choisir à voix haute, tu choisis quand même.",
+      "delay": 100,
+      "next": "c5_019"
+    },
+    {
+      "id": "c5_019",
+      "type": "choice",
+      "sender": "player",
+      "text": "Réagir au basculement doux de Camille.",
+      "choices": [
+        {
+          "id": "c5_019_a",
+          "text": "Je sais. Et je suis en train de t’accorder une place que je ne sais pas ranger.",
+          "next": "c5_020_a",
+          "effects": {
+            "camille_interest": 2,
+            "guilt": 2,
+            "flags": [
+              "camille_emotional_debt",
+              "camille_trust_risk_j5"
+            ]
+          }
+        },
+        {
+          "id": "c5_019_b",
+          "text": "Je ne veux pas que tu portes ce que je n’assume pas.",
+          "next": "c5_020_b",
+          "effects": {
+            "camille_interest": 1,
+            "risk": -1,
+            "flags": [
+              "camille_boundary_respected_j5"
+            ]
+          }
+        },
+        {
+          "id": "c5_019_c",
+          "text": "Je voudrais te répondre sans calculer les dégâts.",
+          "next": "c5_020_c",
+          "effects": {
+            "camille_interest": 1,
+            "guilt": 1,
+            "risk": 1,
+            "flags": [
+              "j4_social_trace"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c5_020_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je sais. Et je suis en train de t’accorder une place que je ne sais pas ranger.",
+      "delay": 0,
+      "next": "c5_021_a"
+    },
+    {
+      "id": "c5_021_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors ne fais pas comme si une belle réponse suffisait à remettre les choses droites.",
+      "delay": 70,
+      "next": "c5_022"
+    },
+    {
+      "id": "c5_020_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne veux pas que tu portes ce que je n’assume pas.",
+      "delay": 0,
+      "next": "c5_021_b"
+    },
+    {
+      "id": "c5_021_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est peut-être la phrase la plus tendre que tu pouvais m’envoyer sans m’offrir ce que je veux.",
+      "delay": 70,
+      "next": "c5_022"
+    },
+    {
+      "id": "c5_020_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je voudrais te répondre sans calculer les dégâts.",
+      "delay": 0,
+      "next": "c5_021_c"
+    },
+    {
+      "id": "c5_021_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Le problème, c’est que tu calcules déjà. Tu essaies juste de garder les additions dans des pièces séparées.",
+      "delay": 70,
+      "next": "c5_022"
+    },
+    {
+      "id": "c5_022",
+      "type": "choice",
+      "sender": "player",
+      "text": "Fermer Camille J5.",
+      "choices": [
+        {
+          "id": "c5_022_a",
+          "text": "Demain je reviendrai avec une réponse moins confortable.",
+          "next": "c5_023_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_trust_risk_j5",
+              "player_chose_camille_j5"
+            ]
+          }
+        },
+        {
+          "id": "c5_022_b",
+          "text": "Je ne veux pas te perdre dans mes esquives.",
+          "next": "c5_023_b",
+          "effects": {
+            "camille_interest": 1,
+            "guilt": 2,
+            "flags": [
+              "camille_emotional_debt"
+            ]
+          }
+        },
+        {
+          "id": "c5_022_c",
+          "text": "Je préfère une limite claire à un faux espoir.",
+          "next": "c5_023_c",
+          "effects": {
+            "camille_interest": 0,
+            "risk": -1,
+            "flags": [
+              "camille_boundary_respected_j5",
+              "player_kept_camille_at_distance_j5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c5_023_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Demain je reviendrai avec une réponse moins confortable.",
+      "delay": 0,
+      "next": "c5_024_a"
+    },
+    {
+      "id": "c5_024_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors je retiens demain. Pas comme une promesse brillante. Comme un endroit où tu peux enfin arrêter de te cacher.",
+      "delay": 80,
+      "next": "c5_end_a"
+    },
+    {
+      "id": "c5_023_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne veux pas te perdre dans mes esquives.",
+      "delay": 0,
+      "next": "c5_024_b"
+    },
+    {
+      "id": "c5_024_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors commence par ne pas appeler ça de la prudence quand c’est de la peur avec un joli manteau. À demain, peut-être.",
+      "delay": 80,
+      "next": "c5_end_b"
+    },
+    {
+      "id": "c5_023_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je préfère une limite claire à un faux espoir.",
+      "delay": 0,
+      "next": "c5_024_c"
+    },
+    {
+      "id": "c5_024_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je peux respecter ça. Mais une limite claire laisse quand même une marque quand elle arrive trop tard.",
+      "delay": 80,
+      "next": "c5_end_c"
+    },
+    {
+      "id": "c5_end_a",
+      "type": "end",
+      "text": "Fin Camille J5 — Camille accepte la place floue que tu lui donnes, et ça pèsera en J6."
+    },
+    {
+      "id": "c5_end_b",
+      "type": "end",
+      "text": "Fin Camille J5 — lien maintenu, culpabilité plus visible."
+    },
+    {
+      "id": "c5_end_c",
+      "type": "end",
+      "text": "Fin Camille J5 — limite posée, distance fragile mais respectée."
+    }
+  ]
+}

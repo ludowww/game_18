@@ -1,0 +1,17 @@
+; Engine configuration file.
+; Godot 4 minimal project for Double Vie T004.
+
+config_version=5
+
+[application]
+config/name="Double Vie - T004 Conversation Prototype"
+run/main_scene="res://scenes/conversation_list.tscn"
+config/features=PackedStringArray("4.2")
+
+[display]
+window/size/viewport_width=420
+window/size/viewport_height=760
+window/stretch/mode="canvas_items"
+
+[autoload]
+ConversationState="*res://scripts/conversation_state.gd"

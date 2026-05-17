@@ -1,0 +1,628 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "camille_j6_complete",
+  "day": 6,
+  "contact_id": "camille",
+  "start_node": "c6_block_a",
+  "nodes": [
+    {
+      "id": "c6_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "C6A — Camille : le téléphone encore allumé",
+      "delay": 0,
+      "next": "c6_001"
+    },
+    {
+      "id": "c6_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "J’ai remis le même morceau qu’hier. Le café du fond l’a adopté, mauvaise nouvelle pour moi.",
+      "delay": 0,
+      "next": "c6_002"
+    },
+    {
+      "id": "c6_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mauvaise idée. Il a exactement la durée d’une réponse qu’on attend trop, plus trois secondes pour faire semblant de ne pas attendre.",
+      "delay": 70,
+      "next": "c6_003"
+    },
+    {
+      "id": "c6_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu vois, je peux être très raisonnable. J’ai juste choisi une chanson qui ne l’est pas et une table près de la porte.",
+      "delay": 80,
+      "next": "c6_004"
+    },
+    {
+      "id": "c6_004",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre à Camille comme à quelqu’un de réel, pas comme à une sortie de secours.",
+      "choices": [
+        {
+          "id": "c6_004_a",
+          "text": "Je l’écoute aussi. Mauvaise idée partagée, au moins pour les vingt premières secondes.",
+          "next": "c6_005_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "camille_j6_shared_song"
+            ]
+          }
+        },
+        {
+          "id": "c6_004_b",
+          "text": "Je ne devrais pas te répondre maintenant, mais je le fais.",
+          "next": "c6_005_b",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j6_answered_anyway"
+            ]
+          }
+        },
+        {
+          "id": "c6_004_c",
+          "text": "Camille, je ne peux pas faire comme si ce message était léger.",
+          "next": "c6_005_c",
+          "effects": {
+            "camille_interest": 1,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_j6_not_light"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c6_005_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je l’écoute aussi. Mauvaise idée partagée, au moins pour les vingt premières secondes.",
+      "delay": 0,
+      "next": "c6_006_a"
+    },
+    {
+      "id": "c6_006_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Évidemment. Tu as toujours eu du talent pour choisir les mauvaises idées avec un air sincère. C’est presque un style.",
+      "delay": 60,
+      "next": "c6_007"
+    },
+    {
+      "id": "c6_005_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne devrais pas te répondre maintenant, mais je le fais.",
+      "delay": 0,
+      "next": "c6_006_b"
+    },
+    {
+      "id": "c6_006_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je note le “mais”. Il a pris toute la place dans ta phrase. Je lui commande un café ?",
+      "delay": 60,
+      "next": "c6_007"
+    },
+    {
+      "id": "c6_005_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Camille, je ne peux pas faire comme si ce message était léger.",
+      "delay": 0,
+      "next": "c6_006_c"
+    },
+    {
+      "id": "c6_006_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tant mieux. Je commence à me fatiguer des choses légères qui laissent des bleus.",
+      "delay": 60,
+      "next": "c6_007"
+    },
+    {
+      "id": "c6_007",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je suis passée devant le café. Celui qui n’a rien d’exceptionnel : table bancale, vitre froide, et toi qui le regardes toujours comme une porte de secours.",
+      "delay": 95,
+      "next": "c6_008"
+    },
+    {
+      "id": "c6_008",
+      "type": "choice",
+      "sender": "player",
+      "text": "Réagir au lieu sans promettre une romance facile.",
+      "choices": [
+        {
+          "id": "c6_008_a",
+          "text": "Je n’ai pas envie que tu sois une porte de secours.",
+          "next": "c6_009_a",
+          "effects": {
+            "camille_interest": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j6_not_escape_door"
+            ]
+          }
+        },
+        {
+          "id": "c6_008_b",
+          "text": "Ce café me fait penser à toi, même quand je fais semblant de regarder ailleurs.",
+          "next": "c6_009_b",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "flags": [
+              "camille_j6_place_admitted"
+            ]
+          }
+        },
+        {
+          "id": "c6_008_c",
+          "text": "Je préfère qu’on ne parle pas de lieux ce soir.",
+          "next": "c6_009_c",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "flags": [
+              "camille_j6_avoids_place"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c6_009_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je n’ai pas envie que tu sois une porte de secours.",
+      "delay": 0,
+      "next": "c6_010_a"
+    },
+    {
+      "id": "c6_010_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors arrête d’arriver chez moi seulement quand le reste devient irrespirable.",
+      "delay": 70,
+      "next": "c6_011"
+    },
+    {
+      "id": "c6_009_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Ce café me fait penser à toi, même quand je fais semblant de regarder ailleurs.",
+      "delay": 0,
+      "next": "c6_010_b"
+    },
+    {
+      "id": "c6_010_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ça sonnait presque vrai. Le “presque” est pénible, mais je l’entends.",
+      "delay": 70,
+      "next": "c6_011"
+    },
+    {
+      "id": "c6_009_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je préfère qu’on ne parle pas de lieux ce soir.",
+      "delay": 0,
+      "next": "c6_010_c"
+    },
+    {
+      "id": "c6_010_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu préfères souvent ne pas nommer les endroits où tu reviens quand même.",
+      "delay": 70,
+      "next": "c6_011"
+    },
+    {
+      "id": "c6_011",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne te demande pas d’être courageux en majuscules. Juste de ne pas me répondre comme si je tenais dans un coin d’écran.",
+      "delay": 90,
+      "next": "c6_012"
+    },
+    {
+      "id": "c6_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Dire quelle place Camille peut avoir avant C6B.",
+      "choices": [
+        {
+          "id": "c6_012_a",
+          "text": "Tu ne tiens pas dans un coin. C’est bien le problème.",
+          "next": "c6_013_a",
+          "effects": {
+            "camille_interest": 3,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j6_place_too_real"
+            ]
+          }
+        },
+        {
+          "id": "c6_012_b",
+          "text": "Je suis en train de comprendre que je t’ai rangée trop facilement.",
+          "next": "c6_013_b",
+          "effects": {
+            "camille_interest": 2,
+            "guilt": 2,
+            "flags": [
+              "camille_j6_admits_rangement"
+            ]
+          }
+        },
+        {
+          "id": "c6_012_c",
+          "text": "Je ne peux pas te donner plus que ce message maintenant.",
+          "next": "c6_013_c",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "flags": [
+              "camille_j6_message_only"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c6_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu ne tiens pas dans un coin. C’est bien le problème.",
+      "delay": 0,
+      "next": "c6_014_a"
+    },
+    {
+      "id": "c6_014_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Non. Le problème, c’est ce que tu fais quand quelque chose ne tient plus dans le coin prévu.",
+      "delay": 75,
+      "next": "c6_block_b"
+    },
+    {
+      "id": "c6_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis en train de comprendre que je t’ai rangée trop facilement.",
+      "delay": 0,
+      "next": "c6_014_b"
+    },
+    {
+      "id": "c6_014_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu vois. Ce n’était pas si difficile à écrire. Difficile à vivre, peut-être.",
+      "delay": 75,
+      "next": "c6_block_b"
+    },
+    {
+      "id": "c6_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne peux pas te donner plus que ce message maintenant.",
+      "delay": 0,
+      "next": "c6_014_c"
+    },
+    {
+      "id": "c6_014_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors lis bien ma réponse. Elle ne va peut-être pas rester disponible longtemps.",
+      "delay": 75,
+      "next": "c6_block_b"
+    },
+    {
+      "id": "c6_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "C6B — Camille : ne plus être une parenthèse",
+      "delay": 0,
+      "next": "c6_015"
+    },
+    {
+      "id": "c6_015",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je vais être claire, mais pas spectaculaire.",
+      "delay": 0,
+      "next": "c6_016"
+    },
+    {
+      "id": "c6_016",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne veux pas être l’endroit où tu respires quand tu n’arrives plus à parler ailleurs.",
+      "delay": 85,
+      "next": "c6_017"
+    },
+    {
+      "id": "c6_017",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre à la demande de respect de Camille.",
+      "choices": [
+        {
+          "id": "c6_017_a",
+          "text": "Tu mérites mieux qu’une cachette.",
+          "next": "c6_018_a",
+          "effects": {
+            "camille_interest": 2,
+            "guilt": 2,
+            "flags": [
+              "camille_j6_not_hiding_place"
+            ]
+          }
+        },
+        {
+          "id": "c6_017_b",
+          "text": "Je veux te voir comme quelqu’un de réel, pas comme une pause.",
+          "next": "c6_018_b",
+          "effects": {
+            "camille_interest": 3,
+            "risk": 2,
+            "flags": [
+              "camille_j6_real_choice_seed"
+            ]
+          }
+        },
+        {
+          "id": "c6_017_c",
+          "text": "Je crois que je me suis servi de toi pour ne pas regarder le reste.",
+          "next": "c6_018_c",
+          "effects": {
+            "camille_interest": 1,
+            "guilt": 3,
+            "risk": -1,
+            "flags": [
+              "camille_j6_used_as_breath"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c6_018_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu mérites mieux qu’une cachette.",
+      "delay": 0,
+      "next": "c6_019_a"
+    },
+    {
+      "id": "c6_019_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je n’avais pas prévu d’être un meuble discret dans ta panique, non.",
+      "delay": 65,
+      "next": "c6_020"
+    },
+    {
+      "id": "c6_018_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je veux te voir comme quelqu’un de réel, pas comme une pause.",
+      "delay": 0,
+      "next": "c6_019_b"
+    },
+    {
+      "id": "c6_019_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors il faudra supporter que le réel réponde parfois non. Ou pas tout de suite.",
+      "delay": 65,
+      "next": "c6_020"
+    },
+    {
+      "id": "c6_018_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je crois que je me suis servi de toi pour ne pas regarder le reste.",
+      "delay": 0,
+      "next": "c6_019_c"
+    },
+    {
+      "id": "c6_019_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est une phrase moche. Donc probablement utile.",
+      "delay": 65,
+      "next": "c6_020"
+    },
+    {
+      "id": "c6_020",
+      "type": "message",
+      "sender": "camille",
+      "text": "J’ai posé mon téléphone sur la table. Écran vers le haut. Je ne fais jamais ça quand j’attends quelqu’un.",
+      "delay": 85,
+      "next": "c6_021"
+    },
+    {
+      "id": "c6_021",
+      "type": "choice",
+      "sender": "player",
+      "text": "Décider si Camille doit attendre, reculer ou recevoir une position claire.",
+      "choices": [
+        {
+          "id": "c6_021_a",
+          "text": "N’attends pas en silence. Je veux te voir, mais pas en cachette.",
+          "next": "c6_022_a",
+          "effects": {
+            "camille_interest": 3,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j6_wants_real_meeting"
+            ]
+          }
+        },
+        {
+          "id": "c6_021_b",
+          "text": "Je ne peux pas venir. Mais je ne veux plus te laisser dans le flou.",
+          "next": "c6_022_b",
+          "effects": {
+            "camille_interest": 1,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_j6_boundary_with_truth"
+            ]
+          }
+        },
+        {
+          "id": "c6_021_c",
+          "text": "Je vais encore te faire attendre si je réponds mal maintenant.",
+          "next": "c6_022_c",
+          "effects": {
+            "camille_interest": 0,
+            "guilt": 2,
+            "flags": [
+              "camille_j6_afraid_to_hurt"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c6_022_a",
+      "type": "message",
+      "sender": "player",
+      "text": "N’attends pas en silence. Je veux te voir, mais pas en cachette.",
+      "delay": 0,
+      "next": "c6_023_a"
+    },
+    {
+      "id": "c6_023_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Voilà. Pas une belle phrase. Une phrase avec des chaussures. Elle peut marcher quelque part.",
+      "delay": 70,
+      "next": "c6_024"
+    },
+    {
+      "id": "c6_022_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne peux pas venir. Mais je ne veux plus te laisser dans le flou.",
+      "delay": 0,
+      "next": "c6_023_b"
+    },
+    {
+      "id": "c6_023_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je préfère une porte fermée à une poignée qu’on touche toutes les dix minutes.",
+      "delay": 70,
+      "next": "c6_024"
+    },
+    {
+      "id": "c6_022_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je vais encore te faire attendre si je réponds mal maintenant.",
+      "delay": 0,
+      "next": "c6_023_c"
+    },
+    {
+      "id": "c6_023_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu as cette manière de prendre soin en reculant. Je ne sais pas encore si ça me touche ou si ça m’épuise.",
+      "delay": 70,
+      "next": "c6_024"
+    },
+    {
+      "id": "c6_024",
+      "type": "message",
+      "sender": "camille",
+      "text": "Le morceau vient de finir. Je ne le relance pas. À toi de ne pas transformer ce silence en meuble.",
+      "delay": 90,
+      "next": "c6_025"
+    },
+    {
+      "id": "c6_025",
+      "type": "choice",
+      "sender": "player",
+      "text": "Laisser Camille vers les futures fins MVP.",
+      "choices": [
+        {
+          "id": "c6_025_a",
+          "text": "Je vais dire une chose simple : je te choisis comme une vraie personne, pas comme une pause.",
+          "next": "c6_end_chosen_seed",
+          "effects": {
+            "camille_interest": 3,
+            "risk": 3,
+            "guilt": 2,
+            "flags": [
+              "ending_seed_camille_assumed",
+              "camille_j6_chosen_as_real"
+            ]
+          }
+        },
+        {
+          "id": "c6_025_b",
+          "text": "Je dois d’abord parler ailleurs. Si je reviens, ce sera debout.",
+          "next": "c6_end_respect_distance",
+          "effects": {
+            "camille_interest": 1,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "ending_seed_truth_before_camille",
+              "camille_j6_respectful_distance"
+            ]
+          }
+        },
+        {
+          "id": "c6_025_c",
+          "text": "Je ne sais pas faire mieux que ce silence ce soir.",
+          "next": "c6_end_cuts_short",
+          "effects": {
+            "camille_interest": -2,
+            "guilt": 2,
+            "flags": [
+              "ending_seed_camille_cuts_short",
+              "camille_j6_silence_too_much"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c6_end_chosen_seed",
+      "type": "end",
+      "text": "Fin Camille J6 — Camille entend une position plus nette. Elle ne récompense pas encore : elle attend que les actes rejoignent la phrase."
+    },
+    {
+      "id": "c6_end_respect_distance",
+      "type": "end",
+      "text": "Fin Camille J6 — Camille accepte la distance si elle est honnête. La porte reste réelle, mais pas ouverte pour fuir."
+    },
+    {
+      "id": "c6_end_cuts_short",
+      "type": "end",
+      "text": "Fin Camille J6 — Camille coupe court avec dignité : elle refuse de devenir un silence confortable."
+    }
+  ]
+}

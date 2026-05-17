@@ -1,0 +1,411 @@
+{
+  "schema_version": "0.1-refonte-j1-v2-experimental",
+  "conversation_id": "camille_j1_v2",
+  "day": 1,
+  "contact_id": "camille",
+  "start_node": "j1_02_camille_001",
+  "experimental": true,
+  "notes": "Conversion expérimentale non branchée au runtime actif. Première conversation Camille dehors.",
+  "nodes": [
+    {
+      "id": "j1_02_camille_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je crois qu’on a été moins discrets qu’on pensait.",
+      "delay": 0,
+      "next": "j1_02_camille_002"
+    },
+    {
+      "id": "j1_02_camille_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ou alors tout le monde a poliment décidé de devenir aveugle pendant vingt minutes.",
+      "delay": 35,
+      "next": "j1_02_camille_003"
+    },
+    {
+      "id": "j1_02_camille_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne sais pas quelle option est la plus confortable.",
+      "delay": 35,
+      "next": "j1_02_camille_004"
+    },
+    {
+      "id": "j1_02_camille_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu vas faire comme si c’était juste une discussion dehors ?",
+      "delay": 35,
+      "next": "j1_02_choice_camille_dehors"
+    },
+    {
+      "id": "j1_02_choice_camille_dehors",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Camille ?",
+      "choices": [
+        {
+          "id": "j1_02_admit_tension",
+          "text": "Non. C’était pas juste une discussion. Je sais pas encore quoi en faire, mais je vais pas te dire que c’était rien.",
+          "next": "j1_02_player_005a",
+          "effects": {
+            "tension_camille": 2,
+            "respect_camille": 1,
+            "coherence": 1,
+            "culpabilite": 2,
+            "flags": [
+              "admitted_tension_to_camille",
+              "camille_trouble_acknowledged"
+            ]
+          }
+        },
+        {
+          "id": "j1_02_respect_boundary",
+          "text": "Je veux pas faire comme si c’était rien. Mais je peux pas te demander de porter ça pendant que je ne suis pas clair avec Sarah.",
+          "next": "j1_02_player_005b",
+          "effects": {
+            "tension_camille": -1,
+            "respect_camille": 3,
+            "pression_camille": -2,
+            "coherence": 2,
+            "culpabilite": 1,
+            "flags": [
+              "protected_camille_boundary",
+              "camille_boundary_respected"
+            ]
+          }
+        },
+        {
+          "id": "j1_02_minimize",
+          "text": "Camille, on a parlé dehors. C’est tout. On va pas transformer ça en drame.",
+          "next": "j1_02_player_005c",
+          "effects": {
+            "tension_camille": -1,
+            "respect_camille": -3,
+            "pression_camille": 1,
+            "coherence": -1,
+            "culpabilite": 1,
+            "flags": [
+              "minimized_with_camille",
+              "camille_minimized_j1"
+            ]
+          }
+        },
+        {
+          "id": "j1_02_early_desire",
+          "text": "Je pensais surtout à toi ce matin. Au moment dehors. À ce que j’aurais peut-être dû faire.",
+          "next": "j1_02_player_005d",
+          "effects": {
+            "tension_camille": 2,
+            "respect_camille": -3,
+            "pression_camille": 3,
+            "culpabilite": 2,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "early_desire_to_camille",
+              "camille_desire_too_early_j1"
+            ]
+          }
+        },
+        {
+          "id": "j1_02_uncertain",
+          "text": "Je sais pas ce que c’était. Je sais juste que ça m’a déplacé. Et que j’ai peur de répondre à côté.",
+          "next": "j1_02_player_005e",
+          "effects": {
+            "tension_camille": 1,
+            "respect_camille": 1,
+            "coherence": 1,
+            "culpabilite": 2,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "uncertain_with_camille",
+              "camille_trouble_acknowledged"
+            ]
+          }
+        },
+        {
+          "id": "j1_02_silence",
+          "text": "Laisser le message ouvert sans répondre.",
+          "next": "j1_02_sys_005f",
+          "effects": {
+            "tension_camille": -2,
+            "respect_camille": -1,
+            "fatigue_emotionnelle": 1,
+            "culpabilite": 1,
+            "flags": [
+              "ignored_camille_j1",
+              "camille_left_on_read_j1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j1_02_player_005a",
+      "type": "message",
+      "sender": "player",
+      "text": "Non. C’était pas juste une discussion. Je sais pas encore quoi en faire, mais je vais pas te dire que c’était rien.",
+      "delay": 0,
+      "next": "j1_02_camille_006a"
+    },
+    {
+      "id": "j1_02_camille_006a",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est déjà plus honnête que “on prenait l’air”.",
+      "delay": 35,
+      "next": "j1_02_camille_007a"
+    },
+    {
+      "id": "j1_02_camille_007a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne te demande pas de savoir quoi en faire ce matin.",
+      "delay": 35,
+      "next": "j1_02_camille_008a"
+    },
+    {
+      "id": "j1_02_camille_008a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je te demande juste de ne pas me laisser seule avec la version exacte de ce qui s’est passé.",
+      "delay": 45,
+      "next": "j1_02_camille_009a"
+    },
+    {
+      "id": "j1_02_camille_009a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Même si cette version tient mal debout.",
+      "delay": 35,
+      "next": "j1_02_end_trouble_acknowledged"
+    },
+    {
+      "id": "j1_02_end_trouble_acknowledged",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille reste prudente, mais ouverte à une parole plus honnête.",
+      "delay": 0
+    },
+    {
+      "id": "j1_02_player_005b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je veux pas faire comme si c’était rien. Mais je peux pas te demander de porter ça pendant que je ne suis pas clair avec Sarah.",
+      "delay": 0,
+      "next": "j1_02_camille_006b"
+    },
+    {
+      "id": "j1_02_camille_006b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne sais pas si c’est lâche ou prudent.",
+      "delay": 35,
+      "next": "j1_02_camille_007b"
+    },
+    {
+      "id": "j1_02_camille_007b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais au moins tu ne me déguises pas en pause dans ta journée.",
+      "delay": 45,
+      "next": "j1_02_camille_008b"
+    },
+    {
+      "id": "j1_02_camille_008b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ça ne rend pas hier plus simple.",
+      "delay": 35,
+      "next": "j1_02_camille_009b"
+    },
+    {
+      "id": "j1_02_camille_009b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ça le rend juste un peu moins sale.",
+      "delay": 35,
+      "next": "j1_02_end_boundary_respected"
+    },
+    {
+      "id": "j1_02_end_boundary_respected",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille respecte la limite, même si elle reste troublée.",
+      "delay": 0
+    },
+    {
+      "id": "j1_02_player_005c",
+      "type": "message",
+      "sender": "player",
+      "text": "Camille, on a parlé dehors. C’est tout. On va pas transformer ça en drame.",
+      "delay": 0,
+      "next": "j1_02_camille_006c"
+    },
+    {
+      "id": "j1_02_camille_006c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je note le détour.",
+      "delay": 30,
+      "next": "j1_02_camille_007c"
+    },
+    {
+      "id": "j1_02_camille_007c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Et le “on”, très généreux.",
+      "delay": 30,
+      "next": "j1_02_camille_008c"
+    },
+    {
+      "id": "j1_02_camille_008c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu peux appeler ça une discussion si ça t’aide à dormir.",
+      "delay": 35,
+      "next": "j1_02_camille_009c"
+    },
+    {
+      "id": "j1_02_camille_009c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ne me demande juste pas de jouer dans la même version.",
+      "delay": 35,
+      "next": "j1_02_end_camille_cold"
+    },
+    {
+      "id": "j1_02_end_camille_cold",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille détecte la minimisation et se refroidit.",
+      "delay": 0
+    },
+    {
+      "id": "j1_02_player_005d",
+      "type": "message",
+      "sender": "player",
+      "text": "Je pensais surtout à toi ce matin. Au moment dehors. À ce que j’aurais peut-être dû faire.",
+      "delay": 0,
+      "next": "j1_02_camille_006d"
+    },
+    {
+      "id": "j1_02_camille_006d",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu vois, c’est exactement là que ça devient pratique pour toi.",
+      "delay": 35,
+      "next": "j1_02_camille_007d"
+    },
+    {
+      "id": "j1_02_camille_007d",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu sautes la partie où tu regardes ce que ça abîme.",
+      "delay": 35,
+      "next": "j1_02_camille_008d"
+    },
+    {
+      "id": "j1_02_camille_008d",
+      "type": "message",
+      "sender": "camille",
+      "text": "Et tu arrives directement à celle où je deviens une idée agréable.",
+      "delay": 45,
+      "next": "j1_02_camille_009d"
+    },
+    {
+      "id": "j1_02_camille_009d",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne veux pas être ton endroit où respirer quand le reste t’étouffe.",
+      "delay": 45,
+      "next": "j1_02_end_pressure_too_high"
+    },
+    {
+      "id": "j1_02_end_pressure_too_high",
+      "type": "end",
+      "sender": "system",
+      "text": "Le désir augmente la tension, mais Camille pose une limite forte.",
+      "delay": 0
+    },
+    {
+      "id": "j1_02_player_005e",
+      "type": "message",
+      "sender": "player",
+      "text": "Je sais pas ce que c’était. Je sais juste que ça m’a déplacé. Et que j’ai peur de répondre à côté.",
+      "delay": 0,
+      "next": "j1_02_camille_006e"
+    },
+    {
+      "id": "j1_02_camille_006e",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ça sonnait presque vrai.",
+      "delay": 35,
+      "next": "j1_02_camille_007e"
+    },
+    {
+      "id": "j1_02_camille_007e",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je dis presque parce que tu as cette façon de garder une porte ouverte derrière chaque phrase.",
+      "delay": 45,
+      "next": "j1_02_camille_008e"
+    },
+    {
+      "id": "j1_02_camille_008e",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais je préfère ça à quelqu’un qui me raconte qu’il faisait juste frais dehors.",
+      "delay": 45,
+      "next": "j1_02_end_uncertain_open"
+    },
+    {
+      "id": "j1_02_end_uncertain_open",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille accepte l’incertitude, mais surveille les détours.",
+      "delay": 0
+    },
+    {
+      "id": "j1_02_sys_005f",
+      "type": "message",
+      "sender": "system",
+      "text": "Le message reste ouvert.",
+      "delay": 0,
+      "next": "j1_02_sys_006f"
+    },
+    {
+      "id": "j1_02_sys_006f",
+      "type": "message",
+      "sender": "system",
+      "text": "Camille écrit. S’arrête. Réécrit.",
+      "delay": 35,
+      "next": "j1_02_camille_007f"
+    },
+    {
+      "id": "j1_02_camille_007f",
+      "type": "message",
+      "sender": "camille",
+      "text": "D’accord.",
+      "delay": 50,
+      "next": "j1_02_camille_008f"
+    },
+    {
+      "id": "j1_02_camille_008f",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je vais prendre ton silence pour ce qu’il est, alors.",
+      "delay": 35,
+      "next": "j1_02_end_camille_left_on_read"
+    },
+    {
+      "id": "j1_02_end_camille_left_on_read",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille n’a pas besoin d’une dispute pour comprendre l’évitement.",
+      "delay": 0
+    }
+  ]
+}

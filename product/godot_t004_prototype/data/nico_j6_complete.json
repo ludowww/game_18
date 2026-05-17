@@ -1,0 +1,406 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "nico_j6_complete",
+  "day": 6,
+  "contact_id": "nico",
+  "start_node": "n6_block_a",
+  "nodes": [
+    {
+      "id": "n6_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "N6A — Nico : dernier service, vraie limite",
+      "delay": 0,
+      "next": "n6_001"
+    },
+    {
+      "id": "n6_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "J’ai commandé trop de frites. Encore. C’est ma stabilité émotionnelle à moi.",
+      "delay": 0,
+      "next": "n6_002"
+    },
+    {
+      "id": "n6_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "C’est pas le sujet, mais ça m’aide à réfléchir sans casser une chaise ni envoyer un vocal de dix minutes.",
+      "delay": 65,
+      "next": "n6_003"
+    },
+    {
+      "id": "n6_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "Et là, réflexion terminée : je peux couvrir un blanc. Pas devenir ton service après-vente avec musique d’attente.",
+      "delay": 85,
+      "next": "n6_004"
+    },
+    {
+      "id": "n6_004",
+      "type": "choice",
+      "sender": "player",
+      "text": "Nico pose la limite sans cesser d’être l’ami.",
+      "choices": [
+        {
+          "id": "n6_004_a",
+          "text": "Je te demande pas de porter ça. Juste de ne pas m’enfoncer.",
+          "next": "n6_005_a",
+          "effects": {
+            "nico_trust": 1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "nico_j6_last_soft_cover"
+            ]
+          }
+        },
+        {
+          "id": "n6_004_b",
+          "text": "T’as raison. Je t’ai trop mis au milieu. Et personne ne mérite ça, même pas tes frites.",
+          "next": "n6_005_b",
+          "effects": {
+            "nico_trust": 2,
+            "guilt": 2,
+            "flags": [
+              "nico_j6_admits_using_friend"
+            ]
+          }
+        },
+        {
+          "id": "n6_004_c",
+          "text": "Si t’es mon ami, aide-moi encore une fois.",
+          "next": "n6_005_c",
+          "effects": {
+            "nico_trust": -2,
+            "risk": 2,
+            "flags": [
+              "nico_j6_pressed_for_cover"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n6_005_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je te demande pas de porter ça. Juste de ne pas m’enfoncer.",
+      "delay": 0,
+      "next": "n6_006_a"
+    },
+    {
+      "id": "n6_006_a",
+      "type": "message",
+      "sender": "nico",
+      "text": "Ah, nuance de juriste fatigué. “Ne pas m’enfoncer”, c’est déjà porter un petit sac, tu vois.",
+      "delay": 70,
+      "next": "n6_007"
+    },
+    {
+      "id": "n6_005_b",
+      "type": "message",
+      "sender": "player",
+      "text": "T’as raison. Je t’ai trop mis au milieu. Et personne ne mérite ça, même pas tes frites.",
+      "delay": 0,
+      "next": "n6_006_b"
+    },
+    {
+      "id": "n6_006_b",
+      "type": "message",
+      "sender": "nico",
+      "text": "Merci. J’aime quand tu découvres les évidences avant que je fasse un PowerPoint avec des frites et des flèches rouges.",
+      "delay": 70,
+      "next": "n6_007"
+    },
+    {
+      "id": "n6_005_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Si t’es mon ami, aide-moi encore une fois.",
+      "delay": 0,
+      "next": "n6_006_c"
+    },
+    {
+      "id": "n6_006_c",
+      "type": "message",
+      "sender": "nico",
+      "text": "Oh non. Pas le bouton “si t’es mon ami”. Celui-là, il sent la pizza froide et le chantage affectif.",
+      "delay": 70,
+      "next": "n6_007"
+    },
+    {
+      "id": "n6_007",
+      "type": "message",
+      "sender": "nico",
+      "text": "Maya m’a écrit “il fait quoi exactement ?” avec trois points. Trois points, frérot. Elle a sorti la ponctuation de guerre et moi j’avais de la sauce sur les doigts.",
+      "delay": 90,
+      "next": "n6_008"
+    },
+    {
+      "id": "n6_008",
+      "type": "choice",
+      "sender": "player",
+      "text": "Décider comment Nico doit répondre à Maya.",
+      "choices": [
+        {
+          "id": "n6_008_a",
+          "text": "Dis-lui que tu sais pas. Simple.",
+          "next": "n6_009_a",
+          "effects": {
+            "nico_trust": 2,
+            "risk": -1,
+            "flags": [
+              "nico_j6_truth_to_maya"
+            ]
+          }
+        },
+        {
+          "id": "n6_008_b",
+          "text": "Dis-lui que je règle un truc perso.",
+          "next": "n6_009_b",
+          "effects": {
+            "nico_trust": 0,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "nico_j6_vague_personal_excuse"
+            ]
+          }
+        },
+        {
+          "id": "n6_008_c",
+          "text": "Ne réponds pas pour l’instant.",
+          "next": "n6_009_c",
+          "effects": {
+            "nico_trust": -1,
+            "risk": 1,
+            "flags": [
+              "nico_j6_asked_silence"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n6_009_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Dis-lui que tu sais pas. Simple.",
+      "delay": 0,
+      "next": "n6_010_a"
+    },
+    {
+      "id": "n6_010_a",
+      "type": "message",
+      "sender": "nico",
+      "text": "Ça, je peux. Incroyable concept : répondre ce que je sais. On tient peut-être une innovation.",
+      "delay": 65,
+      "next": "n6_011"
+    },
+    {
+      "id": "n6_009_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Dis-lui que je règle un truc perso.",
+      "delay": 0,
+      "next": "n6_010_b"
+    },
+    {
+      "id": "n6_010_b",
+      "type": "message",
+      "sender": "nico",
+      "text": "Ça passe une fois. Mais “un truc perso”, c’est une tente Quechua : pratique, moche, pas faite pour vivre dedans.",
+      "delay": 75,
+      "next": "n6_011"
+    },
+    {
+      "id": "n6_009_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Ne réponds pas pour l’instant.",
+      "delay": 0,
+      "next": "n6_010_c"
+    },
+    {
+      "id": "n6_010_c",
+      "type": "message",
+      "sender": "nico",
+      "text": "Donc ta stratégie c’est que tout le monde devienne silencieux en même temps. Audacieux. Nul, mais audacieux.",
+      "delay": 75,
+      "next": "n6_011"
+    },
+    {
+      "id": "n6_011",
+      "type": "message",
+      "sender": "nico",
+      "text": "Je rigole, mais je suis sérieux deux secondes : je suis ton pote, pas ton standard de crise, et j’ai pas envie que ton bazar change ma façon de parler aux gens.",
+      "delay": 95,
+      "next": "n6_012"
+    },
+    {
+      "id": "n6_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Réagir à la limite de Nico sans le transformer en hotline émotionnelle.",
+      "choices": [
+        {
+          "id": "n6_012_a",
+          "text": "Je veux pas t’abîmer avec mes histoires.",
+          "next": "n6_013_a",
+          "effects": {
+            "nico_trust": 2,
+            "guilt": 2,
+            "flags": [
+              "nico_j6_friendship_respected"
+            ]
+          }
+        },
+        {
+          "id": "n6_012_b",
+          "text": "Je suis en train de perdre le contrôle, je crois.",
+          "next": "n6_013_b",
+          "effects": {
+            "nico_trust": 1,
+            "guilt": 1,
+            "risk": 1,
+            "flags": [
+              "nico_j6_player_admits_losing_control"
+            ]
+          }
+        },
+        {
+          "id": "n6_012_c",
+          "text": "On en reparlera après, là j’ai besoin d’une solution.",
+          "next": "n6_013_c",
+          "effects": {
+            "nico_trust": -2,
+            "risk": 2,
+            "flags": [
+              "nico_j6_tool_mode_rejected"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n6_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je veux pas t’abîmer avec mes histoires.",
+      "delay": 0,
+      "next": "n6_014_a"
+    },
+    {
+      "id": "n6_014_a",
+      "type": "message",
+      "sender": "nico",
+      "text": "Bien. Parce que moi je suis déjà abîmé par mes choix de sauces, ça suffit pour ce soir.",
+      "delay": 65,
+      "next": "n6_015"
+    },
+    {
+      "id": "n6_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis en train de perdre le contrôle, je crois.",
+      "delay": 0,
+      "next": "n6_014_b"
+    },
+    {
+      "id": "n6_014_b",
+      "type": "message",
+      "sender": "nico",
+      "text": "Je vais pas applaudir, mais au moins tu regardes le volant. C’est mieux que conduire les yeux fermés.",
+      "delay": 75,
+      "next": "n6_015"
+    },
+    {
+      "id": "n6_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "On en reparlera après, là j’ai besoin d’une solution.",
+      "delay": 0,
+      "next": "n6_014_c"
+    },
+    {
+      "id": "n6_014_c",
+      "type": "message",
+      "sender": "nico",
+      "text": "Non. Ça, c’est exactement le moment où je deviens une appli gratuite dans ta tête. Je passe mon tour.",
+      "delay": 75,
+      "next": "n6_015"
+    },
+    {
+      "id": "n6_015",
+      "type": "message",
+      "sender": "nico",
+      "text": "Dernière offre : je réponds un truc propre si on me demande. Pas beau. Pas héroïque. Propre.",
+      "delay": 85,
+      "next": "n6_016"
+    },
+    {
+      "id": "n6_016",
+      "type": "choice",
+      "sender": "player",
+      "text": "Fixer le seed de fin côté Nico.",
+      "choices": [
+        {
+          "id": "n6_016_a",
+          "text": "Réponds propre. Et après je gère moi-même.",
+          "next": "n6_end_loyal_limit",
+          "effects": {
+            "nico_trust": 3,
+            "risk": -1,
+            "flags": [
+              "ending_seed_nico_loyal_limit",
+              "nico_j6_clean_answer"
+            ]
+          }
+        },
+        {
+          "id": "n6_016_b",
+          "text": "Ne réponds rien. Je vais arrêter de t’utiliser comme tampon.",
+          "next": "n6_end_steps_back",
+          "effects": {
+            "nico_trust": 2,
+            "guilt": 1,
+            "flags": [
+              "ending_seed_nico_steps_back",
+              "nico_j6_no_more_buffer"
+            ]
+          }
+        },
+        {
+          "id": "n6_016_c",
+          "text": "Laisse tomber. Je vais trouver quelqu’un d’autre.",
+          "next": "n6_end_friend_hurt",
+          "effects": {
+            "nico_trust": -3,
+            "risk": 2,
+            "flags": [
+              "ending_seed_nico_hurt",
+              "nico_j6_friendship_damaged"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "n6_end_loyal_limit",
+      "type": "end",
+      "text": "Fin Nico J6 — Nico aide une dernière fois, mais avec une limite nette : après ça, le joueur devra parler lui-même."
+    },
+    {
+      "id": "n6_end_steps_back",
+      "type": "end",
+      "text": "Fin Nico J6 — Nico respecte l’effort du joueur et sort du rôle de tampon social."
+    },
+    {
+      "id": "n6_end_friend_hurt",
+      "type": "end",
+      "text": "Fin Nico J6 — Nico recule, blessé d’être traité comme un outil remplaçable."
+    }
+  ]
+}

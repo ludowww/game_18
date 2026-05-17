@@ -1,0 +1,219 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "camille_j1_intro",
+  "day": 1,
+  "contact_id": "camille",
+  "start_node": "c1_001",
+  "nodes": [
+    {
+      "id": "c1_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors… tu fais toujours semblant d’être sérieux le matin ?",
+      "delay": 0,
+      "next": "c1_002"
+    },
+    {
+      "id": "c1_002",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre à Camille",
+      "choices": [
+        {
+          "id": "c1_002_a",
+          "text": "Seulement quand on me surveille.",
+          "next": "c1_003_flirt",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "answered_camille_fast"
+            ]
+          }
+        },
+        {
+          "id": "c1_002_b",
+          "text": "Je suis très sérieux. Trop, même.",
+          "next": "c1_003_soft",
+          "effects": {
+            "camille_interest": 0,
+            "flags": [
+              "answered_camille_fast"
+            ]
+          }
+        },
+        {
+          "id": "c1_002_c",
+          "text": "Ignorer pour l’instant",
+          "next": "c1_003_ignore",
+          "effects": {
+            "camille_interest": -1,
+            "sarah_trust": 1,
+            "flags": [
+              "left_camille_on_read"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c1_003_flirt",
+      "type": "message",
+      "sender": "player",
+      "text": "Seulement quand on me surveille.",
+      "delay": 0,
+      "next": "c1_004_flirt"
+    },
+    {
+      "id": "c1_004_flirt",
+      "type": "message",
+      "sender": "camille",
+      "text": "Donc si je te surveille, tu redeviens sage ? Intéressant.",
+      "delay": 60,
+      "next": "c1_005"
+    },
+    {
+      "id": "c1_003_soft",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis très sérieux. Trop, même.",
+      "delay": 0,
+      "next": "c1_004_soft"
+    },
+    {
+      "id": "c1_004_soft",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ça sonne comme un défi, pas comme une information.",
+      "delay": 60,
+      "next": "c1_005"
+    },
+    {
+      "id": "c1_003_ignore",
+      "type": "message",
+      "sender": "system",
+      "text": "Camille reste en attente. La notification disparaît, pas la tension.",
+      "delay": 0,
+      "next": "c1_end_ignore",
+      "effects": {
+        "flags": [
+          "camille_left_waiting"
+        ]
+      }
+    },
+    {
+      "id": "c1_005",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je passe près de ton quartier ce soir. Enfin… peut-être.",
+      "delay": 120,
+      "next": "c1_006"
+    },
+    {
+      "id": "c1_006",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille ouvre une porte.",
+      "choices": [
+        {
+          "id": "c1_006_a",
+          "text": "Préviens-moi si le peut-être devient sûr.",
+          "next": "c1_007_a",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1
+          }
+        },
+        {
+          "id": "c1_006_b",
+          "text": "Ce soir c’est compliqué.",
+          "next": "c1_007_b",
+          "effects": {
+            "camille_interest": -1,
+            "sarah_trust": 1
+          }
+        },
+        {
+          "id": "c1_006_c",
+          "text": "Compliqué, mais j’ai envie de savoir.",
+          "next": "c1_007_c",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "c1_007_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Préviens-moi si le peut-être devient sûr.",
+      "delay": 0,
+      "next": "c1_008_a"
+    },
+    {
+      "id": "c1_008_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je note. J’aime bien quand tu réponds vite.",
+      "delay": 60,
+      "next": "c1_end"
+    },
+    {
+      "id": "c1_007_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Ce soir c’est compliqué.",
+      "delay": 0,
+      "next": "c1_008_b"
+    },
+    {
+      "id": "c1_008_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Toujours sérieux, donc. Dommage, j’étais curieuse.",
+      "delay": 60,
+      "next": "c1_end"
+    },
+    {
+      "id": "c1_007_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Compliqué, mais j’ai envie de savoir.",
+      "delay": 0,
+      "next": "c1_008_c"
+    },
+    {
+      "id": "c1_008_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Voilà. Là tu es beaucoup plus intéressant.",
+      "delay": 60,
+      "next": "c1_end"
+    },
+    {
+      "id": "c1_end_ignore",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin temporaire : Camille attendra une relance plus tard.",
+      "effects": {
+        "flags": [
+          "camille_j1_ignored"
+        ]
+      }
+    },
+    {
+      "id": "c1_end",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin temporaire du bloc Camille J1. La conversation peut reprendre après interruption Sarah/Nico.",
+      "effects": {
+        "flags": [
+          "camille_j1_intro_done"
+        ]
+      }
+    }
+  ]
+}

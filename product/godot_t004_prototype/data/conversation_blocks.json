@@ -1,0 +1,657 @@
+{
+  "schema_version": "0.1",
+  "block_order": [
+    "camille_c1a",
+    "sarah_s1a",
+    "camille_c1b",
+    "sarah_s1b",
+    "camille_c1c",
+    "sarah_s1c",
+    "camille_c2a",
+    "sarah_s2a",
+    "camille_c2b",
+    "sarah_s2b",
+    "camille_c2c",
+    "sarah_s2c",
+    "camille_c3a",
+    "sarah_s3a",
+    "camille_c3b",
+    "sarah_s3b",
+    "camille_c3c",
+    "sarah_s3c",
+    "camille_c4a",
+    "maya_m4a",
+    "ines_i4a",
+    "nico_n4a",
+    "camille_c4b",
+    "maya_m4b",
+    "ines_i4b",
+    "nico_n4b",
+    "camille_c4c",
+    "maya_m4c",
+    "ines_i4c",
+    "nico_n4c",
+    "sarah_s5a",
+    "camille_c5a",
+    "nico_n5a",
+    "sarah_s5b",
+    "camille_c5b",
+    "maya_m5a",
+    "sarah_s5c",
+    "camille_c5c",
+    "sarah_s6a",
+    "camille_c6a",
+    "nico_n6a",
+    "maya_m6a",
+    "sarah_s6b",
+    "camille_c6b",
+    "ines_i6a",
+    "finale_fin"
+  ],
+  "blocks": {
+    "camille_c1a": {
+      "contact_id": "camille",
+      "conversation_id": "camille",
+      "start_node": "c1_001",
+      "end_nodes": [
+        "c1_009_pause"
+      ],
+      "unlock_on_done": "sarah_s1a",
+      "notification_target": "sarah",
+      "waiting_text": "Camille ne répond plus pour l’instant. Va voir ailleurs."
+    },
+    "sarah_s1a": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah",
+      "start_node": "s1_001",
+      "end_nodes": [
+        "s1_010"
+      ],
+      "unlock_on_done": "camille_c1b",
+      "notification_target": "camille",
+      "waiting_text": "Sarah ne répond plus pour l’instant."
+    },
+    "camille_c1b": {
+      "contact_id": "camille",
+      "conversation_id": "camille",
+      "start_node": "c1_010",
+      "end_nodes": [
+        "c1_018_wait"
+      ],
+      "unlock_on_done": "sarah_s1b",
+      "notification_target": "sarah",
+      "waiting_text": "Camille ne répond plus pour l’instant."
+    },
+    "sarah_s1b": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah",
+      "start_node": "s1_011",
+      "end_nodes": [
+        "s1_019_a",
+        "s1_019_b",
+        "s1_019_c"
+      ],
+      "unlock_on_done": "camille_c1c",
+      "notification_target": "camille",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "camille_c1c": {
+      "contact_id": "camille",
+      "conversation_id": "camille",
+      "start_node": "c1_019",
+      "end_nodes": [
+        "c1_end_go",
+        "c1_end_resist",
+        "c1_end_seen"
+      ],
+      "unlock_on_done": "sarah_s1c",
+      "notification_target": "sarah",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "sarah_s1c": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah",
+      "start_node": "s1_020",
+      "end_nodes": [
+        "s1_end_deny",
+        "s1_end_delay",
+        "s1_end_confess_hint"
+      ],
+      "unlock_on_done": "",
+      "notification_target": "",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "camille_c2a": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j2",
+      "start_node": "c2_block_a",
+      "end_nodes": [
+        "c2_009_a",
+        "c2_009_b",
+        "c2_009_c"
+      ],
+      "unlock_on_done": "sarah_s2a",
+      "notification_target": "sarah_j2",
+      "waiting_text": "Camille ne répond plus pour l’instant."
+    },
+    "sarah_s2a": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah_j2",
+      "start_node": "s2_block_a",
+      "end_nodes": [
+        "s2_009_a",
+        "s2_009_b",
+        "s2_009_c"
+      ],
+      "unlock_on_done": "camille_c2b",
+      "notification_target": "camille_j2",
+      "waiting_text": "Sarah ne répond plus pour l’instant."
+    },
+    "camille_c2b": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j2",
+      "start_node": "c2_block_b",
+      "end_nodes": [
+        "c2_020_a",
+        "c2_020_b",
+        "c2_020_c"
+      ],
+      "unlock_on_done": "sarah_s2b",
+      "notification_target": "sarah_j2",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "sarah_s2b": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah_j2",
+      "start_node": "s2_block_b",
+      "end_nodes": [
+        "s2_019_a",
+        "s2_019_b",
+        "s2_019_c"
+      ],
+      "unlock_on_done": "camille_c2c",
+      "notification_target": "camille_j2",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "camille_c2c": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j2",
+      "start_node": "c2_block_c",
+      "end_nodes": [
+        "c2_end_boundary",
+        "c2_end_stay",
+        "c2_end_thread"
+      ],
+      "unlock_on_done": "sarah_s2c",
+      "notification_target": "sarah_j2",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "sarah_s2c": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah_j2",
+      "start_node": "s2_block_c",
+      "end_nodes": [
+        "s2_end_presence",
+        "s2_end_fragile",
+        "s2_end_distance"
+      ],
+      "unlock_on_done": "",
+      "notification_target": "",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "camille_c3a": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j3",
+      "start_node": "c3_block_a",
+      "end_nodes": [
+        "c3_009_a",
+        "c3_009_b",
+        "c3_009_c"
+      ],
+      "unlock_on_done": "sarah_s3a",
+      "notification_target": "sarah_j3",
+      "waiting_text": "Camille ne répond plus pour l’instant."
+    },
+    "sarah_s3a": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah_j3",
+      "start_node": "s3_block_a",
+      "end_nodes": [
+        "s3_009_a",
+        "s3_009_b",
+        "s3_009_c"
+      ],
+      "unlock_on_done": "camille_c3b",
+      "notification_target": "camille_j3",
+      "waiting_text": "Sarah ne répond plus pour l’instant."
+    },
+    "camille_c3b": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j3",
+      "start_node": "c3_block_b",
+      "end_nodes": [
+        "c3_020_a",
+        "c3_020_b",
+        "c3_020_c"
+      ],
+      "unlock_on_done": "sarah_s3b",
+      "notification_target": "sarah_j3",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "sarah_s3b": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah_j3",
+      "start_node": "s3_block_b",
+      "end_nodes": [
+        "s3_018_a",
+        "s3_018_b",
+        "s3_018_c"
+      ],
+      "unlock_on_done": "camille_c3c",
+      "notification_target": "camille_j3",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "camille_c3c": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j3",
+      "start_node": "c3_block_c",
+      "end_nodes": [
+        "c3_end_pull",
+        "c3_end_boundary",
+        "c3_end_trace"
+      ],
+      "unlock_on_done": "sarah_s3c",
+      "notification_target": "sarah_j3",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "sarah_s3c": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah_j3",
+      "start_node": "s3_block_c",
+      "end_nodes": [
+        "s3_end_presence",
+        "s3_end_fragile",
+        "s3_end_distance"
+      ],
+      "unlock_on_done": "",
+      "notification_target": "",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "camille_c4a": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j4",
+      "start_node": "c4_block_a",
+      "end_nodes": [
+        "c4_009_a",
+        "c4_009_b",
+        "c4_009_c"
+      ],
+      "unlock_on_done": "maya_m4a",
+      "notification_target": "maya_j4",
+      "waiting_text": "Camille ne répond plus pour l’instant."
+    },
+    "maya_m4a": {
+      "contact_id": "maya",
+      "conversation_id": "maya_j4",
+      "start_node": "m4_block_a",
+      "end_nodes": [
+        "m4_009_a",
+        "m4_009_b",
+        "m4_009_c"
+      ],
+      "unlock_on_done": "ines_i4a",
+      "notification_target": "ines_j4",
+      "waiting_text": "Maya ne répond plus pour l’instant."
+    },
+    "ines_i4a": {
+      "contact_id": "ines",
+      "conversation_id": "ines_j4",
+      "start_node": "i4_block_a",
+      "end_nodes": [
+        "i4_009_a",
+        "i4_009_b",
+        "i4_009_c"
+      ],
+      "unlock_on_done": "nico_n4a",
+      "notification_target": "nico_j4",
+      "waiting_text": "Inès ne répond plus pour l’instant."
+    },
+    "nico_n4a": {
+      "contact_id": "nico",
+      "conversation_id": "nico_j4",
+      "start_node": "n4_block_a",
+      "end_nodes": [
+        "n4_009_a",
+        "n4_009_b",
+        "n4_009_c"
+      ],
+      "unlock_on_done": "camille_c4b",
+      "notification_target": "camille_j4",
+      "waiting_text": "Nico ne répond plus pour l’instant."
+    },
+    "camille_c4b": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j4",
+      "start_node": "c4_block_b",
+      "end_nodes": [
+        "c4_018_a",
+        "c4_018_b",
+        "c4_018_c"
+      ],
+      "unlock_on_done": "maya_m4b",
+      "notification_target": "maya_j4",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "maya_m4b": {
+      "contact_id": "maya",
+      "conversation_id": "maya_j4",
+      "start_node": "m4_block_b",
+      "end_nodes": [
+        "m4_018_a",
+        "m4_018_b",
+        "m4_018_c"
+      ],
+      "unlock_on_done": "ines_i4b",
+      "notification_target": "ines_j4",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "ines_i4b": {
+      "contact_id": "ines",
+      "conversation_id": "ines_j4",
+      "start_node": "i4_block_b",
+      "end_nodes": [
+        "i4_018_a",
+        "i4_018_b",
+        "i4_018_c"
+      ],
+      "unlock_on_done": "nico_n4b",
+      "notification_target": "nico_j4",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "nico_n4b": {
+      "contact_id": "nico",
+      "conversation_id": "nico_j4",
+      "start_node": "n4_block_b",
+      "end_nodes": [
+        "n4_018_a",
+        "n4_018_b",
+        "n4_018_c"
+      ],
+      "unlock_on_done": "camille_c4c",
+      "notification_target": "camille_j4",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "camille_c4c": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j4",
+      "start_node": "c4_block_c",
+      "end_nodes": [
+        "c4_end_window",
+        "c4_end_trace",
+        "c4_end_retreat"
+      ],
+      "unlock_on_done": "maya_m4c",
+      "notification_target": "maya_j4",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "maya_m4c": {
+      "contact_id": "maya",
+      "conversation_id": "maya_j4",
+      "start_node": "m4_block_c",
+      "end_nodes": [
+        "m4_end_gratitude",
+        "m4_end_cover",
+        "m4_end_distance"
+      ],
+      "unlock_on_done": "ines_i4c",
+      "notification_target": "ines_j4",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "ines_i4c": {
+      "contact_id": "ines",
+      "conversation_id": "ines_j4",
+      "start_node": "i4_block_c",
+      "end_nodes": [
+        "i4_end_open",
+        "i4_end_boundary",
+        "i4_end_complication"
+      ],
+      "unlock_on_done": "nico_n4c",
+      "notification_target": "nico_j4",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "nico_n4c": {
+      "contact_id": "nico",
+      "conversation_id": "nico_j4",
+      "start_node": "n4_block_c",
+      "end_nodes": [
+        "n4_end_clarify",
+        "n4_end_cloud",
+        "n4_end_silence"
+      ],
+      "unlock_on_done": "",
+      "notification_target": "",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "sarah_s5a": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah_j5",
+      "start_node": "s5_block_a",
+      "end_nodes": [
+        "s5_009_a",
+        "s5_009_b",
+        "s5_009_c"
+      ],
+      "unlock_on_done": "camille_c5a",
+      "notification_target": "camille_j5",
+      "waiting_text": "Sarah ne répond plus pour l’instant."
+    },
+    "camille_c5a": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j5",
+      "start_node": "c5_block_a",
+      "end_nodes": [
+        "c5_008_a",
+        "c5_008_b",
+        "c5_008_c"
+      ],
+      "unlock_on_done": "nico_n5a",
+      "notification_target": "nico_j5",
+      "waiting_text": "Camille ne répond plus pour l’instant."
+    },
+    "nico_n5a": {
+      "contact_id": "nico",
+      "conversation_id": "nico_j5",
+      "start_node": "n5_block_a",
+      "end_nodes": [
+        "n5_end_cover",
+        "n5_end_warned",
+        "n5_end_cost"
+      ],
+      "unlock_on_done": "sarah_s5b",
+      "notification_target": "sarah_j5",
+      "waiting_text": "Nico ne répond plus pour l’instant."
+    },
+    "sarah_s5b": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah_j5",
+      "start_node": "s5_block_b",
+      "end_nodes": [
+        "s5_018_a",
+        "s5_018_b",
+        "s5_018_c"
+      ],
+      "unlock_on_done": "camille_c5b",
+      "notification_target": "camille_j5",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "camille_c5b": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j5",
+      "start_node": "c5_block_b",
+      "end_nodes": [
+        "c5_016_a",
+        "c5_016_b",
+        "c5_016_c"
+      ],
+      "unlock_on_done": "maya_m5a",
+      "notification_target": "maya_j5",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "maya_m5a": {
+      "contact_id": "maya",
+      "conversation_id": "maya_j5",
+      "start_node": "m5_block_a",
+      "end_nodes": [
+        "m5_end_watch",
+        "m5_end_minimized",
+        "m5_end_distance"
+      ],
+      "unlock_on_done": "sarah_s5c",
+      "notification_target": "sarah_j5",
+      "waiting_text": "Maya ne répond plus pour l’instant."
+    },
+    "sarah_s5c": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah_j5",
+      "start_node": "s5_block_c",
+      "end_nodes": [
+        "s5_end_presence",
+        "s5_end_fragile",
+        "s5_end_distance"
+      ],
+      "unlock_on_done": "camille_c5c",
+      "notification_target": "camille_j5",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "camille_c5c": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j5",
+      "start_node": "c5_block_c",
+      "end_nodes": [
+        "c5_end_a",
+        "c5_end_b",
+        "c5_end_c"
+      ],
+      "unlock_on_done": "",
+      "notification_target": "",
+      "waiting_text": "Plus rien pour le moment."
+    },
+    "sarah_s6a": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah_j6",
+      "start_node": "s6_block_a",
+      "end_nodes": [
+        "s6_013_a",
+        "s6_013_b",
+        "s6_013_c"
+      ],
+      "unlock_on_done": "camille_c6a",
+      "notification_target": "camille_j6",
+      "waiting_text": "Sarah ne répond plus pour l’instant."
+    },
+    "camille_c6a": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j6",
+      "start_node": "c6_block_a",
+      "end_nodes": [
+        "c6_013_a",
+        "c6_013_b",
+        "c6_013_c"
+      ],
+      "unlock_on_done": "nico_n6a",
+      "notification_target": "nico_j6",
+      "waiting_text": "Camille ne répond plus pour l’instant."
+    },
+    "nico_n6a": {
+      "contact_id": "nico",
+      "conversation_id": "nico_j6",
+      "start_node": "n6_block_a",
+      "end_nodes": [
+        "n6_end_loyal_limit",
+        "n6_end_steps_back",
+        "n6_end_friend_hurt"
+      ],
+      "unlock_on_done": "maya_m6a",
+      "notification_target": "maya_j6",
+      "waiting_text": "Nico ne répond plus pour l’instant."
+    },
+    "maya_m6a": {
+      "contact_id": "maya",
+      "conversation_id": "maya_j6",
+      "start_node": "m6_block_a",
+      "end_nodes": [
+        "m6_end_warned",
+        "m6_end_soft_cover",
+        "m6_end_minimized"
+      ],
+      "unlock_on_done": "sarah_s6b",
+      "notification_target": "sarah_j6",
+      "waiting_text": "Maya ne répond plus pour l’instant."
+    },
+    "sarah_s6b": {
+      "contact_id": "sarah",
+      "conversation_id": "sarah_j6",
+      "start_node": "s6_block_b",
+      "pre_start_nodes": [
+        "s6_014_a",
+        "s6_014_b",
+        "s6_014_c"
+      ],
+      "end_nodes": [
+        "s6_end_repair",
+        "s6_end_uncertain",
+        "s6_end_distance"
+      ],
+      "unlock_on_done": "camille_c6b",
+      "notification_target": "camille_j6",
+      "waiting_text": "Sarah ne répond plus pour l’instant."
+    },
+    "camille_c6b": {
+      "contact_id": "camille",
+      "conversation_id": "camille_j6",
+      "start_node": "c6_block_b",
+      "pre_start_nodes": [
+        "c6_014_a",
+        "c6_014_b",
+        "c6_014_c"
+      ],
+      "end_nodes": [
+        "c6_end_chosen_seed",
+        "c6_end_respect_distance",
+        "c6_end_cuts_short"
+      ],
+      "unlock_on_done": "ines_i6a",
+      "notification_target": "ines_j6",
+      "waiting_text": "Camille ne répond plus pour l’instant."
+    },
+    "ines_i6a": {
+      "contact_id": "ines",
+      "conversation_id": "ines_j6",
+      "start_node": "i6_block_a",
+      "end_nodes": [
+        "i6_end_boundary",
+        "i6_end_ambiguous",
+        "i6_end_flight"
+      ],
+      "unlock_on_done": "finale_fin",
+      "notification_target": "finales_mvp",
+      "waiting_text": "Inès ne répond plus pour l’instant."
+    },
+    "finale_fin": {
+      "contact_id": "system",
+      "conversation_id": "finales_mvp",
+      "start_node": "final_block_a",
+      "end_nodes": [
+        "final_end_reparation_fragile",
+        "final_end_camille_assumee",
+        "final_end_double_vie_maintenue",
+        "final_end_tout_se_fissure",
+        "final_end_fuite_en_avant"
+      ],
+      "unlock_on_done": "",
+      "notification_target": "",
+      "waiting_text": "Fin MVP atteinte."
+    }
+  }
+}

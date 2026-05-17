@@ -1,0 +1,36 @@
+Bloc 2/8 — Scope MVP
+
+SCOPE MVP
+
+Plateforme :
+- PC Windows d’abord
+- Godot 4
+- interface faux smartphone vertical
+
+Contenu :
+- 3 personnages séduisibles adultes
+- 1 partenaire officiel(le)
+- 1 confident optionnel
+- 5 à 7 jours de jeu
+- 300 à 600 messages
+- 30 à 50 choix significatifs
+- 3 à 5 fins
+- 2 à 4 images par personnage
+
+Systèmes :
+- galerie soft/adulte
+- sauvegarde
+- jauges invisibles
+- flags narratifs
+- événements conditionnels
+- écran debug
+
+Hors MVP :
+- mobile
+- génération NSFW libre
+- réseaux sociaux complexes
+- voix complète
+- éditeur de routes
+- saisons longues
+- analytics avancées
+- traduction anglaise

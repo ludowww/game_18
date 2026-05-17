@@ -1,0 +1,629 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "sarah_j6_complete",
+  "day": 6,
+  "contact_id": "sarah",
+  "start_node": "s6_block_a",
+  "nodes": [
+    {
+      "id": "s6_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "S6A — Sarah : le quotidien ne tient plus",
+      "delay": 0,
+      "next": "s6_001"
+    },
+    {
+      "id": "s6_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je viens de rentrer. La lumière de la cuisine était encore allumée.",
+      "delay": 0,
+      "next": "s6_002"
+    },
+    {
+      "id": "s6_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ton mug est encore dans l’évier, juste à côté de la tasse du café d’hier. J’ai voulu les ranger, puis je les ai reposés exactement au même endroit.",
+      "delay": 70,
+      "next": "s6_003"
+    },
+    {
+      "id": "s6_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est idiot, mais ça m’a fait quelque chose. Comme si même l’évier attendait une réponse plus claire que moi.",
+      "delay": 90,
+      "next": "s6_004"
+    },
+    {
+      "id": "s6_004",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre au détail du mug sans transformer Sarah en procès.",
+      "choices": [
+        {
+          "id": "s6_004_a",
+          "text": "Laisse-le là. Je rentre et on parle vraiment.",
+          "next": "s6_005_a",
+          "effects": {
+            "sarah_trust": 2,
+            "guilt": 1,
+            "player_presence": 2,
+            "flags": [
+              "sarah_j6_promised_real_talk"
+            ]
+          }
+        },
+        {
+          "id": "s6_004_b",
+          "text": "Je suis désolé. Je pensais pas qu’un mug et une assiette pouvaient dire autant.",
+          "next": "s6_005_b",
+          "effects": {
+            "sarah_trust": 1,
+            "guilt": 2,
+            "flags": [
+              "sarah_j6_acknowledged_domestic_weight"
+            ]
+          }
+        },
+        {
+          "id": "s6_004_c",
+          "text": "Ne fais pas une histoire d’un mug.",
+          "next": "s6_005_c",
+          "effects": {
+            "sarah_trust": -2,
+            "sarah_doubt": 2,
+            "risk": 1,
+            "flags": [
+              "sarah_j6_minimized_mug"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s6_005_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Laisse-le là. Je rentre et on parle vraiment.",
+      "delay": 0,
+      "next": "s6_006_a"
+    },
+    {
+      "id": "s6_006_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "D’accord. Mais “vraiment”, ça veut dire sans poser ton téléphone face contre table toutes les deux minutes.",
+      "delay": 65,
+      "next": "s6_007"
+    },
+    {
+      "id": "s6_005_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis désolé. Je pensais pas qu’un mug et une assiette pouvaient dire autant.",
+      "delay": 0,
+      "next": "s6_006_b"
+    },
+    {
+      "id": "s6_006_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je sais. C’est justement le problème. On finit par vivre dans des choses que tu ne vois même plus.",
+      "delay": 65,
+      "next": "s6_007"
+    },
+    {
+      "id": "s6_005_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Ne fais pas une histoire d’un mug.",
+      "delay": 0,
+      "next": "s6_006_c"
+    },
+    {
+      "id": "s6_006_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ce n’est pas le mug. Tu le sais. Le mug, au moins, il est là.",
+      "delay": 65,
+      "next": "s6_007"
+    },
+    {
+      "id": "s6_007",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai gardé une assiette hier. Puis je l’ai mise au frigo. Puis je l’ai jetée ce matin, entre le café et les courses. Ça m’a énervée d’être triste pour une assiette.",
+      "delay": 90,
+      "next": "s6_008"
+    },
+    {
+      "id": "s6_008",
+      "type": "choice",
+      "sender": "player",
+      "text": "Dire si le joueur accepte le manque concret ou le déplace.",
+      "choices": [
+        {
+          "id": "s6_008_a",
+          "text": "Tu n’aurais pas dû avoir à m’attendre comme ça.",
+          "next": "s6_009_a",
+          "effects": {
+            "sarah_trust": 2,
+            "guilt": 2,
+            "flags": [
+              "sarah_j6_accepts_waiting_hurt"
+            ]
+          }
+        },
+        {
+          "id": "s6_008_b",
+          "text": "J’aurais dû prévenir plus tôt.",
+          "next": "s6_009_b",
+          "effects": {
+            "sarah_trust": 1,
+            "player_presence": 1,
+            "flags": [
+              "sarah_j6_practical_repair"
+            ]
+          }
+        },
+        {
+          "id": "s6_008_c",
+          "text": "J’avais juste besoin d’air hier.",
+          "next": "s6_009_c",
+          "effects": {
+            "sarah_trust": -1,
+            "sarah_doubt": 1,
+            "flags": [
+              "sarah_j6_needed_air_defense"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s6_009_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu n’aurais pas dû avoir à m’attendre comme ça.",
+      "delay": 0,
+      "next": "s6_010_a"
+    },
+    {
+      "id": "s6_010_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Merci de ne pas me dire que j’exagère. Ça change déjà quelque chose.",
+      "delay": 55,
+      "next": "s6_011"
+    },
+    {
+      "id": "s6_009_b",
+      "type": "message",
+      "sender": "player",
+      "text": "J’aurais dû prévenir plus tôt.",
+      "delay": 0,
+      "next": "s6_010_b"
+    },
+    {
+      "id": "s6_010_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Oui. Prévenir, c’est petit. Mais ces derniers temps, les petites choses manquent beaucoup.",
+      "delay": 55,
+      "next": "s6_011"
+    },
+    {
+      "id": "s6_009_c",
+      "type": "message",
+      "sender": "player",
+      "text": "J’avais juste besoin d’air hier.",
+      "delay": 0,
+      "next": "s6_010_c"
+    },
+    {
+      "id": "s6_010_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je peux entendre ça. J’ai juste besoin de savoir si respirer veut dire partir de moi.",
+      "delay": 55,
+      "next": "s6_011"
+    },
+    {
+      "id": "s6_011",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne veux pas te coincer. Je veux juste arrêter de parler à quelqu’un qui semble déjà ailleurs.",
+      "delay": 85,
+      "next": "s6_012"
+    },
+    {
+      "id": "s6_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre à la peur de Sarah sans jouer une grande scène.",
+      "choices": [
+        {
+          "id": "s6_012_a",
+          "text": "Je suis encore là. Maladroitement, mais là.",
+          "next": "s6_013_a",
+          "effects": {
+            "sarah_trust": 2,
+            "player_presence": 2,
+            "flags": [
+              "sarah_j6_presence_claimed"
+            ]
+          }
+        },
+        {
+          "id": "s6_012_b",
+          "text": "Je ne sais pas bien où j’en suis, mais je ne veux pas te perdre dans le flou.",
+          "next": "s6_013_b",
+          "effects": {
+            "sarah_trust": 1,
+            "guilt": 1,
+            "sarah_doubt": 1,
+            "flags": [
+              "sarah_j6_partial_truth_opened"
+            ]
+          }
+        },
+        {
+          "id": "s6_012_c",
+          "text": "J’ai besoin que tu me laisses un peu de silence.",
+          "next": "s6_013_c",
+          "effects": {
+            "sarah_trust": -1,
+            "sarah_doubt": 2,
+            "flags": [
+              "sarah_j6_asked_for_silence"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s6_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis encore là. Maladroitement, mais là.",
+      "delay": 0,
+      "next": "s6_014_a"
+    },
+    {
+      "id": "s6_014_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Alors montre-le petit. Rentre. Pose ton téléphone écran vers le haut. Bois un verre d’eau. On commence là.",
+      "delay": 70,
+      "next": "s6_block_b"
+    },
+    {
+      "id": "s6_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne sais pas bien où j’en suis, mais je ne veux pas te perdre dans le flou.",
+      "delay": 0,
+      "next": "s6_014_b"
+    },
+    {
+      "id": "s6_014_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est pas confortable à lire. Mais c’est moins dur que tes phrases toutes lisses.",
+      "delay": 70,
+      "next": "s6_block_b"
+    },
+    {
+      "id": "s6_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai besoin que tu me laisses un peu de silence.",
+      "delay": 0,
+      "next": "s6_014_c"
+    },
+    {
+      "id": "s6_014_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je peux laisser du silence. Je ne peux plus faire semblant qu’il ne me parle pas.",
+      "delay": 70,
+      "next": "s6_block_b"
+    },
+    {
+      "id": "s6_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "S6B — Sarah : rester ou seulement faire tenir",
+      "delay": 0,
+      "next": "s6_015"
+    },
+    {
+      "id": "s6_015",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vais te demander une chose simple. Pas parfaite. Simple.",
+      "delay": 0,
+      "next": "s6_016"
+    },
+    {
+      "id": "s6_016",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Tu veux encore être là avec moi, ou tu veux juste que ça ne casse pas ce soir ?",
+      "delay": 90,
+      "next": "s6_017"
+    },
+    {
+      "id": "s6_017",
+      "type": "choice",
+      "sender": "player",
+      "text": "Choisir le ton de la réponse intime à Sarah.",
+      "choices": [
+        {
+          "id": "s6_017_a",
+          "text": "Je veux être là. Pas juste éviter que ça casse.",
+          "next": "s6_018_a",
+          "effects": {
+            "sarah_trust": 3,
+            "player_presence": 2,
+            "guilt": 1,
+            "flags": [
+              "sarah_j6_repair_path_seed"
+            ]
+          }
+        },
+        {
+          "id": "s6_017_b",
+          "text": "Je veux qu’on tienne ce soir, et demain je te dirai plus.",
+          "next": "s6_018_b",
+          "effects": {
+            "sarah_trust": 1,
+            "sarah_doubt": 1,
+            "risk": 1,
+            "flags": [
+              "sarah_j6_delayed_truth"
+            ]
+          }
+        },
+        {
+          "id": "s6_017_c",
+          "text": "Je ne peux pas te donner une réponse propre maintenant.",
+          "next": "s6_018_c",
+          "effects": {
+            "sarah_trust": -1,
+            "sarah_doubt": 2,
+            "guilt": 1,
+            "flags": [
+              "sarah_j6_no_clean_answer"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s6_018_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je veux être là. Pas juste éviter que ça casse.",
+      "delay": 0,
+      "next": "s6_019_a"
+    },
+    {
+      "id": "s6_019_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Alors ne commence pas par une promesse. Commence par être joignable quand tu dis que tu l’es.",
+      "delay": 65,
+      "next": "s6_020"
+    },
+    {
+      "id": "s6_018_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je veux qu’on tienne ce soir, et demain je te dirai plus.",
+      "delay": 0,
+      "next": "s6_019_b"
+    },
+    {
+      "id": "s6_019_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Demain, c’est proche. J’accepte proche. Mais je ne veux plus d’un demain qui recule à chaque message.",
+      "delay": 65,
+      "next": "s6_020"
+    },
+    {
+      "id": "s6_018_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne peux pas te donner une réponse propre maintenant.",
+      "delay": 0,
+      "next": "s6_019_c"
+    },
+    {
+      "id": "s6_019_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne demande pas propre. Je demande une phrase qui ne me laisse pas seule à deviner.",
+      "delay": 65,
+      "next": "s6_020"
+    },
+    {
+      "id": "s6_020",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je suis fatiguée, mais je suis encore là à t’écrire. Ce n’est pas rien pour moi.",
+      "delay": 80,
+      "next": "s6_021"
+    },
+    {
+      "id": "s6_021",
+      "type": "choice",
+      "sender": "player",
+      "text": "Décider quoi faire de cette ouverture.",
+      "choices": [
+        {
+          "id": "s6_021_a",
+          "text": "Je rentre sans détour. On parle avant de dormir.",
+          "next": "s6_022_a",
+          "effects": {
+            "sarah_trust": 2,
+            "player_presence": 2,
+            "risk": -1,
+            "flags": [
+              "sarah_j6_comes_home"
+            ]
+          }
+        },
+        {
+          "id": "s6_021_b",
+          "text": "Je passe, mais je dois encore régler un truc avant.",
+          "next": "s6_022_b",
+          "effects": {
+            "sarah_trust": 0,
+            "sarah_doubt": 1,
+            "risk": 1,
+            "flags": [
+              "sarah_j6_one_more_delay"
+            ]
+          }
+        },
+        {
+          "id": "s6_021_c",
+          "text": "Je ne veux pas te mentir : je vais avoir besoin de temps.",
+          "next": "s6_022_c",
+          "effects": {
+            "sarah_trust": 0,
+            "guilt": 2,
+            "sarah_doubt": 2,
+            "flags": [
+              "sarah_j6_time_requested"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s6_022_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Je rentre sans détour. On parle avant de dormir.",
+      "delay": 0,
+      "next": "s6_023_a"
+    },
+    {
+      "id": "s6_023_a",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je laisse le mug dans l’évier alors. Pas comme un test. Comme un point de départ.",
+      "delay": 70,
+      "next": "s6_024"
+    },
+    {
+      "id": "s6_022_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je passe, mais je dois encore régler un truc avant.",
+      "delay": 0,
+      "next": "s6_023_b"
+    },
+    {
+      "id": "s6_023_b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Voilà. C’est ce “un truc” qui prend toujours une chaise entre nous.",
+      "delay": 70,
+      "next": "s6_024"
+    },
+    {
+      "id": "s6_022_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne veux pas te mentir : je vais avoir besoin de temps.",
+      "delay": 0,
+      "next": "s6_023_c"
+    },
+    {
+      "id": "s6_023_c",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Merci de le dire comme ça. Ça fait mal, mais au moins je sais où poser mes pieds.",
+      "delay": 70,
+      "next": "s6_024"
+    },
+    {
+      "id": "s6_024",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vais me faire un thé et éteindre la cuisine. C’est minuscule, mais j’ai besoin d’un geste qui n’attend pas ta réponse.",
+      "delay": 90,
+      "next": "s6_025"
+    },
+    {
+      "id": "s6_025",
+      "type": "choice",
+      "sender": "player",
+      "text": "Laisser Sarah partir vers la fin MVP avec une couleur relationnelle.",
+      "choices": [
+        {
+          "id": "s6_025_a",
+          "text": "Garde-moi une tasse. J’arrive.",
+          "next": "s6_end_repair",
+          "effects": {
+            "sarah_trust": 3,
+            "player_presence": 2,
+            "flags": [
+              "ending_seed_sarah_repair",
+              "sarah_j6_tea_shared"
+            ]
+          }
+        },
+        {
+          "id": "s6_025_b",
+          "text": "Je t’écris dès que je pars. Pas une minute floue de plus, même si c’est juste “je mets mes chaussures”.",
+          "next": "s6_end_uncertain",
+          "effects": {
+            "sarah_trust": 1,
+            "sarah_doubt": 1,
+            "flags": [
+              "ending_seed_control_fragile",
+              "sarah_j6_less_flou_promised"
+            ]
+          }
+        },
+        {
+          "id": "s6_025_c",
+          "text": "Ne m’attends pas éveillée.",
+          "next": "s6_end_distance",
+          "effects": {
+            "sarah_trust": -2,
+            "sarah_doubt": 3,
+            "guilt": 1,
+            "flags": [
+              "ending_seed_sarah_distance",
+              "sarah_j6_do_not_wait"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s6_end_repair",
+      "type": "end",
+      "text": "Fin Sarah J6 — Sarah laisse une place ouverte : pas de pardon magique, mais une discussion possible avant la fin MVP."
+    },
+    {
+      "id": "s6_end_uncertain",
+      "type": "end",
+      "text": "Fin Sarah J6 — Sarah accepte une phrase moins floue, sans savoir encore si elle suffira."
+    },
+    {
+      "id": "s6_end_distance",
+      "type": "end",
+      "text": "Fin Sarah J6 — Sarah se protège : le quotidien reste debout, mais moins près du joueur."
+    }
+  ]
+}

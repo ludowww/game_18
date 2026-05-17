@@ -1,0 +1,573 @@
+{
+  "schema_version": "0.1",
+  "conversation_id": "camille_j2_complete",
+  "day": 2,
+  "contact_id": "camille",
+  "start_node": "c2_block_a",
+  "nodes": [
+    {
+      "id": "c2_block_a",
+      "type": "message",
+      "sender": "system",
+      "text": "C2A — Reprise après 23:42",
+      "delay": 0,
+      "next": "c2_001"
+    },
+    {
+      "id": "c2_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "J’ai relu ton message de cette nuit.",
+      "delay": 0,
+      "next": "c2_002"
+    },
+    {
+      "id": "c2_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Enfin… ton message, ton silence, ou ton “ne bouge pas”. Peu importe. Ça m’a tenue éveillée plus longtemps que prévu.",
+      "delay": 70,
+      "next": "c2_003"
+    },
+    {
+      "id": "c2_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille revient sur 23:42.",
+      "choices": [
+        {
+          "id": "c2_003_a",
+          "text": "Moi aussi j’y ai repensé. Surtout au café, et c’est agaçant.",
+          "next": "c2_004_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "camille_j2_assumes_2342"
+            ]
+          }
+        },
+        {
+          "id": "c2_003_b",
+          "text": "C’était une mauvaise idée de continuer si tard.",
+          "next": "c2_004_b",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_j2_steps_back_2342"
+            ]
+          }
+        },
+        {
+          "id": "c2_003_c",
+          "text": "Tu étais vraiment devant le café ?",
+          "next": "c2_004_c",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "camille_j2_asks_cafe_truth"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c2_004_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Moi aussi j’y ai repensé. Surtout au café, et c’est agaçant.",
+      "delay": 0,
+      "next": "c2_005_a"
+    },
+    {
+      "id": "c2_005_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je m’en doutais. Tu as cette façon de répondre comme si tu voulais faire semblant de ne pas attendre.",
+      "delay": 60,
+      "next": "c2_006"
+    },
+    {
+      "id": "c2_004_b",
+      "type": "message",
+      "sender": "player",
+      "text": "C’était une mauvaise idée de continuer si tard.",
+      "delay": 0,
+      "next": "c2_005_b"
+    },
+    {
+      "id": "c2_005_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mauvaise idée, peut-être. Mais tu n’as pas dit que tu regrettais.",
+      "delay": 60,
+      "next": "c2_006"
+    },
+    {
+      "id": "c2_004_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu étais vraiment devant le café ?",
+      "delay": 0,
+      "next": "c2_005_c"
+    },
+    {
+      "id": "c2_005_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Oui. Et j’ai détesté le fait que ce soit presque normal de t’écrire de là.",
+      "delay": 60,
+      "next": "c2_006"
+    },
+    {
+      "id": "c2_006",
+      "type": "message",
+      "sender": "camille",
+      "text": "Aujourd’hui je passe encore dans le coin. Pas par hasard cette fois.",
+      "delay": 120,
+      "next": "c2_007"
+    },
+    {
+      "id": "c2_007",
+      "type": "choice",
+      "sender": "player",
+      "text": "Réagir à son passage annoncé.",
+      "choices": [
+        {
+          "id": "c2_007_a",
+          "text": "Tu cherches les problèmes, ou juste une table au fond ?",
+          "next": "c2_008_a",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "flags": [
+              "camille_j2_names_the_risk"
+            ]
+          }
+        },
+        {
+          "id": "c2_007_b",
+          "text": "Dis-moi juste quand.",
+          "next": "c2_008_b",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j2_wants_timing"
+            ]
+          }
+        },
+        {
+          "id": "c2_007_c",
+          "text": "Je ne peux pas te voir aujourd’hui.",
+          "next": "c2_008_c",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "sarah_trust": 1,
+            "flags": [
+              "camille_j2_refuses_today"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c2_008_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu cherches les problèmes, ou juste une table au fond ?",
+      "delay": 0,
+      "next": "c2_009_a"
+    },
+    {
+      "id": "c2_009_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Non. Je vérifie si tu en es un.",
+      "delay": 55,
+      "next": "c2_block_b"
+    },
+    {
+      "id": "c2_008_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Dis-moi juste quand.",
+      "delay": 0,
+      "next": "c2_009_b"
+    },
+    {
+      "id": "c2_009_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Voilà. Là, tu ne joues plus au sérieux.",
+      "delay": 55,
+      "next": "c2_block_b"
+    },
+    {
+      "id": "c2_008_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne peux pas te voir aujourd’hui.",
+      "delay": 0,
+      "next": "c2_009_c"
+    },
+    {
+      "id": "c2_009_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu dis “je ne peux pas”, pas “je ne veux pas”. C’est noté.",
+      "delay": 55,
+      "next": "c2_block_b"
+    },
+    {
+      "id": "c2_block_b",
+      "type": "message",
+      "sender": "system",
+      "text": "C2B — Proposition ambiguë",
+      "delay": 900,
+      "next": "c2_010"
+    },
+    {
+      "id": "c2_010",
+      "type": "message",
+      "sender": "camille",
+      "text": "Pause déjeuner. 12:40. Le café au coin a une table près de la vitre.",
+      "delay": 0,
+      "next": "c2_011"
+    },
+    {
+      "id": "c2_011",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne te demande pas de venir. Je te donne juste une information inutile.",
+      "delay": 45,
+      "next": "c2_012"
+    },
+    {
+      "id": "c2_012",
+      "type": "choice",
+      "sender": "player",
+      "text": "Camille transforme l’attente en disponibilité concrète.",
+      "choices": [
+        {
+          "id": "c2_012_a",
+          "text": "Une information inutile que je vais retenir.",
+          "next": "c2_013_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j2_keeps_lunch_info"
+            ]
+          }
+        },
+        {
+          "id": "c2_012_b",
+          "text": "Ne m’envoie pas ce genre d’info si tu ne demandes rien.",
+          "next": "c2_013_b",
+          "effects": {
+            "camille_interest": 0,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_j2_pushes_back"
+            ]
+          }
+        },
+        {
+          "id": "c2_012_c",
+          "text": "Je serai trop loin à cette heure-là.",
+          "next": "c2_013_c",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "flags": [
+              "camille_j2_declines_lunch"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c2_013_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Une information inutile que je vais retenir.",
+      "delay": 0,
+      "next": "c2_014_a"
+    },
+    {
+      "id": "c2_014_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je préfère quand tu admets que tu retiens les choses.",
+      "delay": 60,
+      "next": "c2_015"
+    },
+    {
+      "id": "c2_013_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Ne m’envoie pas ce genre d’info si tu ne demandes rien.",
+      "delay": 0,
+      "next": "c2_014_b"
+    },
+    {
+      "id": "c2_014_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "D’accord. Alors je ne demande rien. Et toi tu n’as rien à refuser.",
+      "delay": 60,
+      "next": "c2_015"
+    },
+    {
+      "id": "c2_013_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Je serai trop loin à cette heure-là.",
+      "delay": 0,
+      "next": "c2_014_c"
+    },
+    {
+      "id": "c2_014_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Trop loin, c’est une distance. Pas une décision.",
+      "delay": 60,
+      "next": "c2_015"
+    },
+    {
+      "id": "c2_015",
+      "type": "message",
+      "sender": "system",
+      "text": "Le téléphone reste calme quelques minutes. Le calme ressemble à une invitation à vérifier l’écran.",
+      "delay": 600,
+      "next": "c2_016"
+    },
+    {
+      "id": "c2_016",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je suis arrivée.",
+      "delay": 0,
+      "next": "c2_017"
+    },
+    {
+      "id": "c2_017",
+      "type": "message",
+      "sender": "camille",
+      "text": "La table près de la vitre est libre. Évidemment.",
+      "delay": 40,
+      "next": "c2_018"
+    },
+    {
+      "id": "c2_018",
+      "type": "choice",
+      "sender": "player",
+      "text": "La proposition devient presque réelle.",
+      "choices": [
+        {
+          "id": "c2_018_a",
+          "text": "Arrête de me donner envie de passer.",
+          "next": "c2_019_a",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 2,
+            "guilt": 1,
+            "flags": [
+              "camille_j2_tempted_to_pass"
+            ]
+          }
+        },
+        {
+          "id": "c2_018_b",
+          "text": "Je ne passerai pas. Mais je lis.",
+          "next": "c2_019_b",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "camille_j2_reads_but_refuses"
+            ]
+          }
+        },
+        {
+          "id": "c2_018_c",
+          "text": "Si je viens, cinq minutes maximum.",
+          "next": "c2_019_c",
+          "effects": {
+            "camille_interest": 3,
+            "risk": 3,
+            "guilt": 2,
+            "flags": [
+              "camille_j2_five_minutes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c2_019_a",
+      "type": "message",
+      "sender": "player",
+      "text": "Arrête de me donner envie de passer.",
+      "delay": 0,
+      "next": "c2_020_a"
+    },
+    {
+      "id": "c2_020_a",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne t’ai jamais demandé de ne pas avoir envie.",
+      "delay": 55,
+      "next": "c2_block_c"
+    },
+    {
+      "id": "c2_019_b",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne passerai pas. Mais je lis.",
+      "delay": 0,
+      "next": "c2_020_b"
+    },
+    {
+      "id": "c2_020_b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Lire, c’est déjà être un peu là. Tu le sais ?",
+      "delay": 55,
+      "next": "c2_block_c"
+    },
+    {
+      "id": "c2_019_c",
+      "type": "message",
+      "sender": "player",
+      "text": "Si je viens, cinq minutes maximum.",
+      "delay": 0,
+      "next": "c2_020_c"
+    },
+    {
+      "id": "c2_020_c",
+      "type": "message",
+      "sender": "camille",
+      "text": "Cinq minutes, c’est le genre de mensonge poli qui dure toujours plus longtemps.",
+      "delay": 55,
+      "next": "c2_block_c"
+    },
+    {
+      "id": "c2_block_c",
+      "type": "message",
+      "sender": "system",
+      "text": "C2C — Point de bascule J2",
+      "delay": 1800,
+      "next": "c2_021"
+    },
+    {
+      "id": "c2_021",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je vais partir dans dix minutes.",
+      "delay": 0,
+      "next": "c2_022"
+    },
+    {
+      "id": "c2_022",
+      "type": "message",
+      "sender": "camille",
+      "text": "Si tu voulais faire semblant que ce n’était qu’un jeu de messages, c’est le moment de réussir.",
+      "delay": 50,
+      "next": "c2_023"
+    },
+    {
+      "id": "c2_023",
+      "type": "choice",
+      "sender": "player",
+      "text": "Point de bascule Camille J2.",
+      "choices": [
+        {
+          "id": "c2_023_a",
+          "text": "Pars. On arrête là pour aujourd’hui.",
+          "next": "c2_end_boundary",
+          "effects": {
+            "camille_interest": -1,
+            "risk": -1,
+            "guilt": 1,
+            "flags": [
+              "camille_j2_boundary_set"
+            ]
+          }
+        },
+        {
+          "id": "c2_023_b",
+          "text": "Reste dix minutes de plus.",
+          "next": "c2_end_stay",
+          "effects": {
+            "camille_interest": 2,
+            "risk": 3,
+            "guilt": 2,
+            "flags": [
+              "camille_j2_asked_her_to_stay"
+            ]
+          }
+        },
+        {
+          "id": "c2_023_c",
+          "text": "Je ne viens pas. Mais écris quand tu rentres.",
+          "next": "c2_end_thread",
+          "effects": {
+            "camille_interest": 1,
+            "risk": 1,
+            "guilt": 1,
+            "flags": [
+              "camille_j2_keeps_thread_alive"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c2_end_boundary",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Camille J2 : tu poses une limite. Camille s’éloigne, mais elle sait maintenant où elle peut appuyer.",
+      "effects": {
+        "flags": [
+          "camille_j2_complete",
+          "camille_j2_ending_boundary"
+        ]
+      }
+    },
+    {
+      "id": "c2_end_stay",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Camille J2 : elle reste. Le risque n’est plus seulement dans les messages.",
+      "effects": {
+        "flags": [
+          "camille_j2_complete",
+          "camille_j2_ending_stay"
+        ]
+      }
+    },
+    {
+      "id": "c2_end_thread",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin Camille J2 : tu ne viens pas, mais tu gardes le fil ouvert. C’est peut-être le plus dangereux.",
+      "effects": {
+        "flags": [
+          "camille_j2_complete",
+          "camille_j2_ending_thread"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+# Secrets / local auth
+.env
+auth.json
+config.yaml
+*.key
+*.pem
+
+# Hermes/runtime internals
+logs/
+sessions/
+checkpoints/
+cron/
+audio_cache/
+state.db*
+.hermes_history
+channel_directory.json
+SOUL.md
+discord_threads.json
+gateway.pid
+gateway_state.json
+memories/
+models_dev_cache.json
+skills/
+bin/
+pastes/
+*.lock
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Godot generated/imported files
+.godot/
+.import/
+export.cfg
+export_presets.cfg
+*.translation
+
+# Python/cache/test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary files
+*.tmp
+*.bak
+*.log
