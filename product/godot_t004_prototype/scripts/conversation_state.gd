@@ -32,6 +32,13 @@ const V2_VARIABLE_DEFAULTS := {
 	"risque_exposition": 25,
 	"fatigue_emotionnelle": 20
 }
+const J1_V2_FIRST_REPLY_CHOICES := {
+	"j1_00_reply_sarah_first": "sarah_j1_v2",
+	"j1_00_reply_camille_first": "camille_j1_v2",
+	"j1_00_reply_nico_first": "nico_j1_v2",
+	"j1_00_reply_maya_first": "maya_j1_v2",
+	"j1_00_reply_ines_first": "ines_j1_v2"
+}
 
 var current_conversation_id: String = "camille"
 var current_day: int = 1
@@ -146,6 +153,66 @@ func _default_conversations() -> Dictionary:
 			false,
 			true,
 			"j1_02_camille_001"
+		),
+		"nico_j1_v2": _new_conversation_state(
+			"nico_j1_v2",
+			"nico",
+			"Nico",
+			"J1 V2 — Couverture",
+			"res://data/nico_j1_v2_experimental.json",
+			1,
+			false,
+			false,
+			true,
+			"j1_03_nico_001"
+		),
+		"maya_j1_v2": _new_conversation_state(
+			"maya_j1_v2",
+			"maya",
+			"Maya",
+			"J1 V2 — Timing",
+			"res://data/maya_j1_v2_experimental.json",
+			1,
+			false,
+			false,
+			true,
+			"j1_04_maya_001"
+		),
+		"ines_j1_v2": _new_conversation_state(
+			"ines_j1_v2",
+			"ines",
+			"Inès",
+			"J1 V2 — Faille",
+			"res://data/ines_j1_v2_experimental.json",
+			1,
+			false,
+			false,
+			true,
+			"j1_05_ines_001"
+		),
+		"sarah_meal_j1_v2": _new_conversation_state(
+			"sarah_meal_j1_v2",
+			"sarah",
+			"Sarah",
+			"J1 V2 — Rentrer manger",
+			"res://data/sarah_meal_j1_v2_experimental.json",
+			1,
+			false,
+			false,
+			true,
+			"j1_06_sarah_001"
+		),
+		"nico_respiration_j1_v2": _new_conversation_state(
+			"nico_respiration_j1_v2",
+			"nico",
+			"Nico",
+			"J1 V2 — Respiration",
+			"res://data/nico_respiration_j1_v2_experimental.json",
+			1,
+			false,
+			false,
+			true,
+			"j1_07_nico_001"
 		),
 		"camille_j2": _new_conversation_state(
 			"camille_j2",
@@ -379,11 +446,14 @@ func _default_conversation_blocks() -> Dictionary:
 	return blocks
 
 func conversation_ids() -> Array:
-	return ["camille", "sarah", "j1_00_reveil_v2", "sarah_j1_v2", "camille_j1_v2", "camille_j2", "sarah_j2", "camille_j3", "sarah_j3", "camille_j4", "maya_j4", "ines_j4", "nico_j4", "sarah_j5", "camille_j5", "nico_j5", "maya_j5", "sarah_j6", "camille_j6", "nico_j6", "maya_j6", "ines_j6", "finales_mvp"]
+	return ["camille", "sarah", "j1_00_reveil_v2", "sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2", "sarah_meal_j1_v2", "nico_respiration_j1_v2", "camille_j2", "sarah_j2", "camille_j3", "sarah_j3", "camille_j4", "maya_j4", "ines_j4", "nico_j4", "sarah_j5", "camille_j5", "nico_j5", "maya_j5", "sarah_j6", "camille_j6", "nico_j6", "maya_j6", "ines_j6", "finales_mvp"]
 
 func active_conversation_ids() -> Array:
 	var ids: Array = []
+	var forced_j1_v2_id: String = _j1_v2_forced_first_reply_conversation_id()
 	for id in conversation_ids():
+		if forced_j1_v2_id != "" and id != forced_j1_v2_id:
+			continue
 		var state: Dictionary = conversations[id]
 		if experimental_j1_v2_enabled and current_day == 1 and not bool(state.get("experimental", false)):
 			continue
@@ -427,9 +497,34 @@ func quick_switch_new_conversation_id() -> String:
 	return ""
 
 func set_current_conversation(id: String) -> void:
+	var forced_j1_v2_id: String = _j1_v2_forced_first_reply_conversation_id()
+	if forced_j1_v2_id != "" and id != forced_j1_v2_id:
+		return
 	if conversations.has(id):
 		current_conversation_id = id
 		save_progression()
+
+func _j1_v2_forced_first_reply_conversation_id() -> String:
+	if not experimental_j1_v2_enabled or current_day != 1:
+		return ""
+	if not conversations.has("j1_00_reveil_v2"):
+		return ""
+	var reveil_choices: Array = conversations["j1_00_reveil_v2"].get("choices", [])
+	for index in range(reveil_choices.size() - 1, -1, -1):
+		var choice_id: String = str(reveil_choices[index])
+		if not J1_V2_FIRST_REPLY_CHOICES.has(choice_id):
+			continue
+		var target_id: String = str(J1_V2_FIRST_REPLY_CHOICES[choice_id])
+		if not conversations.has(target_id):
+			return ""
+		var target_state: Dictionary = conversations[target_id]
+		if not bool(target_state.get("available", false)):
+			return ""
+		if bool(target_state.get("done", false)):
+			return ""
+		if not bool(target_state.get("started", false)):
+			return target_id
+	return ""
 
 func current() -> Dictionary:
 	return conversations[current_conversation_id]
@@ -712,6 +807,24 @@ func _unlock_j1_v2_after_priority_choice() -> void:
 	if conversations.has("camille_j1_v2"):
 		conversations["camille_j1_v2"]["available"] = true
 		mark_conversation_new("camille_j1_v2", "Camille attend ta réponse.")
+	if conversations.has("nico_j1_v2"):
+		conversations["nico_j1_v2"]["available"] = true
+		mark_conversation_new("nico_j1_v2", "Nico peut couvrir une partie.")
+	if conversations.has("maya_j1_v2"):
+		conversations["maya_j1_v2"]["available"] = true
+		mark_conversation_new("maya_j1_v2", "Maya a noté le timing.")
+	if conversations.has("ines_j1_v2"):
+		conversations["ines_j1_v2"]["available"] = true
+		mark_conversation_new("ines_j1_v2", "Inès ouvre une porte.")
+	if conversations.has("sarah_meal_j1_v2"):
+		conversations["sarah_meal_j1_v2"]["available"] = true
+		mark_conversation_new("sarah_meal_j1_v2", "Sarah parle du repas.")
+	if conversations.has("nico_respiration_j1_v2"):
+		conversations["nico_respiration_j1_v2"]["available"] = true
+		mark_conversation_new("nico_respiration_j1_v2", "Nico tente une respiration.")
+	var forced_j1_v2_id: String = _j1_v2_forced_first_reply_conversation_id()
+	if forced_j1_v2_id != "":
+		current_conversation_id = forced_j1_v2_id
 
 func has_new(id: String) -> bool:
 	if not conversations.has(id):

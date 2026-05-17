@@ -1,0 +1,113 @@
+{
+  "schema_version": "0.1-refonte-j1-v2-experimental",
+  "conversation_id": "maya_j1_v2",
+  "day": 1,
+  "contact_id": "maya",
+  "start_node": "j1_04_maya_001",
+  "experimental": true,
+  "nodes": [
+    {
+      "id": "j1_04_maya_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "je pose ça là : vous êtes fatigants.",
+      "delay": 0,
+      "next": "j1_04_maya_002"
+    },
+    {
+      "id": "j1_04_maya_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "coïncidence sûrement. très artistique comme timing.",
+      "delay": 35,
+      "next": "j1_04_choice_maya_pique"
+    },
+    {
+      "id": "j1_04_choice_maya_pique",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Maya ?",
+      "choices": [
+        {
+          "id": "j1_04_play_dumb",
+          "text": "Je vois pas de quoi tu parles.",
+          "next": "j1_04_end_suspicious",
+          "effects": {
+            "suspicion_maya": 2,
+            "coherence": -1,
+            "flags": [
+              "played_dumb_with_maya",
+              "maya_suspicion_seeded_j1"
+            ]
+          }
+        },
+        {
+          "id": "j1_04_needed_air",
+          "text": "J’avais besoin d’air. J’ai pas géré le timing.",
+          "next": "j1_04_end_prudent",
+          "effects": {
+            "suspicion_maya": -1,
+            "coherence": 1,
+            "flags": [
+              "told_maya_needed_air",
+              "maya_timing_noted"
+            ]
+          }
+        },
+        {
+          "id": "j1_04_ask_what_saw",
+          "text": "Qu’est-ce que t’as vu exactement ?",
+          "next": "j1_04_end_photo_seeded",
+          "effects": {
+            "suspicion_maya": 1,
+            "risque_exposition": 1,
+            "flags": [
+              "asked_maya_what_she_saw",
+              "maya_photo_possible"
+            ]
+          }
+        },
+        {
+          "id": "j1_04_not_involve",
+          "text": "Maya, te mêle pas de ça.",
+          "next": "j1_04_end_defensive",
+          "effects": {
+            "suspicion_maya": 3,
+            "risque_exposition": 2,
+            "flags": [
+              "told_maya_not_involve"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j1_04_end_suspicious",
+      "type": "end",
+      "sender": "system",
+      "text": "Maya note l’esquive.",
+      "delay": 0
+    },
+    {
+      "id": "j1_04_end_prudent",
+      "type": "end",
+      "sender": "system",
+      "text": "Maya reste piquante mais moins hostile.",
+      "delay": 0
+    },
+    {
+      "id": "j1_04_end_photo_seeded",
+      "type": "end",
+      "sender": "system",
+      "text": "La photo devient une trace possible.",
+      "delay": 0
+    },
+    {
+      "id": "j1_04_end_defensive",
+      "type": "end",
+      "sender": "system",
+      "text": "Maya se rapproche de Sarah par protection.",
+      "delay": 0
+    }
+  ]
+}

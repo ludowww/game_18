@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1-refonte-j1-v2-experimental",
+  "conversation_id": "sarah_meal_j1_v2",
+  "day": 1,
+  "contact_id": "sarah",
+  "start_node": "j1_06_sarah_001",
+  "experimental": true,
+  "nodes": [
+    {"id": "j1_06_sarah_001", "type": "message", "sender": "sarah", "text": "Tu rentres manger ce soir ?", "delay": 0, "next": "j1_06_sarah_002"},
+    {"id": "j1_06_sarah_002", "type": "message", "sender": "sarah", "text": "J’ai sorti ce qu’il restait de pâtes.", "delay": 30, "next": "j1_06_sarah_003"},
+    {"id": "j1_06_sarah_003", "type": "message", "sender": "sarah", "text": "Et j’ai retrouvé ton pull sur la chaise, donc techniquement tu es déjà un peu là.", "delay": 35, "next": "j1_06_sarah_004"},
+    {"id": "j1_06_sarah_004", "type": "message", "sender": "sarah", "text": "Je sais pas si ça compte.", "delay": 30, "next": "j1_06_choice_sarah_meal"},
+    {
+      "id": "j1_06_choice_sarah_meal",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Sarah ?",
+      "choices": [
+        {"id": "j1_06_come_home", "text": "Oui. Je rentre. Et je veux être vraiment là, pas juste poser mon sac.", "next": "j1_06_end_domestic_warmth", "effects": {"confiance_sarah": 2, "distance_sarah": -2, "intimite_sarah": 2, "fatigue_emotionnelle": -1, "flags": ["sarah_j1_domestic_presence"]}},
+        {"id": "j1_06_later", "text": "Je passe plus tard. Je veux pas te laisser sans réponse, mais j’ai besoin d’un peu de temps.", "next": "j1_06_end_later_fragile", "effects": {"confiance_sarah": 1, "distance_sarah": 1, "fatigue_emotionnelle": 1, "flags": ["promised_sarah_later_j1"]}},
+        {"id": "j1_06_uncertain", "text": "Je sais pas encore. Je suis désolé, je suis un peu partout aujourd’hui.", "next": "j1_06_end_sarah_waits", "effects": {"distance_sarah": 1, "culpabilite": 1, "fatigue_emotionnelle": 1, "flags": ["sarah_j1_uncertain_return"]}},
+        {"id": "j1_06_work_excuse", "text": "Je vais sûrement finir tard avec le boulot. Mange sans moi.", "next": "j1_06_end_domestic_distance", "effects": {"confiance_sarah": -1, "distance_sarah": 2, "coherence": -1, "culpabilite": 1, "flags": ["used_work_excuse_sarah_j1"]}},
+        {"id": "j1_06_late_reply", "text": "Répondre plus tard : Désolé, j’ai pas vu. Tu as mangé ?", "next": "j1_06_end_late_cold", "effects": {"distance_sarah": 2, "intimite_sarah": -1, "culpabilite": 1, "flags": ["late_reply_sarah_meal_j1"]}}
+      ]
+    },
+    {"id": "j1_06_end_domestic_warmth", "type": "end", "sender": "system", "text": "Sarah garde une chaleur domestique fragile.", "delay": 0},
+    {"id": "j1_06_end_later_fragile", "type": "end", "sender": "system", "text": "Sarah accepte le délai, sans l’effacer.", "delay": 0},
+    {"id": "j1_06_end_sarah_waits", "type": "end", "sender": "system", "text": "Sarah reste là, mais attend seule.", "delay": 0},
+    {"id": "j1_06_end_domestic_distance", "type": "end", "sender": "system", "text": "La table devient un espace de distance.", "delay": 0},
+    {"id": "j1_06_end_late_cold", "type": "end", "sender": "system", "text": "Le retard répond à ta place.", "delay": 0}
+  ]
+}

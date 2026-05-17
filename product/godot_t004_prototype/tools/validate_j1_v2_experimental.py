@@ -17,6 +17,11 @@ FILES = [
     DATA / "j1_00_reveil_messages_v2_experimental.json",
     DATA / "sarah_j1_v2_experimental.json",
     DATA / "camille_j1_v2_experimental.json",
+    DATA / "nico_j1_v2_experimental.json",
+    DATA / "maya_j1_v2_experimental.json",
+    DATA / "ines_j1_v2_experimental.json",
+    DATA / "sarah_meal_j1_v2_experimental.json",
+    DATA / "nico_respiration_j1_v2_experimental.json",
 ]
 
 

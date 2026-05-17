@@ -1,0 +1,115 @@
+{
+  "schema_version": "0.1-refonte-j1-v2-experimental",
+  "conversation_id": "nico_j1_v2",
+  "day": 1,
+  "contact_id": "nico",
+  "start_node": "j1_03_nico_001",
+  "experimental": true,
+  "nodes": [
+    {
+      "id": "j1_03_nico_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "frérot j’ai fait ce que j’ai pu mais ton histoire sent le plan claqué",
+      "delay": 0,
+      "next": "j1_03_nico_002"
+    },
+    {
+      "id": "j1_03_nico_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "Tu veux que je sache quelle version, exactement ?",
+      "delay": 35,
+      "next": "j1_03_choice_nico_version"
+    },
+    {
+      "id": "j1_03_choice_nico_version",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que demander à Nico ?",
+      "choices": [
+        {
+          "id": "j1_03_hold_version",
+          "text": "Si on te demande, dis juste qu’on était ensemble dehors un moment.",
+          "next": "j1_03_end_alibi_debt",
+          "effects": {
+            "dette_nico": 4,
+            "coherence": -1,
+            "risque_exposition": 2,
+            "flags": [
+              "asked_nico_hold_version",
+              "nico_alibi_requested"
+            ]
+          }
+        },
+        {
+          "id": "j1_03_stay_silent",
+          "text": "Reste vague. Je vais gérer.",
+          "next": "j1_03_end_vague_support",
+          "effects": {
+            "dette_nico": 1,
+            "coherence": 1,
+            "flags": [
+              "told_nico_stay_silent"
+            ]
+          }
+        },
+        {
+          "id": "j1_03_confess_camille",
+          "text": "Camille m’a rejoint dehors. C’était pas neutre.",
+          "next": "j1_03_end_confession_support",
+          "effects": {
+            "dette_nico": -1,
+            "coherence": 2,
+            "culpabilite": 1,
+            "flags": [
+              "confessed_camille_to_nico",
+              "vulnerable_to_nico"
+            ]
+          }
+        },
+        {
+          "id": "j1_03_dismiss_warning",
+          "text": "Laisse tomber. T’en fais trop.",
+          "next": "j1_03_end_nico_hurt",
+          "effects": {
+            "dette_nico": 2,
+            "coherence": -1,
+            "fatigue_emotionnelle": 2,
+            "flags": [
+              "dismissed_nico_warning"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j1_03_end_alibi_debt",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico accepte mal de porter une version.",
+      "delay": 0
+    },
+    {
+      "id": "j1_03_end_vague_support",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico reste allié, mais prudent.",
+      "delay": 0
+    },
+    {
+      "id": "j1_03_end_confession_support",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico comprend mieux sans devenir alibi.",
+      "delay": 0
+    },
+    {
+      "id": "j1_03_end_nico_hurt",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico pose une limite plus froide.",
+      "delay": 0
+    }
+  ]
+}

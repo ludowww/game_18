@@ -1,0 +1,110 @@
+{
+  "schema_version": "0.1-refonte-j1-v2-experimental",
+  "conversation_id": "ines_j1_v2",
+  "day": 1,
+  "contact_id": "ines",
+  "start_node": "j1_05_ines_001",
+  "experimental": true,
+  "nodes": [
+    {
+      "id": "j1_05_ines_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "C’est peut-être pas mes affaires.",
+      "delay": 0,
+      "next": "j1_05_ines_002"
+    },
+    {
+      "id": "j1_05_ines_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "Mais tu avais l’air triste hier. Oublie si c’est bizarre.",
+      "delay": 35,
+      "next": "j1_05_choice_ines_faille"
+    },
+    {
+      "id": "j1_05_choice_ines_faille",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Inès ?",
+      "choices": [
+        {
+          "id": "j1_05_open_softly",
+          "text": "Non, c’est pas bizarre. Je crois que t’as vu juste.",
+          "next": "j1_05_end_soft_opening",
+          "effects": {
+            "fuite_ines": 1,
+            "fatigue_emotionnelle": -1,
+            "flags": [
+              "opened_to_ines"
+            ]
+          }
+        },
+        {
+          "id": "j1_05_keep_distance",
+          "text": "Merci. Je préfère pas te mettre là-dedans.",
+          "next": "j1_05_end_distance",
+          "effects": {
+            "fuite_ines": -1,
+            "coherence": 1,
+            "flags": [
+              "kept_ines_at_distance"
+            ]
+          }
+        },
+        {
+          "id": "j1_05_fuite_seed",
+          "text": "J’aurais préféré rester avec quelqu’un qui ne me demandait rien.",
+          "next": "j1_05_end_fuite_warning",
+          "effects": {
+            "fuite_ines": 3,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "ines_fuite_seed"
+            ]
+          }
+        },
+        {
+          "id": "j1_05_too_direct",
+          "text": "Tu m’as regardé longtemps, alors ?",
+          "next": "j1_05_end_ines_closes",
+          "effects": {
+            "fuite_ines": -2,
+            "fatigue_emotionnelle": 2,
+            "flags": [
+              "sexualized_ines_too_early"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j1_05_end_soft_opening",
+      "type": "end",
+      "sender": "system",
+      "text": "Inès reste une présence douce.",
+      "delay": 0
+    },
+    {
+      "id": "j1_05_end_distance",
+      "type": "end",
+      "sender": "system",
+      "text": "La porte reste fermée proprement.",
+      "delay": 0
+    },
+    {
+      "id": "j1_05_end_fuite_warning",
+      "type": "end",
+      "sender": "system",
+      "text": "Inès perçoit qu’elle peut devenir une fuite.",
+      "delay": 0
+    },
+    {
+      "id": "j1_05_end_ines_closes",
+      "type": "end",
+      "sender": "system",
+      "text": "Inès se ferme face à une intimité forcée.",
+      "delay": 0
+    }
+  ]
+}
