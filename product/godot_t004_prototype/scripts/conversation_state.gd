@@ -15,6 +15,23 @@ const BLOCK_STATUS_AVAILABLE := "available"
 const BLOCK_STATUS_ACTIVE := "active"
 const BLOCK_STATUS_DONE := "done"
 const BLOCKS_CONFIG_PATH := "res://data/conversation_blocks.json"
+const V2_VARIABLE_DEFAULTS := {
+	"confiance_sarah": 55,
+	"distance_sarah": 35,
+	"tension_camille": 55,
+	"respect_camille": 50,
+	"pression_camille": 30,
+	"intimite_sarah": 45,
+	"intimite_camille": 45,
+	"attente_image_camille": 0,
+	"suspicion_maya": 40,
+	"dette_nico": 20,
+	"fuite_ines": 10,
+	"coherence": 60,
+	"culpabilite": 35,
+	"risque_exposition": 25,
+	"fatigue_emotionnelle": 20
+}
 
 var current_conversation_id: String = "camille"
 var current_day: int = 1
@@ -28,12 +45,42 @@ var conversation_block_defs: Dictionary = {}
 var conversation_block_order: Array = []
 var conversation_blocks: Dictionary = {}
 var dynamic_notifications_fired: Array = []
+var global_game_state: Dictionary = _default_global_game_state()
 
 func set_test_fast_mode_enabled(enabled: bool) -> void:
 	test_fast_mode_enabled = enabled
 
 func set_experimental_j1_v2_enabled(enabled: bool) -> void:
 	experimental_j1_v2_enabled = enabled
+
+func _default_global_game_state() -> Dictionary:
+	var state: Dictionary = {
+		"variables": {},
+		"flags": []
+	}
+	for key in V2_VARIABLE_DEFAULTS.keys():
+		state["variables"][key] = int(V2_VARIABLE_DEFAULTS[key])
+	return state
+
+func global_state() -> Dictionary:
+	return global_game_state.duplicate(true)
+
+func apply_global_effects(effects_value) -> Dictionary:
+	if typeof(effects_value) != TYPE_DICTIONARY:
+		return global_state()
+	var effects: Dictionary = effects_value
+	for key in effects.keys():
+		if key == "flags":
+			if typeof(effects[key]) != TYPE_ARRAY:
+				continue
+			for flag in effects["flags"]:
+				if not global_game_state["flags"].has(flag):
+					global_game_state["flags"].append(flag)
+		elif V2_VARIABLE_DEFAULTS.has(key) and (typeof(effects[key]) == TYPE_INT or typeof(effects[key]) == TYPE_FLOAT):
+			var current_value: int = int(global_game_state["variables"].get(key, V2_VARIABLE_DEFAULTS[key]))
+			global_game_state["variables"][key] = int(clamp(current_value + int(effects[key]), 0, 100))
+	save_progression()
+	return global_state()
 
 func _ready() -> void:
 	_load_conversation_block_defs()
@@ -782,6 +829,7 @@ func save_progression() -> void:
 		"completed_days": completed_days.duplicate(true),
 		"day_transition_available": day_transition_available,
 		"dynamic_notifications_fired": dynamic_notifications_fired.duplicate(true),
+		"global_game_state": global_game_state.duplicate(true),
 		"conversation_blocks": conversation_blocks.duplicate(true),
 		"conversations": {}
 	}
@@ -823,6 +871,8 @@ func load_progression() -> void:
 	var saved_fired = payload.get("dynamic_notifications_fired", [])
 	if typeof(saved_fired) == TYPE_ARRAY:
 		dynamic_notifications_fired = saved_fired.duplicate(true)
+	var saved_global_game_state = payload.get("global_game_state", {})
+	_merge_saved_global_game_state(saved_global_game_state)
 	var saved_blocks = payload.get("conversation_blocks", {})
 	var has_saved_blocks: bool = typeof(saved_blocks) == TYPE_DICTIONARY and not saved_blocks.is_empty()
 	if has_saved_blocks:
@@ -861,6 +911,22 @@ func load_progression() -> void:
 		current_conversation_id = saved_current
 	if not has_saved_blocks:
 		_migrate_blocks_from_existing_save()
+	refresh_day_progression()
+
+func _merge_saved_global_game_state(saved_global_game_state) -> void:
+	global_game_state = _default_global_game_state()
+	if typeof(saved_global_game_state) != TYPE_DICTIONARY:
+		return
+	var saved_variables = saved_global_game_state.get("variables", {})
+	if typeof(saved_variables) == TYPE_DICTIONARY:
+		for key in V2_VARIABLE_DEFAULTS.keys():
+			if saved_variables.has(key) and (typeof(saved_variables[key]) == TYPE_INT or typeof(saved_variables[key]) == TYPE_FLOAT):
+				global_game_state["variables"][key] = int(clamp(int(saved_variables[key]), 0, 100))
+	var saved_flags = saved_global_game_state.get("flags", [])
+	if typeof(saved_flags) == TYPE_ARRAY:
+		for flag in saved_flags:
+			if not global_game_state["flags"].has(flag):
+				global_game_state["flags"].append(flag)
 
 func _migrate_blocks_from_existing_save() -> void:
 	if current_day > 1 or bool(conversations["camille"].get("done", false)):

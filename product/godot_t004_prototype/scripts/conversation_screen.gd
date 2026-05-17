@@ -54,7 +54,7 @@ func _ready() -> void:
 	_load_conversation(current_json_path)
 	ConversationState.mark_current_opened()
 	if ConversationState.has_current_state():
-		game_state = ConversationState.current_game_state()
+		game_state = ConversationState.global_state()
 		await _restore_current_messages()
 	if not ConversationState.can_current_block_play():
 		_show_waiting_state()
@@ -434,20 +434,8 @@ func _lock_choice_buttons() -> void:
 			child.disabled = true
 
 func _apply_effects(effects_value) -> void:
-	if typeof(effects_value) != TYPE_DICTIONARY:
-		return
-	var effects: Dictionary = effects_value
-	for key in effects.keys():
-		if key == "flags":
-			if not game_state.has("flags"):
-				game_state["flags"] = []
-			for flag in effects["flags"]:
-				if not game_state["flags"].has(flag):
-					game_state["flags"].append(flag)
-		elif typeof(effects[key]) == TYPE_INT or typeof(effects[key]) == TYPE_FLOAT:
-			game_state[key] = game_state.get(key, 0) + effects[key]
+	game_state = ConversationState.apply_global_effects(effects_value)
 	_update_state_label()
-	ConversationState.set_current_game_state(game_state)
 
 func _add_bubble(sender: String, text: String, record_state: bool = true) -> void:
 	if sender == "system":
