@@ -13,6 +13,7 @@ cron/
 audio_cache/
 state.db*
 .hermes_history
+.skills_prompt_snapshot.json
 channel_directory.json
 SOUL.md
 discord_threads.json
