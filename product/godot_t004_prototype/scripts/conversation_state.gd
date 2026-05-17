@@ -797,6 +797,7 @@ func mark_current_done() -> void:
 	current()["active_choice_node"] = ""
 	if current_conversation_id == "j1_00_reveil_v2":
 		_unlock_j1_v2_after_priority_choice()
+	_unlock_j1_v2_breathing_scenes_if_ready()
 	refresh_day_progression()
 	save_progression()
 
@@ -816,15 +817,29 @@ func _unlock_j1_v2_after_priority_choice() -> void:
 	if conversations.has("ines_j1_v2"):
 		conversations["ines_j1_v2"]["available"] = true
 		mark_conversation_new("ines_j1_v2", "Inès ouvre une porte.")
-	if conversations.has("sarah_meal_j1_v2"):
-		conversations["sarah_meal_j1_v2"]["available"] = true
-		mark_conversation_new("sarah_meal_j1_v2", "Sarah parle du repas.")
-	if conversations.has("nico_respiration_j1_v2"):
-		conversations["nico_respiration_j1_v2"]["available"] = true
-		mark_conversation_new("nico_respiration_j1_v2", "Nico tente une respiration.")
 	var forced_j1_v2_id: String = _j1_v2_forced_first_reply_conversation_id()
 	if forced_j1_v2_id != "":
 		current_conversation_id = forced_j1_v2_id
+
+func _j1_v2_core_conversations_done() -> bool:
+	for id in ["sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2"]:
+		if not conversations.has(id):
+			return false
+		if not bool(conversations[id].get("done", false)):
+			return false
+	return true
+
+func _unlock_j1_v2_breathing_scenes_if_ready() -> void:
+	if not experimental_j1_v2_enabled or current_day != 1:
+		return
+	if not _j1_v2_core_conversations_done():
+		return
+	if conversations.has("sarah_meal_j1_v2") and not bool(conversations["sarah_meal_j1_v2"].get("available", false)):
+		conversations["sarah_meal_j1_v2"]["available"] = true
+		mark_conversation_new("sarah_meal_j1_v2", "Sarah parle du repas.")
+	if conversations.has("nico_respiration_j1_v2") and not bool(conversations["nico_respiration_j1_v2"].get("available", false)):
+		conversations["nico_respiration_j1_v2"]["available"] = true
+		mark_conversation_new("nico_respiration_j1_v2", "Nico tente une respiration.")
 
 func has_new(id: String) -> bool:
 	if not conversations.has(id):
@@ -867,7 +882,7 @@ func refresh_day_progression() -> void:
 	if current_day >= 6:
 		day_transition_available = false
 		return
-	if not REQUIRED_CONVERSATIONS_BY_DAY.has(current_day):
+	if _required_conversations_for_current_mode(current_day).is_empty():
 		day_transition_available = false
 		return
 	if completed_days.has(current_day):
@@ -875,10 +890,24 @@ func refresh_day_progression() -> void:
 		return
 	day_transition_available = _is_day_complete(current_day)
 
+func _required_conversations_for_current_mode(day: int) -> Array:
+	if experimental_j1_v2_enabled and day == 1:
+		return [
+			"j1_00_reveil_v2",
+			"sarah_j1_v2",
+			"camille_j1_v2",
+			"nico_j1_v2",
+			"maya_j1_v2",
+			"ines_j1_v2",
+			"sarah_meal_j1_v2",
+			"nico_respiration_j1_v2"
+		]
+	return REQUIRED_CONVERSATIONS_BY_DAY.get(day, [])
+
 func _is_day_complete(day: int) -> bool:
-	if not REQUIRED_CONVERSATIONS_BY_DAY.has(day):
+	var required_ids: Array = _required_conversations_for_current_mode(day)
+	if required_ids.is_empty():
 		return false
-	var required_ids: Array = REQUIRED_CONVERSATIONS_BY_DAY[day]
 	for id in required_ids:
 		if not conversations.has(id):
 			return false
@@ -1124,6 +1153,7 @@ func reset_progression() -> void:
 	day_transition_available = false
 	conversation_blocks = _default_conversation_blocks()
 	dynamic_notifications_fired = []
+	global_game_state = _default_global_game_state()
 	conversations = _default_conversations()
 	if FileAccess.file_exists(SAVE_PATH):
 		var dir: DirAccess = DirAccess.open("user://")
