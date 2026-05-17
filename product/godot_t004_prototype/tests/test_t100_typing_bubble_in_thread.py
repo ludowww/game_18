@@ -38,7 +38,7 @@ def test_t100_typing_indicator_is_temporary_bubble_inside_message_thread() -> No
 
 def test_t100_typing_bubble_looks_like_contact_bubble_and_animates_points() -> None:
     source = read_screen()
-    assert "style.bg_color = _contact_color(current_contact_id)" in source or "style.bg_color = _contact_color(current_contact_id).lightened" in source
+    assert "style.bg_color = _contact_color(sender)" in source or "style.bg_color = _contact_color(sender).lightened" in source
     assert "style.corner_radius_bottom_left = 5" in source
     assert "row.add_child(bubble)" in source
     assert "row.add_child(right_spacer)" in source

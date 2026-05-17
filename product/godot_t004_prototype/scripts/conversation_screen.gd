@@ -43,6 +43,7 @@ var typing_bubble: PanelContainer
 var typing_label: Label
 var typing_indicator_active: bool = false
 var typing_dot_count: int = 0
+var typing_sender_id: String = ""
 var quick_switch_target_id: String = ""
 var quick_switch_button: Button
 
@@ -346,7 +347,7 @@ func _wait_before_node(node: Dictionary) -> void:
 		return
 
 	var sender := str(node.get("sender", "system"))
-	if sender == current_contact_id:
+	if sender != "player" and sender != "system":
 		await _show_typing_indicator(sender)
 		await get_tree().create_timer(_display_delay_for_text(str(node.get("text", "")), delay_seconds)).timeout
 		_hide_typing_indicator()
@@ -595,7 +596,7 @@ func _ensure_last_message_visible() -> void:
 	if scroll.scroll_vertical < max_scroll:
 		scroll.scroll_vertical = max_scroll
 
-func _add_typing_bubble() -> void:
+func _add_typing_bubble(sender: String) -> void:
 	_remove_typing_bubble()
 	typing_row = HBoxContainer.new()
 	typing_row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -606,8 +607,8 @@ func _add_typing_bubble() -> void:
 	typing_bubble = PanelContainer.new()
 	typing_bubble.custom_minimum_size = Vector2(96, 44)
 	var style := StyleBoxFlat.new()
-	style.bg_color = _contact_color(current_contact_id).lightened(0.08)
-	style.border_color = _contact_color(current_contact_id).lightened(0.32)
+	style.bg_color = _contact_color(sender).lightened(0.08)
+	style.border_color = _contact_color(sender).lightened(0.32)
 	style.set_border_width_all(1)
 	style.corner_radius_top_left = 17
 	style.corner_radius_top_right = 17
@@ -642,12 +643,13 @@ func _remove_typing_bubble() -> void:
 	typing_label = null
 
 func _show_typing_indicator(sender: String) -> void:
-	if sender != current_contact_id:
+	if sender == "player" or sender == "system":
 		_hide_typing_indicator()
 		return
+	typing_sender_id = sender
 	typing_dot_count = 1
 	typing_indicator_active = true
-	await _add_typing_bubble()
+	await _add_typing_bubble(sender)
 	if typing_label != null:
 		typing_label.modulate.a = 0.72
 		typing_label.text = _typing_indicator_text()
@@ -667,6 +669,7 @@ func _animate_typing_indicator() -> void:
 func _hide_typing_indicator() -> void:
 	typing_indicator_active = false
 	typing_dot_count = 0
+	typing_sender_id = ""
 	_remove_typing_bubble()
 
 func _clear_choices() -> void:

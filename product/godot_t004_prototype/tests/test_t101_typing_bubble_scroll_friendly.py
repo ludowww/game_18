@@ -63,7 +63,7 @@ def test_t101_friendly_visual_tuning_is_larger_and_readable() -> None:
     source = read_screen()
     add_section = section(source, "func _add_typing_bubble", "func _remove_typing_bubble")
     assert "typing_bubble.custom_minimum_size = Vector2(96, 44)" in add_section
-    assert "style.border_color = _contact_color(current_contact_id).lightened(0.32)" in add_section
+    assert "style.border_color = _contact_color(sender).lightened(0.32)" in add_section
     assert "style.set_border_width_all(1)" in add_section
     assert "typing_label.add_theme_font_size_override(\"font_size\", 24)" in add_section
     assert "typing_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER" in add_section
