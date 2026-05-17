@@ -86,7 +86,8 @@
             "distance_sarah": -1,
             "tension_camille": -1,
             "flags": [
-              "first_reply_sarah"
+              "first_reply_sarah",
+              "delayed_reply_camille_j1"
             ]
           }
         },

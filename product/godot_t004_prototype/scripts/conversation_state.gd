@@ -130,7 +130,7 @@ func _default_conversations() -> Dictionary:
 			"J1 V2 — Où tu étais ?",
 			"res://data/sarah_j1_v2_experimental.json",
 			1,
-			true,
+			false,
 			false,
 			true,
 			"j1_01_sarah_001"
@@ -142,7 +142,7 @@ func _default_conversations() -> Dictionary:
 			"J1 V2 — Dehors",
 			"res://data/camille_j1_v2_experimental.json",
 			1,
-			true,
+			false,
 			false,
 			true,
 			"j1_02_camille_001"
@@ -700,8 +700,18 @@ func mark_current_done() -> void:
 	current()["done"] = true
 	current()["next_node"] = ""
 	current()["active_choice_node"] = ""
+	if current_conversation_id == "j1_00_reveil_v2":
+		_unlock_j1_v2_after_priority_choice()
 	refresh_day_progression()
 	save_progression()
+
+func _unlock_j1_v2_after_priority_choice() -> void:
+	if conversations.has("sarah_j1_v2"):
+		conversations["sarah_j1_v2"]["available"] = true
+		mark_conversation_new("sarah_j1_v2", "Sarah attend ta réponse.")
+	if conversations.has("camille_j1_v2"):
+		conversations["camille_j1_v2"]["available"] = true
+		mark_conversation_new("camille_j1_v2", "Camille attend ta réponse.")
 
 func has_new(id: String) -> bool:
 	if not conversations.has(id):
