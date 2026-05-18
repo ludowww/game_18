@@ -68,7 +68,7 @@ func _ready() -> void:
 			_advance_to(ConversationState.current_next_node())
 	else:
 		ConversationState.current()["started"] = true
-		_advance_to(ConversationState.current_block_start_node(), true)
+		_advance_to(_resolved_start_node(), true)
 
 func _build_ui() -> void:
 	var background := ColorRect.new()
@@ -284,6 +284,28 @@ func _load_conversation(path: String) -> void:
 	nodes_by_id.clear()
 	for node in conversation.get("nodes", []):
 		nodes_by_id[str(node.get("id", ""))] = node
+
+func _resolved_start_node() -> String:
+	var variants = conversation.get("entry_variants", [])
+	for variant in variants:
+		if _entry_variant_matches(variant):
+			return str(variant.get("start_node", conversation.get("start_node", "")))
+	return ConversationState.current_block_start_node()
+
+func _entry_variant_matches(variant: Dictionary) -> bool:
+	var conditions: Dictionary = variant.get("conditions", {})
+
+	var flags: Array = conditions.get("flags", [])
+	for flag in flags:
+		if not ConversationState.has_global_flag(str(flag)):
+			return false
+
+	var not_flags: Array = conditions.get("not_flags", [])
+	for flag in not_flags:
+		if ConversationState.has_global_flag(str(flag)):
+			return false
+
+	return true
 
 func _restore_current_messages() -> void:
 	for entry in ConversationState.current_messages():

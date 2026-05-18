@@ -72,6 +72,12 @@ func _default_global_game_state() -> Dictionary:
 func global_state() -> Dictionary:
 	return global_game_state.duplicate(true)
 
+func has_global_flag(flag: String) -> bool:
+	return global_game_state.get("flags", []).has(flag)
+
+func global_variable_value(key: String) -> int:
+	return int(global_game_state.get("variables", {}).get(key, 0))
+
 func apply_global_effects(effects_value) -> Dictionary:
 	if typeof(effects_value) != TYPE_DICTIONARY:
 		return global_state()
