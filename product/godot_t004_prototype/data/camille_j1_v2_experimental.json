@@ -19,7 +19,7 @@
       "id": "j1_02_camille_002",
       "type": "message",
       "sender": "camille",
-      "text": "Ou alors tout le monde a poliment décidé de devenir aveugle pendant vingt minutes.",
+      "text": "Je crois que tu sais très bien ce que je veux dire.",
       "delay": 35,
       "next": "j1_02_camille_003"
     },
@@ -27,7 +27,7 @@
       "id": "j1_02_camille_003",
       "type": "message",
       "sender": "camille",
-      "text": "Je ne sais pas quelle option est la plus confortable.",
+      "text": "Et là, ton “tu crois ?” fait déjà un petit détour.",
       "delay": 35,
       "next": "j1_02_camille_004"
     },
@@ -35,7 +35,7 @@
       "id": "j1_02_camille_004",
       "type": "message",
       "sender": "camille",
-      "text": "Tu vas faire comme si c’était juste une discussion dehors ?",
+      "text": "Tu vas me dire que c’était juste une discussion dehors ?",
       "delay": 35,
       "next": "j1_02_choice_camille_dehors"
     },

@@ -13,7 +13,7 @@
       "sender": "sarah",
       "text": "T’es réveillé ?",
       "delay": 0,
-      "next": "j1_01_sarah_002"
+      "next": "j1_01_sarah_auto_player_default_001"
     },
     {
       "id": "j1_01_sarah_002",
@@ -37,7 +37,7 @@
       "sender": "sarah",
       "text": "Je sais pas comment le dire autrement.",
       "delay": 35,
-      "next": "j1_01_sarah_auto_player_default_001"
+      "next": "j1_01_sarah_auto_player_default_002"
     },
     {
       "id": "j1_01_sarah_005",
@@ -45,7 +45,7 @@
       "sender": "sarah",
       "text": "Tu étais où, exactement ?",
       "delay": 30,
-      "next": "j1_01_sarah_auto_player_default_002"
+      "next": "j1_01_choice_version_sarah"
     },
     {
       "id": "j1_01_sarah_entry_first_reply_001",
@@ -117,15 +117,15 @@
       "sender": "player",
       "text": "Oui. Je viens de voir ton message.",
       "delay": 0,
-      "next": "j1_01_sarah_005"
+      "next": "j1_01_sarah_002"
     },
     {
       "id": "j1_01_sarah_auto_player_default_002",
       "type": "message",
       "sender": "player",
-      "text": "Je savais pas quoi répondre.",
+      "text": "Je sais.",
       "delay": 0,
-      "next": "j1_01_choice_version_sarah"
+      "next": "j1_01_sarah_005"
     },
     {
       "id": "j1_01_sarah_auto_player_first_reply_001",
