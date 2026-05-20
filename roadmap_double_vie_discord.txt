@@ -820,7 +820,55 @@ Statut : DONE
 Sortie : Export lisible complet généré pour permettre une relecture humaine des dialogues après retour Ludo indiquant qu’une première phrase est incompréhensible. Deux fichiers créés : `product/dialogues_export_lisible_j1_j6.md` et `product/dialogues_export_simple_j1_j6.txt`. L’export contient les 20 dialogues actifs J1→J6/finale, organisés par jour/contact, avec messages visibles, choix joueur, IDs de nodes et sources JSON. Note de cadrage créée : `product/t131_export_relecture_dialogues_j1_j6.md`. Aucun JSON dialogue, copie Godot data, `conversation_blocks.json`, script Godot, schéma T003, save/runtime/UX modifié.
 
 Livrable :
-Exports prêts pour relecture. Prochaine étape recommandée : T132 — Corrections lisibilité dialogues après relecture externe.
+Exports prêts pour relecture. Suite Roadmap resynchronisée ci-dessous avec les tâches J1 V2 déjà exécutées jusqu’à T137.
+
+T132 — Forcer la première réponse J1 V2 après choix priorité
+Thread : Scope MVP / technique / Roadmap
+Statut : DONE
+Sortie : Runtime J1 V2 ajusté pour que le choix de priorité dans `j1_00_reveil_v2` force l’ouverture de la conversation correspondante avant les autres (`sarah_j1_v2`, `camille_j1_v2`, `nico_j1_v2`, `maya_j1_v2`, `ines_j1_v2`). Ajout mapping explicite choix → conversation, filtrage liste messages tant que la première réponse forcée n’a pas commencé, et routage sélection/unlock vers cette conversation. Test `test_t132_j1_v2_forced_first_reply.py` OK.
+
+Livrable :
+Priorité J1 V2 respectée au runtime. Prochaine étape recommandée : T133 — Ajouter scènes de respiration J1 V2 Sarah/Nico.
+
+T133 — Ajouter scènes de respiration J1 V2 Sarah/Nico
+Thread : Dialogues / Scope MVP / Roadmap
+Statut : DONE
+Sortie : Deux scènes de respiration J1 V2 ajoutées comme JSON de follow-up : `sarah_meal_j1_v2_experimental.json` et `nico_respiration_j1_v2_experimental.json`. Elles restent des respirations relationnelles, non des nouveaux threads séparés, et sont différées jusqu’à la fin du noyau J1 V2. Validateur J1 V2 étendu. Test `test_t133_j1_v2_breathing_scenes.py` OK.
+
+Livrable :
+Respirations Sarah/Nico disponibles en follow-up. Prochaine étape recommandée : T134 — Gardes d’état J1 V2.
+
+T134 — Gardes d’état J1 V2 / reset + progression jour
+Thread : Scope MVP / technique / Roadmap
+Statut : DONE
+Sortie : Gardes runtime ajoutés pour éviter que J1 V2 pollue ou casse la progression : `reset_progression` réinitialise l’état global V2, la complétion de jour utilise les conversations requises selon le mode, et les scènes de respiration se déverrouillent seulement après les conversations cœur J1 V2. Test `test_t134_j1_v2_state_guards.py` OK.
+
+Livrable :
+Progression J1 V2 plus sûre. Prochaine étape recommandée : T135 — Créer la matrice de cohérence des dialogues J1 V2.
+
+T135 — Créer la matrice de cohérence des dialogues J1 V2
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Matrice de cohérence narrative créée dans `product/godot_t004_prototype/docs/j1_v2_dialogue_coherence_matrix.md`. Le document verrouille les 7 scènes J1 V2 (`j1_01_sarah_absence`, `j1_02_camille_dehors`, `j1_03_nico_couverture`, `j1_04_maya_pique`, `j1_05_ines_faille`, `j1_06_sarah_rentrer_manger`, `j1_07_nico_vanne_soiree`) avec fonction narrative, savoir/ignorance/soupçons du personnage, flags d’entrée, variantes nécessaires, phrases interdites, effets attendus et vigilance voix. Contraintes respectées : pas de réécriture complète, pas de nouveau scénario, voix Sarah/Camille/Maya/Nico/Inès conservées, aucune omniscience personnage. Test de suivi `test_t135_j1_v2_followup_threading.py` OK.
+
+Livrable :
+Matrice T135 prête à guider les `entry_variants`. Prochaine étape recommandée : T136 — Support runtime minimal des `entry_variants`.
+
+T136 — Support runtime minimal des entry_variants
+Thread : Scope MVP / technique / Roadmap
+Statut : DONE
+Sortie : Runtime Godot J1 V2 étendu pour résoudre un start node via `entry_variants` avant fallback vers `current_block_start_node()`. Ajout helpers `has_global_flag(...)` et `global_variable_value(...)`, résolution `_resolved_start_node()`, matcher `_entry_variant_matches(...)` avec conditions `flags` / `not_flags`. Aucun JSON dialogue modifié dans T136. Test `test_t136_entry_variants_runtime.py` OK.
+
+Livrable :
+Support runtime minimal des variantes d’entrée présent et pushé. Prochaine étape recommandée : T137 — Implémenter les `entry_variants` Sarah + Camille J1 V2.
+
+T137 — Implémenter les entry_variants Sarah + Camille J1 V2
+Thread : Dialogues / Scope MVP / Roadmap
+Statut : DONE
+Sortie : Variantes d’entrée cohérentes ajoutées dans `data/sarah_j1_v2_experimental.json` et `data/camille_j1_v2_experimental.json`, en respectant la matrice T135 et sans réécrire les scènes. Sarah : `default`, `first_reply_sarah`, `after_camille_first`, `after_nico_first`, `late_or_delayed`. Camille : `default`, `first_reply_camille`, `after_sarah_first`, `late_or_left_open`, `after_nico_first`. Chaque variante possède `id`, `conditions`, `start_node`, pointe vers des nodes existants et converge vers le choice node existant. Test T137 ajouté : `test_t137_j1_v2_sarah_camille_entry_variants.py`.
+
+Livrable :
+Entry variants Sarah/Camille J1 V2 intégrées. Validations OK : T132, T133, T134, T135, T136, T137 + `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : T138 — Implémenter les entry_variants Nico/Maya/Inès J1 V2.
 
 ---
 

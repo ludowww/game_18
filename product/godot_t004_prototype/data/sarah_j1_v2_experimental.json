@@ -48,6 +48,70 @@
       "next": "j1_01_choice_version_sarah"
     },
     {
+      "id": "j1_01_sarah_entry_first_reply_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Merci de me répondre maintenant.",
+      "delay": 0,
+      "next": "j1_01_sarah_entry_first_reply_002"
+    },
+    {
+      "id": "j1_01_sarah_entry_first_reply_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je suis blessée, mais je préfère qu’on parle avant que ça fasse trop de bruit dans ma tête.",
+      "delay": 35,
+      "next": "j1_01_choice_version_sarah"
+    },
+    {
+      "id": "j1_01_sarah_entry_after_camille_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vois que tu as mis un moment à revenir vers moi.",
+      "delay": 0,
+      "next": "j1_01_sarah_entry_after_camille_002"
+    },
+    {
+      "id": "j1_01_sarah_entry_after_camille_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne sais pas ce que tu as géré avant, et je ne veux pas inventer. Mais là, moi aussi j’ai besoin d’une phrase claire.",
+      "delay": 45,
+      "next": "j1_01_choice_version_sarah"
+    },
+    {
+      "id": "j1_01_sarah_entry_after_nico_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai l’impression que Nico est encore au milieu de l’histoire.",
+      "delay": 0,
+      "next": "j1_01_sarah_entry_after_nico_002"
+    },
+    {
+      "id": "j1_01_sarah_entry_after_nico_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne sais pas ce qu’il sait ni ce qu’il couvre. Je veux juste ta version à toi.",
+      "delay": 40,
+      "next": "j1_01_choice_version_sarah"
+    },
+    {
+      "id": "j1_01_sarah_entry_late_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vais faire simple, parce que sinon je vais me protéger en me taisant.",
+      "delay": 0,
+      "next": "j1_01_sarah_entry_late_002"
+    },
+    {
+      "id": "j1_01_sarah_entry_late_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Hier tu étais loin. Ce matin aussi, un peu. Tu étais où, exactement ?",
+      "delay": 40,
+      "next": "j1_01_choice_version_sarah"
+    },
+    {
       "id": "j1_01_choice_version_sarah",
       "type": "choice",
       "sender": "player",
@@ -353,6 +417,56 @@
       "sender": "system",
       "text": "Sarah n’a aucune réponse claire.",
       "delay": 0
+    }
+  ],
+  "entry_variants": [
+    {
+      "id": "first_reply_sarah",
+      "conditions": {
+        "flags": [
+          "first_reply_sarah"
+        ]
+      },
+      "start_node": "j1_01_sarah_entry_first_reply_001"
+    },
+    {
+      "id": "after_camille_first",
+      "conditions": {
+        "flags": [
+          "first_reply_camille"
+        ],
+        "not_flags": [
+          "first_reply_sarah"
+        ]
+      },
+      "start_node": "j1_01_sarah_entry_after_camille_001"
+    },
+    {
+      "id": "after_nico_first",
+      "conditions": {
+        "flags": [
+          "first_reply_nico"
+        ],
+        "not_flags": [
+          "first_reply_sarah",
+          "first_reply_camille"
+        ]
+      },
+      "start_node": "j1_01_sarah_entry_after_nico_001"
+    },
+    {
+      "id": "late_or_delayed",
+      "conditions": {
+        "flags": [
+          "delayed_reply_sarah_j1"
+        ]
+      },
+      "start_node": "j1_01_sarah_entry_late_001"
+    },
+    {
+      "id": "default",
+      "conditions": {},
+      "start_node": "j1_01_sarah_001"
     }
   ]
 }
