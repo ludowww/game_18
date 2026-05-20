@@ -10,7 +10,7 @@
       "id": "j1_03_nico_001",
       "type": "message",
       "sender": "nico",
-      "text": "frérot j’ai fait ce que j’ai pu mais ton histoire sent le plan claqué",
+      "text": "frérot j’ai fait ce que j’ai pu hier, mais ton truc sentait pas la grande stratégie",
       "delay": 0,
       "next": "j1_03_nico_002"
     },
@@ -18,7 +18,7 @@
       "id": "j1_03_nico_002",
       "type": "message",
       "sender": "nico",
-      "text": "Tu veux que je sache quelle version, exactement ?",
+      "text": "dis-moi juste ce que je suis censé savoir. et surtout ce que je suis pas censé inventer.",
       "delay": 35,
       "next": "j1_03_choice_nico_version"
     },
@@ -26,7 +26,7 @@
       "id": "j1_03_nico_entry_first_reply_001",
       "type": "message",
       "sender": "nico",
-      "text": "wow réponse express, ambiance pare-chocs humain dès le café",
+      "text": "réponse rapide. soit tu paniques, soit tu prépares une connerie propre",
       "delay": 0,
       "next": "j1_03_nico_entry_first_reply_002"
     },
@@ -34,7 +34,7 @@
       "id": "j1_03_nico_entry_first_reply_002",
       "type": "message",
       "sender": "nico",
-      "text": "je peux aider deux minutes, mais je signe pas un CDI mensonge frère",
+      "text": "je peux t’aider deux minutes, mais je deviens pas ton service après-vente du mensonge",
       "delay": 35,
       "next": "j1_03_choice_nico_version"
     },
@@ -42,7 +42,7 @@
       "id": "j1_03_nico_entry_after_sarah_001",
       "type": "message",
       "sender": "nico",
-      "text": "attends. si mon nom est déjà sorti avec Sarah, faut qu’on parle proprement",
+      "text": "attends. si mon nom est déjà dans la phrase, faut qu’on soit au clair",
       "delay": 0,
       "next": "j1_03_nico_entry_after_sarah_002"
     },
@@ -50,7 +50,7 @@
       "id": "j1_03_nico_entry_after_sarah_002",
       "type": "message",
       "sender": "nico",
-      "text": "je peux couvrir une bourde, pas devenir le meuble qui cache tout le salon",
+      "text": "je peux couvrir un blanc. pas un meuble entier dans le salon.",
       "delay": 40,
       "next": "j1_03_choice_nico_version"
     },
@@ -58,7 +58,7 @@
       "id": "j1_03_nico_entry_after_camille_001",
       "type": "message",
       "sender": "nico",
-      "text": "ok donc Camille est dans le brouillard aussi, super casting",
+      "text": "ok. donc Camille est pas juste une parenthèse dans ta tête.",
       "delay": 0,
       "next": "j1_03_nico_entry_after_camille_002"
     },
@@ -66,7 +66,7 @@
       "id": "j1_03_nico_entry_after_camille_002",
       "type": "message",
       "sender": "nico",
-      "text": "dis-moi juste quelle version tu veux éviter de faire exploser, sans me vendre ça comme un plan brillant",
+      "text": "je te juge pas. mais faut que tu me dises si tu veux un ami ou un alibi.",
       "delay": 45,
       "next": "j1_03_choice_nico_version"
     },
@@ -74,7 +74,7 @@
       "id": "j1_03_nico_entry_late_001",
       "type": "message",
       "sender": "nico",
-      "text": "tu réponds tard, donc soit tu réfléchis, soit ton cerveau est en PLS derrière le canapé",
+      "text": "tu réponds tard, donc je suppose que ton cerveau a quitté le groupe sans prévenir",
       "delay": 0,
       "next": "j1_03_nico_entry_late_002"
     },
@@ -82,7 +82,7 @@
       "id": "j1_03_nico_entry_late_002",
       "type": "message",
       "sender": "nico",
-      "text": "dans les deux cas, fais court : tu veux que je dise quoi si ça tombe sur moi ?",
+      "text": "respire. et dis-moi ce que je dois faire si quelqu’un me demande.",
       "delay": 40,
       "next": "j1_03_choice_nico_version"
     },
@@ -94,7 +94,7 @@
       "choices": [
         {
           "id": "j1_03_hold_version",
-          "text": "Si on te demande, dis juste qu’on était ensemble dehors un moment.",
+          "text": "Si on te demande, dis juste que j’étais dehors avec toi un moment.",
           "next": "j1_03_end_alibi_debt",
           "effects": {
             "dette_nico": 4,
@@ -108,7 +108,7 @@
         },
         {
           "id": "j1_03_stay_silent",
-          "text": "Reste vague. Je vais gérer.",
+          "text": "Reste vague. Je vais gérer le reste.",
           "next": "j1_03_end_vague_support",
           "effects": {
             "dette_nico": 1,
@@ -120,7 +120,7 @@
         },
         {
           "id": "j1_03_confess_camille",
-          "text": "Camille m’a rejoint dehors. C’était pas neutre.",
+          "text": "Camille m’a rejoint dehors. C’était pas juste une pause.",
           "next": "j1_03_end_confession_support",
           "effects": {
             "dette_nico": -1,
@@ -134,7 +134,7 @@
         },
         {
           "id": "j1_03_dismiss_warning",
-          "text": "Laisse tomber. T’en fais trop.",
+          "text": "Laisse tomber. Tu dramatises.",
           "next": "j1_03_end_nico_hurt",
           "effects": {
             "dette_nico": 2,
@@ -151,28 +151,28 @@
       "id": "j1_03_end_alibi_debt",
       "type": "end",
       "sender": "system",
-      "text": "Nico accepte mal de porter une version.",
+      "text": "Nico accepte, mais la dette devient plus lourde.",
       "delay": 0
     },
     {
       "id": "j1_03_end_vague_support",
       "type": "end",
       "sender": "system",
-      "text": "Nico reste allié, mais prudent.",
+      "text": "Nico reste dans ton camp, sans prendre toute la charge.",
       "delay": 0
     },
     {
       "id": "j1_03_end_confession_support",
       "type": "end",
       "sender": "system",
-      "text": "Nico comprend mieux sans devenir alibi.",
+      "text": "Nico comprend mieux, mais il ne devient pas ton alibi.",
       "delay": 0
     },
     {
       "id": "j1_03_end_nico_hurt",
       "type": "end",
       "sender": "system",
-      "text": "Nico pose une limite plus froide.",
+      "text": "Nico se referme un peu derrière la vanne.",
       "delay": 0
     }
   ],

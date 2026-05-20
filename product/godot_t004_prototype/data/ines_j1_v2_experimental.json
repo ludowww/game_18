@@ -10,7 +10,7 @@
       "id": "j1_05_ines_001",
       "type": "message",
       "sender": "ines",
-      "text": "C’est peut-être pas mes affaires.",
+      "text": "j’ai hésité avant d’écrire.",
       "delay": 0,
       "next": "j1_05_ines_002"
     },
@@ -18,7 +18,7 @@
       "id": "j1_05_ines_002",
       "type": "message",
       "sender": "ines",
-      "text": "Mais tu avais l’air triste hier. Oublie si c’est bizarre.",
+      "text": "c’est peut-être pas mes affaires. mais hier, tu avais l’air loin. pas absent. juste… loin.",
       "delay": 35,
       "next": "j1_05_choice_ines_faille"
     },
@@ -26,7 +26,7 @@
       "id": "j1_05_ines_entry_first_reply_001",
       "type": "message",
       "sender": "ines",
-      "text": "Je ne pensais pas que tu répondrais tout de suite. C’est… un peu inattendu.",
+      "text": "je pensais pas que tu répondrais aussi vite.",
       "delay": 0,
       "next": "j1_05_ines_entry_first_reply_002"
     },
@@ -34,7 +34,7 @@
       "id": "j1_05_ines_entry_first_reply_002",
       "type": "message",
       "sender": "ines",
-      "text": "Je ne sais pas si tu cherches quelqu’un ou juste un endroit calme.",
+      "text": "je sais pas si c’est rassurant ou si ça veut dire que tu cherchais juste un endroit calme.",
       "delay": 40,
       "next": "j1_05_choice_ines_faille"
     },
@@ -42,7 +42,7 @@
       "id": "j1_05_ines_entry_after_conflict_001",
       "type": "message",
       "sender": "ines",
-      "text": "Tu as l’air chargé. Je ne sais pas de quoi, exactement.",
+      "text": "tu as l’air chargé.",
       "delay": 0,
       "next": "j1_05_ines_entry_after_conflict_002"
     },
@@ -50,7 +50,7 @@
       "id": "j1_05_ines_entry_after_conflict_002",
       "type": "message",
       "sender": "ines",
-      "text": "Je peux juste laisser une petite place ici. Sans demander trop fort.",
+      "text": "je ne sais pas de quoi. je voulais juste laisser une petite place ici, si ça aide.",
       "delay": 45,
       "next": "j1_05_choice_ines_faille"
     },
@@ -58,7 +58,7 @@
       "id": "j1_05_ines_entry_late_001",
       "type": "message",
       "sender": "ines",
-      "text": "Je pensais que tu ne répondrais pas.",
+      "text": "je pensais que tu ne répondrais pas.",
       "delay": 0,
       "next": "j1_05_ines_entry_late_002"
     },
@@ -66,7 +66,7 @@
       "id": "j1_05_ines_entry_late_002",
       "type": "message",
       "sender": "ines",
-      "text": "C’est pas grave. Enfin… je crois. Tu avais l’air loin hier.",
+      "text": "c’est pas grave. mon message pouvait rester là aussi.",
       "delay": 40,
       "next": "j1_05_choice_ines_faille"
     },
@@ -78,7 +78,7 @@
       "choices": [
         {
           "id": "j1_05_open_softly",
-          "text": "Non, c’est pas bizarre. Je crois que t’as vu juste.",
+          "text": "Non, c’est pas bizarre. Je crois que t’as vu quelque chose.",
           "next": "j1_05_end_soft_opening",
           "effects": {
             "fuite_ines": 1,
@@ -90,7 +90,7 @@
         },
         {
           "id": "j1_05_keep_distance",
-          "text": "Merci. Je préfère pas te mettre là-dedans.",
+          "text": "Merci. Mais je préfère pas t’embarquer là-dedans.",
           "next": "j1_05_end_distance",
           "effects": {
             "fuite_ines": -1,
@@ -102,7 +102,7 @@
         },
         {
           "id": "j1_05_fuite_seed",
-          "text": "J’aurais préféré rester avec quelqu’un qui ne me demandait rien.",
+          "text": "J’aurais aimé rester avec quelqu’un qui ne me demandait rien.",
           "next": "j1_05_end_fuite_warning",
           "effects": {
             "fuite_ines": 3,
@@ -114,7 +114,7 @@
         },
         {
           "id": "j1_05_too_direct",
-          "text": "Tu m’as regardé longtemps, alors ?",
+          "text": "Tu m’as beaucoup regardé, hier ?",
           "next": "j1_05_end_ines_closes",
           "effects": {
             "fuite_ines": -2,
@@ -130,7 +130,7 @@
       "id": "j1_05_end_soft_opening",
       "type": "end",
       "sender": "system",
-      "text": "Inès reste une présence douce.",
+      "text": "Inès reste une présence douce, mais pas une réponse.",
       "delay": 0
     },
     {
@@ -144,14 +144,14 @@
       "id": "j1_05_end_fuite_warning",
       "type": "end",
       "sender": "system",
-      "text": "Inès perçoit qu’elle peut devenir une fuite.",
+      "text": "Inès sent qu’elle pourrait devenir une échappatoire.",
       "delay": 0
     },
     {
       "id": "j1_05_end_ines_closes",
       "type": "end",
       "sender": "system",
-      "text": "Inès se ferme face à une intimité forcée.",
+      "text": "Inès se retire face à une intimité forcée.",
       "delay": 0
     }
   ],

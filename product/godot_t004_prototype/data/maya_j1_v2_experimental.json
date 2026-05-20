@@ -10,7 +10,7 @@
       "id": "j1_04_maya_001",
       "type": "message",
       "sender": "maya",
-      "text": "je pose ça là : vous êtes fatigants.",
+      "text": "je pose ça là : vous êtes pas subtils.",
       "delay": 0,
       "next": "j1_04_maya_002"
     },
@@ -18,7 +18,7 @@
       "id": "j1_04_maya_002",
       "type": "message",
       "sender": "maya",
-      "text": "coïncidence sûrement. très artistique comme timing.",
+      "text": "enfin. c’est sûrement une coïncidence. une coïncidence très bien éclairée.",
       "delay": 35,
       "next": "j1_04_choice_maya_pique"
     },
@@ -26,7 +26,7 @@
       "id": "j1_04_maya_entry_first_reply_001",
       "type": "message",
       "sender": "maya",
-      "text": "réponse rapide. intéressant. presque une prise de risque sociale",
+      "text": "réponse rapide. intéressant.",
       "delay": 0,
       "next": "j1_04_maya_entry_first_reply_002"
     },
@@ -34,7 +34,7 @@
       "id": "j1_04_maya_entry_first_reply_002",
       "type": "message",
       "sender": "maya",
-      "text": "je note pas une vérité, je note juste le timing. et il fait beaucoup de bruit",
+      "text": "je note pas une vérité, hein. je note juste que tu viens vite sur un terrain bizarre.",
       "delay": 35,
       "next": "j1_04_choice_maya_pique"
     },
@@ -42,7 +42,7 @@
       "id": "j1_04_maya_entry_after_sarah_001",
       "type": "message",
       "sender": "maya",
-      "text": "t’as déjà dû gérer Sarah, non ? enfin, je suppose. ton délai a une tête de couloir trop long",
+      "text": "j’imagine que Sarah t’a écrit aussi.",
       "delay": 0,
       "next": "j1_04_maya_entry_after_sarah_002"
     },
@@ -50,7 +50,7 @@
       "id": "j1_04_maya_entry_after_sarah_002",
       "type": "message",
       "sender": "maya",
-      "text": "je protège personne en mode héroïne, mais les absences se voient sur les photos de groupe",
+      "text": "je veux pas être au milieu. mais les absences, ça se voit. surtout sur les photos de groupe.",
       "delay": 45,
       "next": "j1_04_choice_maya_pique"
     },
@@ -58,7 +58,7 @@
       "id": "j1_04_maya_entry_after_camille_001",
       "type": "message",
       "sender": "maya",
-      "text": "tu arrives après un détour, et le détour a une très belle lumière dramatique",
+      "text": "tu arrives avec un délai qui a une petite odeur de détour.",
       "delay": 0,
       "next": "j1_04_maya_entry_after_camille_002"
     },
@@ -66,7 +66,7 @@
       "id": "j1_04_maya_entry_after_camille_002",
       "type": "message",
       "sender": "maya",
-      "text": "je sais pas ce qui s’est passé dehors. je sais juste que le groupe a vu des blancs bizarres",
+      "text": "je sais pas ce qui s’est passé dehors. je sais juste qu’il y a eu un blanc dans le groupe.",
       "delay": 45,
       "next": "j1_04_choice_maya_pique"
     },
@@ -74,7 +74,7 @@
       "id": "j1_04_maya_entry_late_001",
       "type": "message",
       "sender": "maya",
-      "text": "réponse tardive reçue, enregistrée, presque encadrée",
+      "text": "réponse tardive reçue. je mets une petite étoile dans mon carnet imaginaire.",
       "delay": 0,
       "next": "j1_04_maya_entry_late_002"
     },
@@ -82,7 +82,7 @@
       "id": "j1_04_maya_entry_late_002",
       "type": "message",
       "sender": "maya",
-      "text": "pas besoin d’être détective : parfois le timing fait tout le PowerPoint tout seul",
+      "text": "pas besoin d’être détective. parfois le timing travaille tout seul.",
       "delay": 35,
       "next": "j1_04_choice_maya_pique"
     },
@@ -107,7 +107,7 @@
         },
         {
           "id": "j1_04_needed_air",
-          "text": "J’avais besoin d’air. J’ai pas géré le timing.",
+          "text": "J’avais besoin d’air. Le timing était nul, je sais.",
           "next": "j1_04_end_prudent",
           "effects": {
             "suspicion_maya": -1,
@@ -120,7 +120,7 @@
         },
         {
           "id": "j1_04_ask_what_saw",
-          "text": "Qu’est-ce que t’as vu exactement ?",
+          "text": "T’as vu quoi, exactement ?",
           "next": "j1_04_end_photo_seeded",
           "effects": {
             "suspicion_maya": 1,
@@ -149,14 +149,14 @@
       "id": "j1_04_end_suspicious",
       "type": "end",
       "sender": "system",
-      "text": "Maya note l’esquive.",
+      "text": "Maya note l’esquive sans avoir besoin d’en dire plus.",
       "delay": 0
     },
     {
       "id": "j1_04_end_prudent",
       "type": "end",
       "sender": "system",
-      "text": "Maya reste piquante mais moins hostile.",
+      "text": "Maya reste piquante, mais la version tient encore.",
       "delay": 0
     },
     {
@@ -170,7 +170,7 @@
       "id": "j1_04_end_defensive",
       "type": "end",
       "sender": "system",
-      "text": "Maya se rapproche de Sarah par protection.",
+      "text": "Maya se rapproche de Sarah par réflexe de protection.",
       "delay": 0
     }
   ],
