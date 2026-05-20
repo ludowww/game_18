@@ -23,6 +23,54 @@
       "next": "j1_05_choice_ines_faille"
     },
     {
+      "id": "j1_05_ines_entry_first_reply_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "Tu m’écris en premier. C’est… un peu inattendu.",
+      "delay": 0,
+      "next": "j1_05_ines_entry_first_reply_002"
+    },
+    {
+      "id": "j1_05_ines_entry_first_reply_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je ne sais pas si tu cherches quelqu’un ou juste un endroit calme.",
+      "delay": 40,
+      "next": "j1_05_choice_ines_faille"
+    },
+    {
+      "id": "j1_05_ines_entry_after_conflict_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "Tu as l’air chargé. Je ne sais pas de quoi, exactement.",
+      "delay": 0,
+      "next": "j1_05_ines_entry_after_conflict_002"
+    },
+    {
+      "id": "j1_05_ines_entry_after_conflict_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je peux juste laisser une petite place ici. Sans demander trop fort.",
+      "delay": 45,
+      "next": "j1_05_choice_ines_faille"
+    },
+    {
+      "id": "j1_05_ines_entry_late_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "Je pensais que tu ne répondrais pas.",
+      "delay": 0,
+      "next": "j1_05_ines_entry_late_002"
+    },
+    {
+      "id": "j1_05_ines_entry_late_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "C’est pas grave. Enfin… je crois. Tu avais l’air loin hier.",
+      "delay": 40,
+      "next": "j1_05_choice_ines_faille"
+    },
+    {
       "id": "j1_05_choice_ines_faille",
       "type": "choice",
       "sender": "player",
@@ -105,6 +153,40 @@
       "sender": "system",
       "text": "Inès se ferme face à une intimité forcée.",
       "delay": 0
+    }
+  ],
+  "entry_variants": [
+    {
+      "id": "first_reply_ines",
+      "conditions": {
+        "flags": [
+          "first_reply_ines"
+        ]
+      },
+      "start_node": "j1_05_ines_entry_first_reply_001"
+    },
+    {
+      "id": "after_conflict",
+      "conditions": {
+        "flags": [
+          "early_desire_to_camille"
+        ]
+      },
+      "start_node": "j1_05_ines_entry_after_conflict_001"
+    },
+    {
+      "id": "late_or_delayed",
+      "conditions": {
+        "flags": [
+          "delayed_reply_ines_j1"
+        ]
+      },
+      "start_node": "j1_05_ines_entry_late_001"
+    },
+    {
+      "id": "default",
+      "conditions": {},
+      "start_node": "j1_05_ines_001"
     }
   ]
 }

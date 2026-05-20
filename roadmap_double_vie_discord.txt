@@ -868,7 +868,15 @@ Statut : DONE
 Sortie : Variantes d’entrée cohérentes ajoutées dans `data/sarah_j1_v2_experimental.json` et `data/camille_j1_v2_experimental.json`, en respectant la matrice T135 et sans réécrire les scènes. Sarah : `default`, `first_reply_sarah`, `after_camille_first`, `after_nico_first`, `late_or_delayed`. Camille : `default`, `first_reply_camille`, `after_sarah_first`, `late_or_left_open`, `after_nico_first`. Chaque variante possède `id`, `conditions`, `start_node`, pointe vers des nodes existants et converge vers le choice node existant. Test T137 ajouté : `test_t137_j1_v2_sarah_camille_entry_variants.py`.
 
 Livrable :
-Entry variants Sarah/Camille J1 V2 intégrées. Validations OK : T132, T133, T134, T135, T136, T137 + `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : T138 — Implémenter les entry_variants Nico/Maya/Inès J1 V2.
+Entry variants Sarah/Camille J1 V2 intégrées. Validations OK : T132, T133, T134, T135, T136, T137 + `tools/validate_j1_v2_experimental.py`. Suite T138 exécutée ci-dessous.
+
+T138 — Implémenter les entry_variants Nico + Maya + Inès J1 V2
+Thread : Dialogues / Scope MVP / Roadmap
+Statut : DONE
+Sortie : Variantes d’entrée cohérentes ajoutées dans `data/nico_j1_v2_experimental.json`, `data/maya_j1_v2_experimental.json` et `data/ines_j1_v2_experimental.json`, en respectant la matrice T135 et sans réécrire les scènes. Nico : `first_reply_nico`, `after_sarah_nico_version`, `after_camille_confusion`, `late_or_delayed`, `default`. Maya : `first_reply_maya`, `after_sarah`, `after_camille`, `late_or_delayed`, `default`. Inès : `first_reply_ines`, `after_conflict`, `late_or_delayed`, `default`. Chaque variante possède `id`, `conditions`, `start_node`, pointe vers des nodes existants et converge vers le choice node central. Test T138 ajouté : `test_t138_nico_maya_ines_entry_variants.py`.
+
+Livrable :
+Entry variants Nico/Maya/Inès J1 V2 intégrées. Validations OK : T132, T133, T134, T135, T136, T137, T138 + `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : T139 — Playtest runtime J1 V2 complet avec ordre de priorité et variantes d’entrée.
 
 ---
 

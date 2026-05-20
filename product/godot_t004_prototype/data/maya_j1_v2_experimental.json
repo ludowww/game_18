@@ -23,6 +23,70 @@
       "next": "j1_04_choice_maya_pique"
     },
     {
+      "id": "j1_04_maya_entry_first_reply_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "alors là, moi en premier ? audacieux comme ordre de priorité",
+      "delay": 0,
+      "next": "j1_04_maya_entry_first_reply_002"
+    },
+    {
+      "id": "j1_04_maya_entry_first_reply_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "je note pas une vérité, je note juste le timing. et il fait beaucoup de bruit",
+      "delay": 35,
+      "next": "j1_04_choice_maya_pique"
+    },
+    {
+      "id": "j1_04_maya_entry_after_sarah_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "t’as déjà dû gérer Sarah, non ? enfin, je suppose. ton délai a une tête de couloir trop long",
+      "delay": 0,
+      "next": "j1_04_maya_entry_after_sarah_002"
+    },
+    {
+      "id": "j1_04_maya_entry_after_sarah_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "je protège personne en mode héroïne, mais les absences se voient sur les photos de groupe",
+      "delay": 45,
+      "next": "j1_04_choice_maya_pique"
+    },
+    {
+      "id": "j1_04_maya_entry_after_camille_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "tu arrives après un détour, et le détour a une très belle lumière dramatique",
+      "delay": 0,
+      "next": "j1_04_maya_entry_after_camille_002"
+    },
+    {
+      "id": "j1_04_maya_entry_after_camille_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "je sais pas ce qui s’est passé dehors. je sais juste que le groupe a vu des blancs bizarres",
+      "delay": 45,
+      "next": "j1_04_choice_maya_pique"
+    },
+    {
+      "id": "j1_04_maya_entry_late_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "réponse tardive reçue, enregistrée, presque encadrée",
+      "delay": 0,
+      "next": "j1_04_maya_entry_late_002"
+    },
+    {
+      "id": "j1_04_maya_entry_late_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "pas besoin d’être détective : parfois le timing fait tout le PowerPoint tout seul",
+      "delay": 35,
+      "next": "j1_04_choice_maya_pique"
+    },
+    {
       "id": "j1_04_choice_maya_pique",
       "type": "choice",
       "sender": "player",
@@ -108,6 +172,56 @@
       "sender": "system",
       "text": "Maya se rapproche de Sarah par protection.",
       "delay": 0
+    }
+  ],
+  "entry_variants": [
+    {
+      "id": "first_reply_maya",
+      "conditions": {
+        "flags": [
+          "first_reply_maya"
+        ]
+      },
+      "start_node": "j1_04_maya_entry_first_reply_001"
+    },
+    {
+      "id": "after_sarah",
+      "conditions": {
+        "flags": [
+          "first_reply_sarah"
+        ],
+        "not_flags": [
+          "first_reply_maya"
+        ]
+      },
+      "start_node": "j1_04_maya_entry_after_sarah_001"
+    },
+    {
+      "id": "after_camille",
+      "conditions": {
+        "flags": [
+          "first_reply_camille"
+        ],
+        "not_flags": [
+          "first_reply_maya",
+          "first_reply_sarah"
+        ]
+      },
+      "start_node": "j1_04_maya_entry_after_camille_001"
+    },
+    {
+      "id": "late_or_delayed",
+      "conditions": {
+        "flags": [
+          "delayed_reply_maya_j1"
+        ]
+      },
+      "start_node": "j1_04_maya_entry_late_001"
+    },
+    {
+      "id": "default",
+      "conditions": {},
+      "start_node": "j1_04_maya_001"
     }
   ]
 }

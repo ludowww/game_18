@@ -23,6 +23,70 @@
       "next": "j1_03_choice_nico_version"
     },
     {
+      "id": "j1_03_nico_entry_first_reply_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "wow direct moi en premier, ambiance pare-chocs humain dès le café",
+      "delay": 0,
+      "next": "j1_03_nico_entry_first_reply_002"
+    },
+    {
+      "id": "j1_03_nico_entry_first_reply_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "je peux aider deux minutes, mais je signe pas un CDI mensonge frère",
+      "delay": 35,
+      "next": "j1_03_choice_nico_version"
+    },
+    {
+      "id": "j1_03_nico_entry_after_sarah_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "attends. si mon nom est déjà sorti avec Sarah, faut qu’on parle proprement",
+      "delay": 0,
+      "next": "j1_03_nico_entry_after_sarah_002"
+    },
+    {
+      "id": "j1_03_nico_entry_after_sarah_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "je peux couvrir une bourde, pas devenir le meuble qui cache tout le salon",
+      "delay": 40,
+      "next": "j1_03_choice_nico_version"
+    },
+    {
+      "id": "j1_03_nico_entry_after_camille_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "ok donc Camille est dans le brouillard aussi, super casting",
+      "delay": 0,
+      "next": "j1_03_nico_entry_after_camille_002"
+    },
+    {
+      "id": "j1_03_nico_entry_after_camille_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "dis-moi juste quelle version tu veux éviter de faire exploser, sans me vendre ça comme un plan brillant",
+      "delay": 45,
+      "next": "j1_03_choice_nico_version"
+    },
+    {
+      "id": "j1_03_nico_entry_late_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "tu réponds tard, donc soit tu réfléchis, soit ton cerveau est en PLS derrière le canapé",
+      "delay": 0,
+      "next": "j1_03_nico_entry_late_002"
+    },
+    {
+      "id": "j1_03_nico_entry_late_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "dans les deux cas, fais court : tu veux que je dise quoi si ça tombe sur moi ?",
+      "delay": 40,
+      "next": "j1_03_choice_nico_version"
+    },
+    {
       "id": "j1_03_choice_nico_version",
       "type": "choice",
       "sender": "player",
@@ -110,6 +174,49 @@
       "sender": "system",
       "text": "Nico pose une limite plus froide.",
       "delay": 0
+    }
+  ],
+  "entry_variants": [
+    {
+      "id": "first_reply_nico",
+      "conditions": {
+        "flags": [
+          "first_reply_nico"
+        ]
+      },
+      "start_node": "j1_03_nico_entry_first_reply_001"
+    },
+    {
+      "id": "after_sarah_nico_version",
+      "conditions": {
+        "flags": [
+          "used_nico_alibi_sarah"
+        ]
+      },
+      "start_node": "j1_03_nico_entry_after_sarah_001"
+    },
+    {
+      "id": "after_camille_confusion",
+      "conditions": {
+        "flags": [
+          "admitted_tension_to_camille"
+        ]
+      },
+      "start_node": "j1_03_nico_entry_after_camille_001"
+    },
+    {
+      "id": "late_or_delayed",
+      "conditions": {
+        "flags": [
+          "delayed_reply_nico_j1"
+        ]
+      },
+      "start_node": "j1_03_nico_entry_late_001"
+    },
+    {
+      "id": "default",
+      "conditions": {},
+      "start_node": "j1_03_nico_001"
     }
   ]
 }
