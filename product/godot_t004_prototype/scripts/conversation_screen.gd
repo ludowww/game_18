@@ -449,6 +449,7 @@ func _on_choice_pressed(choice: Dictionary) -> void:
 	ConversationState.record_current_choice(str(choice.get("id", "")))
 	_apply_effects(choice.get("effects", {}))
 	_clear_choices()
+	await _add_bubble("player", str(choice.get("text", "")))
 	_advance_to(str(choice.get("next", "")), true)
 
 func _lock_choice_buttons() -> void:

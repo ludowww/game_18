@@ -1,4 +1,4 @@
-Bloc 4/8 — Roadmap locale resynchronisée T001 à T138
+Bloc 4/8 — Roadmap locale resynchronisée T001 à T139
 
 SOURCE DE VÉRITÉ
 La Roadmap Discord reste la source de vérité pour les IDs Txxx.
@@ -776,4 +776,12 @@ Statut : DONE
 Sortie : Variantes d’entrée cohérentes ajoutées dans `data/nico_j1_v2_experimental.json`, `data/maya_j1_v2_experimental.json` et `data/ines_j1_v2_experimental.json`, en respectant la matrice T135 et sans réécrire les scènes. Nico : `first_reply_nico`, `after_sarah_nico_version`, `after_camille_confusion`, `late_or_delayed`, `default`. Maya : `first_reply_maya`, `after_sarah`, `after_camille`, `late_or_delayed`, `default`. Inès : `first_reply_ines`, `after_conflict`, `late_or_delayed`, `default`. Chaque variante possède `id`, `conditions`, `start_node`, pointe vers des nodes existants et converge vers le choice node central. Test T138 ajouté : `test_t138_nico_maya_ines_entry_variants.py`.
 
 Livrable :
-Entry variants Nico/Maya/Inès J1 V2 intégrées. Validations OK : T132, T133, T134, T135, T136, T137, T138 + `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : T139 — Playtest runtime J1 V2 complet avec ordre de priorité et variantes d’entrée.
+Entry variants Nico/Maya/Inès J1 V2 intégrées. Validations OK : T132, T133, T134, T135, T136, T137, T138 + `tools/validate_j1_v2_experimental.py`. Correctif runtime T139 exécuté ci-dessous.
+
+T139 — Corriger affichage réponse joueur avant message système de fin
+Thread : Scope MVP / UX faux smartphone / Roadmap
+Statut : DONE
+Sortie : Bug runtime corrigé dans `conversation_screen.gd` : lorsqu’un choix mène directement à un node `end` système, la réponse joueur est désormais ajoutée à la conversation avant l’avancée vers le node suivant. Root cause : `_on_choice_pressed(...)` enregistrait le choix/effects puis appelait `_advance_to(next, true)` sans afficher la bulle joueur ; le message système de clôture apparaissait donc à la place de la réponse sélectionnée. Test de régression ajouté : `test_t139_choice_response_before_system_end.py`.
+
+Livrable :
+La séquence attendue est maintenant choix → bulle joueur → message système de clôture. Validations OK : T136, T137, T138, T139 + `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : playtest runtime Godot local sur une conversation J1 V2 qui se clôture juste après un choix.
