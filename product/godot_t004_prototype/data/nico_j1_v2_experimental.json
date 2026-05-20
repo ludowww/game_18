@@ -26,7 +26,7 @@
       "id": "j1_03_nico_entry_first_reply_001",
       "type": "message",
       "sender": "nico",
-      "text": "wow direct moi en premier, ambiance pare-chocs humain dès le café",
+      "text": "wow réponse express, ambiance pare-chocs humain dès le café",
       "delay": 0,
       "next": "j1_03_nico_entry_first_reply_002"
     },

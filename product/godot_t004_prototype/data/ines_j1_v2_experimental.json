@@ -26,7 +26,7 @@
       "id": "j1_05_ines_entry_first_reply_001",
       "type": "message",
       "sender": "ines",
-      "text": "Tu m’écris en premier. C’est… un peu inattendu.",
+      "text": "Je ne pensais pas que tu répondrais tout de suite. C’est… un peu inattendu.",
       "delay": 0,
       "next": "j1_05_ines_entry_first_reply_002"
     },

@@ -43,7 +43,7 @@
       "id": "j1_02_camille_entry_first_reply_001",
       "type": "message",
       "sender": "camille",
-      "text": "Tu m’as répondu en premier.",
+      "text": "Tu réponds vite.",
       "delay": 0,
       "next": "j1_02_camille_entry_first_reply_002"
     },
@@ -51,7 +51,7 @@
       "id": "j1_02_camille_entry_first_reply_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je ne vais pas faire semblant que ça ne compte pas. Je ne vais pas non plus appeler ça une preuve de courage.",
+      "text": "Je ne vais pas faire semblant que le timing ne compte pas. Je ne vais pas non plus appeler ça une preuve de courage.",
       "delay": 40,
       "next": "j1_02_choice_camille_dehors"
     },

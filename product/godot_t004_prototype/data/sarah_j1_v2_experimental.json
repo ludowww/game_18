@@ -51,7 +51,7 @@
       "id": "j1_01_sarah_entry_first_reply_001",
       "type": "message",
       "sender": "sarah",
-      "text": "Merci de me répondre maintenant.",
+      "text": "Tu réponds vite. Merci.",
       "delay": 0,
       "next": "j1_01_sarah_entry_first_reply_002"
     },

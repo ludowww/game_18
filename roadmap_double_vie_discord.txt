@@ -884,7 +884,15 @@ Statut : DONE
 Sortie : Bug runtime corrigé dans `conversation_screen.gd` : lorsqu’un choix mène directement à un node `end` système, la réponse joueur est désormais ajoutée à la conversation avant l’avancée vers le node suivant. Root cause : `_on_choice_pressed(...)` enregistrait le choix/effects puis appelait `_advance_to(next, true)` sans afficher la bulle joueur ; le message système de clôture apparaissait donc à la place de la réponse sélectionnée. Test de régression ajouté : `test_t139_choice_response_before_system_end.py`.
 
 Livrable :
-La séquence attendue est maintenant choix → bulle joueur → message système de clôture. Validations OK : T136, T137, T138, T139 + `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : playtest runtime Godot local sur une conversation J1 V2 qui se clôture juste après un choix.
+La séquence attendue est maintenant choix → bulle joueur → message système de clôture. Validations OK : T136, T137, T138, T139 + `tools/validate_j1_v2_experimental.py`. Correctif dialogue T139B exécuté ci-dessous.
+
+T139B — Dé-métatiser les entry_variants J1 V2
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Textes des variantes d’entrée J1 V2 corrigés pour retirer les formulations où les personnages semblaient savoir qu’ils étaient ouverts “en premier”. Corrections ciblées uniquement dans les textes visibles de Sarah, Camille, Nico, Maya et Inès : remplacement par des perceptions de réponse rapide, timing, délai ou ton. Aucun `id`, `entry_variants`, `conditions`, `start_node`, convergence ou structure JSON modifié. Garde-fous respectés : pas d’omniscience, Maya non enquêtrice, Nico non conseiller moral permanent, Inès non sexualisée.
+
+Livrable :
+Variantes d’entrée J1 V2 non-méta. Validations OK : T136, T137, T138 + `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : playtest runtime Godot local des ouvertures J1 V2.
 
 ---
 
