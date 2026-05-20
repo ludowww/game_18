@@ -908,7 +908,15 @@ Statut : DONE
 Sortie : Réponses automatiques Sarah/Camille repositionnées et naturalisées sans modifier ids de choix, effects, flags, `entry_variants`, `start_node` ni branches après choix. Sarah default suit désormais : `T’es réveillé ?` → joueur `Oui. Je viens de voir ton message.` → malaise Sarah → joueur `Je sais.` → vraie question → choix central. Camille default conserve `Je crois qu’on a été moins discrets qu’on pensait.` → joueur `Tu crois ?`, puis Camille lit l’esquive de façon plus humaine et précise avant le choix central. Aucun nouveau choix, aucune prise de position automatique forte.
 
 Livrable :
-Enchaînements automatiques Sarah/Camille plus naturels. Validations OK : `test_t137_sarah_camille_entry_variants.py`, `test_t140a_bis_sarah_camille_auto_player_replies.py`, `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : T140B — Réponses automatiques joueur Nico/Maya/Inès J1 V2 ou playtest runtime local.
+Enchaînements automatiques Sarah/Camille plus naturels. Validations OK : `test_t137_sarah_camille_entry_variants.py`, `test_t140a_bis_sarah_camille_auto_player_replies.py`, `tools/validate_j1_v2_experimental.py`. Suite T140A-quater exécutée ci-dessous.
+
+T140A-quater — Remplacer les textes Sarah/Camille par une version plus naturelle
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Remplacements exacts appliqués depuis les documents `proposition_reecriture_sarah_j1_v2.md` et `proposition_reecriture_camille_j1_v2.md`. Seuls les champs `text` ciblés ont été modifiés dans `sarah_j1_v2_experimental.json` et `camille_j1_v2_experimental.json`. Aucun `id`, `type`, `sender`, `delay`, `next`, effect, flag, choice, `entry_variants`, `start_node` ou branche modifié. Sarah est plus simple/concrète/domestique ; Camille plus naturelle, précise et incisive.
+
+Livrable :
+Dialogue Sarah/Camille J1 V2 naturalisé au niveau texte uniquement. Validations OK : `test_t137_sarah_camille_entry_variants.py`, `test_t140a_bis_sarah_camille_auto_player_replies.py`, `tools/validate_j1_v2_experimental.py`. Vérification diff OK : uniquement lignes `text` changées dans les deux JSON ciblés. Prochaine étape recommandée : playtest runtime local Sarah/Camille J1 V2.
 
 ---
 

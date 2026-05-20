@@ -27,7 +27,7 @@
       "id": "j1_01_sarah_003",
       "type": "message",
       "sender": "sarah",
-      "text": "Mais hier, quand t’es revenu, j’ai eu l’impression que t’étais encore dehors.",
+      "text": "Mais hier, quand t’es revenu, t’étais bizarre.",
       "delay": 45,
       "next": "j1_01_sarah_004"
     },
@@ -35,7 +35,7 @@
       "id": "j1_01_sarah_004",
       "type": "message",
       "sender": "sarah",
-      "text": "Je sais pas comment le dire autrement.",
+      "text": "Pas juste fatigué. Ailleurs.",
       "delay": 35,
       "next": "j1_01_sarah_auto_player_default_002"
     },
@@ -43,7 +43,7 @@
       "id": "j1_01_sarah_005",
       "type": "message",
       "sender": "sarah",
-      "text": "Tu étais où, exactement ?",
+      "text": "Alors commence simple. Tu étais où, exactement ?",
       "delay": 30,
       "next": "j1_01_choice_version_sarah"
     },
@@ -59,7 +59,7 @@
       "id": "j1_01_sarah_entry_first_reply_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Je suis blessée, mais je préfère qu’on parle avant que ça fasse trop de bruit dans ma tête.",
+      "text": "Alors réponds-moi vraiment. Hier, quand t’es revenu, j’ai eu l’impression que t’étais plus tout à fait avec moi.",
       "delay": 35,
       "next": "j1_01_choice_version_sarah"
     },
@@ -67,7 +67,7 @@
       "id": "j1_01_sarah_entry_after_camille_001",
       "type": "message",
       "sender": "sarah",
-      "text": "Je vois que tu as mis un moment à revenir vers moi.",
+      "text": "J’ai attendu un peu.",
       "delay": 0,
       "next": "j1_01_sarah_auto_player_after_camille_001"
     },
@@ -75,7 +75,7 @@
       "id": "j1_01_sarah_entry_after_camille_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Je ne sais pas ce que tu as géré avant, et je ne veux pas inventer. Mais là, moi aussi j’ai besoin d’une phrase claire.",
+      "text": "Je peux entendre ça. Mais j’ai besoin que tu me parles, pas que tu disparaisses dans le silence.",
       "delay": 45,
       "next": "j1_01_choice_version_sarah"
     },
@@ -83,7 +83,7 @@
       "id": "j1_01_sarah_entry_after_nico_001",
       "type": "message",
       "sender": "sarah",
-      "text": "J’ai l’impression que Nico est encore au milieu de l’histoire.",
+      "text": "Nico m’a donné une réponse hier, mais elle tenait pas beaucoup.",
       "delay": 0,
       "next": "j1_01_sarah_entry_after_nico_002"
     },
@@ -91,7 +91,7 @@
       "id": "j1_01_sarah_entry_after_nico_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Je ne sais pas ce qu’il sait ni ce qu’il couvre. Je veux juste ta version à toi.",
+      "text": "Je veux pas comparer les versions. Je veux juste entendre la tienne.",
       "delay": 40,
       "next": "j1_01_choice_version_sarah"
     },
@@ -99,7 +99,7 @@
       "id": "j1_01_sarah_entry_late_001",
       "type": "message",
       "sender": "sarah",
-      "text": "Je vais faire simple, parce que sinon je vais me protéger en me taisant.",
+      "text": "Je vais te le demander simplement.",
       "delay": 0,
       "next": "j1_01_sarah_entry_late_002"
     },
@@ -107,7 +107,7 @@
       "id": "j1_01_sarah_entry_late_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Hier tu étais loin. Ce matin aussi, un peu. Tu étais où, exactement ?",
+      "text": "Hier tu étais loin. Ce matin aussi. Tu étais où, exactement ?",
       "delay": 40,
       "next": "j1_01_choice_version_sarah"
     },
@@ -123,7 +123,7 @@
       "id": "j1_01_sarah_auto_player_default_002",
       "type": "message",
       "sender": "player",
-      "text": "Je sais.",
+      "text": "Je sais pas quoi dire.",
       "delay": 0,
       "next": "j1_01_sarah_005"
     },

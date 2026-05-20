@@ -19,7 +19,7 @@
       "id": "j1_02_camille_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je crois que tu sais très bien ce que je veux dire.",
+      "text": "Tu aimerais que je dise non.",
       "delay": 35,
       "next": "j1_02_camille_003"
     },
@@ -27,7 +27,7 @@
       "id": "j1_02_camille_003",
       "type": "message",
       "sender": "camille",
-      "text": "Et là, ton “tu crois ?” fait déjà un petit détour.",
+      "text": "Mais je pense que tu sais déjà.",
       "delay": 35,
       "next": "j1_02_camille_004"
     },
@@ -51,7 +51,7 @@
       "id": "j1_02_camille_entry_first_reply_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je ne vais pas faire semblant que le timing ne compte pas. Je ne vais pas non plus appeler ça une preuve de courage.",
+      "text": "Oui. Ça, j’avais compris. Ce que je ne sais pas, c’est ce que tu vas en faire.",
       "delay": 40,
       "next": "j1_02_choice_camille_dehors"
     },
@@ -59,7 +59,7 @@
       "id": "j1_02_camille_entry_after_sarah_001",
       "type": "message",
       "sender": "camille",
-      "text": "Tu as l’air de marcher sur du verre ce matin.",
+      "text": "Tu as l’air prudent ce matin.",
       "delay": 0,
       "next": "j1_02_camille_auto_player_after_sarah_001"
     },
@@ -67,7 +67,7 @@
       "id": "j1_02_camille_entry_after_sarah_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je suppose que tu as essayé de tenir la maison debout avant de me répondre. Je ne sais pas si ça rend hier plus propre.",
+      "text": "Je sais. Mais “pas simple”, ça peut vite devenir une façon élégante de ne rien dire.",
       "delay": 45,
       "next": "j1_02_choice_camille_dehors"
     },
@@ -75,7 +75,7 @@
       "id": "j1_02_camille_entry_late_001",
       "type": "message",
       "sender": "camille",
-      "text": "Le silence répond aussi, tu sais.",
+      "text": "Tu as laissé passer du temps.",
       "delay": 0,
       "next": "j1_02_camille_entry_late_002"
     },
@@ -83,7 +83,7 @@
       "id": "j1_02_camille_entry_late_002",
       "type": "message",
       "sender": "camille",
-      "text": "Pas toujours avec la bonne phrase, mais avec une direction assez lisible.",
+      "text": "Je vais essayer de ne pas lire tout un roman dedans. Mais je note quand même.",
       "delay": 35,
       "next": "j1_02_choice_camille_dehors"
     },
@@ -91,7 +91,7 @@
       "id": "j1_02_camille_entry_after_nico_001",
       "type": "message",
       "sender": "camille",
-      "text": "J’ai l’impression que tu cherches la version qui tient le mieux debout.",
+      "text": "Tu as l’air de chercher une phrase qui ne casse rien.",
       "delay": 0,
       "next": "j1_02_camille_entry_after_nico_002"
     },
@@ -99,7 +99,7 @@
       "id": "j1_02_camille_entry_after_nico_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je ne sais pas ce que Nico a dans l’histoire. Je sais juste que dehors, ce n’était pas neutre.",
+      "text": "Je ne sais pas à qui tu l’as déjà racontée. Je sais juste que dehors, ce n’était pas neutre.",
       "delay": 45,
       "next": "j1_02_choice_camille_dehors"
     },
