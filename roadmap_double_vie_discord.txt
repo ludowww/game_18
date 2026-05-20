@@ -892,7 +892,15 @@ Statut : DONE
 Sortie : Textes des variantes d’entrée J1 V2 corrigés pour retirer les formulations où les personnages semblaient savoir qu’ils étaient ouverts “en premier”. Corrections ciblées uniquement dans les textes visibles de Sarah, Camille, Nico, Maya et Inès : remplacement par des perceptions de réponse rapide, timing, délai ou ton. Aucun `id`, `entry_variants`, `conditions`, `start_node`, convergence ou structure JSON modifié. Garde-fous respectés : pas d’omniscience, Maya non enquêtrice, Nico non conseiller moral permanent, Inès non sexualisée.
 
 Livrable :
-Variantes d’entrée J1 V2 non-méta. Validations OK : T136, T137, T138 + `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : playtest runtime Godot local des ouvertures J1 V2.
+Variantes d’entrée J1 V2 non-méta. Validations OK : T136, T137, T138 + `tools/validate_j1_v2_experimental.py`. Suite T140A-bis exécutée ci-dessous.
+
+T140A-bis — Ajouter des réponses automatiques du joueur dans Sarah + Camille J1 V2
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Réponses automatiques neutres du joueur ajoutées avant les choix centraux dans `sarah_j1_v2_experimental.json` et `camille_j1_v2_experimental.json`, sans modifier les ids de choix, effects, flags, `entry_variants`, `start_node` ni branches après choix. Sarah gagne des liaisons courtes (`Oui. Je viens de voir ton message.`, `Je savais pas quoi répondre.`, `Je voulais pas te laisser attendre.`) sur default/first_reply/after_camille. Camille gagne des liaisons minimales (`Tu crois ?`, `J’ai vu ton message.`, `C’est pas simple.`) sur default/first_reply/after_sarah. Tous les chemins convergent toujours vers `j1_01_choice_version_sarah` ou `j1_02_choice_camille_dehors`.
+
+Livrable :
+Conversation Sarah/Camille J1 V2 moins mécanique avant les choix. Test ajouté : `test_t140a_bis_sarah_camille_auto_player_replies.py`. Validations OK : T136, T137, T138, T139, T140A-bis + `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : T140B — Ajouter réponses automatiques joueur Nico/Maya/Inès J1 V2 ou playtest runtime local.
 
 ---
 

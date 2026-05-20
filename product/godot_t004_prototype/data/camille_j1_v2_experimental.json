@@ -13,7 +13,7 @@
       "sender": "camille",
       "text": "Je crois qu’on a été moins discrets qu’on pensait.",
       "delay": 0,
-      "next": "j1_02_camille_002"
+      "next": "j1_02_camille_auto_player_default_001"
     },
     {
       "id": "j1_02_camille_002",
@@ -45,7 +45,7 @@
       "sender": "camille",
       "text": "Tu réponds vite.",
       "delay": 0,
-      "next": "j1_02_camille_entry_first_reply_002"
+      "next": "j1_02_camille_auto_player_first_reply_001"
     },
     {
       "id": "j1_02_camille_entry_first_reply_002",
@@ -61,7 +61,7 @@
       "sender": "camille",
       "text": "Tu as l’air de marcher sur du verre ce matin.",
       "delay": 0,
-      "next": "j1_02_camille_entry_after_sarah_002"
+      "next": "j1_02_camille_auto_player_after_sarah_001"
     },
     {
       "id": "j1_02_camille_entry_after_sarah_002",
@@ -102,6 +102,30 @@
       "text": "Je ne sais pas ce que Nico a dans l’histoire. Je sais juste que dehors, ce n’était pas neutre.",
       "delay": 45,
       "next": "j1_02_choice_camille_dehors"
+    },
+    {
+      "id": "j1_02_camille_auto_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu crois ?",
+      "delay": 0,
+      "next": "j1_02_camille_002"
+    },
+    {
+      "id": "j1_02_camille_auto_player_first_reply_001",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai vu ton message.",
+      "delay": 0,
+      "next": "j1_02_camille_entry_first_reply_002"
+    },
+    {
+      "id": "j1_02_camille_auto_player_after_sarah_001",
+      "type": "message",
+      "sender": "player",
+      "text": "C’est pas simple.",
+      "delay": 0,
+      "next": "j1_02_camille_entry_after_sarah_002"
     },
     {
       "id": "j1_02_choice_camille_dehors",
