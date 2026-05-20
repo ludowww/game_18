@@ -824,4 +824,12 @@ Statut : DONE
 Sortie : Remplacements exacts appliqués depuis les documents `proposition_reecriture_nico_j1_v2.md`, `proposition_reecriture_maya_j1_v2.md` et `proposition_reecriture_ines_j1_v2.md`. Seuls les champs `text` ciblés ont été modifiés dans `nico_j1_v2_experimental.json`, `maya_j1_v2_experimental.json` et `ines_j1_v2_experimental.json`, incluant les textes de nodes, choix et fins système proposés. Aucun `id`, `type`, `sender`, `delay`, `next`, effect, flag, `entry_variants`, `start_node` ou branche modifié. Nico devient plus oral/loyal sans clown permanent, Maya plus sociale/piquante sans omniscience, Inès plus douce/flottante sans sexualisation.
 
 Livrable :
-Dialogues Nico/Maya/Inès J1 V2 naturalisés au niveau texte uniquement. Validations OK : `test_t138_nico_maya_ines_entry_variants.py`, `tools/validate_j1_v2_experimental.py`. Vérification diff OK : uniquement changements de lignes `text` autorisés dans les trois JSON ciblés. Prochaine étape recommandée : playtest runtime local J1 V2 complet.
+Dialogues Nico/Maya/Inès J1 V2 naturalisés au niveau texte uniquement. Validations OK : `test_t138_nico_maya_ines_entry_variants.py`, `tools/validate_j1_v2_experimental.py`. Vérification diff OK : uniquement changements de lignes `text` autorisés dans les trois JSON ciblés. Suite T140C exécutée ci-dessous.
+
+T140C — Naturaliser Sarah repas + Nico respiration J1 V2
+Thread : Dialogues / Roadmap
+Statut : DONE
+Sortie : Remplacements exacts appliqués depuis `proposition_reecriture_sarah_repas_j1_v2.md` et `proposition_reecriture_nico_respiration_j1_v2.md`. Seuls les champs `text` ciblés ont été modifiés dans `sarah_meal_j1_v2_experimental.json` et `nico_respiration_j1_v2_experimental.json`, incluant messages d’entrée, choix et fins système. Aucun `id`, `type`, `sender`, `delay`, `next`, effect, flag, choice structure ou `start_node` modifié. Option d’ajout de node automatique volontairement non appliquée pour rester en remplacement texte uniquement.
+
+Livrable :
+Scènes respiration Sarah repas / Nico respiration J1 V2 naturalisées au niveau texte uniquement. Validation OK : `tools/validate_j1_v2_experimental.py`. Vérification diff OK : uniquement changements de lignes `text` autorisés dans les deux JSON ciblés. Prochaine étape recommandée : playtest runtime local J1 V2 complet.
