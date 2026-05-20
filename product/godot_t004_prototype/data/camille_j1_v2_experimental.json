@@ -474,27 +474,6 @@
   ],
   "entry_variants": [
     {
-      "id": "first_reply_camille",
-      "conditions": {
-        "flags": [
-          "first_reply_camille"
-        ]
-      },
-      "start_node": "j1_02_camille_entry_first_reply_001"
-    },
-    {
-      "id": "after_sarah_first",
-      "conditions": {
-        "flags": [
-          "first_reply_sarah"
-        ],
-        "not_flags": [
-          "first_reply_camille"
-        ]
-      },
-      "start_node": "j1_02_camille_entry_after_sarah_001"
-    },
-    {
       "id": "late_or_left_open",
       "conditions": {
         "flags": [
@@ -515,6 +494,27 @@
         ]
       },
       "start_node": "j1_02_camille_entry_after_nico_001"
+    },
+    {
+      "id": "after_sarah_first",
+      "conditions": {
+        "flags": [
+          "first_reply_sarah"
+        ],
+        "not_flags": [
+          "first_reply_camille"
+        ]
+      },
+      "start_node": "j1_02_camille_entry_after_sarah_001"
+    },
+    {
+      "id": "first_reply_camille",
+      "conditions": {
+        "flags": [
+          "first_reply_camille"
+        ]
+      },
+      "start_node": "j1_02_camille_entry_first_reply_001"
     },
     {
       "id": "default",

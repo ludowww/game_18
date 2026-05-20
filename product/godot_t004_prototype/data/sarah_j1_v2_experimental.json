@@ -421,15 +421,6 @@
   ],
   "entry_variants": [
     {
-      "id": "first_reply_sarah",
-      "conditions": {
-        "flags": [
-          "first_reply_sarah"
-        ]
-      },
-      "start_node": "j1_01_sarah_entry_first_reply_001"
-    },
-    {
       "id": "after_camille_first",
       "conditions": {
         "flags": [
@@ -462,6 +453,15 @@
         ]
       },
       "start_node": "j1_01_sarah_entry_late_001"
+    },
+    {
+      "id": "first_reply_sarah",
+      "conditions": {
+        "flags": [
+          "first_reply_sarah"
+        ]
+      },
+      "start_node": "j1_01_sarah_entry_first_reply_001"
     },
     {
       "id": "default",

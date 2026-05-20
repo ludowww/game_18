@@ -8,24 +8,24 @@ EXPECTED = {
     "sarah_j1_v2_experimental.json": {
         "default_start": "j1_01_sarah_001",
         "choice_node": "j1_01_choice_version_sarah",
-        "variant_ids": {
-            "default",
-            "first_reply_sarah",
+        "variant_ids": [
             "after_camille_first",
             "after_nico_first",
             "late_or_delayed",
-        },
+            "first_reply_sarah",
+            "default",
+        ],
     },
     "camille_j1_v2_experimental.json": {
         "default_start": "j1_02_camille_001",
         "choice_node": "j1_02_choice_camille_dehors",
-        "variant_ids": {
-            "default",
-            "first_reply_camille",
-            "after_sarah_first",
+        "variant_ids": [
             "late_or_left_open",
             "after_nico_first",
-        },
+            "after_sarah_first",
+            "first_reply_camille",
+            "default",
+        ],
     },
 }
 
@@ -55,7 +55,7 @@ def test_t137_sarah_and_camille_jsons_define_expected_entry_variants() -> None:
         data = load_json(filename)
         variants = data.get("entry_variants")
         assert isinstance(variants, list)
-        assert {variant.get("id") for variant in variants} == expected["variant_ids"]
+        assert [variant.get("id") for variant in variants] == expected["variant_ids"]
 
 
 def test_t137_each_entry_variant_has_conditions_and_existing_start_node() -> None:
@@ -94,3 +94,4 @@ if __name__ == "__main__":
     test_t137_default_variant_points_to_current_start_node()
     test_t137_all_entry_variants_converge_to_existing_choice_nodes()
     print("T137 J1 V2 Sarah/Camille entry variants tests OK")
+
