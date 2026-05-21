@@ -841,3 +841,11 @@ Sortie : Bulles runtime nettoyées sans préfixe `Nom ·`; garde runtime ajouté
 
 Livrable :
 UX conversationnelle J1 V2 nettoyée avant écriture finale. Validations OK : `test_t136_entry_variants_runtime.py`, `test_t137_sarah_camille_entry_variants.py`, `test_t138_nico_maya_ines_entry_variants.py`, `test_t140a_bis_sarah_camille_auto_player_replies.py`, `test_t141_j1_v2_conversation_ux.py`, `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : T142 — remplacer Réveil par écran Messages + popup première ouverture.
+
+T142 — Refonte UX du Réveil J1 V2 : première ouverture depuis Messages
+Thread : Roadmap
+Statut : DONE
+Sortie : Le mode J1 V2 démarre désormais depuis l’écran Messages : les cinq conversations cœur sont disponibles avec badge `nouveau` et aperçu initial, `j1_00_reveil_v2` reste dans le code comme archive/fallback mais n’est plus exposée comme conversation principale. Ajout d’un encart non bloquant expliquant que la première conversation ouverte donne le ton. La première ouverture appelle `handle_j1_v2_first_open_from_messages(...)`, pose le flag `first_reply_*` correspondant et les `delayed_reply_*` des autres conversations sans tunnel bloquant. Les scènes Sarah repas / Nico respiration restent verrouillées jusqu’à complétion des cinq scènes cœur. Tests T129/T132/T139 adaptés au nouveau comportement et test T142 ajouté.
+
+Livrable :
+J1 V2 démarre depuis la liste Messages, sans menu systémique “À qui répondre en premier ?”. Validations OK : tous les `tests/test_*.py` du prototype + `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : playtest Godot local Reset → Mode J1 V2 ON sur les cinq premières ouvertures possibles.

@@ -17,10 +17,12 @@ def function_body(text: str, name: str) -> str:
     return text[start:start + 5 + next_func]
 
 
-def test_t139_choice_press_displays_player_choice_before_advancing_to_next_node() -> None:
+def test_t139_choice_press_displays_player_choice_before_advancing_to_next_node_when_not_duplicate() -> None:
     body = function_body(source(), "_on_choice_pressed")
+    assert 'var next_id := str(choice.get("next", ""))' in body
+    assert 'if not _choice_text_is_repeated_by_next_player_node(choice, next_id):' in body
     assert 'await _add_bubble("player", str(choice.get("text", "")))' in body
-    assert body.index('await _add_bubble("player", str(choice.get("text", "")))') < body.index('_advance_to(str(choice.get("next", "")), true)')
+    assert body.index('await _add_bubble("player", str(choice.get("text", "")))') < body.index('_advance_to(next_id, true)')
 
 
 def test_t139_choice_press_records_choice_before_player_message_for_state_flags() -> None:
@@ -30,6 +32,6 @@ def test_t139_choice_press_records_choice_before_player_message_for_state_flags(
 
 
 if __name__ == "__main__":
-    test_t139_choice_press_displays_player_choice_before_advancing_to_next_node()
+    test_t139_choice_press_displays_player_choice_before_advancing_to_next_node_when_not_duplicate()
     test_t139_choice_press_records_choice_before_player_message_for_state_flags()
     print("T139 choice response before system end tests OK")

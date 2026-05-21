@@ -85,6 +85,9 @@ func _build_ui() -> void:
 
 	header_stack.add_child(_make_header_debug_controls())
 
+	if ConversationState.j1_v2_should_show_first_open_note():
+		root.add_child(_make_j1_v2_first_open_note())
+
 	if ConversationState.is_day_transition_available():
 		root.add_child(_make_day_transition_button())
 
@@ -125,6 +128,30 @@ func _build_ui() -> void:
 					ConversationState.archived_preview_text(conversation_id),
 					bool(state.get("available", false))
 				))
+
+func _make_j1_v2_first_open_note() -> PanelContainer:
+	var card := PanelContainer.new()
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color("24202a")
+	style.border_color = Color("d58a35")
+	style.set_border_width_all(1)
+	style.corner_radius_top_left = 12
+	style.corner_radius_top_right = 12
+	style.corner_radius_bottom_left = 12
+	style.corner_radius_bottom_right = 12
+	style.content_margin_left = 12
+	style.content_margin_right = 12
+	style.content_margin_top = 10
+	style.content_margin_bottom = 10
+	card.add_theme_stylebox_override("panel", style)
+
+	var label := Label.new()
+	label.text = "Ton téléphone s’allume. Plusieurs conversations attendent. La première que tu ouvres donnera le ton de la journée."
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.add_theme_font_size_override("font_size", 13)
+	label.add_theme_color_override("font_color", Color("f1d6a8"))
+	card.add_child(label)
+	return card
 
 func _make_archives_toggle(count: int) -> Button:
 	var button := Button.new()

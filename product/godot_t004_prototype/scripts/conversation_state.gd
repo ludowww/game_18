@@ -32,6 +32,28 @@ const V2_VARIABLE_DEFAULTS := {
 	"risque_exposition": 25,
 	"fatigue_emotionnelle": 20
 }
+const J1_V2_CORE_CONVERSATIONS := ["sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2"]
+const J1_V2_FIRST_OPEN_FLAGS := {
+	"sarah_j1_v2": "first_reply_sarah",
+	"camille_j1_v2": "first_reply_camille",
+	"nico_j1_v2": "first_reply_nico",
+	"maya_j1_v2": "first_reply_maya",
+	"ines_j1_v2": "first_reply_ines"
+}
+const J1_V2_DELAYED_REPLY_FLAGS := {
+	"sarah_j1_v2": "delayed_reply_sarah_j1",
+	"camille_j1_v2": "delayed_reply_camille_j1",
+	"nico_j1_v2": "delayed_reply_nico_j1",
+	"maya_j1_v2": "delayed_reply_maya_j1",
+	"ines_j1_v2": "delayed_reply_ines_j1"
+}
+const J1_V2_INITIAL_PREVIEWS := {
+	"sarah_j1_v2": "T’es réveillé ?",
+	"camille_j1_v2": "Je crois qu’on a été moins discrets qu’on pensait.",
+	"nico_j1_v2": "T’es rentré comment ?",
+	"maya_j1_v2": "tu dors encore ?",
+	"ines_j1_v2": "Je peux te parler ?"
+}
 const J1_V2_FIRST_REPLY_CHOICES := {
 	"j1_00_reply_sarah_first": "sarah_j1_v2",
 	"j1_00_reply_camille_first": "camille_j1_v2",
@@ -59,6 +81,9 @@ func set_test_fast_mode_enabled(enabled: bool) -> void:
 
 func set_experimental_j1_v2_enabled(enabled: bool) -> void:
 	experimental_j1_v2_enabled = enabled
+	if experimental_j1_v2_enabled and current_day == 1:
+		_unlock_j1_v2_core_from_messages()
+	save_progression()
 
 func _default_global_game_state() -> Dictionary:
 	var state: Dictionary = {
@@ -432,9 +457,11 @@ func conversation_ids() -> Array:
 
 func active_conversation_ids() -> Array:
 	var ids: Array = []
-	var forced_j1_v2_id: String = _j1_v2_forced_first_reply_conversation_id()
-	for id in conversation_ids():
-		if forced_j1_v2_id != "" and id != forced_j1_v2_id:
+	if experimental_j1_v2_enabled and current_day == 1:
+		_unlock_j1_v2_core_from_messages()
+	var source_ids: Array = _j1_v2_message_list_core_ids() if experimental_j1_v2_enabled and current_day == 1 else conversation_ids()
+	for id in source_ids:
+		if experimental_j1_v2_enabled and current_day == 1 and id == "j1_00_reveil_v2":
 			continue
 		var state: Dictionary = conversations[id]
 		if experimental_j1_v2_enabled and current_day == 1 and not bool(state.get("experimental", false)):
@@ -479,12 +506,55 @@ func quick_switch_new_conversation_id() -> String:
 	return ""
 
 func set_current_conversation(id: String) -> void:
-	var forced_j1_v2_id: String = _j1_v2_forced_first_reply_conversation_id()
-	if forced_j1_v2_id != "" and id != forced_j1_v2_id:
-		return
 	if conversations.has(id):
+		handle_j1_v2_first_open_from_messages(id)
 		current_conversation_id = id
 		save_progression()
+
+func handle_j1_v2_first_open_from_messages(conversation_id: String) -> void:
+	if not experimental_j1_v2_enabled or current_day != 1:
+		return
+	if not J1_V2_FIRST_OPEN_FLAGS.has(conversation_id):
+		return
+	if _j1_v2_first_open_already_chosen():
+		return
+	var flags: Array = [J1_V2_FIRST_OPEN_FLAGS[conversation_id]]
+	for other_id in J1_V2_CORE_CONVERSATIONS:
+		if other_id == conversation_id:
+			continue
+		flags.append(J1_V2_DELAYED_REPLY_FLAGS[other_id])
+	apply_global_effects({"flags": flags})
+
+func _j1_v2_first_open_already_chosen() -> bool:
+	for flag in J1_V2_FIRST_OPEN_FLAGS.values():
+		if has_global_flag(str(flag)):
+			return true
+	return false
+
+func _unlock_j1_v2_core_from_messages() -> void:
+	if conversations.has("sarah_j1_v2"):
+		conversations["sarah_j1_v2"]["available"] = true
+		if not bool(conversations["sarah_j1_v2"].get("started", false)) and not bool(conversations["sarah_j1_v2"].get("has_new", false)):
+			mark_conversation_new("sarah_j1_v2", str(J1_V2_INITIAL_PREVIEWS["sarah_j1_v2"]))
+	if conversations.has("camille_j1_v2"):
+		conversations["camille_j1_v2"]["available"] = true
+		if not bool(conversations["camille_j1_v2"].get("started", false)) and not bool(conversations["camille_j1_v2"].get("has_new", false)):
+			mark_conversation_new("camille_j1_v2", str(J1_V2_INITIAL_PREVIEWS["camille_j1_v2"]))
+	if conversations.has("nico_j1_v2"):
+		conversations["nico_j1_v2"]["available"] = true
+		if not bool(conversations["nico_j1_v2"].get("started", false)) and not bool(conversations["nico_j1_v2"].get("has_new", false)):
+			mark_conversation_new("nico_j1_v2", str(J1_V2_INITIAL_PREVIEWS["nico_j1_v2"]))
+	if conversations.has("maya_j1_v2"):
+		conversations["maya_j1_v2"]["available"] = true
+		if not bool(conversations["maya_j1_v2"].get("started", false)) and not bool(conversations["maya_j1_v2"].get("has_new", false)):
+			mark_conversation_new("maya_j1_v2", str(J1_V2_INITIAL_PREVIEWS["maya_j1_v2"]))
+	if conversations.has("ines_j1_v2"):
+		conversations["ines_j1_v2"]["available"] = true
+		if not bool(conversations["ines_j1_v2"].get("started", false)) and not bool(conversations["ines_j1_v2"].get("has_new", false)):
+			mark_conversation_new("ines_j1_v2", str(J1_V2_INITIAL_PREVIEWS["ines_j1_v2"]))
+
+func _j1_v2_message_list_core_ids() -> Array:
+	return J1_V2_CORE_CONVERSATIONS.duplicate()
 
 func _j1_v2_forced_first_reply_conversation_id() -> String:
 	if not experimental_j1_v2_enabled or current_day != 1:
@@ -507,6 +577,9 @@ func _j1_v2_forced_first_reply_conversation_id() -> String:
 		if not bool(target_state.get("started", false)):
 			return target_id
 	return ""
+
+func j1_v2_should_show_first_open_note() -> bool:
+	return experimental_j1_v2_enabled and current_day == 1 and not _j1_v2_first_open_already_chosen()
 
 func current() -> Dictionary:
 	return conversations[current_conversation_id]
