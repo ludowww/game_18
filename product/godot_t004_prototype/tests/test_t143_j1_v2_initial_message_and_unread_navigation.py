@@ -35,14 +35,14 @@ def test_t143_conversation_screen_injects_initial_message_before_entry_variant()
     source = text(SCREEN)
     ready = body(source, "_ready", "_build_ui")
     assert "var start_node := _resolved_start_node()" in ready
-    assert "await _show_j1_v2_initial_message_if_needed(start_node)" in ready
-    assert ready.index("await _show_j1_v2_initial_message_if_needed(start_node)") < ready.index("_advance_to(start_node, true)")
-    assert "func _show_j1_v2_initial_message_if_needed(start_node: String) -> void:" in source
+    assert "await _show_j1_v2_initial_exchange_if_needed(start_node)" in ready
+    assert ready.index("await _show_j1_v2_initial_exchange_if_needed(start_node)") < ready.index("_advance_to(start_node, true)")
+    assert "func _show_j1_v2_initial_exchange_if_needed(start_node: String) -> void:" in source
 
 
 def test_t143_initial_message_injection_has_duplicate_guards() -> None:
     source = text(SCREEN)
-    injection = body(source, "_show_j1_v2_initial_message_if_needed", "_node_text_matches_initial_message")
+    injection = body(source, "_show_j1_v2_initial_exchange_if_needed", "_node_text_matches_initial_message")
     assert "ConversationState.j1_v2_initial_message_for" in injection
     assert "ConversationState.current_has_message_text(initial_message)" in injection
     assert "_node_text_matches_initial_message(start_node, initial_message)" in injection

@@ -55,6 +55,13 @@ const J1_V2_INITIAL_MESSAGES := {
 	"ines_j1_v2": "Je peux te parler ?"
 }
 const J1_V2_INITIAL_PREVIEWS := J1_V2_INITIAL_MESSAGES
+const J1_V2_INITIAL_PLAYER_REPLIES := {
+	"sarah_j1_v2": "Oui. Je viens de voir ton message.",
+	"camille_j1_v2": "Tu crois ?",
+	"nico_j1_v2": "À pied. Pourquoi ?",
+	"maya_j1_v2": "non. pourquoi ?",
+	"ines_j1_v2": "Oui, dis-moi."
+}
 const J1_V2_FIRST_REPLY_CHOICES := {
 	"j1_00_reply_sarah_first": "sarah_j1_v2",
 	"j1_00_reply_camille_first": "camille_j1_v2",
@@ -592,6 +599,11 @@ func j1_v2_initial_message_for(conversation_id: String) -> String:
 	if not J1_V2_INITIAL_MESSAGES.has(conversation_id):
 		return ""
 	return str(J1_V2_INITIAL_MESSAGES[conversation_id])
+
+func j1_v2_initial_player_reply_for(conversation_id: String) -> String:
+	if not J1_V2_INITIAL_PLAYER_REPLIES.has(conversation_id):
+		return ""
+	return str(J1_V2_INITIAL_PLAYER_REPLIES[conversation_id])
 
 func current_has_message_text(text: String) -> bool:
 	var clean_text := text.strip_edges()

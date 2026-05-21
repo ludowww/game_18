@@ -966,6 +966,16 @@ Continuité aperçu Messages → premier message du fil rétablie pour Sarah/Cam
 
 ---
 
+T144 — Ajouter la première réponse joueur après le message initial J1 V2
+Thread : Roadmap
+Statut : DONE
+Sortie : Ajout du mapping `J1_V2_INITIAL_PLAYER_REPLIES` et de `j1_v2_initial_player_reply_for(...)`. L’injection initiale devient un échange complet via `_show_j1_v2_initial_exchange_if_needed(...)` : message initial contact, réponse automatique joueur neutre, puis start node résolu par `entry_variants`. Garde anti-duplication conservée pour le message contact et ajoutée pour la réponse joueur ; si le start node contient déjà le message initial, l’échange n’est pas réinjecté. Navigation `Messages non lus...` conservée vers l’écran Messages. Test T144 ajouté et test T143 adapté au nouvel échange initial.
+
+Livrable :
+Ouverture J1 V2 depuis Messages rétablie en séquence naturelle contact → joueur → variante d’entrée pour Sarah/Camille/Nico/Maya/Inès. Validations OK : `test_t141`, `test_t142`, `test_t143`, `test_t144`, tous les `tests/test_*.py`, et `tools/validate_j1_v2_experimental.py`.
+
+---
+
 Bloc 5/8 — Phase 2
 
 PHASE 2 — PROTOTYPE TECHNIQUE

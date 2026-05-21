@@ -69,7 +69,7 @@ func _ready() -> void:
 	else:
 		ConversationState.current()["started"] = true
 		var start_node := _resolved_start_node()
-		await _show_j1_v2_initial_message_if_needed(start_node)
+		await _show_j1_v2_initial_exchange_if_needed(start_node)
 		_advance_to(start_node, true)
 
 func _build_ui() -> void:
@@ -299,15 +299,17 @@ func _resolved_start_node() -> String:
 			return str(variant.get("start_node", conversation.get("start_node", "")))
 	return ConversationState.current_block_start_node()
 
-func _show_j1_v2_initial_message_if_needed(start_node: String) -> void:
+func _show_j1_v2_initial_exchange_if_needed(start_node: String) -> void:
 	var initial_message := ConversationState.j1_v2_initial_message_for(ConversationState.current_conversation_id)
-	if initial_message == "":
-		return
-	if ConversationState.current_has_message_text(initial_message):
+	var player_reply := ConversationState.j1_v2_initial_player_reply_for(ConversationState.current_conversation_id)
+	if initial_message == "" or player_reply == "":
 		return
 	if _node_text_matches_initial_message(start_node, initial_message):
 		return
-	await _add_bubble(current_contact_id, initial_message)
+	if not ConversationState.current_has_message_text(initial_message):
+		await _add_bubble(current_contact_id, initial_message)
+	if not ConversationState.current_has_message_text(player_reply):
+		await _add_bubble("player", player_reply)
 
 func _node_text_matches_initial_message(node_id: String, initial_message: String) -> bool:
 	if node_id == "" or not nodes_by_id.has(node_id):
