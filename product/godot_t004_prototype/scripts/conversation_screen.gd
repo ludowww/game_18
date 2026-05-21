@@ -70,7 +70,8 @@ func _ready() -> void:
 		ConversationState.current()["started"] = true
 		var start_node := _resolved_start_node()
 		await _show_j1_v2_initial_exchange_if_needed(start_node)
-		_advance_to(start_node, true)
+		await get_tree().create_timer(_between_messages_delay_seconds()).timeout
+		_advance_to(start_node)
 
 func _build_ui() -> void:
 	var background := ColorRect.new()
@@ -308,6 +309,7 @@ func _show_j1_v2_initial_exchange_if_needed(start_node: String) -> void:
 		return
 	if not ConversationState.current_has_message_text(initial_message):
 		await _add_bubble(current_contact_id, initial_message)
+		await get_tree().create_timer(_between_messages_delay_seconds()).timeout
 	if not ConversationState.current_has_message_text(player_reply):
 		await _add_bubble("player", player_reply)
 

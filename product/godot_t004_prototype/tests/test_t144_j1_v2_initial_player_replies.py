@@ -37,7 +37,7 @@ def test_t144_screen_injects_initial_exchange_before_entry_variant_start_node() 
     assert "var start_node := _resolved_start_node()" in ready
     assert "await _show_j1_v2_initial_exchange_if_needed(start_node)" in ready
     assert "_show_j1_v2_initial_message_if_needed" not in ready
-    assert ready.index("await _show_j1_v2_initial_exchange_if_needed(start_node)") < ready.index("_advance_to(start_node, true)")
+    assert ready.index("await _show_j1_v2_initial_exchange_if_needed(start_node)") < ready.index("_advance_to(start_node)")
 
 
 def test_t144_initial_exchange_order_is_contact_message_then_player_reply() -> None:

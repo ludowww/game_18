@@ -36,7 +36,7 @@ def test_t143_conversation_screen_injects_initial_message_before_entry_variant()
     ready = body(source, "_ready", "_build_ui")
     assert "var start_node := _resolved_start_node()" in ready
     assert "await _show_j1_v2_initial_exchange_if_needed(start_node)" in ready
-    assert ready.index("await _show_j1_v2_initial_exchange_if_needed(start_node)") < ready.index("_advance_to(start_node, true)")
+    assert ready.index("await _show_j1_v2_initial_exchange_if_needed(start_node)") < ready.index("_advance_to(start_node)")
     assert "func _show_j1_v2_initial_exchange_if_needed(start_node: String) -> void:" in source
 
 
