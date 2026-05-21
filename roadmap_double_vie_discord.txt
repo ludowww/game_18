@@ -936,6 +936,16 @@ Scènes respiration Sarah repas / Nico respiration J1 V2 naturalisées au niveau
 
 ---
 
+T141 — Nettoyer l’UX conversationnelle J1 V2 avant écriture finale
+Thread : Roadmap
+Statut : DONE
+Sortie : Bulles runtime nettoyées sans préfixe `Nom ·`; garde runtime ajoutée dans `_on_choice_pressed` pour ne pas afficher deux fois une réponse joueur quand le choix pointe vers un node `sender: "player"` au texte identique. Test T141 ajouté pour verrouiller : absence de préfixe, garde anti-doublon, convention `_auto_player_`, neutralité des auto-réponses et threading immédiat après message contact. Note de préparation refonte Réveil créée : `product/j1_v2_reveil_ux_refonte_t141.md`.
+
+Livrable :
+UX conversationnelle J1 V2 nettoyée avant écriture finale. Validations OK : `test_t136_entry_variants_runtime.py`, `test_t137_sarah_camille_entry_variants.py`, `test_t138_nico_maya_ines_entry_variants.py`, `test_t140a_bis_sarah_camille_auto_player_replies.py`, `test_t141_j1_v2_conversation_ux.py`, `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : T142 — remplacer Réveil par écran Messages + popup première ouverture.
+
+---
+
 Bloc 5/8 — Phase 2
 
 PHASE 2 — PROTOTYPE TECHNIQUE

@@ -449,8 +449,18 @@ func _on_choice_pressed(choice: Dictionary) -> void:
 	ConversationState.record_current_choice(str(choice.get("id", "")))
 	_apply_effects(choice.get("effects", {}))
 	_clear_choices()
-	await _add_bubble("player", str(choice.get("text", "")))
-	_advance_to(str(choice.get("next", "")), true)
+	var next_id := str(choice.get("next", ""))
+	if not _choice_text_is_repeated_by_next_player_node(choice, next_id):
+		await _add_bubble("player", str(choice.get("text", "")))
+	_advance_to(next_id, true)
+
+func _choice_text_is_repeated_by_next_player_node(choice: Dictionary, next_id: String) -> bool:
+	if next_id == "" or not nodes_by_id.has(next_id):
+		return false
+	var next_node: Dictionary = nodes_by_id[next_id]
+	if str(next_node.get("sender", "")) != "player":
+		return false
+	return str(next_node.get("text", "")).strip_edges() == str(choice.get("text", "")).strip_edges()
 
 func _lock_choice_buttons() -> void:
 	for child in choice_box.get_children():
@@ -500,7 +510,7 @@ func _add_bubble(sender: String, text: String, record_state: bool = true) -> voi
 	bubble.add_theme_stylebox_override("panel", style)
 
 	var label := Label.new()
-	label.text = _display_sender(sender) + text
+	label.text = text
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	label.add_theme_font_size_override("font_size", 16)
 	label.add_theme_color_override("font_color", Color("f1f1f5"))
