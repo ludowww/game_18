@@ -68,7 +68,9 @@ func _ready() -> void:
 			_advance_to(ConversationState.current_next_node())
 	else:
 		ConversationState.current()["started"] = true
-		_advance_to(_resolved_start_node(), true)
+		var start_node := _resolved_start_node()
+		await _show_j1_v2_initial_message_if_needed(start_node)
+		_advance_to(start_node, true)
 
 func _build_ui() -> void:
 	var background := ColorRect.new()
@@ -232,10 +234,12 @@ func _refresh_quick_switch_notification() -> void:
 
 func _make_quick_switch_notification(target_id: String) -> Button:
 	var button := Button.new()
-	var target_state: Dictionary = ConversationState.conversation(target_id)
-	var display_name: String = str(target_state.get("display_name", target_id))
-	button.text = "Nouveau message de " + display_name + " · Ouvrir"
-	button.tooltip_text = "Ouvrir cette conversation sans repasser par Messages"
+	var display_name: String = "Messages non lus..."
+	if target_id != "__unread_messages__":
+		var target_state: Dictionary = ConversationState.conversation(target_id)
+		display_name = "Nouveau message de " + str(target_state.get("display_name", target_id)) + " · Ouvrir"
+	button.text = display_name
+	button.tooltip_text = "Retourner à Messages pour choisir" if target_id == "__unread_messages__" else "Ouvrir cette conversation sans repasser par Messages"
 	button.custom_minimum_size = Vector2(0, 40)
 	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	button.focus_mode = Control.FOCUS_ALL
@@ -263,6 +267,9 @@ func _quick_switch_style(highlighted: bool) -> StyleBoxFlat:
 	return style
 
 func _open_quick_switch_conversation(target_id: String) -> void:
+	if target_id == "__unread_messages__":
+		get_tree().change_scene_to_file("res://scenes/conversation_list.tscn")
+		return
 	if target_id == "" or not ConversationState.conversations.has(target_id):
 		return
 	ConversationState.set_current_conversation(target_id)
@@ -291,6 +298,22 @@ func _resolved_start_node() -> String:
 		if _entry_variant_matches(variant):
 			return str(variant.get("start_node", conversation.get("start_node", "")))
 	return ConversationState.current_block_start_node()
+
+func _show_j1_v2_initial_message_if_needed(start_node: String) -> void:
+	var initial_message := ConversationState.j1_v2_initial_message_for(ConversationState.current_conversation_id)
+	if initial_message == "":
+		return
+	if ConversationState.current_has_message_text(initial_message):
+		return
+	if _node_text_matches_initial_message(start_node, initial_message):
+		return
+	await _add_bubble(current_contact_id, initial_message)
+
+func _node_text_matches_initial_message(node_id: String, initial_message: String) -> bool:
+	if node_id == "" or not nodes_by_id.has(node_id):
+		return false
+	var node: Dictionary = nodes_by_id[node_id]
+	return str(node.get("text", "")).strip_edges() == initial_message.strip_edges()
 
 func _entry_variant_matches(variant: Dictionary) -> bool:
 	var conditions: Dictionary = variant.get("conditions", {})

@@ -47,13 +47,14 @@ const J1_V2_DELAYED_REPLY_FLAGS := {
 	"maya_j1_v2": "delayed_reply_maya_j1",
 	"ines_j1_v2": "delayed_reply_ines_j1"
 }
-const J1_V2_INITIAL_PREVIEWS := {
+const J1_V2_INITIAL_MESSAGES := {
 	"sarah_j1_v2": "T’es réveillé ?",
 	"camille_j1_v2": "Je crois qu’on a été moins discrets qu’on pensait.",
 	"nico_j1_v2": "T’es rentré comment ?",
 	"maya_j1_v2": "tu dors encore ?",
 	"ines_j1_v2": "Je peux te parler ?"
 }
+const J1_V2_INITIAL_PREVIEWS := J1_V2_INITIAL_MESSAGES
 const J1_V2_FIRST_REPLY_CHOICES := {
 	"j1_00_reply_sarah_first": "sarah_j1_v2",
 	"j1_00_reply_camille_first": "camille_j1_v2",
@@ -493,7 +494,16 @@ func visible_conversation_ids() -> Array:
 	return active_conversation_ids()
 
 func quick_switch_new_conversation_id() -> String:
-	# T102 MVP: proposer une seule conversation active du jour courant, jamais une archive.
+	# T143: si plusieurs fils non lus existent, revenir à Messages plutôt que choisir à la place du joueur.
+	var unread_ids: Array = unread_conversation_ids_except_current()
+	if unread_ids.size() == 1:
+		return str(unread_ids[0])
+	if unread_ids.size() > 1:
+		return "__unread_messages__"
+	return ""
+
+func unread_conversation_ids_except_current() -> Array:
+	var ids: Array = []
 	for id in active_conversation_ids():
 		if id == current_conversation_id:
 			continue
@@ -502,8 +512,8 @@ func quick_switch_new_conversation_id() -> String:
 		var state: Dictionary = conversations[id]
 		if bool(state.get("done", false)):
 			continue
-		return id
-	return ""
+		ids.append(id)
+	return ids
 
 func set_current_conversation(id: String) -> void:
 	if conversations.has(id):
@@ -577,6 +587,18 @@ func _j1_v2_forced_first_reply_conversation_id() -> String:
 		if not bool(target_state.get("started", false)):
 			return target_id
 	return ""
+
+func j1_v2_initial_message_for(conversation_id: String) -> String:
+	if not J1_V2_INITIAL_MESSAGES.has(conversation_id):
+		return ""
+	return str(J1_V2_INITIAL_MESSAGES[conversation_id])
+
+func current_has_message_text(text: String) -> bool:
+	var clean_text := text.strip_edges()
+	for entry in current_messages():
+		if str(entry.get("text", "")).strip_edges() == clean_text:
+			return true
+	return false
 
 func j1_v2_should_show_first_open_note() -> bool:
 	return experimental_j1_v2_enabled and current_day == 1 and not _j1_v2_first_open_already_chosen()

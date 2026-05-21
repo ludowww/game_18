@@ -849,3 +849,11 @@ Sortie : Le mode J1 V2 démarre désormais depuis l’écran Messages : les cinq
 
 Livrable :
 J1 V2 démarre depuis la liste Messages, sans menu systémique “À qui répondre en premier ?”. Validations OK : tous les `tests/test_*.py` du prototype + `tools/validate_j1_v2_experimental.py`. Prochaine étape recommandée : playtest Godot local Reset → Mode J1 V2 ON sur les cinq premières ouvertures possibles.
+
+T143 — Corriger le premier message en conversation + navigation Messages non lus
+Thread : Roadmap
+Statut : DONE
+Sortie : Ajout d’un mapping dédié `J1_V2_INITIAL_MESSAGES` et de `j1_v2_initial_message_for(...)`. À la première ouverture d’une conversation cœur J1 V2, `conversation_screen.gd` affiche le message initial avant la variante d’entrée résolue, avec garde anti-duplication si le message existe déjà ou si le start node résolu le contient déjà. La navigation quick-switch ne choisit plus une conversation à la place du joueur quand plusieurs fils non lus existent : elle affiche `Messages non lus...` et renvoie vers `conversation_list.tscn`. Test T143 ajouté et T136 adapté au start node résolu stocké avant injection.
+
+Livrable :
+Continuité aperçu Messages → premier message du fil rétablie pour Sarah/Camille/Nico/Maya/Inès J1 V2, et navigation non-lue rendue neutre quand plusieurs conversations restent à choisir. Validations OK : tous les `tests/test_*.py` du prototype + `tools/validate_j1_v2_experimental.py`.

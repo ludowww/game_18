@@ -29,7 +29,8 @@ def test_t136_conversation_state_exposes_global_flag_and_variable_helpers() -> N
 def test_t136_new_conversation_uses_resolved_entry_variant_start_node() -> None:
     text = source(SCREEN)
     ready = function_body(text, "_ready")
-    assert "_advance_to(_resolved_start_node(), true)" in ready
+    assert "var start_node := _resolved_start_node()" in ready
+    assert "_advance_to(start_node, true)" in ready
     assert "_advance_to(ConversationState.current_block_start_node(), true)" not in ready
 
 
