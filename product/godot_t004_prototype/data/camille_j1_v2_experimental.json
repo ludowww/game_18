@@ -429,7 +429,7 @@
       "id": "j1_02_camille_006b",
       "type": "message",
       "sender": "camille",
-      "text": "Je ne sais pas si c’est lâche ou prudent.",
+      "text": "Je sais pas si c’est courageux ou si tu recules juste proprement.",
       "delay": 35,
       "next": "j1_02_camille_007b"
     },
@@ -539,7 +539,7 @@
       "id": "j1_02_camille_008d",
       "type": "message",
       "sender": "camille",
-      "text": "Et tu arrives directement à celle où je deviens une idée agréable.",
+      "text": "Et tu passes direct au moment où je deviens quelque chose qui te fait du bien.",
       "delay": 45,
       "next": "j1_02_camille_009d"
     },

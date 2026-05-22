@@ -10,7 +10,7 @@
       "id": "j1_03_nico_001",
       "type": "message",
       "sender": "nico",
-      "text": "frérot j’ai fait ce que j’ai pu hier, mais ton truc sentait pas la grande stratégie",
+      "text": "frérot j’ai fait ce que j’ai pu hier, mais ton truc sentait pas le plan solide",
       "delay": 0,
       "next": "j1_03_nico_single_reply_default_001"
     },

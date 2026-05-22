@@ -397,7 +397,7 @@
       "id": "j1_01_sarah_009a",
       "type": "message",
       "sender": "sarah",
-      "text": "Ce que j’ai moins compris, c’est pourquoi t’es revenu comme si je venais de rater une partie de toi.",
+      "text": "Ce que j’ai moins compris, c’est pourquoi t’es revenu comme si t’étais plus vraiment là.",
       "delay": 50,
       "next": "j1_01_sarah_010a"
     },
