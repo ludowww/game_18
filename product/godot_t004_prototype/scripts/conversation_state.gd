@@ -671,15 +671,29 @@ func mark_conversation_new(id: String, preview: String = "Nouveau message") -> v
 	save_progression()
 
 func record_current_message(sender: String, text: String) -> void:
+	record_current_event({"kind": "message", "sender": sender, "text": text})
+
+func record_current_event(event: Dictionary) -> void:
 	var state: Dictionary = current()
 	state["started"] = true
-	state["messages"].append({"sender": sender, "text": text})
-	var preview: String = _preview_for_message(sender, text)
+	var entry: Dictionary = event.duplicate(true)
+	if not entry.has("kind"):
+		entry["kind"] = "message"
+	state["messages"].append(entry)
+	var preview: String = _preview_for_event(entry)
 	if preview != "":
 		state["last_preview"] = preview
 	# Le message affiché dans la conversation ouverte est déjà lu.
 	# Les badges "nouveau" sont posés uniquement par mark_conversation_new().
 	save_progression()
+
+func _preview_for_event(entry: Dictionary) -> String:
+	if str(entry.get("kind", "message")) == "media":
+		var caption: String = str(entry.get("caption", "")).strip_edges()
+		if caption == "":
+			caption = "[image envoyée]"
+		return _preview_for_message(str(entry.get("sender", "system")), caption)
+	return _preview_for_message(str(entry.get("sender", "system")), str(entry.get("text", "")))
 
 func _preview_for_message(sender: String, text: String) -> String:
 	var clean_text: String = text.strip_edges()

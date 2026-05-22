@@ -342,7 +342,10 @@ func _entry_variant_matches(variant: Dictionary) -> bool:
 
 func _restore_current_messages() -> void:
 	for entry in ConversationState.current_messages():
-		await _add_bubble(str(entry.get("sender", "system")), str(entry.get("text", "")), false)
+		if str(entry.get("kind", "message")) == "media":
+			await _add_media_bubble(str(entry.get("sender", "system")), entry, false)
+		else:
+			await _add_bubble(str(entry.get("sender", "system")), str(entry.get("text", "")), false)
 	_update_state_label()
 
 func _show_waiting_state() -> void:
@@ -363,6 +366,20 @@ func _advance_to(node_id: String, immediate: bool = false) -> void:
 		if not immediate:
 			await get_tree().create_timer(_pre_choice_delay_seconds()).timeout
 		_show_choice(node)
+		return
+
+	if node_type == "media":
+		if not immediate:
+			await _wait_before_node(node)
+		var media_sender := str(node.get("sender", "system"))
+		await _add_media_bubble(media_sender, node)
+		ConversationState.handle_dynamic_notification(current_contact_id, node_id)
+		_refresh_quick_switch_notification()
+		var media_next_id := str(node.get("next", ""))
+		if media_next_id != "":
+			ConversationState.set_current_next_node(media_next_id)
+			await get_tree().create_timer(_between_messages_delay_seconds()).timeout
+			_advance_to(media_next_id)
 		return
 
 	if not immediate:
@@ -566,6 +583,76 @@ func _add_bubble(sender: String, text: String, record_state: bool = true) -> voi
 	message_list.add_child(row)
 	if record_state:
 		ConversationState.record_current_message(sender, text)
+	await get_tree().process_frame
+	_ensure_last_message_visible()
+
+func _add_media_bubble(sender: String, node: Dictionary, record_state: bool = true) -> void:
+	var media_type: String = str(node.get("media_type", "image"))
+	var asset: String = str(node.get("asset", ""))
+	var caption: String = str(node.get("caption", "")).strip_edges()
+	if caption == "":
+		caption = "[image envoyée]"
+	if media_type != "image":
+		caption = caption if caption != "" else "[média envoyé]"
+
+	var row := HBoxContainer.new()
+	row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var left_spacer := Control.new()
+	var right_spacer := Control.new()
+	left_spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	right_spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+
+	var bubble := PanelContainer.new()
+	bubble.custom_minimum_size = Vector2(BUBBLE_WIDTH, 58)
+	var style := StyleBoxFlat.new()
+	style.bg_color = _contact_color(sender) if sender != "player" else PLAYER_COLOR
+	style.corner_radius_top_left = 16
+	style.corner_radius_top_right = 16
+	style.corner_radius_bottom_left = 5 if sender != "player" else 16
+	style.corner_radius_bottom_right = 16 if sender != "player" else 5
+	style.content_margin_left = 10
+	style.content_margin_right = 10
+	style.content_margin_top = 10
+	style.content_margin_bottom = 10
+	bubble.add_theme_stylebox_override("panel", style)
+
+	if sender == "player":
+		row.add_child(left_spacer)
+		row.add_child(bubble)
+	else:
+		row.add_child(bubble)
+		row.add_child(right_spacer)
+
+	var content := VBoxContainer.new()
+	content.add_theme_constant_override("separation", 6)
+	bubble.add_child(content)
+
+	if media_type == "image" and asset != "" and ResourceLoader.exists(asset):
+		var texture = load(asset)
+		if texture is Texture2D:
+			var image := TextureRect.new()
+			image.texture = texture
+			image.custom_minimum_size = Vector2(BUBBLE_WIDTH - 28, 160)
+			image.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+			image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			content.add_child(image)
+
+	var label := Label.new()
+	label.text = caption
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.add_theme_font_size_override("font_size", 14)
+	label.add_theme_color_override("font_color", Color("f1f1f5"))
+	content.add_child(label)
+
+	message_list.add_child(row)
+	if record_state:
+		ConversationState.record_current_event({
+			"kind": "media",
+			"sender": sender,
+			"media_type": media_type,
+			"asset": asset,
+			"caption": caption
+		})
 	await get_tree().process_frame
 	_ensure_last_message_visible()
 

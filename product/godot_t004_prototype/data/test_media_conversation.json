@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1-media-test",
+  "conversation_id": "test_media",
+  "day": 1,
+  "contact_id": "maya",
+  "start_node": "test_media_001",
+  "experimental": true,
+  "nodes": [
+    {
+      "id": "test_media_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "attends, regarde ça.",
+      "delay": 0,
+      "next": "test_media_002"
+    },
+    {
+      "id": "test_media_002",
+      "type": "media",
+      "sender": "maya",
+      "media_type": "image",
+      "asset": "",
+      "caption": "[photo de groupe envoyée]",
+      "delay": 20,
+      "next": "test_media_003"
+    },
+    {
+      "id": "test_media_003",
+      "type": "end",
+      "sender": "system",
+      "text": "Media test terminé.",
+      "delay": 0
+    }
+  ]
+}
