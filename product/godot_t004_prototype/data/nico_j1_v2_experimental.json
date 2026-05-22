@@ -178,7 +178,7 @@
       "id": "j1_03_nico_entry_after_camille_001",
       "type": "message",
       "sender": "nico",
-      "text": "ok. donc Camille est pas juste une parenthèse dans ta tête.",
+      "text": "j’ai l’impression qu’il y a un truc que tu tournes autour sans le nommer.",
       "delay": 0,
       "next": "j1_03_nico_single_reply_after_camille_001"
     },
@@ -190,7 +190,7 @@
       "choices": [
         {
           "id": "j1_03_nico_single_reply_after_camille_001_option",
-          "text": "Non.",
+          "text": "Camille.",
           "next": "j1_03_nico_player_after_camille_001"
         }
       ],
@@ -200,7 +200,7 @@
       "id": "j1_03_nico_player_after_camille_001",
       "type": "message",
       "sender": "player",
-      "text": "Non.",
+      "text": "Camille.",
       "delay": 0,
       "next": "j1_03_nico_entry_after_camille_002"
     },
@@ -208,7 +208,7 @@
       "id": "j1_03_nico_entry_after_camille_002",
       "type": "message",
       "sender": "nico",
-      "text": "au moins c’est clair.",
+      "text": "ok. donc c’est pas juste une parenthèse.",
       "delay": 45,
       "next": "j1_03_nico_entry_after_camille_003"
     },
