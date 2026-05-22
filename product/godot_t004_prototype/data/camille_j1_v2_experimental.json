@@ -151,7 +151,7 @@
       "id": "j1_02_camille_entry_late_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je vais essayer de ne pas lire tout un roman dedans.",
+      "text": "Je vais essayer de pas tout interpréter.",
       "delay": 35,
       "next": "j1_02_camille_entry_late_003"
     },
@@ -413,7 +413,7 @@
       "id": "j1_02_camille_008a",
       "type": "message",
       "sender": "camille",
-      "text": "Je te demande juste de ne pas me laisser seule avec la version exacte de ce qui s’est passé.",
+      "text": "Je te demande juste de pas faire comme si j’avais inventé ce moment toute seule.",
       "delay": 45,
       "next": "j1_02_camille_009a"
     },

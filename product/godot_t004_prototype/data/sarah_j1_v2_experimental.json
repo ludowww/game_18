@@ -467,7 +467,7 @@
       "id": "j1_01_sarah_010b",
       "type": "message",
       "sender": "sarah",
-      "text": "Je veux pas avoir besoin de comparer ce que les gens me disent.",
+      "text": "Je veux pas avoir à comparer les versions.",
       "delay": 45,
       "next": "j1_01_end_version_fragile"
     },
@@ -522,7 +522,7 @@
       "id": "j1_01_end_sarah_doubts",
       "type": "end",
       "sender": "system",
-      "text": "Sarah sait que Camille entre dans l’histoire, mais sent l’esquive.",
+      "text": "Sarah entend le nom de Camille, mais pas encore une vraie réponse.",
       "delay": 0
     },
     {
