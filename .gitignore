@@ -52,3 +52,15 @@ htmlcov/
 *.tmp
 *.bak
 *.log
+
+# Local cache / temporary files
+cache/
+
+# Godot generated UID files
+product/godot_t004_prototype/scripts/*.gd.uid
+
+# Godot image import metadata currently not versioned
+product/godot_t004_prototype/assets/media/j1_v2/*.png.import
+
+# Duplicate / obsolete local test file
+product/godot_t004_prototype/tests/test_t137_j1_v2_sarah_camille_entry_variants.py
