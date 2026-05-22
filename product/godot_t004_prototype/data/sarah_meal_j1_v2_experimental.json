@@ -149,19 +149,6 @@
               "used_work_excuse_sarah_j1"
             ]
           }
-        },
-        {
-          "id": "j1_06_late_reply",
-          "text": "Désolé, j’ai pas vu. Tu as mangé ?",
-          "next": "j1_06_end_late_cold",
-          "effects": {
-            "distance_sarah": 2,
-            "intimite_sarah": -1,
-            "culpabilite": 1,
-            "flags": [
-              "late_reply_sarah_meal_j1"
-            ]
-          }
         }
       ]
     },

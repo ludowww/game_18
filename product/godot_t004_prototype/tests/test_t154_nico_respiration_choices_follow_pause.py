@@ -70,7 +70,6 @@ def test_choice_ids_effects_and_flags_remain_present():
         "j1_07_ask_real_advice",
         "j1_07_second_cover",
         "j1_07_joke_avoid",
-        "j1_07_silence",
     ]
     assert [choice["id"] for choice in choice_node["choices"]] == expected_ids
     for choice in choice_node["choices"]:

@@ -144,18 +144,6 @@
               "joked_to_avoid_nico_j1"
             ]
           }
-        },
-        {
-          "id": "j1_07_silence",
-          "text": "Laisser le message de Nico ouvert.",
-          "next": "j1_07_end_friend_waits",
-          "effects": {
-            "dette_nico": 1,
-            "fatigue_emotionnelle": 1,
-            "flags": [
-              "ignored_nico_respiration_j1"
-            ]
-          }
         }
       ]
     },
