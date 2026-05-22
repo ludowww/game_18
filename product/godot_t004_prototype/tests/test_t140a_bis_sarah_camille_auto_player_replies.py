@@ -28,7 +28,6 @@ EXPECTED_CHOICE_IDS = {
         "j1_01_nico_alibi",
         "j1_01_camille_minimized",
         "j1_01_vulnerable",
-        "j1_01_silence",
     ],
     "camille_j1_v2_experimental.json": [
         "j1_02_admit_tension",
@@ -36,7 +35,6 @@ EXPECTED_CHOICE_IDS = {
         "j1_02_minimize",
         "j1_02_early_desire",
         "j1_02_uncertain",
-        "j1_02_silence",
     ],
 }
 

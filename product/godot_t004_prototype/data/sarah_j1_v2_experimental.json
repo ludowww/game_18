@@ -366,21 +366,6 @@
               "sarah_version_emotional_confusion"
             ]
           }
-        },
-        {
-          "id": "j1_01_silence",
-          "text": "Ne pas répondre maintenant.",
-          "next": "j1_01_sys_006e",
-          "effects": {
-            "confiance_sarah": -2,
-            "distance_sarah": 3,
-            "fatigue_emotionnelle": 1,
-            "culpabilite": 1,
-            "flags": [
-              "ignored_sarah_j1",
-              "sarah_no_clear_version_j1"
-            ]
-          }
         }
       ]
     },

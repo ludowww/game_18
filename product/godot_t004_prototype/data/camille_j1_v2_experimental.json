@@ -367,21 +367,6 @@
               "camille_trouble_acknowledged"
             ]
           }
-        },
-        {
-          "id": "j1_02_silence",
-          "text": "Laisser le message ouvert sans répondre.",
-          "next": "j1_02_sys_005f",
-          "effects": {
-            "tension_camille": -2,
-            "respect_camille": -1,
-            "fatigue_emotionnelle": 1,
-            "culpabilite": 1,
-            "flags": [
-              "ignored_camille_j1",
-              "camille_left_on_read_j1"
-            ]
-          }
         }
       ]
     },
