@@ -148,6 +148,60 @@
       ]
     },
     {
+      "id": "j1_07_nico_late_reopen_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "ok donc même mon meme tu l’as laissé en vu",
+      "delay": 0,
+      "next": "j1_07_nico_late_reopen_002"
+    },
+    {
+      "id": "j1_07_nico_late_reopen_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "violent mais je respecte la constance",
+      "delay": 25,
+      "next": "j1_07_nico_single_reply_late_reopen_001"
+    },
+    {
+      "id": "j1_07_nico_single_reply_late_reopen_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_07_nico_single_reply_late_reopen_001_option",
+          "text": "J’ai décroché deux minutes.",
+          "next": "j1_07_nico_player_late_reopen_001"
+        }
+      ],
+      "next": "j1_07_nico_player_late_reopen_001"
+    },
+    {
+      "id": "j1_07_nico_player_late_reopen_001",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai décroché deux minutes.",
+      "delay": 0,
+      "next": "j1_07_nico_late_reopen_003"
+    },
+    {
+      "id": "j1_07_nico_late_reopen_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "deux minutes chez toi c’est une unité très souple",
+      "delay": 25,
+      "next": "j1_07_nico_late_reopen_004"
+    },
+    {
+      "id": "j1_07_nico_late_reopen_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "bon. pizza, fuite ou vraie phrase ?",
+      "delay": 35,
+      "next": "j1_07_choice_nico_respiration"
+    },
+    {
       "id": "j1_07_end_friendship_breathes",
       "type": "end",
       "sender": "system",

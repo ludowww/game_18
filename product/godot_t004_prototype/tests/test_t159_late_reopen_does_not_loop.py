@@ -43,7 +43,7 @@ def test_current_late_reopen_start_node_stays_blocked_after_consumption():
     body = function_body("current_late_reopen_start_node")
     assert 'bool(state.get("late_reopen_consumed", false))' in body
     assert 'return ""' in body
-    assert body.index('bool(state.get("late_reopen_consumed", false))') < body.index('return "j1_06_sarah_late_reopen_001"')
+    assert body.index('bool(state.get("late_reopen_consumed", false))') < body.index("_late_reopen_start_for_context")
 
 
 def test_consumed_context_fields_are_saved_and_loaded():

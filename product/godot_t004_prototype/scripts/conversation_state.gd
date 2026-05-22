@@ -776,13 +776,17 @@ func current_late_reopen_start_node() -> String:
 		return ""
 	if not bool(state.get("left_open", false)) or not bool(state.get("late_reply_prepared", false)):
 		return ""
-	if str(state.get("left_open_choice_node", "")) != "j1_06_choice_sarah_meal":
-		return ""
-	if not has_global_flag("late_reply_sarah_meal_j1"):
-		return ""
-	if not str(state.get("json_path", "")).contains("sarah_meal_j1_v2"):
-		return ""
-	return "j1_06_sarah_late_reopen_001"
+	var active_choice_node: String = str(state.get("left_open_choice_node", ""))
+	var silence_flag: String = str(state.get("left_open_flag", ""))
+	var json_path: String = str(state.get("json_path", ""))
+	return _late_reopen_start_for_context(silence_flag, active_choice_node, json_path)
+
+func _late_reopen_start_for_context(silence_flag: String, choice_node: String, json_path: String) -> String:
+	if silence_flag == "late_reply_sarah_meal_j1" and choice_node == "j1_06_choice_sarah_meal" and json_path.contains("sarah_meal_j1_v2"):
+		return "j1_06_sarah_late_reopen_001"
+	if silence_flag == "ignored_nico_respiration_j1" and choice_node == "j1_07_choice_nico_respiration" and json_path.contains("nico_respiration_j1_v2"):
+		return "j1_07_nico_late_reopen_001"
+	return ""
 
 func consume_current_late_reopen(start_node: String) -> void:
 	if start_node == "":
