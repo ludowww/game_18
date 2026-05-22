@@ -7,22 +7,546 @@
   "experimental": true,
   "nodes": [
     {
+      "id": "j2_01_sarah_entry_after_nico_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai repensé à Nico.",
+      "delay": 25,
+      "next": "j2_01_sarah_single_reply_after_nico_001"
+    },
+    {
+      "id": "j2_01_sarah_single_reply_after_nico_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_01_sarah_single_reply_after_nico_001_option",
+          "text": "Qu’est-ce qu’il a dit ?",
+          "next": "j2_01_sarah_player_after_nico_001"
+        }
+      ],
+      "next": "j2_01_sarah_player_after_nico_001"
+    },
+    {
+      "id": "j2_01_sarah_player_after_nico_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Qu’est-ce qu’il a dit ?",
+      "delay": 0,
+      "next": "j2_01_sarah_entry_after_nico_002"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_nico_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Pas assez pour m’aider.",
+      "delay": 30,
+      "next": "j2_01_sarah_entry_after_nico_003"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_nico_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Assez pour que je sente qu’il faisait attention à chaque mot.",
+      "delay": 30,
+      "next": "j2_01_sarah_entry_after_nico_004"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_nico_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je veux pas le mettre au milieu. Mais c’est toi qui l’as mis là.",
+      "delay": 30,
+      "next": "j2_01_choice_sarah_morning"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_camille_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai repensé à ta phrase d’hier.",
+      "delay": 25,
+      "next": "j2_01_sarah_single_reply_after_camille_001"
+    },
+    {
+      "id": "j2_01_sarah_single_reply_after_camille_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_01_sarah_single_reply_after_camille_001_option",
+          "text": "Laquelle ?",
+          "next": "j2_01_sarah_player_after_camille_001"
+        }
+      ],
+      "next": "j2_01_sarah_player_after_camille_001"
+    },
+    {
+      "id": "j2_01_sarah_player_after_camille_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Laquelle ?",
+      "delay": 0,
+      "next": "j2_01_sarah_entry_after_camille_002"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_camille_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "“On a parlé, c’est tout.”",
+      "delay": 30,
+      "next": "j2_01_sarah_entry_after_camille_003"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_camille_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je sais pas pourquoi, mais c’est le “c’est tout” qui m’est resté.",
+      "delay": 30,
+      "next": "j2_01_sarah_entry_after_camille_004"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_camille_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Comme si tu voulais fermer la porte avant même que je regarde dedans.",
+      "delay": 30,
+      "next": "j2_01_choice_sarah_morning"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_domestic_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Merci d’être rentré hier.",
+      "delay": 25,
+      "next": "j2_01_sarah_single_reply_after_domestic_001"
+    },
+    {
+      "id": "j2_01_sarah_single_reply_after_domestic_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_01_sarah_single_reply_after_domestic_001_option",
+          "text": "Je voulais pas te laisser seule avec ça.",
+          "next": "j2_01_sarah_player_after_domestic_001"
+        }
+      ],
+      "next": "j2_01_sarah_player_after_domestic_001"
+    },
+    {
+      "id": "j2_01_sarah_player_after_domestic_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je voulais pas te laisser seule avec ça.",
+      "delay": 0,
+      "next": "j2_01_sarah_entry_after_domestic_002"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_domestic_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je sais.",
+      "delay": 30,
+      "next": "j2_01_sarah_entry_after_domestic_003"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_domestic_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Et ça compte.",
+      "delay": 30,
+      "next": "j2_01_sarah_entry_after_domestic_004"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_domestic_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais être là à table, c’est pas exactement revenir dans la conversation.",
+      "delay": 30,
+      "next": "j2_01_choice_sarah_morning"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_late_meal_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ce matin, j’ai rangé ton assiette.",
+      "delay": 25,
+      "next": "j2_01_sarah_single_reply_after_late_meal_001"
+    },
+    {
+      "id": "j2_01_sarah_single_reply_after_late_meal_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_01_sarah_single_reply_after_late_meal_001_option",
+          "text": "Sarah…",
+          "next": "j2_01_sarah_player_after_late_meal_001"
+        }
+      ],
+      "next": "j2_01_sarah_player_after_late_meal_001"
+    },
+    {
+      "id": "j2_01_sarah_player_after_late_meal_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Sarah…",
+      "delay": 0,
+      "next": "j2_01_sarah_entry_after_late_meal_002"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_late_meal_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je te dis pas ça pour te faire culpabiliser.",
+      "delay": 30,
+      "next": "j2_01_sarah_entry_after_late_meal_003"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_late_meal_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Enfin. Pas seulement.",
+      "delay": 30,
+      "next": "j2_01_sarah_entry_after_late_meal_004"
+    },
+    {
+      "id": "j2_01_sarah_entry_after_late_meal_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est juste que même les petites choses commencent à avoir une heure, maintenant.",
+      "delay": 30,
+      "next": "j2_01_choice_sarah_morning"
+    },
+    {
       "id": "j2_01_sarah_001",
       "type": "message",
       "sender": "sarah",
-      "text": "[J2 placeholder Sarah matin]",
+      "text": "T’es parti tôt ce matin.",
       "delay": 0,
-      "next": "j2_01_sarah_end_placeholder"
+      "next": "j2_01_sarah_single_reply_default_001"
     },
     {
-      "id": "j2_01_sarah_end_placeholder",
+      "id": "j2_01_sarah_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_01_sarah_single_reply_default_001_option",
+          "text": "Oui. Je voulais pas faire de bruit.",
+          "next": "j2_01_sarah_player_default_001"
+        }
+      ],
+      "next": "j2_01_sarah_player_default_001"
+    },
+    {
+      "id": "j2_01_sarah_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Oui. Je voulais pas faire de bruit.",
+      "delay": 0,
+      "next": "j2_01_sarah_002"
+    },
+    {
+      "id": "j2_01_sarah_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Tu n’en as pas fait.",
+      "delay": 30,
+      "next": "j2_01_sarah_003"
+    },
+    {
+      "id": "j2_01_sarah_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est presque ça le problème.",
+      "delay": 30,
+      "next": "j2_01_sarah_004"
+    },
+    {
+      "id": "j2_01_sarah_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai l’impression qu’on devient très doués pour éviter les vrais sons.",
+      "delay": 30,
+      "next": "j2_01_choice_sarah_morning"
+    },
+    {
+      "id": "j2_01_choice_sarah_morning",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Sarah ?",
+      "choices": [
+        {
+          "id": "j2_01_sarah_be_concrete",
+          "text": "Je vais arrêter de te donner des bouts de réponse. Hier, j’ai eu peur de dire les choses clairement.",
+          "next": "j2_01_sarah_player_be_concrete",
+          "effects": {
+            "confiance_sarah": 2,
+            "distance_sarah": -1,
+            "coherence": 2,
+            "culpabilite": 1,
+            "flags": [
+              "j2_sarah_try_concrete",
+              "j2_sarah_admits_fear"
+            ]
+          }
+        },
+        {
+          "id": "j2_01_sarah_need_time",
+          "text": "Je peux te parler ce soir ? Là, j’ai peur de répondre n’importe comment juste pour remplir le silence.",
+          "next": "j2_01_sarah_player_need_time",
+          "effects": {
+            "confiance_sarah": 0,
+            "distance_sarah": 1,
+            "fatigue_emotionnelle": 1,
+            "culpabilite": 1,
+            "flags": [
+              "j2_sarah_asked_time",
+              "j2_sarah_delays_clarity"
+            ]
+          }
+        },
+        {
+          "id": "j2_01_sarah_minimize_again",
+          "text": "Sarah, j’ai l’impression qu’on transforme une soirée bizarre en quelque chose de beaucoup plus grave.",
+          "next": "j2_01_sarah_player_minimize_again",
+          "effects": {
+            "confiance_sarah": -2,
+            "distance_sarah": 2,
+            "coherence": -1,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "j2_sarah_minimized_again",
+              "j2_sarah_defensive"
+            ]
+          }
+        },
+        {
+          "id": "j2_01_sarah_admit_incoherence",
+          "text": "T’as raison. J’ai essayé de rendre ça plus simple que ça ne l’était, et je crois que ça se voit.",
+          "next": "j2_01_sarah_player_admit_incoherence",
+          "effects": {
+            "confiance_sarah": 1,
+            "distance_sarah": -1,
+            "coherence": 1,
+            "culpabilite": 2,
+            "risque_exposition": -1,
+            "flags": [
+              "j2_sarah_admitted_incoherence",
+              "j2_sarah_version_fragile_named"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j2_01_sarah_player_be_concrete",
+      "type": "message",
+      "sender": "player",
+      "text": "Je vais arrêter de te donner des bouts de réponse. Hier, j’ai eu peur de dire les choses clairement.",
+      "delay": 0,
+      "next": "j2_01_sarah_concrete_001"
+    },
+    {
+      "id": "j2_01_sarah_concrete_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ça, je peux l’entendre.",
+      "delay": 30,
+      "next": "j2_01_sarah_concrete_002"
+    },
+    {
+      "id": "j2_01_sarah_concrete_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Pas parce que ça règle tout.",
+      "delay": 30,
+      "next": "j2_01_sarah_concrete_003"
+    },
+    {
+      "id": "j2_01_sarah_concrete_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais parce que c’est la première phrase depuis hier qui ne me demande pas de deviner à ta place.",
+      "delay": 30,
+      "next": "j2_01_end_sarah_concrete_fragile"
+    },
+    {
+      "id": "j2_01_end_sarah_concrete_fragile",
       "type": "end",
       "sender": "system",
-      "text": "Fin placeholder Sarah J2.",
+      "text": "Sarah ne te croit pas aveuglément, mais elle entend une phrase plus stable.",
+      "delay": 0
+    },
+    {
+      "id": "j2_01_sarah_player_need_time",
+      "type": "message",
+      "sender": "player",
+      "text": "Je peux te parler ce soir ? Là, j’ai peur de répondre n’importe comment juste pour remplir le silence.",
+      "delay": 0,
+      "next": "j2_01_sarah_time_001"
+    },
+    {
+      "id": "j2_01_sarah_time_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Tu peux.",
+      "delay": 30,
+      "next": "j2_01_sarah_time_002"
+    },
+    {
+      "id": "j2_01_sarah_time_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais je veux que tu comprennes un truc.",
+      "delay": 30,
+      "next": "j2_01_sarah_time_003"
+    },
+    {
+      "id": "j2_01_sarah_time_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Quand tu demandes du temps, moi je reste avec la place vide entre les deux.",
+      "delay": 30,
+      "next": "j2_01_end_sarah_time_distance"
+    },
+    {
+      "id": "j2_01_end_sarah_time_distance",
+      "type": "end",
+      "sender": "system",
+      "text": "Sarah accepte le délai, mais la distance reste active.",
+      "delay": 0
+    },
+    {
+      "id": "j2_01_sarah_player_minimize_again",
+      "type": "message",
+      "sender": "player",
+      "text": "Sarah, j’ai l’impression qu’on transforme une soirée bizarre en quelque chose de beaucoup plus grave.",
+      "delay": 0,
+      "next": "j2_01_sarah_minimize_001"
+    },
+    {
+      "id": "j2_01_sarah_minimize_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Peut-être.",
+      "delay": 30,
+      "next": "j2_01_sarah_minimize_002"
+    },
+    {
+      "id": "j2_01_sarah_minimize_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ou peut-être que c’est exactement ce que tu fais quand tu veux que je baisse le volume.",
+      "delay": 30,
+      "next": "j2_01_sarah_minimize_003"
+    },
+    {
+      "id": "j2_01_sarah_minimize_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Tu appelles ça “bizarre”, et moi je suis censée arrêter d’écouter ce que j’ai senti.",
+      "delay": 30,
+      "next": "j2_01_end_sarah_colder"
+    },
+    {
+      "id": "j2_01_end_sarah_colder",
+      "type": "end",
+      "sender": "system",
+      "text": "Sarah se protège davantage. La discussion reste calme, mais plus froide.",
+      "delay": 0
+    },
+    {
+      "id": "j2_01_sarah_player_admit_incoherence",
+      "type": "message",
+      "sender": "player",
+      "text": "T’as raison. J’ai essayé de rendre ça plus simple que ça ne l’était, et je crois que ça se voit.",
+      "delay": 0,
+      "next": "j2_01_sarah_incoherence_001"
+    },
+    {
+      "id": "j2_01_sarah_incoherence_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Oui.",
+      "delay": 30,
+      "next": "j2_01_sarah_incoherence_002"
+    },
+    {
+      "id": "j2_01_sarah_incoherence_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ça se voit.",
+      "delay": 30,
+      "next": "j2_01_sarah_incoherence_003"
+    },
+    {
+      "id": "j2_01_sarah_incoherence_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais je préfère encore voir une phrase fragile qu’une phrase trop propre.",
+      "delay": 30,
+      "next": "j2_01_sarah_incoherence_004"
+    },
+    {
+      "id": "j2_01_sarah_incoherence_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Au moins, je sais où poser les pieds.",
+      "delay": 30,
+      "next": "j2_01_end_sarah_fragile_named"
+    },
+    {
+      "id": "j2_01_end_sarah_fragile_named",
+      "type": "end",
+      "sender": "system",
+      "text": "Sarah nomme la fragilité de la version, mais elle ne ferme pas la porte.",
       "delay": 0
     }
   ],
   "entry_variants": [
+    {
+      "id": "after_nico_version",
+      "conditions": {
+        "flags": [
+          "sarah_version_nico"
+        ]
+      },
+      "start_node": "j2_01_sarah_entry_after_nico_001"
+    },
+    {
+      "id": "after_camille_minimized",
+      "conditions": {
+        "flags": [
+          "sarah_version_camille_minimized"
+        ]
+      },
+      "start_node": "j2_01_sarah_entry_after_camille_001"
+    },
+    {
+      "id": "after_domestic_presence",
+      "conditions": {
+        "flags": [
+          "sarah_j1_domestic_presence"
+        ]
+      },
+      "start_node": "j2_01_sarah_entry_after_domestic_001"
+    },
+    {
+      "id": "after_late_meal",
+      "conditions": {
+        "flags": [
+          "late_reply_sarah_meal_j1"
+        ]
+      },
+      "start_node": "j2_01_sarah_entry_after_late_meal_001"
+    },
     {
       "id": "default",
       "conditions": {},
