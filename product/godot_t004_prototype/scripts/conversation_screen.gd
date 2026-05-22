@@ -188,6 +188,7 @@ func _make_header() -> Control:
 	back.custom_minimum_size = Vector2(34, 34)
 	back.tooltip_text = "Retour conversations"
 	back.pressed.connect(func() -> void:
+		ConversationState.mark_current_left_open_if_pending_choice()
 		get_tree().change_scene_to_file("res://scenes/conversation_list.tscn")
 	)
 	row.add_child(back)
@@ -353,7 +354,7 @@ func _advance_to(node_id: String, immediate: bool = false) -> void:
 	var node_type := str(node.get("type", "message"))
 
 	if node_type == "choice":
-		ConversationState.set_current_active_choice(node_id)
+		ConversationState.set_current_active_choice(node_id, node.get("choices", []).size())
 		if not immediate:
 			await get_tree().create_timer(_pre_choice_delay_seconds()).timeout
 		_show_choice(node)

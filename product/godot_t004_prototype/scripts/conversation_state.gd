@@ -47,6 +47,12 @@ const J1_V2_DELAYED_REPLY_FLAGS := {
 	"maya_j1_v2": "delayed_reply_maya_j1",
 	"ines_j1_v2": "delayed_reply_ines_j1"
 }
+const J1_V2_LEFT_OPEN_FLAGS := {
+	"sarah_j1_v2": "left_sarah_on_read_j1",
+	"camille_j1_v2": "left_camille_on_read_j1",
+	"nico_respiration_j1_v2": "ignored_nico_respiration_j1",
+	"sarah_meal_j1_v2": "late_reply_sarah_meal_j1"
+}
 const J1_V2_INITIAL_MESSAGES := {
 	"sarah_j1_v2": "T’es réveillé ?",
 	"camille_j1_v2": "Je crois qu’on a été moins discrets qu’on pensait.",
@@ -426,9 +432,15 @@ func _new_conversation_state(id: String, contact_id: String, display_name: Strin
 		"messages": [],
 		"game_state": {},
 		"active_choice_node": "",
+		"pending_choice_option_count": 0,
 		"next_node": "",
 		"done": false,
 		"choices": [],
+		"left_open": false,
+		"left_open_choice_node": "",
+		"left_open_count": 0,
+		"left_open_flag": "",
+		"late_reply_prepared": false,
 		"last_preview": "Nouveau message" if initial_has_new else display_name + " — " + title,
 		"has_new": initial_has_new
 	}
@@ -681,19 +693,75 @@ func set_current_next_node(node_id: String) -> void:
 	state["started"] = true
 	state["next_node"] = node_id
 	state["active_choice_node"] = ""
+	state["pending_choice_option_count"] = 0
 	save_progression()
 
-func set_current_active_choice(node_id: String) -> void:
+func set_current_active_choice(node_id: String, option_count: int = 0) -> void:
 	var state: Dictionary = current()
 	state["started"] = true
 	state["active_choice_node"] = node_id
+	state["pending_choice_option_count"] = option_count
 	state["next_node"] = ""
 	save_progression()
+
+func is_single_reply_choice_node(node_id: String) -> bool:
+	return node_id.contains("_single_reply_")
+
+func is_narrative_multiple_choice_pending(conversation_id: String = "") -> bool:
+	var id: String = current_conversation_id if conversation_id == "" else conversation_id
+	if not conversations.has(id):
+		return false
+	var state: Dictionary = conversations[id]
+	if bool(state.get("done", false)):
+		return false
+	var active_choice_node: String = str(state.get("active_choice_node", ""))
+	if active_choice_node == "":
+		return false
+	if is_single_reply_choice_node(active_choice_node):
+		return false
+	return int(state.get("pending_choice_option_count", 0)) > 1
+
+func mark_current_left_open_if_pending_choice() -> bool:
+	var state: Dictionary = current()
+	if bool(state.get("done", false)):
+		return false
+	var active_choice_node: String = str(state.get("active_choice_node", ""))
+	if active_choice_node == "":
+		return false
+	if is_single_reply_choice_node(active_choice_node):
+		return false
+	if int(state.get("pending_choice_option_count", 0)) <= 1:
+		return false
+	if bool(state.get("left_open", false)):
+		return false
+	state["left_open"] = true
+	state["left_open_choice_node"] = active_choice_node
+	state["left_open_count"] = int(state.get("left_open_count", 0)) + 1
+	var silence_flag: String = _left_open_flag_for_current_context(active_choice_node)
+	state["left_open_flag"] = silence_flag
+	state["late_reply_prepared"] = true
+	if silence_flag != "" and not global_game_state["flags"].has(silence_flag):
+		global_game_state["flags"].append(silence_flag)
+	save_progression()
+	return true
+
+func _left_open_flag_for_current_context(active_choice_node: String) -> String:
+	var state: Dictionary = current()
+	var json_path: String = str(state.get("json_path", ""))
+	if json_path.contains("nico_respiration_j1_v2"):
+		return str(J1_V2_LEFT_OPEN_FLAGS.get("nico_respiration_j1_v2", ""))
+	if json_path.contains("sarah_meal_j1_v2"):
+		return str(J1_V2_LEFT_OPEN_FLAGS.get("sarah_meal_j1_v2", ""))
+	return str(J1_V2_LEFT_OPEN_FLAGS.get(current_conversation_id, ""))
 
 func record_current_choice(choice_id: String) -> void:
 	var state: Dictionary = current()
 	state["started"] = true
 	state["choices"].append(choice_id)
+	state["left_open"] = false
+	state["left_open_choice_node"] = ""
+	state["left_open_flag"] = ""
+	state["late_reply_prepared"] = false
 	save_progression()
 
 func set_current_game_state(game_state: Dictionary) -> void:
@@ -884,6 +952,11 @@ func mark_current_done() -> void:
 	current()["done"] = true
 	current()["next_node"] = ""
 	current()["active_choice_node"] = ""
+	current()["pending_choice_option_count"] = 0
+	current()["left_open"] = false
+	current()["left_open_choice_node"] = ""
+	current()["left_open_flag"] = ""
+	current()["late_reply_prepared"] = false
 	if current_conversation_id == "j1_00_reveil_v2":
 		_unlock_j1_v2_after_priority_choice()
 	_unlock_j1_v2_breathing_scenes_if_ready()
@@ -1090,9 +1163,15 @@ func save_progression() -> void:
 			"messages": state.get("messages", []).duplicate(true),
 			"game_state": state.get("game_state", {}).duplicate(true),
 			"active_choice_node": str(state.get("active_choice_node", "")),
+			"pending_choice_option_count": int(state.get("pending_choice_option_count", 0)),
 			"next_node": str(state.get("next_node", "")),
 			"done": bool(state.get("done", false)),
 			"choices": state.get("choices", []).duplicate(true),
+			"left_open": bool(state.get("left_open", false)),
+			"left_open_choice_node": str(state.get("left_open_choice_node", "")),
+			"left_open_count": int(state.get("left_open_count", 0)),
+			"left_open_flag": str(state.get("left_open_flag", "")),
+			"late_reply_prepared": bool(state.get("late_reply_prepared", false)),
 			"last_preview": str(state.get("last_preview", "")),
 			"has_new": bool(state.get("has_new", false))
 		}
@@ -1150,9 +1229,15 @@ func load_progression() -> void:
 		state["messages"] = saved_state.get("messages", state.get("messages", [])).duplicate(true)
 		state["game_state"] = saved_state.get("game_state", state.get("game_state", {})).duplicate(true)
 		state["active_choice_node"] = str(saved_state.get("active_choice_node", state.get("active_choice_node", "")))
+		state["pending_choice_option_count"] = int(saved_state.get("pending_choice_option_count", state.get("pending_choice_option_count", 0)))
 		state["next_node"] = str(saved_state.get("next_node", state.get("next_node", "")))
 		state["done"] = bool(saved_state.get("done", state.get("done", false)))
 		state["choices"] = saved_state.get("choices", state.get("choices", [])).duplicate(true)
+		state["left_open"] = bool(saved_state.get("left_open", state.get("left_open", false)))
+		state["left_open_choice_node"] = str(saved_state.get("left_open_choice_node", state.get("left_open_choice_node", "")))
+		state["left_open_count"] = int(saved_state.get("left_open_count", state.get("left_open_count", 0)))
+		state["left_open_flag"] = str(saved_state.get("left_open_flag", state.get("left_open_flag", "")))
+		state["late_reply_prepared"] = bool(saved_state.get("late_reply_prepared", state.get("late_reply_prepared", false)))
 		state["last_preview"] = str(saved_state.get("last_preview", state.get("last_preview", "")))
 		state["has_new"] = bool(saved_state.get("has_new", state.get("has_new", false)))
 
