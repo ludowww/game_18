@@ -86,7 +86,7 @@
       "id": "j1_07_nico_004",
       "type": "message",
       "sender": "nico",
-      "text": "pizza ou tu continues ton régime stress + café froid ?",
+      "text": "pizza ou tu continues ton régime stress + café froid ? et après tu me dis si on doit vraiment parler du reste.",
       "delay": 35,
       "next": "j1_07_choice_nico_respiration"
     },
@@ -98,7 +98,7 @@
       "choices": [
         {
           "id": "j1_07_share_joke",
-          "text": "Pizza. Et ton meme est vraiment nul, donc oui, ça aide.",
+          "text": "Pizza. Et ton meme est nul, donc oui, ça aide un peu.",
           "next": "j1_07_end_friendship_breathes",
           "effects": {
             "fatigue_emotionnelle": -1,
@@ -110,7 +110,7 @@
         },
         {
           "id": "j1_07_ask_real_advice",
-          "text": "Deux secondes sans vanne : je fais quoi si je sais même pas quelle vérité dire ?",
+          "text": "Pizza, oui. Mais après j’ai besoin de deux secondes sans vanne.",
           "next": "j1_07_end_real_advice",
           "effects": {
             "coherence": 1,
@@ -123,7 +123,7 @@
         },
         {
           "id": "j1_07_second_cover",
-          "text": "Si Sarah ou Maya te demande, tu peux rester sur la même version ?",
+          "text": "Avant la pizza : si quelqu’un te demande, tu peux rester vague ?",
           "next": "j1_07_end_debt_grows",
           "effects": {
             "dette_nico": 3,
@@ -136,7 +136,7 @@
         },
         {
           "id": "j1_07_joke_avoid",
-          "text": "Le régime stress + café froid marche très bien, merci.",
+          "text": "Le régime stress + café froid marche très bien, je recommande.",
           "next": "j1_07_end_joke_soft_warning",
           "effects": {
             "fatigue_emotionnelle": 1,
@@ -147,7 +147,7 @@
         },
         {
           "id": "j1_07_silence",
-          "text": "Ne pas répondre.",
+          "text": "Laisser le message de Nico ouvert.",
           "next": "j1_07_end_friend_waits",
           "effects": {
             "dette_nico": 1,
