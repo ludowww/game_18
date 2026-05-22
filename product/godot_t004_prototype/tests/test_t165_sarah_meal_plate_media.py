@@ -39,7 +39,7 @@ def test_sarah_meal_contains_plate_media_placeholder():
     assert media["sender"] == "sarah"
     assert media["media_type"] == "image"
     assert media["caption"] == "[photo de l’assiette envoyée]"
-    assert media["asset"] == ""
+    assert media["asset"] == "res://assets/media/j1_v2/sarah_assiette_j1.png"
 
 
 def test_plate_media_is_inserted_after_sarah_002_and_returns_to_flow():

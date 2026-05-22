@@ -43,7 +43,7 @@ def test_maya_after_sarah_contains_media_placeholder_node():
     assert media["type"] == "media"
     assert media["sender"] == "maya"
     assert media["media_type"] == "image"
-    assert media["asset"] == ""
+    assert media["asset"] == "res://assets/media/j1_v2/maya_photo_groupe_j1.png"
     assert media["caption"] == "[photo de groupe envoyée]"
 
 

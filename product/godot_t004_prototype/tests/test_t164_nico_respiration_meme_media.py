@@ -39,7 +39,7 @@ def test_nico_respiration_contains_meme_media_placeholder():
     assert media["sender"] == "nico"
     assert media["media_type"] == "image"
     assert media["caption"] == "[meme envoyé]"
-    assert media["asset"] == ""
+    assert media["asset"] == "res://assets/media/j1_v2/nico_meme_j1.png"
 
 
 def test_meme_media_is_inserted_after_nico_002_and_returns_to_flow():

@@ -203,7 +203,7 @@
       "type": "media",
       "sender": "maya",
       "media_type": "image",
-      "asset": "",
+      "asset": "res://assets/media/j1_v2/maya_photo_groupe_j1.png",
       "caption": "[photo de groupe envoyée]",
       "delay": 35,
       "next": "j1_04_maya_entry_after_sarah_004"
