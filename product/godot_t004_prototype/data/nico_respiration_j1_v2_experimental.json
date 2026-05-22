@@ -42,6 +42,24 @@
       "sender": "nico",
       "text": "il est nul, donc il devrait te parler.",
       "delay": 30,
+      "next": "j1_07_nico_media_meme_001"
+    },
+    {
+      "id": "j1_07_nico_media_meme_001",
+      "type": "media",
+      "sender": "nico",
+      "media_type": "image",
+      "asset": "",
+      "caption": "[meme envoyé]",
+      "delay": 25,
+      "next": "j1_07_nico_002b"
+    },
+    {
+      "id": "j1_07_nico_002b",
+      "type": "message",
+      "sender": "nico",
+      "text": "voilà. zéro budget, mais intention sincère.",
+      "delay": 30,
       "next": "j1_07_nico_003"
     },
     {
