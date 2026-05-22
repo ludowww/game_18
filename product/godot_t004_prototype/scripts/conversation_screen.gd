@@ -273,6 +273,7 @@ func _quick_switch_style(highlighted: bool) -> StyleBoxFlat:
 	return style
 
 func _open_quick_switch_conversation(target_id: String) -> void:
+	ConversationState.mark_current_left_open_if_pending_choice()
 	if target_id == "__unread_messages__":
 		get_tree().change_scene_to_file("res://scenes/conversation_list.tscn")
 		return
