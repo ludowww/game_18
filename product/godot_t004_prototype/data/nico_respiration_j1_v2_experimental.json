@@ -6,27 +6,149 @@
   "start_node": "j1_07_nico_001",
   "experimental": true,
   "nodes": [
-    {"id": "j1_07_nico_001", "type": "message", "sender": "nico", "text": "je t’ai envoyé un meme.", "delay": 0, "next": "j1_07_nico_002"},
-    {"id": "j1_07_nico_002", "type": "message", "sender": "nico", "text": "il est nul, donc il devrait te parler.", "delay": 30, "next": "j1_07_nico_003"},
-    {"id": "j1_07_nico_003", "type": "message", "sender": "nico", "text": "aussi j’ai faim. détail secondaire mais pas tant que ça.", "delay": 35, "next": "j1_07_nico_004"},
-    {"id": "j1_07_nico_004", "type": "message", "sender": "nico", "text": "pizza ou tu continues ton régime stress + café froid ?", "delay": 35, "next": "j1_07_choice_nico_respiration"},
+    {
+      "id": "j1_07_nico_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "je t’ai envoyé un meme.",
+      "delay": 0,
+      "next": "j1_07_nico_auto_player_001"
+    },
+    {
+      "id": "j1_07_nico_auto_player_001",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ose ouvrir ?",
+      "delay": 0,
+      "next": "j1_07_nico_002"
+    },
+    {
+      "id": "j1_07_nico_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "il est nul, donc il devrait te parler.",
+      "delay": 30,
+      "next": "j1_07_nico_003"
+    },
+    {
+      "id": "j1_07_nico_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "aussi j’ai faim. détail secondaire mais pas tant que ça.",
+      "delay": 35,
+      "next": "j1_07_nico_004"
+    },
+    {
+      "id": "j1_07_nico_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "pizza ou tu continues ton régime stress + café froid ?",
+      "delay": 35,
+      "next": "j1_07_choice_nico_respiration"
+    },
     {
       "id": "j1_07_choice_nico_respiration",
       "type": "choice",
       "sender": "player",
       "text": "Que répondre à Nico ?",
       "choices": [
-        {"id": "j1_07_share_joke", "text": "Pizza. Et ton meme est vraiment nul, donc oui, ça aide.", "next": "j1_07_end_friendship_breathes", "effects": {"fatigue_emotionnelle": -1, "dette_nico": -1, "flags": ["nico_j1_respiration_shared"]}},
-        {"id": "j1_07_ask_real_advice", "text": "Deux secondes sans vanne : je fais quoi si je sais même pas quelle vérité dire ?", "next": "j1_07_end_real_advice", "effects": {"coherence": 1, "dette_nico": -1, "fatigue_emotionnelle": -1, "flags": ["asked_nico_real_advice_j1"]}},
-        {"id": "j1_07_second_cover", "text": "Si Sarah ou Maya te demande, tu peux rester sur la même version ?", "next": "j1_07_end_debt_grows", "effects": {"dette_nico": 3, "risque_exposition": 1, "fatigue_emotionnelle": 1, "flags": ["asked_nico_second_cover_j1"]}},
-        {"id": "j1_07_joke_avoid", "text": "Le régime stress + café froid marche très bien, merci.", "next": "j1_07_end_joke_soft_warning", "effects": {"fatigue_emotionnelle": 1, "flags": ["joked_to_avoid_nico_j1"]}},
-        {"id": "j1_07_silence", "text": "Ne pas répondre.", "next": "j1_07_end_friend_waits", "effects": {"dette_nico": 1, "fatigue_emotionnelle": 1, "flags": ["ignored_nico_respiration_j1"]}}
+        {
+          "id": "j1_07_share_joke",
+          "text": "Pizza. Et ton meme est vraiment nul, donc oui, ça aide.",
+          "next": "j1_07_end_friendship_breathes",
+          "effects": {
+            "fatigue_emotionnelle": -1,
+            "dette_nico": -1,
+            "flags": [
+              "nico_j1_respiration_shared"
+            ]
+          }
+        },
+        {
+          "id": "j1_07_ask_real_advice",
+          "text": "Deux secondes sans vanne : je fais quoi si je sais même pas quelle vérité dire ?",
+          "next": "j1_07_end_real_advice",
+          "effects": {
+            "coherence": 1,
+            "dette_nico": -1,
+            "fatigue_emotionnelle": -1,
+            "flags": [
+              "asked_nico_real_advice_j1"
+            ]
+          }
+        },
+        {
+          "id": "j1_07_second_cover",
+          "text": "Si Sarah ou Maya te demande, tu peux rester sur la même version ?",
+          "next": "j1_07_end_debt_grows",
+          "effects": {
+            "dette_nico": 3,
+            "risque_exposition": 1,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "asked_nico_second_cover_j1"
+            ]
+          }
+        },
+        {
+          "id": "j1_07_joke_avoid",
+          "text": "Le régime stress + café froid marche très bien, merci.",
+          "next": "j1_07_end_joke_soft_warning",
+          "effects": {
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "joked_to_avoid_nico_j1"
+            ]
+          }
+        },
+        {
+          "id": "j1_07_silence",
+          "text": "Ne pas répondre.",
+          "next": "j1_07_end_friend_waits",
+          "effects": {
+            "dette_nico": 1,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "ignored_nico_respiration_j1"
+            ]
+          }
+        }
       ]
     },
-    {"id": "j1_07_end_friendship_breathes", "type": "end", "sender": "system", "text": "Nico remet un peu d’air dans la journée.", "delay": 0},
-    {"id": "j1_07_end_real_advice", "type": "end", "sender": "system", "text": "Nico répond en ami, pas en solution magique.", "delay": 0},
-    {"id": "j1_07_end_debt_grows", "type": "end", "sender": "system", "text": "Nico tient encore, mais la dette s’alourdit.", "delay": 0},
-    {"id": "j1_07_end_joke_soft_warning", "type": "end", "sender": "system", "text": "La vanne fait respirer, mais elle évite aussi quelque chose.", "delay": 0},
-    {"id": "j1_07_end_friend_waits", "type": "end", "sender": "system", "text": "Nico reste là, même sans réponse.", "delay": 0}
+    {
+      "id": "j1_07_end_friendship_breathes",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico remet un peu d’air dans la journée.",
+      "delay": 0
+    },
+    {
+      "id": "j1_07_end_real_advice",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico répond en ami, pas en solution magique.",
+      "delay": 0
+    },
+    {
+      "id": "j1_07_end_debt_grows",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico tient encore, mais la dette s’alourdit.",
+      "delay": 0
+    },
+    {
+      "id": "j1_07_end_joke_soft_warning",
+      "type": "end",
+      "sender": "system",
+      "text": "La vanne fait respirer, mais elle évite aussi quelque chose.",
+      "delay": 0
+    },
+    {
+      "id": "j1_07_end_friend_waits",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico reste là, même sans réponse.",
+      "delay": 0
+    }
   ]
 }

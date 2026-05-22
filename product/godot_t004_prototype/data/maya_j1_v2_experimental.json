@@ -12,13 +12,29 @@
       "sender": "maya",
       "text": "je pose ça là : vous êtes pas subtils.",
       "delay": 0,
+      "next": "j1_04_maya_auto_player_default_001"
+    },
+    {
+      "id": "j1_04_maya_auto_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Qui, “vous” ?",
+      "delay": 0,
       "next": "j1_04_maya_002"
     },
     {
       "id": "j1_04_maya_002",
       "type": "message",
       "sender": "maya",
-      "text": "enfin. c’est sûrement une coïncidence. une coïncidence très bien éclairée.",
+      "text": "enfin. c’est sûrement une coïncidence.",
+      "delay": 35,
+      "next": "j1_04_maya_003"
+    },
+    {
+      "id": "j1_04_maya_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "une coïncidence très bien éclairée.",
       "delay": 35,
       "next": "j1_04_choice_maya_pique"
     },
@@ -28,13 +44,29 @@
       "sender": "maya",
       "text": "réponse rapide. intéressant.",
       "delay": 0,
+      "next": "j1_04_maya_auto_player_first_reply_001"
+    },
+    {
+      "id": "j1_04_maya_auto_player_first_reply_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Pourquoi ?",
+      "delay": 0,
       "next": "j1_04_maya_entry_first_reply_002"
     },
     {
       "id": "j1_04_maya_entry_first_reply_002",
       "type": "message",
       "sender": "maya",
-      "text": "je note pas une vérité, hein. je note juste que tu viens vite sur un terrain bizarre.",
+      "text": "je note pas une vérité, hein.",
+      "delay": 35,
+      "next": "j1_04_maya_entry_first_reply_003"
+    },
+    {
+      "id": "j1_04_maya_entry_first_reply_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "je note juste que tu viens vite sur un terrain bizarre.",
       "delay": 35,
       "next": "j1_04_choice_maya_pique"
     },
@@ -44,13 +76,29 @@
       "sender": "maya",
       "text": "j’imagine que Sarah t’a écrit aussi.",
       "delay": 0,
+      "next": "j1_04_maya_auto_player_after_sarah_001"
+    },
+    {
+      "id": "j1_04_maya_auto_player_after_sarah_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Pourquoi tu dis ça ?",
+      "delay": 0,
       "next": "j1_04_maya_entry_after_sarah_002"
     },
     {
       "id": "j1_04_maya_entry_after_sarah_002",
       "type": "message",
       "sender": "maya",
-      "text": "je veux pas être au milieu. mais les absences, ça se voit. surtout sur les photos de groupe.",
+      "text": "je veux pas être au milieu.",
+      "delay": 45,
+      "next": "j1_04_maya_entry_after_sarah_003"
+    },
+    {
+      "id": "j1_04_maya_entry_after_sarah_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "mais les absences, ça se voit. surtout sur les photos de groupe.",
       "delay": 45,
       "next": "j1_04_choice_maya_pique"
     },
@@ -60,10 +108,26 @@
       "sender": "maya",
       "text": "tu arrives avec un délai qui a une petite odeur de détour.",
       "delay": 0,
+      "next": "j1_04_maya_auto_player_after_camille_001"
+    },
+    {
+      "id": "j1_04_maya_auto_player_after_camille_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu sais rien, Maya.",
+      "delay": 0,
       "next": "j1_04_maya_entry_after_camille_002"
     },
     {
       "id": "j1_04_maya_entry_after_camille_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "justement.",
+      "delay": 45,
+      "next": "j1_04_maya_entry_after_camille_003"
+    },
+    {
+      "id": "j1_04_maya_entry_after_camille_003",
       "type": "message",
       "sender": "maya",
       "text": "je sais pas ce qui s’est passé dehors. je sais juste qu’il y a eu un blanc dans le groupe.",
@@ -76,13 +140,21 @@
       "sender": "maya",
       "text": "réponse tardive reçue. je mets une petite étoile dans mon carnet imaginaire.",
       "delay": 0,
+      "next": "j1_04_maya_auto_player_late_001"
+    },
+    {
+      "id": "j1_04_maya_auto_player_late_001",
+      "type": "message",
+      "sender": "player",
+      "text": "T’as un carnet ?",
+      "delay": 0,
       "next": "j1_04_maya_entry_late_002"
     },
     {
       "id": "j1_04_maya_entry_late_002",
       "type": "message",
       "sender": "maya",
-      "text": "pas besoin d’être détective. parfois le timing travaille tout seul.",
+      "text": "non. mais parfois le timing travaille tout seul.",
       "delay": 35,
       "next": "j1_04_choice_maya_pique"
     },

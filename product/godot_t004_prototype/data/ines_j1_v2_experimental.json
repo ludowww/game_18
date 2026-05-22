@@ -12,13 +12,29 @@
       "sender": "ines",
       "text": "j’ai hésité avant d’écrire.",
       "delay": 0,
+      "next": "j1_05_ines_auto_player_default_001"
+    },
+    {
+      "id": "j1_05_ines_auto_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Pourquoi ?",
+      "delay": 0,
       "next": "j1_05_ines_002"
     },
     {
       "id": "j1_05_ines_002",
       "type": "message",
       "sender": "ines",
-      "text": "c’est peut-être pas mes affaires. mais hier, tu avais l’air loin. pas absent. juste… loin.",
+      "text": "c’est peut-être pas mes affaires.",
+      "delay": 35,
+      "next": "j1_05_ines_003"
+    },
+    {
+      "id": "j1_05_ines_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "mais hier, tu avais l’air loin. pas absent. juste… loin.",
       "delay": 35,
       "next": "j1_05_choice_ines_faille"
     },
@@ -28,13 +44,29 @@
       "sender": "ines",
       "text": "je pensais pas que tu répondrais aussi vite.",
       "delay": 0,
+      "next": "j1_05_ines_auto_player_first_reply_001"
+    },
+    {
+      "id": "j1_05_ines_auto_player_first_reply_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Moi non plus.",
+      "delay": 0,
       "next": "j1_05_ines_entry_first_reply_002"
     },
     {
       "id": "j1_05_ines_entry_first_reply_002",
       "type": "message",
       "sender": "ines",
-      "text": "je sais pas si c’est rassurant. ou si tu avais juste besoin d’un endroit calme.",
+      "text": "je sais pas si c’est rassurant.",
+      "delay": 40,
+      "next": "j1_05_ines_entry_first_reply_003"
+    },
+    {
+      "id": "j1_05_ines_entry_first_reply_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "ou si tu avais juste besoin d’un endroit calme.",
       "delay": 40,
       "next": "j1_05_choice_ines_faille"
     },
@@ -44,13 +76,29 @@
       "sender": "ines",
       "text": "tu as l’air chargé.",
       "delay": 0,
+      "next": "j1_05_ines_auto_player_after_conflict_001"
+    },
+    {
+      "id": "j1_05_ines_auto_player_after_conflict_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Ça se voit tant que ça ?",
+      "delay": 0,
       "next": "j1_05_ines_entry_after_conflict_002"
     },
     {
       "id": "j1_05_ines_entry_after_conflict_002",
       "type": "message",
       "sender": "ines",
-      "text": "je ne sais pas de quoi. je peux juste rester là deux minutes, si ça aide.",
+      "text": "je ne sais pas de quoi.",
+      "delay": 45,
+      "next": "j1_05_ines_entry_after_conflict_003"
+    },
+    {
+      "id": "j1_05_ines_entry_after_conflict_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "je peux juste rester là deux minutes, si ça aide.",
       "delay": 45,
       "next": "j1_05_choice_ines_faille"
     },
@@ -59,6 +107,14 @@
       "type": "message",
       "sender": "ines",
       "text": "je pensais que tu ne répondrais pas.",
+      "delay": 0,
+      "next": "j1_05_ines_auto_player_late_001"
+    },
+    {
+      "id": "j1_05_ines_auto_player_late_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Désolé.",
       "delay": 0,
       "next": "j1_05_ines_entry_late_002"
     },

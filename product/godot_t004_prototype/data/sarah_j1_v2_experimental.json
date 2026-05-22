@@ -151,7 +151,7 @@
       "choices": [
         {
           "id": "j1_01_needed_air",
-          "text": "J’avais besoin d’air. Je suis sorti un moment, c’est vrai. J’aurais dû te le dire.",
+          "text": "J’avais besoin d’air. Je suis sorti un moment. J’aurais dû te le dire.",
           "next": "j1_01_player_006a",
           "effects": {
             "confiance_sarah": 1,
@@ -166,7 +166,7 @@
         },
         {
           "id": "j1_01_nico_alibi",
-          "text": "J’étais avec Nico une partie du temps. On a parlé dehors, c’est tout.",
+          "text": "J’étais avec Nico une partie du temps. On a parlé dehors.",
           "next": "j1_01_player_006b",
           "effects": {
             "confiance_sarah": -1,
@@ -182,7 +182,7 @@
         },
         {
           "id": "j1_01_camille_minimized",
-          "text": "J’ai croisé Camille dehors, oui. Mais c’était juste une discussion, rien de plus.",
+          "text": "J’ai croisé Camille dehors. On a parlé, c’est tout.",
           "next": "j1_01_player_006c",
           "effects": {
             "confiance_sarah": -2,
@@ -199,7 +199,7 @@
         },
         {
           "id": "j1_01_vulnerable",
-          "text": "Je sais pas bien. Je suis sorti parce que j’étais pas bien. Et quand je suis revenu, j’ai pas réussi à revenir vraiment.",
+          "text": "Je sais pas bien. Je suis sorti parce que j’étais pas bien. Et quand je suis revenu, je n’ai pas réussi à revenir vraiment.",
           "next": "j1_01_player_006d",
           "effects": {
             "confiance_sarah": 2,
