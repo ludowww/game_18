@@ -42,6 +42,24 @@
       "sender": "sarah",
       "text": "J’ai fait trop de pâtes. Comme toujours.",
       "delay": 30,
+      "next": "j1_06_sarah_media_plate_001"
+    },
+    {
+      "id": "j1_06_sarah_media_plate_001",
+      "type": "media",
+      "sender": "sarah",
+      "media_type": "image",
+      "asset": "",
+      "caption": "[photo de l’assiette envoyée]",
+      "delay": 30,
+      "next": "j1_06_sarah_002b"
+    },
+    {
+      "id": "j1_06_sarah_002b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "j’ai pas fait exprès que ça ressemble à une mise en scène.",
+      "delay": 30,
       "next": "j1_06_sarah_003"
     },
     {
