@@ -132,7 +132,7 @@
       "id": "j1_03_nico_entry_after_sarah_001",
       "type": "message",
       "sender": "nico",
-      "text": "attends. si mon nom est déjà dans la phrase, faut qu’on soit au clair",
+      "text": "parce que j’ai eu l’impression hier que j’allais finir dans ta version officielle sans avoir lu le script",
       "delay": 0,
       "next": "j1_03_nico_single_reply_after_sarah_001"
     },
@@ -162,7 +162,7 @@
       "id": "j1_03_nico_entry_after_sarah_002",
       "type": "message",
       "sender": "nico",
-      "text": "bah c’est raté doucement.",
+      "text": "bah là, tu m’y mets déjà un peu.",
       "delay": 40,
       "next": "j1_03_nico_entry_after_sarah_003"
     },
