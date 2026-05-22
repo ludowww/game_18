@@ -586,6 +586,10 @@ func _add_bubble(sender: String, text: String, record_state: bool = true) -> voi
 	await get_tree().process_frame
 	_ensure_last_message_visible()
 
+func _is_placeholder_caption(caption: String) -> bool:
+	var clean := caption.strip_edges()
+	return clean.begins_with("[") and clean.ends_with("]")
+
 func _add_media_bubble(sender: String, node: Dictionary, record_state: bool = true) -> void:
 	var media_type: String = str(node.get("media_type", "image"))
 	var asset: String = str(node.get("asset", ""))
@@ -627,22 +631,34 @@ func _add_media_bubble(sender: String, node: Dictionary, record_state: bool = tr
 	content.add_theme_constant_override("separation", 6)
 	bubble.add_child(content)
 
+	var image_loaded := false
 	if media_type == "image" and asset != "" and ResourceLoader.exists(asset):
 		var texture = load(asset)
 		if texture is Texture2D:
+			image_loaded = true
 			var image := TextureRect.new()
 			image.texture = texture
-			image.custom_minimum_size = Vector2(BUBBLE_WIDTH - 28, 160)
+			image.custom_minimum_size = Vector2(BUBBLE_WIDTH - 28, 190)
 			image.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 			image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			image.mouse_filter = Control.MOUSE_FILTER_STOP
+			image.tooltip_text = "Agrandir l’image"
+			image.gui_input.connect(func(event: InputEvent) -> void:
+				if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+					_show_media_overlay(texture, caption)
+			)
 			content.add_child(image)
 
-	var label := Label.new()
-	label.text = caption
-	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	label.add_theme_font_size_override("font_size", 14)
-	label.add_theme_color_override("font_color", Color("f1f1f5"))
-	content.add_child(label)
+	var should_show_caption := true
+	if image_loaded and _is_placeholder_caption(caption):
+		should_show_caption = false
+	if should_show_caption:
+		var label := Label.new()
+		label.text = caption
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		label.add_theme_font_size_override("font_size", 14)
+		label.add_theme_color_override("font_color", Color("f1f1f5"))
+		content.add_child(label)
 
 	message_list.add_child(row)
 	if record_state:
@@ -655,6 +671,77 @@ func _add_media_bubble(sender: String, node: Dictionary, record_state: bool = tr
 		})
 	await get_tree().process_frame
 	_ensure_last_message_visible()
+
+func _show_media_overlay(texture: Texture2D, caption: String = "") -> void:
+	var overlay := ColorRect.new()
+	overlay.color = Color(0, 0, 0, 0.82)
+	overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
+	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	add_child(overlay)
+	move_child(overlay, get_child_count() - 1)
+
+	var margin := MarginContainer.new()
+	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
+	margin.add_theme_constant_override("margin_left", 18)
+	margin.add_theme_constant_override("margin_right", 18)
+	margin.add_theme_constant_override("margin_top", 18)
+	margin.add_theme_constant_override("margin_bottom", 18)
+	overlay.add_child(margin)
+
+	var center := CenterContainer.new()
+	center.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	center.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	margin.add_child(center)
+
+	var panel := PanelContainer.new()
+	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	var panel_style := StyleBoxFlat.new()
+	panel_style.bg_color = Color("101018")
+	panel_style.corner_radius_top_left = 18
+	panel_style.corner_radius_top_right = 18
+	panel_style.corner_radius_bottom_left = 18
+	panel_style.corner_radius_bottom_right = 18
+	panel_style.content_margin_left = 12
+	panel_style.content_margin_right = 12
+	panel_style.content_margin_top = 12
+	panel_style.content_margin_bottom = 12
+	panel.add_theme_stylebox_override("panel", panel_style)
+	center.add_child(panel)
+
+	var box := VBoxContainer.new()
+	box.add_theme_constant_override("separation", 10)
+	panel.add_child(box)
+
+	var image := TextureRect.new()
+	image.texture = texture
+	image.custom_minimum_size = Vector2(0, 420)
+	image.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	image.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	image.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	box.add_child(image)
+
+	if caption.strip_edges() != "" and not _is_placeholder_caption(caption):
+		var caption_label := Label.new()
+		caption_label.text = caption.strip_edges()
+		caption_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		caption_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		caption_label.add_theme_font_size_override("font_size", 14)
+		caption_label.add_theme_color_override("font_color", Color("f1f1f5"))
+		box.add_child(caption_label)
+
+	var close := Button.new()
+	close.text = "Fermer"
+	close.custom_minimum_size = Vector2(0, 42)
+	close.pressed.connect(func() -> void:
+		overlay.queue_free()
+	)
+	box.add_child(close)
+	overlay.gui_input.connect(func(event: InputEvent) -> void:
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			overlay.queue_free()
+	)
 
 func _add_system_note(text: String, record_state: bool = true) -> void:
 	var row := HBoxContainer.new()
