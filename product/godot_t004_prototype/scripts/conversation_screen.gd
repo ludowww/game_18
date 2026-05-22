@@ -62,7 +62,11 @@ func _ready() -> void:
 		return
 	ConversationState.mark_current_block_active()
 	if ConversationState.has_current_state():
-		if ConversationState.current_active_choice_node() != "":
+		var late_reopen_start := ConversationState.current_late_reopen_start_node()
+		if late_reopen_start != "":
+			ConversationState.consume_current_late_reopen(late_reopen_start)
+			_advance_to(late_reopen_start)
+		elif ConversationState.current_active_choice_node() != "":
 			_show_choice(nodes_by_id[ConversationState.current_active_choice_node()])
 		elif ConversationState.current_next_node() != "" and not ConversationState.current_done():
 			_advance_to(ConversationState.current_next_node())

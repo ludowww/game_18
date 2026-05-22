@@ -153,6 +153,60 @@
       ]
     },
     {
+      "id": "j1_06_sarah_late_reopen_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai mangé un peu.",
+      "delay": 0,
+      "next": "j1_06_sarah_late_reopen_002"
+    },
+    {
+      "id": "j1_06_sarah_late_reopen_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai laissé ton assiette sur le côté.",
+      "delay": 30,
+      "next": "j1_06_sarah_single_reply_late_reopen_001"
+    },
+    {
+      "id": "j1_06_sarah_single_reply_late_reopen_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_06_sarah_single_reply_late_reopen_001_option",
+          "text": "Désolé. J’ai laissé passer le message.",
+          "next": "j1_06_sarah_player_late_reopen_001"
+        }
+      ],
+      "next": "j1_06_sarah_player_late_reopen_001"
+    },
+    {
+      "id": "j1_06_sarah_player_late_reopen_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Désolé. J’ai laissé passer le message.",
+      "delay": 0,
+      "next": "j1_06_sarah_late_reopen_003"
+    },
+    {
+      "id": "j1_06_sarah_late_reopen_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai vu.",
+      "delay": 25,
+      "next": "j1_06_sarah_late_reopen_004"
+    },
+    {
+      "id": "j1_06_sarah_late_reopen_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Tu peux encore rentrer. Mais ce sera pas tout à fait le même repas.",
+      "delay": 35,
+      "next": "j1_06_choice_sarah_meal"
+    },
+    {
       "id": "j1_06_end_domestic_warmth",
       "type": "end",
       "sender": "system",

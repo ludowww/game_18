@@ -441,6 +441,7 @@ func _new_conversation_state(id: String, contact_id: String, display_name: Strin
 		"left_open_count": 0,
 		"left_open_flag": "",
 		"late_reply_prepared": false,
+		"late_reopen_consumed": false,
 		"last_preview": "Nouveau message" if initial_has_new else display_name + " — " + title,
 		"has_new": initial_has_new
 	}
@@ -740,6 +741,7 @@ func mark_current_left_open_if_pending_choice() -> bool:
 	var silence_flag: String = _left_open_flag_for_current_context(active_choice_node)
 	state["left_open_flag"] = silence_flag
 	state["late_reply_prepared"] = true
+	state["late_reopen_consumed"] = false
 	if silence_flag != "" and not global_game_state["flags"].has(silence_flag):
 		global_game_state["flags"].append(silence_flag)
 	save_progression()
@@ -753,6 +755,34 @@ func _left_open_flag_for_current_context(active_choice_node: String) -> String:
 	if json_path.contains("sarah_meal_j1_v2"):
 		return str(J1_V2_LEFT_OPEN_FLAGS.get("sarah_meal_j1_v2", ""))
 	return str(J1_V2_LEFT_OPEN_FLAGS.get(current_conversation_id, ""))
+
+func current_late_reopen_start_node() -> String:
+	var state: Dictionary = current()
+	if bool(state.get("done", false)):
+		return ""
+	if bool(state.get("late_reopen_consumed", false)):
+		return ""
+	if not bool(state.get("left_open", false)) or not bool(state.get("late_reply_prepared", false)):
+		return ""
+	if str(state.get("left_open_choice_node", "")) != "j1_06_choice_sarah_meal":
+		return ""
+	if not has_global_flag("late_reply_sarah_meal_j1"):
+		return ""
+	if not str(state.get("json_path", "")).contains("sarah_meal_j1_v2"):
+		return ""
+	return "j1_06_sarah_late_reopen_001"
+
+func consume_current_late_reopen(start_node: String) -> void:
+	if start_node == "":
+		return
+	var state: Dictionary = current()
+	state["late_reopen_consumed"] = true
+	state["late_reply_prepared"] = false
+	state["left_open"] = false
+	state["active_choice_node"] = ""
+	state["pending_choice_option_count"] = 0
+	state["next_node"] = start_node
+	save_progression()
 
 func record_current_choice(choice_id: String) -> void:
 	var state: Dictionary = current()
@@ -1172,6 +1202,7 @@ func save_progression() -> void:
 			"left_open_count": int(state.get("left_open_count", 0)),
 			"left_open_flag": str(state.get("left_open_flag", "")),
 			"late_reply_prepared": bool(state.get("late_reply_prepared", false)),
+			"late_reopen_consumed": bool(state.get("late_reopen_consumed", false)),
 			"last_preview": str(state.get("last_preview", "")),
 			"has_new": bool(state.get("has_new", false))
 		}
@@ -1238,6 +1269,7 @@ func load_progression() -> void:
 		state["left_open_count"] = int(saved_state.get("left_open_count", state.get("left_open_count", 0)))
 		state["left_open_flag"] = str(saved_state.get("left_open_flag", state.get("left_open_flag", "")))
 		state["late_reply_prepared"] = bool(saved_state.get("late_reply_prepared", state.get("late_reply_prepared", false)))
+		state["late_reopen_consumed"] = bool(saved_state.get("late_reopen_consumed", state.get("late_reopen_consumed", false)))
 		state["last_preview"] = str(saved_state.get("last_preview", state.get("last_preview", "")))
 		state["has_new"] = bool(saved_state.get("has_new", state.get("has_new", false)))
 
