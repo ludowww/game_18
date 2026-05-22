@@ -34,7 +34,7 @@
       "id": "j1_05_ines_entry_first_reply_002",
       "type": "message",
       "sender": "ines",
-      "text": "je sais pas si c’est rassurant ou si ça veut dire que tu cherchais juste un endroit calme.",
+      "text": "je sais pas si c’est rassurant. ou si tu avais juste besoin d’un endroit calme.",
       "delay": 40,
       "next": "j1_05_choice_ines_faille"
     },
@@ -50,7 +50,7 @@
       "id": "j1_05_ines_entry_after_conflict_002",
       "type": "message",
       "sender": "ines",
-      "text": "je ne sais pas de quoi. je voulais juste laisser une petite place ici, si ça aide.",
+      "text": "je ne sais pas de quoi. je peux juste rester là deux minutes, si ça aide.",
       "delay": 45,
       "next": "j1_05_choice_ines_faille"
     },
@@ -66,7 +66,7 @@
       "id": "j1_05_ines_entry_late_002",
       "type": "message",
       "sender": "ines",
-      "text": "c’est pas grave. mon message pouvait rester là aussi.",
+      "text": "c’est pas grave. mon message pouvait attendre.",
       "delay": 40,
       "next": "j1_05_choice_ines_faille"
     },
@@ -78,7 +78,7 @@
       "choices": [
         {
           "id": "j1_05_open_softly",
-          "text": "Non, c’est pas bizarre. Je crois que t’as vu quelque chose.",
+          "text": "T’as vu juste. J’étais pas vraiment là.",
           "next": "j1_05_end_soft_opening",
           "effects": {
             "fuite_ines": 1,
@@ -90,7 +90,7 @@
         },
         {
           "id": "j1_05_keep_distance",
-          "text": "Merci. Mais je préfère pas t’embarquer là-dedans.",
+          "text": "Merci de l’avoir vu. Mais je préfère pas t’embarquer là-dedans.",
           "next": "j1_05_end_distance",
           "effects": {
             "fuite_ines": -1,
@@ -102,7 +102,7 @@
         },
         {
           "id": "j1_05_fuite_seed",
-          "text": "J’aurais aimé rester avec quelqu’un qui ne me demandait rien.",
+          "text": "Peut-être que je cherchais juste un endroit où personne ne me demandait rien.",
           "next": "j1_05_end_fuite_warning",
           "effects": {
             "fuite_ines": 3,

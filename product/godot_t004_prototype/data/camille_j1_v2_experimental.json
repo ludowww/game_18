@@ -35,7 +35,7 @@
       "id": "j1_02_camille_004",
       "type": "message",
       "sender": "camille",
-      "text": "Tu vas me dire que c’était juste une discussion dehors ?",
+      "text": "Alors dis-moi : c’était juste une discussion dehors ?",
       "delay": 35,
       "next": "j1_02_choice_camille_dehors"
     },
@@ -51,7 +51,7 @@
       "id": "j1_02_camille_entry_first_reply_002",
       "type": "message",
       "sender": "camille",
-      "text": "Oui. Ça, j’avais compris. Ce que je ne sais pas, c’est ce que tu vas en faire.",
+      "text": "Alors réponds vraiment : c’était juste une discussion dehors ?",
       "delay": 40,
       "next": "j1_02_choice_camille_dehors"
     },
@@ -67,7 +67,7 @@
       "id": "j1_02_camille_entry_after_sarah_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je sais. Mais “pas simple”, ça peut vite devenir une façon élégante de ne rien dire.",
+      "text": "Je sais. Mais “pas simple”, ça ne répond pas à la question : dehors, c’était juste une discussion ?",
       "delay": 45,
       "next": "j1_02_choice_camille_dehors"
     },
@@ -83,7 +83,7 @@
       "id": "j1_02_camille_entry_late_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je vais essayer de ne pas lire tout un roman dedans. Mais je note quand même.",
+      "text": "Je vais éviter d’y lire tout un roman. Réponds juste : c’était juste une discussion dehors ?",
       "delay": 35,
       "next": "j1_02_choice_camille_dehors"
     },
@@ -99,7 +99,7 @@
       "id": "j1_02_camille_entry_after_nico_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je ne sais pas à qui tu l’as déjà racontée. Je sais juste que dehors, ce n’était pas neutre.",
+      "text": "Je ne sais pas à qui tu l’as déjà racontée. Mais à moi, tu peux répondre simple : c’était juste une discussion dehors ?",
       "delay": 45,
       "next": "j1_02_choice_camille_dehors"
     },
