@@ -236,7 +236,7 @@
       "choices": [
         {
           "id": "j1_05_open_softly",
-          "text": "T’as vu juste. J’étais pas vraiment là.",
+          "text": "Oui. J’étais pas vraiment là, hier.",
           "next": "j1_05_end_soft_opening",
           "effects": {
             "fuite_ines": 1,
@@ -248,7 +248,7 @@
         },
         {
           "id": "j1_05_keep_distance",
-          "text": "Merci de l’avoir vu. Mais je préfère pas t’embarquer là-dedans.",
+          "text": "Merci de l’avoir vu. Mais je préfère pas t’embarquer dans ça.",
           "next": "j1_05_end_distance",
           "effects": {
             "fuite_ines": -1,
@@ -260,7 +260,7 @@
         },
         {
           "id": "j1_05_fuite_seed",
-          "text": "Peut-être que je cherchais juste un endroit où personne ne me demandait rien.",
+          "text": "Peut-être que oui. Peut-être que je cherchais juste un endroit où personne ne me demandait rien.",
           "next": "j1_05_end_fuite_warning",
           "effects": {
             "fuite_ines": 3,

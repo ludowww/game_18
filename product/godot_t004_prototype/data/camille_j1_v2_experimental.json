@@ -306,7 +306,7 @@
         },
         {
           "id": "j1_02_respect_boundary",
-          "text": "Je veux pas faire comme si c’était rien. Mais je peux pas te demander de porter ça pendant que je ne suis pas clair avec Sarah.",
+          "text": "Non. Mais je peux pas te demander de porter ça pendant que je ne suis pas clair avec Sarah.",
           "next": "j1_02_player_005b",
           "effects": {
             "tension_camille": -1,
@@ -322,7 +322,7 @@
         },
         {
           "id": "j1_02_minimize",
-          "text": "Camille, on a parlé dehors. C’est tout. On va pas transformer ça en drame.",
+          "text": "Oui. On a parlé dehors. C’est tout. Je veux pas transformer ça en drame.",
           "next": "j1_02_player_005c",
           "effects": {
             "tension_camille": -1,
@@ -338,7 +338,7 @@
         },
         {
           "id": "j1_02_early_desire",
-          "text": "Je pensais surtout à toi ce matin. Au moment dehors. À ce que j’aurais peut-être dû faire.",
+          "text": "Non. Et c’est justement ça le problème : je pensais surtout à toi ce matin.",
           "next": "j1_02_player_005d",
           "effects": {
             "tension_camille": 2,
@@ -354,7 +354,7 @@
         },
         {
           "id": "j1_02_uncertain",
-          "text": "Je sais pas ce que c’était. Je sais juste que ça m’a déplacé. Et que j’ai peur de répondre à côté.",
+          "text": "Non. Je sais pas encore ce que c’était, mais je sais que ça m’a remué.",
           "next": "j1_02_player_005e",
           "effects": {
             "tension_camille": 1,
@@ -421,7 +421,7 @@
       "id": "j1_02_player_005b",
       "type": "message",
       "sender": "player",
-      "text": "Je veux pas faire comme si c’était rien. Mais je peux pas te demander de porter ça pendant que je ne suis pas clair avec Sarah.",
+      "text": "Non. Mais je peux pas te demander de porter ça pendant que je ne suis pas clair avec Sarah.",
       "delay": 0,
       "next": "j1_02_camille_006b"
     },
@@ -468,7 +468,7 @@
       "id": "j1_02_player_005c",
       "type": "message",
       "sender": "player",
-      "text": "Camille, on a parlé dehors. C’est tout. On va pas transformer ça en drame.",
+      "text": "Oui. On a parlé dehors. C’est tout. Je veux pas transformer ça en drame.",
       "delay": 0,
       "next": "j1_02_camille_006c"
     },
@@ -515,7 +515,7 @@
       "id": "j1_02_player_005d",
       "type": "message",
       "sender": "player",
-      "text": "Je pensais surtout à toi ce matin. Au moment dehors. À ce que j’aurais peut-être dû faire.",
+      "text": "Non. Et c’est justement ça le problème : je pensais surtout à toi ce matin.",
       "delay": 0,
       "next": "j1_02_camille_006d"
     },
@@ -562,7 +562,7 @@
       "id": "j1_02_player_005e",
       "type": "message",
       "sender": "player",
-      "text": "Je sais pas ce que c’était. Je sais juste que ça m’a déplacé. Et que j’ai peur de répondre à côté.",
+      "text": "Non. Je sais pas encore ce que c’était, mais je sais que ça m’a remué.",
       "delay": 0,
       "next": "j1_02_camille_006e"
     },

@@ -306,7 +306,7 @@
       "choices": [
         {
           "id": "j1_04_play_dumb",
-          "text": "Je vois pas de quoi tu parles.",
+          "text": "Je vois pas ce que tu crois avoir compris.",
           "next": "j1_04_end_suspicious",
           "effects": {
             "suspicion_maya": 2,
@@ -332,7 +332,7 @@
         },
         {
           "id": "j1_04_ask_what_saw",
-          "text": "T’as vu quoi, exactement ?",
+          "text": "T’as vu quelque chose, ou tu déduis juste ?",
           "next": "j1_04_end_photo_seeded",
           "effects": {
             "suspicion_maya": 1,
@@ -345,7 +345,7 @@
         },
         {
           "id": "j1_04_not_involve",
-          "text": "Maya, te mêle pas de ça.",
+          "text": "Maya, laisse tomber. Te mêle pas de ça.",
           "next": "j1_04_end_defensive",
           "effects": {
             "suspicion_maya": 3,
