@@ -13,7 +13,7 @@
       "sender": "sarah",
       "text": "T’es réveillé ?",
       "delay": 0,
-      "next": "j1_01_sarah_auto_player_default_001"
+      "next": "j1_01_sarah_single_reply_default_001"
     },
     {
       "id": "j1_01_sarah_002",
@@ -29,6 +29,28 @@
       "sender": "sarah",
       "text": "Mais hier, quand t’es revenu, t’étais bizarre.",
       "delay": 45,
+      "next": "j1_01_sarah_single_reply_default_002"
+    },
+    {
+      "id": "j1_01_sarah_single_reply_default_002",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_01_sarah_single_reply_default_002_option",
+          "text": "Bizarre comment ?",
+          "next": "j1_01_sarah_player_default_002"
+        }
+      ],
+      "next": "j1_01_sarah_player_default_002"
+    },
+    {
+      "id": "j1_01_sarah_player_default_002",
+      "type": "message",
+      "sender": "player",
+      "text": "Bizarre comment ?",
+      "delay": 0,
       "next": "j1_01_sarah_004"
     },
     {
@@ -37,7 +59,15 @@
       "sender": "sarah",
       "text": "Pas juste fatigué. Ailleurs.",
       "delay": 35,
-      "next": "j1_01_sarah_auto_player_default_002"
+      "next": "j1_01_sarah_004b"
+    },
+    {
+      "id": "j1_01_sarah_004b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Comme si une partie de toi était restée dehors.",
+      "delay": 35,
+      "next": "j1_01_sarah_single_reply_default_003"
     },
     {
       "id": "j1_01_sarah_005",
@@ -53,7 +83,7 @@
       "sender": "sarah",
       "text": "Tu réponds vite. Merci.",
       "delay": 0,
-      "next": "j1_01_sarah_auto_player_first_reply_001"
+      "next": "j1_01_sarah_single_reply_first_reply_001"
     },
     {
       "id": "j1_01_sarah_entry_first_reply_002",
@@ -69,13 +99,21 @@
       "sender": "sarah",
       "text": "J’ai attendu un peu.",
       "delay": 0,
-      "next": "j1_01_sarah_auto_player_after_camille_001"
+      "next": "j1_01_sarah_single_reply_after_camille_001"
     },
     {
       "id": "j1_01_sarah_entry_after_camille_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Je peux entendre ça. Mais j’ai besoin que tu me parles, pas que tu disparaisses dans le silence.",
+      "text": "Je peux entendre ça.",
+      "delay": 45,
+      "next": "j1_01_sarah_entry_after_camille_003"
+    },
+    {
+      "id": "j1_01_sarah_entry_after_camille_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais j’ai besoin que tu me parles, pas que tu disparaisses dans le silence.",
       "delay": 45,
       "next": "j1_01_choice_version_sarah"
     },
@@ -85,6 +123,36 @@
       "sender": "sarah",
       "text": "Nico m’a donné une réponse hier, mais elle tenait pas beaucoup.",
       "delay": 0,
+      "next": "j1_01_sarah_single_reply_after_nico_001"
+    },
+    {
+      "id": "j1_01_sarah_single_reply_after_nico_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_01_sarah_single_reply_after_nico_001_option",
+          "text": "Qu’est-ce qu’il t’a dit ?",
+          "next": "j1_01_sarah_player_after_nico_001"
+        }
+      ],
+      "next": "j1_01_sarah_player_after_nico_001"
+    },
+    {
+      "id": "j1_01_sarah_player_after_nico_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Qu’est-ce qu’il t’a dit ?",
+      "delay": 0,
+      "next": "j1_01_sarah_entry_after_nico_001b"
+    },
+    {
+      "id": "j1_01_sarah_entry_after_nico_001b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Pas grand-chose. C’est justement le problème.",
+      "delay": 35,
       "next": "j1_01_sarah_entry_after_nico_002"
     },
     {
@@ -107,12 +175,56 @@
       "id": "j1_01_sarah_entry_late_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Hier tu étais loin. Ce matin aussi. Tu étais où, exactement ?",
+      "text": "Hier tu étais loin. Ce matin aussi.",
+      "delay": 40,
+      "next": "j1_01_sarah_single_reply_late_001"
+    },
+    {
+      "id": "j1_01_sarah_single_reply_late_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_01_sarah_single_reply_late_001_option",
+          "text": "Je suis là maintenant.",
+          "next": "j1_01_sarah_player_late_001"
+        }
+      ],
+      "next": "j1_01_sarah_player_late_001"
+    },
+    {
+      "id": "j1_01_sarah_player_late_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis là maintenant.",
+      "delay": 0,
+      "next": "j1_01_sarah_entry_late_003"
+    },
+    {
+      "id": "j1_01_sarah_entry_late_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Alors réponds-moi. Tu étais où, exactement ?",
       "delay": 40,
       "next": "j1_01_choice_version_sarah"
     },
     {
-      "id": "j1_01_sarah_auto_player_default_001",
+      "id": "j1_01_sarah_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_01_sarah_single_reply_default_001_option",
+          "text": "Oui. Je viens de voir ton message.",
+          "next": "j1_01_sarah_player_default_001"
+        }
+      ],
+      "next": "j1_01_sarah_player_default_001"
+    },
+    {
+      "id": "j1_01_sarah_player_default_001",
       "type": "message",
       "sender": "player",
       "text": "Oui. Je viens de voir ton message.",
@@ -120,7 +232,21 @@
       "next": "j1_01_sarah_002"
     },
     {
-      "id": "j1_01_sarah_auto_player_default_002",
+      "id": "j1_01_sarah_single_reply_default_003",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_01_sarah_single_reply_default_003_option",
+          "text": "Je sais pas quoi dire.",
+          "next": "j1_01_sarah_player_default_003"
+        }
+      ],
+      "next": "j1_01_sarah_player_default_003"
+    },
+    {
+      "id": "j1_01_sarah_player_default_003",
       "type": "message",
       "sender": "player",
       "text": "Je sais pas quoi dire.",
@@ -128,7 +254,21 @@
       "next": "j1_01_sarah_005"
     },
     {
-      "id": "j1_01_sarah_auto_player_first_reply_001",
+      "id": "j1_01_sarah_single_reply_first_reply_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_01_sarah_single_reply_first_reply_001_option",
+          "text": "Je voulais pas te laisser attendre.",
+          "next": "j1_01_sarah_player_first_reply_001"
+        }
+      ],
+      "next": "j1_01_sarah_player_first_reply_001"
+    },
+    {
+      "id": "j1_01_sarah_player_first_reply_001",
       "type": "message",
       "sender": "player",
       "text": "Je voulais pas te laisser attendre.",
@@ -136,7 +276,21 @@
       "next": "j1_01_sarah_entry_first_reply_002"
     },
     {
-      "id": "j1_01_sarah_auto_player_after_camille_001",
+      "id": "j1_01_sarah_single_reply_after_camille_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_01_sarah_single_reply_after_camille_001_option",
+          "text": "Je savais pas quoi répondre.",
+          "next": "j1_01_sarah_player_after_camille_001"
+        }
+      ],
+      "next": "j1_01_sarah_player_after_camille_001"
+    },
+    {
+      "id": "j1_01_sarah_player_after_camille_001",
       "type": "message",
       "sender": "player",
       "text": "Je savais pas quoi répondre.",

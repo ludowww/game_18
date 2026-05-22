@@ -12,10 +12,24 @@
       "sender": "nico",
       "text": "frérot j’ai fait ce que j’ai pu hier, mais ton truc sentait pas la grande stratégie",
       "delay": 0,
-      "next": "j1_03_nico_auto_player_default_001"
+      "next": "j1_03_nico_single_reply_default_001"
     },
     {
-      "id": "j1_03_nico_auto_player_default_001",
+      "id": "j1_03_nico_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_03_nico_single_reply_default_001_option",
+          "text": "Je sais.",
+          "next": "j1_03_nico_player_default_001"
+        }
+      ],
+      "next": "j1_03_nico_player_default_001"
+    },
+    {
+      "id": "j1_03_nico_player_default_001",
       "type": "message",
       "sender": "player",
       "text": "Je sais.",
@@ -28,13 +42,43 @@
       "sender": "nico",
       "text": "dis-moi juste ce que je suis censé savoir.",
       "delay": 35,
+      "next": "j1_03_nico_single_reply_default_002"
+    },
+    {
+      "id": "j1_03_nico_single_reply_default_002",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_03_nico_single_reply_default_002_option",
+          "text": "Tu veux dire quoi ?",
+          "next": "j1_03_nico_player_default_002"
+        }
+      ],
+      "next": "j1_03_nico_player_default_002"
+    },
+    {
+      "id": "j1_03_nico_player_default_002",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu veux dire quoi ?",
+      "delay": 0,
+      "next": "j1_03_nico_002b"
+    },
+    {
+      "id": "j1_03_nico_002b",
+      "type": "message",
+      "sender": "nico",
+      "text": "je veux dire : qu’est-ce que je dis si quelqu’un me demande ?",
+      "delay": 35,
       "next": "j1_03_nico_003"
     },
     {
       "id": "j1_03_nico_003",
       "type": "message",
       "sender": "nico",
-      "text": "et surtout ce que je suis pas censé inventer.",
+      "text": "et surtout, qu’est-ce que je suis pas censé inventer ?",
       "delay": 35,
       "next": "j1_03_choice_nico_version"
     },
@@ -44,10 +88,24 @@
       "sender": "nico",
       "text": "réponse rapide. soit tu paniques, soit tu prépares une connerie propre",
       "delay": 0,
-      "next": "j1_03_nico_auto_player_first_reply_001"
+      "next": "j1_03_nico_single_reply_first_reply_001"
     },
     {
-      "id": "j1_03_nico_auto_player_first_reply_001",
+      "id": "j1_03_nico_single_reply_first_reply_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_03_nico_single_reply_first_reply_001_option",
+          "text": "Un peu les deux.",
+          "next": "j1_03_nico_player_first_reply_001"
+        }
+      ],
+      "next": "j1_03_nico_player_first_reply_001"
+    },
+    {
+      "id": "j1_03_nico_player_first_reply_001",
       "type": "message",
       "sender": "player",
       "text": "Un peu les deux.",
@@ -58,7 +116,15 @@
       "id": "j1_03_nico_entry_first_reply_002",
       "type": "message",
       "sender": "nico",
-      "text": "je peux t’aider deux minutes, mais je deviens pas ton service après-vente du mensonge",
+      "text": "parfait, ambiance grand art.",
+      "delay": 35,
+      "next": "j1_03_nico_entry_first_reply_003"
+    },
+    {
+      "id": "j1_03_nico_entry_first_reply_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "je peux t’aider deux minutes, mais je deviens pas ton service après-vente du mensonge.",
       "delay": 35,
       "next": "j1_03_choice_nico_version"
     },
@@ -68,10 +134,24 @@
       "sender": "nico",
       "text": "attends. si mon nom est déjà dans la phrase, faut qu’on soit au clair",
       "delay": 0,
-      "next": "j1_03_nico_auto_player_after_sarah_001"
+      "next": "j1_03_nico_single_reply_after_sarah_001"
     },
     {
-      "id": "j1_03_nico_auto_player_after_sarah_001",
+      "id": "j1_03_nico_single_reply_after_sarah_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_03_nico_single_reply_after_sarah_001_option",
+          "text": "Je voulais pas t’y mettre plus que ça.",
+          "next": "j1_03_nico_player_after_sarah_001"
+        }
+      ],
+      "next": "j1_03_nico_player_after_sarah_001"
+    },
+    {
+      "id": "j1_03_nico_player_after_sarah_001",
       "type": "message",
       "sender": "player",
       "text": "Je voulais pas t’y mettre plus que ça.",
@@ -80,6 +160,14 @@
     },
     {
       "id": "j1_03_nico_entry_after_sarah_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "bah c’est raté doucement.",
+      "delay": 40,
+      "next": "j1_03_nico_entry_after_sarah_003"
+    },
+    {
+      "id": "j1_03_nico_entry_after_sarah_003",
       "type": "message",
       "sender": "nico",
       "text": "je peux couvrir un blanc. pas un meuble entier dans le salon.",
@@ -92,10 +180,24 @@
       "sender": "nico",
       "text": "ok. donc Camille est pas juste une parenthèse dans ta tête.",
       "delay": 0,
-      "next": "j1_03_nico_auto_player_after_camille_001"
+      "next": "j1_03_nico_single_reply_after_camille_001"
     },
     {
-      "id": "j1_03_nico_auto_player_after_camille_001",
+      "id": "j1_03_nico_single_reply_after_camille_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_03_nico_single_reply_after_camille_001_option",
+          "text": "Non.",
+          "next": "j1_03_nico_player_after_camille_001"
+        }
+      ],
+      "next": "j1_03_nico_player_after_camille_001"
+    },
+    {
+      "id": "j1_03_nico_player_after_camille_001",
       "type": "message",
       "sender": "player",
       "text": "Non.",
@@ -104,6 +206,14 @@
     },
     {
       "id": "j1_03_nico_entry_after_camille_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "au moins c’est clair.",
+      "delay": 45,
+      "next": "j1_03_nico_entry_after_camille_003"
+    },
+    {
+      "id": "j1_03_nico_entry_after_camille_003",
       "type": "message",
       "sender": "nico",
       "text": "je te juge pas. mais faut que tu me dises si tu veux un ami ou un alibi.",
@@ -116,10 +226,24 @@
       "sender": "nico",
       "text": "tu réponds tard, donc je suppose que ton cerveau a quitté le groupe sans prévenir",
       "delay": 0,
-      "next": "j1_03_nico_auto_player_late_001"
+      "next": "j1_03_nico_single_reply_late_001"
     },
     {
-      "id": "j1_03_nico_auto_player_late_001",
+      "id": "j1_03_nico_single_reply_late_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_03_nico_single_reply_late_001_option",
+          "text": "Pas loin.",
+          "next": "j1_03_nico_player_late_001"
+        }
+      ],
+      "next": "j1_03_nico_player_late_001"
+    },
+    {
+      "id": "j1_03_nico_player_late_001",
       "type": "message",
       "sender": "player",
       "text": "Pas loin.",
@@ -128,6 +252,14 @@
     },
     {
       "id": "j1_03_nico_entry_late_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "ok. on va faire simple.",
+      "delay": 40,
+      "next": "j1_03_nico_entry_late_003"
+    },
+    {
+      "id": "j1_03_nico_entry_late_003",
       "type": "message",
       "sender": "nico",
       "text": "respire. et dis-moi ce que je dois faire si quelqu’un me demande.",

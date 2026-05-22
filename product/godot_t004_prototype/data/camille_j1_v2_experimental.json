@@ -13,7 +13,7 @@
       "sender": "camille",
       "text": "Je crois qu’on a été moins discrets qu’on pensait.",
       "delay": 0,
-      "next": "j1_02_camille_auto_player_default_001"
+      "next": "j1_02_camille_single_reply_default_001"
     },
     {
       "id": "j1_02_camille_002",
@@ -21,13 +21,35 @@
       "sender": "camille",
       "text": "Tu aimerais que je dise non.",
       "delay": 35,
+      "next": "j1_02_camille_single_reply_default_002"
+    },
+    {
+      "id": "j1_02_camille_single_reply_default_002",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_02_camille_single_reply_default_002_option",
+          "text": "Camille…",
+          "next": "j1_02_camille_player_default_002"
+        }
+      ],
+      "next": "j1_02_camille_player_default_002"
+    },
+    {
+      "id": "j1_02_camille_player_default_002",
+      "type": "message",
+      "sender": "player",
+      "text": "Camille…",
+      "delay": 0,
       "next": "j1_02_camille_003"
     },
     {
       "id": "j1_02_camille_003",
       "type": "message",
       "sender": "camille",
-      "text": "Mais je pense que tu sais déjà.",
+      "text": "Non, laisse. Tu sais très bien de quoi je parle.",
       "delay": 35,
       "next": "j1_02_camille_004"
     },
@@ -45,13 +67,21 @@
       "sender": "camille",
       "text": "Tu réponds vite.",
       "delay": 0,
-      "next": "j1_02_camille_auto_player_first_reply_001"
+      "next": "j1_02_camille_single_reply_first_reply_001"
     },
     {
       "id": "j1_02_camille_entry_first_reply_002",
       "type": "message",
       "sender": "camille",
-      "text": "Alors réponds vraiment : c’était juste une discussion dehors ?",
+      "text": "Oui. Ça, j’avais compris.",
+      "delay": 40,
+      "next": "j1_02_camille_entry_first_reply_003"
+    },
+    {
+      "id": "j1_02_camille_entry_first_reply_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ce que je veux savoir, c’est si tu vas appeler hier “juste une discussion”.",
       "delay": 40,
       "next": "j1_02_choice_camille_dehors"
     },
@@ -61,14 +91,30 @@
       "sender": "camille",
       "text": "Tu as l’air prudent ce matin.",
       "delay": 0,
-      "next": "j1_02_camille_auto_player_after_sarah_001"
+      "next": "j1_02_camille_single_reply_after_sarah_001"
     },
     {
       "id": "j1_02_camille_entry_after_sarah_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je sais. Mais “pas simple”, ça ne répond pas à la question : dehors, c’était juste une discussion ?",
+      "text": "Je sais.",
       "delay": 45,
+      "next": "j1_02_camille_entry_after_sarah_003"
+    },
+    {
+      "id": "j1_02_camille_entry_after_sarah_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais “pas simple”, ça peut vite devenir une façon élégante de ne rien dire.",
+      "delay": 35,
+      "next": "j1_02_camille_entry_after_sarah_004"
+    },
+    {
+      "id": "j1_02_camille_entry_after_sarah_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Dehors, c’était juste une discussion ?",
+      "delay": 35,
       "next": "j1_02_choice_camille_dehors"
     },
     {
@@ -77,13 +123,43 @@
       "sender": "camille",
       "text": "Tu as laissé passer du temps.",
       "delay": 0,
+      "next": "j1_02_camille_single_reply_late_001"
+    },
+    {
+      "id": "j1_02_camille_single_reply_late_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_02_camille_single_reply_late_001_option",
+          "text": "Je cherchais quoi dire.",
+          "next": "j1_02_camille_player_late_001"
+        }
+      ],
+      "next": "j1_02_camille_player_late_001"
+    },
+    {
+      "id": "j1_02_camille_player_late_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je cherchais quoi dire.",
+      "delay": 0,
       "next": "j1_02_camille_entry_late_002"
     },
     {
       "id": "j1_02_camille_entry_late_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je vais éviter d’y lire tout un roman. Réponds juste : c’était juste une discussion dehors ?",
+      "text": "Je vais essayer de ne pas lire tout un roman dedans.",
+      "delay": 35,
+      "next": "j1_02_camille_entry_late_003"
+    },
+    {
+      "id": "j1_02_camille_entry_late_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Réponds juste : c’était juste une discussion dehors ?",
       "delay": 35,
       "next": "j1_02_choice_camille_dehors"
     },
@@ -93,18 +169,70 @@
       "sender": "camille",
       "text": "Tu as l’air de chercher une phrase qui ne casse rien.",
       "delay": 0,
+      "next": "j1_02_camille_single_reply_after_nico_001"
+    },
+    {
+      "id": "j1_02_camille_single_reply_after_nico_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_02_camille_single_reply_after_nico_001_option",
+          "text": "Tu crois que je mens ?",
+          "next": "j1_02_camille_player_after_nico_001"
+        }
+      ],
+      "next": "j1_02_camille_player_after_nico_001"
+    },
+    {
+      "id": "j1_02_camille_player_after_nico_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu crois que je mens ?",
+      "delay": 0,
+      "next": "j1_02_camille_entry_after_nico_001b"
+    },
+    {
+      "id": "j1_02_camille_entry_after_nico_001b",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je crois que tu tries.",
+      "delay": 35,
       "next": "j1_02_camille_entry_after_nico_002"
     },
     {
       "id": "j1_02_camille_entry_after_nico_002",
       "type": "message",
       "sender": "camille",
-      "text": "Je ne sais pas à qui tu l’as déjà racontée. Mais à moi, tu peux répondre simple : c’était juste une discussion dehors ?",
+      "text": "Je ne sais pas à qui tu l’as déjà racontée. Mais à moi, tu peux répondre simple.",
       "delay": 45,
+      "next": "j1_02_camille_entry_after_nico_003"
+    },
+    {
+      "id": "j1_02_camille_entry_after_nico_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’était juste une discussion dehors ?",
+      "delay": 35,
       "next": "j1_02_choice_camille_dehors"
     },
     {
-      "id": "j1_02_camille_auto_player_default_001",
+      "id": "j1_02_camille_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_02_camille_single_reply_default_001_option",
+          "text": "Tu crois ?",
+          "next": "j1_02_camille_player_default_001"
+        }
+      ],
+      "next": "j1_02_camille_player_default_001"
+    },
+    {
+      "id": "j1_02_camille_player_default_001",
       "type": "message",
       "sender": "player",
       "text": "Tu crois ?",
@@ -112,7 +240,21 @@
       "next": "j1_02_camille_002"
     },
     {
-      "id": "j1_02_camille_auto_player_first_reply_001",
+      "id": "j1_02_camille_single_reply_first_reply_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_02_camille_single_reply_first_reply_001_option",
+          "text": "J’ai vu ton message.",
+          "next": "j1_02_camille_player_first_reply_001"
+        }
+      ],
+      "next": "j1_02_camille_player_first_reply_001"
+    },
+    {
+      "id": "j1_02_camille_player_first_reply_001",
       "type": "message",
       "sender": "player",
       "text": "J’ai vu ton message.",
@@ -120,7 +262,21 @@
       "next": "j1_02_camille_entry_first_reply_002"
     },
     {
-      "id": "j1_02_camille_auto_player_after_sarah_001",
+      "id": "j1_02_camille_single_reply_after_sarah_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_02_camille_single_reply_after_sarah_001_option",
+          "text": "C’est pas simple.",
+          "next": "j1_02_camille_player_after_sarah_001"
+        }
+      ],
+      "next": "j1_02_camille_player_after_sarah_001"
+    },
+    {
+      "id": "j1_02_camille_player_after_sarah_001",
       "type": "message",
       "sender": "player",
       "text": "C’est pas simple.",

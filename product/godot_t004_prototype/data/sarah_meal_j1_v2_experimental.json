@@ -12,10 +12,24 @@
       "sender": "sarah",
       "text": "Tu rentres manger ce soir ?",
       "delay": 0,
-      "next": "j1_06_sarah_auto_player_001"
+      "next": "j1_06_sarah_single_reply_001"
     },
     {
-      "id": "j1_06_sarah_auto_player_001",
+      "id": "j1_06_sarah_single_reply_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_06_sarah_single_reply_001_option",
+          "text": "Tu as prévu quelque chose ?",
+          "next": "j1_06_sarah_player_001"
+        }
+      ],
+      "next": "j1_06_sarah_player_001"
+    },
+    {
+      "id": "j1_06_sarah_player_001",
       "type": "message",
       "sender": "player",
       "text": "Tu as prévu quelque chose ?",
@@ -34,7 +48,37 @@
       "id": "j1_06_sarah_003",
       "type": "message",
       "sender": "sarah",
-      "text": "Et ton pull est encore sur la chaise, donc techniquement une partie de toi est déjà rentrée.",
+      "text": "Et ton pull est encore sur la chaise.",
+      "delay": 35,
+      "next": "j1_06_sarah_single_reply_002"
+    },
+    {
+      "id": "j1_06_sarah_single_reply_002",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_06_sarah_single_reply_002_option",
+          "text": "Mon pull ?",
+          "next": "j1_06_sarah_player_002"
+        }
+      ],
+      "next": "j1_06_sarah_player_002"
+    },
+    {
+      "id": "j1_06_sarah_player_002",
+      "type": "message",
+      "sender": "player",
+      "text": "Mon pull ?",
+      "delay": 0,
+      "next": "j1_06_sarah_003b"
+    },
+    {
+      "id": "j1_06_sarah_003b",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Oui. Donc techniquement une partie de toi est déjà rentrée.",
       "delay": 35,
       "next": "j1_06_sarah_004"
     },

@@ -12,10 +12,24 @@
       "sender": "ines",
       "text": "j’ai hésité avant d’écrire.",
       "delay": 0,
-      "next": "j1_05_ines_auto_player_default_001"
+      "next": "j1_05_ines_single_reply_default_001"
     },
     {
-      "id": "j1_05_ines_auto_player_default_001",
+      "id": "j1_05_ines_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_05_ines_single_reply_default_001_option",
+          "text": "Pourquoi ?",
+          "next": "j1_05_ines_player_default_001"
+        }
+      ],
+      "next": "j1_05_ines_player_default_001"
+    },
+    {
+      "id": "j1_05_ines_player_default_001",
       "type": "message",
       "sender": "player",
       "text": "Pourquoi ?",
@@ -28,13 +42,43 @@
       "sender": "ines",
       "text": "c’est peut-être pas mes affaires.",
       "delay": 35,
+      "next": "j1_05_ines_single_reply_default_002"
+    },
+    {
+      "id": "j1_05_ines_single_reply_default_002",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_05_ines_single_reply_default_002_option",
+          "text": "Dis toujours.",
+          "next": "j1_05_ines_player_default_002"
+        }
+      ],
+      "next": "j1_05_ines_player_default_002"
+    },
+    {
+      "id": "j1_05_ines_player_default_002",
+      "type": "message",
+      "sender": "player",
+      "text": "Dis toujours.",
+      "delay": 0,
+      "next": "j1_05_ines_002b"
+    },
+    {
+      "id": "j1_05_ines_002b",
+      "type": "message",
+      "sender": "ines",
+      "text": "hier, tu avais l’air loin.",
+      "delay": 35,
       "next": "j1_05_ines_003"
     },
     {
       "id": "j1_05_ines_003",
       "type": "message",
       "sender": "ines",
-      "text": "mais hier, tu avais l’air loin. pas absent. juste… loin.",
+      "text": "pas absent. juste… loin.",
       "delay": 35,
       "next": "j1_05_choice_ines_faille"
     },
@@ -44,10 +88,24 @@
       "sender": "ines",
       "text": "je pensais pas que tu répondrais aussi vite.",
       "delay": 0,
-      "next": "j1_05_ines_auto_player_first_reply_001"
+      "next": "j1_05_ines_single_reply_first_reply_001"
     },
     {
-      "id": "j1_05_ines_auto_player_first_reply_001",
+      "id": "j1_05_ines_single_reply_first_reply_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_05_ines_single_reply_first_reply_001_option",
+          "text": "Moi non plus.",
+          "next": "j1_05_ines_player_first_reply_001"
+        }
+      ],
+      "next": "j1_05_ines_player_first_reply_001"
+    },
+    {
+      "id": "j1_05_ines_player_first_reply_001",
       "type": "message",
       "sender": "player",
       "text": "Moi non plus.",
@@ -76,10 +134,24 @@
       "sender": "ines",
       "text": "tu as l’air chargé.",
       "delay": 0,
-      "next": "j1_05_ines_auto_player_after_conflict_001"
+      "next": "j1_05_ines_single_reply_after_conflict_001"
     },
     {
-      "id": "j1_05_ines_auto_player_after_conflict_001",
+      "id": "j1_05_ines_single_reply_after_conflict_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_05_ines_single_reply_after_conflict_001_option",
+          "text": "Ça se voit tant que ça ?",
+          "next": "j1_05_ines_player_after_conflict_001"
+        }
+      ],
+      "next": "j1_05_ines_player_after_conflict_001"
+    },
+    {
+      "id": "j1_05_ines_player_after_conflict_001",
       "type": "message",
       "sender": "player",
       "text": "Ça se voit tant que ça ?",
@@ -90,8 +162,16 @@
       "id": "j1_05_ines_entry_after_conflict_002",
       "type": "message",
       "sender": "ines",
-      "text": "je ne sais pas de quoi.",
+      "text": "un peu.",
       "delay": 45,
+      "next": "j1_05_ines_entry_after_conflict_002b"
+    },
+    {
+      "id": "j1_05_ines_entry_after_conflict_002b",
+      "type": "message",
+      "sender": "ines",
+      "text": "je ne sais pas de quoi.",
+      "delay": 35,
       "next": "j1_05_ines_entry_after_conflict_003"
     },
     {
@@ -108,10 +188,24 @@
       "sender": "ines",
       "text": "je pensais que tu ne répondrais pas.",
       "delay": 0,
-      "next": "j1_05_ines_auto_player_late_001"
+      "next": "j1_05_ines_single_reply_late_001"
     },
     {
-      "id": "j1_05_ines_auto_player_late_001",
+      "id": "j1_05_ines_single_reply_late_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_05_ines_single_reply_late_001_option",
+          "text": "Désolé.",
+          "next": "j1_05_ines_player_late_001"
+        }
+      ],
+      "next": "j1_05_ines_player_late_001"
+    },
+    {
+      "id": "j1_05_ines_player_late_001",
       "type": "message",
       "sender": "player",
       "text": "Désolé.",
@@ -122,7 +216,15 @@
       "id": "j1_05_ines_entry_late_002",
       "type": "message",
       "sender": "ines",
-      "text": "c’est pas grave. mon message pouvait attendre.",
+      "text": "c’est pas grave.",
+      "delay": 40,
+      "next": "j1_05_ines_entry_late_003"
+    },
+    {
+      "id": "j1_05_ines_entry_late_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "mon message pouvait attendre.",
       "delay": 40,
       "next": "j1_05_choice_ines_faille"
     },

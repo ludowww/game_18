@@ -12,10 +12,24 @@
       "sender": "nico",
       "text": "je t’ai envoyé un meme.",
       "delay": 0,
-      "next": "j1_07_nico_auto_player_001"
+      "next": "j1_07_nico_single_reply_001"
     },
     {
-      "id": "j1_07_nico_auto_player_001",
+      "id": "j1_07_nico_single_reply_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_07_nico_single_reply_001_option",
+          "text": "J’ose ouvrir ?",
+          "next": "j1_07_nico_player_001"
+        }
+      ],
+      "next": "j1_07_nico_player_001"
+    },
+    {
+      "id": "j1_07_nico_player_001",
       "type": "message",
       "sender": "player",
       "text": "J’ose ouvrir ?",
@@ -34,7 +48,37 @@
       "id": "j1_07_nico_003",
       "type": "message",
       "sender": "nico",
-      "text": "aussi j’ai faim. détail secondaire mais pas tant que ça.",
+      "text": "aussi j’ai faim.",
+      "delay": 35,
+      "next": "j1_07_nico_single_reply_002"
+    },
+    {
+      "id": "j1_07_nico_single_reply_002",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j1_07_nico_single_reply_002_option",
+          "text": "Évidemment.",
+          "next": "j1_07_nico_player_002"
+        }
+      ],
+      "next": "j1_07_nico_player_002"
+    },
+    {
+      "id": "j1_07_nico_player_002",
+      "type": "message",
+      "sender": "player",
+      "text": "Évidemment.",
+      "delay": 0,
+      "next": "j1_07_nico_003b"
+    },
+    {
+      "id": "j1_07_nico_003b",
+      "type": "message",
+      "sender": "nico",
+      "text": "détail secondaire mais pas tant que ça.",
       "delay": 35,
       "next": "j1_07_nico_004"
     },
