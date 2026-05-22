@@ -379,6 +379,8 @@ func _advance_to(node_id: String, immediate: bool = false) -> void:
 		ConversationState.repair_available_block_notifications()
 		_refresh_quick_switch_notification()
 		ConversationState.mark_current_done()
+		ConversationState.repair_available_block_notifications()
+		_refresh_quick_switch_notification()
 		return
 
 	var next_id := str(node.get("next", ""))
