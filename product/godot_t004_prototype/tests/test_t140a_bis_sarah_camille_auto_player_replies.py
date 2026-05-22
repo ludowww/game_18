@@ -6,14 +6,14 @@ DATA = ROOT / "data"
 
 EXPECTED_PLAYER_NODES = {
     "sarah_j1_v2_experimental.json": [
-        "j1_01_sarah_auto_player_default_001",
-        "j1_01_sarah_auto_player_first_reply_001",
-        "j1_01_sarah_auto_player_after_camille_001",
+        "j1_01_sarah_player_default_001",
+        "j1_01_sarah_player_first_reply_001",
+        "j1_01_sarah_player_after_camille_001",
     ],
     "camille_j1_v2_experimental.json": [
-        "j1_02_camille_auto_player_default_001",
-        "j1_02_camille_auto_player_first_reply_001",
-        "j1_02_camille_auto_player_after_sarah_001",
+        "j1_02_camille_player_default_001",
+        "j1_02_camille_player_first_reply_001",
+        "j1_02_camille_player_after_sarah_001",
     ],
 }
 

@@ -35,10 +35,10 @@ def test_t141_message_bubbles_do_not_prefix_sender_names() -> None:
 
 def test_t141_choice_click_skips_duplicate_player_node_text() -> None:
     source = CONVERSATION_SCREEN.read_text(encoding="utf-8")
-    assert "_choice_text_is_repeated_by_next_player_node" in source
-    assert "if not _choice_text_is_repeated_by_next_player_node(choice, next_id):" in source
+    assert "_choice_next_is_player_node" in source
+    assert "if not _choice_next_is_player_node(next_id):" in source
+    assert "_choice_text_is_repeated_by_next_player_node" not in source
     assert re.search(r"sender.*player", source)
-    assert re.search(r"strip_edges\(\).*==.*strip_edges\(\)", source)
 
 
 def test_t141_auto_player_nodes_follow_convention_and_threading() -> None:

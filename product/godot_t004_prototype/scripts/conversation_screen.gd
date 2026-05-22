@@ -409,6 +409,9 @@ func _wait_before_node(node: Dictionary) -> void:
 func _show_choice(node: Dictionary) -> void:
 	choice_panel.visible = true
 
+	var choices: Array = node.get("choices", [])
+	choice_scroll.custom_minimum_size = Vector2(0, _choice_panel_height_for_choices(choices))
+
 	var prompt := Label.new()
 	prompt.text = "Répondre"
 	prompt.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -416,7 +419,7 @@ func _show_choice(node: Dictionary) -> void:
 	prompt.add_theme_color_override("font_color", Color("b8b8c6"))
 	choice_box.add_child(prompt)
 
-	for choice in node.get("choices", []):
+	for choice in choices:
 		var choice_text := str(choice.get("text", "..."))
 		var button := Button.new()
 		button.text = ""
@@ -451,6 +454,17 @@ func _show_choice(node: Dictionary) -> void:
 	choice_scroll.scroll_vertical = 0
 	_ensure_last_message_visible()
 
+func _choice_panel_height_for_choices(choices: Array) -> float:
+	if choices.size() <= 1:
+		var text := ""
+		if choices.size() == 1:
+			text = str(choices[0].get("text", ""))
+		return float(_choice_button_height(text) + 42)
+	var total := 32
+	for choice in choices:
+		total += _choice_button_height(str(choice.get("text", ""))) + 6
+	return min(float(total), CHOICE_PANEL_MAX_HEIGHT)
+
 func _choice_button_height(text: String) -> int:
 	if text.length() > 96:
 		return 92
@@ -477,17 +491,15 @@ func _on_choice_pressed(choice: Dictionary) -> void:
 	_apply_effects(choice.get("effects", {}))
 	_clear_choices()
 	var next_id := str(choice.get("next", ""))
-	if not _choice_text_is_repeated_by_next_player_node(choice, next_id):
+	if not _choice_next_is_player_node(next_id):
 		await _add_bubble("player", str(choice.get("text", "")))
 	_advance_to(next_id, true)
 
-func _choice_text_is_repeated_by_next_player_node(choice: Dictionary, next_id: String) -> bool:
+func _choice_next_is_player_node(next_id: String) -> bool:
 	if next_id == "" or not nodes_by_id.has(next_id):
 		return false
 	var next_node: Dictionary = nodes_by_id[next_id]
-	if str(next_node.get("sender", "")) != "player":
-		return false
-	return str(next_node.get("text", "")).strip_edges() == str(choice.get("text", "")).strip_edges()
+	return str(next_node.get("sender", "")) == "player"
 
 func _lock_choice_buttons() -> void:
 	for child in choice_box.get_children():

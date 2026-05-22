@@ -20,7 +20,7 @@ def function_body(text: str, name: str) -> str:
 def test_t139_choice_press_displays_player_choice_before_advancing_to_next_node_when_not_duplicate() -> None:
     body = function_body(source(), "_on_choice_pressed")
     assert 'var next_id := str(choice.get("next", ""))' in body
-    assert 'if not _choice_text_is_repeated_by_next_player_node(choice, next_id):' in body
+    assert 'if not _choice_next_is_player_node(next_id):' in body
     assert 'await _add_bubble("player", str(choice.get("text", "")))' in body
     assert body.index('await _add_bubble("player", str(choice.get("text", "")))') < body.index('_advance_to(next_id, true)')
 
