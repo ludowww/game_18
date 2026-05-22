@@ -196,6 +196,32 @@
       "sender": "maya",
       "text": "mais les absences, ça se voit. surtout sur les photos de groupe.",
       "delay": 45,
+      "next": "j1_04_maya_media_after_sarah_001"
+    },
+    {
+      "id": "j1_04_maya_media_after_sarah_001",
+      "type": "media",
+      "sender": "maya",
+      "media_type": "image",
+      "asset": "",
+      "caption": "[photo de groupe envoyée]",
+      "delay": 35,
+      "next": "j1_04_maya_entry_after_sarah_004"
+    },
+    {
+      "id": "j1_04_maya_entry_after_sarah_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "je dis pas que ça prouve quoi que ce soit.",
+      "delay": 35,
+      "next": "j1_04_maya_entry_after_sarah_005"
+    },
+    {
+      "id": "j1_04_maya_entry_after_sarah_005",
+      "type": "message",
+      "sender": "maya",
+      "text": "je dis juste que ça laisse une place bizarre dans l’image.",
+      "delay": 35,
       "next": "j1_04_choice_maya_pique"
     },
     {
