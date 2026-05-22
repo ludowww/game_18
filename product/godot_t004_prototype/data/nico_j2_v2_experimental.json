@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1-j2-v2-experimental",
+  "conversation_id": "nico_j2_v2",
+  "day": 2,
+  "contact_id": "nico",
+  "start_node": "j2_02_nico_001",
+  "experimental": true,
+  "nodes": [
+    {
+      "id": "j2_02_nico_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "[J2 placeholder Nico matin]",
+      "delay": 0,
+      "next": "j2_02_nico_end_placeholder"
+    },
+    {
+      "id": "j2_02_nico_end_placeholder",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin placeholder Nico J2.",
+      "delay": 0
+    }
+  ],
+  "entry_variants": [
+    {
+      "id": "default",
+      "conditions": {},
+      "start_node": "j2_02_nico_001"
+    }
+  ]
+}

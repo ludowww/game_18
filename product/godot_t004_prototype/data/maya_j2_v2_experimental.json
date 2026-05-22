@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1-j2-v2-experimental",
+  "conversation_id": "maya_j2_v2",
+  "day": 2,
+  "contact_id": "maya",
+  "start_node": "j2_04_maya_001",
+  "experimental": true,
+  "nodes": [
+    {
+      "id": "j2_04_maya_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "[J2 placeholder Maya après-midi]",
+      "delay": 0,
+      "next": "j2_04_maya_end_placeholder"
+    },
+    {
+      "id": "j2_04_maya_end_placeholder",
+      "type": "end",
+      "sender": "system",
+      "text": "Fin placeholder Maya J2.",
+      "delay": 0
+    }
+  ],
+  "entry_variants": [
+    {
+      "id": "default",
+      "conditions": {},
+      "start_node": "j2_04_maya_001"
+    }
+  ]
+}

@@ -235,6 +235,66 @@ func _default_conversations() -> Dictionary:
 			true,
 			"j1_05_ines_001"
 		),
+		"sarah_j2_v2": _new_conversation_state(
+			"sarah_j2_v2",
+			"sarah",
+			"Sarah",
+			"J2 V2 — Matin",
+			"res://data/sarah_j2_v2_experimental.json",
+			2,
+			false,
+			false,
+			true,
+			"j2_01_sarah_001"
+		),
+		"nico_j2_v2": _new_conversation_state(
+			"nico_j2_v2",
+			"nico",
+			"Nico",
+			"J2 V2 — Alibi",
+			"res://data/nico_j2_v2_experimental.json",
+			2,
+			false,
+			false,
+			true,
+			"j2_02_nico_001"
+		),
+		"camille_j2_v2": _new_conversation_state(
+			"camille_j2_v2",
+			"camille",
+			"Camille",
+			"J2 V2 — Tension",
+			"res://data/camille_j2_v2_experimental.json",
+			2,
+			false,
+			false,
+			true,
+			"j2_03_camille_001"
+		),
+		"maya_j2_v2": _new_conversation_state(
+			"maya_j2_v2",
+			"maya",
+			"Maya",
+			"J2 V2 — Groupe",
+			"res://data/maya_j2_v2_experimental.json",
+			2,
+			false,
+			false,
+			true,
+			"j2_04_maya_001"
+		),
+		"ines_j2_v2": _new_conversation_state(
+			"ines_j2_v2",
+			"ines",
+			"Inès",
+			"J2 V2 — Calme",
+			"res://data/ines_j2_v2_experimental.json",
+			2,
+			false,
+			false,
+			true,
+			"j2_05_ines_001"
+		),
 		"camille_j2": _new_conversation_state(
 			"camille_j2",
 			"camille",
@@ -476,7 +536,7 @@ func _default_conversation_blocks() -> Dictionary:
 	return blocks
 
 func conversation_ids() -> Array:
-	return ["camille", "sarah", "j1_00_reveil_v2", "sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2", "camille_j2", "sarah_j2", "camille_j3", "sarah_j3", "camille_j4", "maya_j4", "ines_j4", "nico_j4", "sarah_j5", "camille_j5", "nico_j5", "maya_j5", "sarah_j6", "camille_j6", "nico_j6", "maya_j6", "ines_j6", "finales_mvp"]
+	return ["camille", "sarah", "j1_00_reveil_v2", "sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2", "sarah_j2_v2", "nico_j2_v2", "camille_j2_v2", "maya_j2_v2", "ines_j2_v2", "camille_j2", "sarah_j2", "camille_j3", "sarah_j3", "camille_j4", "maya_j4", "ines_j4", "nico_j4", "sarah_j5", "camille_j5", "nico_j5", "maya_j5", "sarah_j6", "camille_j6", "nico_j6", "maya_j6", "ines_j6", "finales_mvp"]
 
 func active_conversation_ids() -> Array:
 	var ids: Array = []
@@ -1024,6 +1084,7 @@ func mark_current_done() -> void:
 	if current_conversation_id == "j1_00_reveil_v2":
 		_unlock_j1_v2_after_priority_choice()
 	_unlock_j1_v2_breathing_scenes_if_ready()
+	_unlock_j2_v2_after_morning_if_ready()
 	refresh_day_progression()
 	save_progression()
 
@@ -1137,6 +1198,13 @@ func _required_conversations_for_current_mode(day: int) -> Array:
 			"maya_j1_v2",
 			"ines_j1_v2"
 		]
+	if experimental_j1_v2_enabled and day == 2:
+		return [
+			"sarah_j2_v2",
+			"nico_j2_v2",
+			"camille_j2_v2",
+			"maya_j2_v2"
+		]
 	return REQUIRED_CONVERSATIONS_BY_DAY.get(day, [])
 
 func _is_day_complete(day: int) -> bool:
@@ -1160,8 +1228,34 @@ func advance_to_next_day() -> void:
 	if not completed_days.has(current_day):
 		completed_days.append(current_day)
 	current_day += 1
+	if experimental_j1_v2_enabled and current_day == 2:
+		_unlock_j2_v2_initial_conversations()
 	day_transition_available = false
 	save_progression()
+
+func _unlock_j2_v2_initial_conversations() -> void:
+	if conversations.has("sarah_j2_v2") and not bool(conversations["sarah_j2_v2"].get("done", false)):
+		conversations["sarah_j2_v2"]["available"] = true
+		mark_conversation_new("sarah_j2_v2", "Sarah a écrit ce matin.")
+	if conversations.has("nico_j2_v2") and not bool(conversations["nico_j2_v2"].get("done", false)):
+		conversations["nico_j2_v2"]["available"] = true
+		mark_conversation_new("nico_j2_v2", "Nico vérifie si ça tient encore.")
+
+func _unlock_j2_v2_after_morning_if_ready() -> void:
+	if not experimental_j1_v2_enabled or current_day != 2:
+		return
+	if not conversations.has("camille_j2_v2") or bool(conversations["camille_j2_v2"].get("done", false)):
+		return
+	if bool(conversations["camille_j2_v2"].get("available", false)):
+		return
+	var morning_done := false
+	if conversations.has("sarah_j2_v2") and bool(conversations["sarah_j2_v2"].get("done", false)):
+		morning_done = true
+	if conversations.has("nico_j2_v2") and bool(conversations["nico_j2_v2"].get("done", false)):
+		morning_done = true
+	if morning_done:
+		conversations["camille_j2_v2"]["available"] = true
+		mark_conversation_new("camille_j2_v2", "Camille reprend le fil.")
 
 func handle_dynamic_notification(source_conversation_id: String, node_id: String) -> void:
 	var event_id: String = source_conversation_id + ":" + node_id
