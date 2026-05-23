@@ -1198,6 +1198,15 @@ func _required_conversations_for_current_mode(day: int) -> Array:
 			"maya_j1_v2",
 			"ines_j1_v2"
 		]
+	if _has_j1_v2_progression() and day == 1:
+		return [
+			"j1_00_reveil_v2",
+			"sarah_j1_v2",
+			"camille_j1_v2",
+			"nico_j1_v2",
+			"maya_j1_v2",
+			"ines_j1_v2"
+		]
 	if experimental_j1_v2_enabled and day == 2:
 		return [
 			"sarah_j2_v2",
@@ -1224,7 +1233,9 @@ func _is_required_conversation_complete(id: String, day: int) -> bool:
 		return false
 	if bool(state.get("done", false)):
 		return true
-	if experimental_j1_v2_enabled and day == 1:
+	if day == 1 and _has_j1_v2_progression() and id == "j1_00_reveil_v2" and bool(state.get("available", false)):
+		return true
+	if (experimental_j1_v2_enabled or _has_j1_v2_progression()) and day == 1:
 		var json_path: String = str(state.get("json_path", ""))
 		if id == "sarah_j1_v2" and json_path.contains("sarah_meal_j1_v2"):
 			return true
@@ -1241,12 +1252,25 @@ func advance_to_next_day() -> void:
 func force_advance_to_next_day_for_testing() -> void:
 	if current_day >= 6:
 		return
+	if current_day == 1 and _has_j1_v2_progression() and not experimental_j1_v2_enabled:
+		experimental_j1_v2_enabled = true
 	_advance_day_unchecked()
+
+func _has_j1_v2_progression() -> bool:
+	for id in ["j1_00_reveil_v2", "sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2"]:
+		if not conversations.has(id):
+			continue
+		var state: Dictionary = conversations[id]
+		if bool(state.get("started", false)) or bool(state.get("done", false)) or not state.get("messages", []).is_empty():
+			return true
+	return false
 
 func _advance_day_unchecked() -> void:
 	if not completed_days.has(current_day):
 		completed_days.append(current_day)
 	current_day += 1
+	if _has_j1_v2_progression() and current_day == 2 and not experimental_j1_v2_enabled:
+		experimental_j1_v2_enabled = true
 	if experimental_j1_v2_enabled and current_day == 2:
 		_unlock_j2_v2_initial_conversations()
 	day_transition_available = false
@@ -1328,6 +1352,7 @@ func save_progression() -> void:
 		"current_day": current_day,
 		"completed_days": completed_days.duplicate(true),
 		"day_transition_available": day_transition_available,
+		"experimental_j1_v2_enabled": experimental_j1_v2_enabled,
 		"dynamic_notifications_fired": dynamic_notifications_fired.duplicate(true),
 		"global_game_state": global_game_state.duplicate(true),
 		"conversation_blocks": conversation_blocks.duplicate(true),
@@ -1381,6 +1406,7 @@ func load_progression() -> void:
 	if typeof(saved_completed_days) == TYPE_ARRAY:
 		completed_days = saved_completed_days.duplicate(true)
 	day_transition_available = bool(payload.get("day_transition_available", false))
+	experimental_j1_v2_enabled = bool(payload.get("experimental_j1_v2_enabled", experimental_j1_v2_enabled))
 	var saved_fired = payload.get("dynamic_notifications_fired", [])
 	if typeof(saved_fired) == TYPE_ARRAY:
 		dynamic_notifications_fired = saved_fired.duplicate(true)

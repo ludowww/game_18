@@ -30,6 +30,7 @@ def test_t134_day_completion_uses_mode_specific_required_conversations() -> None
     assert "func _required_conversations_for_current_mode(day: int) -> Array:" in source
     helper = function_body(source, "_required_conversations_for_current_mode")
     assert "if experimental_j1_v2_enabled and day == 1:" in helper
+    assert "if _has_j1_v2_progression() and day == 1:" in helper
     for conversation_id in [
         "j1_00_reveil_v2",
         "sarah_j1_v2",

@@ -68,7 +68,9 @@ def test_t135_followup_threads_do_not_hide_j2_transition_after_core_done() -> No
     helper = function_body(source, "_is_required_conversation_complete")
     assert 'id == "sarah_j1_v2" and json_path.contains("sarah_meal_j1_v2")' in helper
     assert 'id == "nico_j1_v2" and json_path.contains("nico_respiration_j1_v2")' in helper
-    assert "experimental_j1_v2_enabled and day == 1" in helper
+    assert "(experimental_j1_v2_enabled or _has_j1_v2_progression()) and day == 1" in helper
+    advance = function_body(source, "_advance_day_unchecked")
+    assert "_has_j1_v2_progression() and current_day == 2 and not experimental_j1_v2_enabled" in advance
 
 
 if __name__ == "__main__":
