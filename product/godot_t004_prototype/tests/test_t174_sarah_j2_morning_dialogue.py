@@ -136,6 +136,9 @@ def test_other_j2_skeletons_remain_placeholders():
         if data["conversation_id"] == "camille_j2_v2":
             assert "j2_03_choice_camille_tension" in node_ids
             continue
+        if data["conversation_id"] == "maya_j2_v2":
+            assert "j2_04_choice_maya_social" in node_ids
+            continue
         first_message = next(node for node in data["nodes"] if node.get("type") == "message")
         assert first_message["text"] == expected[data["conversation_id"]]
 

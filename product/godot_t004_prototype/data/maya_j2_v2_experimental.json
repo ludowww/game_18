@@ -7,22 +7,550 @@
   "experimental": true,
   "nodes": [
     {
+      "id": "j2_04_maya_entry_photo_possible_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "j’ai revu la photo de groupe.",
+      "delay": 25,
+      "next": "j2_04_maya_single_reply_photo_possible_001"
+    },
+    {
+      "id": "j2_04_maya_single_reply_photo_possible_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_04_maya_single_reply_photo_possible_001_option",
+          "text": "La photo d’hier ?",
+          "next": "j2_04_maya_player_photo_possible_001"
+        }
+      ],
+      "next": "j2_04_maya_player_photo_possible_001"
+    },
+    {
+      "id": "j2_04_maya_player_photo_possible_001",
+      "type": "message",
+      "sender": "player",
+      "text": "La photo d’hier ?",
+      "delay": 0,
+      "next": "j2_04_maya_entry_photo_possible_002"
+    },
+    {
+      "id": "j2_04_maya_entry_photo_possible_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "oui.",
+      "delay": 30,
+      "next": "j2_04_maya_media_group_001"
+    },
+    {
+      "id": "j2_04_maya_media_group_001",
+      "type": "media",
+      "sender": "maya",
+      "media_type": "image",
+      "asset": "res://assets/media/j1_v2/maya_photo_groupe_j1.png",
+      "caption": "[photo de groupe envoyée]",
+      "delay": 30,
+      "next": "j2_04_maya_entry_photo_possible_003"
+    },
+    {
+      "id": "j2_04_maya_entry_photo_possible_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "je te la renvoie pas pour te coincer.",
+      "delay": 30,
+      "next": "j2_04_maya_entry_photo_possible_004"
+    },
+    {
+      "id": "j2_04_maya_entry_photo_possible_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "elle prouve rien.",
+      "delay": 30,
+      "next": "j2_04_maya_entry_photo_possible_005"
+    },
+    {
+      "id": "j2_04_maya_entry_photo_possible_005",
+      "type": "message",
+      "sender": "maya",
+      "text": "mais elle rappelle qu’il y avait une place bizarre dans l’image.",
+      "delay": 30,
+      "next": "j2_04_choice_maya_social"
+    },
+    {
+      "id": "j2_04_maya_entry_played_dumb_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "j’ai repensé à ton “je vois pas”.",
+      "delay": 25,
+      "next": "j2_04_maya_single_reply_played_dumb_001"
+    },
+    {
+      "id": "j2_04_maya_single_reply_played_dumb_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_04_maya_single_reply_played_dumb_001_option",
+          "text": "Tu gardes ça en mémoire ?",
+          "next": "j2_04_maya_player_played_dumb_001"
+        }
+      ],
+      "next": "j2_04_maya_player_played_dumb_001"
+    },
+    {
+      "id": "j2_04_maya_player_played_dumb_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu gardes ça en mémoire ?",
+      "delay": 0,
+      "next": "j2_04_maya_entry_played_dumb_002"
+    },
+    {
+      "id": "j2_04_maya_entry_played_dumb_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "je garde pas.",
+      "delay": 30,
+      "next": "j2_04_maya_entry_played_dumb_003"
+    },
+    {
+      "id": "j2_04_maya_entry_played_dumb_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "ça colle tout seul.",
+      "delay": 30,
+      "next": "j2_04_maya_entry_played_dumb_004"
+    },
+    {
+      "id": "j2_04_maya_entry_played_dumb_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "plus tu fais comme si tu ne comprenais pas, plus ça sonne précis.",
+      "delay": 30,
+      "next": "j2_04_choice_maya_social"
+    },
+    {
+      "id": "j2_04_maya_entry_not_involve_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "tu m’as dit de ne pas m’en mêler.",
+      "delay": 25,
+      "next": "j2_04_maya_single_reply_not_involve_001"
+    },
+    {
+      "id": "j2_04_maya_single_reply_not_involve_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_04_maya_single_reply_not_involve_001_option",
+          "text": "J’étais tendu.",
+          "next": "j2_04_maya_player_not_involve_001"
+        }
+      ],
+      "next": "j2_04_maya_player_not_involve_001"
+    },
+    {
+      "id": "j2_04_maya_player_not_involve_001",
+      "type": "message",
+      "sender": "player",
+      "text": "J’étais tendu.",
+      "delay": 0,
+      "next": "j2_04_maya_entry_not_involve_002"
+    },
+    {
+      "id": "j2_04_maya_entry_not_involve_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "j’avais remarqué.",
+      "delay": 30,
+      "next": "j2_04_maya_entry_not_involve_003"
+    },
+    {
+      "id": "j2_04_maya_entry_not_involve_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "le problème, c’est que quand quelqu’un dit ça, ça donne très envie de regarder où il ne faut pas.",
+      "delay": 30,
+      "next": "j2_04_maya_entry_not_involve_004"
+    },
+    {
+      "id": "j2_04_maya_entry_not_involve_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "et j’aime bien Sarah, donc je regarde un peu quand même.",
+      "delay": 30,
+      "next": "j2_04_choice_maya_social"
+    },
+    {
+      "id": "j2_04_maya_entry_timing_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "ton histoire d’air tient peut-être.",
+      "delay": 25,
+      "next": "j2_04_maya_single_reply_timing_001"
+    },
+    {
+      "id": "j2_04_maya_single_reply_timing_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_04_maya_single_reply_timing_001_option",
+          "text": "Tu en doutes ?",
+          "next": "j2_04_maya_player_timing_001"
+        }
+      ],
+      "next": "j2_04_maya_player_timing_001"
+    },
+    {
+      "id": "j2_04_maya_player_timing_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu en doutes ?",
+      "delay": 0,
+      "next": "j2_04_maya_entry_timing_002"
+    },
+    {
+      "id": "j2_04_maya_entry_timing_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "je doute de beaucoup de choses, c’est un hobby.",
+      "delay": 30,
+      "next": "j2_04_maya_entry_timing_003"
+    },
+    {
+      "id": "j2_04_maya_entry_timing_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "mais surtout des absences qui tombent toutes au même moment.",
+      "delay": 30,
+      "next": "j2_04_choice_maya_social"
+    },
+    {
       "id": "j2_04_maya_001",
       "type": "message",
       "sender": "maya",
-      "text": "[J2 placeholder Maya après-midi]",
+      "text": "je vais pas te faire un interrogatoire.",
       "delay": 0,
-      "next": "j2_04_maya_end_placeholder"
+      "next": "j2_04_maya_single_reply_default_001"
     },
     {
-      "id": "j2_04_maya_end_placeholder",
+      "id": "j2_04_maya_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_04_maya_single_reply_default_001_option",
+          "text": "Rassurant.",
+          "next": "j2_04_maya_player_default_001"
+        }
+      ],
+      "next": "j2_04_maya_player_default_001"
+    },
+    {
+      "id": "j2_04_maya_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Rassurant.",
+      "delay": 0,
+      "next": "j2_04_maya_002"
+    },
+    {
+      "id": "j2_04_maya_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "j’ai dit que j’allais pas.",
+      "delay": 30,
+      "next": "j2_04_maya_003"
+    },
+    {
+      "id": "j2_04_maya_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "pas que j’étais pas tentée.",
+      "delay": 30,
+      "next": "j2_04_maya_004"
+    },
+    {
+      "id": "j2_04_maya_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "il y a juste un truc dans le groupe depuis hier.",
+      "delay": 30,
+      "next": "j2_04_choice_maya_social"
+    },
+    {
+      "id": "j2_04_choice_maya_social",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Maya ?",
+      "choices": [
+        {
+          "id": "j2_04_maya_ask_direct",
+          "text": "Dis-moi franchement ce que tu penses avoir compris.",
+          "next": "j2_04_maya_player_ask_direct",
+          "effects": {
+            "suspicion_maya": 1,
+            "risque_exposition": 1,
+            "coherence": 1,
+            "flags": [
+              "j2_maya_asked_directly",
+              "j2_maya_social_read_opened"
+            ]
+          }
+        },
+        {
+          "id": "j2_04_maya_admit_malaise",
+          "text": "Il y a un malaise, oui. Mais je veux pas que ça devienne une histoire de groupe.",
+          "next": "j2_04_maya_player_admit_malaise",
+          "effects": {
+            "suspicion_maya": -1,
+            "coherence": 1,
+            "risque_exposition": -1,
+            "flags": [
+              "j2_maya_malaise_admitted",
+              "j2_maya_group_boundary"
+            ]
+          }
+        },
+        {
+          "id": "j2_04_maya_play_innocent",
+          "text": "Tu fais beaucoup avec une photo et deux absences.",
+          "next": "j2_04_maya_player_play_innocent",
+          "effects": {
+            "suspicion_maya": 2,
+            "coherence": -1,
+            "risque_exposition": 1,
+            "flags": [
+              "j2_maya_defensive",
+              "j2_maya_suspicion_grows"
+            ]
+          }
+        },
+        {
+          "id": "j2_04_maya_ask_discretion",
+          "text": "Si tu parles à Sarah, fais-le parce que tu t’inquiètes pour elle. Pas pour me coincer.",
+          "next": "j2_04_maya_player_ask_discretion",
+          "effects": {
+            "coherence": 1,
+            "risque_exposition": -1,
+            "flags": [
+              "j2_maya_discretion_requested",
+              "j2_maya_sarah_protection_named"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j2_04_maya_player_ask_direct",
+      "type": "message",
+      "sender": "player",
+      "text": "Dis-moi franchement ce que tu penses avoir compris.",
+      "delay": 0,
+      "next": "j2_04_maya_ask_direct_001"
+    },
+    {
+      "id": "j2_04_maya_ask_direct_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "je pense pas avoir compris.",
+      "delay": 30,
+      "next": "j2_04_maya_ask_direct_002"
+    },
+    {
+      "id": "j2_04_maya_ask_direct_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "je pense que vous faites tous très attention à ne pas comprendre trop fort.",
+      "delay": 30,
+      "next": "j2_04_maya_ask_direct_003"
+    },
+    {
+      "id": "j2_04_maya_ask_direct_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "c’est différent.",
+      "delay": 30,
+      "next": "j2_04_end_maya_social_read_opened"
+    },
+    {
+      "id": "j2_04_end_maya_social_read_opened",
       "type": "end",
       "sender": "system",
-      "text": "Fin placeholder Maya J2.",
+      "text": "Maya ne prouve rien, mais elle met le malaise en mots.",
+      "delay": 0
+    },
+    {
+      "id": "j2_04_maya_player_admit_malaise",
+      "type": "message",
+      "sender": "player",
+      "text": "Il y a un malaise, oui. Mais je veux pas que ça devienne une histoire de groupe.",
+      "delay": 0,
+      "next": "j2_04_maya_admit_001"
+    },
+    {
+      "id": "j2_04_maya_admit_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "merci.",
+      "delay": 30,
+      "next": "j2_04_maya_admit_002"
+    },
+    {
+      "id": "j2_04_maya_admit_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "ça, au moins, ça ressemble à une phrase adulte.",
+      "delay": 30,
+      "next": "j2_04_maya_admit_003"
+    },
+    {
+      "id": "j2_04_maya_admit_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "je peux ne pas pousser.",
+      "delay": 30,
+      "next": "j2_04_maya_admit_004"
+    },
+    {
+      "id": "j2_04_maya_admit_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "mais je peux pas ne rien voir non plus.",
+      "delay": 30,
+      "next": "j2_04_end_maya_malaise_named"
+    },
+    {
+      "id": "j2_04_end_maya_malaise_named",
+      "type": "end",
+      "sender": "system",
+      "text": "Maya respecte la limite de groupe, sans effacer ce qu’elle a vu.",
+      "delay": 0
+    },
+    {
+      "id": "j2_04_maya_player_play_innocent",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu fais beaucoup avec une photo et deux absences.",
+      "delay": 0,
+      "next": "j2_04_maya_innocent_001"
+    },
+    {
+      "id": "j2_04_maya_innocent_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "peut-être.",
+      "delay": 30,
+      "next": "j2_04_maya_innocent_002"
+    },
+    {
+      "id": "j2_04_maya_innocent_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "mais toi, tu fais beaucoup d’efforts pour appeler ça peu.",
+      "delay": 30,
+      "next": "j2_04_maya_innocent_003"
+    },
+    {
+      "id": "j2_04_maya_innocent_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "on a tous nos hobbies.",
+      "delay": 30,
+      "next": "j2_04_end_maya_suspicion_grows"
+    },
+    {
+      "id": "j2_04_end_maya_suspicion_grows",
+      "type": "end",
+      "sender": "system",
+      "text": "Maya entend la défense et devient plus attentive.",
+      "delay": 0
+    },
+    {
+      "id": "j2_04_maya_player_ask_discretion",
+      "type": "message",
+      "sender": "player",
+      "text": "Si tu parles à Sarah, fais-le parce que tu t’inquiètes pour elle. Pas pour me coincer.",
+      "delay": 0,
+      "next": "j2_04_maya_discretion_001"
+    },
+    {
+      "id": "j2_04_maya_discretion_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "je ne joue pas à te coincer.",
+      "delay": 30,
+      "next": "j2_04_maya_discretion_002"
+    },
+    {
+      "id": "j2_04_maya_discretion_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "si je parle à Sarah, ce sera pour Sarah.",
+      "delay": 30,
+      "next": "j2_04_maya_discretion_003"
+    },
+    {
+      "id": "j2_04_maya_discretion_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "mais ne me demande pas non plus de fermer les yeux pour te rendre service.",
+      "delay": 30,
+      "next": "j2_04_end_maya_sarah_protected"
+    },
+    {
+      "id": "j2_04_end_maya_sarah_protected",
+      "type": "end",
+      "sender": "system",
+      "text": "Maya reste loyale à Sarah, sans transformer le malaise en accusation.",
       "delay": 0
     }
   ],
   "entry_variants": [
+    {
+      "id": "photo_possible",
+      "conditions": {
+        "flags": [
+          "maya_photo_possible"
+        ]
+      },
+      "start_node": "j2_04_maya_entry_photo_possible_001"
+    },
+    {
+      "id": "played_dumb",
+      "conditions": {
+        "flags": [
+          "played_dumb_with_maya"
+        ]
+      },
+      "start_node": "j2_04_maya_entry_played_dumb_001"
+    },
+    {
+      "id": "not_involve",
+      "conditions": {
+        "flags": [
+          "told_maya_not_involve"
+        ]
+      },
+      "start_node": "j2_04_maya_entry_not_involve_001"
+    },
+    {
+      "id": "timing_noted",
+      "conditions": {
+        "flags": [
+          "maya_timing_noted"
+        ]
+      },
+      "start_node": "j2_04_maya_entry_timing_001"
+    },
     {
       "id": "default",
       "conditions": {},
