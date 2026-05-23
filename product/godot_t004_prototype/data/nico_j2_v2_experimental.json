@@ -10,7 +10,7 @@
       "id": "j2_02_nico_entry_alibi_used_001",
       "type": "message",
       "sender": "nico",
-      "text": "petite question administrative.",
+      "text": "j’ai une question avant que la journée reparte.",
       "delay": 25,
       "next": "j2_02_nico_single_reply_alibi_used_001"
     },
@@ -22,7 +22,7 @@
       "choices": [
         {
           "id": "j2_02_nico_single_reply_alibi_used_001_option",
-          "text": "Je sens que je vais pas aimer.",
+          "text": "Vas-y.",
           "next": "j2_02_nico_player_alibi_used_001"
         }
       ],
@@ -32,7 +32,7 @@
       "id": "j2_02_nico_player_alibi_used_001",
       "type": "message",
       "sender": "player",
-      "text": "Je sens que je vais pas aimer.",
+      "text": "Vas-y.",
       "delay": 0,
       "next": "j2_02_nico_entry_alibi_used_002"
     },
@@ -40,7 +40,7 @@
       "id": "j2_02_nico_entry_alibi_used_002",
       "type": "message",
       "sender": "nico",
-      "text": "t’as donné mon nom à Sarah comme si j’étais une pièce jointe ?",
+      "text": "hier, j’ai senti que mon prénom pouvait devenir une version officielle.",
       "delay": 30,
       "next": "j2_02_nico_entry_alibi_used_003"
     },
@@ -48,7 +48,7 @@
       "id": "j2_02_nico_entry_alibi_used_003",
       "type": "message",
       "sender": "nico",
-      "text": "parce que moi j’ai pas reçu le mail avec le scénario complet.",
+      "text": "et j’aime bien aider, mais j’aime moins découvrir mon rôle en direct.",
       "delay": 30,
       "next": "j2_02_nico_entry_alibi_used_004"
     },
@@ -56,7 +56,7 @@
       "id": "j2_02_nico_entry_alibi_used_004",
       "type": "message",
       "sender": "nico",
-      "text": "donc ce matin, avant que quelqu’un me redemande un truc, j’aimerais savoir quelle version je suis censé habiter.",
+      "text": "donc si Sarah me demande quelque chose, je réponds quoi ?",
       "delay": 30,
       "next": "j2_02_choice_nico_alibi"
     },
@@ -64,7 +64,7 @@
       "id": "j2_02_nico_entry_second_cover_001",
       "type": "message",
       "sender": "nico",
-      "text": "j’ai réfléchi à ton “reste vague”.",
+      "text": "j’ai repensé à ton “reste vague”.",
       "delay": 25,
       "next": "j2_02_nico_single_reply_second_cover_001"
     },
@@ -94,7 +94,7 @@
       "id": "j2_02_nico_entry_second_cover_002",
       "type": "message",
       "sender": "nico",
-      "text": "et je confirme : c’est une stratégie de mec qui court avec un verre plein.",
+      "text": "ça peut tenir deux minutes.",
       "delay": 30,
       "next": "j2_02_nico_entry_second_cover_003"
     },
@@ -102,7 +102,7 @@
       "id": "j2_02_nico_entry_second_cover_003",
       "type": "message",
       "sender": "nico",
-      "text": "ça peut marcher.",
+      "text": "mais seulement si personne ne demande l’heure, le lieu, ou pourquoi on a tous l’air de réciter.",
       "delay": 30,
       "next": "j2_02_nico_entry_second_cover_004"
     },
@@ -110,7 +110,7 @@
       "id": "j2_02_nico_entry_second_cover_004",
       "type": "message",
       "sender": "nico",
-      "text": "mais faut pas trébucher. et toi, t’as une passion pour les sols glissants.",
+      "text": "donc j’aimerais éviter de construire un alibi avec du scotch.",
       "delay": 30,
       "next": "j2_02_choice_nico_alibi"
     },
@@ -118,7 +118,7 @@
       "id": "j2_02_nico_entry_real_advice_001",
       "type": "message",
       "sender": "nico",
-      "text": "je repense à ce que tu m’as demandé hier.",
+      "text": "j’ai repensé à ce que tu m’as demandé hier.",
       "delay": 25,
       "next": "j2_02_nico_single_reply_real_advice_001"
     },
@@ -148,7 +148,7 @@
       "id": "j2_02_nico_entry_real_advice_002",
       "type": "message",
       "sender": "nico",
-      "text": "oui, cette anomalie historique.",
+      "text": "oui. moment rare, note-le.",
       "delay": 30,
       "next": "j2_02_nico_entry_real_advice_003"
     },
@@ -156,7 +156,7 @@
       "id": "j2_02_nico_entry_real_advice_003",
       "type": "message",
       "sender": "nico",
-      "text": "j’ai pas de grande sagesse, hein.",
+      "text": "je crois que ton problème, c’est pas de trouver une bonne phrase.",
       "delay": 30,
       "next": "j2_02_nico_entry_real_advice_004"
     },
@@ -164,7 +164,7 @@
       "id": "j2_02_nico_entry_real_advice_004",
       "type": "message",
       "sender": "nico",
-      "text": "mais si tu continues à empiler des versions, à un moment c’est pas les autres qui vont se perdre. c’est toi.",
+      "text": "c’est que tu cherches une phrase qui évite toutes les autres.",
       "delay": 30,
       "next": "j2_02_choice_nico_alibi"
     },
@@ -172,7 +172,7 @@
       "id": "j2_02_nico_entry_ignored_respiration_001",
       "type": "message",
       "sender": "nico",
-      "text": "déjà, bonjour à toi et à ton art de laisser les gens en vu.",
+      "text": "bonjour à toi et à ta gestion très personnelle des messages lus.",
       "delay": 25,
       "next": "j2_02_nico_single_reply_ignored_respiration_001"
     },
@@ -202,7 +202,7 @@
       "id": "j2_02_nico_entry_ignored_respiration_002",
       "type": "message",
       "sender": "nico",
-      "text": "ça, c’est une marque déposée à ce stade.",
+      "text": "ça, j’avais deviné.",
       "delay": 30,
       "next": "j2_02_nico_entry_ignored_respiration_003"
     },
@@ -218,7 +218,7 @@
       "id": "j2_02_nico_entry_ignored_respiration_004",
       "type": "message",
       "sender": "nico",
-      "text": "mais si tu veux que je t’aide encore, faut que je sache si je suis dans la confidence ou juste dans le brouillard avec un casque de chantier.",
+      "text": "mais si tu veux que je sois avec toi là-dedans, faut que je sache où je mets les pieds.",
       "delay": 30,
       "next": "j2_02_choice_nico_alibi"
     },
@@ -226,7 +226,7 @@
       "id": "j2_02_nico_001",
       "type": "message",
       "sender": "nico",
-      "text": "alors. nouveau jour, même incendie ?",
+      "text": "nouveau jour.",
       "delay": 0,
       "next": "j2_02_nico_single_reply_default_001"
     },
@@ -238,7 +238,7 @@
       "choices": [
         {
           "id": "j2_02_nico_single_reply_default_001_option",
-          "text": "Tu commences fort.",
+          "text": "Tu commences doucement.",
           "next": "j2_02_nico_player_default_001"
         }
       ],
@@ -248,7 +248,7 @@
       "id": "j2_02_nico_player_default_001",
       "type": "message",
       "sender": "player",
-      "text": "Tu commences fort.",
+      "text": "Tu commences doucement.",
       "delay": 0,
       "next": "j2_02_nico_002"
     },
@@ -256,7 +256,7 @@
       "id": "j2_02_nico_002",
       "type": "message",
       "sender": "nico",
-      "text": "je m’adapte au décor.",
+      "text": "je fais un effort.",
       "delay": 30,
       "next": "j2_02_nico_003"
     },
@@ -264,7 +264,7 @@
       "id": "j2_02_nico_003",
       "type": "message",
       "sender": "nico",
-      "text": "hier c’était déjà pas très droit.",
+      "text": "hier, c’était déjà pas super lisible.",
       "delay": 30,
       "next": "j2_02_nico_004"
     },
@@ -272,7 +272,7 @@
       "id": "j2_02_nico_004",
       "type": "message",
       "sender": "nico",
-      "text": "donc avant que ça devienne une série en six saisons, je préfère savoir où je suis censé me tenir.",
+      "text": "donc avant que ça reparte dans tous les sens, je préfère savoir ce que tu attends de moi.",
       "delay": 30,
       "next": "j2_02_choice_nico_alibi"
     },
@@ -284,7 +284,7 @@
       "choices": [
         {
           "id": "j2_02_nico_hold_line",
-          "text": "Si Sarah te demande, reste sur une version simple. On était dehors un moment, rien de plus.",
+          "text": "Si Sarah te demande, reste simple : on était dehors un moment. Pas besoin d’en rajouter.",
           "next": "j2_02_nico_player_hold_line",
           "effects": {
             "dette_nico": 3,
@@ -299,7 +299,7 @@
         },
         {
           "id": "j2_02_nico_release_him",
-          "text": "Si on te demande, dis juste que tu sais pas. Je veux pas que tu portes ça à ma place.",
+          "text": "Si on te demande, dis que tu ne sais pas. Je veux pas que tu portes ma version.",
           "next": "j2_02_nico_player_release_him",
           "effects": {
             "dette_nico": -3,
@@ -314,7 +314,7 @@
         },
         {
           "id": "j2_02_nico_partial_truth",
-          "text": "Je sais pas encore quoi dire à Sarah. Mais avec Camille, c’était pas aussi neutre que je l’ai laissé entendre.",
+          "text": "Je sais pas encore quoi dire à Sarah. Mais Camille, c’était pas juste un moment neutre.",
           "next": "j2_02_nico_player_partial_truth",
           "effects": {
             "dette_nico": -1,
@@ -329,7 +329,7 @@
         },
         {
           "id": "j2_02_nico_joke_escape",
-          "text": "Tu peux juste improviser avec ton talent habituel. C’est presque crédible quand tu parles vite.",
+          "text": "Tu peux faire comme d’habitude : parler vite et avoir l’air sûr de toi.",
           "next": "j2_02_nico_player_joke_escape",
           "effects": {
             "dette_nico": 1,
@@ -348,7 +348,7 @@
       "id": "j2_02_nico_player_hold_line",
       "type": "message",
       "sender": "player",
-      "text": "Si Sarah te demande, reste sur une version simple. On était dehors un moment, rien de plus.",
+      "text": "Si Sarah te demande, reste simple : on était dehors un moment. Pas besoin d’en rajouter.",
       "delay": 0,
       "next": "j2_02_nico_hold_line_001"
     },
@@ -364,7 +364,7 @@
       "id": "j2_02_nico_hold_line_002",
       "type": "message",
       "sender": "nico",
-      "text": "je peux dire simple.",
+      "text": "je peux faire simple.",
       "delay": 30,
       "next": "j2_02_nico_hold_line_003"
     },
@@ -372,7 +372,7 @@
       "id": "j2_02_nico_hold_line_003",
       "type": "message",
       "sender": "nico",
-      "text": "mais “simple”, chez toi, ça ressemble souvent à “incomplet avec des chaussures propres”.",
+      "text": "mais simple, ça veut pas dire magique.",
       "delay": 30,
       "next": "j2_02_nico_hold_line_004"
     },
@@ -380,7 +380,7 @@
       "id": "j2_02_nico_hold_line_004",
       "type": "message",
       "sender": "nico",
-      "text": "je le fais. mais tu me dois une vraie phrase après.",
+      "text": "si quelqu’un insiste, je n’invente pas une pièce en plus.",
       "delay": 30,
       "next": "j2_02_end_nico_line_cost"
     },
@@ -388,14 +388,14 @@
       "id": "j2_02_end_nico_line_cost",
       "type": "end",
       "sender": "system",
-      "text": "Nico accepte encore de tenir la ligne, mais la dette devient plus visible.",
+      "text": "Nico accepte de tenir une version simple, mais refuse d’inventer.",
       "delay": 0
     },
     {
       "id": "j2_02_nico_player_release_him",
       "type": "message",
       "sender": "player",
-      "text": "Si on te demande, dis juste que tu sais pas. Je veux pas que tu portes ça à ma place.",
+      "text": "Si on te demande, dis que tu ne sais pas. Je veux pas que tu portes ma version.",
       "delay": 0,
       "next": "j2_02_nico_release_001"
     },
@@ -419,7 +419,7 @@
       "id": "j2_02_nico_release_003",
       "type": "message",
       "sender": "nico",
-      "text": "j’aime bien être ton pote. beaucoup moins ton accessoire de scène.",
+      "text": "j’aime bien être ton pote.",
       "delay": 30,
       "next": "j2_02_nico_release_004"
     },
@@ -427,7 +427,7 @@
       "id": "j2_02_nico_release_004",
       "type": "message",
       "sender": "nico",
-      "text": "mais du coup, prépare-toi à parler pour de vrai.",
+      "text": "j’aime moins être la phrase que tu poses entre toi et le reste.",
       "delay": 30,
       "next": "j2_02_end_nico_released"
     },
@@ -435,14 +435,14 @@
       "id": "j2_02_end_nico_released",
       "type": "end",
       "sender": "system",
-      "text": "Nico respire un peu. L’alibi se desserre, mais la vérité se rapproche.",
+      "text": "Nico est soulagé d’être sorti de l’alibi, mais cela rapproche le joueur de sa propre parole.",
       "delay": 0
     },
     {
       "id": "j2_02_nico_player_partial_truth",
       "type": "message",
       "sender": "player",
-      "text": "Je sais pas encore quoi dire à Sarah. Mais avec Camille, c’était pas aussi neutre que je l’ai laissé entendre.",
+      "text": "Je sais pas encore quoi dire à Sarah. Mais Camille, c’était pas juste un moment neutre.",
       "delay": 0,
       "next": "j2_02_nico_partial_truth_001"
     },
@@ -458,7 +458,7 @@
       "id": "j2_02_nico_partial_truth_002",
       "type": "message",
       "sender": "nico",
-      "text": "ça au moins, c’est une phrase avec des os.",
+      "text": "là, je comprends mieux.",
       "delay": 30,
       "next": "j2_02_nico_partial_truth_003"
     },
@@ -466,7 +466,7 @@
       "id": "j2_02_nico_partial_truth_003",
       "type": "message",
       "sender": "nico",
-      "text": "pas confortable, mais ça tient debout.",
+      "text": "c’est pas confortable, mais au moins c’est plus clair.",
       "delay": 30,
       "next": "j2_02_nico_partial_truth_004"
     },
@@ -474,7 +474,7 @@
       "id": "j2_02_nico_partial_truth_004",
       "type": "message",
       "sender": "nico",
-      "text": "je te conseille pas de la servir froide à Sarah, par contre.",
+      "text": "je te conseille pas de servir ça à Sarah comme ça.",
       "delay": 30,
       "next": "j2_02_end_nico_partial_truth"
     },
@@ -482,14 +482,14 @@
       "id": "j2_02_end_nico_partial_truth",
       "type": "end",
       "sender": "system",
-      "text": "Nico comprend mieux le poids de Camille, sans devenir ton porte-parole.",
+      "text": "Nico comprend mieux la place de Camille, sans devenir intermédiaire.",
       "delay": 0
     },
     {
       "id": "j2_02_nico_player_joke_escape",
       "type": "message",
       "sender": "player",
-      "text": "Tu peux juste improviser avec ton talent habituel. C’est presque crédible quand tu parles vite.",
+      "text": "Tu peux faire comme d’habitude : parler vite et avoir l’air sûr de toi.",
       "delay": 0,
       "next": "j2_02_nico_joke_001"
     },
@@ -497,7 +497,7 @@
       "id": "j2_02_nico_joke_001",
       "type": "message",
       "sender": "nico",
-      "text": "ah oui, excellent.",
+      "text": "ah oui.",
       "delay": 30,
       "next": "j2_02_nico_joke_002"
     },
@@ -505,7 +505,7 @@
       "id": "j2_02_nico_joke_002",
       "type": "message",
       "sender": "nico",
-      "text": "donc on part sur “laisse le clown gérer l’incendie”.",
+      "text": "donc ton plan, c’est que je parle vite.",
       "delay": 30,
       "next": "j2_02_nico_joke_003"
     },
@@ -513,7 +513,7 @@
       "id": "j2_02_nico_joke_003",
       "type": "message",
       "sender": "nico",
-      "text": "je note.",
+      "text": "très solide.",
       "delay": 30,
       "next": "j2_02_nico_joke_004"
     },
@@ -521,7 +521,7 @@
       "id": "j2_02_nico_joke_004",
       "type": "message",
       "sender": "nico",
-      "text": "mais même les clowns ont une sortie de secours, frérot.",
+      "text": "je peux gagner trente secondes, pas une journée entière.",
       "delay": 30,
       "next": "j2_02_end_nico_joke_warning"
     },
@@ -529,7 +529,7 @@
       "id": "j2_02_end_nico_joke_warning",
       "type": "end",
       "sender": "system",
-      "text": "Nico plaisante encore, mais il commence à chercher la sortie.",
+      "text": "Nico plaisante encore, mais il refuse de porter la scène seul.",
       "delay": 0
     }
   ],
