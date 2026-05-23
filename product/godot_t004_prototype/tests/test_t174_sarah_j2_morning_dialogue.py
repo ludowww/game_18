@@ -129,8 +129,12 @@ def test_other_j2_skeletons_remain_placeholders():
     }
     for path in OTHER_J2:
         data = load(path)
+        node_ids = {node["id"] for node in data["nodes"]}
         if data["conversation_id"] == "nico_j2_v2":
-            assert "j2_02_choice_nico_alibi" in {node["id"] for node in data["nodes"]}
+            assert "j2_02_choice_nico_alibi" in node_ids
+            continue
+        if data["conversation_id"] == "camille_j2_v2":
+            assert "j2_03_choice_camille_tension" in node_ids
             continue
         first_message = next(node for node in data["nodes"] if node.get("type") == "message")
         assert first_message["text"] == expected[data["conversation_id"]]

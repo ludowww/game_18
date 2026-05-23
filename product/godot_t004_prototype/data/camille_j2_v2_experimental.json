@@ -7,22 +7,580 @@
   "experimental": true,
   "nodes": [
     {
+      "id": "j2_03_camille_entry_tension_ack_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "J’ai repensé à ce que tu as dit hier.",
+      "delay": 25,
+      "next": "j2_03_camille_single_reply_tension_ack_001"
+    },
+    {
+      "id": "j2_03_camille_single_reply_tension_ack_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_03_camille_single_reply_tension_ack_001_option",
+          "text": "À quelle partie ?",
+          "next": "j2_03_camille_player_tension_ack_001"
+        }
+      ],
+      "next": "j2_03_camille_player_tension_ack_001"
+    },
+    {
+      "id": "j2_03_camille_player_tension_ack_001",
+      "type": "message",
+      "sender": "player",
+      "text": "À quelle partie ?",
+      "delay": 0,
+      "next": "j2_03_camille_entry_tension_ack_002"
+    },
+    {
+      "id": "j2_03_camille_entry_tension_ack_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Au moment où tu as arrêté de dire que c’était rien.",
+      "delay": 30,
+      "next": "j2_03_camille_entry_tension_ack_003"
+    },
+    {
+      "id": "j2_03_camille_entry_tension_ack_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’était maladroit.",
+      "delay": 30,
+      "next": "j2_03_camille_entry_tension_ack_004"
+    },
+    {
+      "id": "j2_03_camille_entry_tension_ack_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais au moins, je n’avais pas l’impression de parler seule dans la scène.",
+      "delay": 30,
+      "next": "j2_03_choice_camille_tension"
+    },
+    {
+      "id": "j2_03_camille_entry_boundary_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je t’en veux pas d’avoir freiné hier.",
+      "delay": 25,
+      "next": "j2_03_camille_single_reply_boundary_001"
+    },
+    {
+      "id": "j2_03_camille_single_reply_boundary_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_03_camille_single_reply_boundary_001_option",
+          "text": "C’était pas contre toi.",
+          "next": "j2_03_camille_player_boundary_001"
+        }
+      ],
+      "next": "j2_03_camille_player_boundary_001"
+    },
+    {
+      "id": "j2_03_camille_player_boundary_001",
+      "type": "message",
+      "sender": "player",
+      "text": "C’était pas contre toi.",
+      "delay": 0,
+      "next": "j2_03_camille_entry_boundary_002"
+    },
+    {
+      "id": "j2_03_camille_entry_boundary_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je sais.",
+      "delay": 30,
+      "next": "j2_03_camille_entry_boundary_003"
+    },
+    {
+      "id": "j2_03_camille_entry_boundary_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est même peut-être ce qui m’a empêchée de te détester un peu.",
+      "delay": 30,
+      "next": "j2_03_camille_entry_boundary_004"
+    },
+    {
+      "id": "j2_03_camille_entry_boundary_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais je ne sais toujours pas si tu as posé une limite ou si tu as juste trouvé une sortie propre.",
+      "delay": 30,
+      "next": "j2_03_choice_camille_tension"
+    },
+    {
+      "id": "j2_03_camille_entry_minimized_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je vais faire court.",
+      "delay": 25,
+      "next": "j2_03_camille_single_reply_minimized_001"
+    },
+    {
+      "id": "j2_03_camille_single_reply_minimized_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_03_camille_single_reply_minimized_001_option",
+          "text": "Je t’écoute.",
+          "next": "j2_03_camille_player_minimized_001"
+        }
+      ],
+      "next": "j2_03_camille_player_minimized_001"
+    },
+    {
+      "id": "j2_03_camille_player_minimized_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je t’écoute.",
+      "delay": 0,
+      "next": "j2_03_camille_entry_minimized_002"
+    },
+    {
+      "id": "j2_03_camille_entry_minimized_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Hier, tu as appelé ça une discussion.",
+      "delay": 30,
+      "next": "j2_03_camille_entry_minimized_003"
+    },
+    {
+      "id": "j2_03_camille_entry_minimized_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Très bien.",
+      "delay": 30,
+      "next": "j2_03_camille_entry_minimized_004"
+    },
+    {
+      "id": "j2_03_camille_entry_minimized_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais ne me demande pas aujourd’hui d’avoir la même mémoire que toi.",
+      "delay": 30,
+      "next": "j2_03_choice_camille_tension"
+    },
+    {
+      "id": "j2_03_camille_entry_desire_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "J’ai failli ne pas t’écrire.",
+      "delay": 25,
+      "next": "j2_03_camille_single_reply_desire_001"
+    },
+    {
+      "id": "j2_03_camille_single_reply_desire_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_03_camille_single_reply_desire_001_option",
+          "text": "Pourquoi tu l’as fait ?",
+          "next": "j2_03_camille_player_desire_001"
+        }
+      ],
+      "next": "j2_03_camille_player_desire_001"
+    },
+    {
+      "id": "j2_03_camille_player_desire_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Pourquoi tu l’as fait ?",
+      "delay": 0,
+      "next": "j2_03_camille_entry_desire_002"
+    },
+    {
+      "id": "j2_03_camille_entry_desire_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Parce que ne pas répondre, ça aurait été te laisser décider du sens de mon silence.",
+      "delay": 30,
+      "next": "j2_03_camille_entry_desire_003"
+    },
+    {
+      "id": "j2_03_camille_entry_desire_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Hier, tu es allé trop vite.",
+      "delay": 30,
+      "next": "j2_03_camille_entry_desire_004"
+    },
+    {
+      "id": "j2_03_camille_entry_desire_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Pas parce que je ne ressens rien. Parce que tu as sauté la partie où ça abîme quelque chose.",
+      "delay": 30,
+      "next": "j2_03_choice_camille_tension"
+    },
+    {
       "id": "j2_03_camille_001",
       "type": "message",
       "sender": "camille",
-      "text": "[J2 placeholder Camille après-midi]",
+      "text": "Je ne sais pas si je devrais revenir là-dessus.",
       "delay": 0,
-      "next": "j2_03_camille_end_placeholder"
+      "next": "j2_03_camille_single_reply_default_001"
     },
     {
-      "id": "j2_03_camille_end_placeholder",
+      "id": "j2_03_camille_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_03_camille_single_reply_default_001_option",
+          "text": "Sur hier ?",
+          "next": "j2_03_camille_player_default_001"
+        }
+      ],
+      "next": "j2_03_camille_player_default_001"
+    },
+    {
+      "id": "j2_03_camille_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Sur hier ?",
+      "delay": 0,
+      "next": "j2_03_camille_002"
+    },
+    {
+      "id": "j2_03_camille_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Oui.",
+      "delay": 30,
+      "next": "j2_03_camille_003"
+    },
+    {
+      "id": "j2_03_camille_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Enfin. Sur dehors.",
+      "delay": 30,
+      "next": "j2_03_camille_004"
+    },
+    {
+      "id": "j2_03_camille_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je déteste que ce mot suffise à faire toute une phrase.",
+      "delay": 30,
+      "next": "j2_03_choice_camille_tension"
+    },
+    {
+      "id": "j2_03_choice_camille_tension",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Camille ?",
+      "choices": [
+        {
+          "id": "j2_03_camille_assume_tension",
+          "text": "Je vais pas faire semblant que c’était neutre. Mais je veux pas te promettre quelque chose juste parce que je suis troublé.",
+          "next": "j2_03_camille_player_assume_tension",
+          "effects": {
+            "tension_camille": 1,
+            "respect_camille": 2,
+            "pression_camille": -1,
+            "coherence": 1,
+            "culpabilite": 1,
+            "flags": [
+              "j2_camille_assumed_tension",
+              "j2_camille_no_false_promise"
+            ]
+          }
+        },
+        {
+          "id": "j2_03_camille_clear_boundary",
+          "text": "Je crois qu’il faut qu’on garde une limite claire. Pas parce que c’était rien, mais parce que ça compte trop pour être utilisé n’importe comment.",
+          "next": "j2_03_camille_player_clear_boundary",
+          "effects": {
+            "tension_camille": -1,
+            "respect_camille": 3,
+            "pression_camille": -2,
+            "coherence": 2,
+            "flags": [
+              "j2_camille_clear_boundary",
+              "j2_camille_respected_again"
+            ]
+          }
+        },
+        {
+          "id": "j2_03_camille_minimize_again",
+          "text": "Je pense qu’on est en train de donner trop de poids à un moment qui était surtout confus.",
+          "next": "j2_03_camille_player_minimize_again",
+          "effects": {
+            "tension_camille": -1,
+            "respect_camille": -3,
+            "pression_camille": 1,
+            "coherence": -1,
+            "culpabilite": 1,
+            "flags": [
+              "j2_camille_minimized_again",
+              "j2_camille_refuses_shared_version"
+            ]
+          }
+        },
+        {
+          "id": "j2_03_camille_seek_refuge",
+          "text": "Avec toi, j’ai l’impression de respirer. Et je sais que c’est peut-être injuste de te dire ça maintenant.",
+          "next": "j2_03_camille_player_seek_refuge",
+          "effects": {
+            "tension_camille": 2,
+            "pression_camille": 3,
+            "respect_camille": -1,
+            "fuite_ines": 1,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "j2_camille_refuge_attempt",
+              "j2_camille_pressure_rises"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j2_03_camille_player_assume_tension",
+      "type": "message",
+      "sender": "player",
+      "text": "Je vais pas faire semblant que c’était neutre. Mais je veux pas te promettre quelque chose juste parce que je suis troublé.",
+      "delay": 0,
+      "next": "j2_03_camille_assume_001"
+    },
+    {
+      "id": "j2_03_camille_assume_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est frustrant.",
+      "delay": 30,
+      "next": "j2_03_camille_assume_002"
+    },
+    {
+      "id": "j2_03_camille_assume_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais c’est moins insultant qu’une promesse faite dans le brouillard.",
+      "delay": 30,
+      "next": "j2_03_camille_assume_003"
+    },
+    {
+      "id": "j2_03_camille_assume_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je peux entendre que tu sois troublé.",
+      "delay": 30,
+      "next": "j2_03_camille_assume_004"
+    },
+    {
+      "id": "j2_03_camille_assume_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je veux juste pas devenir le mot que tu utilises pour éviter les autres.",
+      "delay": 30,
+      "next": "j2_03_end_camille_close_but_clear"
+    },
+    {
+      "id": "j2_03_end_camille_close_but_clear",
       "type": "end",
       "sender": "system",
-      "text": "Fin placeholder Camille J2.",
+      "text": "Camille reste proche, mais elle refuse les promesses floues.",
+      "delay": 0
+    },
+    {
+      "id": "j2_03_camille_player_clear_boundary",
+      "type": "message",
+      "sender": "player",
+      "text": "Je crois qu’il faut qu’on garde une limite claire. Pas parce que c’était rien, mais parce que ça compte trop pour être utilisé n’importe comment.",
+      "delay": 0,
+      "next": "j2_03_camille_boundary_001"
+    },
+    {
+      "id": "j2_03_camille_boundary_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "D’accord.",
+      "delay": 30,
+      "next": "j2_03_camille_boundary_002"
+    },
+    {
+      "id": "j2_03_camille_boundary_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne vais pas prétendre que ça ne pique pas.",
+      "delay": 30,
+      "next": "j2_03_camille_boundary_003"
+    },
+    {
+      "id": "j2_03_camille_boundary_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais je préfère une limite qui me regarde en face à une ambiguïté qui me prend quand ça l’arrange.",
+      "delay": 30,
+      "next": "j2_03_camille_boundary_004"
+    },
+    {
+      "id": "j2_03_camille_boundary_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors tiens-la. Vraiment.",
+      "delay": 30,
+      "next": "j2_03_end_camille_boundary_held"
+    },
+    {
+      "id": "j2_03_end_camille_boundary_held",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille accepte la limite, mais elle attend qu’elle soit tenue.",
+      "delay": 0
+    },
+    {
+      "id": "j2_03_camille_player_minimize_again",
+      "type": "message",
+      "sender": "player",
+      "text": "Je pense qu’on est en train de donner trop de poids à un moment qui était surtout confus.",
+      "delay": 0,
+      "next": "j2_03_camille_minimize_001"
+    },
+    {
+      "id": "j2_03_camille_minimize_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Voilà.",
+      "delay": 30,
+      "next": "j2_03_camille_minimize_002"
+    },
+    {
+      "id": "j2_03_camille_minimize_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est exactement ça.",
+      "delay": 30,
+      "next": "j2_03_camille_minimize_003"
+    },
+    {
+      "id": "j2_03_camille_minimize_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu ne dis pas que je mens.",
+      "delay": 30,
+      "next": "j2_03_camille_minimize_004"
+    },
+    {
+      "id": "j2_03_camille_minimize_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu dis juste que ma version prend trop de place.",
+      "delay": 30,
+      "next": "j2_03_camille_minimize_005"
+    },
+    {
+      "id": "j2_03_camille_minimize_005",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est plus élégant. Pas forcément plus honnête.",
+      "delay": 30,
+      "next": "j2_03_end_camille_cold"
+    },
+    {
+      "id": "j2_03_end_camille_cold",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille se refroidit. Elle refuse d’entrer dans ta version des faits.",
+      "delay": 0
+    },
+    {
+      "id": "j2_03_camille_player_seek_refuge",
+      "type": "message",
+      "sender": "player",
+      "text": "Avec toi, j’ai l’impression de respirer. Et je sais que c’est peut-être injuste de te dire ça maintenant.",
+      "delay": 0,
+      "next": "j2_03_camille_refuge_001"
+    },
+    {
+      "id": "j2_03_camille_refuge_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est injuste, oui.",
+      "delay": 30,
+      "next": "j2_03_camille_refuge_002"
+    },
+    {
+      "id": "j2_03_camille_refuge_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Pas parce que c’est faux.",
+      "delay": 30,
+      "next": "j2_03_camille_refuge_003"
+    },
+    {
+      "id": "j2_03_camille_refuge_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Parce que tu le dis comme si j’étais une fenêtre ouverte dans une pièce que tu ne veux pas ranger.",
+      "delay": 30,
+      "next": "j2_03_camille_refuge_004"
+    },
+    {
+      "id": "j2_03_camille_refuge_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne veux pas être ton air de secours.",
+      "delay": 30,
+      "next": "j2_03_end_camille_refuge_refused"
+    },
+    {
+      "id": "j2_03_end_camille_refuge_refused",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille entend le besoin de refuge, mais elle refuse d’être utilisée comme sortie.",
       "delay": 0
     }
   ],
   "entry_variants": [
+    {
+      "id": "tension_acknowledged",
+      "conditions": {
+        "flags": [
+          "admitted_tension_to_camille"
+        ]
+      },
+      "start_node": "j2_03_camille_entry_tension_ack_001"
+    },
+    {
+      "id": "boundary_respected",
+      "conditions": {
+        "flags": [
+          "protected_camille_boundary"
+        ]
+      },
+      "start_node": "j2_03_camille_entry_boundary_001"
+    },
+    {
+      "id": "minimized",
+      "conditions": {
+        "flags": [
+          "minimized_with_camille"
+        ]
+      },
+      "start_node": "j2_03_camille_entry_minimized_001"
+    },
+    {
+      "id": "desire_too_early",
+      "conditions": {
+        "flags": [
+          "early_desire_to_camille"
+        ]
+      },
+      "start_node": "j2_03_camille_entry_desire_001"
+    },
     {
       "id": "default",
       "conditions": {},
