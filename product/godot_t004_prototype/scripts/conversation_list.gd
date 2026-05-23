@@ -205,6 +205,7 @@ func _make_header_debug_controls() -> HBoxContainer:
 	)
 	debug_row.add_child(reset_button)
 	debug_row.add_child(_make_test_fast_mode_button())
+	debug_row.add_child(_make_force_day_button())
 	debug_row.add_child(_make_experimental_j1_v2_button())
 	return debug_row
 
@@ -222,6 +223,21 @@ func _make_test_fast_mode_button() -> Button:
 
 func _on_test_fast_mode_pressed() -> void:
 	ConversationState.set_test_fast_mode_enabled(not ConversationState.test_fast_mode_enabled)
+	get_tree().reload_current_scene()
+
+func _make_force_day_button() -> Button:
+	var button := Button.new()
+	var next_day: int = ConversationState.current_day + 1
+	button.text = "Debug Jour " + str(next_day)
+	button.tooltip_text = "Debug: forcer la bascule au jour suivant pour les playtests"
+	button.custom_minimum_size = Vector2(0, 28)
+	button.add_theme_font_size_override("font_size", 11)
+	button.disabled = ConversationState.current_day >= 6
+	button.pressed.connect(_on_force_day_pressed)
+	return button
+
+func _on_force_day_pressed() -> void:
+	ConversationState.force_advance_to_next_day_for_testing()
 	get_tree().reload_current_scene()
 
 func _make_experimental_j1_v2_button() -> Button:

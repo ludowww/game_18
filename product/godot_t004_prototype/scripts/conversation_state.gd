@@ -1236,6 +1236,14 @@ func advance_to_next_day() -> void:
 	refresh_day_progression()
 	if not day_transition_available:
 		return
+	_advance_day_unchecked()
+
+func force_advance_to_next_day_for_testing() -> void:
+	if current_day >= 6:
+		return
+	_advance_day_unchecked()
+
+func _advance_day_unchecked() -> void:
 	if not completed_days.has(current_day):
 		completed_days.append(current_day)
 	current_day += 1
@@ -1328,6 +1336,10 @@ func save_progression() -> void:
 	for id in conversation_ids():
 		var state: Dictionary = conversations[id]
 		payload["conversations"][id] = {
+			"available": bool(state.get("available", false)),
+			"title": str(state.get("title", "")),
+			"json_path": str(state.get("json_path", "")),
+			"start_node": str(state.get("start_node", "")),
 			"started": bool(state.get("started", false)),
 			"messages": state.get("messages", []).duplicate(true),
 			"game_state": state.get("game_state", {}).duplicate(true),
@@ -1397,6 +1409,10 @@ func load_progression() -> void:
 			continue
 		var saved_state: Dictionary = saved_state_value
 		var state: Dictionary = conversations[id]
+		state["available"] = bool(saved_state.get("available", state.get("available", false)))
+		state["title"] = str(saved_state.get("title", state.get("title", "")))
+		state["json_path"] = str(saved_state.get("json_path", state.get("json_path", "")))
+		state["start_node"] = str(saved_state.get("start_node", state.get("start_node", "")))
 		state["started"] = bool(saved_state.get("started", state.get("started", false)))
 		state["messages"] = saved_state.get("messages", state.get("messages", [])).duplicate(true)
 		state["game_state"] = saved_state.get("game_state", state.get("game_state", {})).duplicate(true)

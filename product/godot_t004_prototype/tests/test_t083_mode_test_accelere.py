@@ -40,14 +40,21 @@ def test_fast_test_mode_toggle_and_delays_are_code_side_only():
     assert "Mode test rapide : OFF" in listing
     assert "_make_test_fast_mode_button" in listing
     assert "_on_test_fast_mode_pressed" in listing
+    assert "_make_force_day_button" in listing
+    assert "force_advance_to_next_day_for_testing" in listing
+    assert "func force_advance_to_next_day_for_testing() -> void:" in state
+    assert "func _advance_day_unchecked() -> void:" in state
     reset_body = state.split("func reset_progression() -> void:", 1)[1].split("# Compatibilité", 1)[0]
     assert "test_fast_mode_enabled" not in reset_body
 
     # No save/schema migration for debug-only mode.
     save_body = state.split("func save_progression() -> void:", 1)[1].split("func load_progression()", 1)[0]
-    load_body = state.split("func load_progression() -> void:", 1)[1].split("func _migrate_blocks_from_existing_save", 1)[0]
+    load_body = state.split("func load_progression() -> void:", 1)[1].split("func _merge_saved_global_game_state", 1)[0]
     assert "test_fast_mode_enabled" not in save_body
     assert "test_fast_mode_enabled" not in load_body
+    for mutable_field in ["available", "title", "json_path", "start_node"]:
+        assert f'"{mutable_field}":' in save_body
+        assert f'state["{mutable_field}"] =' in load_body
 
 
 if __name__ == "__main__":
