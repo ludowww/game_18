@@ -1212,14 +1212,25 @@ func _is_day_complete(day: int) -> bool:
 	if required_ids.is_empty():
 		return false
 	for id in required_ids:
-		if not conversations.has(id):
-			return false
-		var state: Dictionary = conversations[id]
-		if not bool(state.get("done", false)):
-			return false
-		if str(state.get("active_choice_node", "")) != "":
+		if not _is_required_conversation_complete(id, day):
 			return false
 	return true
+
+func _is_required_conversation_complete(id: String, day: int) -> bool:
+	if not conversations.has(id):
+		return false
+	var state: Dictionary = conversations[id]
+	if str(state.get("active_choice_node", "")) != "":
+		return false
+	if bool(state.get("done", false)):
+		return true
+	if experimental_j1_v2_enabled and day == 1:
+		var json_path: String = str(state.get("json_path", ""))
+		if id == "sarah_j1_v2" and json_path.contains("sarah_meal_j1_v2"):
+			return true
+		if id == "nico_j1_v2" and json_path.contains("nico_respiration_j1_v2"):
+			return true
+	return false
 
 func advance_to_next_day() -> void:
 	refresh_day_progression()

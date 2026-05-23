@@ -61,9 +61,20 @@ def test_t135_j1_v2_day_completion_uses_existing_threads_not_duplicate_followup_
     assert '"nico_respiration_j1_v2"' not in required
 
 
+def test_t135_followup_threads_do_not_hide_j2_transition_after_core_done() -> None:
+    source = state_text()
+    is_day_complete = function_body(source, "_is_day_complete")
+    assert "_is_required_conversation_complete(id, day)" in is_day_complete
+    helper = function_body(source, "_is_required_conversation_complete")
+    assert 'id == "sarah_j1_v2" and json_path.contains("sarah_meal_j1_v2")' in helper
+    assert 'id == "nico_j1_v2" and json_path.contains("nico_respiration_j1_v2")' in helper
+    assert "experimental_j1_v2_enabled and day == 1" in helper
+
+
 if __name__ == "__main__":
     test_t135_breathing_jsons_are_not_separate_message_conversations()
     test_t135_breathing_scenes_attach_to_existing_sarah_and_nico_threads()
     test_t135_attach_helper_reopens_existing_thread_with_followup_json()
     test_t135_j1_v2_day_completion_uses_existing_threads_not_duplicate_followup_ids()
+    test_t135_followup_threads_do_not_hide_j2_transition_after_core_done()
     print("T135 J1 V2 followup threading tests OK")
