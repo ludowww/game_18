@@ -7,22 +7,535 @@
   "experimental": true,
   "nodes": [
     {
+      "id": "j2_05_ines_entry_opened_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "je repense à ce que tu m’as dit hier.",
+      "delay": 25,
+      "next": "j2_05_ines_single_reply_opened_001"
+    },
+    {
+      "id": "j2_05_ines_single_reply_opened_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_05_ines_single_reply_opened_001_option",
+          "text": "À quel moment ?",
+          "next": "j2_05_ines_player_opened_001"
+        }
+      ],
+      "next": "j2_05_ines_player_opened_001"
+    },
+    {
+      "id": "j2_05_ines_player_opened_001",
+      "type": "message",
+      "sender": "player",
+      "text": "À quel moment ?",
+      "delay": 0,
+      "next": "j2_05_ines_entry_opened_002"
+    },
+    {
+      "id": "j2_05_ines_entry_opened_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "quand tu as dit que tu n’étais pas vraiment là.",
+      "delay": 30,
+      "next": "j2_05_ines_entry_opened_003"
+    },
+    {
+      "id": "j2_05_ines_entry_opened_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "je ne sais pas ce que ça veut dire pour toi.",
+      "delay": 30,
+      "next": "j2_05_ines_entry_opened_004"
+    },
+    {
+      "id": "j2_05_ines_entry_opened_004",
+      "type": "message",
+      "sender": "ines",
+      "text": "mais je sais que ça m’a donné envie de faire attention.",
+      "delay": 30,
+      "next": "j2_05_choice_ines_calm"
+    },
+    {
+      "id": "j2_05_ines_entry_distance_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "je sais que tu voulais garder une distance.",
+      "delay": 25,
+      "next": "j2_05_ines_single_reply_distance_001"
+    },
+    {
+      "id": "j2_05_ines_single_reply_distance_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_05_ines_single_reply_distance_001_option",
+          "text": "Je voulais pas t’embarquer.",
+          "next": "j2_05_ines_player_distance_001"
+        }
+      ],
+      "next": "j2_05_ines_player_distance_001"
+    },
+    {
+      "id": "j2_05_ines_player_distance_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je voulais pas t’embarquer.",
+      "delay": 0,
+      "next": "j2_05_ines_entry_distance_002"
+    },
+    {
+      "id": "j2_05_ines_entry_distance_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "j’ai compris.",
+      "delay": 30,
+      "next": "j2_05_ines_entry_distance_003"
+    },
+    {
+      "id": "j2_05_ines_entry_distance_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "et je respecte ça.",
+      "delay": 30,
+      "next": "j2_05_ines_entry_distance_004"
+    },
+    {
+      "id": "j2_05_ines_entry_distance_004",
+      "type": "message",
+      "sender": "ines",
+      "text": "je voulais juste vérifier que distance ne voulait pas dire disparaître complètement.",
+      "delay": 30,
+      "next": "j2_05_choice_ines_calm"
+    },
+    {
+      "id": "j2_05_ines_entry_fuite_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "hier, tu as parlé d’un endroit où personne ne demandait rien.",
+      "delay": 25,
+      "next": "j2_05_ines_single_reply_fuite_001"
+    },
+    {
+      "id": "j2_05_ines_single_reply_fuite_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_05_ines_single_reply_fuite_001_option",
+          "text": "Oui.",
+          "next": "j2_05_ines_player_fuite_001"
+        }
+      ],
+      "next": "j2_05_ines_player_fuite_001"
+    },
+    {
+      "id": "j2_05_ines_player_fuite_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Oui.",
+      "delay": 0,
+      "next": "j2_05_ines_entry_fuite_002"
+    },
+    {
+      "id": "j2_05_ines_entry_fuite_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "je comprends l’envie.",
+      "delay": 30,
+      "next": "j2_05_ines_entry_fuite_003"
+    },
+    {
+      "id": "j2_05_ines_entry_fuite_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "mais je ne veux pas devenir un endroit où tu viens quand le reste devient trop bruyant.",
+      "delay": 30,
+      "next": "j2_05_ines_entry_fuite_004"
+    },
+    {
+      "id": "j2_05_ines_entry_fuite_004",
+      "type": "message",
+      "sender": "ines",
+      "text": "pas si tu n’es pas vraiment là avec moi.",
+      "delay": 30,
+      "next": "j2_05_choice_ines_calm"
+    },
+    {
+      "id": "j2_05_ines_entry_too_direct_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "j’ai hésité à revenir après ta question d’hier.",
+      "delay": 25,
+      "next": "j2_05_ines_single_reply_too_direct_001"
+    },
+    {
+      "id": "j2_05_ines_single_reply_too_direct_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_05_ines_single_reply_too_direct_001_option",
+          "text": "Je suis allé trop loin.",
+          "next": "j2_05_ines_player_too_direct_001"
+        }
+      ],
+      "next": "j2_05_ines_player_too_direct_001"
+    },
+    {
+      "id": "j2_05_ines_player_too_direct_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je suis allé trop loin.",
+      "delay": 0,
+      "next": "j2_05_ines_entry_too_direct_002"
+    },
+    {
+      "id": "j2_05_ines_entry_too_direct_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "un peu.",
+      "delay": 30,
+      "next": "j2_05_ines_entry_too_direct_003"
+    },
+    {
+      "id": "j2_05_ines_entry_too_direct_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "je crois que tu cherchais une réaction plus qu’une réponse.",
+      "delay": 30,
+      "next": "j2_05_ines_entry_too_direct_004"
+    },
+    {
+      "id": "j2_05_ines_entry_too_direct_004",
+      "type": "message",
+      "sender": "ines",
+      "text": "je préfère qu’on reparte de plus simple, si on repart.",
+      "delay": 30,
+      "next": "j2_05_choice_ines_calm"
+    },
+    {
       "id": "j2_05_ines_001",
       "type": "message",
       "sender": "ines",
-      "text": "[J2 placeholder Inès soir]",
+      "text": "je ne sais pas si c’est le bon moment.",
       "delay": 0,
-      "next": "j2_05_ines_end_placeholder"
+      "next": "j2_05_ines_single_reply_default_001"
     },
     {
-      "id": "j2_05_ines_end_placeholder",
+      "id": "j2_05_ines_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j2_05_ines_single_reply_default_001_option",
+          "text": "Pour quoi ?",
+          "next": "j2_05_ines_player_default_001"
+        }
+      ],
+      "next": "j2_05_ines_player_default_001"
+    },
+    {
+      "id": "j2_05_ines_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Pour quoi ?",
+      "delay": 0,
+      "next": "j2_05_ines_002"
+    },
+    {
+      "id": "j2_05_ines_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "pour demander comment tu vas.",
+      "delay": 30,
+      "next": "j2_05_ines_003"
+    },
+    {
+      "id": "j2_05_ines_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "pas la version rapide.",
+      "delay": 30,
+      "next": "j2_05_ines_004"
+    },
+    {
+      "id": "j2_05_ines_004",
+      "type": "message",
+      "sender": "ines",
+      "text": "la vraie, si elle existe ce soir.",
+      "delay": 30,
+      "next": "j2_05_choice_ines_calm"
+    },
+    {
+      "id": "j2_05_choice_ines_calm",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Inès ?",
+      "choices": [
+        {
+          "id": "j2_05_ines_open_carefully",
+          "text": "Je vais pas très bien. Mais je veux te répondre sans faire de toi une échappatoire.",
+          "next": "j2_05_ines_player_open_carefully",
+          "effects": {
+            "fuite_ines": -1,
+            "fatigue_emotionnelle": -1,
+            "culpabilite": 1,
+            "coherence": 1,
+            "flags": [
+              "j2_ines_careful_opening",
+              "j2_ines_not_escape"
+            ]
+          }
+        },
+        {
+          "id": "j2_05_ines_keep_boundary",
+          "text": "Merci d’être là. Mais je crois que je dois garder une limite claire avec toi aussi.",
+          "next": "j2_05_ines_player_keep_boundary",
+          "effects": {
+            "fuite_ines": -2,
+            "coherence": 2,
+            "fatigue_emotionnelle": -1,
+            "flags": [
+              "j2_ines_boundary_kept",
+              "j2_ines_respected_distance"
+            ]
+          }
+        },
+        {
+          "id": "j2_05_ines_seek_refuge",
+          "text": "J’ai juste besoin d’un endroit calme ce soir. Et avec toi, c’est plus facile de respirer.",
+          "next": "j2_05_ines_player_seek_refuge",
+          "effects": {
+            "fuite_ines": 3,
+            "fatigue_emotionnelle": -1,
+            "culpabilite": 1,
+            "flags": [
+              "j2_ines_refuge_attempt",
+              "j2_ines_fuite_rises"
+            ]
+          }
+        },
+        {
+          "id": "j2_05_ines_repair_misstep",
+          "text": "Hier, j’ai été maladroit. Je crois que je cherchais à me sentir vu, pas à te mettre mal à l’aise.",
+          "next": "j2_05_ines_player_repair_misstep",
+          "effects": {
+            "fuite_ines": -1,
+            "coherence": 1,
+            "culpabilite": 2,
+            "fatigue_emotionnelle": -1,
+            "flags": [
+              "j2_ines_repair_misstep",
+              "j2_ines_apology_clear"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j2_05_ines_player_open_carefully",
+      "type": "message",
+      "sender": "player",
+      "text": "Je vais pas très bien. Mais je veux te répondre sans faire de toi une échappatoire.",
+      "delay": 0,
+      "next": "j2_05_ines_open_001"
+    },
+    {
+      "id": "j2_05_ines_open_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "merci de le dire comme ça.",
+      "delay": 30,
+      "next": "j2_05_ines_open_002"
+    },
+    {
+      "id": "j2_05_ines_open_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "je peux entendre que tu ailles mal.",
+      "delay": 30,
+      "next": "j2_05_ines_open_003"
+    },
+    {
+      "id": "j2_05_ines_open_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "je veux juste rester une personne, pas une sortie de secours.",
+      "delay": 30,
+      "next": "j2_05_end_ines_careful_presence"
+    },
+    {
+      "id": "j2_05_end_ines_careful_presence",
       "type": "end",
       "sender": "system",
-      "text": "Fin placeholder Inès J2.",
+      "text": "Inès reste présente, mais la fuite est nommée et contenue.",
+      "delay": 0
+    },
+    {
+      "id": "j2_05_ines_player_keep_boundary",
+      "type": "message",
+      "sender": "player",
+      "text": "Merci d’être là. Mais je crois que je dois garder une limite claire avec toi aussi.",
+      "delay": 0,
+      "next": "j2_05_ines_boundary_001"
+    },
+    {
+      "id": "j2_05_ines_boundary_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "d’accord.",
+      "delay": 30,
+      "next": "j2_05_ines_boundary_002"
+    },
+    {
+      "id": "j2_05_ines_boundary_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "ça me va mieux qu’une douceur qui ne sait pas où elle va.",
+      "delay": 30,
+      "next": "j2_05_ines_boundary_003"
+    },
+    {
+      "id": "j2_05_ines_boundary_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "prends soin de ce que tu dois régler ailleurs.",
+      "delay": 30,
+      "next": "j2_05_end_ines_boundary_respected"
+    },
+    {
+      "id": "j2_05_end_ines_boundary_respected",
+      "type": "end",
+      "sender": "system",
+      "text": "Inès accepte la limite et reste à distance juste.",
+      "delay": 0
+    },
+    {
+      "id": "j2_05_ines_player_seek_refuge",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai juste besoin d’un endroit calme ce soir. Et avec toi, c’est plus facile de respirer.",
+      "delay": 0,
+      "next": "j2_05_ines_refuge_001"
+    },
+    {
+      "id": "j2_05_ines_refuge_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "je suis contente que ce soit calme pour toi.",
+      "delay": 30,
+      "next": "j2_05_ines_refuge_002"
+    },
+    {
+      "id": "j2_05_ines_refuge_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "mais je ne veux pas être seulement ça.",
+      "delay": 30,
+      "next": "j2_05_ines_refuge_003"
+    },
+    {
+      "id": "j2_05_ines_refuge_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "si tu viens ici pour ne pas répondre ailleurs, je vais finir par le sentir.",
+      "delay": 30,
+      "next": "j2_05_end_ines_refuge_warning"
+    },
+    {
+      "id": "j2_05_end_ines_refuge_warning",
+      "type": "end",
+      "sender": "system",
+      "text": "Inès offre du calme, mais elle sent le risque de fuite.",
+      "delay": 0
+    },
+    {
+      "id": "j2_05_ines_player_repair_misstep",
+      "type": "message",
+      "sender": "player",
+      "text": "Hier, j’ai été maladroit. Je crois que je cherchais à me sentir vu, pas à te mettre mal à l’aise.",
+      "delay": 0,
+      "next": "j2_05_ines_repair_001"
+    },
+    {
+      "id": "j2_05_ines_repair_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "je te crois.",
+      "delay": 30,
+      "next": "j2_05_ines_repair_002"
+    },
+    {
+      "id": "j2_05_ines_repair_002",
+      "type": "message",
+      "sender": "ines",
+      "text": "et merci de le dire clairement.",
+      "delay": 30,
+      "next": "j2_05_ines_repair_003"
+    },
+    {
+      "id": "j2_05_ines_repair_003",
+      "type": "message",
+      "sender": "ines",
+      "text": "on peut revenir à quelque chose de plus simple.",
+      "delay": 30,
+      "next": "j2_05_end_ines_repair_possible"
+    },
+    {
+      "id": "j2_05_end_ines_repair_possible",
+      "type": "end",
+      "sender": "system",
+      "text": "Inès rouvre une présence douce, sans accepter l’ambiguïté forcée.",
       "delay": 0
     }
   ],
   "entry_variants": [
+    {
+      "id": "opened_softly",
+      "conditions": {
+        "flags": [
+          "opened_to_ines"
+        ]
+      },
+      "start_node": "j2_05_ines_entry_opened_001"
+    },
+    {
+      "id": "kept_distance",
+      "conditions": {
+        "flags": [
+          "kept_ines_at_distance"
+        ]
+      },
+      "start_node": "j2_05_ines_entry_distance_001"
+    },
+    {
+      "id": "fuite_seed",
+      "conditions": {
+        "flags": [
+          "ines_fuite_seed"
+        ]
+      },
+      "start_node": "j2_05_ines_entry_fuite_001"
+    },
+    {
+      "id": "too_direct",
+      "conditions": {
+        "flags": [
+          "sexualized_ines_too_early"
+        ]
+      },
+      "start_node": "j2_05_ines_entry_too_direct_001"
+    },
     {
       "id": "default",
       "conditions": {},
