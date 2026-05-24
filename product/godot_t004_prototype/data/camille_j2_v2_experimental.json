@@ -337,12 +337,12 @@
             "tension_camille": 2,
             "pression_camille": 3,
             "respect_camille": -1,
-            "fuite_ines": 1,
             "fatigue_emotionnelle": 1,
             "flags": [
               "j2_camille_refuge_attempt",
               "j2_camille_pressure_rises"
-            ]
+            ],
+            "culpabilite": 1
           }
         }
       ]

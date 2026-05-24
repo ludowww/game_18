@@ -336,7 +336,7 @@
         },
         {
           "id": "j2_04_maya_ask_discretion",
-          "text": "Si tu parles à Sarah, fais-le pour elle. Pas pour me mettre au pied du mur.",
+          "text": "Si tu en parles à quelqu’un, fais-le parce que tu t’inquiètes. Pas pour me mettre au pied du mur.",
           "next": "j2_04_maya_player_ask_discretion",
           "effects": {
             "coherence": 1,
@@ -478,7 +478,7 @@
       "id": "j2_04_maya_player_ask_discretion",
       "type": "message",
       "sender": "player",
-      "text": "Si tu parles à Sarah, fais-le pour elle. Pas pour me mettre au pied du mur.",
+      "text": "Si tu en parles à quelqu’un, fais-le parce que tu t’inquiètes. Pas pour me mettre au pied du mur.",
       "delay": 0,
       "next": "j2_04_maya_discretion_001"
     },
@@ -494,7 +494,7 @@
       "id": "j2_04_maya_discretion_002",
       "type": "message",
       "sender": "maya",
-      "text": "si je parle à Sarah, ce sera pour Sarah.",
+      "text": "si j’en parle, ce sera pas pour te coincer.",
       "delay": 30,
       "next": "j2_04_maya_discretion_003"
     },

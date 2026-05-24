@@ -46,8 +46,8 @@ def test_sarah_nico_entry_no_longer_implies_private_nico_answer():
 
 def test_nico_alibi_entry_stays_on_uncertainty_not_magic_knowledge():
     nodes = nodes_by_id(load("nico_j2_v2_experimental.json"))
-    assert nodes["j2_02_nico_entry_alibi_used_002"]["text"] == "je sais pas ce que tu as dit à Sarah exactement."
-    assert nodes["j2_02_nico_entry_alibi_used_003"]["text"] == "mais si mon prénom commence à servir de repère, j’aimerais le savoir avant."
+    assert nodes["j2_02_nico_entry_alibi_used_002"]["text"] == "je vais te poser une question sans faire semblant de savoir."
+    assert nodes["j2_02_nico_entry_alibi_used_003"]["text"] == "si mon prénom doit servir de repère à quelqu’un, j’aimerais l’apprendre par toi."
     assert nodes["j2_02_nico_entry_alibi_used_004"]["text"] == "donc, si elle me demande quelque chose, je réponds quoi ?"
     assert nodes["j2_02_nico_entry_second_cover_003"]["text"] == "mais seulement si personne ne me demande pourquoi je réponds comme si j’avais appris un texte."
 

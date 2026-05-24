@@ -40,7 +40,7 @@
       "id": "j2_02_nico_entry_alibi_used_002",
       "type": "message",
       "sender": "nico",
-      "text": "je sais pas ce que tu as dit à Sarah exactement.",
+      "text": "je vais te poser une question sans faire semblant de savoir.",
       "delay": 30,
       "next": "j2_02_nico_entry_alibi_used_003"
     },
@@ -48,7 +48,7 @@
       "id": "j2_02_nico_entry_alibi_used_003",
       "type": "message",
       "sender": "nico",
-      "text": "mais si mon prénom commence à servir de repère, j’aimerais le savoir avant.",
+      "text": "si mon prénom doit servir de repère à quelqu’un, j’aimerais l’apprendre par toi.",
       "delay": 30,
       "next": "j2_02_nico_entry_alibi_used_004"
     },
@@ -304,7 +304,6 @@
           "effects": {
             "dette_nico": -3,
             "coherence": 1,
-            "confiance_sarah": 1,
             "fatigue_emotionnelle": -1,
             "flags": [
               "j2_nico_released_from_alibi",

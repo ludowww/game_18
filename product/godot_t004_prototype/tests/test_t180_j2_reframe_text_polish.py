@@ -37,7 +37,7 @@ def test_t180_key_reframe_phrases_are_present():
         ],
         "maya_j2_v2_experimental.json": [
             "et peut-être que je me trompe.",
-            "Si tu parles à Sarah, fais-le pour elle. Pas pour me mettre au pied du mur.",
+            "Si tu en parles à quelqu’un, fais-le parce que tu t’inquiètes. Pas pour me mettre au pied du mur.",
         ],
         "ines_j2_v2_experimental.json": [
             "Je vais pas très bien. Mais je veux te parler sans me cacher derrière toi.",
