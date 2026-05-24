@@ -50,6 +50,16 @@
       "sender": "ines",
       "text": "je ne sais pas ce que ça veut dire pour toi.",
       "delay": 30,
+      "next": "j2_05_ines_media_calm_001"
+    },
+    {
+      "id": "j2_05_ines_media_calm_001",
+      "type": "media",
+      "sender": "ines",
+      "media_type": "image",
+      "asset": "res://assets/media/j2_v2/ines_fenetre_soir_j2.png",
+      "caption": "[photo d’un coin calme envoyée]",
+      "delay": 30,
       "next": "j2_05_ines_entry_opened_004"
     },
     {

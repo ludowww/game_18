@@ -42,6 +42,16 @@
       "sender": "camille",
       "text": "Au moment où tu as arrêté de dire que c’était rien.",
       "delay": 30,
+      "next": "j2_03_camille_media_dehors_001"
+    },
+    {
+      "id": "j2_03_camille_media_dehors_001",
+      "type": "media",
+      "sender": "camille",
+      "media_type": "image",
+      "asset": "res://assets/media/j2_v2/camille_dehors_j2.png",
+      "caption": "[photo du dehors envoyée]",
+      "delay": 30,
       "next": "j2_03_camille_entry_tension_ack_003"
     },
     {
