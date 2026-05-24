@@ -68,12 +68,13 @@ def test_j2_v2_initial_unlock_only_makes_sarah_and_nico_available():
 
 def test_j2_v2_after_morning_unlock_prepares_camille_only():
     assert "func _unlock_j2_v2_after_morning_if_ready() -> void:" in STATE
-    body = STATE.split("func _unlock_j2_v2_after_morning_if_ready() -> void:", 1)[1].split("\nfunc ", 1)[0]
+    assert "func _repair_j2_v2_progression_unlocks() -> void:" in STATE
+    wrapper = STATE.split("func _unlock_j2_v2_after_morning_if_ready() -> void:", 1)[1].split("\nfunc ", 1)[0]
+    body = STATE.split("func _repair_j2_v2_progression_unlocks() -> void:", 1)[1].split("\nfunc ", 1)[0]
+    assert "_repair_j2_v2_progression_unlocks()" in wrapper
     assert 'bool(conversations["sarah_j2_v2"].get("done", false))' in body
     assert 'bool(conversations["nico_j2_v2"].get("done", false))' in body
     assert 'mark_conversation_new("camille_j2_v2"' in body
-    assert 'mark_conversation_new("maya_j2_v2"' not in body
-    assert 'mark_conversation_new("ines_j2_v2"' not in body
 
 
 def test_required_conversations_for_day_2_experimental_exclude_ines():

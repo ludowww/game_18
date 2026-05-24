@@ -1091,7 +1091,7 @@ func mark_current_done() -> void:
 	if current_conversation_id == "j1_00_reveil_v2":
 		_unlock_j1_v2_after_priority_choice()
 	_unlock_j1_v2_breathing_scenes_if_ready()
-	_unlock_j2_v2_after_morning_if_ready()
+	_repair_j2_v2_progression_unlocks()
 	refresh_day_progression()
 	save_progression()
 
@@ -1184,6 +1184,7 @@ func is_day_transition_available() -> bool:
 
 func refresh_day_progression() -> void:
 	# MVP actuel : transitions explicites J1 → J2 → J3 → J4 → J5 → J6, sans calendrier ni scheduler.
+	_repair_j2_v2_progression_unlocks()
 	if current_day >= 6:
 		day_transition_available = false
 		return
@@ -1292,20 +1293,27 @@ func _unlock_j2_v2_initial_conversations() -> void:
 		mark_conversation_new("nico_j2_v2", "Nico vérifie si ça tient encore.")
 
 func _unlock_j2_v2_after_morning_if_ready() -> void:
+	_repair_j2_v2_progression_unlocks()
+
+func _repair_j2_v2_progression_unlocks() -> void:
 	if not experimental_j1_v2_enabled or current_day != 2:
-		return
-	if not conversations.has("camille_j2_v2") or bool(conversations["camille_j2_v2"].get("done", false)):
-		return
-	if bool(conversations["camille_j2_v2"].get("available", false)):
 		return
 	var morning_done := false
 	if conversations.has("sarah_j2_v2") and bool(conversations["sarah_j2_v2"].get("done", false)):
 		morning_done = true
 	if conversations.has("nico_j2_v2") and bool(conversations["nico_j2_v2"].get("done", false)):
 		morning_done = true
-	if morning_done:
+	if morning_done and conversations.has("camille_j2_v2") and not bool(conversations["camille_j2_v2"].get("done", false)) and not bool(conversations["camille_j2_v2"].get("available", false)):
 		conversations["camille_j2_v2"]["available"] = true
 		mark_conversation_new("camille_j2_v2", "Camille reprend le fil.")
+	if conversations.has("camille_j2_v2") and bool(conversations["camille_j2_v2"].get("done", false)):
+		if conversations.has("maya_j2_v2") and not bool(conversations["maya_j2_v2"].get("done", false)) and not bool(conversations["maya_j2_v2"].get("available", false)):
+			conversations["maya_j2_v2"]["available"] = true
+			mark_conversation_new("maya_j2_v2", "Maya revient sur la photo.")
+	if conversations.has("maya_j2_v2") and bool(conversations["maya_j2_v2"].get("done", false)):
+		if conversations.has("ines_j2_v2") and not bool(conversations["ines_j2_v2"].get("done", false)) and not bool(conversations["ines_j2_v2"].get("available", false)):
+			conversations["ines_j2_v2"]["available"] = true
+			mark_conversation_new("ines_j2_v2", "Inès écrit plus tard.")
 
 func handle_dynamic_notification(source_conversation_id: String, node_id: String) -> void:
 	var event_id: String = source_conversation_id + ":" + node_id
