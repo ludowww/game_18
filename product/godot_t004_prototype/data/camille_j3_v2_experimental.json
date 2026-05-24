@@ -7,22 +7,571 @@
   "experimental": true,
   "nodes": [
     {
+      "id": "j3_03_camille_entry_assumed_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je pensais que ça me calmerait que tu ne fasses pas semblant.",
+      "delay": 25,
+      "next": "j3_03_camille_single_reply_assumed_001"
+    },
+    {
+      "id": "j3_03_camille_single_reply_assumed_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_03_camille_single_reply_assumed_001_option",
+          "text": "Et ça t’a calmée ?",
+          "next": "j3_03_camille_player_assumed_001"
+        }
+      ],
+      "next": "j3_03_camille_player_assumed_001"
+    },
+    {
+      "id": "j3_03_camille_player_assumed_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Et ça t’a calmée ?",
+      "delay": 0,
+      "next": "j3_03_camille_entry_assumed_002"
+    },
+    {
+      "id": "j3_03_camille_entry_assumed_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Pas vraiment.",
+      "delay": 30,
+      "next": "j3_03_camille_entry_assumed_003"
+    },
+    {
+      "id": "j3_03_camille_entry_assumed_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais ça m’a évité de me sentir seule avec la scène.",
+      "delay": 30,
+      "next": "j3_03_camille_entry_assumed_004"
+    },
+    {
+      "id": "j3_03_camille_entry_assumed_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est déjà quelque chose. Pas forcément simple, mais quelque chose.",
+      "delay": 30,
+      "next": "j3_03_choice_camille_line"
+    },
+    {
+      "id": "j3_03_camille_entry_boundary_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "J’ai repensé à ta limite.",
+      "delay": 25,
+      "next": "j3_03_camille_single_reply_boundary_001"
+    },
+    {
+      "id": "j3_03_camille_single_reply_boundary_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_03_camille_single_reply_boundary_001_option",
+          "text": "Elle était trop dure ?",
+          "next": "j3_03_camille_player_boundary_001"
+        }
+      ],
+      "next": "j3_03_camille_player_boundary_001"
+    },
+    {
+      "id": "j3_03_camille_player_boundary_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Elle était trop dure ?",
+      "delay": 0,
+      "next": "j3_03_camille_entry_boundary_002"
+    },
+    {
+      "id": "j3_03_camille_entry_boundary_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Non.",
+      "delay": 30,
+      "next": "j3_03_camille_entry_boundary_003"
+    },
+    {
+      "id": "j3_03_camille_entry_boundary_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est même peut-être pour ça que je l’ai écoutée.",
+      "delay": 30,
+      "next": "j3_03_camille_entry_boundary_004"
+    },
+    {
+      "id": "j3_03_camille_entry_boundary_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais une limite, ça peut protéger. Ou ça peut juste ranger quelque chose qu’on ne veut pas regarder.",
+      "delay": 30,
+      "next": "j3_03_choice_camille_line"
+    },
+    {
+      "id": "j3_03_camille_entry_minimized_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je vais faire simple.",
+      "delay": 25,
+      "next": "j3_03_camille_single_reply_minimized_001"
+    },
+    {
+      "id": "j3_03_camille_single_reply_minimized_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_03_camille_single_reply_minimized_001_option",
+          "text": "Je t’écoute.",
+          "next": "j3_03_camille_player_minimized_001"
+        }
+      ],
+      "next": "j3_03_camille_player_minimized_001"
+    },
+    {
+      "id": "j3_03_camille_player_minimized_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je t’écoute.",
+      "delay": 0,
+      "next": "j3_03_camille_entry_minimized_002"
+    },
+    {
+      "id": "j3_03_camille_entry_minimized_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Hier, tu as encore essayé de réduire ce que j’avais vécu.",
+      "delay": 30,
+      "next": "j3_03_camille_entry_minimized_003"
+    },
+    {
+      "id": "j3_03_camille_entry_minimized_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne te demande pas de m’aimer dans une phrase.",
+      "delay": 30,
+      "next": "j3_03_camille_entry_minimized_004"
+    },
+    {
+      "id": "j3_03_camille_entry_minimized_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais je refuse que tu appelles ça “trop de poids” juste parce que ça te dérange de le porter.",
+      "delay": 30,
+      "next": "j3_03_choice_camille_line"
+    },
+    {
+      "id": "j3_03_camille_entry_refuge_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "J’ai repensé à ton histoire de respiration.",
+      "delay": 25,
+      "next": "j3_03_camille_single_reply_refuge_001"
+    },
+    {
+      "id": "j3_03_camille_single_reply_refuge_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_03_camille_single_reply_refuge_001_option",
+          "text": "Je l’ai mal dit.",
+          "next": "j3_03_camille_player_refuge_001"
+        }
+      ],
+      "next": "j3_03_camille_player_refuge_001"
+    },
+    {
+      "id": "j3_03_camille_player_refuge_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je l’ai mal dit.",
+      "delay": 0,
+      "next": "j3_03_camille_entry_refuge_002"
+    },
+    {
+      "id": "j3_03_camille_entry_refuge_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Peut-être.",
+      "delay": 30,
+      "next": "j3_03_camille_entry_refuge_003"
+    },
+    {
+      "id": "j3_03_camille_entry_refuge_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Ou peut-être que tu l’as dit exactement comme tu le ressentais.",
+      "delay": 30,
+      "next": "j3_03_camille_entry_refuge_004"
+    },
+    {
+      "id": "j3_03_camille_entry_refuge_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est ça qui m’inquiète un peu.",
+      "delay": 30,
+      "next": "j3_03_choice_camille_line"
+    },
+    {
       "id": "j3_03_camille_001",
       "type": "message",
       "sender": "camille",
-      "text": "[J3 placeholder Camille après-midi]",
-      "delay": 20,
-      "next": "j3_03_camille_end"
+      "text": "Je ne sais pas si je devrais rouvrir le sujet du dehors.",
+      "delay": 25,
+      "next": "j3_03_camille_single_reply_default_001"
     },
     {
-      "id": "j3_03_camille_end",
+      "id": "j3_03_camille_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_03_camille_single_reply_default_001_option",
+          "text": "Pourquoi tu le fais ?",
+          "next": "j3_03_camille_player_default_001"
+        }
+      ],
+      "next": "j3_03_camille_player_default_001"
+    },
+    {
+      "id": "j3_03_camille_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Pourquoi tu le fais ?",
+      "delay": 0,
+      "next": "j3_03_camille_002"
+    },
+    {
+      "id": "j3_03_camille_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Parce qu’il est déjà ouvert.",
+      "delay": 30,
+      "next": "j3_03_camille_003"
+    },
+    {
+      "id": "j3_03_camille_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Même quand on n’en parle pas.",
+      "delay": 30,
+      "next": "j3_03_camille_004"
+    },
+    {
+      "id": "j3_03_camille_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Et je n’aime pas laisser les choses ouvertes quand quelqu’un fait semblant de ne pas voir la porte.",
+      "delay": 30,
+      "next": "j3_03_choice_camille_line"
+    },
+    {
+      "id": "j3_03_choice_camille_line",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Camille ?",
+      "choices": [
+        {
+          "id": "j3_03_camille_recognize_without_using",
+          "text": "Je ne veux pas effacer ce moment. Mais je ne veux pas non plus t’utiliser pour sortir de ce que je n’arrive pas à régler ailleurs.",
+          "effects": {
+            "tension_camille": 1,
+            "respect_camille": 2,
+            "pression_camille": -1,
+            "coherence": 1,
+            "culpabilite": 1,
+            "flags": [
+              "j3_camille_recognized_without_using",
+              "j3_camille_not_escape_route"
+            ]
+          },
+          "next": "j3_03_camille_player_recognize_without_using"
+        },
+        {
+          "id": "j3_03_camille_keep_boundary",
+          "text": "Je crois qu’il faut encore garder une limite. Pas pour nier ce qu’il y a, mais pour ne pas te faire porter ma confusion.",
+          "effects": {
+            "tension_camille": -1,
+            "respect_camille": 2,
+            "pression_camille": -2,
+            "coherence": 2,
+            "flags": [
+              "j3_camille_boundary_kept",
+              "j3_camille_confusion_not_shifted"
+            ]
+          },
+          "next": "j3_03_camille_player_keep_boundary"
+        },
+        {
+          "id": "j3_03_camille_reopen_tension",
+          "text": "Oui, j’y pense encore. Et je crois que j’ai envie de savoir ce que ça pourrait devenir.",
+          "effects": {
+            "tension_camille": 3,
+            "pression_camille": 2,
+            "respect_camille": -1,
+            "risque_exposition": 1,
+            "culpabilite": 1,
+            "flags": [
+              "j3_camille_tension_reopened",
+              "j3_camille_pressure_rises"
+            ]
+          },
+          "next": "j3_03_camille_player_reopen_tension"
+        },
+        {
+          "id": "j3_03_camille_close_down",
+          "text": "Je pense qu’on devrait arrêter d’ajouter du poids à ce moment.",
+          "effects": {
+            "tension_camille": -2,
+            "respect_camille": -2,
+            "pression_camille": 1,
+            "coherence": -1,
+            "flags": [
+              "j3_camille_minimized_again",
+              "j3_camille_closes_badly"
+            ]
+          },
+          "next": "j3_03_camille_player_close_down"
+        }
+      ]
+    },
+    {
+      "id": "j3_03_camille_player_recognize_without_using",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne veux pas effacer ce moment. Mais je ne veux pas non plus t’utiliser pour sortir de ce que je n’arrive pas à régler ailleurs.",
+      "delay": 0,
+      "next": "j3_03_camille_response_not_escape_001"
+    },
+    {
+      "id": "j3_03_camille_response_not_escape_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est probablement la phrase la plus difficile à tenir.",
+      "delay": 30,
+      "next": "j3_03_camille_response_not_escape_002"
+    },
+    {
+      "id": "j3_03_camille_response_not_escape_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais au moins, elle me laisse une place qui n’est pas seulement pratique.",
+      "delay": 30,
+      "next": "j3_03_camille_response_not_escape_003"
+    },
+    {
+      "id": "j3_03_camille_response_not_escape_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je peux faire quelque chose avec ça.",
+      "delay": 30,
+      "next": "j3_03_camille_response_not_escape_004"
+    },
+    {
+      "id": "j3_03_camille_response_not_escape_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Pas tout. Mais quelque chose.",
+      "delay": 30,
+      "next": "j3_03_end_camille_not_escape"
+    },
+    {
+      "id": "j3_03_end_camille_not_escape",
       "type": "end",
       "sender": "system",
-      "text": "[J3 placeholder terminé]",
+      "text": "Camille reste proche, mais elle refuse d’être une sortie pratique.",
+      "delay": 0
+    },
+    {
+      "id": "j3_03_camille_player_keep_boundary",
+      "type": "message",
+      "sender": "player",
+      "text": "Je crois qu’il faut encore garder une limite. Pas pour nier ce qu’il y a, mais pour ne pas te faire porter ma confusion.",
+      "delay": 0,
+      "next": "j3_03_camille_response_boundary_001"
+    },
+    {
+      "id": "j3_03_camille_response_boundary_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "D’accord.",
+      "delay": 30,
+      "next": "j3_03_camille_response_boundary_002"
+    },
+    {
+      "id": "j3_03_camille_response_boundary_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne vais pas dire que ça ne me frustre pas.",
+      "delay": 30,
+      "next": "j3_03_camille_response_boundary_003"
+    },
+    {
+      "id": "j3_03_camille_response_boundary_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Mais je préfère une limite qui me regarde en face à une ouverture qui m’utilise mal.",
+      "delay": 30,
+      "next": "j3_03_camille_response_boundary_004"
+    },
+    {
+      "id": "j3_03_camille_response_boundary_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Alors tiens-la. Pas juste aujourd’hui.",
+      "delay": 30,
+      "next": "j3_03_end_camille_boundary"
+    },
+    {
+      "id": "j3_03_end_camille_boundary",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille accepte la limite, mais elle attend qu’elle soit réelle.",
+      "delay": 0
+    },
+    {
+      "id": "j3_03_camille_player_reopen_tension",
+      "type": "message",
+      "sender": "player",
+      "text": "Oui, j’y pense encore. Et je crois que j’ai envie de savoir ce que ça pourrait devenir.",
+      "delay": 0,
+      "next": "j3_03_camille_response_pressure_001"
+    },
+    {
+      "id": "j3_03_camille_response_pressure_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je crois que tu confonds encore deux choses.",
+      "delay": 30,
+      "next": "j3_03_camille_response_pressure_002"
+    },
+    {
+      "id": "j3_03_camille_response_pressure_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "Avoir envie de savoir.",
+      "delay": 30,
+      "next": "j3_03_camille_response_pressure_003"
+    },
+    {
+      "id": "j3_03_camille_response_pressure_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Et me demander de devenir l’endroit où tu vérifies.",
+      "delay": 30,
+      "next": "j3_03_camille_response_pressure_004"
+    },
+    {
+      "id": "j3_03_camille_response_pressure_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Je ne dis pas non. Mais je n’appelle pas ça simple.",
+      "delay": 30,
+      "next": "j3_03_end_camille_pressure"
+    },
+    {
+      "id": "j3_03_end_camille_pressure",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille entend le désir, mais la pression monte.",
+      "delay": 0
+    },
+    {
+      "id": "j3_03_camille_player_close_down",
+      "type": "message",
+      "sender": "player",
+      "text": "Je pense qu’on devrait arrêter d’ajouter du poids à ce moment.",
+      "delay": 0,
+      "next": "j3_03_camille_response_cold_001"
+    },
+    {
+      "id": "j3_03_camille_response_cold_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "Voilà.",
+      "delay": 30,
+      "next": "j3_03_camille_response_cold_002"
+    },
+    {
+      "id": "j3_03_camille_response_cold_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "C’est cette phrase-là.",
+      "delay": 30,
+      "next": "j3_03_camille_response_cold_003"
+    },
+    {
+      "id": "j3_03_camille_response_cold_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu ne dis pas que je me trompe.",
+      "delay": 30,
+      "next": "j3_03_camille_response_cold_004"
+    },
+    {
+      "id": "j3_03_camille_response_cold_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "Tu dis juste que ce que j’ai senti est trop lourd pour rester dans la pièce.",
+      "delay": 30,
+      "next": "j3_03_end_camille_cold"
+    },
+    {
+      "id": "j3_03_end_camille_cold",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille se refroidit. Elle refuse que son ressenti soit rangé pour alléger la scène.",
       "delay": 0
     }
   ],
   "entry_variants": [
+    {
+      "id": "after_assumed_tension",
+      "conditions": {
+        "flags": [
+          "j2_camille_assumed_tension"
+        ]
+      },
+      "start_node": "j3_03_camille_entry_assumed_001"
+    },
+    {
+      "id": "after_clear_boundary",
+      "conditions": {
+        "flags": [
+          "j2_camille_clear_boundary"
+        ]
+      },
+      "start_node": "j3_03_camille_entry_boundary_001"
+    },
+    {
+      "id": "after_minimized_again",
+      "conditions": {
+        "flags": [
+          "j2_camille_minimized_again"
+        ]
+      },
+      "start_node": "j3_03_camille_entry_minimized_001"
+    },
+    {
+      "id": "after_refuge_attempt",
+      "conditions": {
+        "flags": [
+          "j2_camille_refuge_attempt"
+        ]
+      },
+      "start_node": "j3_03_camille_entry_refuge_001"
+    },
     {
       "id": "default",
       "conditions": {},
