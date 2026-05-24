@@ -40,7 +40,7 @@
       "id": "j2_02_nico_entry_alibi_used_002",
       "type": "message",
       "sender": "nico",
-      "text": "hier, j’ai senti que mon prénom pouvait devenir une version officielle.",
+      "text": "je sais pas ce que tu as dit à Sarah exactement.",
       "delay": 30,
       "next": "j2_02_nico_entry_alibi_used_003"
     },
@@ -48,7 +48,7 @@
       "id": "j2_02_nico_entry_alibi_used_003",
       "type": "message",
       "sender": "nico",
-      "text": "et j’aime bien aider, mais j’aime moins découvrir mon rôle en direct.",
+      "text": "mais si mon prénom commence à servir de repère, j’aimerais le savoir avant.",
       "delay": 30,
       "next": "j2_02_nico_entry_alibi_used_004"
     },
@@ -56,7 +56,7 @@
       "id": "j2_02_nico_entry_alibi_used_004",
       "type": "message",
       "sender": "nico",
-      "text": "donc si Sarah me demande quelque chose, je réponds quoi ?",
+      "text": "donc, si elle me demande quelque chose, je réponds quoi ?",
       "delay": 30,
       "next": "j2_02_choice_nico_alibi"
     },
@@ -102,7 +102,7 @@
       "id": "j2_02_nico_entry_second_cover_003",
       "type": "message",
       "sender": "nico",
-      "text": "mais seulement si personne ne demande l’heure, le lieu, ou pourquoi on a tous l’air de réciter.",
+      "text": "mais seulement si personne ne me demande pourquoi je réponds comme si j’avais appris un texte.",
       "delay": 30,
       "next": "j2_02_nico_entry_second_cover_004"
     },

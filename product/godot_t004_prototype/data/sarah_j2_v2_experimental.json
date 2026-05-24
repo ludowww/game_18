@@ -22,7 +22,7 @@
       "choices": [
         {
           "id": "j2_01_sarah_single_reply_after_nico_001_option",
-          "text": "Qu’est-ce qu’il a dit ?",
+          "text": "À Nico ?",
           "next": "j2_01_sarah_player_after_nico_001"
         }
       ],
@@ -32,7 +32,7 @@
       "id": "j2_01_sarah_player_after_nico_001",
       "type": "message",
       "sender": "player",
-      "text": "Qu’est-ce qu’il a dit ?",
+      "text": "À Nico ?",
       "delay": 0,
       "next": "j2_01_sarah_entry_after_nico_002"
     },
@@ -40,7 +40,7 @@
       "id": "j2_01_sarah_entry_after_nico_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Pas assez pour m’aider.",
+      "text": "À la place qu’il prend dans ton histoire.",
       "delay": 30,
       "next": "j2_01_sarah_entry_after_nico_003"
     },
@@ -48,7 +48,7 @@
       "id": "j2_01_sarah_entry_after_nico_003",
       "type": "message",
       "sender": "sarah",
-      "text": "Assez pour que je sente qu’il faisait attention à chaque mot.",
+      "text": "Je ne sais pas ce qu’il dirait, et c’est bien ça qui me gêne.",
       "delay": 30,
       "next": "j2_01_sarah_entry_after_nico_004"
     },
@@ -56,7 +56,7 @@
       "id": "j2_01_sarah_entry_after_nico_004",
       "type": "message",
       "sender": "sarah",
-      "text": "Je veux pas le mettre au milieu. Mais c’est toi qui l’as mis là.",
+      "text": "Tu m’as donné un prénom, mais pas vraiment une réponse.",
       "delay": 30,
       "next": "j2_01_choice_sarah_morning"
     },

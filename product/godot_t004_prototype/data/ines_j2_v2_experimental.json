@@ -370,7 +370,7 @@
       "id": "j2_05_ines_open_003",
       "type": "message",
       "sender": "ines",
-      "text": "je veux juste rester quelqu’un, pas seulement l’endroit où tu te poses quand ça déborde.",
+      "text": "je veux juste rester quelqu’un, pas seulement un endroit où tu te poses quand ça déborde.",
       "delay": 30,
       "next": "j2_05_end_ines_careful_presence"
     },
@@ -448,7 +448,7 @@
       "id": "j2_05_ines_refuge_003",
       "type": "message",
       "sender": "ines",
-      "text": "si tu viens ici pour ne pas répondre ailleurs, je vais finir par le sentir.",
+      "text": "si tu viens ici pour ne pas répondre ailleurs, je crois que je finirai par le sentir.",
       "delay": 30,
       "next": "j2_05_end_ines_refuge_warning"
     },

@@ -102,7 +102,7 @@
       "id": "j2_03_camille_entry_boundary_003",
       "type": "message",
       "sender": "camille",
-      "text": "ça m’a évité de me sentir complètement utilisée.",
+      "text": "ça m’a évité de me sentir mise de côté au moment où ça devenait trop simple pour toi.",
       "delay": 30,
       "next": "j2_03_camille_entry_boundary_004"
     },
@@ -110,7 +110,7 @@
       "id": "j2_03_camille_entry_boundary_004",
       "type": "message",
       "sender": "camille",
-      "text": "Mais je ne sais toujours pas si tu as posé une limite ou si tu as juste trouvé une sortie propre.",
+      "text": "Mais je ne sais toujours pas si tu m’as vraiment protégée, ou si tu as juste trouvé une sortie propre.",
       "delay": 30,
       "next": "j2_03_choice_camille_tension"
     },

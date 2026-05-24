@@ -369,7 +369,7 @@
       "id": "j2_04_maya_ask_direct_002",
       "type": "message",
       "sender": "maya",
-      "text": "j’ai juste l’impression que tout le monde évite de regarder au même endroit.",
+      "text": "j’ai juste l’impression que tu évites de regarder au même endroit que nous.",
       "delay": 30,
       "next": "j2_04_maya_ask_direct_003"
     },
@@ -385,7 +385,7 @@
       "id": "j2_04_end_maya_social_read_opened",
       "type": "end",
       "sender": "system",
-      "text": "Maya ne prouve rien, mais elle met le malaise en mots.",
+      "text": "Maya ne prouve rien, mais elle met son impression en mots.",
       "delay": 0
     },
     {
@@ -432,7 +432,7 @@
       "id": "j2_04_end_maya_malaise_named",
       "type": "end",
       "sender": "system",
-      "text": "Maya respecte la limite de groupe, sans effacer ce qu’elle a vu.",
+      "text": "Maya accepte de ne pas pousser, sans effacer ce qu’elle remarque.",
       "delay": 0
     },
     {
@@ -471,7 +471,7 @@
       "id": "j2_04_end_maya_suspicion_grows",
       "type": "end",
       "sender": "system",
-      "text": "Maya entend la défense et devient plus attentive.",
+      "text": "Maya entend la défense et garde le détail en tête.",
       "delay": 0
     },
     {
@@ -510,7 +510,7 @@
       "id": "j2_04_end_maya_sarah_protected",
       "type": "end",
       "sender": "system",
-      "text": "Maya reste loyale à Sarah, sans transformer le malaise en accusation.",
+      "text": "Maya reste loyale à Sarah, sans transformer son impression en accusation.",
       "delay": 0
     }
   ],
