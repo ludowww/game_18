@@ -156,7 +156,7 @@
       "id": "j2_05_ines_entry_fuite_003",
       "type": "message",
       "sender": "ines",
-      "text": "mais je ne veux pas devenir un endroit où tu viens quand le reste devient trop bruyant.",
+      "text": "mais je ne veux pas être l’endroit où tu viens juste quand le reste fait trop de bruit.",
       "delay": 30,
       "next": "j2_05_ines_entry_fuite_004"
     },
@@ -272,7 +272,7 @@
       "id": "j2_05_ines_004",
       "type": "message",
       "sender": "ines",
-      "text": "la vraie, si elle existe ce soir.",
+      "text": "celle que tu peux dire ce soir.",
       "delay": 30,
       "next": "j2_05_choice_ines_calm"
     },
@@ -284,7 +284,7 @@
       "choices": [
         {
           "id": "j2_05_ines_open_carefully",
-          "text": "Je vais pas très bien. Mais je veux te répondre sans faire de toi une échappatoire.",
+          "text": "Je vais pas très bien. Mais je veux te parler sans me cacher derrière toi.",
           "next": "j2_05_ines_player_open_carefully",
           "effects": {
             "fuite_ines": -1,
@@ -313,7 +313,7 @@
         },
         {
           "id": "j2_05_ines_seek_refuge",
-          "text": "J’ai juste besoin d’un endroit calme ce soir. Et avec toi, c’est plus facile de respirer.",
+          "text": "J’ai juste besoin de calme ce soir. Avec toi, je respire un peu mieux.",
           "next": "j2_05_ines_player_seek_refuge",
           "effects": {
             "fuite_ines": 3,
@@ -327,7 +327,7 @@
         },
         {
           "id": "j2_05_ines_repair_misstep",
-          "text": "Hier, j’ai été maladroit. Je crois que je cherchais à me sentir vu, pas à te mettre mal à l’aise.",
+          "text": "Hier, j’ai été maladroit. Je crois que je cherchais quelqu’un qui me remarque, pas à te mettre mal à l’aise.",
           "next": "j2_05_ines_player_repair_misstep",
           "effects": {
             "fuite_ines": -1,
@@ -346,7 +346,7 @@
       "id": "j2_05_ines_player_open_carefully",
       "type": "message",
       "sender": "player",
-      "text": "Je vais pas très bien. Mais je veux te répondre sans faire de toi une échappatoire.",
+      "text": "Je vais pas très bien. Mais je veux te parler sans me cacher derrière toi.",
       "delay": 0,
       "next": "j2_05_ines_open_001"
     },
@@ -370,7 +370,7 @@
       "id": "j2_05_ines_open_003",
       "type": "message",
       "sender": "ines",
-      "text": "je veux juste rester une personne, pas une sortie de secours.",
+      "text": "je veux juste rester quelqu’un, pas seulement l’endroit où tu te poses quand ça déborde.",
       "delay": 30,
       "next": "j2_05_end_ines_careful_presence"
     },
@@ -378,7 +378,7 @@
       "id": "j2_05_end_ines_careful_presence",
       "type": "end",
       "sender": "system",
-      "text": "Inès reste présente, mais la fuite est nommée et contenue.",
+      "text": "Inès reste présente, sans devenir une échappatoire.",
       "delay": 0
     },
     {
@@ -401,7 +401,7 @@
       "id": "j2_05_ines_boundary_002",
       "type": "message",
       "sender": "ines",
-      "text": "ça me va mieux qu’une douceur qui ne sait pas où elle va.",
+      "text": "je préfère ça à quelque chose de doux mais pas clair.",
       "delay": 30,
       "next": "j2_05_ines_boundary_003"
     },
@@ -409,7 +409,7 @@
       "id": "j2_05_ines_boundary_003",
       "type": "message",
       "sender": "ines",
-      "text": "prends soin de ce que tu dois régler ailleurs.",
+      "text": "essaie de ne pas tout mélanger.",
       "delay": 30,
       "next": "j2_05_end_ines_boundary_respected"
     },
@@ -417,14 +417,14 @@
       "id": "j2_05_end_ines_boundary_respected",
       "type": "end",
       "sender": "system",
-      "text": "Inès accepte la limite et reste à distance juste.",
+      "text": "Inès accepte la limite et reste à bonne distance.",
       "delay": 0
     },
     {
       "id": "j2_05_ines_player_seek_refuge",
       "type": "message",
       "sender": "player",
-      "text": "J’ai juste besoin d’un endroit calme ce soir. Et avec toi, c’est plus facile de respirer.",
+      "text": "J’ai juste besoin de calme ce soir. Avec toi, je respire un peu mieux.",
       "delay": 0,
       "next": "j2_05_ines_refuge_001"
     },
@@ -456,14 +456,14 @@
       "id": "j2_05_end_ines_refuge_warning",
       "type": "end",
       "sender": "system",
-      "text": "Inès offre du calme, mais elle sent le risque de fuite.",
+      "text": "Inès offre du calme, mais elle sent le risque de devenir une fuite.",
       "delay": 0
     },
     {
       "id": "j2_05_ines_player_repair_misstep",
       "type": "message",
       "sender": "player",
-      "text": "Hier, j’ai été maladroit. Je crois que je cherchais à me sentir vu, pas à te mettre mal à l’aise.",
+      "text": "Hier, j’ai été maladroit. Je crois que je cherchais quelqu’un qui me remarque, pas à te mettre mal à l’aise.",
       "delay": 0,
       "next": "j2_05_ines_repair_001"
     },
@@ -487,7 +487,7 @@
       "id": "j2_05_ines_repair_003",
       "type": "message",
       "sender": "ines",
-      "text": "on peut revenir à quelque chose de plus simple.",
+      "text": "on peut revenir à quelque chose de simple.",
       "delay": 30,
       "next": "j2_05_end_ines_repair_possible"
     },

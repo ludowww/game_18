@@ -74,7 +74,7 @@
       "id": "j2_04_maya_entry_photo_possible_005",
       "type": "message",
       "sender": "maya",
-      "text": "mais elle rappelle qu’il y avait une place bizarre dans l’image.",
+      "text": "mais ça donne une impression bizarre dans l’image.",
       "delay": 30,
       "next": "j2_04_choice_maya_social"
     },
@@ -128,7 +128,7 @@
       "id": "j2_04_maya_entry_played_dumb_004",
       "type": "message",
       "sender": "maya",
-      "text": "plus tu fais comme si tu ne comprenais pas, plus ça sonne précis.",
+      "text": "plus tu fais comme si tu ne comprenais pas, plus j’ai l’impression qu’il y a quelque chose.",
       "delay": 30,
       "next": "j2_04_choice_maya_social"
     },
@@ -174,7 +174,7 @@
       "id": "j2_04_maya_entry_not_involve_003",
       "type": "message",
       "sender": "maya",
-      "text": "le problème, c’est que quand quelqu’un dit ça, ça donne très envie de regarder où il ne faut pas.",
+      "text": "le problème, c’est que quand quelqu’un dit ça, on se demande ce qu’il essaie de protéger.",
       "delay": 30,
       "next": "j2_04_maya_entry_not_involve_004"
     },
@@ -182,7 +182,7 @@
       "id": "j2_04_maya_entry_not_involve_004",
       "type": "message",
       "sender": "maya",
-      "text": "et j’aime bien Sarah, donc je regarde un peu quand même.",
+      "text": "et j’aime bien Sarah, donc je fais un peu attention quand même.",
       "delay": 30,
       "next": "j2_04_choice_maya_social"
     },
@@ -228,7 +228,7 @@
       "id": "j2_04_maya_entry_timing_003",
       "type": "message",
       "sender": "maya",
-      "text": "mais surtout des absences qui tombent toutes au même moment.",
+      "text": "surtout quand les absences tombent toutes au même moment.",
       "delay": 30,
       "next": "j2_04_choice_maya_social"
     },
@@ -282,7 +282,7 @@
       "id": "j2_04_maya_004",
       "type": "message",
       "sender": "maya",
-      "text": "il y a juste un truc dans le groupe depuis hier.",
+      "text": "je trouve juste l’ambiance un peu bizarre depuis hier.",
       "delay": 30,
       "next": "j2_04_choice_maya_social"
     },
@@ -294,7 +294,7 @@
       "choices": [
         {
           "id": "j2_04_maya_ask_direct",
-          "text": "Dis-moi franchement ce que tu penses avoir compris.",
+          "text": "Dis-moi franchement ce que tu crois voir.",
           "next": "j2_04_maya_player_ask_direct",
           "effects": {
             "suspicion_maya": 1,
@@ -322,7 +322,7 @@
         },
         {
           "id": "j2_04_maya_play_innocent",
-          "text": "Tu fais beaucoup avec une photo et deux absences.",
+          "text": "Tu tires beaucoup de choses d’une photo et de deux absences.",
           "next": "j2_04_maya_player_play_innocent",
           "effects": {
             "suspicion_maya": 2,
@@ -336,7 +336,7 @@
         },
         {
           "id": "j2_04_maya_ask_discretion",
-          "text": "Si tu parles à Sarah, fais-le parce que tu t’inquiètes pour elle. Pas pour me coincer.",
+          "text": "Si tu parles à Sarah, fais-le pour elle. Pas pour me mettre au pied du mur.",
           "next": "j2_04_maya_player_ask_discretion",
           "effects": {
             "coherence": 1,
@@ -353,7 +353,7 @@
       "id": "j2_04_maya_player_ask_direct",
       "type": "message",
       "sender": "player",
-      "text": "Dis-moi franchement ce que tu penses avoir compris.",
+      "text": "Dis-moi franchement ce que tu crois voir.",
       "delay": 0,
       "next": "j2_04_maya_ask_direct_001"
     },
@@ -361,7 +361,7 @@
       "id": "j2_04_maya_ask_direct_001",
       "type": "message",
       "sender": "maya",
-      "text": "je pense pas avoir compris.",
+      "text": "je crois pas avoir compris grand-chose.",
       "delay": 30,
       "next": "j2_04_maya_ask_direct_002"
     },
@@ -369,7 +369,7 @@
       "id": "j2_04_maya_ask_direct_002",
       "type": "message",
       "sender": "maya",
-      "text": "je pense que vous faites tous très attention à ne pas comprendre trop fort.",
+      "text": "j’ai juste l’impression que tout le monde évite de regarder au même endroit.",
       "delay": 30,
       "next": "j2_04_maya_ask_direct_003"
     },
@@ -377,7 +377,7 @@
       "id": "j2_04_maya_ask_direct_003",
       "type": "message",
       "sender": "maya",
-      "text": "c’est différent.",
+      "text": "et peut-être que je me trompe.",
       "delay": 30,
       "next": "j2_04_end_maya_social_read_opened"
     },
@@ -439,7 +439,7 @@
       "id": "j2_04_maya_player_play_innocent",
       "type": "message",
       "sender": "player",
-      "text": "Tu fais beaucoup avec une photo et deux absences.",
+      "text": "Tu tires beaucoup de choses d’une photo et de deux absences.",
       "delay": 0,
       "next": "j2_04_maya_innocent_001"
     },
@@ -455,7 +455,7 @@
       "id": "j2_04_maya_innocent_002",
       "type": "message",
       "sender": "maya",
-      "text": "mais toi, tu fais beaucoup d’efforts pour appeler ça peu.",
+      "text": "mais toi, tu fais aussi beaucoup d’efforts pour que ça reste petit.",
       "delay": 30,
       "next": "j2_04_maya_innocent_003"
     },
@@ -478,7 +478,7 @@
       "id": "j2_04_maya_player_ask_discretion",
       "type": "message",
       "sender": "player",
-      "text": "Si tu parles à Sarah, fais-le parce que tu t’inquiètes pour elle. Pas pour me coincer.",
+      "text": "Si tu parles à Sarah, fais-le pour elle. Pas pour me mettre au pied du mur.",
       "delay": 0,
       "next": "j2_04_maya_discretion_001"
     },
@@ -486,7 +486,7 @@
       "id": "j2_04_maya_discretion_001",
       "type": "message",
       "sender": "maya",
-      "text": "je ne joue pas à te coincer.",
+      "text": "je ne joue pas à ça.",
       "delay": 30,
       "next": "j2_04_maya_discretion_002"
     },
@@ -502,7 +502,7 @@
       "id": "j2_04_maya_discretion_003",
       "type": "message",
       "sender": "maya",
-      "text": "mais ne me demande pas non plus de fermer les yeux pour te rendre service.",
+      "text": "mais ne me demande pas de faire semblant de ne rien remarquer pour te rendre service.",
       "delay": 30,
       "next": "j2_04_end_maya_sarah_protected"
     },

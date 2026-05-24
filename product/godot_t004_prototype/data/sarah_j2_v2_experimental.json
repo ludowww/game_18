@@ -218,7 +218,7 @@
       "id": "j2_01_sarah_entry_after_late_meal_004",
       "type": "message",
       "sender": "sarah",
-      "text": "C’est juste que même les petites choses commencent à avoir une heure, maintenant.",
+      "text": "c’est juste que même les petites choses finissent par compter quand elles arrivent trop tard.",
       "delay": 30,
       "next": "j2_01_choice_sarah_morning"
     },
@@ -272,7 +272,7 @@
       "id": "j2_01_sarah_004",
       "type": "message",
       "sender": "sarah",
-      "text": "J’ai l’impression qu’on devient très doués pour éviter les vrais sons.",
+      "text": "J’ai l’impression qu’on devient très doués pour éviter les vraies phrases.",
       "delay": 30,
       "next": "j2_01_choice_sarah_morning"
     },
@@ -412,7 +412,7 @@
       "id": "j2_01_sarah_time_003",
       "type": "message",
       "sender": "sarah",
-      "text": "Quand tu demandes du temps, moi je reste avec la place vide entre les deux.",
+      "text": "Quand tu demandes du temps, moi je reste avec ce que je ne sais pas.",
       "delay": 30,
       "next": "j2_01_end_sarah_time_distance"
     },
@@ -420,7 +420,7 @@
       "id": "j2_01_end_sarah_time_distance",
       "type": "end",
       "sender": "system",
-      "text": "Sarah accepte le délai, mais la distance reste active.",
+      "text": "Sarah accepte le délai, mais elle reste avec ce qu’elle ne sait pas.",
       "delay": 0
     },
     {

@@ -102,7 +102,7 @@
       "id": "j2_03_camille_entry_boundary_003",
       "type": "message",
       "sender": "camille",
-      "text": "C’est même peut-être ce qui m’a empêchée de te détester un peu.",
+      "text": "ça m’a évité de me sentir complètement utilisée.",
       "delay": 30,
       "next": "j2_03_camille_entry_boundary_004"
     },
@@ -383,7 +383,7 @@
       "id": "j2_03_camille_assume_004",
       "type": "message",
       "sender": "camille",
-      "text": "Je veux juste pas devenir le mot que tu utilises pour éviter les autres.",
+      "text": "Je veux juste pas être le moment que tu utilises quand ça t’arrange.",
       "delay": 30,
       "next": "j2_03_end_camille_close_but_clear"
     },
@@ -524,7 +524,7 @@
       "id": "j2_03_camille_refuge_003",
       "type": "message",
       "sender": "camille",
-      "text": "Parce que tu le dis comme si j’étais une fenêtre ouverte dans une pièce que tu ne veux pas ranger.",
+      "text": "Parce que tu le dis comme si j’étais là pour rendre le reste supportable.",
       "delay": 30,
       "next": "j2_03_camille_refuge_004"
     },
@@ -532,7 +532,7 @@
       "id": "j2_03_camille_refuge_004",
       "type": "message",
       "sender": "camille",
-      "text": "Je ne veux pas être ton air de secours.",
+      "text": "Je ne veux pas être la pause qui te permet d’éviter le reste.",
       "delay": 30,
       "next": "j2_03_end_camille_refuge_refused"
     },
@@ -540,7 +540,7 @@
       "id": "j2_03_end_camille_refuge_refused",
       "type": "end",
       "sender": "system",
-      "text": "Camille entend le besoin de refuge, mais elle refuse d’être utilisée comme sortie.",
+      "text": "Camille entend le besoin de respirer, mais refuse d’être utilisée comme sortie.",
       "delay": 0
     }
   ],
