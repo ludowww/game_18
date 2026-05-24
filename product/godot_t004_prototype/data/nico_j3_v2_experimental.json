@@ -321,8 +321,8 @@
             "risque_exposition": 1,
             "fatigue_emotionnelle": 1,
             "flags": [
-              "j3_nico_knows_sarah_observes",
-              "j3_sarah_gestures_pressure_named"
+              "j3_player_told_nico_sarah_observes",
+              "j3_player_named_sarah_gestures_pressure"
             ]
           },
           "next": "j3_02_nico_player_sarah_observes"
