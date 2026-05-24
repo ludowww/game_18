@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1-j3-v2-experimental",
+  "conversation_id": "ines_j3_v2",
+  "day": 3,
+  "contact_id": "ines",
+  "start_node": "j3_05_ines_001",
+  "experimental": true,
+  "nodes": [
+    {
+      "id": "j3_05_ines_001",
+      "type": "message",
+      "sender": "ines",
+      "text": "[J3 placeholder Inès soir]",
+      "delay": 20,
+      "next": "j3_05_ines_end"
+    },
+    {
+      "id": "j3_05_ines_end",
+      "type": "end",
+      "sender": "system",
+      "text": "[J3 placeholder terminé]",
+      "delay": 0
+    }
+  ],
+  "entry_variants": [
+    {
+      "id": "default",
+      "conditions": {},
+      "start_node": "j3_05_ines_001"
+    }
+  ]
+}
