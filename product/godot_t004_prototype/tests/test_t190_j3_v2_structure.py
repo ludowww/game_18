@@ -43,8 +43,7 @@ def test_t190_j3_json_skeleton_files_exist_and_are_minimal() -> None:
         assert data["experimental"] is True
         assert any(node.get("id") == start_node for node in data["nodes"])
         assert any(node.get("type") == "end" for node in data["nodes"])
-        if conversation_id not in ["sarah_j3_v2", "nico_j3_v2", "camille_j3_v2", "maya_j3_v2"]:
-            assert any(node.get("id") == start_node and node.get("text") == placeholder for node in data["nodes"])
+        # Dialogue-writing tasks after T190 replace placeholders progressively; structural checks remain.
         default_variants = [variant for variant in data["entry_variants"] if variant.get("id") == "default"]
         assert default_variants, f"missing default entry variant for {conversation_id}"
         assert default_variants[0].get("conditions", {}) == {}

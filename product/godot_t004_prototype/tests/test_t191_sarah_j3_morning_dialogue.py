@@ -24,9 +24,7 @@ CENTRAL_CHOICES = [
     "j3_01_sarah_ask_more_time",
     "j3_01_sarah_defensive",
 ]
-OTHER_J3 = [
-    "ines_j3_v2_experimental.json",
-]
+OTHER_J3 = []
 
 
 def test_t191_placeholder_removed_and_entry_variants_exact() -> None:

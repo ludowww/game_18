@@ -8,7 +8,7 @@ MAYA = json.loads((DATA / "maya_j3_v2_experimental.json").read_text(encoding="ut
 NODES = {node["id"]: node for node in MAYA["nodes"]}
 ENTRY_VARIANTS = ["after_social_read_opened", "after_malaise_admitted", "after_defensive", "after_discretion", "default"]
 CENTRAL_CHOICES = ["j3_04_maya_ask_what_changed", "j3_04_maya_keep_group_boundary", "j3_04_maya_minimize_signals", "j3_04_maya_ask_if_others_notice"]
-OTHER_UNWRITTEN_J3 = ["ines_j3_v2_experimental.json"]
+OTHER_UNWRITTEN_J3 = []
 
 def test_t195_placeholder_removed_and_entry_variants_exact():
     serialized = json.dumps(MAYA, ensure_ascii=False)

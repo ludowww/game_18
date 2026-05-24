@@ -17,9 +17,7 @@ CENTRAL_CHOICES = [
     "j3_02_nico_sarah_observes",
     "j3_02_nico_deflect_to_his_life",
 ]
-OTHER_J3 = [
-    "ines_j3_v2_experimental.json",
-]
+OTHER_J3 = []
 
 
 def test_t192_placeholder_removed_and_entry_variants_exact() -> None:
