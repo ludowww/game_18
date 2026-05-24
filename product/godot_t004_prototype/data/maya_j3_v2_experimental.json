@@ -7,22 +7,565 @@
   "experimental": true,
   "nodes": [
     {
+      "id": "j3_04_maya_entry_social_read_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "j’ai essayé de ne pas repenser à ta question.",
+      "delay": 25,
+      "next": "j3_04_maya_single_reply_social_read_001"
+    },
+    {
+      "id": "j3_04_maya_single_reply_social_read_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_04_maya_single_reply_social_read_001_option",
+          "text": "Laquelle ?",
+          "next": "j3_04_maya_player_social_read_001"
+        }
+      ],
+      "next": "j3_04_maya_player_social_read_001"
+    },
+    {
+      "id": "j3_04_maya_player_social_read_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Laquelle ?",
+      "delay": 0,
+      "next": "j3_04_maya_entry_social_read_002"
+    },
+    {
+      "id": "j3_04_maya_entry_social_read_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "celle où tu me demandais ce que je croyais voir.",
+      "delay": 30,
+      "next": "j3_04_maya_entry_social_read_003"
+    },
+    {
+      "id": "j3_04_maya_entry_social_read_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "j’ai pas une réponse plus solide aujourd’hui.",
+      "delay": 30,
+      "next": "j3_04_maya_entry_social_read_004"
+    },
+    {
+      "id": "j3_04_maya_entry_social_read_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "juste plus de petits détails qui refusent de rester chacun dans leur coin.",
+      "delay": 30,
+      "next": "j3_04_choice_maya_signals"
+    },
+    {
+      "id": "j3_04_maya_entry_malaise_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "j’ai respecté ce que tu m’as demandé hier.",
+      "delay": 25,
+      "next": "j3_04_maya_single_reply_malaise_001"
+    },
+    {
+      "id": "j3_04_maya_single_reply_malaise_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_04_maya_single_reply_malaise_001_option",
+          "text": "C’est-à-dire ?",
+          "next": "j3_04_maya_player_malaise_001"
+        }
+      ],
+      "next": "j3_04_maya_player_malaise_001"
+    },
+    {
+      "id": "j3_04_maya_player_malaise_001",
+      "type": "message",
+      "sender": "player",
+      "text": "C’est-à-dire ?",
+      "delay": 0,
+      "next": "j3_04_maya_entry_malaise_002"
+    },
+    {
+      "id": "j3_04_maya_entry_malaise_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "je n’ai pas transformé ton malaise en sujet de groupe.",
+      "delay": 30,
+      "next": "j3_04_maya_entry_malaise_003"
+    },
+    {
+      "id": "j3_04_maya_entry_malaise_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "mais ça veut pas dire que l’ambiance a arrêté d’exister.",
+      "delay": 30,
+      "next": "j3_04_maya_entry_malaise_004"
+    },
+    {
+      "id": "j3_04_maya_entry_malaise_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "les trucs tus ne deviennent pas invisibles. ils deviennent juste plus silencieux.",
+      "delay": 30,
+      "next": "j3_04_choice_maya_signals"
+    },
+    {
+      "id": "j3_04_maya_entry_defensive_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "je te rassure.",
+      "delay": 25,
+      "next": "j3_04_maya_single_reply_defensive_001"
+    },
+    {
+      "id": "j3_04_maya_single_reply_defensive_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_04_maya_single_reply_defensive_001_option",
+          "text": "Sur quoi ?",
+          "next": "j3_04_maya_player_defensive_001"
+        }
+      ],
+      "next": "j3_04_maya_player_defensive_001"
+    },
+    {
+      "id": "j3_04_maya_player_defensive_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Sur quoi ?",
+      "delay": 0,
+      "next": "j3_04_maya_entry_defensive_002"
+    },
+    {
+      "id": "j3_04_maya_entry_defensive_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "je n’ai toujours pas ouvert d’agence de détective.",
+      "delay": 30,
+      "next": "j3_04_maya_entry_defensive_003"
+    },
+    {
+      "id": "j3_04_maya_entry_defensive_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "j’ai juste des yeux.",
+      "delay": 30,
+      "next": "j3_04_maya_entry_defensive_004"
+    },
+    {
+      "id": "j3_04_maya_entry_defensive_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "et visiblement, c’est déjà trop pour certaines conversations.",
+      "delay": 30,
+      "next": "j3_04_choice_maya_signals"
+    },
+    {
+      "id": "j3_04_maya_entry_discretion_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "j’ai pensé à ce que tu m’as demandé.",
+      "delay": 25,
+      "next": "j3_04_maya_single_reply_discretion_001"
+    },
+    {
+      "id": "j3_04_maya_single_reply_discretion_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_04_maya_single_reply_discretion_001_option",
+          "text": "Et ?",
+          "next": "j3_04_maya_player_discretion_001"
+        }
+      ],
+      "next": "j3_04_maya_player_discretion_001"
+    },
+    {
+      "id": "j3_04_maya_player_discretion_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Et ?",
+      "delay": 0,
+      "next": "j3_04_maya_entry_discretion_002"
+    },
+    {
+      "id": "j3_04_maya_entry_discretion_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "je n’ai pas envie de te mettre au pied du mur.",
+      "delay": 30,
+      "next": "j3_04_maya_entry_discretion_003"
+    },
+    {
+      "id": "j3_04_maya_entry_discretion_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "mais je n’ai pas envie non plus de devenir un meuble dans le décor.",
+      "delay": 30,
+      "next": "j3_04_maya_entry_discretion_004"
+    },
+    {
+      "id": "j3_04_maya_entry_discretion_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "si je remarque un truc, je le remarque. même quand ça dérange.",
+      "delay": 30,
+      "next": "j3_04_choice_maya_signals"
+    },
+    {
       "id": "j3_04_maya_001",
       "type": "message",
       "sender": "maya",
-      "text": "[J3 placeholder Maya après-midi]",
-      "delay": 20,
-      "next": "j3_04_maya_end"
+      "text": "je vais dire un truc très moi.",
+      "delay": 25,
+      "next": "j3_04_maya_single_reply_default_001"
     },
     {
-      "id": "j3_04_maya_end",
+      "id": "j3_04_maya_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_04_maya_single_reply_default_001_option",
+          "text": "Je me prépare.",
+          "next": "j3_04_maya_player_default_001"
+        }
+      ],
+      "next": "j3_04_maya_player_default_001"
+    },
+    {
+      "id": "j3_04_maya_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je me prépare.",
+      "delay": 0,
+      "next": "j3_04_maya_002"
+    },
+    {
+      "id": "j3_04_maya_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "merci, c’est important d’échauffer les muscles de déni.",
+      "delay": 30,
+      "next": "j3_04_maya_003"
+    },
+    {
+      "id": "j3_04_maya_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "l’ambiance est bizarre depuis hier.",
+      "delay": 30,
+      "next": "j3_04_maya_004"
+    },
+    {
+      "id": "j3_04_maya_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "pas dramatique. pas évidente. juste bizarre.",
+      "delay": 30,
+      "next": "j3_04_choice_maya_signals"
+    },
+    {
+      "id": "j3_04_choice_maya_signals",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Maya ?",
+      "choices": [
+        {
+          "id": "j3_04_maya_ask_what_changed",
+          "text": "Dis-moi ce qui a changé, mais sans transformer ça en preuve.",
+          "effects": {
+            "suspicion_maya": 1,
+            "coherence": 1,
+            "risque_exposition": 1,
+            "flags": [
+              "j3_maya_asked_for_signals",
+              "j3_maya_social_signals_opened"
+            ]
+          },
+          "next": "j3_04_maya_player_ask_what_changed"
+        },
+        {
+          "id": "j3_04_maya_keep_group_boundary",
+          "text": "Je veux pas que ça devienne une histoire de groupe. Si tu vois quelque chose, parle-moi à moi.",
+          "effects": {
+            "suspicion_maya": -1,
+            "coherence": 1,
+            "risque_exposition": -1,
+            "flags": [
+              "j3_maya_group_boundary_requested",
+              "j3_maya_direct_channel_requested"
+            ]
+          },
+          "next": "j3_04_maya_player_keep_group_boundary"
+        },
+        {
+          "id": "j3_04_maya_minimize_signals",
+          "text": "Tu relies trop de détails. Une ambiance bizarre, ça ne veut pas dire qu’il y a quelque chose à comprendre.",
+          "effects": {
+            "suspicion_maya": 2,
+            "coherence": -1,
+            "risque_exposition": 1,
+            "flags": [
+              "j3_maya_defensive_again",
+              "j3_maya_suspicion_reinforced"
+            ]
+          },
+          "next": "j3_04_maya_player_minimize_signals"
+        },
+        {
+          "id": "j3_04_maya_ask_if_others_notice",
+          "text": "Quand tu dis que l’ambiance est bizarre, tu veux dire que d’autres l’ont remarqué aussi ?",
+          "effects": {
+            "suspicion_maya": 1,
+            "risque_exposition": 2,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "j3_maya_others_may_notice",
+              "j3_maya_social_thread_possible"
+            ]
+          },
+          "next": "j3_04_maya_player_ask_if_others_notice"
+        }
+      ]
+    },
+    {
+      "id": "j3_04_maya_player_ask_what_changed",
+      "type": "message",
+      "sender": "player",
+      "text": "Dis-moi ce qui a changé, mais sans transformer ça en preuve.",
+      "delay": 0,
+      "next": "j3_04_maya_response_signals_opened_001"
+    },
+    {
+      "id": "j3_04_maya_response_signals_opened_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "d’accord.",
+      "delay": 30,
+      "next": "j3_04_maya_response_signals_opened_002"
+    },
+    {
+      "id": "j3_04_maya_response_signals_opened_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "alors je vais rester dans le flou honnête.",
+      "delay": 30,
+      "next": "j3_04_maya_response_signals_opened_003"
+    },
+    {
+      "id": "j3_04_maya_response_signals_opened_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "les réponses arrivent moins naturellement.",
+      "delay": 30,
+      "next": "j3_04_maya_response_signals_opened_004"
+    },
+    {
+      "id": "j3_04_maya_response_signals_opened_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "et toi, tu regardes parfois les messages comme s’ils avaient une température.",
+      "delay": 30,
+      "next": "j3_04_end_maya_signals_opened"
+    },
+    {
+      "id": "j3_04_end_maya_signals_opened",
       "type": "end",
       "sender": "system",
-      "text": "[J3 placeholder terminé]",
+      "text": "Maya ouvre les signaux sociaux sans les transformer en preuve.",
+      "delay": 0
+    },
+    {
+      "id": "j3_04_maya_player_keep_group_boundary",
+      "type": "message",
+      "sender": "player",
+      "text": "Je veux pas que ça devienne une histoire de groupe. Si tu vois quelque chose, parle-moi à moi.",
+      "delay": 0,
+      "next": "j3_04_maya_response_boundary_001"
+    },
+    {
+      "id": "j3_04_maya_response_boundary_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "ça, je peux l’entendre.",
+      "delay": 30,
+      "next": "j3_04_maya_response_boundary_002"
+    },
+    {
+      "id": "j3_04_maya_response_boundary_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "et je préfère aussi parler à la personne concernée plutôt qu’à un tribunal imaginaire.",
+      "delay": 30,
+      "next": "j3_04_maya_response_boundary_003"
+    },
+    {
+      "id": "j3_04_maya_response_boundary_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "mais ça marche seulement si la personne concernée répond vraiment.",
+      "delay": 30,
+      "next": "j3_04_maya_response_boundary_004"
+    },
+    {
+      "id": "j3_04_maya_response_boundary_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "pas si elle me fait une conférence sur le calme.",
+      "delay": 30,
+      "next": "j3_04_end_maya_boundary"
+    },
+    {
+      "id": "j3_04_end_maya_boundary",
+      "type": "end",
+      "sender": "system",
+      "text": "Maya accepte la limite de groupe, mais attend une vraie réponse directe.",
+      "delay": 0
+    },
+    {
+      "id": "j3_04_maya_player_minimize_signals",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu relies trop de détails. Une ambiance bizarre, ça ne veut pas dire qu’il y a quelque chose à comprendre.",
+      "delay": 0,
+      "next": "j3_04_maya_response_suspicion_001"
+    },
+    {
+      "id": "j3_04_maya_response_suspicion_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "peut-être.",
+      "delay": 30,
+      "next": "j3_04_maya_response_suspicion_002"
+    },
+    {
+      "id": "j3_04_maya_response_suspicion_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "mais tu remarqueras que je dis “bizarre”.",
+      "delay": 30,
+      "next": "j3_04_maya_response_suspicion_003"
+    },
+    {
+      "id": "j3_04_maya_response_suspicion_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "pas “coupable”. pas “grillé”. pas “je détiens la vérité”.",
+      "delay": 30,
+      "next": "j3_04_maya_response_suspicion_004"
+    },
+    {
+      "id": "j3_04_maya_response_suspicion_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "c’est toi qui paniques dès que le mot n’est pas assez petit.",
+      "delay": 30,
+      "next": "j3_04_end_maya_suspicion"
+    },
+    {
+      "id": "j3_04_end_maya_suspicion",
+      "type": "end",
+      "sender": "system",
+      "text": "Maya n’a toujours pas de preuve, mais la défense renforce son attention.",
+      "delay": 0
+    },
+    {
+      "id": "j3_04_maya_player_ask_if_others_notice",
+      "type": "message",
+      "sender": "player",
+      "text": "Quand tu dis que l’ambiance est bizarre, tu veux dire que d’autres l’ont remarqué aussi ?",
+      "delay": 0,
+      "next": "j3_04_maya_response_social_thread_001"
+    },
+    {
+      "id": "j3_04_maya_response_social_thread_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "je vais répondre prudemment.",
+      "delay": 30,
+      "next": "j3_04_maya_response_social_thread_002"
+    },
+    {
+      "id": "j3_04_maya_response_social_thread_002",
+      "type": "message",
+      "sender": "maya",
+      "text": "je pense que je ne suis pas la seule à sentir que quelque chose accroche.",
+      "delay": 30,
+      "next": "j3_04_maya_response_social_thread_003"
+    },
+    {
+      "id": "j3_04_maya_response_social_thread_003",
+      "type": "message",
+      "sender": "maya",
+      "text": "mais sentir, ce n’est pas savoir.",
+      "delay": 30,
+      "next": "j3_04_maya_response_social_thread_004"
+    },
+    {
+      "id": "j3_04_maya_response_social_thread_004",
+      "type": "message",
+      "sender": "maya",
+      "text": "et je ne vais pas te donner des noms pour que tu choisisses quelle version servir à qui.",
+      "delay": 30,
+      "next": "j3_04_end_maya_social_thread"
+    },
+    {
+      "id": "j3_04_end_maya_social_thread",
+      "type": "end",
+      "sender": "system",
+      "text": "Maya laisse entendre que le malaise circule, sans donner de preuve ni de nom.",
       "delay": 0
     }
   ],
   "entry_variants": [
+    {
+      "id": "after_social_read_opened",
+      "conditions": {
+        "flags": [
+          "j2_maya_social_read_opened"
+        ]
+      },
+      "start_node": "j3_04_maya_entry_social_read_001"
+    },
+    {
+      "id": "after_malaise_admitted",
+      "conditions": {
+        "flags": [
+          "j2_maya_malaise_admitted"
+        ]
+      },
+      "start_node": "j3_04_maya_entry_malaise_001"
+    },
+    {
+      "id": "after_defensive",
+      "conditions": {
+        "flags": [
+          "j2_maya_defensive"
+        ]
+      },
+      "start_node": "j3_04_maya_entry_defensive_001"
+    },
+    {
+      "id": "after_discretion",
+      "conditions": {
+        "flags": [
+          "j2_maya_discretion_requested"
+        ]
+      },
+      "start_node": "j3_04_maya_entry_discretion_001"
+    },
     {
       "id": "default",
       "conditions": {},

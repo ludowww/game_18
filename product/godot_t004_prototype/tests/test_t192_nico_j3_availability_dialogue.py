@@ -18,7 +18,6 @@ CENTRAL_CHOICES = [
     "j3_02_nico_deflect_to_his_life",
 ]
 OTHER_J3 = [
-    "maya_j3_v2_experimental.json",
     "ines_j3_v2_experimental.json",
 ]
 

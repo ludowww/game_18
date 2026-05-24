@@ -8,7 +8,7 @@ CAMILLE = json.loads((DATA / "camille_j3_v2_experimental.json").read_text(encodi
 NODES = {node["id"]: node for node in CAMILLE["nodes"]}
 ENTRY_VARIANTS = ["after_assumed_tension", "after_clear_boundary", "after_minimized_again", "after_refuge_attempt", "default"]
 CENTRAL_CHOICES = ["j3_03_camille_recognize_without_using", "j3_03_camille_keep_boundary", "j3_03_camille_reopen_tension", "j3_03_camille_close_down"]
-OTHER_UNWRITTEN_J3 = ["maya_j3_v2_experimental.json", "ines_j3_v2_experimental.json"]
+OTHER_UNWRITTEN_J3 = ["ines_j3_v2_experimental.json"]
 
 def test_t194_placeholder_removed_and_entry_variants_exact():
     serialized = json.dumps(CAMILLE, ensure_ascii=False)
