@@ -39,7 +39,8 @@ def test_t126_state_declares_opt_in_experimental_j1_v2_mode() -> None:
     assert '"sarah_j1_v2"' in source
     assert '"camille_j1_v2"' in source
     assert '"experimental": experimental' in source
-    assert "if experimental_j1_v2_enabled and current_day == 1 and not bool(state.get(\"experimental\", false)):" in source
+    assert "func _conversation_allowed_in_current_mode(id: String, state: Dictionary) -> bool:" in source
+    assert "if day == 1:" in source
     assert "if bool(state.get(\"experimental\", false)) and not experimental_j1_v2_enabled:" in source
 
 

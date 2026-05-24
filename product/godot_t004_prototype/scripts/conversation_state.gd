@@ -538,6 +538,17 @@ func _default_conversation_blocks() -> Dictionary:
 func conversation_ids() -> Array:
 	return ["camille", "sarah", "j1_00_reveil_v2", "sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2", "sarah_j2_v2", "nico_j2_v2", "camille_j2_v2", "maya_j2_v2", "ines_j2_v2", "camille_j2", "sarah_j2", "camille_j3", "sarah_j3", "camille_j4", "maya_j4", "ines_j4", "nico_j4", "sarah_j5", "camille_j5", "nico_j5", "maya_j5", "sarah_j6", "camille_j6", "nico_j6", "maya_j6", "ines_j6", "finales_mvp"]
 
+func _conversation_allowed_in_current_mode(id: String, state: Dictionary) -> bool:
+	if bool(state.get("experimental", false)) and not experimental_j1_v2_enabled:
+		return false
+	if experimental_j1_v2_enabled:
+		var day: int = int(state.get("day", 1))
+		if day == 1:
+			return bool(state.get("experimental", false))
+		if day == 2:
+			return bool(state.get("experimental", false))
+	return true
+
 func active_conversation_ids() -> Array:
 	var ids: Array = []
 	if experimental_j1_v2_enabled and current_day == 1:
@@ -547,9 +558,7 @@ func active_conversation_ids() -> Array:
 		if experimental_j1_v2_enabled and current_day == 1 and id == "j1_00_reveil_v2":
 			continue
 		var state: Dictionary = conversations[id]
-		if experimental_j1_v2_enabled and current_day == 1 and not bool(state.get("experimental", false)):
-			continue
-		if bool(state.get("experimental", false)) and not experimental_j1_v2_enabled:
+		if not _conversation_allowed_in_current_mode(id, state):
 			continue
 		var day: int = int(state.get("day", 1))
 		if day == current_day and bool(state.get("available", false)):
@@ -560,9 +569,7 @@ func archived_conversation_ids() -> Array:
 	var ids: Array = []
 	for id in conversation_ids():
 		var state: Dictionary = conversations[id]
-		if experimental_j1_v2_enabled and current_day == 1 and not bool(state.get("experimental", false)):
-			continue
-		if bool(state.get("experimental", false)) and not experimental_j1_v2_enabled:
+		if not _conversation_allowed_in_current_mode(id, state):
 			continue
 		var day: int = int(state.get("day", 1))
 		var started: bool = bool(state.get("started", false))
