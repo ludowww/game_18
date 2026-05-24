@@ -7,22 +7,568 @@
   "experimental": true,
   "nodes": [
     {
+      "id": "j3_02_nico_entry_hold_line_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "j’ai dormi dessus.",
+      "delay": 25,
+      "next": "j3_02_nico_single_reply_hold_line_001"
+    },
+    {
+      "id": "j3_02_nico_single_reply_hold_line_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_02_nico_single_reply_hold_line_001_option",
+          "text": "Sur quoi ?",
+          "next": "j3_02_nico_player_hold_line_001"
+        }
+      ],
+      "next": "j3_02_nico_player_hold_line_001"
+    },
+    {
+      "id": "j3_02_nico_player_hold_line_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Sur quoi ?",
+      "delay": 0,
+      "next": "j3_02_nico_entry_hold_line_002"
+    },
+    {
+      "id": "j3_02_nico_entry_hold_line_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "sur ton “reste simple”.",
+      "delay": 30,
+      "next": "j3_02_nico_entry_hold_line_003"
+    },
+    {
+      "id": "j3_02_nico_entry_hold_line_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "bonne nouvelle : simple, je sais faire.",
+      "delay": 30,
+      "next": "j3_02_nico_entry_hold_line_004"
+    },
+    {
+      "id": "j3_02_nico_entry_hold_line_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "mauvaise nouvelle : si quelqu’un insiste, je ne deviens pas scénariste bénévole.",
+      "delay": 30,
+      "next": "j3_02_choice_nico_availability"
+    },
+    {
+      "id": "j3_02_nico_entry_released_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "je voulais te dire un truc.",
+      "delay": 25,
+      "next": "j3_02_nico_single_reply_released_001"
+    },
+    {
+      "id": "j3_02_nico_single_reply_released_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_02_nico_single_reply_released_001_option",
+          "text": "Je t’écoute.",
+          "next": "j3_02_nico_player_released_001"
+        }
+      ],
+      "next": "j3_02_nico_player_released_001"
+    },
+    {
+      "id": "j3_02_nico_player_released_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je t’écoute.",
+      "delay": 0,
+      "next": "j3_02_nico_entry_released_002"
+    },
+    {
+      "id": "j3_02_nico_entry_released_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "merci de m’avoir sorti de ta phrase.",
+      "delay": 30,
+      "next": "j3_02_nico_entry_released_003"
+    },
+    {
+      "id": "j3_02_nico_entry_released_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "c’est pas souvent que je remercie quelqu’un pour m’avoir rendu inutile.",
+      "delay": 30,
+      "next": "j3_02_nico_entry_released_004"
+    },
+    {
+      "id": "j3_02_nico_entry_released_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "mais là, franchement, ça fait du bien.",
+      "delay": 30,
+      "next": "j3_02_choice_nico_availability"
+    },
+    {
+      "id": "j3_02_nico_entry_partial_truth_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "j’ai repensé à ce que tu m’as dit sur Camille.",
+      "delay": 25,
+      "next": "j3_02_nico_single_reply_partial_truth_001"
+    },
+    {
+      "id": "j3_02_nico_single_reply_partial_truth_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_02_nico_single_reply_partial_truth_001_option",
+          "text": "Et ?",
+          "next": "j3_02_nico_player_partial_truth_001"
+        }
+      ],
+      "next": "j3_02_nico_player_partial_truth_001"
+    },
+    {
+      "id": "j3_02_nico_player_partial_truth_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Et ?",
+      "delay": 0,
+      "next": "j3_02_nico_entry_partial_truth_002"
+    },
+    {
+      "id": "j3_02_nico_entry_partial_truth_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "et je vais faire très attention à ne pas devenir le SAV de tes tremblements.",
+      "delay": 30,
+      "next": "j3_02_nico_entry_partial_truth_003"
+    },
+    {
+      "id": "j3_02_nico_entry_partial_truth_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "je peux entendre une vérité partielle.",
+      "delay": 30,
+      "next": "j3_02_nico_entry_partial_truth_004"
+    },
+    {
+      "id": "j3_02_nico_entry_partial_truth_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "je peux pas la porter à ta place.",
+      "delay": 30,
+      "next": "j3_02_choice_nico_availability"
+    },
+    {
+      "id": "j3_02_nico_entry_joke_escape_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "j’ai évalué ton plan “parler vite et avoir l’air sûr de moi”.",
+      "delay": 25,
+      "next": "j3_02_nico_single_reply_joke_escape_001"
+    },
+    {
+      "id": "j3_02_nico_single_reply_joke_escape_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_02_nico_single_reply_joke_escape_001_option",
+          "text": "Verdict ?",
+          "next": "j3_02_nico_player_joke_escape_001"
+        }
+      ],
+      "next": "j3_02_nico_player_joke_escape_001"
+    },
+    {
+      "id": "j3_02_nico_player_joke_escape_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Verdict ?",
+      "delay": 0,
+      "next": "j3_02_nico_entry_joke_escape_002"
+    },
+    {
+      "id": "j3_02_nico_entry_joke_escape_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "très bon plan si l’objectif est de tenir trente secondes.",
+      "delay": 30,
+      "next": "j3_02_nico_entry_joke_escape_003"
+    },
+    {
+      "id": "j3_02_nico_entry_joke_escape_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "moins bon si la journée dure une journée.",
+      "delay": 30,
+      "next": "j3_02_nico_entry_joke_escape_004"
+    },
+    {
+      "id": "j3_02_nico_entry_joke_escape_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "et, détail agaçant, les journées font souvent ça.",
+      "delay": 30,
+      "next": "j3_02_choice_nico_availability"
+    },
+    {
       "id": "j3_02_nico_001",
       "type": "message",
       "sender": "nico",
-      "text": "[J3 placeholder Nico matin]",
-      "delay": 20,
-      "next": "j3_02_nico_end"
+      "text": "je réponds tard, je sais.",
+      "delay": 25,
+      "next": "j3_02_nico_single_reply_default_001"
     },
     {
-      "id": "j3_02_nico_end",
+      "id": "j3_02_nico_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_02_nico_single_reply_default_001_option",
+          "text": "Tout va bien ?",
+          "next": "j3_02_nico_player_default_001"
+        }
+      ],
+      "next": "j3_02_nico_player_default_001"
+    },
+    {
+      "id": "j3_02_nico_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Tout va bien ?",
+      "delay": 0,
+      "next": "j3_02_nico_002"
+    },
+    {
+      "id": "j3_02_nico_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "oui.",
+      "delay": 30,
+      "next": "j3_02_nico_003"
+    },
+    {
+      "id": "j3_02_nico_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "enfin, oui dans le sens où personne n’a encore crié.",
+      "delay": 30,
+      "next": "j3_02_nico_004"
+    },
+    {
+      "id": "j3_02_nico_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "mais je crois que je vais avoir une journée moins disponible que prévu.",
+      "delay": 30,
+      "next": "j3_02_choice_nico_availability"
+    },
+    {
+      "id": "j3_02_choice_nico_availability",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Nico ?",
+      "choices": [
+        {
+          "id": "j3_02_nico_respect_limit",
+          "text": "T’as raison. Je t’ai trop mis au milieu. Je vais arrêter de te demander de tenir mes phrases.",
+          "effects": {
+            "dette_nico": -2,
+            "coherence": 2,
+            "fatigue_emotionnelle": -1,
+            "risque_exposition": -1,
+            "flags": [
+              "j3_nico_limit_respected",
+              "j3_nico_no_longer_tool"
+            ]
+          },
+          "next": "j3_02_nico_player_respect_limit"
+        },
+        {
+          "id": "j3_02_nico_ask_more_help",
+          "text": "J’ai encore besoin que tu m’aides un peu. Pas pour mentir, juste pour éviter que ça parte dans tous les sens.",
+          "effects": {
+            "dette_nico": 2,
+            "coherence": -1,
+            "risque_exposition": 1,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "j3_nico_more_help_requested",
+              "j3_nico_pressure_continues"
+            ]
+          },
+          "next": "j3_02_nico_player_ask_more_help"
+        },
+        {
+          "id": "j3_02_nico_sarah_observes",
+          "text": "Sarah observe tout maintenant. Même quand elle ne pose pas de question, j’ai l’impression qu’elle regarde si mes gestes tiennent.",
+          "effects": {
+            "dette_nico": 0,
+            "coherence": 1,
+            "risque_exposition": 1,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "j3_nico_knows_sarah_observes",
+              "j3_sarah_gestures_pressure_named"
+            ]
+          },
+          "next": "j3_02_nico_player_sarah_observes"
+        },
+        {
+          "id": "j3_02_nico_deflect_to_his_life",
+          "text": "Et toi alors ? Journée moins disponible pourquoi ? T’as une vie secrète maintenant ?",
+          "effects": {
+            "dette_nico": -1,
+            "fatigue_emotionnelle": -1,
+            "coherence": 0,
+            "flags": [
+              "j3_nico_life_outside_player_teased",
+              "j3_nico_maya_thread_possible"
+            ]
+          },
+          "next": "j3_02_nico_player_deflect_to_his_life"
+        }
+      ]
+    },
+    {
+      "id": "j3_02_nico_player_respect_limit",
+      "type": "message",
+      "sender": "player",
+      "text": "T’as raison. Je t’ai trop mis au milieu. Je vais arrêter de te demander de tenir mes phrases.",
+      "delay": 0,
+      "next": "j3_02_nico_response_friend_place_001"
+    },
+    {
+      "id": "j3_02_nico_response_friend_place_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "merci.",
+      "delay": 30,
+      "next": "j3_02_nico_response_friend_place_002"
+    },
+    {
+      "id": "j3_02_nico_response_friend_place_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "je dis pas ça pour disparaître.",
+      "delay": 30,
+      "next": "j3_02_nico_response_friend_place_003"
+    },
+    {
+      "id": "j3_02_nico_response_friend_place_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "juste pour redevenir ton pote, pas ton service après-vente.",
+      "delay": 30,
+      "next": "j3_02_nico_response_friend_place_004"
+    },
+    {
+      "id": "j3_02_nico_response_friend_place_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "et franchement, ton pote est déjà un poste à temps plein.",
+      "delay": 30,
+      "next": "j3_02_end_nico_friend_place"
+    },
+    {
+      "id": "j3_02_end_nico_friend_place",
       "type": "end",
       "sender": "system",
-      "text": "[J3 placeholder terminé]",
+      "text": "Nico reste proche, mais il récupère sa place d’ami.",
+      "delay": 0
+    },
+    {
+      "id": "j3_02_nico_player_ask_more_help",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai encore besoin que tu m’aides un peu. Pas pour mentir, juste pour éviter que ça parte dans tous les sens.",
+      "delay": 0,
+      "next": "j3_02_nico_response_limited_help_001"
+    },
+    {
+      "id": "j3_02_nico_response_limited_help_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "tu entends la phrase, là ?",
+      "delay": 30,
+      "next": "j3_02_nico_response_limited_help_002"
+    },
+    {
+      "id": "j3_02_nico_response_limited_help_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "“pas pour mentir, juste pour éviter”.",
+      "delay": 30,
+      "next": "j3_02_nico_response_limited_help_003"
+    },
+    {
+      "id": "j3_02_nico_response_limited_help_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "c’est souvent le couloir entre les deux qui coûte cher.",
+      "delay": 30,
+      "next": "j3_02_nico_response_limited_help_004"
+    },
+    {
+      "id": "j3_02_nico_response_limited_help_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "je peux t’aider un peu. Mais je vais pas vivre dans ce couloir.",
+      "delay": 30,
+      "next": "j3_02_end_nico_limited_help"
+    },
+    {
+      "id": "j3_02_end_nico_limited_help",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico accepte une aide limitée, mais la pression continue.",
+      "delay": 0
+    },
+    {
+      "id": "j3_02_nico_player_sarah_observes",
+      "type": "message",
+      "sender": "player",
+      "text": "Sarah observe tout maintenant. Même quand elle ne pose pas de question, j’ai l’impression qu’elle regarde si mes gestes tiennent.",
+      "delay": 0,
+      "next": "j3_02_nico_response_sarah_pressure_001"
+    },
+    {
+      "id": "j3_02_nico_response_sarah_pressure_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "ça, je peux l’entendre.",
+      "delay": 30,
+      "next": "j3_02_nico_response_sarah_pressure_002"
+    },
+    {
+      "id": "j3_02_nico_response_sarah_pressure_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "mais attention.",
+      "delay": 30,
+      "next": "j3_02_nico_response_sarah_pressure_003"
+    },
+    {
+      "id": "j3_02_nico_response_sarah_pressure_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "si tu me racontes Sarah comme un radar, tu vas finir par oublier qu’elle est surtout fatiguée.",
+      "delay": 30,
+      "next": "j3_02_nico_response_sarah_pressure_004"
+    },
+    {
+      "id": "j3_02_nico_response_sarah_pressure_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "les radars, ça flashe. Les gens, ça lâche.",
+      "delay": 30,
+      "next": "j3_02_end_nico_sarah_pressure"
+    },
+    {
+      "id": "j3_02_end_nico_sarah_pressure",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico comprend la pression Sarah, sans devenir intermédiaire.",
+      "delay": 0
+    },
+    {
+      "id": "j3_02_nico_player_deflect_to_his_life",
+      "type": "message",
+      "sender": "player",
+      "text": "Et toi alors ? Journée moins disponible pourquoi ? T’as une vie secrète maintenant ?",
+      "delay": 0,
+      "next": "j3_02_nico_response_life_teased_001"
+    },
+    {
+      "id": "j3_02_nico_response_life_teased_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "déjà, j’adore que tu découvres que j’existe hors de tes incendies.",
+      "delay": 30,
+      "next": "j3_02_nico_response_life_teased_002"
+    },
+    {
+      "id": "j3_02_nico_response_life_teased_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "ensuite, vie secrète, non.",
+      "delay": 30,
+      "next": "j3_02_nico_response_life_teased_003"
+    },
+    {
+      "id": "j3_02_nico_response_life_teased_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "disons que quelqu’un m’a écrit.",
+      "delay": 30,
+      "next": "j3_02_nico_response_life_teased_004"
+    },
+    {
+      "id": "j3_02_nico_response_life_teased_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "et pour une fois, ce n’était pas pour me demander de faire le pare-feu humain.",
+      "delay": 30,
+      "next": "j3_02_end_nico_life_teased"
+    },
+    {
+      "id": "j3_02_end_nico_life_teased",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico laisse entendre qu’il a une vie sociale hors du joueur.",
       "delay": 0
     }
   ],
   "entry_variants": [
+    {
+      "id": "after_hold_line",
+      "conditions": {
+        "flags": [
+          "j2_nico_hold_line"
+        ]
+      },
+      "start_node": "j3_02_nico_entry_hold_line_001"
+    },
+    {
+      "id": "after_released",
+      "conditions": {
+        "flags": [
+          "j2_nico_released_from_alibi"
+        ]
+      },
+      "start_node": "j3_02_nico_entry_released_001"
+    },
+    {
+      "id": "after_partial_truth",
+      "conditions": {
+        "flags": [
+          "j2_nico_partial_truth_camille"
+        ]
+      },
+      "start_node": "j3_02_nico_entry_partial_truth_001"
+    },
+    {
+      "id": "after_joke_escape",
+      "conditions": {
+        "flags": [
+          "j2_nico_joke_escape"
+        ]
+      },
+      "start_node": "j3_02_nico_entry_joke_escape_001"
+    },
     {
       "id": "default",
       "conditions": {},
