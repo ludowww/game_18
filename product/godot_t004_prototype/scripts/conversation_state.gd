@@ -1289,7 +1289,9 @@ func _required_conversations_for_current_mode(day: int) -> Array:
 	if experimental_j1_v2_enabled and day == 3:
 		return [
 			"sarah_j3_v2",
-			"nico_j3_v2"
+			"nico_j3_v2",
+			"camille_j3_v2",
+			"maya_j3_v2"
 		]
 	return REQUIRED_CONVERSATIONS_BY_DAY.get(day, [])
 
@@ -1405,6 +1407,14 @@ func _repair_j3_v2_progression_unlocks() -> void:
 	if morning_done and conversations.has("camille_j3_v2") and not bool(conversations["camille_j3_v2"].get("done", false)) and not bool(conversations["camille_j3_v2"].get("available", false)):
 		conversations["camille_j3_v2"]["available"] = true
 		mark_conversation_new("camille_j3_v2", "Camille revient dans l’après-midi.")
+	if conversations.has("camille_j3_v2") and bool(conversations["camille_j3_v2"].get("done", false)):
+		if conversations.has("maya_j3_v2") and not bool(conversations["maya_j3_v2"].get("done", false)) and not bool(conversations["maya_j3_v2"].get("available", false)):
+			conversations["maya_j3_v2"]["available"] = true
+			mark_conversation_new("maya_j3_v2", "Maya revient sur l’ambiance.")
+	if conversations.has("maya_j3_v2") and bool(conversations["maya_j3_v2"].get("done", false)):
+		if conversations.has("ines_j3_v2") and not bool(conversations["ines_j3_v2"].get("done", false)) and not bool(conversations["ines_j3_v2"].get("available", false)):
+			conversations["ines_j3_v2"]["available"] = true
+			mark_conversation_new("ines_j3_v2", "Inès écrit en soirée.")
 
 func handle_dynamic_notification(source_conversation_id: String, node_id: String) -> void:
 	var event_id: String = source_conversation_id + ":" + node_id

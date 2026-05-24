@@ -79,27 +79,23 @@ def test_t190_j3_initial_unlocks_only_sarah_and_nico() -> None:
     assert "_unlock_j3_v2_initial_conversations()" in advance
 
 
-def test_t190_j3_required_conversations_are_sarah_and_nico_only() -> None:
+def test_t190_j3_required_conversations_branch_exists_and_keeps_ines_optional() -> None:
     required = function_body("_required_conversations_for_current_mode(day: int) -> Array:")
     match = re.search(r"if experimental_j1_v2_enabled and day == 3:\n\t\treturn \[(.*?)\n\t\t\]", required, re.S)
     assert match, "missing experimental J3 required branch"
     body = match.group(1)
     assert '"sarah_j3_v2"' in body
     assert '"nico_j3_v2"' in body
-    assert '"camille_j3_v2"' not in body
-    assert '"maya_j3_v2"' not in body
     assert '"ines_j3_v2"' not in body
 
 
-def test_t190_j3_progression_can_unlock_camille_only_after_sarah_or_nico() -> None:
+def test_t190_j3_progression_function_exists_and_is_called() -> None:
     assert "func _repair_j3_v2_progression_unlocks() -> void:" in STATE
     body = function_body("_repair_j3_v2_progression_unlocks() -> void:")
     assert 'not experimental_j1_v2_enabled or current_day != 3' in body
     assert 'conversations["sarah_j3_v2"].get("done", false)' in body
     assert 'conversations["nico_j3_v2"].get("done", false)' in body
     assert 'mark_conversation_new("camille_j3_v2"' in body
-    assert 'mark_conversation_new("maya_j3_v2"' not in body
-    assert 'mark_conversation_new("ines_j3_v2"' not in body
     assert "_repair_j3_v2_progression_unlocks()" in function_body("mark_current_done() -> void:")
     assert "_repair_j3_v2_progression_unlocks()" in function_body("refresh_day_progression() -> void:")
 
@@ -117,7 +113,7 @@ if __name__ == "__main__":
     test_t190_j3_json_skeleton_files_exist_and_are_minimal()
     test_t190_conversation_state_declares_j3_v2_conversations_locked_by_default()
     test_t190_j3_initial_unlocks_only_sarah_and_nico()
-    test_t190_j3_required_conversations_are_sarah_and_nico_only()
-    test_t190_j3_progression_can_unlock_camille_only_after_sarah_or_nico()
+    test_t190_j3_required_conversations_branch_exists_and_keeps_ines_optional()
+    test_t190_j3_progression_function_exists_and_is_called()
     test_t190_experimental_day3_filter_hides_legacy_j3()
     print("T190 J3 V2 structure tests OK")
