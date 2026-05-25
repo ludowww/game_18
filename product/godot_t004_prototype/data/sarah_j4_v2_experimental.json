@@ -7,22 +7,604 @@
   "experimental": true,
   "nodes": [
     {
+      "id": "j4_01_sarah_entry_actions_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ce matin, j’ai regardé la table avant d’écrire.",
+      "delay": 25,
+      "next": "j4_01_sarah_single_reply_actions_001"
+    },
+    {
+      "id": "j4_01_sarah_single_reply_actions_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_01_sarah_single_reply_actions_001_option",
+          "text": "Tu as vu quelque chose ?",
+          "next": "j4_01_sarah_player_actions_001"
+        }
+      ],
+      "next": "j4_01_sarah_player_actions_001"
+    },
+    {
+      "id": "j4_01_sarah_player_actions_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu as vu quelque chose ?",
+      "delay": 0,
+      "next": "j4_01_sarah_entry_actions_002"
+    },
+    {
+      "id": "j4_01_sarah_entry_actions_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Rien d’énorme.",
+      "delay": 30,
+      "next": "j4_01_sarah_entry_actions_003"
+    },
+    {
+      "id": "j4_01_sarah_entry_actions_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Juste un petit détail.",
+      "delay": 30,
+      "next": "j4_01_sarah_entry_actions_004"
+    },
+    {
+      "id": "j4_01_sarah_entry_actions_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Et je me suis rendue compte que maintenant, je vérifie les gestes sans le vouloir.",
+      "delay": 30,
+      "next": "j4_01_choice_sarah_morning_detail"
+    },
+    {
+      "id": "j4_01_sarah_entry_uncertainty_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai failli t’écrire plus tôt.",
+      "delay": 25,
+      "next": "j4_01_sarah_single_reply_uncertainty_001"
+    },
+    {
+      "id": "j4_01_sarah_single_reply_uncertainty_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_01_sarah_single_reply_uncertainty_001_option",
+          "text": "Pourquoi tu ne l’as pas fait ?",
+          "next": "j4_01_sarah_player_uncertainty_001"
+        }
+      ],
+      "next": "j4_01_sarah_player_uncertainty_001"
+    },
+    {
+      "id": "j4_01_sarah_player_uncertainty_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Pourquoi tu ne l’as pas fait ?",
+      "delay": 0,
+      "next": "j4_01_sarah_entry_uncertainty_002"
+    },
+    {
+      "id": "j4_01_sarah_entry_uncertainty_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Parce que je voulais voir si l’incertitude d’hier restait juste une phrase.",
+      "delay": 30,
+      "next": "j4_01_sarah_entry_uncertainty_003"
+    },
+    {
+      "id": "j4_01_sarah_entry_uncertainty_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Et puis je me suis dit que c’était peut-être injuste de te tester dès le matin.",
+      "delay": 30,
+      "next": "j4_01_sarah_entry_uncertainty_004"
+    },
+    {
+      "id": "j4_01_sarah_entry_uncertainty_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais je l’ai fait quand même, un peu.",
+      "delay": 30,
+      "next": "j4_01_choice_sarah_morning_detail"
+    },
+    {
+      "id": "j4_01_sarah_entry_more_time_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "J’ai attendu avant d’écrire.",
+      "delay": 25,
+      "next": "j4_01_sarah_single_reply_more_time_001"
+    },
+    {
+      "id": "j4_01_sarah_single_reply_more_time_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_01_sarah_single_reply_more_time_001_option",
+          "text": "Encore ?",
+          "next": "j4_01_sarah_player_more_time_001"
+        }
+      ],
+      "next": "j4_01_sarah_player_more_time_001"
+    },
+    {
+      "id": "j4_01_sarah_player_more_time_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Encore ?",
+      "delay": 0,
+      "next": "j4_01_sarah_entry_more_time_002"
+    },
+    {
+      "id": "j4_01_sarah_entry_more_time_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Oui.",
+      "delay": 30,
+      "next": "j4_01_sarah_entry_more_time_003"
+    },
+    {
+      "id": "j4_01_sarah_entry_more_time_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je crois que je commence à avoir le réflexe d’attendre avec toi.",
+      "delay": 30,
+      "next": "j4_01_sarah_entry_more_time_004"
+    },
+    {
+      "id": "j4_01_sarah_entry_more_time_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Et je n’aime pas ce que ça me fait.",
+      "delay": 30,
+      "next": "j4_01_choice_sarah_morning_detail"
+    },
+    {
+      "id": "j4_01_sarah_entry_defensive_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je vais faire court ce matin.",
+      "delay": 25,
+      "next": "j4_01_sarah_single_reply_defensive_001"
+    },
+    {
+      "id": "j4_01_sarah_single_reply_defensive_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_01_sarah_single_reply_defensive_001_option",
+          "text": "D’accord.",
+          "next": "j4_01_sarah_player_defensive_001"
+        }
+      ],
+      "next": "j4_01_sarah_player_defensive_001"
+    },
+    {
+      "id": "j4_01_sarah_player_defensive_001",
+      "type": "message",
+      "sender": "player",
+      "text": "D’accord.",
+      "delay": 0,
+      "next": "j4_01_sarah_entry_defensive_002"
+    },
+    {
+      "id": "j4_01_sarah_entry_defensive_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Il y a un détail qui me gêne.",
+      "delay": 30,
+      "next": "j4_01_sarah_entry_defensive_003"
+    },
+    {
+      "id": "j4_01_sarah_entry_defensive_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Pas assez grand pour faire une scène.",
+      "delay": 30,
+      "next": "j4_01_sarah_entry_defensive_004"
+    },
+    {
+      "id": "j4_01_sarah_entry_defensive_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Assez pour que je ne réussisse pas à l’ignorer.",
+      "delay": 30,
+      "next": "j4_01_choice_sarah_morning_detail"
+    },
+    {
       "id": "j4_01_sarah_001",
       "type": "message",
       "sender": "sarah",
-      "text": "[J4 placeholder Sarah matin]",
+      "text": "Je ne sais pas si c’est important.",
       "delay": 25,
-      "next": "j4_01_end"
+      "next": "j4_01_sarah_single_reply_default_001"
     },
     {
-      "id": "j4_01_end",
+      "id": "j4_01_sarah_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_01_sarah_single_reply_default_001_option",
+          "text": "Dis-moi.",
+          "next": "j4_01_sarah_player_default_001"
+        }
+      ],
+      "next": "j4_01_sarah_player_default_001"
+    },
+    {
+      "id": "j4_01_sarah_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Dis-moi.",
+      "delay": 0,
+      "next": "j4_01_sarah_002"
+    },
+    {
+      "id": "j4_01_sarah_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Ce matin, j’ai remarqué un petit truc.",
+      "delay": 30,
+      "next": "j4_01_sarah_003"
+    },
+    {
+      "id": "j4_01_sarah_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Rien de grave.",
+      "delay": 30,
+      "next": "j4_01_sarah_004"
+    },
+    {
+      "id": "j4_01_sarah_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais depuis quelques jours, les petits trucs prennent plus de place.",
+      "delay": 30,
+      "next": "j4_01_choice_sarah_morning_detail"
+    },
+    {
+      "id": "j4_01_choice_sarah_morning_detail",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Sarah ?",
+      "choices": [
+        {
+          "id": "j4_01_sarah_answer_directly",
+          "text": "Tu as raison de le remarquer. Je vais te répondre directement, sans chercher une version parfaite.",
+          "next": "j4_01_sarah_player_answer_directly",
+          "effects": {
+            "confiance_sarah": 1,
+            "coherence": 2,
+            "flags": [
+              "j4_player_given_direct_sarah_answer",
+              "j4_sarah_morning_detail_noted"
+            ]
+          }
+        },
+        {
+          "id": "j4_01_sarah_prudent_truth",
+          "text": "Je peux t’expliquer, mais je préfère le faire sans tout lisser.",
+          "next": "j4_01_sarah_player_prudent_truth",
+          "effects": {
+            "confiance_sarah": 1,
+            "coherence": 1,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "j4_player_chose_prudent_truth",
+              "j4_sarah_morning_detail_noted"
+            ]
+          }
+        },
+        {
+          "id": "j4_01_sarah_delay_answer",
+          "text": "Je veux te répondre, mais pas n’importe comment. Laisse-moi un peu de temps.",
+          "next": "j4_01_sarah_player_delay_answer",
+          "effects": {
+            "distance_sarah": 1,
+            "fatigue_emotionnelle": 1,
+            "risque_exposition": 1,
+            "flags": [
+              "j4_player_delayed_sarah_answer",
+              "j4_sarah_morning_detail_noted"
+            ]
+          }
+        },
+        {
+          "id": "j4_01_sarah_check_before_answer",
+          "text": "Je vais vérifier un truc avant de te répondre, parce que je ne veux pas te dire n’importe quoi.",
+          "next": "j4_01_sarah_player_check_before_answer",
+          "effects": {
+            "distance_sarah": 1,
+            "risque_exposition": 1,
+            "dette_nico": 1,
+            "flags": [
+              "j4_sarah_answer_pending_nico_check",
+              "j4_player_checked_with_nico",
+              "j4_player_delayed_sarah_answer",
+              "j4_sarah_morning_detail_noted"
+            ]
+          }
+        },
+        {
+          "id": "j4_01_sarah_defensive",
+          "text": "J’ai l’impression que le moindre détail devient un procès.",
+          "next": "j4_01_sarah_player_defensive",
+          "effects": {
+            "confiance_sarah": -1,
+            "distance_sarah": 2,
+            "coherence": -1,
+            "flags": [
+              "j4_player_defensive_with_sarah",
+              "j4_sarah_morning_detail_noted"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j4_01_sarah_player_answer_directly",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu as raison de le remarquer. Je vais te répondre directement, sans chercher une version parfaite.",
+      "delay": 0,
+      "next": "j4_01_sarah_response_direct_001"
+    },
+    {
+      "id": "j4_01_sarah_response_direct_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Merci.",
+      "delay": 30,
+      "next": "j4_01_sarah_response_direct_002"
+    },
+    {
+      "id": "j4_01_sarah_response_direct_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je crois que j’avais besoin que tu ne partes pas chercher une phrase ailleurs.",
+      "delay": 30,
+      "next": "j4_01_sarah_response_direct_003"
+    },
+    {
+      "id": "j4_01_sarah_response_direct_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Même si elle n’est pas parfaite.",
+      "delay": 30,
+      "next": "j4_01_end_sarah_direct"
+    },
+    {
+      "id": "j4_01_end_sarah_direct",
       "type": "end",
       "sender": "system",
-      "text": "[Fin placeholder J4]",
+      "text": "Sarah entend une réponse directe. Le matin reste fragile, mais moins flou.",
+      "delay": 0
+    },
+    {
+      "id": "j4_01_sarah_player_prudent_truth",
+      "type": "message",
+      "sender": "player",
+      "text": "Je peux t’expliquer, mais je préfère le faire sans tout lisser.",
+      "delay": 0,
+      "next": "j4_01_sarah_response_prudent_001"
+    },
+    {
+      "id": "j4_01_sarah_response_prudent_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "D’accord.",
+      "delay": 30,
+      "next": "j4_01_sarah_response_prudent_002"
+    },
+    {
+      "id": "j4_01_sarah_response_prudent_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je préfère ça à une réponse trop propre.",
+      "delay": 30,
+      "next": "j4_01_sarah_response_prudent_003"
+    },
+    {
+      "id": "j4_01_sarah_response_prudent_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Même si ça me fait peur aussi.",
+      "delay": 30,
+      "next": "j4_01_end_sarah_prudent"
+    },
+    {
+      "id": "j4_01_end_sarah_prudent",
+      "type": "end",
+      "sender": "system",
+      "text": "Sarah accepte une réponse imparfaite, tant qu’elle ne sonne pas fabriquée.",
+      "delay": 0
+    },
+    {
+      "id": "j4_01_sarah_player_delay_answer",
+      "type": "message",
+      "sender": "player",
+      "text": "Je veux te répondre, mais pas n’importe comment. Laisse-moi un peu de temps.",
+      "delay": 0,
+      "next": "j4_01_sarah_response_delay_001"
+    },
+    {
+      "id": "j4_01_sarah_response_delay_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je l’entends.",
+      "delay": 30,
+      "next": "j4_01_sarah_response_delay_002"
+    },
+    {
+      "id": "j4_01_sarah_response_delay_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais tu comprends que ce temps-là, moi je vais le sentir passer ?",
+      "delay": 30,
+      "next": "j4_01_sarah_response_delay_003"
+    },
+    {
+      "id": "j4_01_sarah_response_delay_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je ne te dis pas non.",
+      "delay": 30,
+      "next": "j4_01_sarah_response_delay_004"
+    },
+    {
+      "id": "j4_01_sarah_response_delay_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je te dis juste que ça compte.",
+      "delay": 30,
+      "next": "j4_01_end_sarah_delay"
+    },
+    {
+      "id": "j4_01_end_sarah_delay",
+      "type": "end",
+      "sender": "system",
+      "text": "Sarah accepte le délai, mais il devient déjà une partie du problème.",
+      "delay": 0
+    },
+    {
+      "id": "j4_01_sarah_player_check_before_answer",
+      "type": "message",
+      "sender": "player",
+      "text": "Je vais vérifier un truc avant de te répondre, parce que je ne veux pas te dire n’importe quoi.",
+      "delay": 0,
+      "next": "j4_01_sarah_response_check_001"
+    },
+    {
+      "id": "j4_01_sarah_response_check_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "D’accord.",
+      "delay": 30,
+      "next": "j4_01_sarah_response_check_002"
+    },
+    {
+      "id": "j4_01_sarah_response_check_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais je vais être honnête : quand tu dis ça, j’entends surtout que tu t’éloignes un peu.",
+      "delay": 30,
+      "next": "j4_01_sarah_response_check_003"
+    },
+    {
+      "id": "j4_01_sarah_response_check_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Je préfère que tu reviennes avec quelque chose de vrai.",
+      "delay": 30,
+      "next": "j4_01_sarah_response_check_004"
+    },
+    {
+      "id": "j4_01_sarah_response_check_004",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Pas seulement quelque chose qui tient.",
+      "delay": 30,
+      "next": "j4_01_end_sarah_check"
+    },
+    {
+      "id": "j4_01_end_sarah_check",
+      "type": "end",
+      "sender": "system",
+      "text": "Sarah attend une réponse. Le délai pèse déjà.",
+      "delay": 0
+    },
+    {
+      "id": "j4_01_sarah_player_defensive",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai l’impression que le moindre détail devient un procès.",
+      "delay": 0,
+      "next": "j4_01_sarah_response_defensive_001"
+    },
+    {
+      "id": "j4_01_sarah_response_defensive_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Non.",
+      "delay": 30,
+      "next": "j4_01_sarah_response_defensive_002"
+    },
+    {
+      "id": "j4_01_sarah_response_defensive_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est justement parce que je ne veux pas en faire un procès que je te le dis comme ça.",
+      "delay": 30,
+      "next": "j4_01_sarah_response_defensive_003"
+    },
+    {
+      "id": "j4_01_sarah_response_defensive_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais si tu te défends tout de suite, je ne sais plus où poser mon doute.",
+      "delay": 30,
+      "next": "j4_01_end_sarah_defensive"
+    },
+    {
+      "id": "j4_01_end_sarah_defensive",
+      "type": "end",
+      "sender": "system",
+      "text": "Sarah se referme un peu. Le détail devient plus lourd parce qu’il n’a pas été accueilli.",
       "delay": 0
     }
   ],
   "entry_variants": [
+    {
+      "id": "after_actions_promised",
+      "conditions": {
+        "flags": [
+          "j3_sarah_promises_actions"
+        ]
+      },
+      "start_node": "j4_01_sarah_entry_actions_001"
+    },
+    {
+      "id": "after_honest_uncertainty",
+      "conditions": {
+        "flags": [
+          "j3_sarah_honest_uncertainty"
+        ]
+      },
+      "start_node": "j4_01_sarah_entry_uncertainty_001"
+    },
+    {
+      "id": "after_more_time",
+      "conditions": {
+        "flags": [
+          "j3_sarah_more_time"
+        ]
+      },
+      "start_node": "j4_01_sarah_entry_more_time_001"
+    },
+    {
+      "id": "after_defensive",
+      "conditions": {
+        "flags_any": [
+          "j3_sarah_defensive",
+          "j3_sarah_feels_unheard"
+        ]
+      },
+      "start_node": "j4_01_sarah_entry_defensive_001"
+    },
     {
       "id": "default",
       "conditions": {},

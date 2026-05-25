@@ -88,13 +88,17 @@ def test_t211_j4_json_skeletons_exist_and_are_valid() -> None:
         assert data["contact_id"] == spec["contact"]
         assert data["start_node"] == spec["start"]
         assert data["experimental"] is True
-        assert data["entry_variants"] == [{"id": "default", "conditions": {}, "start_node": spec["start"]}]
         nodes = {node["id"]: node for node in data["nodes"]}
-        assert nodes[spec["start"]]["text"] == spec["placeholder"]
-        assert nodes[spec["start"]]["next"] == spec["end"]
-        assert nodes[spec["end"]]["type"] == "end"
+        assert any(node.get("type") == "end" for node in data["nodes"])
         assert all(node.get("type") != "media" for node in data["nodes"])
-        assert "effects" not in json.dumps(data, ensure_ascii=False)
+        if conversation_id == "sarah_j4_v2":
+            assert "[J4 placeholder Sarah matin]" not in json.dumps(data, ensure_ascii=False)
+            assert "j4_01_choice_sarah_morning_detail" in nodes
+        else:
+            assert data["entry_variants"] == [{"id": "default", "conditions": {}, "start_node": spec["start"]}]
+            assert nodes[spec["start"]]["text"] == spec["placeholder"]
+            assert nodes[spec["start"]]["next"] == spec["end"]
+            assert "effects" not in json.dumps(data, ensure_ascii=False)
 
 
 def test_t211_runtime_declares_j4_conversations() -> None:
