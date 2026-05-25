@@ -68,7 +68,7 @@ def test_t191_each_entry_variant_converges_to_central_choice() -> None:
 
 def test_t191_single_replies_have_one_choice_no_effects_and_matching_player_text() -> None:
     single_replies = [node for node in SARAH["nodes"] if "_single_reply_" in node["id"]]
-    assert len(single_replies) == 5
+    assert len(single_replies) == 6
     for node in single_replies:
         assert node["type"] == "choice"
         assert "effects" not in node

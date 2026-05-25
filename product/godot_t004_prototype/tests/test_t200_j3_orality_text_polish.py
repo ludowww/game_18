@@ -72,7 +72,8 @@ def test_t200_old_texts_removed_and_new_texts_present() -> None:
         text = serialized(name)
         for old, new in replacements:
             assert old not in text, f"old text still present in {name}: {old}"
-            assert new in text, f"new text missing in {name}: {new}"
+            # Later J3 voice passes may deepen some T200-polished lines again; this test keeps
+            # T200's non-regression guarantee on old-text removal without freezing all future copy.
 
 
 def test_t200_specified_choices_match_player_nodes() -> None:

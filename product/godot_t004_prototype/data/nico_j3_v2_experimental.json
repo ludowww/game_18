@@ -10,7 +10,7 @@
       "id": "j3_02_nico_entry_hold_line_001",
       "type": "message",
       "sender": "nico",
-      "text": "j’ai dormi dessus.",
+      "text": "update : je suis vivant. émotionnellement discutable, mais vivant.",
       "delay": 25,
       "next": "j3_02_nico_single_reply_hold_line_001"
     },
@@ -22,7 +22,7 @@
       "choices": [
         {
           "id": "j3_02_nico_single_reply_hold_line_001_option",
-          "text": "Sur quoi ?",
+          "text": "C’est déjà ça.",
           "next": "j3_02_nico_player_hold_line_001"
         }
       ],
@@ -32,7 +32,7 @@
       "id": "j3_02_nico_player_hold_line_001",
       "type": "message",
       "sender": "player",
-      "text": "Sur quoi ?",
+      "text": "C’est déjà ça.",
       "delay": 0,
       "next": "j3_02_nico_entry_hold_line_002"
     },
@@ -40,7 +40,7 @@
       "id": "j3_02_nico_entry_hold_line_002",
       "type": "message",
       "sender": "nico",
-      "text": "sur ton “reste simple”.",
+      "text": "et j’ai dormi sur ton “reste simple”.",
       "delay": 30,
       "next": "j3_02_nico_entry_hold_line_003"
     },
@@ -118,7 +118,7 @@
       "id": "j3_02_nico_entry_partial_truth_001",
       "type": "message",
       "sender": "nico",
-      "text": "j’ai repensé à ce que tu m’as dit sur Camille.",
+      "text": "je reviens deux secondes sur Camille.",
       "delay": 25,
       "next": "j3_02_nico_single_reply_partial_truth_001"
     },
@@ -524,13 +524,35 @@
       "asset": "res://assets/media/j3_v2/nico_sortie_floue_j3.png",
       "caption": "[photo de sortie envoyée]",
       "delay": 30,
+      "next": "j3_02_nico_single_reply_life_photo_001"
+    },
+    {
+      "id": "j3_02_nico_single_reply_life_photo_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_02_nico_single_reply_life_photo_001_option",
+          "text": "C’est où ça ?",
+          "next": "j3_02_nico_player_life_photo_001"
+        }
+      ],
+      "next": "j3_02_nico_player_life_photo_001"
+    },
+    {
+      "id": "j3_02_nico_player_life_photo_001",
+      "type": "message",
+      "sender": "player",
+      "text": "C’est où ça ?",
+      "delay": 0,
       "next": "j3_02_nico_response_life_photo_001"
     },
     {
       "id": "j3_02_nico_response_life_photo_001",
       "type": "message",
       "sender": "nico",
-      "text": "preuve que j’ai une vie. floue, certes.",
+      "text": "ah.",
       "delay": 30,
       "next": "j3_02_nico_response_life_photo_002"
     },
@@ -538,7 +560,23 @@
       "id": "j3_02_nico_response_life_photo_002",
       "type": "message",
       "sender": "nico",
-      "text": "mais une vie quand même.",
+      "text": "monsieur découvre que je peux être localisé ailleurs que dans tes problèmes.",
+      "delay": 30,
+      "next": "j3_02_nico_response_life_photo_003"
+    },
+    {
+      "id": "j3_02_nico_response_life_photo_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "ce soir je lance la console.",
+      "delay": 30,
+      "next": "j3_02_nico_response_life_photo_004"
+    },
+    {
+      "id": "j3_02_nico_response_life_photo_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "si tu passes, tu parles pas pendant la première game.",
       "delay": 30,
       "next": "j3_02_nico_response_life_teased_004"
     },
@@ -546,7 +584,7 @@
       "id": "j3_02_nico_response_life_teased_004",
       "type": "message",
       "sender": "nico",
-      "text": "et pour une fois, ce n’était pas pour me demander de faire le pare-feu humain.",
+      "text": "et pour une fois, ça ne tournait pas autour de ton incendie.",
       "delay": 30,
       "next": "j3_02_end_nico_life_teased"
     },

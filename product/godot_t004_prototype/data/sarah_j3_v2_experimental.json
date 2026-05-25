@@ -10,7 +10,7 @@
       "id": "j3_01_sarah_entry_concrete_001",
       "type": "message",
       "sender": "sarah",
-      "text": "Je repense à ta phrase d’hier.",
+      "text": "J’ai laissé ta tasse sur la table.",
       "delay": 25,
       "next": "j3_01_sarah_single_reply_concrete_001"
     },
@@ -22,7 +22,7 @@
       "choices": [
         {
           "id": "j3_01_sarah_single_reply_concrete_001_option",
-          "text": "Laquelle ?",
+          "text": "Tu veux me dire quelque chose ?",
           "next": "j3_01_sarah_player_concrete_001"
         }
       ],
@@ -32,7 +32,7 @@
       "id": "j3_01_sarah_player_concrete_001",
       "type": "message",
       "sender": "player",
-      "text": "Laquelle ?",
+      "text": "Tu veux me dire quelque chose ?",
       "delay": 0,
       "next": "j3_01_sarah_entry_concrete_002"
     },
@@ -40,7 +40,7 @@
       "id": "j3_01_sarah_entry_concrete_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Celle où tu disais que tu allais arrêter de me donner des bouts de réponse.",
+      "text": "Pas vraiment. Enfin si, peut-être.",
       "delay": 30,
       "next": "j3_01_sarah_entry_concrete_003"
     },
@@ -48,7 +48,7 @@
       "id": "j3_01_sarah_entry_concrete_003",
       "type": "message",
       "sender": "sarah",
-      "text": "Je l’ai gardée en tête.",
+      "text": "Depuis hier, je crois que je regarde plus les petits gestes.",
       "delay": 30,
       "next": "j3_01_sarah_entry_concrete_004"
     },
@@ -56,7 +56,7 @@
       "id": "j3_01_sarah_entry_concrete_004",
       "type": "message",
       "sender": "sarah",
-      "text": "Pas comme une preuve. Plutôt comme quelque chose que j’ai envie de vérifier aujourd’hui.",
+      "text": "Pas pour te piéger. Juste pour voir si ça tient aujourd’hui.",
       "delay": 30,
       "next": "j3_01_choice_sarah_place"
     },
@@ -64,7 +64,7 @@
       "id": "j3_01_sarah_entry_delay_001",
       "type": "message",
       "sender": "sarah",
-      "text": "Tu m’as demandé du temps hier.",
+      "text": "Ce matin, j’ai failli t’écrire plus tôt.",
       "delay": 25,
       "next": "j3_01_sarah_single_reply_delay_001"
     },
@@ -76,7 +76,7 @@
       "choices": [
         {
           "id": "j3_01_sarah_single_reply_delay_001_option",
-          "text": "Je sais.",
+          "text": "Pourquoi tu ne l’as pas fait ?",
           "next": "j3_01_sarah_player_delay_001"
         }
       ],
@@ -86,7 +86,7 @@
       "id": "j3_01_sarah_player_delay_001",
       "type": "message",
       "sender": "player",
-      "text": "Je sais.",
+      "text": "Pourquoi tu ne l’as pas fait ?",
       "delay": 0,
       "next": "j3_01_sarah_entry_delay_002"
     },
@@ -94,7 +94,7 @@
       "id": "j3_01_sarah_entry_delay_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Je ne te reproche pas d’en avoir besoin.",
+      "text": "Parce que tu m’avais demandé du temps.",
       "delay": 30,
       "next": "j3_01_sarah_entry_delay_003"
     },
@@ -118,7 +118,7 @@
       "id": "j3_01_sarah_entry_minimized_001",
       "type": "message",
       "sender": "sarah",
-      "text": "Je vais essayer de ne pas refaire la discussion d’hier.",
+      "text": "J’ai fait le café avant d’écrire.",
       "delay": 25,
       "next": "j3_01_sarah_single_reply_minimized_001"
     },
@@ -130,7 +130,7 @@
       "choices": [
         {
           "id": "j3_01_sarah_single_reply_minimized_001_option",
-          "text": "D’accord.",
+          "text": "Et ?",
           "next": "j3_01_sarah_player_minimized_001"
         }
       ],
@@ -140,7 +140,7 @@
       "id": "j3_01_sarah_player_minimized_001",
       "type": "message",
       "sender": "player",
-      "text": "D’accord.",
+      "text": "Et ?",
       "delay": 0,
       "next": "j3_01_sarah_entry_minimized_002"
     },
@@ -148,7 +148,7 @@
       "id": "j3_01_sarah_entry_minimized_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Mais je crois que j’ai besoin de te dire une chose.",
+      "text": "Et j’ai essayé de ne pas repartir dans la même discussion.",
       "delay": 30,
       "next": "j3_01_sarah_entry_minimized_003"
     },
@@ -377,13 +377,35 @@
       "asset": "res://assets/media/j3_v2/sarah_trace_matin_j3.png",
       "caption": "[photo du matin envoyée]",
       "delay": 30,
+      "next": "j3_01_sarah_single_reply_photo_morning_001"
+    },
+    {
+      "id": "j3_01_sarah_single_reply_photo_morning_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j3_01_sarah_single_reply_photo_morning_001_option",
+          "text": "Tu veux que je voie quoi ?",
+          "next": "j3_01_sarah_player_photo_morning_001"
+        }
+      ],
+      "next": "j3_01_sarah_player_photo_morning_001"
+    },
+    {
+      "id": "j3_01_sarah_player_photo_morning_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu veux que je voie quoi ?",
+      "delay": 0,
       "next": "j3_01_sarah_response_actions_photo_001"
     },
     {
       "id": "j3_01_sarah_response_actions_photo_001",
       "type": "message",
       "sender": "sarah",
-      "text": "C’est pas grand-chose.",
+      "text": "Rien d’énorme.",
       "delay": 30,
       "next": "j3_01_sarah_response_actions_photo_002"
     },
@@ -391,7 +413,15 @@
       "id": "j3_01_sarah_response_actions_photo_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Mais c’est le genre de petit truc que je remarque maintenant.",
+      "text": "Juste ce genre de petit truc.",
+      "delay": 30,
+      "next": "j3_01_sarah_response_actions_photo_003"
+    },
+    {
+      "id": "j3_01_sarah_response_actions_photo_003",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Le genre de chose qui dit plus que “je vais faire attention”.",
       "delay": 30,
       "next": "j3_01_sarah_response_actions_003"
     },

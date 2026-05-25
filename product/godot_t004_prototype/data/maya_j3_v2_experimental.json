@@ -10,7 +10,7 @@
       "id": "j3_04_maya_entry_social_read_001",
       "type": "message",
       "sender": "maya",
-      "text": "j’ai essayé de ne pas repenser à ta question.",
+      "text": "bon. j’ai fait semblant de rien voir pendant presque 24h.",
       "delay": 25,
       "next": "j3_04_maya_single_reply_social_read_001"
     },
@@ -22,7 +22,7 @@
       "choices": [
         {
           "id": "j3_04_maya_single_reply_social_read_001_option",
-          "text": "Laquelle ?",
+          "text": "Et tu as tenu ?",
           "next": "j3_04_maya_player_social_read_001"
         }
       ],
@@ -32,7 +32,7 @@
       "id": "j3_04_maya_player_social_read_001",
       "type": "message",
       "sender": "player",
-      "text": "Laquelle ?",
+      "text": "Et tu as tenu ?",
       "delay": 0,
       "next": "j3_04_maya_entry_social_read_002"
     },
@@ -40,7 +40,7 @@
       "id": "j3_04_maya_entry_social_read_002",
       "type": "message",
       "sender": "maya",
-      "text": "celle où tu me demandais ce que je croyais voir.",
+      "text": "presque.",
       "delay": 30,
       "next": "j3_04_maya_entry_social_read_003"
     },
@@ -48,7 +48,7 @@
       "id": "j3_04_maya_entry_social_read_003",
       "type": "message",
       "sender": "maya",
-      "text": "j’ai pas une réponse plus solide aujourd’hui.",
+      "text": "je n’ai toujours pas de preuve, si ça peut te détendre.",
       "delay": 30,
       "next": "j3_04_maya_entry_social_read_004"
     },
@@ -56,7 +56,7 @@
       "id": "j3_04_maya_entry_social_read_004",
       "type": "message",
       "sender": "maya",
-      "text": "juste plus de petits détails qui commencent à se répondre.",
+      "text": "juste des petits détails qui commencent à se répondre.",
       "delay": 30,
       "next": "j3_04_choice_maya_signals"
     },
@@ -64,7 +64,7 @@
       "id": "j3_04_maya_entry_malaise_001",
       "type": "message",
       "sender": "maya",
-      "text": "j’ai respecté ce que tu m’as demandé hier.",
+      "text": "j’ai réussi à ne pas en faire un sujet de groupe.",
       "delay": 25,
       "next": "j3_04_maya_single_reply_malaise_001"
     },
@@ -94,7 +94,7 @@
       "id": "j3_04_maya_entry_malaise_002",
       "type": "message",
       "sender": "maya",
-      "text": "je n’ai pas transformé ton malaise en sujet de groupe.",
+      "text": "c’est-à-dire que j’ai été héroïque.",
       "delay": 30,
       "next": "j3_04_maya_entry_malaise_003"
     },
@@ -102,7 +102,7 @@
       "id": "j3_04_maya_entry_malaise_003",
       "type": "message",
       "sender": "maya",
-      "text": "mais ça veut pas dire que l’ambiance a arrêté d’exister.",
+      "text": "mais l’ambiance, elle, n’a pas signé ton accord de confidentialité.",
       "delay": 30,
       "next": "j3_04_maya_entry_malaise_004"
     },
@@ -172,7 +172,7 @@
       "id": "j3_04_maya_entry_discretion_001",
       "type": "message",
       "sender": "maya",
-      "text": "j’ai pensé à ce que tu m’as demandé.",
+      "text": "j’ai respecté ta demande. enfin, j’ai essayé.",
       "delay": 25,
       "next": "j3_04_maya_single_reply_discretion_001"
     },
@@ -202,7 +202,7 @@
       "id": "j3_04_maya_entry_discretion_002",
       "type": "message",
       "sender": "maya",
-      "text": "je n’ai pas envie de te mettre au pied du mur.",
+      "text": "je n’ai pas envie de te coincer.",
       "delay": 30,
       "next": "j3_04_maya_entry_discretion_003"
     },

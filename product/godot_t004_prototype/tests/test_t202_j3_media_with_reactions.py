@@ -51,13 +51,16 @@ def test_t202_sarah_media_inserted_with_reaction_chain() -> None:
     assert media["asset"] == SARAH_ASSET
     assert media["caption"] == "[photo du matin envoyée]"
     assert n["j3_01_sarah_response_actions_002"]["next"] == "j3_01_sarah_media_morning_trace_001"
-    assert media["next"] == "j3_01_sarah_response_actions_photo_001"
+    assert media["next"] == "j3_01_sarah_single_reply_photo_morning_001"
+    assert n["j3_01_sarah_single_reply_photo_morning_001"]["next"] == "j3_01_sarah_player_photo_morning_001"
+    assert n["j3_01_sarah_player_photo_morning_001"]["next"] == "j3_01_sarah_response_actions_photo_001"
     assert n["j3_01_sarah_response_actions_photo_001"]["type"] == "message"
-    assert n["j3_01_sarah_response_actions_photo_001"]["text"] == "C’est pas grand-chose."
+    assert n["j3_01_sarah_response_actions_photo_001"]["text"] == "Rien d’énorme."
     assert n["j3_01_sarah_response_actions_photo_001"]["next"] == "j3_01_sarah_response_actions_photo_002"
     assert n["j3_01_sarah_response_actions_photo_002"]["type"] == "message"
-    assert n["j3_01_sarah_response_actions_photo_002"]["text"] == "Mais c’est le genre de petit truc que je remarque maintenant."
-    assert n["j3_01_sarah_response_actions_photo_002"]["next"] == "j3_01_sarah_response_actions_003"
+    assert n["j3_01_sarah_response_actions_photo_002"]["text"] == "Juste ce genre de petit truc."
+    assert n["j3_01_sarah_response_actions_photo_002"]["next"] == "j3_01_sarah_response_actions_photo_003"
+    assert n["j3_01_sarah_response_actions_photo_003"]["next"] == "j3_01_sarah_response_actions_003"
 
 
 def test_t202_nico_media_inserted_with_reaction_chain() -> None:
@@ -69,13 +72,16 @@ def test_t202_nico_media_inserted_with_reaction_chain() -> None:
     assert media["asset"] == NICO_ASSET
     assert media["caption"] == "[photo de sortie envoyée]"
     assert n["j3_02_nico_response_life_teased_003"]["next"] == "j3_02_nico_media_social_life_001"
-    assert media["next"] == "j3_02_nico_response_life_photo_001"
+    assert media["next"] == "j3_02_nico_single_reply_life_photo_001"
+    assert n["j3_02_nico_single_reply_life_photo_001"]["next"] == "j3_02_nico_player_life_photo_001"
+    assert n["j3_02_nico_player_life_photo_001"]["next"] == "j3_02_nico_response_life_photo_001"
     assert n["j3_02_nico_response_life_photo_001"]["type"] == "message"
-    assert n["j3_02_nico_response_life_photo_001"]["text"] == "preuve que j’ai une vie. floue, certes."
+    assert n["j3_02_nico_response_life_photo_001"]["text"] == "ah."
     assert n["j3_02_nico_response_life_photo_001"]["next"] == "j3_02_nico_response_life_photo_002"
     assert n["j3_02_nico_response_life_photo_002"]["type"] == "message"
-    assert n["j3_02_nico_response_life_photo_002"]["text"] == "mais une vie quand même."
-    assert n["j3_02_nico_response_life_photo_002"]["next"] == "j3_02_nico_response_life_teased_004"
+    assert n["j3_02_nico_response_life_photo_002"]["text"] == "monsieur découvre que je peux être localisé ailleurs que dans tes problèmes."
+    assert n["j3_02_nico_response_life_photo_002"]["next"] == "j3_02_nico_response_life_photo_003"
+    assert n["j3_02_nico_response_life_photo_004"]["next"] == "j3_02_nico_response_life_teased_004"
 
 
 def test_t202_no_j3_media_added_to_camille_maya_or_ines() -> None:

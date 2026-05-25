@@ -10,7 +10,7 @@
       "id": "j3_05_ines_entry_careful_001",
       "type": "message",
       "sender": "ines",
-      "text": "j’ai repensé à ta phrase d’hier soir.",
+      "text": "j’ai écrit trois messages et j’en ai effacé deux.",
       "delay": 25,
       "next": "j3_05_ines_single_reply_careful_001"
     },
@@ -22,7 +22,7 @@
       "choices": [
         {
           "id": "j3_05_ines_single_reply_careful_001_option",
-          "text": "Laquelle ?",
+          "text": "Et celui-ci est resté ?",
           "next": "j3_05_ines_player_careful_001"
         }
       ],
@@ -32,7 +32,7 @@
       "id": "j3_05_ines_player_careful_001",
       "type": "message",
       "sender": "player",
-      "text": "Laquelle ?",
+      "text": "Et celui-ci est resté ?",
       "delay": 0,
       "next": "j3_05_ines_entry_careful_002"
     },
@@ -40,7 +40,7 @@
       "id": "j3_05_ines_entry_careful_002",
       "type": "message",
       "sender": "ines",
-      "text": "celle où tu disais que tu voulais me parler sans te cacher derrière moi.",
+      "text": "oui.",
       "delay": 30,
       "next": "j3_05_ines_entry_careful_003"
     },
@@ -48,7 +48,7 @@
       "id": "j3_05_ines_entry_careful_003",
       "type": "message",
       "sender": "ines",
-      "text": "je crois que c’est pour ça que je te réponds ce soir.",
+      "text": "parce que je crois que tu as essayé de me parler sans te cacher derrière moi.",
       "delay": 30,
       "next": "j3_05_ines_entry_careful_004"
     },
@@ -64,7 +64,7 @@
       "id": "j3_05_ines_entry_boundary_001",
       "type": "message",
       "sender": "ines",
-      "text": "j’ai aimé que tu poses une limite hier.",
+      "text": "ta limite m’est revenue ce soir.",
       "delay": 25,
       "next": "j3_05_ines_single_reply_boundary_001"
     },
@@ -102,7 +102,7 @@
       "id": "j3_05_ines_entry_boundary_003",
       "type": "message",
       "sender": "ines",
-      "text": "pas parce que ça crée de la distance.",
+      "text": "pas comme un mur.",
       "delay": 30,
       "next": "j3_05_ines_entry_boundary_004"
     },
@@ -110,7 +110,7 @@
       "id": "j3_05_ines_entry_boundary_004",
       "type": "message",
       "sender": "ines",
-      "text": "parce que ça évite de faire semblant qu’un silence doux suffit à tout régler.",
+      "text": "plutôt comme quelque chose qui évite de faire semblant.",
       "delay": 30,
       "next": "j3_05_choice_ines_evening"
     },
@@ -172,7 +172,7 @@
       "id": "j3_05_ines_entry_repair_001",
       "type": "message",
       "sender": "ines",
-      "text": "je crois que ta phrase d’hier m’a aidée.",
+      "text": "j’ai relu ton message sans savoir quoi en faire.",
       "delay": 25,
       "next": "j3_05_ines_single_reply_repair_001"
     },
@@ -184,7 +184,7 @@
       "choices": [
         {
           "id": "j3_05_ines_single_reply_repair_001_option",
-          "text": "Celle où je disais que je n’étais pas clair ?",
+          "text": "Lequel ?",
           "next": "j3_05_ines_player_repair_001"
         }
       ],
@@ -194,7 +194,7 @@
       "id": "j3_05_ines_player_repair_001",
       "type": "message",
       "sender": "player",
-      "text": "Celle où je disais que je n’étais pas clair ?",
+      "text": "Lequel ?",
       "delay": 0,
       "next": "j3_05_ines_entry_repair_002"
     },
@@ -202,7 +202,7 @@
       "id": "j3_05_ines_entry_repair_002",
       "type": "message",
       "sender": "ines",
-      "text": "oui.",
+      "text": "celui où tu disais que tu n’étais pas clair.",
       "delay": 30,
       "next": "j3_05_ines_entry_repair_003"
     },
@@ -210,7 +210,7 @@
       "id": "j3_05_ines_entry_repair_003",
       "type": "message",
       "sender": "ines",
-      "text": "je préfère quelqu’un qui admet qu’il ne sait pas faire.",
+      "text": "je crois que j’ai préféré ça à une phrase trop sûre.",
       "delay": 30,
       "next": "j3_05_ines_entry_repair_004"
     },

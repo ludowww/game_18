@@ -10,7 +10,7 @@
       "id": "j3_03_camille_entry_assumed_001",
       "type": "message",
       "sender": "camille",
-      "text": "Je pensais que ça me calmerait que tu ne fasses pas semblant.",
+      "text": "pause de trois minutes.",
       "delay": 25,
       "next": "j3_03_camille_single_reply_assumed_001"
     },
@@ -22,7 +22,7 @@
       "choices": [
         {
           "id": "j3_03_camille_single_reply_assumed_001_option",
-          "text": "Et ça t’a calmée ?",
+          "text": "Tu m’écris pendant ta pause ?",
           "next": "j3_03_camille_player_assumed_001"
         }
       ],
@@ -32,7 +32,7 @@
       "id": "j3_03_camille_player_assumed_001",
       "type": "message",
       "sender": "player",
-      "text": "Et ça t’a calmée ?",
+      "text": "Tu m’écris pendant ta pause ?",
       "delay": 0,
       "next": "j3_03_camille_entry_assumed_002"
     },
@@ -40,7 +40,7 @@
       "id": "j3_03_camille_entry_assumed_002",
       "type": "message",
       "sender": "camille",
-      "text": "Pas vraiment.",
+      "text": "oui.",
       "delay": 30,
       "next": "j3_03_camille_entry_assumed_003"
     },
@@ -48,7 +48,7 @@
       "id": "j3_03_camille_entry_assumed_003",
       "type": "message",
       "sender": "camille",
-      "text": "Mais au moins, j’avais pas l’impression d’être la seule à avoir senti quelque chose.",
+      "text": "j’en utilise une pour te dire que ça ne m’a pas calmée.",
       "delay": 30,
       "next": "j3_03_camille_entry_assumed_004"
     },
@@ -56,7 +56,7 @@
       "id": "j3_03_camille_entry_assumed_004",
       "type": "message",
       "sender": "camille",
-      "text": "C’est déjà quelque chose. Pas forcément simple, mais quelque chose.",
+      "text": "mais au moins, j’ai pas l’impression d’être la seule à avoir senti quelque chose.",
       "delay": 30,
       "next": "j3_03_choice_camille_line"
     },
@@ -64,7 +64,7 @@
       "id": "j3_03_camille_entry_boundary_001",
       "type": "message",
       "sender": "camille",
-      "text": "J’ai repensé à ta limite.",
+      "text": "ta limite tient toujours ?",
       "delay": 25,
       "next": "j3_03_camille_single_reply_boundary_001"
     },
@@ -76,7 +76,7 @@
       "choices": [
         {
           "id": "j3_03_camille_single_reply_boundary_001_option",
-          "text": "Elle était trop dure ?",
+          "text": "Tu me demandes ça comme ça ?",
           "next": "j3_03_camille_player_boundary_001"
         }
       ],
@@ -86,7 +86,7 @@
       "id": "j3_03_camille_player_boundary_001",
       "type": "message",
       "sender": "player",
-      "text": "Elle était trop dure ?",
+      "text": "Tu me demandes ça comme ça ?",
       "delay": 0,
       "next": "j3_03_camille_entry_boundary_002"
     },
@@ -94,7 +94,7 @@
       "id": "j3_03_camille_entry_boundary_002",
       "type": "message",
       "sender": "camille",
-      "text": "Non.",
+      "text": "oui.",
       "delay": 30,
       "next": "j3_03_camille_entry_boundary_003"
     },
@@ -102,7 +102,7 @@
       "id": "j3_03_camille_entry_boundary_003",
       "type": "message",
       "sender": "camille",
-      "text": "C’est même peut-être pour ça que je l’ai écoutée.",
+      "text": "je suis censée bosser, donc évidemment je t’écris.",
       "delay": 30,
       "next": "j3_03_camille_entry_boundary_004"
     },
@@ -110,7 +110,7 @@
       "id": "j3_03_camille_entry_boundary_004",
       "type": "message",
       "sender": "camille",
-      "text": "Mais une limite, ça peut protéger. Ou juste servir à ne plus regarder le problème.",
+      "text": "et je veux savoir si c’était une vraie limite, ou juste une façon propre de fermer la porte.",
       "delay": 30,
       "next": "j3_03_choice_camille_line"
     },
@@ -172,7 +172,7 @@
       "id": "j3_03_camille_entry_refuge_001",
       "type": "message",
       "sender": "camille",
-      "text": "J’ai repensé à ton histoire de respiration.",
+      "text": "je suis repassée devant le lieu tout à l’heure.",
       "delay": 25,
       "next": "j3_03_camille_single_reply_refuge_001"
     },
@@ -184,7 +184,7 @@
       "choices": [
         {
           "id": "j3_03_camille_single_reply_refuge_001_option",
-          "text": "Je l’ai mal dit.",
+          "text": "Et ?",
           "next": "j3_03_camille_player_refuge_001"
         }
       ],
@@ -194,7 +194,7 @@
       "id": "j3_03_camille_player_refuge_001",
       "type": "message",
       "sender": "player",
-      "text": "Je l’ai mal dit.",
+      "text": "Et ?",
       "delay": 0,
       "next": "j3_03_camille_entry_refuge_002"
     },
@@ -202,7 +202,7 @@
       "id": "j3_03_camille_entry_refuge_002",
       "type": "message",
       "sender": "camille",
-      "text": "Peut-être.",
+      "text": "et j’ai repensé à ton histoire de respiration.",
       "delay": 30,
       "next": "j3_03_camille_entry_refuge_003"
     },
@@ -210,7 +210,7 @@
       "id": "j3_03_camille_entry_refuge_003",
       "type": "message",
       "sender": "camille",
-      "text": "Ou peut-être que tu l’as dit exactement comme tu le ressentais.",
+      "text": "je me demande encore si tu cherchais de l’air.",
       "delay": 30,
       "next": "j3_03_camille_entry_refuge_004"
     },
@@ -218,7 +218,7 @@
       "id": "j3_03_camille_entry_refuge_004",
       "type": "message",
       "sender": "camille",
-      "text": "C’est ça qui m’inquiète un peu.",
+      "text": "ou juste une sortie.",
       "delay": 30,
       "next": "j3_03_choice_camille_line"
     },
@@ -226,7 +226,7 @@
       "id": "j3_03_camille_001",
       "type": "message",
       "sender": "camille",
-      "text": "Je ne sais pas si je devrais rouvrir le sujet du dehors.",
+      "text": "je suis censée bosser, donc évidemment je t’écris.",
       "delay": 25,
       "next": "j3_03_camille_single_reply_default_001"
     },
@@ -238,7 +238,7 @@
       "choices": [
         {
           "id": "j3_03_camille_single_reply_default_001_option",
-          "text": "Pourquoi tu le fais ?",
+          "text": "Évidemment.",
           "next": "j3_03_camille_player_default_001"
         }
       ],
@@ -248,7 +248,7 @@
       "id": "j3_03_camille_player_default_001",
       "type": "message",
       "sender": "player",
-      "text": "Pourquoi tu le fais ?",
+      "text": "Évidemment.",
       "delay": 0,
       "next": "j3_03_camille_002"
     },
@@ -256,7 +256,7 @@
       "id": "j3_03_camille_002",
       "type": "message",
       "sender": "camille",
-      "text": "Parce qu’il est déjà ouvert.",
+      "text": "oui.",
       "delay": 30,
       "next": "j3_03_camille_003"
     },
@@ -264,7 +264,7 @@
       "id": "j3_03_camille_003",
       "type": "message",
       "sender": "camille",
-      "text": "Même quand on n’en parle pas.",
+      "text": "le sujet du dehors est déjà ouvert, de toute façon.",
       "delay": 30,
       "next": "j3_03_camille_004"
     },
@@ -272,7 +272,7 @@
       "id": "j3_03_camille_004",
       "type": "message",
       "sender": "camille",
-      "text": "Et je n’aime pas laisser les choses ouvertes quand quelqu’un fait semblant de ne pas voir la porte.",
+      "text": "même quand on fait semblant de ne pas regarder la porte.",
       "delay": 30,
       "next": "j3_03_choice_camille_line"
     },
