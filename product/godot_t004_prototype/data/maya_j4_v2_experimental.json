@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1-j4-v2-experimental",
+  "conversation_id": "maya_j4_v2",
+  "day": 4,
+  "contact_id": "maya",
+  "start_node": "j4_05_maya_001",
+  "experimental": true,
+  "nodes": [
+    {
+      "id": "j4_05_maya_001",
+      "type": "message",
+      "sender": "maya",
+      "text": "[J4 placeholder Maya social]",
+      "delay": 25,
+      "next": "j4_05_end"
+    },
+    {
+      "id": "j4_05_end",
+      "type": "end",
+      "sender": "system",
+      "text": "[Fin placeholder J4]",
+      "delay": 0
+    }
+  ],
+  "entry_variants": [
+    {
+      "id": "default",
+      "conditions": {},
+      "start_node": "j4_05_maya_001"
+    }
+  ]
+}

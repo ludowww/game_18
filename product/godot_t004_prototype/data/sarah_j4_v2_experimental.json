@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1-j4-v2-experimental",
+  "conversation_id": "sarah_j4_v2",
+  "day": 4,
+  "contact_id": "sarah",
+  "start_node": "j4_01_sarah_001",
+  "experimental": true,
+  "nodes": [
+    {
+      "id": "j4_01_sarah_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "[J4 placeholder Sarah matin]",
+      "delay": 25,
+      "next": "j4_01_end"
+    },
+    {
+      "id": "j4_01_end",
+      "type": "end",
+      "sender": "system",
+      "text": "[Fin placeholder J4]",
+      "delay": 0
+    }
+  ],
+  "entry_variants": [
+    {
+      "id": "default",
+      "conditions": {},
+      "start_node": "j4_01_sarah_001"
+    }
+  ]
+}

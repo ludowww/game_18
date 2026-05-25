@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1-j4-v2-experimental",
+  "conversation_id": "nico_j4_v2",
+  "day": 4,
+  "contact_id": "nico",
+  "start_node": "j4_02_nico_001",
+  "experimental": true,
+  "nodes": [
+    {
+      "id": "j4_02_nico_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "[J4 placeholder Nico consultation]",
+      "delay": 25,
+      "next": "j4_02_end"
+    },
+    {
+      "id": "j4_02_end",
+      "type": "end",
+      "sender": "system",
+      "text": "[Fin placeholder J4]",
+      "delay": 0
+    }
+  ],
+  "entry_variants": [
+    {
+      "id": "default",
+      "conditions": {},
+      "start_node": "j4_02_nico_001"
+    }
+  ]
+}

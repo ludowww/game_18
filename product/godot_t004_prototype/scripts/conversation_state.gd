@@ -355,6 +355,78 @@ func _default_conversations() -> Dictionary:
 			true,
 			"j3_05_ines_001"
 		),
+		"sarah_j4_v2": _new_conversation_state(
+			"sarah_j4_v2",
+			"sarah",
+			"Sarah",
+			"J4 V2 — Matin",
+			"res://data/sarah_j4_v2_experimental.json",
+			4,
+			false,
+			false,
+			true,
+			"j4_01_sarah_001"
+		),
+		"nico_j4_v2": _new_conversation_state(
+			"nico_j4_v2",
+			"nico",
+			"Nico",
+			"J4 V2 — Consultation",
+			"res://data/nico_j4_v2_experimental.json",
+			4,
+			false,
+			false,
+			true,
+			"j4_02_nico_001"
+		),
+		"sarah_j4_followup_v2": _new_conversation_state(
+			"sarah_j4_followup_v2",
+			"sarah",
+			"Sarah",
+			"J4 V2 — Retour",
+			"res://data/sarah_j4_followup_v2_experimental.json",
+			4,
+			false,
+			false,
+			true,
+			"j4_03_sarah_followup_001"
+		),
+		"camille_j4_v2": _new_conversation_state(
+			"camille_j4_v2",
+			"camille",
+			"Camille",
+			"J4 V2 — Pause",
+			"res://data/camille_j4_v2_experimental.json",
+			4,
+			false,
+			false,
+			true,
+			"j4_04_camille_001"
+		),
+		"maya_j4_v2": _new_conversation_state(
+			"maya_j4_v2",
+			"maya",
+			"Maya",
+			"J4 V2 — Ambiance",
+			"res://data/maya_j4_v2_experimental.json",
+			4,
+			false,
+			false,
+			true,
+			"j4_05_maya_001"
+		),
+		"ines_j4_v2": _new_conversation_state(
+			"ines_j4_v2",
+			"ines",
+			"Inès",
+			"J4 V2 — Soir",
+			"res://data/ines_j4_v2_experimental.json",
+			4,
+			false,
+			false,
+			true,
+			"j4_06_ines_001"
+		),
 		"camille_j2": _new_conversation_state(
 			"camille_j2",
 			"camille",
@@ -596,7 +668,7 @@ func _default_conversation_blocks() -> Dictionary:
 	return blocks
 
 func conversation_ids() -> Array:
-	return ["camille", "sarah", "j1_00_reveil_v2", "sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2", "sarah_j2_v2", "nico_j2_v2", "camille_j2_v2", "maya_j2_v2", "ines_j2_v2", "sarah_j3_v2", "nico_j3_v2", "camille_j3_v2", "maya_j3_v2", "ines_j3_v2", "camille_j2", "sarah_j2", "camille_j3", "sarah_j3", "camille_j4", "maya_j4", "ines_j4", "nico_j4", "sarah_j5", "camille_j5", "nico_j5", "maya_j5", "sarah_j6", "camille_j6", "nico_j6", "maya_j6", "ines_j6", "finales_mvp"]
+	return ["camille", "sarah", "j1_00_reveil_v2", "sarah_j1_v2", "camille_j1_v2", "nico_j1_v2", "maya_j1_v2", "ines_j1_v2", "sarah_j2_v2", "nico_j2_v2", "camille_j2_v2", "maya_j2_v2", "ines_j2_v2", "sarah_j3_v2", "nico_j3_v2", "camille_j3_v2", "maya_j3_v2", "ines_j3_v2", "sarah_j4_v2", "nico_j4_v2", "sarah_j4_followup_v2", "camille_j4_v2", "maya_j4_v2", "ines_j4_v2", "camille_j2", "sarah_j2", "camille_j3", "sarah_j3", "camille_j4", "maya_j4", "ines_j4", "nico_j4", "sarah_j5", "camille_j5", "nico_j5", "maya_j5", "sarah_j6", "camille_j6", "nico_j6", "maya_j6", "ines_j6", "finales_mvp"]
 
 func _conversation_allowed_in_current_mode(id: String, state: Dictionary) -> bool:
 	if bool(state.get("experimental", false)) and not experimental_j1_v2_enabled:
@@ -608,6 +680,8 @@ func _conversation_allowed_in_current_mode(id: String, state: Dictionary) -> boo
 		if day == 2:
 			return bool(state.get("experimental", false))
 		if day == 3:
+			return bool(state.get("experimental", false))
+		if day == 4:
 			return bool(state.get("experimental", false))
 	return true
 
@@ -1155,6 +1229,7 @@ func mark_current_done() -> void:
 	_unlock_j1_v2_breathing_scenes_if_ready()
 	_repair_j2_v2_progression_unlocks()
 	_repair_j3_v2_progression_unlocks()
+	_repair_j4_v2_progression_unlocks()
 	refresh_day_progression()
 	save_progression()
 
@@ -1249,6 +1324,7 @@ func refresh_day_progression() -> void:
 	# MVP actuel : transitions explicites J1 → J2 → J3 → J4 → J5 → J6, sans calendrier ni scheduler.
 	_repair_j2_v2_progression_unlocks()
 	_repair_j3_v2_progression_unlocks()
+	_repair_j4_v2_progression_unlocks()
 	if current_day >= 6:
 		day_transition_available = false
 		return
@@ -1292,6 +1368,14 @@ func _required_conversations_for_current_mode(day: int) -> Array:
 			"nico_j3_v2",
 			"camille_j3_v2",
 			"maya_j3_v2"
+		]
+	if experimental_j1_v2_enabled and day == 4:
+		return [
+			"sarah_j4_v2",
+			"nico_j4_v2",
+			"sarah_j4_followup_v2",
+			"camille_j4_v2",
+			"maya_j4_v2"
 		]
 	return REQUIRED_CONVERSATIONS_BY_DAY.get(day, [])
 
@@ -1354,6 +1438,8 @@ func _advance_day_unchecked() -> void:
 		_unlock_j2_v2_initial_conversations()
 	if experimental_j1_v2_enabled and current_day == 3:
 		_unlock_j3_v2_initial_conversations()
+	if experimental_j1_v2_enabled and current_day == 4:
+		_unlock_j4_v2_initial_conversations()
 	day_transition_available = false
 	save_progression()
 
@@ -1372,6 +1458,13 @@ func _unlock_j3_v2_initial_conversations() -> void:
 	if conversations.has("nico_j3_v2") and not bool(conversations["nico_j3_v2"].get("done", false)):
 		conversations["nico_j3_v2"]["available"] = true
 		mark_conversation_new("nico_j3_v2", "Nico répond plus tard que d’habitude.")
+
+func _unlock_j4_v2_initial_conversations() -> void:
+	if not experimental_j1_v2_enabled or current_day != 4:
+		return
+	if conversations.has("sarah_j4_v2") and not bool(conversations["sarah_j4_v2"].get("done", false)):
+		conversations["sarah_j4_v2"]["available"] = true
+		mark_conversation_new("sarah_j4_v2", "Sarah a remarqué un détail ce matin.")
 
 func _unlock_j2_v2_after_morning_if_ready() -> void:
 	_repair_j2_v2_progression_unlocks()
@@ -1415,6 +1508,30 @@ func _repair_j3_v2_progression_unlocks() -> void:
 		if conversations.has("ines_j3_v2") and not bool(conversations["ines_j3_v2"].get("done", false)) and not bool(conversations["ines_j3_v2"].get("available", false)):
 			conversations["ines_j3_v2"]["available"] = true
 			mark_conversation_new("ines_j3_v2", "Inès écrit en soirée.")
+
+func _repair_j4_v2_progression_unlocks() -> void:
+	if not experimental_j1_v2_enabled or current_day != 4:
+		return
+	if conversations.has("sarah_j4_v2") and bool(conversations["sarah_j4_v2"].get("done", false)):
+		if conversations.has("nico_j4_v2") and not bool(conversations["nico_j4_v2"].get("done", false)) and not bool(conversations["nico_j4_v2"].get("available", false)):
+			conversations["nico_j4_v2"]["available"] = true
+			mark_conversation_new("nico_j4_v2", "Nico répond quand il peut.")
+	if conversations.has("nico_j4_v2") and bool(conversations["nico_j4_v2"].get("done", false)):
+		if conversations.has("sarah_j4_followup_v2") and not bool(conversations["sarah_j4_followup_v2"].get("done", false)) and not bool(conversations["sarah_j4_followup_v2"].get("available", false)):
+			conversations["sarah_j4_followup_v2"]["available"] = true
+			mark_conversation_new("sarah_j4_followup_v2", "Sarah attend toujours ta réponse.")
+	if conversations.has("sarah_j4_followup_v2") and bool(conversations["sarah_j4_followup_v2"].get("done", false)):
+		if conversations.has("camille_j4_v2") and not bool(conversations["camille_j4_v2"].get("done", false)) and not bool(conversations["camille_j4_v2"].get("available", false)):
+			conversations["camille_j4_v2"]["available"] = true
+			mark_conversation_new("camille_j4_v2", "Camille écrit pendant sa pause.")
+	if conversations.has("camille_j4_v2") and bool(conversations["camille_j4_v2"].get("done", false)):
+		if conversations.has("maya_j4_v2") and not bool(conversations["maya_j4_v2"].get("done", false)) and not bool(conversations["maya_j4_v2"].get("available", false)):
+			conversations["maya_j4_v2"]["available"] = true
+			mark_conversation_new("maya_j4_v2", "Maya revient sur l’ambiance.")
+	if conversations.has("maya_j4_v2") and bool(conversations["maya_j4_v2"].get("done", false)):
+		if conversations.has("ines_j4_v2") and not bool(conversations["ines_j4_v2"].get("done", false)) and not bool(conversations["ines_j4_v2"].get("available", false)):
+			conversations["ines_j4_v2"]["available"] = true
+			mark_conversation_new("ines_j4_v2", "Inès écrit tard.")
 
 func handle_dynamic_notification(source_conversation_id: String, node_id: String) -> void:
 	var event_id: String = source_conversation_id + ":" + node_id
