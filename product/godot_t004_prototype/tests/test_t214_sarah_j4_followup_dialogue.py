@@ -25,7 +25,6 @@ CENTRAL_CHOICES = [
     "j4_03_sarah_defensive_followup",
 ]
 OTHER_STILL_SKELETON_J4 = [
-    "camille_j4_v2_experimental.json",
     "maya_j4_v2_experimental.json",
     "ines_j4_v2_experimental.json",
 ]

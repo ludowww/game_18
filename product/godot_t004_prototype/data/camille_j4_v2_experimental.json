@@ -7,22 +7,627 @@
   "experimental": true,
   "nodes": [
     {
+      "id": "j4_04_camille_entry_boundary_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "pause de trois minutes.",
+      "delay": 25,
+      "next": "j4_04_camille_single_reply_boundary_001"
+    },
+    {
+      "id": "j4_04_camille_single_reply_boundary_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_04_camille_single_reply_boundary_001_option",
+          "text": "Tu comptes les minutes ?",
+          "next": "j4_04_camille_player_boundary_001"
+        }
+      ],
+      "next": "j4_04_camille_player_boundary_001"
+    },
+    {
+      "id": "j4_04_camille_player_boundary_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Tu comptes les minutes ?",
+      "delay": 0,
+      "next": "j4_04_camille_entry_boundary_002"
+    },
+    {
+      "id": "j4_04_camille_entry_boundary_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "aujourd’hui, oui.",
+      "delay": 30,
+      "next": "j4_04_camille_entry_boundary_003"
+    },
+    {
+      "id": "j4_04_camille_entry_boundary_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "parce que si je ne les compte pas, je vais t’écrire plus longtemps que prévu.",
+      "delay": 30,
+      "next": "j4_04_camille_entry_boundary_004"
+    },
+    {
+      "id": "j4_04_camille_entry_boundary_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "et je ne sais pas encore si c’est une bonne idée.",
+      "delay": 30,
+      "next": "j4_04_choice_camille_pause"
+    },
+    {
+      "id": "j4_04_camille_entry_tension_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "je suis censée bosser.",
+      "delay": 25,
+      "next": "j4_04_camille_single_reply_tension_001"
+    },
+    {
+      "id": "j4_04_camille_single_reply_tension_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_04_camille_single_reply_tension_001_option",
+          "text": "Et pourtant tu m’écris.",
+          "next": "j4_04_camille_player_tension_001"
+        }
+      ],
+      "next": "j4_04_camille_player_tension_001"
+    },
+    {
+      "id": "j4_04_camille_player_tension_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Et pourtant tu m’écris.",
+      "delay": 0,
+      "next": "j4_04_camille_entry_tension_002"
+    },
+    {
+      "id": "j4_04_camille_entry_tension_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "oui.",
+      "delay": 30,
+      "next": "j4_04_camille_entry_tension_003"
+    },
+    {
+      "id": "j4_04_camille_entry_tension_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "c’est le problème.",
+      "delay": 30,
+      "next": "j4_04_camille_entry_tension_004"
+    },
+    {
+      "id": "j4_04_camille_entry_tension_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "quand une pause commence par ton prénom dans ma tête, elle devient moins reposante.",
+      "delay": 30,
+      "next": "j4_04_choice_camille_pause"
+    },
+    {
+      "id": "j4_04_camille_entry_pressure_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "je vais être directe, parce que j’ai pas beaucoup de temps.",
+      "delay": 25,
+      "next": "j4_04_camille_single_reply_pressure_001"
+    },
+    {
+      "id": "j4_04_camille_single_reply_pressure_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_04_camille_single_reply_pressure_001_option",
+          "text": "Je t’écoute.",
+          "next": "j4_04_camille_player_pressure_001"
+        }
+      ],
+      "next": "j4_04_camille_player_pressure_001"
+    },
+    {
+      "id": "j4_04_camille_player_pressure_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Je t’écoute.",
+      "delay": 0,
+      "next": "j4_04_camille_entry_pressure_002"
+    },
+    {
+      "id": "j4_04_camille_entry_pressure_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "quand tu veux aller trop vite, je le sens.",
+      "delay": 30,
+      "next": "j4_04_camille_entry_pressure_003"
+    },
+    {
+      "id": "j4_04_camille_entry_pressure_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "et ça me donne envie de reculer, même quand une partie de moi n’a pas envie de reculer.",
+      "delay": 30,
+      "next": "j4_04_camille_entry_pressure_004"
+    },
+    {
+      "id": "j4_04_camille_entry_pressure_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "donc fais attention à ce que tu demandes.",
+      "delay": 30,
+      "next": "j4_04_choice_camille_pause"
+    },
+    {
+      "id": "j4_04_camille_entry_minimized_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "j’ai deux minutes.",
+      "delay": 25,
+      "next": "j4_04_camille_single_reply_minimized_001"
+    },
+    {
+      "id": "j4_04_camille_single_reply_minimized_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_04_camille_single_reply_minimized_001_option",
+          "text": "Seulement deux ?",
+          "next": "j4_04_camille_player_minimized_001"
+        }
+      ],
+      "next": "j4_04_camille_player_minimized_001"
+    },
+    {
+      "id": "j4_04_camille_player_minimized_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Seulement deux ?",
+      "delay": 0,
+      "next": "j4_04_camille_entry_minimized_002"
+    },
+    {
+      "id": "j4_04_camille_entry_minimized_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "oui.",
+      "delay": 30,
+      "next": "j4_04_camille_entry_minimized_003"
+    },
+    {
+      "id": "j4_04_camille_entry_minimized_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "et je ne suis même pas sûre de vouloir te les donner.",
+      "delay": 30,
+      "next": "j4_04_camille_entry_minimized_004"
+    },
+    {
+      "id": "j4_04_camille_entry_minimized_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "mais visiblement, je le fais quand même.",
+      "delay": 30,
+      "next": "j4_04_choice_camille_pause"
+    },
+    {
       "id": "j4_04_camille_001",
       "type": "message",
       "sender": "camille",
-      "text": "[J4 placeholder Camille pause]",
+      "text": "pause café.",
       "delay": 25,
-      "next": "j4_04_end"
+      "next": "j4_04_camille_single_reply_default_001"
     },
     {
-      "id": "j4_04_end",
+      "id": "j4_04_camille_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_04_camille_single_reply_default_001_option",
+          "text": "Ça ressemble à un piège.",
+          "next": "j4_04_camille_player_default_001"
+        }
+      ],
+      "next": "j4_04_camille_player_default_001"
+    },
+    {
+      "id": "j4_04_camille_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Ça ressemble à un piège.",
+      "delay": 0,
+      "next": "j4_04_camille_002"
+    },
+    {
+      "id": "j4_04_camille_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "non.",
+      "delay": 30,
+      "next": "j4_04_camille_003"
+    },
+    {
+      "id": "j4_04_camille_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "un piège demanderait plus de préparation.",
+      "delay": 30,
+      "next": "j4_04_camille_004"
+    },
+    {
+      "id": "j4_04_camille_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "là, c’est juste moi qui t’écris alors que je devrais faire autre chose.",
+      "delay": 30,
+      "next": "j4_04_choice_camille_pause"
+    },
+    {
+      "id": "j4_04_choice_camille_pause",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que répondre à Camille ?",
+      "choices": [
+        {
+          "id": "j4_04_camille_tease_lightly",
+          "text": "Trois minutes, c’est court. Je peux au moins essayer de ne pas les gâcher.",
+          "next": "j4_04_camille_player_tease_lightly",
+          "effects": {
+            "tension_camille": 1,
+            "respect_camille": 1,
+            "flags": [
+              "j4_camille_teased_during_work",
+              "j4_camille_work_pause"
+            ]
+          }
+        },
+        {
+          "id": "j4_04_camille_respect_pause",
+          "text": "Je ne veux pas te voler ta pause. Si tu dois retourner bosser, on peut s’arrêter là.",
+          "next": "j4_04_camille_player_respect_pause",
+          "effects": {
+            "respect_camille": 2,
+            "pression_camille": -1,
+            "coherence": 1,
+            "flags": [
+              "j4_camille_boundary_respected",
+              "j4_camille_pause_cut_short"
+            ]
+          }
+        },
+        {
+          "id": "j4_04_camille_name_trouble",
+          "text": "Je crois que le problème, c’est que même une pause de trois minutes avec toi peut devenir autre chose.",
+          "next": "j4_04_camille_player_name_trouble",
+          "effects": {
+            "tension_camille": 2,
+            "pression_camille": 1,
+            "risque_exposition": 1,
+            "flags": [
+              "j4_camille_trouble_named",
+              "j4_camille_work_pause"
+            ]
+          }
+        },
+        {
+          "id": "j4_04_camille_push_too_much",
+          "text": "Peut-être qu’on devrait arrêter de faire semblant que ce n’est qu’une pause.",
+          "next": "j4_04_camille_player_push_too_much",
+          "effects": {
+            "pression_camille": 2,
+            "respect_camille": -1,
+            "risque_exposition": 1,
+            "flags": [
+              "j4_camille_pressure_too_high",
+              "j4_camille_limit_tested"
+            ]
+          }
+        },
+        {
+          "id": "j4_04_camille_cut_short",
+          "text": "Je préfère qu’on ne laisse pas cette pause devenir un endroit où je mélange tout.",
+          "next": "j4_04_camille_player_cut_short",
+          "effects": {
+            "respect_camille": 1,
+            "tension_camille": -1,
+            "coherence": 1,
+            "flags": [
+              "j4_camille_pause_cut_short",
+              "j4_camille_boundary_respected"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j4_04_camille_player_tease_lightly",
+      "type": "message",
+      "sender": "player",
+      "text": "Trois minutes, c’est court. Je peux au moins essayer de ne pas les gâcher.",
+      "delay": 0,
+      "next": "j4_04_camille_response_tease_001"
+    },
+    {
+      "id": "j4_04_camille_response_tease_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "bonne réponse.",
+      "delay": 30,
+      "next": "j4_04_camille_response_tease_002"
+    },
+    {
+      "id": "j4_04_camille_response_tease_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "pas parfaite.",
+      "delay": 30,
+      "next": "j4_04_camille_response_tease_003"
+    },
+    {
+      "id": "j4_04_camille_response_tease_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "mais assez prudente pour que je ne ferme pas l’écran tout de suite.",
+      "delay": 30,
+      "next": "j4_04_camille_response_tease_004"
+    },
+    {
+      "id": "j4_04_camille_response_tease_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "il te reste environ deux minutes trente.",
+      "delay": 30,
+      "next": "j4_04_end_camille_tease"
+    },
+    {
+      "id": "j4_04_end_camille_tease",
       "type": "end",
       "sender": "system",
-      "text": "[Fin placeholder J4]",
+      "text": "Camille accepte la taquinerie. La tension reste légère, mais présente.",
+      "delay": 0
+    },
+    {
+      "id": "j4_04_camille_player_respect_pause",
+      "type": "message",
+      "sender": "player",
+      "text": "Je ne veux pas te voler ta pause. Si tu dois retourner bosser, on peut s’arrêter là.",
+      "delay": 0,
+      "next": "j4_04_camille_response_respect_001"
+    },
+    {
+      "id": "j4_04_camille_response_respect_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "tu vois, c’est ça qui est pénible.",
+      "delay": 30,
+      "next": "j4_04_camille_response_respect_002"
+    },
+    {
+      "id": "j4_04_camille_response_respect_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "quand tu respectes la limite, ça me donne moins envie de la défendre.",
+      "delay": 30,
+      "next": "j4_04_camille_response_respect_003"
+    },
+    {
+      "id": "j4_04_camille_response_respect_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "je vais retourner bosser.",
+      "delay": 30,
+      "next": "j4_04_camille_response_respect_004"
+    },
+    {
+      "id": "j4_04_camille_response_respect_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "mais je garde cette phrase en tête.",
+      "delay": 30,
+      "next": "j4_04_end_camille_respect"
+    },
+    {
+      "id": "j4_04_end_camille_respect",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille apprécie que la limite soit respectée. La tension baisse, mais la confiance augmente.",
+      "delay": 0
+    },
+    {
+      "id": "j4_04_camille_player_name_trouble",
+      "type": "message",
+      "sender": "player",
+      "text": "Je crois que le problème, c’est que même une pause de trois minutes avec toi peut devenir autre chose.",
+      "delay": 0,
+      "next": "j4_04_camille_response_trouble_001"
+    },
+    {
+      "id": "j4_04_camille_response_trouble_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "oui.",
+      "delay": 30,
+      "next": "j4_04_camille_response_trouble_002"
+    },
+    {
+      "id": "j4_04_camille_response_trouble_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "et c’est exactement pour ça que je compte les minutes.",
+      "delay": 30,
+      "next": "j4_04_camille_response_trouble_003"
+    },
+    {
+      "id": "j4_04_camille_response_trouble_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "parce que si je fais semblant que ça ne devient rien, je mens.",
+      "delay": 30,
+      "next": "j4_04_camille_response_trouble_004"
+    },
+    {
+      "id": "j4_04_camille_response_trouble_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "et si je fais semblant que ça ne me plaît pas un peu, je mens aussi.",
+      "delay": 30,
+      "next": "j4_04_end_camille_trouble"
+    },
+    {
+      "id": "j4_04_end_camille_trouble",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille reconnaît le trouble, mais la pression augmente avec lui.",
+      "delay": 0
+    },
+    {
+      "id": "j4_04_camille_player_push_too_much",
+      "type": "message",
+      "sender": "player",
+      "text": "Peut-être qu’on devrait arrêter de faire semblant que ce n’est qu’une pause.",
+      "delay": 0,
+      "next": "j4_04_camille_response_pressure_001"
+    },
+    {
+      "id": "j4_04_camille_response_pressure_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "non.",
+      "delay": 30,
+      "next": "j4_04_camille_response_pressure_002"
+    },
+    {
+      "id": "j4_04_camille_response_pressure_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "pas comme ça.",
+      "delay": 30,
+      "next": "j4_04_camille_response_pressure_003"
+    },
+    {
+      "id": "j4_04_camille_response_pressure_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "tu vois, c’est précisément le genre de phrase qui me donne envie de ranger mon téléphone.",
+      "delay": 30,
+      "next": "j4_04_camille_response_pressure_004"
+    },
+    {
+      "id": "j4_04_camille_response_pressure_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "pas parce qu’elle ne touche rien. parce qu’elle pousse trop.",
+      "delay": 30,
+      "next": "j4_04_end_camille_pressure"
+    },
+    {
+      "id": "j4_04_end_camille_pressure",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille recule. La tension existe, mais la pression devient trop forte.",
+      "delay": 0
+    },
+    {
+      "id": "j4_04_camille_player_cut_short",
+      "type": "message",
+      "sender": "player",
+      "text": "Je préfère qu’on ne laisse pas cette pause devenir un endroit où je mélange tout.",
+      "delay": 0,
+      "next": "j4_04_camille_response_cut_short_001"
+    },
+    {
+      "id": "j4_04_camille_response_cut_short_001",
+      "type": "message",
+      "sender": "camille",
+      "text": "d’accord.",
+      "delay": 30,
+      "next": "j4_04_camille_response_cut_short_002"
+    },
+    {
+      "id": "j4_04_camille_response_cut_short_002",
+      "type": "message",
+      "sender": "camille",
+      "text": "je ne vais pas faire semblant que ça ne me frustre pas.",
+      "delay": 30,
+      "next": "j4_04_camille_response_cut_short_003"
+    },
+    {
+      "id": "j4_04_camille_response_cut_short_003",
+      "type": "message",
+      "sender": "camille",
+      "text": "mais je préfère une frustration propre à une ambiguïté qui salit tout.",
+      "delay": 30,
+      "next": "j4_04_camille_response_cut_short_004"
+    },
+    {
+      "id": "j4_04_camille_response_cut_short_004",
+      "type": "message",
+      "sender": "camille",
+      "text": "retour au travail, donc.",
+      "delay": 30,
+      "next": "j4_04_end_camille_cut_short"
+    },
+    {
+      "id": "j4_04_end_camille_cut_short",
+      "type": "end",
+      "sender": "system",
+      "text": "Camille accepte la coupure propre. La tension reste contenue.",
       "delay": 0
     }
   ],
   "entry_variants": [
+    {
+      "id": "after_boundary_respected",
+      "conditions": {
+        "flags_any": [
+          "j3_camille_boundary_kept",
+          "j3_camille_confusion_not_shifted"
+        ]
+      },
+      "start_node": "j4_04_camille_entry_boundary_001"
+    },
+    {
+      "id": "after_tension_reopened",
+      "conditions": {
+        "flags": [
+          "j3_camille_tension_reopened"
+        ]
+      },
+      "start_node": "j4_04_camille_entry_tension_001"
+    },
+    {
+      "id": "after_pressure_high",
+      "conditions": {
+        "flags": [
+          "j3_camille_pressure_rises"
+        ]
+      },
+      "start_node": "j4_04_camille_entry_pressure_001"
+    },
+    {
+      "id": "after_minimized",
+      "conditions": {
+        "flags_any": [
+          "j3_camille_minimized_again",
+          "j3_camille_closes_badly"
+        ]
+      },
+      "start_node": "j4_04_camille_entry_minimized_001"
+    },
     {
       "id": "default",
       "conditions": {},
