@@ -94,6 +94,9 @@ def test_t211_j4_json_skeletons_exist_and_are_valid() -> None:
         if conversation_id == "sarah_j4_v2":
             assert "[J4 placeholder Sarah matin]" not in json.dumps(data, ensure_ascii=False)
             assert "j4_01_choice_sarah_morning_detail" in nodes
+        elif conversation_id == "nico_j4_v2":
+            assert "[J4 placeholder Nico consultation]" not in json.dumps(data, ensure_ascii=False)
+            assert "j4_02_choice_nico_consultation" in nodes
         else:
             assert data["entry_variants"] == [{"id": "default", "conditions": {}, "start_node": spec["start"]}]
             assert nodes[spec["start"]]["text"] == spec["placeholder"]

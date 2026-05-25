@@ -7,22 +7,624 @@
   "experimental": true,
   "nodes": [
     {
+      "id": "j4_02_nico_entry_pending_check_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "je réponds maintenant.",
+      "delay": 25,
+      "next": "j4_02_nico_single_reply_pending_check_001"
+    },
+    {
+      "id": "j4_02_nico_single_reply_pending_check_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_02_nico_single_reply_pending_check_001_option",
+          "text": "J’ai besoin de vérifier un truc.",
+          "next": "j4_02_nico_player_pending_check_001"
+        }
+      ],
+      "next": "j4_02_nico_player_pending_check_001"
+    },
+    {
+      "id": "j4_02_nico_player_pending_check_001",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai besoin de vérifier un truc.",
+      "delay": 0,
+      "next": "j4_02_nico_entry_pending_check_002"
+    },
+    {
+      "id": "j4_02_nico_entry_pending_check_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "ça commence toujours comme ça.",
+      "delay": 30,
+      "next": "j4_02_nico_entry_pending_check_003"
+    },
+    {
+      "id": "j4_02_nico_entry_pending_check_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "et ça finit souvent avec moi qui tiens une chaise dans une pièce en feu.",
+      "delay": 30,
+      "next": "j4_02_nico_entry_pending_check_004"
+    },
+    {
+      "id": "j4_02_nico_entry_pending_check_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "vas-y. dis-moi ce que tu veux que je sauve ou que je refuse de sauver.",
+      "delay": 30,
+      "next": "j4_02_choice_nico_consultation"
+    },
+    {
+      "id": "j4_02_nico_entry_direct_answer_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "t’as répondu sans me demander de jouer les airbags ?",
+      "delay": 25,
+      "next": "j4_02_nico_single_reply_direct_answer_001"
+    },
+    {
+      "id": "j4_02_nico_single_reply_direct_answer_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_02_nico_single_reply_direct_answer_001_option",
+          "text": "Ça t’étonne ?",
+          "next": "j4_02_nico_player_direct_answer_001"
+        }
+      ],
+      "next": "j4_02_nico_player_direct_answer_001"
+    },
+    {
+      "id": "j4_02_nico_player_direct_answer_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Ça t’étonne ?",
+      "delay": 0,
+      "next": "j4_02_nico_entry_direct_answer_002"
+    },
+    {
+      "id": "j4_02_nico_entry_direct_answer_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "un peu.",
+      "delay": 30,
+      "next": "j4_02_nico_entry_direct_answer_003"
+    },
+    {
+      "id": "j4_02_nico_entry_direct_answer_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "je note la croissance personnelle.",
+      "delay": 30,
+      "next": "j4_02_nico_entry_direct_answer_004"
+    },
+    {
+      "id": "j4_02_nico_entry_direct_answer_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "ne t’emballe pas, je fais pas encore les diplômes.",
+      "delay": 30,
+      "next": "j4_02_choice_nico_consultation"
+    },
+    {
+      "id": "j4_02_nico_entry_delay_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "tu as mis la conversation en pause, c’est ça ?",
+      "delay": 25,
+      "next": "j4_02_nico_single_reply_delay_001"
+    },
+    {
+      "id": "j4_02_nico_single_reply_delay_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_02_nico_single_reply_delay_001_option",
+          "text": "Plus ou moins.",
+          "next": "j4_02_nico_player_delay_001"
+        }
+      ],
+      "next": "j4_02_nico_player_delay_001"
+    },
+    {
+      "id": "j4_02_nico_player_delay_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Plus ou moins.",
+      "delay": 0,
+      "next": "j4_02_nico_entry_delay_002"
+    },
+    {
+      "id": "j4_02_nico_entry_delay_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "le problème avec les pauses, c’est que les autres entendent aussi le silence.",
+      "delay": 30,
+      "next": "j4_02_nico_entry_delay_003"
+    },
+    {
+      "id": "j4_02_nico_entry_delay_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "je peux t’aider à ne pas l’allonger pour rien.",
+      "delay": 30,
+      "next": "j4_02_nico_entry_delay_004"
+    },
+    {
+      "id": "j4_02_nico_entry_delay_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "mais je vais pas vivre dedans.",
+      "delay": 30,
+      "next": "j4_02_choice_nico_consultation"
+    },
+    {
+      "id": "j4_02_nico_entry_defensive_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "j’ai senti une vibration de mauvaise foi dans la Force.",
+      "delay": 25,
+      "next": "j4_02_nico_single_reply_defensive_001"
+    },
+    {
+      "id": "j4_02_nico_single_reply_defensive_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_02_nico_single_reply_defensive_001_option",
+          "text": "Très drôle.",
+          "next": "j4_02_nico_player_defensive_001"
+        }
+      ],
+      "next": "j4_02_nico_player_defensive_001"
+    },
+    {
+      "id": "j4_02_nico_player_defensive_001",
+      "type": "message",
+      "sender": "player",
+      "text": "Très drôle.",
+      "delay": 0,
+      "next": "j4_02_nico_entry_defensive_002"
+    },
+    {
+      "id": "j4_02_nico_entry_defensive_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "oui.",
+      "delay": 30,
+      "next": "j4_02_nico_entry_defensive_003"
+    },
+    {
+      "id": "j4_02_nico_entry_defensive_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "mais inquiétant aussi.",
+      "delay": 30,
+      "next": "j4_02_nico_entry_defensive_004"
+    },
+    {
+      "id": "j4_02_nico_entry_defensive_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "quand tu passes en mode procès imaginaire, en général tu creuses.",
+      "delay": 30,
+      "next": "j4_02_choice_nico_consultation"
+    },
+    {
       "id": "j4_02_nico_001",
       "type": "message",
       "sender": "nico",
-      "text": "[J4 placeholder Nico consultation]",
+      "text": "je suis pas encore assez réveillé pour une crise.",
       "delay": 25,
-      "next": "j4_02_end"
+      "next": "j4_02_nico_single_reply_default_001"
     },
     {
-      "id": "j4_02_end",
+      "id": "j4_02_nico_single_reply_default_001",
+      "type": "choice",
+      "sender": "player",
+      "text": "Répondre",
+      "choices": [
+        {
+          "id": "j4_02_nico_single_reply_default_001_option",
+          "text": "J’ai besoin d’un avis.",
+          "next": "j4_02_nico_player_default_001"
+        }
+      ],
+      "next": "j4_02_nico_player_default_001"
+    },
+    {
+      "id": "j4_02_nico_player_default_001",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai besoin d’un avis.",
+      "delay": 0,
+      "next": "j4_02_nico_002"
+    },
+    {
+      "id": "j4_02_nico_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "évidemment.",
+      "delay": 30,
+      "next": "j4_02_nico_003"
+    },
+    {
+      "id": "j4_02_nico_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "avis gratuit, alibi payant.",
+      "delay": 30,
+      "next": "j4_02_nico_004"
+    },
+    {
+      "id": "j4_02_nico_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "et je prends pas les paiements en panique.",
+      "delay": 30,
+      "next": "j4_02_choice_nico_consultation"
+    },
+    {
+      "id": "j4_02_choice_nico_consultation",
+      "type": "choice",
+      "sender": "player",
+      "text": "Que demander à Nico ?",
+      "choices": [
+        {
+          "id": "j4_02_nico_ask_advice",
+          "text": "J’ai besoin d’un avis, pas d’un alibi. Juste savoir comment ne pas empirer.",
+          "next": "j4_02_nico_player_ask_advice",
+          "effects": {
+            "coherence": 1,
+            "dette_nico": 1,
+            "fatigue_emotionnelle": 1,
+            "flags": [
+              "j4_nico_advice_requested",
+              "j4_nico_advised_direct_answer",
+              "j4_nico_warned_about_delay"
+            ]
+          }
+        },
+        {
+          "id": "j4_02_nico_ask_cover",
+          "text": "J’ai besoin que tu tiennes la même ligne que moi, au moins pour aujourd’hui.",
+          "next": "j4_02_nico_player_ask_cover",
+          "effects": {
+            "dette_nico": 2,
+            "risque_exposition": 2,
+            "coherence": -1,
+            "flags": [
+              "j4_nico_cover_requested",
+              "j4_nico_helped_version",
+              "j4_nico_pressure_increases"
+            ]
+          }
+        },
+        {
+          "id": "j4_02_nico_release_him",
+          "text": "Non, laisse. Je ne veux pas te remettre là-dedans.",
+          "next": "j4_02_nico_player_release_him",
+          "effects": {
+            "dette_nico": -1,
+            "coherence": 1,
+            "flags": [
+              "j4_nico_released_again",
+              "j4_player_chooses_own_answer"
+            ]
+          }
+        },
+        {
+          "id": "j4_02_nico_joke_escape",
+          "text": "C’était une question théorique. Comme tous les incendies que je déclenche.",
+          "next": "j4_02_nico_player_joke_escape",
+          "effects": {
+            "dette_nico": 1,
+            "risque_exposition": 1,
+            "flags": [
+              "j4_nico_joke_escape",
+              "j4_nico_not_a_service"
+            ]
+          }
+        },
+        {
+          "id": "j4_02_nico_game_evening",
+          "text": "Et sinon, ta soirée console tient toujours ? J’ai peut-être besoin de penser à autre chose.",
+          "next": "j4_02_nico_player_game_evening",
+          "effects": {
+            "fatigue_emotionnelle": -1,
+            "flags": [
+              "j4_nico_game_evening_seed",
+              "j4_player_considers_game_evening"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "j4_02_nico_player_ask_advice",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai besoin d’un avis, pas d’un alibi. Juste savoir comment ne pas empirer.",
+      "delay": 0,
+      "next": "j4_02_nico_response_ask_advice_001"
+    },
+    {
+      "id": "j4_02_nico_response_ask_advice_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "alors mon avis : fais plus court que ton cerveau.",
+      "delay": 30,
+      "next": "j4_02_nico_response_ask_advice_002"
+    },
+    {
+      "id": "j4_02_nico_response_ask_advice_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "quand tu veux tout sécuriser, on dirait que tu poses des planches sur des sables mouvants.",
+      "delay": 30,
+      "next": "j4_02_nico_response_ask_advice_003"
+    },
+    {
+      "id": "j4_02_nico_response_ask_advice_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "dis ce que tu sais.",
+      "delay": 30,
+      "next": "j4_02_nico_response_ask_advice_004"
+    },
+    {
+      "id": "j4_02_nico_response_ask_advice_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "et dis aussi ce que tu ne sais pas tenir.",
+      "delay": 30,
+      "next": "j4_02_end_nico_advice"
+    },
+    {
+      "id": "j4_02_end_nico_advice",
       "type": "end",
       "sender": "system",
-      "text": "[Fin placeholder J4]",
+      "text": "Nico conseille une réponse plus simple. Il aide, mais sans porter la version.",
+      "delay": 0
+    },
+    {
+      "id": "j4_02_nico_player_ask_cover",
+      "type": "message",
+      "sender": "player",
+      "text": "J’ai besoin que tu tiennes la même ligne que moi, au moins pour aujourd’hui.",
+      "delay": 0,
+      "next": "j4_02_nico_response_ask_cover_001"
+    },
+    {
+      "id": "j4_02_nico_response_ask_cover_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "tu entends “au moins pour aujourd’hui” ?",
+      "delay": 30,
+      "next": "j4_02_nico_response_ask_cover_002"
+    },
+    {
+      "id": "j4_02_nico_response_ask_cover_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "c’est jamais seulement aujourd’hui, ce genre de phrase.",
+      "delay": 30,
+      "next": "j4_02_nico_response_ask_cover_003"
+    },
+    {
+      "id": "j4_02_nico_response_ask_cover_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "je peux éviter de te contredire.",
+      "delay": 30,
+      "next": "j4_02_nico_response_ask_cover_004"
+    },
+    {
+      "id": "j4_02_nico_response_ask_cover_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "mais je ne vais pas devenir la charpente de ton mensonge.",
+      "delay": 30,
+      "next": "j4_02_end_nico_cover"
+    },
+    {
+      "id": "j4_02_end_nico_cover",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico accepte une ligne minimale, mais la dette augmente nettement.",
+      "delay": 0
+    },
+    {
+      "id": "j4_02_nico_player_release_him",
+      "type": "message",
+      "sender": "player",
+      "text": "Non, laisse. Je ne veux pas te remettre là-dedans.",
+      "delay": 0,
+      "next": "j4_02_nico_response_release_him_001"
+    },
+    {
+      "id": "j4_02_nico_response_release_him_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "merci.",
+      "delay": 30,
+      "next": "j4_02_nico_response_release_him_002"
+    },
+    {
+      "id": "j4_02_nico_response_release_him_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "je préfère être ton pote que ton extincteur.",
+      "delay": 30,
+      "next": "j4_02_nico_response_release_him_003"
+    },
+    {
+      "id": "j4_02_nico_response_release_him_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "et pour une fois, je pense que tu peux répondre sans me mettre entre deux phrases.",
+      "delay": 30,
+      "next": "j4_02_nico_response_release_him_004"
+    },
+    {
+      "id": "j4_02_nico_response_release_him_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "ça fera peut-être moins propre. mais plus à toi.",
+      "delay": 30,
+      "next": "j4_02_end_nico_released"
+    },
+    {
+      "id": "j4_02_end_nico_released",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico est libéré de l’alibi. Le joueur garde la responsabilité de sa réponse.",
+      "delay": 0
+    },
+    {
+      "id": "j4_02_nico_player_joke_escape",
+      "type": "message",
+      "sender": "player",
+      "text": "C’était une question théorique. Comme tous les incendies que je déclenche.",
+      "delay": 0,
+      "next": "j4_02_nico_response_joke_escape_001"
+    },
+    {
+      "id": "j4_02_nico_response_joke_escape_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "oui, très théorique.",
+      "delay": 30,
+      "next": "j4_02_nico_response_joke_escape_002"
+    },
+    {
+      "id": "j4_02_nico_response_joke_escape_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "d’ailleurs la fumée dans ton salon théorique commence à piquer les yeux.",
+      "delay": 30,
+      "next": "j4_02_nico_response_joke_escape_003"
+    },
+    {
+      "id": "j4_02_nico_response_joke_escape_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "je rigole, mais pas complètement.",
+      "delay": 30,
+      "next": "j4_02_nico_response_joke_escape_004"
+    },
+    {
+      "id": "j4_02_nico_response_joke_escape_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "tu peux faire une vanne. mais il faudra quand même répondre.",
+      "delay": 30,
+      "next": "j4_02_end_nico_joke"
+    },
+    {
+      "id": "j4_02_end_nico_joke",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico suit la vanne, mais refuse que l’humour remplace la réponse.",
+      "delay": 0
+    },
+    {
+      "id": "j4_02_nico_player_game_evening",
+      "type": "message",
+      "sender": "player",
+      "text": "Et sinon, ta soirée console tient toujours ? J’ai peut-être besoin de penser à autre chose.",
+      "delay": 0,
+      "next": "j4_02_nico_response_game_evening_001"
+    },
+    {
+      "id": "j4_02_nico_response_game_evening_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "elle tient.",
+      "delay": 30,
+      "next": "j4_02_nico_response_game_evening_002"
+    },
+    {
+      "id": "j4_02_nico_response_game_evening_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "mais je pose une règle tout de suite.",
+      "delay": 30,
+      "next": "j4_02_nico_response_game_evening_003"
+    },
+    {
+      "id": "j4_02_nico_response_game_evening_003",
+      "type": "message",
+      "sender": "nico",
+      "text": "si tu viens pour respirer, ok.",
+      "delay": 30,
+      "next": "j4_02_nico_response_game_evening_004"
+    },
+    {
+      "id": "j4_02_nico_response_game_evening_004",
+      "type": "message",
+      "sender": "nico",
+      "text": "si tu viens pour te cacher, je te fais jouer support toute la soirée.",
+      "delay": 30,
+      "next": "j4_02_end_nico_game"
+    },
+    {
+      "id": "j4_02_end_nico_game",
+      "type": "end",
+      "sender": "system",
+      "text": "Nico laisse ouverte la soirée console, mais distingue respiration et fuite.",
       "delay": 0
     }
   ],
   "entry_variants": [
+    {
+      "id": "after_sarah_pending_check",
+      "conditions": {
+        "flags": [
+          "j4_sarah_answer_pending_nico_check"
+        ]
+      },
+      "start_node": "j4_02_nico_entry_pending_check_001"
+    },
+    {
+      "id": "after_direct_sarah_answer",
+      "conditions": {
+        "flags": [
+          "j4_player_given_direct_sarah_answer"
+        ]
+      },
+      "start_node": "j4_02_nico_entry_direct_answer_001"
+    },
+    {
+      "id": "after_sarah_delay",
+      "conditions": {
+        "flags": [
+          "j4_player_delayed_sarah_answer"
+        ]
+      },
+      "start_node": "j4_02_nico_entry_delay_001"
+    },
+    {
+      "id": "after_sarah_defensive",
+      "conditions": {
+        "flags": [
+          "j4_player_defensive_with_sarah"
+        ]
+      },
+      "start_node": "j4_02_nico_entry_defensive_001"
+    },
     {
       "id": "default",
       "conditions": {},
