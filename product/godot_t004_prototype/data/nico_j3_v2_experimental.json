@@ -514,6 +514,32 @@
       "sender": "nico",
       "text": "disons que quelqu’un m’a écrit.",
       "delay": 30,
+      "next": "j3_02_nico_media_social_life_001"
+    },
+    {
+      "id": "j3_02_nico_media_social_life_001",
+      "type": "media",
+      "sender": "nico",
+      "media_type": "image",
+      "asset": "res://assets/media/j3_v2/nico_sortie_floue_j3.png",
+      "caption": "[photo de sortie envoyée]",
+      "delay": 30,
+      "next": "j3_02_nico_response_life_photo_001"
+    },
+    {
+      "id": "j3_02_nico_response_life_photo_001",
+      "type": "message",
+      "sender": "nico",
+      "text": "preuve que j’ai une vie. floue, certes.",
+      "delay": 30,
+      "next": "j3_02_nico_response_life_photo_002"
+    },
+    {
+      "id": "j3_02_nico_response_life_photo_002",
+      "type": "message",
+      "sender": "nico",
+      "text": "mais une vie quand même.",
+      "delay": 30,
       "next": "j3_02_nico_response_life_teased_004"
     },
     {

@@ -367,6 +367,32 @@
       "sender": "sarah",
       "text": "Alors je vais regarder les gestes.",
       "delay": 30,
+      "next": "j3_01_sarah_media_morning_trace_001"
+    },
+    {
+      "id": "j3_01_sarah_media_morning_trace_001",
+      "type": "media",
+      "sender": "sarah",
+      "media_type": "image",
+      "asset": "res://assets/media/j3_v2/sarah_trace_matin_j3.png",
+      "caption": "[photo du matin envoyée]",
+      "delay": 30,
+      "next": "j3_01_sarah_response_actions_photo_001"
+    },
+    {
+      "id": "j3_01_sarah_response_actions_photo_001",
+      "type": "message",
+      "sender": "sarah",
+      "text": "C’est pas grand-chose.",
+      "delay": 30,
+      "next": "j3_01_sarah_response_actions_photo_002"
+    },
+    {
+      "id": "j3_01_sarah_response_actions_photo_002",
+      "type": "message",
+      "sender": "sarah",
+      "text": "Mais c’est le genre de petit truc que je remarque maintenant.",
+      "delay": 30,
       "next": "j3_01_sarah_response_actions_003"
     },
     {

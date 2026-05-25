@@ -111,7 +111,9 @@ def test_t191_each_central_branch_ends_on_end_node() -> None:
 
 
 def test_t191_no_media_and_no_forbidden_omniscience_terms() -> None:
-    assert all(node.get("type") != "media" for node in SARAH["nodes"])
+    assert [node["id"] for node in SARAH["nodes"] if node.get("type") == "media"] == [
+        "j3_01_sarah_media_morning_trace_001"
+    ]
     serialized = json.dumps(SARAH, ensure_ascii=False).lower()
     for forbidden in ["maya", "inès", "ines", "camille", "nico"]:
         assert forbidden not in serialized

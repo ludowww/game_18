@@ -99,7 +99,9 @@ def test_t192_each_central_branch_ends_on_end_node() -> None:
 
 
 def test_t192_no_media_no_betrayal_and_life_tease_without_maya() -> None:
-    assert all(node.get("type") != "media" for node in NICO["nodes"])
+    assert [node["id"] for node in NICO["nodes"] if node.get("type") == "media"] == [
+        "j3_02_nico_media_social_life_001"
+    ]
     nico_text = "\n".join(node.get("text", "") for node in NICO["nodes"] if node.get("sender") == "nico")
     assert "Maya" not in nico_text
     assert "Camille m’a dit" not in nico_text
