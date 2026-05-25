@@ -48,7 +48,7 @@
       "id": "j3_03_camille_entry_assumed_003",
       "type": "message",
       "sender": "camille",
-      "text": "Mais ça m’a évité de me sentir seule avec la scène.",
+      "text": "Mais au moins, j’avais pas l’impression d’être la seule à avoir senti quelque chose.",
       "delay": 30,
       "next": "j3_03_camille_entry_assumed_004"
     },
@@ -110,7 +110,7 @@
       "id": "j3_03_camille_entry_boundary_004",
       "type": "message",
       "sender": "camille",
-      "text": "Mais une limite, ça peut protéger. Ou ça peut juste ranger quelque chose qu’on ne veut pas regarder.",
+      "text": "Mais une limite, ça peut protéger. Ou juste servir à ne plus regarder le problème.",
       "delay": 30,
       "next": "j3_03_choice_camille_line"
     },
@@ -284,7 +284,7 @@
       "choices": [
         {
           "id": "j3_03_camille_recognize_without_using",
-          "text": "Je ne veux pas effacer ce moment. Mais je ne veux pas non plus t’utiliser pour sortir de ce que je n’arrive pas à régler ailleurs.",
+          "text": "Je ne veux pas effacer ce moment. Mais je ne veux pas non plus faire de toi une sortie parce que je n’arrive pas à gérer le reste.",
           "effects": {
             "tension_camille": 1,
             "respect_camille": 2,
@@ -350,7 +350,7 @@
       "id": "j3_03_camille_player_recognize_without_using",
       "type": "message",
       "sender": "player",
-      "text": "Je ne veux pas effacer ce moment. Mais je ne veux pas non plus t’utiliser pour sortir de ce que je n’arrive pas à régler ailleurs.",
+      "text": "Je ne veux pas effacer ce moment. Mais je ne veux pas non plus faire de toi une sortie parce que je n’arrive pas à gérer le reste.",
       "delay": 0,
       "next": "j3_03_camille_response_not_escape_001"
     },
@@ -366,7 +366,7 @@
       "id": "j3_03_camille_response_not_escape_002",
       "type": "message",
       "sender": "camille",
-      "text": "Mais au moins, elle me laisse une place qui n’est pas seulement pratique.",
+      "text": "Mais au moins, j’ai pas l’impression d’être juste pratique.",
       "delay": 30,
       "next": "j3_03_camille_response_not_escape_003"
     },
@@ -421,7 +421,7 @@
       "id": "j3_03_camille_response_boundary_003",
       "type": "message",
       "sender": "camille",
-      "text": "Mais je préfère une limite qui me regarde en face à une ouverture qui m’utilise mal.",
+      "text": "Mais je préfère une limite claire à une ouverture où je me sens utilisée.",
       "delay": 30,
       "next": "j3_03_camille_response_boundary_004"
     },
@@ -468,7 +468,7 @@
       "id": "j3_03_camille_response_pressure_003",
       "type": "message",
       "sender": "camille",
-      "text": "Et me demander de devenir l’endroit où tu vérifies.",
+      "text": "Et me demander d’être celle avec qui tu vérifies.",
       "delay": 30,
       "next": "j3_03_camille_response_pressure_004"
     },

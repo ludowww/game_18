@@ -148,7 +148,7 @@
       "id": "j3_02_nico_entry_partial_truth_002",
       "type": "message",
       "sender": "nico",
-      "text": "et je vais faire très attention à ne pas devenir le SAV de tes tremblements.",
+      "text": "et je vais faire gaffe à pas devenir celui qui gère tes tremblements à ta place.",
       "delay": 30,
       "next": "j3_02_nico_entry_partial_truth_003"
     },
@@ -418,7 +418,7 @@
       "id": "j3_02_nico_response_limited_help_003",
       "type": "message",
       "sender": "nico",
-      "text": "c’est souvent le couloir entre les deux qui coûte cher.",
+      "text": "et c’est souvent là que ça commence à coûter cher.",
       "delay": 30,
       "next": "j3_02_nico_response_limited_help_004"
     },
@@ -426,7 +426,7 @@
       "id": "j3_02_nico_response_limited_help_004",
       "type": "message",
       "sender": "nico",
-      "text": "je peux t’aider un peu. Mais je vais pas vivre dans ce couloir.",
+      "text": "je peux t’aider un peu. Mais je vais pas rester coincé là-dedans avec toi.",
       "delay": 30,
       "next": "j3_02_end_nico_limited_help"
     },
@@ -473,7 +473,7 @@
       "id": "j3_02_nico_response_sarah_pressure_004",
       "type": "message",
       "sender": "nico",
-      "text": "les radars, ça flashe. Les gens, ça lâche.",
+      "text": "elle cherche peut-être pas à te flasher. Elle est peut-être juste fatiguée.",
       "delay": 30,
       "next": "j3_02_end_nico_sarah_pressure"
     },

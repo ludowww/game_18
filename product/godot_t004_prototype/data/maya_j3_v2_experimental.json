@@ -56,7 +56,7 @@
       "id": "j3_04_maya_entry_social_read_004",
       "type": "message",
       "sender": "maya",
-      "text": "juste plus de petits détails qui refusent de rester chacun dans leur coin.",
+      "text": "juste plus de petits détails qui commencent à se répondre.",
       "delay": 30,
       "next": "j3_04_choice_maya_signals"
     },
@@ -110,7 +110,7 @@
       "id": "j3_04_maya_entry_malaise_004",
       "type": "message",
       "sender": "maya",
-      "text": "les trucs tus ne deviennent pas invisibles. ils deviennent juste plus silencieux.",
+      "text": "les trucs qu’on tait ne disparaissent pas. ils font juste moins de bruit.",
       "delay": 30,
       "next": "j3_04_choice_maya_signals"
     },
@@ -376,7 +376,7 @@
       "id": "j3_04_maya_response_signals_opened_004",
       "type": "message",
       "sender": "maya",
-      "text": "et toi, tu regardes parfois les messages comme s’ils avaient une température.",
+      "text": "parfois, on dirait que tu vérifies si tes messages brûlent.",
       "delay": 30,
       "next": "j3_04_end_maya_signals_opened"
     },

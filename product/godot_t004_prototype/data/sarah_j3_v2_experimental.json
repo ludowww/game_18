@@ -102,7 +102,7 @@
       "id": "j3_01_sarah_entry_delay_003",
       "type": "message",
       "sender": "sarah",
-      "text": "Mais le temps, pour toi, c’est parfois un endroit où tu peux respirer.",
+      "text": "Mais quand tu demandes du temps, toi, ça te laisse respirer.",
       "delay": 30,
       "next": "j3_01_sarah_entry_delay_004"
     },
@@ -110,7 +110,7 @@
       "id": "j3_01_sarah_entry_delay_004",
       "type": "message",
       "sender": "sarah",
-      "text": "Pour moi, c’est un endroit où j’attends.",
+      "text": "Moi, pendant ce temps-là, j’attends.",
       "delay": 30,
       "next": "j3_01_choice_sarah_place"
     },
@@ -164,7 +164,7 @@
       "id": "j3_01_sarah_entry_minimized_004",
       "type": "message",
       "sender": "sarah",
-      "text": "Et je ne sais pas combien de fois je peux accepter que mon malaise soit trop grand pour ta version.",
+      "text": "Et je sais pas combien de fois je peux entendre que mon malaise est trop grand pour ta version.",
       "delay": 30,
       "next": "j3_01_choice_sarah_place"
     },
@@ -202,7 +202,7 @@
       "id": "j3_01_sarah_entry_fragile_002",
       "type": "message",
       "sender": "sarah",
-      "text": "Hier, ta phrase la moins solide était peut-être celle qui m’a le moins abîmée.",
+      "text": "Hier, bizarrement, c’est ta phrase la plus fragile qui m’a fait le moins mal.",
       "delay": 30,
       "next": "j3_01_sarah_entry_fragile_003"
     },
@@ -218,7 +218,7 @@
       "id": "j3_01_sarah_entry_fragile_004",
       "type": "message",
       "sender": "sarah",
-      "text": "Je crois que j’ai moins besoin d’une version parfaite que d’une présence qui ne se sauve pas dès qu’elle tremble.",
+      "text": "Je crois que j’ai pas besoin d’une version parfaite. J’ai surtout besoin que tu restes là quand ça tremble.",
       "delay": 30,
       "next": "j3_01_choice_sarah_place"
     },
@@ -284,7 +284,7 @@
       "choices": [
         {
           "id": "j3_01_sarah_show_with_actions",
-          "text": "Tu as raison. Aujourd’hui, je veux arrêter de te répondre seulement avec des phrases. Je vais te le montrer dans les gestes.",
+          "text": "Tu as raison. Aujourd’hui, je veux arrêter de répondre juste avec des phrases. Je vais essayer de te le montrer.",
           "effects": {
             "confiance_sarah": 2,
             "distance_sarah": -1,
@@ -349,7 +349,7 @@
       "id": "j3_01_sarah_player_show_with_actions",
       "type": "message",
       "sender": "player",
-      "text": "Tu as raison. Aujourd’hui, je veux arrêter de te répondre seulement avec des phrases. Je vais te le montrer dans les gestes.",
+      "text": "Tu as raison. Aujourd’hui, je veux arrêter de répondre juste avec des phrases. Je vais essayer de te le montrer.",
       "delay": 0,
       "next": "j3_01_sarah_response_actions_001"
     },
@@ -381,7 +381,7 @@
       "id": "j3_01_sarah_response_actions_004",
       "type": "message",
       "sender": "sarah",
-      "text": "Pour voir si je peux arrêter de traduire chaque silence.",
+      "text": "Pour voir si je peux arrêter de devoir deviner derrière chaque silence.",
       "delay": 30,
       "next": "j3_01_end_sarah_actions"
     },
@@ -436,7 +436,7 @@
       "id": "j3_01_end_sarah_uncertainty",
       "type": "end",
       "sender": "system",
-      "text": "Sarah accepte l’incertitude parce qu’elle n’est pas déguisée en certitude.",
+      "text": "Sarah accepte mieux l’incertitude quand elle est dite clairement.",
       "delay": 0
     },
     {

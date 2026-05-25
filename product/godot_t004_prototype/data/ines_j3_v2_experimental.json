@@ -56,7 +56,7 @@
       "id": "j3_05_ines_entry_careful_004",
       "type": "message",
       "sender": "ines",
-      "text": "parce que ça me laisse exister comme quelqu’un, pas comme un endroit.",
+      "text": "parce que j’ai l’impression d’être quelqu’un, pas juste un endroit où tu viens te poser.",
       "delay": 30,
       "next": "j3_05_choice_ines_evening"
     },
@@ -164,7 +164,7 @@
       "id": "j3_05_ines_entry_refuge_004",
       "type": "message",
       "sender": "ines",
-      "text": "mais je ne veux pas devenir le nom que tu donnes à ta fuite.",
+      "text": "mais je ne veux pas que tu appelles “moi” le fait de fuir le reste.",
       "delay": 30,
       "next": "j3_05_choice_ines_evening"
     },
@@ -272,7 +272,7 @@
       "id": "j3_05_ines_004",
       "type": "message",
       "sender": "ines",
-      "text": "sans que ça devienne plus grand que ce qu’on sait tenir.",
+      "text": "sans que ça devienne plus grand que ce qu’on peut tenir.",
       "delay": 30,
       "next": "j3_05_choice_ines_evening"
     },
@@ -284,7 +284,7 @@
       "choices": [
         {
           "id": "j3_05_ines_clear_presence",
-          "text": "Je veux être là clairement. Pas pour fuir le reste, et pas pour te demander de porter ce que je n’ai pas réglé.",
+          "text": "Je veux être là clairement. Pas pour fuir le reste. Et pas pour te faire porter ce que je n’ai pas réglé.",
           "effects": {
             "fuite_ines": -2,
             "coherence": 2,
@@ -347,7 +347,7 @@
       "id": "j3_05_ines_player_clear_presence",
       "type": "message",
       "sender": "player",
-      "text": "Je veux être là clairement. Pas pour fuir le reste, et pas pour te demander de porter ce que je n’ai pas réglé.",
+      "text": "Je veux être là clairement. Pas pour fuir le reste. Et pas pour te faire porter ce que je n’ai pas réglé.",
       "delay": 0,
       "next": "j3_05_ines_response_clear_presence_001"
     },
@@ -379,7 +379,7 @@
       "id": "j3_05_ines_response_clear_presence_004",
       "type": "message",
       "sender": "ines",
-      "text": "juste pour savoir que je ne suis pas en train d’ouvrir une porte pendant que tu cours ailleurs.",
+      "text": "juste pour savoir que je ne suis pas en train de m’ouvrir à toi pendant que tu regardes ailleurs.",
       "delay": 30,
       "next": "j3_05_end_ines_clear_presence"
     },
@@ -418,7 +418,7 @@
       "id": "j3_05_ines_response_soft_distance_003",
       "type": "message",
       "sender": "ines",
-      "text": "plutôt qu’une proximité qui demande ensuite pardon d’avoir été trop facile.",
+      "text": "plutôt qu’une proximité trop facile qu’on regrette après.",
       "delay": 30,
       "next": "j3_05_ines_response_soft_distance_004"
     },
@@ -520,7 +520,7 @@
       "id": "j3_05_ines_response_step_back_004",
       "type": "message",
       "sender": "ines",
-      "text": "mais c’est plus propre qu’une présence qui me prendrait la main en regardant ailleurs.",
+      "text": "mais c’est plus propre que quelqu’un qui me prend la main sans vraiment être là.",
       "delay": 30,
       "next": "j3_05_end_ines_step_back"
     },
